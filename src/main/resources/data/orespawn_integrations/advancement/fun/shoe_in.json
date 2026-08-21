@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:surface_riches/sift_happens",
+  "criteria": {
+    "any_shoes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "orespawn:red_heels",
+              "orespawn:black_heels",
+              "orespawn:slippers",
+              "orespawn:boots_shoes"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "any_shoes"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:red_heels"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.shoe_in.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.shoe_in.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

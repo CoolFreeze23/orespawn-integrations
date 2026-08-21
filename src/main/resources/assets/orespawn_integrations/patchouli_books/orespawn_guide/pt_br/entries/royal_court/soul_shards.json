@@ -1,0 +1,29 @@
+{
+  "name": "Fragmentos de Alma Pré-Vinculados",
+  "icon": "soulshards:soul_shard",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:soulshards",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "soulshards:soul_shard",
+      "text": "O presente de boas-vindas da Corte: sessenta e quatro abates, assinados e reconhecidos em cartório."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Quem Assina",
+      "text": "Quatro membros da realeza podem soltar um fragmento de alma já vinculado a eles: o $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$(), o $(l:orespawn_integrations:bosses/kraken)Kraken$(), a $(l:orespawn_integrations:bosses/the_queen)Rainha$() e o $(l:orespawn_integrations:bestiary/emperor_scorpion)Escorpião Imperador$(). Dez por cento por abate, e o golpe fatal precisa ser seu.$(p)O fragmento chega no nível um — 64 dos seus 1.024 abates já creditados. Vinculado pelo Sangue, diz a conquista, e ela não está errada."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "As Letras Miúdas",
+      "text": "Os 960 abates restantes continuam sendo problema seu. A labuta permanece honesta; só a apresentação é de graça.$(p)Mantenha o fragmento com você e cada novo abate do chefe vinculado sobe o contador escada acima, exatamente como o Soul Shards sempre exigiu. A Corte assina presentes de boas-vindas, não cheques em branco."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Básico da Jaula",
+      "text": "Solte o fragmento numa Jaula de Almas e ela começa a produzir o chefe vinculado — a jaula funciona do nível um, dia um. Alimente-a com mais abates e os níveis mais altos geram mais rápido e mais cruel.$(p)Você está, para deixar claro, construindo uma máquina que dispensa Mobzilla. A Corte presume que você tem um plano para a saída do produto."
+    }
+  ]
+}

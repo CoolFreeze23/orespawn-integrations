@@ -1,0 +1,65 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:root",
+  "criteria": {
+    "nine_king_parts": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:the_king_part_spawn_block",
+            "count": {
+              "min": 9
+            }
+          }
+        ]
+      }
+    },
+    "nine_queen_parts": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:the_queen_part_spawn_block",
+            "count": {
+              "min": 9
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "nine_king_parts"
+    ],
+    [
+      "nine_queen_parts"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:the_king_part_spawn_block"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ultrabosses.king_parts.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ultrabosses.king_parts.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

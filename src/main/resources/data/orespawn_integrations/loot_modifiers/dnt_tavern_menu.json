@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mr_dungeons_andtaverns"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "nova_structures:chests/tavern_quest"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "nova_structures:pots/pot_tavern"
+        }
+      ]
+    }
+  ],
+  "table": "orespawn_integrations:inject/tavern_menu"
+}

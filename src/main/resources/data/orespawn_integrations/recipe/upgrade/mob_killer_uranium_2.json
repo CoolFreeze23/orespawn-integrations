@@ -1,0 +1,36 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "statues"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "type": "statues:upgrade",
+  "catalysts": [
+    {
+      "item": "orespawn:block_uranium"
+    },
+    {
+      "item": "orespawn:block_uranium"
+    },
+    {
+      "item": "orespawn:block_uranium"
+    },
+    {
+      "item": "minecraft:enchanted_book"
+    }
+  ],
+  "center": {
+    "tag": "statues:statues/upgradeable"
+  },
+  "tier": 1,
+  "upgradeType": "mob_killer"
+}

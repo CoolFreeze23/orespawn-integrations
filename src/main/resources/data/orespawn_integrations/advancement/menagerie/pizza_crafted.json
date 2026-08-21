@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:menagerie/farmers_market",
+  "criteria": {
+    "crafted_pizza": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:pizza_from_ingredients"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crafted_pizza"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:pizza_item"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.menagerie.pizza_crafted.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.menagerie.pizza_crafted.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

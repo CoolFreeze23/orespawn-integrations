@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "royal_court"
+    }
+  ],
+  "type": "twilightforest:uncrafting",
+  "cost": 6,
+  "input": {
+    "item": "orespawn:royal_boots"
+  },
+  "input_count": 1,
+  "key": {
+    "Q": {
+      "item": "orespawn:queen_scale"
+    }
+  },
+  "pattern": [
+    " Q ",
+    "Q Q"
+  ]
+}

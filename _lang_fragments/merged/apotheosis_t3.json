@@ -1,0 +1,11 @@
+{
+    "loot_category.orespawn_integrations.orespawn_gun": "OreSpawn Gun",
+    "loot_category.orespawn_integrations.orespawn_gun.plural": "OreSpawn Guns",
+
+    "affix.orespawn_integrations:orespawn_gun/attribute/overcharged": "Overcharged",
+    "affix.orespawn_integrations:orespawn_gun/attribute/overcharged.suffix": "of Overcharge",
+    "affix.orespawn_integrations:orespawn_gun/attribute/tigers_eye": "Tiger-Eyed",
+    "affix.orespawn_integrations:orespawn_gun/attribute/tigers_eye.suffix": "of the Tiger's Eye",
+    "affix.orespawn_integrations:orespawn_gun/mob_effect/antigravity": "Antigravitic",
+    "affix.orespawn_integrations:orespawn_gun/mob_effect/antigravity.suffix": "of Anti-Gravity"
+}

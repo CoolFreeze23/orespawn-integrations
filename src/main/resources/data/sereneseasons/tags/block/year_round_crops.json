@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "orespawn:experience_plant", "required": false },
+    { "id": "orespawn:experience_sapling", "required": false },
+    { "id": "orespawn:moth_plant", "required": false },
+    { "id": "orespawn:firefly_plant", "required": false },
+    { "id": "orespawn:butterfly_plant", "required": false },
+    { "id": "orespawn:mosquito_plant", "required": false }
+  ]
+}

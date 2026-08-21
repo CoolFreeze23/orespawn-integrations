@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apothic_enchanting"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        },
+        {
+            "type": "orespawn_integrations:thread_enabled",
+            "thread": "uranium"
+        }
+    ],
+    "block": "orespawn:block_tigers_eye",
+    "stats": {
+        "maxEterna": 90,
+        "eterna": 15,
+        "quanta": 0,
+        "arcana": 0,
+        "clues": 1
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "statues"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "type": "statues:upgrade",
+  "catalysts": [
+    {
+      "item": "orespawn:ingot_uranium"
+    }
+  ],
+  "center": {
+    "tag": "statues:statues/upgradeable"
+  },
+  "tier": 0,
+  "upgradeType": "mob_killer"
+}

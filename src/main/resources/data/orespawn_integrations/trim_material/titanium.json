@@ -1,0 +1,9 @@
+{
+  "asset_name": "titanium",
+  "description": {
+    "color": "#C0C5CE",
+    "translate": "trim_material.orespawn_integrations.titanium"
+  },
+  "ingredient": "orespawn:ingot_titanium",
+  "item_model_index": 0.65
+}

@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "endrem"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "name": "eye_pool",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "endrem:royal_eye",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

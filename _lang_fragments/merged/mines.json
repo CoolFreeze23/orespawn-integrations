@@ -1,0 +1,8 @@
+{
+  "block.orespawn_integrations.ruby_ore_mine": "Ruby Ore Mine",
+  "block.orespawn_integrations.titanium_ore_mine": "Titanium Ore Mine",
+  "block.orespawn_integrations.tigers_eye_ore_mine": "Tiger's Eye Ore Mine",
+  "block.orespawn_integrations.uranium_ore_mine": "Uranium Ore Mine",
+  "block.orespawn_integrations.suspicious_ore": "Suspicious Ore",
+  "item.orespawn_integrations.decoy_mine.tooltip": "Looks like ore. Isn't."
+}

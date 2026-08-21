@@ -1,0 +1,98 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:root",
+  "criteria": {
+    "ray_gun": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:ray_gun"
+          }
+        ]
+      }
+    },
+    "big_hammer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:big_hammer"
+          }
+        ]
+      }
+    },
+    "mantis_claw": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:mantis_claw"
+          }
+        ]
+      }
+    },
+    "water_dragon_scale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:water_dragon_scale"
+          }
+        ]
+      }
+    },
+    "green_goo": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:green_goo"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ray_gun"
+    ],
+    [
+      "big_hammer"
+    ],
+    [
+      "mantis_claw"
+    ],
+    [
+      "water_dragon_scale"
+    ],
+    [
+      "green_goo"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:mantis_claw"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.chains.bertha_handle_parts.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.chains.bertha_handle_parts.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

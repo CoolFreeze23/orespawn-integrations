@@ -1,0 +1,30 @@
+{
+  "name": "The Queen",
+  "icon": "orespawn:the_queen_spawn_egg",
+  "category": "orespawn_integrations:bosses",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:the_queen",
+      "scale": 0.35,
+      "text": "Deadlier than the King, and dressed better."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Finding Her",
+      "text": "The Queen keeps her own altar, her own royal tree, and her own Challenge Tower — each with a Waystone shrine planted at the door by considerate cartographers.$(p)Her scales are the heart of the pack's finest protection: Queen armor and the Queen Battle Axe are both forged from Queen Scales won in battle."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn:the_queen_spawn_block_from_parts",
+      "text": "Nine buried Queen Parts summon her anywhere. Choose 'anywhere' with enormous care."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "What They Leave Behind",
+      "text": "Her scales mint half the Court's economy: eight around an egg incubate a $(l:orespawn_integrations:royal_court/royal_dragon_egg)Prince of your own$(), they press into $(l:orespawn_integrations:royal_court/upgrade_orbs)upgrade orbs$(), and the Bumblezone's Bee Queen $(l:orespawn_integrations:royal_court/court_economy)pays royal jelly for them$(), monarch to monarch. Her $(l:orespawn_integrations:royal_court/spell_scrolls)Holy scrolls$() share the King's jackpot odds.$(p)Deadlier, better dressed — and better banked."
+    }
+  ]
+}

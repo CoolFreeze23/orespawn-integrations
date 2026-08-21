@@ -1,0 +1,154 @@
+{
+ "comment": "OreSpawn material and boss-drop EMC values for the CrazyCraft 5.0 tag bridge. Storage blocks and nuggets are intentionally left to ProjectE's crafting mapper (OreSpawn ships 9x compression/decompression and nugget recipes). Royal gear, Big Bertha parts and ultimate drops carry no fixed EMC on purpose - top-end loot stays obtainable only from top-end sources.",
+ "values": {
+  "before": [
+   {
+    "type": "projecte:item",
+    "emc_value": 110592,
+    "id": "orespawn:ingot_titanium"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 8192,
+    "id": "marvel:titanium_ingot"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 4096,
+    "tag": "c:ingots/tigers_eye"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 6144,
+    "tag": "c:ingots/crystal_pink"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 2048,
+    "id": "orespawn:ruby"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 73728,
+    "id": "orespawn:ingot_uranium"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 16,
+    "id": "orespawn:salt"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 57344,
+    "id": "orespawn:nightmare_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 49152,
+    "id": "orespawn:kraken_tooth"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 32768,
+    "id": "orespawn:water_dragon_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 32768,
+    "id": "orespawn:emperor_scorpion_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 24576,
+    "id": "orespawn:basilisk_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 24576,
+    "id": "orespawn:sea_monster_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 16384,
+    "id": "orespawn:queen_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 16384,
+    "id": "orespawn:godzilla_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 16384,
+    "id": "orespawn:vortex_eye"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 8192,
+    "id": "orespawn:moth_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 8192,
+    "id": "orespawn:trex_tooth"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 4096,
+    "id": "orespawn:mantis_claw"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 4096,
+    "id": "orespawn:caterkiller_jaw"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 4096,
+    "id": "orespawn:molenoid_nose"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 4096,
+    "id": "orespawn:sea_viper_tongue"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 2048,
+    "id": "orespawn:worm_tooth"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 2048,
+    "id": "orespawn:jumpy_bug_scale"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 1024,
+    "id": "orespawn:peacock_feather"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 8192,
+    "id": "orespawn:uranium_nugget"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 12288,
+    "id": "orespawn:titanium_nugget"
+   }
+  ],
+  "after": [
+   {
+    "type": "projecte:item",
+    "emc_value": 2048,
+    "id": "orespawn:amethyst_gem"
+   },
+   {
+    "type": "projecte:item",
+    "emc_value": 18432,
+    "id": "orespawn:block_amethyst"
+   }
+  ]
+ }
+}

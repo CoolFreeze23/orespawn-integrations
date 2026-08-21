@@ -1,0 +1,35 @@
+{
+  "name": "O Rei",
+  "icon": "orespawn:the_king_spawn_egg",
+  "category": "orespawn_integrations:bosses",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:the_king",
+      "scale": 0.35,
+      "text": "A coisa mais forte que o OreSpawn já fez. E ele sabe disso."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Encontrando o Rei",
+      "text": "O Rei mantém sua corte no Altar do Rei, nas planícies de $(l:orespawn_integrations:dimensions/beyond_the_tunnels)Utopia$(), e suas Torres de Desafio de cinco andares se erguem pelo mundo — o cofre de cada andar mais rico, e mais cruel, que o anterior.$(p)Nosso pack planta um santuário de Pedra do Caminho no portão de cada torre, altar e árvore real: ative-o primeiro, e a derrota custa uma caminhada em vez de uma guerra."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn:the_king_spawn_block_from_parts",
+      "text": "Nove Partes do Rei jazem enterradas entre os blocos de spawn escondidos do mundo. Cave, combine, posicione... arrependa-se."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Prêmio",
+      "text": "Derrube-o e a linha Real é sua: todo abate rende um conjunto completo de armadura Real e a Espada do Guardião Real.$(p)Essa é a única fonte de equipamento Real neste pack — sem receita, sem atalho. Só o Rei, uma barra de vida descabida e você."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Que Eles Deixam",
+      "text": "A linha Real agora é moeda. Seus $(l:orespawn_integrations:royal_court/spell_scrolls)pergaminhos de Relâmpago$() carregam um raro prêmio de nível máximo, a bigorna do Harbinger $(l:orespawn_integrations:royal_court/tempered_majesty)tempera sua espada$() ainda mais, e o equipamento Real excedente $(l:orespawn_integrations:royal_court/court_economy)derrete de volta em escamas da rainha$(). Ele pode até entregar um $(l:orespawn_integrations:royal_court/soul_shards)fragmento de alma$() com 64 abates pré-assinados.$(p)O Rei financia a Corte. A Corte nunca confisca."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Uranium",
+  "icon": "orespawn:ingot_uranium",
+  "category": "orespawn_integrations:ores_gems",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:ingot_uranium",
+      "text": "Faintly warm to the touch. That's probably fine."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Where It Grows",
+      "text": "Uranium hides in small veins below y=30, in both the Overworld and the $(l:orespawn_integrations:dimensions/mining_dimension)Mining Dimension$(). Our cross-dimension veins also thread it beneath the Twilight Forest, for knights who prefer their treasure glowing.$(p)The veins run small by design: together with $(l:orespawn_integrations:ores_gems/titanium)Titanium$(), uranium forges Ultimate-tier gear — and that edge is meant to be earned."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "minecraft:sheep",
+    "minecraft:cow",
+    "minecraft:mooshroom",
+    "minecraft:pig",
+    "minecraft:chicken",
+    "minecraft:rabbit",
+    "minecraft:goat",
+    "minecraft:horse",
+    "minecraft:donkey",
+    "orespawn:gazelle",
+    "orespawn:ostrich",
+    "orespawn:apple_cow",
+    "orespawn:gold_cow",
+    "orespawn:golden_apple_cow",
+    "orespawn:enchanted_apple_cow",
+    "orespawn:crystal_cow",
+    "orespawn:red_cow",
+    "orespawn:beaver",
+    "orespawn:chipmunk",
+    "orespawn:frog",
+    "orespawn:lizard",
+    "orespawn:cricket",
+    "orespawn:easter_bunny",
+    "orespawn:rubber_ducky",
+    "orespawn:peacock",
+    "orespawn:cockateil"
+  ],
+  "traits": [
+    {
+      "type": "walkers:prey",
+      "hunter": [
+        "orespawn:trex",
+        "orespawn:velocity_raptor",
+        "orespawn:alosaurus",
+        "orespawn:nastysaurus",
+        "orespawn:pointysaurus",
+        "orespawn:cryolophosaurus",
+        "orespawn:baryonyx",
+        "orespawn:leonopteryx",
+        "orespawn:kyuubi",
+        "orespawn:mantis"
+      ]
+    }
+  ]
+}

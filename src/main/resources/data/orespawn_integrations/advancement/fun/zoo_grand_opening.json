@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:chains/zoo_cage_ladder",
+  "criteria": {
+    "used_zoo_cage_10": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "orespawn:zoo_cage_10"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "used_zoo_cage_10"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:glass"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.zoo_grand_opening.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.zoo_grand_opening.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

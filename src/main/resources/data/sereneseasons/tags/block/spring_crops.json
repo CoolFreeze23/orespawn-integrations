@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "orespawn:radish_plant", "required": false },
+    { "id": "orespawn:lettuce_0", "required": false },
+    { "id": "orespawn:lettuce_1", "required": false },
+    { "id": "orespawn:lettuce_2", "required": false },
+    { "id": "orespawn:lettuce_3", "required": false }
+  ]
+}

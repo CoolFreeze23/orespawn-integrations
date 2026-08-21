@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:mining_dimension/mining_dim_entry",
+  "criteria": {
+    "hooked_lava_eel": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "rod": {
+          "items": "orespawn:ultimate_fishing_rod"
+        },
+        "item": {
+          "items": "orespawn:lava_eel"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "hooked_lava_eel"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:lava_eel"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.mining_dimension.lava_fishing.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.mining_dimension.lava_fishing.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

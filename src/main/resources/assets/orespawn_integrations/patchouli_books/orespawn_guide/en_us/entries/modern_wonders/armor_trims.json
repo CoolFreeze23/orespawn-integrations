@@ -1,0 +1,35 @@
+{
+  "name": "Armor Trims",
+  "icon": "orespawn_integrations:kraken_armor_trim_smithing_template",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "OreSpawn joins the fashion industry: four new trim materials for every vanilla pattern, plus one pattern of our own, fished out of a $(l:orespawn_integrations:modern_wonders/vault_heist)vault$() guarded by a kraken.$(p)Endgame armor should look like where it's been. Now it can."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "How To Trim",
+      "text": "At a smithing table:$(p)1. Any vanilla trim template in the first slot.$(br)2. A piece of trimmable armor in the second.$(br)3. In the material slot: a $(l:orespawn_integrations:ores_gems/ruby)ruby$(), a $(l:orespawn_integrations:ores_gems/uranium)uranium ingot$(), a $(l:orespawn_integrations:ores_gems/titanium)titanium ingot$(), or a queen scale.$(p)Take out the trimmed piece. The template survives nothing; the armor survives everything."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Palette",
+      "text": "Ruby trims $(thing)crimson$(). Uranium trims $(thing)acid green$(), and no, it doesn't tick. Titanium trims cold $(thing)steel$(). Queen scale trims $(thing)orchid$() — royalty courtesy of $(l:orespawn_integrations:bosses/the_queen)the Queen$(), who was not consulted.$(p)One heads-up: the item sprite in your inventory shows no overlay. That's expected — put it on and the trim renders in full on the worn armor."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:kraken_armor_trim_smithing_template",
+      "title": "The Kraken Pattern",
+      "text": "Our own pattern: a tentacle swirl that wraps the armor like it's being measured for dinner. The template is a $(bold)guaranteed$() find in the $(l:orespawn_integrations:modern_wonders/vault_heist)Kraken vault$() and applies with any trim material, theirs or ours.$(p)Finding it earns $(thing)Deep Sea Treasure$(); wearing it earns $(thing)Kraken Couture$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:kraken_armor_trim_smithing_template",
+      "title": "Duplication",
+      "text": "Standard template economics: seven diamonds and a prismarine block copy one template into two. The Kraken charges in prismarine because it has never once needed diamonds."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "rite.orespawn_integrations.rite_of_gojira": "Rite of Gojira",
+  "rite.orespawn_integrations.rite_of_the_deep": "Rite of the Deep",
+  "compat.orespawn_integrations.rite.needs_ocean": "The deep answers only over open ocean. Your offerings are returned.",
+  "compat.orespawn_integrations.rite.wrong_biome": "The circle refuses this place. Your offerings are returned."
+}

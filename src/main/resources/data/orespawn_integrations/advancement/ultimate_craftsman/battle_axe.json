@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ultimate_craftsman/big_bertha",
+  "criteria": {
+    "any_battle_axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "orespawn:battle_axe",
+              "orespawn:attitude_adjuster"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "any_battle_axe"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:battle_axe"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ultimate_craftsman.battle_axe.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ultimate_craftsman.battle_axe.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

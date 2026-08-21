@@ -1,0 +1,18 @@
+{
+  "name": "Basilisco",
+  "icon": "orespawn:basilisk_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:basilisk",
+      "text": "Prefere túneis, sombras e o seu exato caminho de volta para casa."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Os Basiliscos assombram as profundezas e o próprio covil que leva seu nome: o Labirinto do Basilisco, cujos cofres recompensam quem mapeia com cuidado e corre mais rápido ainda.$(p)Suas escamas sobrevivem ao abate, e os ferreiros pagam bem por elas — a forja da Big Bertha exige uma Escama de Basilisco nominalmente."
+    }
+  ]
+}

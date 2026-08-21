@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "big_game"
+    }
+  ],
+  "type": "twilightforest:attribute",
+  "attribute_modifiers": [
+    {
+      "type": "minecraft:generic.armor",
+      "amount": 4.0,
+      "id": "orespawn_integrations:travellers_gear.vest_mobzilla_plating_armor",
+      "operation": "add_value",
+      "slot": "chest"
+    },
+    {
+      "type": "minecraft:generic.knockback_resistance",
+      "amount": 0.3,
+      "id": "orespawn_integrations:travellers_gear.vest_mobzilla_plating_knockback",
+      "operation": "add_value",
+      "slot": "chest"
+    }
+  ],
+  "builtin_modifier": false,
+  "component": "orespawn_integrations:mobzilla_plating",
+  "description": [
+    {
+      "translate": "travellers_gear.modifier.orespawn_integrations.mobzilla_plating.description"
+    }
+  ],
+  "equipment_slots": "chest"
+}

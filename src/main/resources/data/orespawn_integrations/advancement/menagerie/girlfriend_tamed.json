@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:menagerie/critter_caged",
+  "criteria": {
+    "tamed_girlfriend": {
+      "trigger": "minecraft:tame_animal",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:girlfriend"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "tamed_girlfriend"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:poppy"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.menagerie.girlfriend_tamed.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.menagerie.girlfriend_tamed.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

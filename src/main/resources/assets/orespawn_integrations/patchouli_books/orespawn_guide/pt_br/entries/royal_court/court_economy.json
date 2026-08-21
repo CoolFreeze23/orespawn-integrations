@@ -1,0 +1,34 @@
+{
+  "name": "A Economia da Corte",
+  "icon": "orespawn:queen_scale",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:twilightforest",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:queen_scale",
+      "text": "A moeda da Corte. Estado de conservação opcional."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Recompra",
+      "text": "A Mesa de Desfabricação da Floresta do Crepúsculo recompra equipamento real em escamas da rainha: a Espada do Guardião Real reembolsa seis, o peitoral seis, as calças cinco, o elmo quatro, as botas três. Um kit real completo derrete em 24 escamas.$(p)A mesa cobra experiência pelo serviço — oito níveis pela espada, seis por peça de armadura. Derretido, chama-se a conquista. Nada real é um beco sem saída."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Uma Palavra de Cautela",
+      "text": "Sim, a mesa também recompra alegremente uma lâmina $(l:orespawn_integrations:royal_court/tempered_majesty)Temperada em Witherita$() pelas mesmas seis escamas. Essa troca é legal, é honrada, e é o pior negócio do pack inteiro.$(p)A Corte permite mesmo assim. Recompra é recompra."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Tributo de Rainha para Rainha",
+      "text": "Leve escamas da rainha até a Abelha Rainha da Bumblezone e ela paga tributo por tributo: na maioria das visitas dois cacos de cristal de mel, um terço das vezes quatro, e mais ou menos uma troca em sete um frasco de geleia real.$(p)Duas monarquias, uma mesa de trocas, zero ferroadas — e uma conquista oculta, Diplomacia, esperando pelo primeiro embaixador."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Para Onde Fluem as Escamas",
+      "text": "As escamas reembolsadas voltam direto para o tesouro: oito prensam um $(l:orespawn_integrations:royal_court/royal_dragon_egg)Ovo de Dragão Real$(), a Abelha Rainha as aceita uma por uma, e as $(l:orespawn_integrations:living_world/structure_treasures)mansões dos illagers$() já as revendem sem pedir licença.$(p)Pergaminhos, escamas, fragmentos, orbes, ovo — o ciclo se fecha. A Corte mantém um orçamento equilibrado sobre uma espada desequilibrada."
+    }
+  ]
+}

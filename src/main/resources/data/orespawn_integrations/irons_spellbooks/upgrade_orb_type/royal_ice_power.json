@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "irons_spellbooks"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "royal_court"
+    }
+  ],
+  "amount": 0.08,
+  "attribute": "irons_spellbooks:ice_spell_power",
+  "operation": "add_multiplied_base"
+}

@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "neoforge:add_spawns",
+  "biomes": "orespawn:mining_biome",
+  "spawners": [
+    {
+      "type": "orespawn:baryonyx",
+      "weight": 2,
+      "minCount": 4,
+      "maxCount": 8
+    },
+    {
+      "type": "orespawn:camarasaurus",
+      "weight": 1,
+      "minCount": 2,
+      "maxCount": 4
+    },
+    {
+      "type": "orespawn:dragonfly",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 3
+    },
+    {
+      "type": "orespawn:velocity_raptor",
+      "weight": 1,
+      "minCount": 2,
+      "maxCount": 4
+    },
+    {
+      "type": "orespawn:spyro",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}

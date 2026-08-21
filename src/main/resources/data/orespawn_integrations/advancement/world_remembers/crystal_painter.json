@@ -1,0 +1,51 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "projecte"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "parent": "orespawn_integrations:world_remembers/root",
+  "criteria": {
+    "stone_in_hand": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "projecte:philosophers_stone"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "stone_in_hand"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "projecte:philosophers_stone"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.world_remembers.crystal_painter.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.world_remembers.crystal_painter.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

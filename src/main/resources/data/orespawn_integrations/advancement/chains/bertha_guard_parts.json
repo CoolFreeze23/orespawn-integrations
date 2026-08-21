@@ -1,0 +1,124 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:root",
+  "criteria": {
+    "basilisk_scale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:basilisk_scale"
+          }
+        ]
+      }
+    },
+    "emperor_scorpion_scale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:emperor_scorpion_scale"
+          }
+        ]
+      }
+    },
+    "sea_monster_scale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:sea_monster_scale"
+          }
+        ]
+      }
+    },
+    "nightmare_scale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:nightmare_scale"
+          }
+        ]
+      }
+    },
+    "moth_scale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:moth_scale"
+          }
+        ]
+      }
+    },
+    "molenoid_nose": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:molenoid_nose"
+          }
+        ]
+      }
+    },
+    "jumpy_bug_scale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:jumpy_bug_scale"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "basilisk_scale"
+    ],
+    [
+      "emperor_scorpion_scale"
+    ],
+    [
+      "sea_monster_scale"
+    ],
+    [
+      "nightmare_scale"
+    ],
+    [
+      "moth_scale"
+    ],
+    [
+      "molenoid_nose"
+    ],
+    [
+      "jumpy_bug_scale"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:sea_monster_scale"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.chains.bertha_guard_parts.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.chains.bertha_guard_parts.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

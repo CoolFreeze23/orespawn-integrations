@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:root",
+  "criteria": {
+    "any_ant_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "orespawn:ant_block",
+              "orespawn:red_ant_block",
+              "orespawn:rainbow_ant_block",
+              "orespawn:unstable_ant_block",
+              "orespawn:termite_block"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "any_ant_block"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:ant_block"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.anthill_raider.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.anthill_raider.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

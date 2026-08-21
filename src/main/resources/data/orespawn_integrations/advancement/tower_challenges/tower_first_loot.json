@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:tower_challenges/tower_found",
+  "criteria": {
+    "looted_level1": {
+      "trigger": "minecraft:player_generates_container_loot",
+      "conditions": {
+        "loot_table": "orespawn:chests/challenge_tower_level1"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "looted_level1"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:chest"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.tower_challenges.tower_first_loot.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.tower_challenges.tower_first_loot.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

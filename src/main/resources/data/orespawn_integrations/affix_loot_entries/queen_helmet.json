@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apotheosis"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        }
+    ],
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "orespawn:queen_helmet"
+    },
+    "weights": {
+        "pinnacle": {
+            "quality": 2.5,
+            "weight": 4
+        }
+    }
+}

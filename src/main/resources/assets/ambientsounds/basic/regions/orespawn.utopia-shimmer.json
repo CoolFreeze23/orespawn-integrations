@@ -1,0 +1,33 @@
+{
+    "name": "orespawn.utopia-shimmer",
+    "biomes": [
+        "orespawn:utopia_plains"
+    ],
+    "sounds": [
+        {
+            "name": "utopia-doves",
+            "category": "bird_day",
+            "files": [
+                "ambientsounds:animals.mouring_dove"
+            ],
+            "pause": {
+                "min": 600,
+                "max": 1200
+            },
+            "volume": 0.35
+        },
+        {
+            "name": "utopia-leaves",
+            "category": "wind",
+            "files": [
+                "ambientsounds:wind.wind-in-leaves"
+            ],
+            "length": {
+                "min": 1000,
+                "max": 4000
+            },
+            "volume": 0.25,
+            "transition": 200
+        }
+    ]
+}

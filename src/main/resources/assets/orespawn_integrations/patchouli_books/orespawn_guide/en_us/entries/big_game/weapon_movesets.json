@@ -1,0 +1,34 @@
+{
+  "name": "Weapon Move-Sets",
+  "icon": "orespawn:big_bertha",
+  "category": "orespawn_integrations:big_game",
+  "flag": "mod:bettercombat",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ten feet of legendary steel deserves better than the standard-issue arm wiggle. Better Combat agrees: ten OreSpawn weapons now carry real move-sets — sweeps, combos, stances, and reach that finally match the blueprint.$(p)No new items, no new buttons. The weapon you already earned simply moves the way it always looked like it should."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:big_bertha",
+      "title": "The Flagship",
+      "text": "Big Bertha fights as a claymore with a 1.5-block reach bonus — one swing, one arc, everything in it. Holding her for the first time earns the Sweeping Ambition advancement.$(p)She sweeps now. Local wildlife has been notified."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Heavy Rack",
+      "text": "$(li)Big Bertha — claymore, +1.5 reach$(li)Royal Guardian Sword — claymore, +1.0 reach$(li)Queen's Battle Axe — double-axe combos$(li)Battle Axe — heavy axe$(li)Ultimate Axe — axe$(p)The two great swords share the claymore sweep; Bertha simply reaches further. The Royal Guardian Sword keeps its stance through the witherite temper — see $(l:orespawn_integrations:royal_court/tempered_majesty)Tempered Majesty$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Finesse Rack",
+      "text": "$(li)Fairy Sword — rapier, quick fencing thrusts$(li)Nightmare Sword — katana flow$(li)Thunder Staff — battlestaff melee combos; the right-click lightning bolt is untouched$(li)Emerald Sword — one-handed sword$(li)Ultimate Sword — one-handed sword$(p)The staff's combos fill the gap between bolts, so a caught caster is still an armed one."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Fine Print",
+      "text": "These move-sets are pure data read by Better Combat's own loader — which makes them the one Big Game feature that ignores the threads.big_game config switch. Flip the thread off and the recipes vanish; the swordplay stays until Better Combat itself leaves the pack.$(p)Everything else in this chapter answers to the toggle: $(l:orespawn_integrations:big_game/decoy_mines)mines$(), $(l:orespawn_integrations:big_game/boss_backpacks)backpacks$(), $(l:orespawn_integrations:big_game/chitin_band_plating)boss-wear$(), and the $(l:orespawn_integrations:big_game/angel_insurance)angel paperwork$()."
+    }
+  ]
+}

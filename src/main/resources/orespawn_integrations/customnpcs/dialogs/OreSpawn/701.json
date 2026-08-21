@@ -1,0 +1,83 @@
+{
+    "AvailabilityScoreboardObjective": "",
+    "AvailabilityDialog3Id": -1,
+    "AvailabilityFaction2Stance": 0,
+    "AvailabilityDialog4": 0,
+    "AvailabilityQuest2": 0,
+    "AvailabilityFaction": 0,
+    "DecreaseFaction2Points": 0b,
+    "AvailabilityQuest3Id": -1,
+    "AvailabilityDialog2Id": -1,
+    "AvailabilityQuest": 0,
+    "OptionFaction2Points": 100,
+    "AvailabilityMinPlayerLevel": 0,
+    "OptionFaction1Points": 100,
+    "AvailabilityQuest4Id": -1,
+    "AvailabilityQuest2Id": -1,
+    "DecreaseFaction1Points": 0b,
+    "DialogQuest": 701,
+    "DialogDisableEsc": 0b,
+    "AvailabilityDialog3": 0,
+    "DialogMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    },
+    "DialogTitle": "The Monster Hunter",
+    "DialogCommand": "",
+    "AvailabilityDayTime": 0,
+    "AvailabilityScoreboard2Type": 1,
+    "AvailabilityScoreboard2Objective": "",
+    "AvailabilityDialog": 0,
+    "AvailabilityDialog4Id": -1,
+    "AvailabilityQuestId": -1,
+    "OptionFactions2": -1,
+    "AvailabilityScoreboardType": 1,
+    "AvailabilityDialogId": -1,
+    "AvailabilityFactionId": -1,
+    "Options": [
+        {
+            "Option": {
+                "OptionType": 0,
+                "Title": "I'll see it done.",
+                "Dialog": -1,
+                "DialogCommand": "",
+                "DialogColor": 14737632
+            },
+            "OptionSlot": 0
+        },
+        {
+            "Option": {
+                "OptionType": 0,
+                "Title": "That thing will eat me alive.",
+                "Dialog": -1,
+                "DialogCommand": "",
+                "DialogColor": 14737632
+            },
+            "OptionSlot": 1
+        }
+    ],
+    "DialogText": "You picked a bad stretch of land to settle, {player}. Ore that glows, ants the size of barns, and something big enough to flatten a mountain ridge when it rolls over in its sleep.
+
+I hunt the things OreSpawn drags in. If you have the spine for it, start with the big one - the locals call it Mobzilla. And when you are done, ask me about uranium, or about paying the Queen a visit.",
+    "AvailabilityDialog2": 0,
+    "AvailabilityQuest3": 0,
+    "AvailabilityQuest4": 0,
+    "DialogShowWheel": 0b,
+    "AvailabilityFactionStance": 0,
+    "DialogHideNPC": 0b,
+    "AvailabilityFaction2": 0,
+    "OptionFactions1": -1,
+    "AvailabilityScoreboardValue": 1,
+    "AvailabilityFaction2Id": -1,
+    "DialogId": 701,
+    "AvailabilityScoreboard2Value": 1,
+    "ModRev": 18
+}

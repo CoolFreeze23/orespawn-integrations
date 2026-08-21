@@ -1,0 +1,18 @@
+{
+  "name": "Este Exato Livro",
+  "icon": "minecraft:book",
+  "category": "orespawn_integrations:getting_started",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:orespawn_guide",
+      "text": "Um livro, um rubi. O conhecimento nunca foi tão barato — nem tão necessário."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Perdeu o seu exemplar? O mundo produz rubis justamente para que ninguém precise encarar um T-Rex desinformado.$(p)Faça uma cópia para um amigo. Estatisticamente, quem não lê não continua amigo por muito tempo."
+    }
+  ]
+}

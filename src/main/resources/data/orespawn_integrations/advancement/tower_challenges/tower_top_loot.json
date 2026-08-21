@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:tower_challenges/tower_first_loot",
+  "criteria": {
+    "looted_level5": {
+      "trigger": "minecraft:player_generates_container_loot",
+      "conditions": {
+        "loot_table": "orespawn:chests/challenge_tower_level5"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "looted_level5"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:ender_chest"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.tower_challenges.tower_top_loot.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.tower_challenges.tower_top_loot.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 350
+  }
+}

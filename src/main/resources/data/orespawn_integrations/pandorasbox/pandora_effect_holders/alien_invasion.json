@@ -1,0 +1,128 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pandorasbox"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "tooltip": {
+    "translate": "effect_holder.orespawn_integrations.alien_invasion",
+    "fallback": "Alien Invasion"
+  },
+  "effect_creator": {
+    "entities": [
+      {
+        "entity": "orespawn:alien",
+        "min_count": 4,
+        "max_count": 8,
+        "weight": 100.0
+      },
+      {
+        "entity": "orespawn:robot_1",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 40.0
+      },
+      {
+        "entity": "orespawn:robot_2",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 30.0
+      },
+      {
+        "entity": "orespawn:robot_3",
+        "min_count": 1,
+        "max_count": 3,
+        "weight": 25.0
+      },
+      {
+        "entity": "orespawn:robot_4",
+        "min_count": 1,
+        "max_count": 3,
+        "weight": 20.0
+      },
+      {
+        "entity": "orespawn:robot_5",
+        "min_count": 1,
+        "max_count": 2,
+        "weight": 15.0
+      },
+      {
+        "entity": "orespawn:ant_robot",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 25.0
+      },
+      {
+        "entity": "orespawn:spider_robot",
+        "min_count": 1,
+        "max_count": 3,
+        "weight": 20.0
+      },
+      {
+        "entity": "orespawn:giant_robot",
+        "min_count": 1,
+        "max_count": 1,
+        "weight": 6.0
+      },
+      {
+        "entity": "orespawn:alien_boss",
+        "min_count": 1,
+        "max_count": 1,
+        "weight": 2.0
+      }
+    ],
+    "value_throw": {
+      "throw_strength_horizontal": {
+        "min": 0.1,
+        "max": 0.4,
+        "type": "minecraft:linear"
+      },
+      "throw_strength_vertical": {
+        "min": 0.2,
+        "max": 1.0,
+        "type": "minecraft:linear"
+      }
+    },
+    "value_spawn": {
+      "spawn_range": {
+        "min": 8.0,
+        "max": 30.0,
+        "type": "minecraft:linear"
+      },
+      "spawn_shift": {
+        "value": 0.0,
+        "type": "minecraft:constant"
+      }
+    },
+    "spawn_from_effect_center": {
+      "guaranteed": false,
+      "type": "minecraft:constant"
+    },
+    "time": {
+      "min": 20,
+      "max": 40,
+      "type": "minecraft:linear"
+    },
+    "number": {
+      "values": [
+        1,
+        2,
+        3
+      ],
+      "weights": [
+        100,
+        30,
+        5
+      ],
+      "type": "minecraft:weighted"
+    },
+    "type": "pandorasbox:spawn_entities"
+  },
+  "positive": false,
+  "type": "minecraft:positive_or_negative"
+}

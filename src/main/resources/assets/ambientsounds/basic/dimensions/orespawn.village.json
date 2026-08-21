@@ -1,0 +1,77 @@
+{
+    "name": "orespawn.village",
+    "dimension-names": [
+        "orespawn:village"
+    ],
+    "biome-selector": {
+        "always": false
+    },
+    "regions": [
+        {
+            "name": "orespawn.village.meadow",
+            "sounds": [
+                {
+                    "name": "village-cricket",
+                    "category": "cricket_day",
+                    "files": [
+                        "ambientsounds:animals.cricket",
+                        "ambientsounds:animals.cricket2",
+                        "ambientsounds:animals.cricket3"
+                    ],
+                    "overall-raining": false,
+                    "length": {
+                        "min": 1000,
+                        "max": 1500
+                    },
+                    "volume": 0.3,
+                    "transition": 100
+                },
+                {
+                    "name": "village-cricket-night",
+                    "category": "cricket_night",
+                    "files": [
+                        "ambientsounds:animals.cricket-night",
+                        "ambientsounds:animals.cricket-night2",
+                        "ambientsounds:animals.cricket-night3",
+                        "ambientsounds:animals.cricket-night4",
+                        "ambientsounds:animals.cricket-night5"
+                    ],
+                    "overall-raining": false,
+                    "length": {
+                        "min": 1000,
+                        "max": 1500
+                    },
+                    "volume": 0.3,
+                    "transition": 100
+                },
+                {
+                    "name": "village-doves",
+                    "category": "bird_day",
+                    "files": [
+                        "ambientsounds:animals.mouring_dove"
+                    ],
+                    "pause": {
+                        "min": 750,
+                        "max": 1000
+                    },
+                    "volume": 0.3
+                },
+                {
+                    "name": "village-birds",
+                    "category": "bird_day",
+                    "files": [
+                        "ambientsounds:animals.bird-ambience1",
+                        "ambientsounds:animals.bird-ambience2",
+                        "ambientsounds:animals.bird-ambience3"
+                    ],
+                    "length": {
+                        "min": 2000,
+                        "max": 3000
+                    },
+                    "volume": 0.25,
+                    "transition": 400
+                }
+            ]
+        }
+    ]
+}

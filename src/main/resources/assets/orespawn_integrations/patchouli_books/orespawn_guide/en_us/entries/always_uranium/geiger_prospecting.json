@@ -1,0 +1,38 @@
+{
+  "name": "Geiger Prospecting",
+  "icon": "hbmsntm:geiger_counter",
+  "category": "orespawn_integrations:always_uranium",
+  "flag": "mod:hbmsntm",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hbmsntm:geiger_counter",
+      "text": "NTM built it to measure how bad things are. Around here it measures how good they're about to get."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Dowsing Rod",
+      "text": "Hold the geiger counter in either hand and it moonlights as an ore-dowsing rod. Once a second it sweeps six blocks in every direction from your boots for buried $(l:orespawn_integrations:ores_gems/ruby)Ruby$(), $(l:orespawn_integrations:ores_gems/titanium)Titanium$() and $(l:orespawn_integrations:ores_gems/uranium)Uranium$(), then sings about the strongest thing it found. Works in every dimension the veins do — the $(l:orespawn_integrations:dimensions/mining_dimension)Mining Dimension$()'s crowded seams read exactly the same."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/geiger_bands.png"
+      ],
+      "title": "Know Your Bands",
+      "border": true,
+      "text": "Three ores, three songs. Learn them and the ground reads like sheet music."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The 2 / 8 / 22 Scale",
+      "text": "The counter feeds signal strength straight into HBM's own audio bands. Ruby reads $(thing)2$() — a lazy, curious click. Titanium reads $(thing)8$() — steady chatter. An OreSpawn uranium vein reads $(thing)22$() — the full panic song.$(p)Storage blocks count too: a wall of uranium blocks sings exactly like the vein it came from, which turns vault-hunting into a listening exercise."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Zero. Always Zero.",
+      "text": "Your dose stays at exactly zero the whole time — right-click the counter and watch it swear to that in writing. We drive HBM's telemetry channel, never its radiation: detection and harm are separate wires, and we only touch the one that can't bite.$(p)The first vein you ping signs the $(thing)First Ping$() advancement. NTM's dosimeter overhears the same signal, if you prefer your prospecting on a wristwatch."
+    }
+  ]
+}

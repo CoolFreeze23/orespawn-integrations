@@ -1,0 +1,24 @@
+{
+  "name": "Rubi",
+  "icon": "orespawn:ruby",
+  "category": "orespawn_integrations:ores_gems",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:ruby",
+      "text": "A pedra que começou tudo — ferramentas, armadura e a encadernação deste exato guia."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Onde Ele Cresce",
+      "text": "Os veios de rubi perseguem o calor, formando-se perto de lava abaixo de y=50 — procure no fundo de ravinas e em lagos de lava. O Nether esconde veios próprios, e a $(l:orespawn_integrations:dimensions/mining_dimension)Dimensão de Mineração$() está crivada deles, às vezes em blocos inteiros de rubi maciço.$(p)Nossos novos veios entre mundos vão ainda mais longe: rubis agora crescem sob a Floresta do Crepúsculo e nas paredes de cera da Bumblezone."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Equipamento de Rubi",
+      "text": "Um kit completo de rubi — espada, ferramentas, armadura — é o primeiro passo pretendido além do diamante, e os rubis continuam comuns o bastante para gastar sem dó.$(p)Dica de campo: siga a lava. O minério literalmente cresce na direção dela, e uma poção de resistência ao fogo transforma o perigo em dia de compras."
+    }
+  ]
+}

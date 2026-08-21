@@ -1,0 +1,34 @@
+{
+  "name": "The Court Economy",
+  "icon": "orespawn:queen_scale",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:twilightforest",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:queen_scale",
+      "text": "The Court's coin. Mint condition optional."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Buyback",
+      "text": "Twilight Forest's Uncrafting Table buys royal gear back in queen scales: the Royal Guardian Sword refunds six, the chestplate six, the leggings five, the helmet four, the boots three. A full royal kit melts down to 24 scales.$(p)The table charges experience for the service — eight levels for the sword, six per armor piece. Melted Down, the advancement calls it. Nothing royal is ever a dead end."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Word of Caution",
+      "text": "Yes, the table will also cheerfully buy back a $(l:orespawn_integrations:royal_court/tempered_majesty)Witherite-Tempered$() blade for the same six scales. That trade is legal, honored, and the single worst deal in the pack.$(p)The Court permits it anyway. Buyback means buyback."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Queen-to-Queen Tribute",
+      "text": "Carry queen scales to the Bumblezone's Bee Queen and she pays tribute for tribute: most visits two honey crystal shards, a third of the time four, and roughly one trade in seven a bottle of royal jelly.$(p)Two monarchies, one trade table, zero stings — and a hidden advancement, Diplomacy, waiting for the first ambassador."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Where Scales Flow",
+      "text": "Refunded scales flow straight back into the treasury: eight press a $(l:orespawn_integrations:royal_court/royal_dragon_egg)Royal Dragon Egg$(), the Bee Queen takes them one at a time, and the $(l:orespawn_integrations:living_world/structure_treasures)illager mansions$() are already fencing them without asking.$(p)Scrolls, scales, shards, orbs, egg — the loop closes. The Court runs a balanced budget on an unbalanced sword."
+    }
+  ]
+}

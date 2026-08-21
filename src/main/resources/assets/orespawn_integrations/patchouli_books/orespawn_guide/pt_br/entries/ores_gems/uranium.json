@@ -1,0 +1,19 @@
+{
+  "name": "Urânio",
+  "icon": "orespawn:ingot_uranium",
+  "category": "orespawn_integrations:ores_gems",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:ingot_uranium",
+      "text": "Levemente morno ao toque. Deve ser tranquilo."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Onde Ele Cresce",
+      "text": "O urânio se esconde em veios pequenos abaixo de y=30, tanto no Mundo Superior quanto na $(l:orespawn_integrations:dimensions/mining_dimension)Dimensão de Mineração$(). Nossos veios entre dimensões também o entrelaçam sob a Floresta do Crepúsculo, para cavaleiros que preferem seus tesouros brilhando.$(p)Os veios são pequenos de propósito: junto com o $(l:orespawn_integrations:ores_gems/titanium)Titânio$(), o urânio forja o equipamento de nível Ultimate — e essa vantagem foi feita para ser merecida."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Orbes Reais de Aprimoramento",
+  "icon": "irons_spellbooks:upgrade_orb",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:irons_spellbooks",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:upgrade_orb",
+      "text": "Materiais de chefe alimentam a magia. A Corte prensa três orbes próprios."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:royal_fire_orb",
+      "recipe2": "orespawn_integrations:royal_ice_orb",
+      "text": "Oito escamas de $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() fazem Fogo; oito dentes de $(l:orespawn_integrations:bosses/kraken)Kraken$() fazem Gelo. Ambos envolvem um orbe de aprimoramento comum."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:royal_mana_orb",
+      "text": "Oito escamas de $(l:orespawn_integrations:bestiary/water_dragon)Dragão-d'Água$() prensam o terceiro orbe — mana pura, sem opiniões elementais."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Na Bigorna",
+      "text": "Aplique um orbe na bigorna arcana do Iron's Spellbooks, em qualquer equipamento que aceite aprimoramentos:$(p)Orbe Real de Fogo — +8% de poder de magias de fogo.$(p)Orbe Real de Gelo — +8% de poder de magias de gelo.$(p)Orbe Real de Mana — +100 de mana máxima.$(p)Os três são de raridade épica e rodam no próprio sistema de orbes do Iron's Spellbooks como dados puros — sem maquinário customizado, sem surpresas."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Uma Ideia, Dois Chapéus",
+      "text": "$(l:orespawn_integrations:royal_court/spell_scrolls)Pergaminhos$() e orbes dividem o mesmo ramo de conquistas porque são uma ideia só usando dois chapéus: os chefes da Corte ensinam as escolas, e os materiais da Corte as fortalecem.$(p)Repare nas moedas: estes três rodam com partes de Mobzilla, Kraken e Dragão-d'Água. As escamas da rainha ficam reservadas para o $(l:orespawn_integrations:royal_court/royal_dragon_egg)ovo$() e para o $(l:orespawn_integrations:royal_court/court_economy)tesouro$()."
+    }
+  ]
+}

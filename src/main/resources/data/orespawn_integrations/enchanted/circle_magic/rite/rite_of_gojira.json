@@ -1,0 +1,28 @@
+{
+    "neoforge:conditions": [
+        { "type": "neoforge:mod_loaded", "modid": "enchanted" },
+        { "type": "neoforge:mod_loaded", "modid": "orespawn" },
+        { "type": "orespawn_integrations:thread_enabled", "thread": "world_remembers" }
+    ],
+    "items": [
+        { "id": "orespawn:godzilla_scale", "count": 4 },
+        { "id": "enchanted:demonic_blood", "count": 1 },
+        { "id": "enchanted:attuned_stone_charged", "count": 1 }
+    ],
+    "shapes": {
+        "enchanted:large_circle": "enchanted:otherwhere_chalk"
+    },
+    "power": 10000,
+    "weather": "thundering",
+    "factory": {
+        "type": "enchanted:command",
+        "commands": [
+            [
+                "summon orespawn:godzilla ~ ~ ~",
+                "weather thunder 300s",
+                "advancement grant @p[distance=..16] only orespawn_integrations:world_remembers/rite_of_gojira witnessed"
+            ]
+        ],
+        "delay": 0
+    }
+}

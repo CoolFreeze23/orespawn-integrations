@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "parent": "orespawn_integrations:alive_world/root",
+  "criteria": {
+    "found_miners_dream": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:miners_dream"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "found_miners_dream"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:miners_dream"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.alive_world.dungeon_delver.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.alive_world.dungeon_delver.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

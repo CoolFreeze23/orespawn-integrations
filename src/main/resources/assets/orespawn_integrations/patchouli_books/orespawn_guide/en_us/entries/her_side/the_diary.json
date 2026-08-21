@@ -1,0 +1,35 @@
+{
+  "name": "Her Diary",
+  "icon": "bibliocraft:written_big_book",
+  "category": "orespawn_integrations:her_side",
+  "flag": "mod:bibliocraft",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Her Diary",
+      "text": "She has watched you punch trees, wake things you shouldn't, and wear mismatched armor for months. She wrote it all down. In ink. With dates.$(p)The diary runs three volumes in her own handwriting — $(bold)earned, never found$(). No chest in any dungeon holds a copy, and this guide will not quote a single line. She'd know."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Volume I",
+      "text": "Volume I surfaces the hard way: when a $(l:orespawn_integrations:bestiary/girlfriend)Girlfriend$() falls at a player's hand, one time in ten her diary is left behind. Read it before you judge yourself.$(p)Inside: her running feud with the Boyfriend next door, a formal complaint about a certain Prince's six-a.m. $(l:orespawn_integrations:modern_wonders/a_reactive_world)flyovers$(), her flower policy — poppies mean something, dandelions get a makeover — a pointed hint about the $(item)Heart Locket$(), and the first rumor of a pink $(l:orespawn_integrations:her_side/the_tome)tome$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:heart_locket",
+      "title": "The Heart Locket",
+      "text": "The pointed hint, made real: four gold, one ruby, one poppy. Girlfriends also rarely carry one — about 4% — as if they wanted you to have it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "What the Locket Does",
+      "text": "Worn in any Curios slot, it is a promise in jewelry form:$(li)$(bold)Love aura$() — any Girlfriend or Boyfriend within 8 blocks grants you Regeneration I.$(li)$(bold)Calming$() — a girlfriend can never turn on the wearer. Not even on the fourteenth of February.$(li)$(bold)Keepsake$() — never dropped on death, in any dimension.$(p)It pairs a $(l:orespawn_integrations:ores_gems/ruby)ruby$() with a poppy for a reason. Both of those mean something to her."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Volumes II & III",
+      "text": "The later volumes are earned on $(l:orespawn_integrations:her_side/date_night)Date Night$(). Three milestones and $(thing)Going Steady$() hands you Volume II — she starts writing $(bold)to$() you, confirms the gifts are genuinely making her stronger, and late in the volume leaves directions worth following: where the old mages hid their spell $(l:orespawn_integrations:her_side/the_tome)tomes$().$(p)Six milestones and $(thing)Practically Family$() delivers Volume III — the feud ends, a copied page of her tome's spell, a last-page secret about a $(l:orespawn_integrations:her_side/the_familiar)binding ritual$(), and her ring-metal preference, in writing. Rose gold. She only says it once."
+    }
+  ]
+}

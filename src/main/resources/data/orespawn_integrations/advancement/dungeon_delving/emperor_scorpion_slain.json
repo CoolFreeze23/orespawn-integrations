@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:dungeon_delving/dungeon_loot",
+  "criteria": {
+    "killed_emperor_scorpion": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:emperor_scorpion"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_emperor_scorpion"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:emperor_scorpion_scale"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.dungeon_delving.emperor_scorpion_slain.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.dungeon_delving.emperor_scorpion_slain.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

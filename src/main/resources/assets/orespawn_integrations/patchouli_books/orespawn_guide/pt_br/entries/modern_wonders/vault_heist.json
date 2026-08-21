@@ -1,0 +1,50 @@
+{
+  "name": "O Assalto ao Cofre",
+  "icon": "orespawn_integrations:mobzilla_vault_key",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/vault_heist.png"
+      ],
+      "title": "O Assalto ao Cofre",
+      "border": true,
+      "text": "Dois chefes. Duas chaves. Duas portas que pagam exatamente uma vez por ladrão."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "As Chaves",
+      "text": "O $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() e o $(l:orespawn_integrations:bosses/kraken)Kraken$() soltam cada um a chave do próprio cofre ao morrer. Todo abate, 100% — sem implorar aos deuses do loot.$(p)A conquista se chama $(thing)Chaves do Reino$() porque a sutileza morreu junto com o chefe."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:mobzilla_vault_key",
+      "title": "Cofre do Mobzilla",
+      "text": "Um cofre ominoso de chamas azuis fica na borda norte do centro de magma da arena, projetando um holograma dos prêmios enquanto você se aproxima. Clique com a chave e ele paga na hora.$(p)Só arenas recém-geradas têm um — as antigas são anteriores à modernização da segurança. Explore chunks novos."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:kraken_vault_key",
+      "title": "Cofre do Kraken",
+      "text": "O cofre do Covil do Kraken abre do mesmo jeito, e seu primeiro item nunca depende de sorte: um $(l:orespawn_integrations:modern_wonders/armor_trims)molde de ferraria do Kraken$() garantido, com tesouros do mar logo atrás.$(p)Mesma regra da arena — só covis recém-gerados."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Regras da Casa",
+      "text": "As recompensas são por jogador. Todo mundo que trouxer uma chave coleta o próprio pagamento do mesmo cofre — ninguém sai lootando o seu loot.$(p)Mas é uma recompensa cada: tente a mesma chave no mesmo cofre duas vezes e você ganha o zumbido de recusa e nada mais. O cofre lembra de você. Com carinho, mas com firmeza."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Butim",
+      "text": "O cofre do Mobzilla: 3 a 5 rolagens de rubis, XP engarrafado, urânio e titânio em todas as denominações, escamas de godzilla — e então a manchete: livros de $(l:orespawn_integrations:modern_wonders/new_enchantments)Bafo de Dragão$() cerca de 2 em 5, um $(item)Núcleo Pesado$() cerca de 1 em 3, ou uma barra de netherita.$(p)O do Kraken: dentes de kraken, rubis, prismarinho, livros de Aperto do Kraken, tridentes, corações do mar."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notas de Rodapé",
+      "text": "Com o End Remastered instalado, os dois cofres de chefe também guardam o Olho Real exclusivo do pack — veja $(l:orespawn_integrations:living_world/the_eye_hunt)A Caça aos Olhos$(). As salas do tesouro das fortalezas do YUNG vendem bilhetes de loteria de chave de cofre com chances mínimas — veja $(l:orespawn_integrations:living_world/structure_treasures)Tesouros das Estruturas$().$(p)A missão 705, $(thing)Assalto ao Cofre$(), paga um bônus por fazer tudo isso com registro em cartório."
+    }
+  ]
+}

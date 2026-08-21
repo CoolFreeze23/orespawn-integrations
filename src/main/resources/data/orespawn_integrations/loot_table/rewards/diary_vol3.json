@@ -1,0 +1,117 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "bibliocraft"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "girlfriend"
+    }
+  ],
+  "type": "minecraft:advancement_reward",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bibliocraft:written_big_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "bibliocraft:written_big_book_content": {
+                  "title": "Her Diary, Vol. III",
+                  "author": "Your Girlfriend",
+                  "generation": 0,
+                  "current_page": 0,
+                  "pages": [
+                    [
+                      {"text": "VOLUME THREE", "style": {"color": "light_purple"}, "size": 16, "mode": "shadow", "alignment": "center"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "ask me anything", "style": {"italic": true}, "size": 12, "mode": "normal", "alignment": "center"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "(well. almost anything.", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "one question you have", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "to ask properly.)", "style": {}, "size": 10, "mode": "normal", "alignment": "center"}
+                    ],
+                    [
+                      {"text": "six. SIX.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "you remembered the", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "macaron. nobody", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "remembers the macaron.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "roses in my health,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "lavender in my step,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "and a teddy bear on", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "my shelf. you're", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "building me, gift by", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "gift. i let you.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "the feud is over,", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "i guess.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "the boyfriend actually", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "said 'take care of her'", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "to you the other day.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "i pretended not to", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "hear.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "i heard.", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "i found a copied page", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "of the TOME. it reads:", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "'a decoy of the", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "summoner, to draw every", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "eye - and mending", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "besides.'", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "if you pull the pink one", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "out of some dungeon", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "chest, cast it and", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "think of me.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "one more secret.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "the mages' worn", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "notebook speaks of a", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "RITUAL OF BINDING.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "a wild girl steps into", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "the circle and comes", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "out bound to your side.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "through portals.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "through everything.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "rings before rituals,", "style": {"color": "dark_purple"}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "though. ask me the", "style": {"color": "dark_purple"}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "question first.", "style": {"color": "dark_purple"}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "there's exactly one", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "thing left to ask me.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "rose gold, if you're", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "asking. which you are.", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "you know where", "style": {}, "size": 12, "mode": "normal", "alignment": "center"},
+                      {"text": "to find me.", "style": {}, "size": 12, "mode": "normal", "alignment": "center"}
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

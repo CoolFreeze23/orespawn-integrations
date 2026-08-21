@@ -1,0 +1,43 @@
+{
+  "name": "Date Night",
+  "icon": "orespawn:heart",
+  "category": "orespawn_integrations:her_side",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/date_night.png"
+      ],
+      "title": "Date Night",
+      "border": true,
+      "text": "Eight gifts from across the pack say what poppies can't."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "House Rules",
+      "text": "She must be $(bold)your tamed companion$() first — poppies still do exactly what poppies have always done (see $(l:orespawn_integrations:bestiary/girlfriend)The Girlfriend$()), and dandelions still mean makeover. Those are hers; we didn't touch them.$(p)Every gift she accepts is consumed once and leaves a small $(bold)permanent$() buff on $(bold)her$() — on her, never on you. You're courting her, not farming her. One of each gift type per girlfriend; a repeat is politely declined and never consumed. The buffs live in her own vital statistics, so they survive death, saves, and Valentine moods."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Gift List",
+      "text": "$(li)$(item)Rose$() (Biomes O' Plenty) — +1 heart, filled on the spot$(li)$(item)Lavender$() (Biomes O' Plenty) — +5% movement speed$(li)$(item)Pink Daffodil$() (Biomes O' Plenty) — +2 armor$(li)$(item)White Flower$() (Aether) — +10% knockback resistance$(p)Any partner mod that isn't installed simply means that gift never comes up. She doesn't hold missing flora against you."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Gift List, cont.",
+      "text": "$(li)$(item)Sourceberry$() (Ars Nouveau) — +1 attack damage$(li)$(item)Strawberry Shortcake$() (OreSpawn Delight) — +2 hearts, filled$(li)$(item)Luna Moth Macaron$() (OreSpawn Delight) — +2 armor toughness$(li)$(item)Teddy Bear$() (Decocraft) — +1 heart. Any of the thirteen colors; they share one flag.$(p)And no, handing her the teddy bear does not equip it as a weapon. We checked. She was going to."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Milestones",
+      "text": "Your first gift earns $(thing)First Date$(). Milestones count $(bold)to you$(), and they survive death — every girlfriend keeps her own gift list, but the courtship record is yours.$(li)$(bold)3$() — $(thing)Going Steady$(): her Diary, Vol. II$(li)$(bold)6$() — $(thing)Practically Family$(): Vol. III$(li)$(bold)8$() — the ring becomes an option$(p)Bonus rule: the $(item)Heart Box of Chocolates$() belongs to OreSpawn Delight's kitchen, and she enjoys it on that mod's terms — but Date Night quietly counts it as a ninth milestone. You may skip any one gift and still reach eight."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Ring",
+      "text": "With eight milestones banked, present a Decocraft $(item)Engagement Ring$(). Rose gold is canon — she said so in Volume III — though gold and silver are also accepted.$(p)She answers with a full heal, the loudest celebration her voice bank can produce, and $(thing)The Question$(): 200 experience, $(item)Her Answer$() in writing, and eight of her mod's own hearts.$(p)Too early? She declines gently and the ring is not consumed. Twice? She taps her ring finger — already spoken for, by you. Carry the trousseau in style: $(l:orespawn_integrations:big_game/boss_backpacks)the Girlfriend backpack$() exists."
+    }
+  ]
+}

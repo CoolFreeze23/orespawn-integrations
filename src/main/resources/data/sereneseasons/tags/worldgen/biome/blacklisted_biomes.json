@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "orespawn:mining_biome", "required": false },
+    { "id": "orespawn:chaos_biome", "required": false }
+  ]
+}

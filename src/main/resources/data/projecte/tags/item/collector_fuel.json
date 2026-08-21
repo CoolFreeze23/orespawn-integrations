@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:uranium_nugget",
+      "required": false
+    },
+    {
+      "id": "orespawn:ingot_uranium",
+      "required": false
+    },
+    {
+      "id": "orespawn:block_uranium",
+      "required": false
+    }
+  ]
+}

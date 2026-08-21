@@ -1,0 +1,56 @@
+{
+  "name": "Summoning Rites",
+  "icon": "enchanted:otherwhere_chalk",
+  "category": "orespawn_integrations:world_remembers",
+  "flag": "mod:enchanted",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Enchanted's circle magic has learned two names it should be afraid of. With chalk, an Altar, and catastrophically poor judgment, a witch can now call $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() or the $(l:orespawn_integrations:bosses/kraken)Kraken$() up out of the ground on purpose.$(p)Both rites read the sky before they answer, and neither ever keeps your ingredients on a failure. The walk home is the only fee."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Rite of Gojira",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/rite_of_gojira.png"
+      ],
+      "border": true,
+      "text": "Chalk, scales, storm. Then run."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Gojira: The Setup",
+      "text": "Scribe a Golden Chalk glyph and ring it in Otherwhere Chalk — the Large Circle pattern, the biggest ring the craft knows. An Altar holding 10,000 power must be in range; this is not a starter rite.$(p)Toss the offerings onto the glyph: four Godzilla Scales, one Demonic Blood, and one Attuned Stone (Charged). Then right-click the gold."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Gojira: The Answer",
+      "text": "The rite begins only under a genuine, active thunderstorm — clear skies are refused outright. Gojira does not answer polite weather.$(p)Succeed, and Mobzilla claws out of the ground at the circle's heart while the storm holds for five more minutes of atmosphere. Every player within sixteen blocks is granted the Rite of Gojira advancement. Witnessed. That's on you now."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Rite of the Deep",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/rite_of_the_deep.png"
+      ],
+      "border": true,
+      "text": "The tide takes requests now."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Calling the Deep",
+      "text": "A smaller ceremony for a wetter horror: a Medium Circle of Otherwhere Chalk on a platform over open ocean, 6,000 Altar power, and — onto the glyph — four Kraken Teeth, one Demonic Blood, and one plain Attuned Stone. No charge needed; the sea provides.$(p)Rain overhead and true ocean underfoot are both required. The $(l:orespawn_integrations:bosses/kraken)Kraken$() rises dead center. Ideally you are not."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Mercy Rule",
+      "text": "Read the sky wrong and the circle refuses to begin. Read the map wrong and it cancels with a snare-drum flourish, respawning every offering at your feet: the deep answers only over open ocean, and your items come straight back.$(p)A failed rite costs you nothing. That is policy, not luck — the world says 'not here', never 'too bad'."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Why Would You?",
+      "text": "Because royals are loot on legs. A summoned king drops everything its wild cousin does — scales for the forge, teeth for Bertha, and $(l:orespawn_integrations:royal_court/spell_scrolls)spell scrolls$() of its school: Fire from Gojira, Ice from the deep.$(p)An arena fight comes with walls. A summoned one comes with whatever you remembered to build. Plan accordingly."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ant_farm_frontier/ant_block_placed",
+  "criteria": {
+    "entered_village": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:village"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_village"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:emerald"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.village_visit.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.village_visit.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,67 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "big_game"
+    }
+  ],
+  "parent": "orespawn_integrations:big_game/root",
+  "criteria": {
+    "boss_vest": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:travellers_vest"
+          }
+        ]
+      }
+    },
+    "godzilla_plates": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:godzilla_scale",
+            "count": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "boss_vest"
+    ],
+    [
+      "godzilla_plates"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "twilightforest:travellers_vest"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.big_game.wearing_the_boss.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.big_game.wearing_the_boss.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

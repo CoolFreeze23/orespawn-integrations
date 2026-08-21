@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "marvel"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "uranium"
+    }
+  ],
+  "parent": "orespawn_integrations:uranium/root",
+  "criteria": {
+    "reactor_pocketed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn_integrations:dirty_arc_reactor"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "reactor_pocketed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn_integrations:dirty_arc_reactor"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.uranium.this_is_fine.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.uranium.this_is_fine.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 50
+  }
+}

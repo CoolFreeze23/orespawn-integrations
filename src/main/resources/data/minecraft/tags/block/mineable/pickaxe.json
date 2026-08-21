@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn_integrations:ruby_ore_mine",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:titanium_ore_mine",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:tigers_eye_ore_mine",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:uranium_ore_mine",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:suspicious_ore",
+      "required": false
+    }
+  ]
+}

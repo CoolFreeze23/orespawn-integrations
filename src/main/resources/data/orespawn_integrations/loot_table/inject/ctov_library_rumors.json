@@ -1,0 +1,76 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:written_book_content": {
+                  "title": "Rumors & Landmarks",
+                  "author": "Village Archivist",
+                  "generation": 0,
+                  "resolved": true
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "pages": [
+                {
+                  "raw": {
+                    "translate": "book.orespawn_integrations.library_rumor.page1",
+                    "fallback": "Travelers' ledger, kept by the village librarian. A haunted house stands where plains meet taiga. Leaf monsters den beneath the tall grass. Mantis nests hang in the deep jungle. Most who follow this ledger come back. Usually richer."
+                  }
+                }
+              ],
+              "mode": "replace_all"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:map",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:exploration_map",
+              "destination": "orespawn_integrations:on_village_rumor_maps",
+              "decoration": "red_x",
+              "zoom": 2,
+              "skip_existing_chunks": false
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:map_color": 9072195,
+                "minecraft:item_name": "{'translate': 'item.orespawn_integrations.filled_map.village_rumor', 'fallback': 'Rumor Map: Strange Landmark', 'italic': false}"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 13
+        }
+      ]
+    }
+  ]
+}

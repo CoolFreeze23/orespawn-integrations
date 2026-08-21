@@ -1,0 +1,18 @@
+{
+  "name": "A Namorada",
+  "icon": "orespawn:girlfriend_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:girlfriend",
+      "text": "Vaga pelo Mundo Superior, julgando sua roupa em silêncio."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A Namorada é a criação mais famosa do OreSpawn e seu exercício diplomático mais delicado. Trate-a bem e ela seguirá você pelo mundo inteiro. Trate-a mal e você vai descobrir que ela bate consideravelmente mais forte do que qualquer outra coisa no seu quintal.$(p)Um Namorado também perambula pelo mundo, tomando decisões idênticas com um cabelo pior."
+    }
+  ]
+}

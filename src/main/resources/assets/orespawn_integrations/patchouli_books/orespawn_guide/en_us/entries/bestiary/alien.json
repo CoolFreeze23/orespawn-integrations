@@ -1,0 +1,18 @@
+{
+  "name": "Alien",
+  "icon": "orespawn:alien_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:alien",
+      "text": "It phoned home. Home said: keep it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Aliens arrive armed with ray guns and no concept of trespass. Where several gather, look for the crashed WTF Alien Dungeon — yes, that is its real name — and its very unusual salvage.$(p)A towering Alien Boss commands each landing site. Bring hard cover; it brings a beam."
+    }
+  ]
+}

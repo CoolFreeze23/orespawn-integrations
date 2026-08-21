@@ -1,0 +1,15 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:termite"
+  ],
+  "traits": [
+    {
+      "type": "walkers:reinforcements",
+      "range": 32,
+      "reinforcements": [
+        "orespawn:termite"
+      ]
+    }
+  ]
+}

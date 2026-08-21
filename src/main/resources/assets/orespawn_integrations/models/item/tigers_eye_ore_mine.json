@@ -1,0 +1,11 @@
+{
+  "parent": "securitycraft:item/template_block_mine",
+  "textures": {
+    "down": "orespawn:blocks/tigerseye",
+    "east": "orespawn:blocks/tigerseye",
+    "north": "orespawn:blocks/tigerseye",
+    "south": "orespawn:blocks/tigerseye",
+    "up": "orespawn:blocks/tigerseye",
+    "west": "orespawn:blocks/tigerseye"
+  }
+}

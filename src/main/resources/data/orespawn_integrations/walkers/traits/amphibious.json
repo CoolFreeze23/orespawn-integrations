@@ -1,0 +1,17 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:baryonyx",
+    "orespawn:crab",
+    "orespawn:rubber_ducky"
+  ],
+  "traits": [
+    {
+      "type": "walkers:aquatic",
+      "is_aquatic": 1
+    },
+    {
+      "type": "walkers:undrownable"
+    }
+  ]
+}

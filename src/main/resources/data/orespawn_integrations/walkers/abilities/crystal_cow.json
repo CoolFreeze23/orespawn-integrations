@@ -1,0 +1,11 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:crystal_cow"
+  ],
+  "ability": {
+    "type": "walkers:get_item",
+    "item": "orespawn:crystal_apple",
+    "amount": 1
+  }
+}

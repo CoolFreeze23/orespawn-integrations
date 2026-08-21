@@ -1,0 +1,152 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ultrabosses/godzilla_slain",
+  "criteria": {
+    "killed_kraken": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:kraken"
+            }
+          }
+        ]
+      }
+    },
+    "killed_water_dragon": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:water_dragon"
+            }
+          }
+        ]
+      }
+    },
+    "killed_mothra": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:mothra"
+            }
+          }
+        ]
+      }
+    },
+    "killed_alien_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:alien_boss"
+            }
+          }
+        ]
+      }
+    },
+    "killed_godzilla": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:godzilla"
+            }
+          }
+        ]
+      }
+    },
+    "killed_the_king": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:the_king"
+            }
+          }
+        ]
+      }
+    },
+    "killed_the_queen": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:the_queen"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_kraken"
+    ],
+    [
+      "killed_water_dragon"
+    ],
+    [
+      "killed_mothra"
+    ],
+    [
+      "killed_alien_boss"
+    ],
+    [
+      "killed_godzilla"
+    ],
+    [
+      "killed_the_king"
+    ],
+    [
+      "killed_the_queen"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:attitude_adjuster"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ultrabosses.boss_slayer_all.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ultrabosses.boss_slayer_all.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 500
+  }
+}

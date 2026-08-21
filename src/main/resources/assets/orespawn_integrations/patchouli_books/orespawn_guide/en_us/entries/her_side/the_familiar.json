@@ -1,0 +1,29 @@
+{
+  "name": "The Girlfriend Familiar",
+  "icon": "ars_nouveau:worn_notebook",
+  "category": "orespawn_integrations:her_side",
+  "flag": "mod:ars_nouveau",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Wherever You Go",
+      "text": "The last page of $(item)Her Answer$() points at the mages' $(item)Worn Notebook$() for a reason. Study their ways and she learns Ars Nouveau's oldest trick: coming along.$(p)The familiar is a pocket-sized girlfriend who perches at your shoulder and follows you anywhere — through portals, through everything. Finishing $(l:orespawn_integrations:her_side/date_night)Date Night$() is how the story reads; the ritual below is how the magic actually works, and the brazier never checks for a ring."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Ritual of Binding",
+      "text": "Ars Nouveau's standard ritual, aimed carefully:$(li)Craft a $(item)Ritual Brazier$() and a $(item)Ritual of Binding$() tablet$(li)Find a $(bold)wild$() $(l:orespawn_integrations:bestiary/girlfriend)Girlfriend$() — one nobody has tamed$(li)Set the brazier near her and place the tablet to begin$(li)The ritual takes her and leaves behind a $(item)Bound Script$()$(li)Study the script, then summon her from the familiars screen like any other Ars familiar$(p)Her first summon earns $(thing)Wherever You Go$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Read This Twice",
+      "text": "$(bold)THE WARNING: the binding only ever answers to a wild, untamed girlfriend. Your tamed companion can NEVER be consumed by the ritual.$()$(p)The Ritual of Binding removes the creature it binds — permanently. So the match rule refuses tamed girlfriends outright: yours, anyone's, always. Fire it off next to your fiancée and the circle simply won't see her. We checked that twice, on purpose.$(p)Her own rule, for the record, was \"rings before rituals.\" The magic doesn't enforce it. She will."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Jealousy Payoff",
+      "text": "While she is summoned, any living attacker that lands a hit on you — with her within 24 blocks — is struck with $(bold)Weakness II for 5 seconds$(), delivered with a cloud of visibly furious particles.$(p)That's jealousy as a game mechanic: she can't stop the world from swinging at you, but she can make it regret connecting. Stack her with the $(l:orespawn_integrations:her_side/the_tome)Tome's$() decoy and most fights never find the real you at all."
+    }
+  ]
+}

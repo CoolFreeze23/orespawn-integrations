@@ -1,0 +1,29 @@
+{
+  "name": "Urânio Engarrafado",
+  "icon": "orespawn_integrations:uranium_bottle",
+  "category": "orespawn_integrations:always_uranium",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:uranium_bottle",
+      "text": "Um frasco de vidro, duas pepitas de urânio. Empilha até dezesseis, porque um nunca é o bastante."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Uranium Rush",
+      "text": "Beba — sim, mesmo de estômago cheio; é um bônus, não uma refeição — e o $(thing)Uranium Rush$() bate: vinte segundos de $(thing)Brilho$(), $(thing)Visão Noturna$() e $(thing)Velocidade II$(), com o frasco vazio devolvido educadamente. Não é veneno. Nunca é veneno.$(p)Um pesquisador do Nether chamado Haskov bebeu o primeiro e pediu outro. A conquista leva o nome do estado dele."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Caldeirão Brilhante",
+      "text": "Despeje alguns frascos num caldeirão do Amendments e o pote se enche de $(thing)Urânio Líquido$() — verde ácido e genuinamente brilhante, iluminação para o canto de alquimia inteiro. Clique no pote com frascos de vidro vazios para tirar a bebida de volta sempre que der vontade.$(p)Esta é a linha de abastecimento pretendida: prepare um pote uma vez, engarrafe para sempre."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Não, o Condensador Não Pode",
+      "text": "O Urânio Engarrafado não carrega EMC, deliberadamente — o livro-razão completo mora em $(l:orespawn_integrations:always_uranium/uranium_economy)A Economia do Urânio$(). O condensador não ganha o direito de imprimir uma bebida de três bônus aos montes; você pega a sua no caldeirão brilhante, como uma pessoa de cultura."
+    }
+  ]
+}

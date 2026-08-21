@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apotheosis"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        }
+    ],
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "orespawn:tigerseye_chestplate"
+    },
+    "weights": {
+        "summit": {
+            "quality": 1.0,
+            "weight": 5
+        },
+        "pinnacle": {
+            "quality": 2.0,
+            "weight": 20
+        }
+    }
+}

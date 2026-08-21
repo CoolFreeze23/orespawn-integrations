@@ -1,0 +1,124 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:root",
+  "criteria": {
+    "ultimate_sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:ultimate_sword"
+          }
+        ]
+      }
+    },
+    "kraken_tooth": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:kraken_tooth"
+          }
+        ]
+      }
+    },
+    "trex_tooth": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:trex_tooth"
+          }
+        ]
+      }
+    },
+    "worm_tooth": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:worm_tooth"
+          }
+        ]
+      }
+    },
+    "caterkiller_jaw": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:caterkiller_jaw"
+          }
+        ]
+      }
+    },
+    "sea_viper_tongue": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:sea_viper_tongue"
+          }
+        ]
+      }
+    },
+    "vortex_eye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:vortex_eye"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ultimate_sword"
+    ],
+    [
+      "kraken_tooth"
+    ],
+    [
+      "trex_tooth"
+    ],
+    [
+      "worm_tooth"
+    ],
+    [
+      "caterkiller_jaw"
+    ],
+    [
+      "sea_viper_tongue"
+    ],
+    [
+      "vortex_eye"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:trex_tooth"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.chains.bertha_blade_parts.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.chains.bertha_blade_parts.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

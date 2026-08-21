@@ -1,0 +1,30 @@
+{
+  "name": "A Rainha",
+  "icon": "orespawn:the_queen_spawn_egg",
+  "category": "orespawn_integrations:bosses",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:the_queen",
+      "scale": 0.35,
+      "text": "Mais mortal que o Rei, e mais bem-vestida."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Encontrando a Rainha",
+      "text": "A Rainha mantém seu próprio altar, sua própria árvore real e sua própria Torre de Desafio — cada uma com um santuário de Pedra do Caminho plantado à porta por cartógrafos atenciosos.$(p)Suas escamas são o coração da melhor proteção do pack: a armadura da Rainha e o Machado de Batalha da Rainha são ambos forjados com Escamas da Rainha conquistadas em batalha."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn:the_queen_spawn_block_from_parts",
+      "text": "Nove Partes da Rainha enterradas a invocam em qualquer lugar. Escolha o 'qualquer lugar' com enorme cuidado."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Que Eles Deixam",
+      "text": "Suas escamas cunham metade da economia da Corte: oito ao redor de um ovo incubam um $(l:orespawn_integrations:royal_court/royal_dragon_egg)Príncipe só seu$(), elas se prensam em $(l:orespawn_integrations:royal_court/upgrade_orbs)orbes de aprimoramento$(), e a Abelha Rainha da Bumblezone $(l:orespawn_integrations:royal_court/court_economy)paga geleia real por elas$(), de monarca para monarca. Seus $(l:orespawn_integrations:royal_court/spell_scrolls)pergaminhos Sagrados$() têm as mesmas chances de prêmio que os do Rei.$(p)Mais mortal, mais bem-vestida — e com conta bancária melhor."
+    }
+  ]
+}

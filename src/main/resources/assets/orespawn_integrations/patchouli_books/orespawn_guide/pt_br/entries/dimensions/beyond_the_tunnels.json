@@ -1,0 +1,19 @@
+{
+  "name": "Os Outros Mundos",
+  "icon": "orespawn:butterfly_spawn_egg",
+  "category": "orespawn_integrations:dimensions",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Utopia e Vilas",
+      "text": "$(6)Utopia$() é a dimensão-recompensa: céus mansos, macieiras mágicas e o $(l:orespawn_integrations:bosses/the_king)Altar do Rei$() para quando a paz ficar entediante.$(p)$(6)A Dimensão das Vilas$() (Formiga Arco-Íris) é terra colonizada — ruas de aldeões que nunca viram um creeper e fazem muita questão de continuar assim."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Ilhas e Caos",
+      "text": "$(6)As Ilhas$() (Formiga Instável) flutuam sobre o céu aberto. Leve blocos sobressalentes, olhe onde pisa e saqueie as ilhas dos monstros por seus cofres.$(p)O $(4)Caos$() (Borboleta) fecha a lista por um motivo: Pitch Blacks, Lurking Terrors e coisas piores são donos daquele céu. Chegue armado de verdade. Vá embora antes que vire algo pessoal."
+    }
+  ]
+}

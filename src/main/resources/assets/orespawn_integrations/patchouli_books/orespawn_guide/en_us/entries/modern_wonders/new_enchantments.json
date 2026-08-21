@@ -1,0 +1,38 @@
+{
+  "name": "New Enchantments",
+  "icon": "minecraft:enchanted_book",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Three new ways to make a sword rude: poison, tentacles, and fire. None of them have a crafting recipe, because enchantments aren't crafted — they're rolled at the table, looted from $(l:orespawn_integrations:modern_wonders/vault_heist)boss vaults$(), or, in one glowing case, infused out of raw uranium.$(p)All three land on books, so the anvil is always an option."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Radioactive I-III",
+      "text": "\"Strikes poison the target. Uranium-based swordsmanship: perfectly safe for the wielder, notably less so for everyone else.\"$(p)Direct hits poison — 2 seconds at level I, one second and one potency rank more per level. Rolls at any enchanting table, Apotheosis altars included. For the best odds, shelve your table with the right books — see $(l:orespawn_integrations:always_uranium/enchanting_corner)the Enchanting Corner$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Infusion",
+      "text": "Prefer certainty to table roulette? A maxed-out Apothic enchanting altar accepts a single $(l:orespawn_integrations:ores_gems/uranium)uranium ingot$() and infuses it straight into a $(item)Radioactive II$() book. No XP gamble, no rerolls — just fuel in, malice out.$(p)Full setup notes live in $(l:orespawn_integrations:always_uranium/enchanting_corner)the Enchanting Corner$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Kraken's Grip I-II",
+      "text": "\"Strikes slow the target, as if seized by tentacles from somewhere deep and unfriendly.\"$(p)Direct hits apply slowness — 1.5 seconds at level I, one second and one potency rank more at II. It rolls at the enchanting table, and the $(l:orespawn_integrations:modern_wonders/vault_heist)Kraken vault$() deals its books straight, up to level II."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Dragon's Breath I-II",
+      "text": "\"Strikes set the target ablaze. The King does not share his fire cheaply - vault treasure only.\"$(p)Direct hits ignite — 3 seconds at level I, 5 at II. This is a treasure enchantment: it $(bold)never$() appears at any enchanting table. Mobzilla vault books and the anvil are the only road, and the anvil charges double for the privilege."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Mace Clause",
+      "text": "Radioactive and Kraken's Grip apply to swords and, yes, the $(item)Mace$() — a smash that poisons or slows is exactly as fair as it sounds. Dragon's Breath fits any weapon, but the mace refuses fire. Even blunt instruments have standards.$(p)Bagging any Radioactive gear earns $(thing)Radioactive Arsenal$(); quest 706, $(thing)Enchanter of Legend$(), buys your surplus."
+    }
+  ]
+}

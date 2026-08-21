@@ -1,0 +1,45 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apotheosis"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        }
+    ],
+    "type": "apotheosis:salvaging",
+    "input": [
+        {
+            "item": "orespawn:ultimate_helmet"
+        },
+        {
+            "item": "orespawn:ultimate_chestplate"
+        },
+        {
+            "item": "orespawn:ultimate_leggings"
+        },
+        {
+            "item": "orespawn:ultimate_boots"
+        }
+    ],
+    "outputs": [
+        {
+            "max_count": 4,
+            "min_count": 1,
+            "stack": {
+                "count": 1,
+                "id": "apotheosis:gem_dust"
+            }
+        },
+        {
+            "max_count": 2,
+            "min_count": 0,
+            "stack": {
+                "count": 1,
+                "id": "orespawn:ruby"
+            }
+        }
+    ]
+}

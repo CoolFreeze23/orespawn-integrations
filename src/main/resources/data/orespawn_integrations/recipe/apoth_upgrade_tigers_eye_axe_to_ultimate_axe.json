@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apotheosis"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        }
+    ],
+    "type": "apotheosis:sized_upgrade_recipe",
+    "addition": {
+        "count": 4,
+        "item": "orespawn:ingot_uranium"
+    },
+    "base": {
+        "item": "orespawn:tigers_eye_axe"
+    },
+    "result": {
+        "count": 1,
+        "id": "orespawn:ultimate_axe"
+    },
+    "template": {
+        "item": "minecraft:netherite_upgrade_smithing_template"
+    }
+}

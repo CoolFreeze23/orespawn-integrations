@@ -1,0 +1,10 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:giant_robot"
+  ],
+  "ability": {
+    "type": "walkers:explosion",
+    "radius": 3.0
+  }
+}

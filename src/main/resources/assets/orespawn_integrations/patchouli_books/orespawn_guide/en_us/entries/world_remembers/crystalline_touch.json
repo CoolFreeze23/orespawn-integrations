@@ -1,0 +1,29 @@
+{
+  "name": "The Crystalline Touch",
+  "icon": "projecte:philosophers_stone",
+  "category": "orespawn_integrations:world_remembers",
+  "flag": "mod:projecte",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "projecte:philosophers_stone",
+      "text": "The Philosopher's Stone has picked up some local color."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "How to Paint",
+      "text": "Point the Stone at honest terrain and right-click: the block turns Crystal on the spot, exactly like any other world transmutation. Raise the Stone's charge to widen the brush from a single block to a broad sweep, and sneak-click to pick a block's alternate shade where one exists.$(p)It paints matter, not value — see the small print at the end."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Palette",
+      "text": "$(li)Stone and cobblestone: crystal stone$(li)Dirt and grass: crystal grass$(li)Oak logs and planks: crystal timber$(li)Oak leaves and saplings: crystal, two shades each$(li)Dandelions and poppies: crystal flowers — yellow or green, red or blue$(p)A whole build in $(l:orespawn_integrations:dimensions/crystal_dimension)Crystal Dimension$() dress, and no termite ever checked your pockets."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Undo Button",
+      "text": "The three terrain blocks transmute back — crystal stone to stone, crystal grass to dirt, crystal log to oak — so a misclick is a redo, not a renovation.$(p)Small print: none of the crystal blocks carry EMC in this addon's tables, and this feature adds none. Terraforming, never a condenser feed — the $(l:orespawn_integrations:always_uranium/uranium_economy)EMC ledger$() stays audited and boring."
+    }
+  ]
+}

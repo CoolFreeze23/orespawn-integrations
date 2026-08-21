@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:chains/bertha_blade_parts",
+  "criteria": {
+    "has_bertha_blade": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:bertha_blade"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bertha_blade"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:bertha_blade"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ultimate_craftsman.bertha_blade.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ultimate_craftsman.bertha_blade.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:haunted_house",
+      "required": false
+    },
+    {
+      "id": "orespawn:leaf_monster_dungeon",
+      "required": false
+    },
+    {
+      "id": "orespawn:mantis_nest",
+      "required": false
+    }
+  ]
+}

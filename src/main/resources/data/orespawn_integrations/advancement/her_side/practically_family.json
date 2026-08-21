@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "bibliocraft"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "girlfriend"
+    }
+  ],
+  "parent": "orespawn_integrations:her_side/going_steady",
+  "criteria": {
+    "witnessed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "witnessed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "bibliocraft:written_big_book"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.her_side.practically_family.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.her_side.practically_family.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 75,
+    "loot": [
+      "orespawn_integrations:rewards/diary_vol3"
+    ]
+  }
+}

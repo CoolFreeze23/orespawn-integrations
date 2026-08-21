@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mcheli"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "uranium"
+    }
+  ],
+  "parent": "orespawn_integrations:uranium/root",
+  "criteria": {
+    "witnessed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "witnessed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:ingot_uranium"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.uranium.warthog_diet.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.uranium.warthog_diet.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 50
+  }
+}

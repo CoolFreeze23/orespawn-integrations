@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:surface_riches/hoverboard_ride",
+  "criteria": {
+    "painted_hoverboard": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:ultimate_sword"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:elevator"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "painted_hoverboard"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:cyan_dye"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.fresh_paint_job.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.fresh_paint_job.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

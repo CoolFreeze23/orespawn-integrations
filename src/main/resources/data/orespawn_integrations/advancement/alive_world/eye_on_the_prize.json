@@ -1,0 +1,68 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "endrem"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "parent": "orespawn_integrations:alive_world/root",
+  "criteria": {
+    "eye_obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endrem:black_eye",
+              "endrem:cold_eye",
+              "endrem:corrupted_eye",
+              "endrem:cryptic_eye",
+              "endrem:cursed_eye",
+              "endrem:evil_eye",
+              "endrem:exotic_eye",
+              "endrem:guardian_eye",
+              "endrem:lost_eye",
+              "endrem:magical_eye",
+              "endrem:nether_eye",
+              "endrem:old_eye",
+              "endrem:rogue_eye",
+              "endrem:undead_eye",
+              "endrem:witch_eye",
+              "endrem:wither_eye"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "eye_obtained"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "endrem:magical_eye"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.alive_world.eye_on_the_prize.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.alive_world.eye_on_the_prize.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

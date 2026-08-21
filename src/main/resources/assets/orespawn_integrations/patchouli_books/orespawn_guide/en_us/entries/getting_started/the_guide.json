@@ -1,0 +1,18 @@
+{
+  "name": "This Very Book",
+  "icon": "minecraft:book",
+  "category": "orespawn_integrations:getting_started",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:orespawn_guide",
+      "text": "One book, one ruby. Knowledge has never been cheaper — or more necessary."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lost your copy? The world grows rubies precisely so that nobody has to face a T-Rex uninformed.$(p)Craft a spare for a friend. Statistically, the unread do not remain friends for long."
+    }
+  ]
+}

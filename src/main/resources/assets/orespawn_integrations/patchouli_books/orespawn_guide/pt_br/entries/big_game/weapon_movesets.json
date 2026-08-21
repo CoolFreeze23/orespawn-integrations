@@ -1,0 +1,34 @@
+{
+  "name": "Golpes de Arma",
+  "icon": "orespawn:big_bertha",
+  "category": "orespawn_integrations:big_game",
+  "flag": "mod:bettercombat",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Três metros de aço lendário merecem mais do que a sacudidela de braço padrão. O Better Combat concorda: dez armas do OreSpawn agora carregam golpes de verdade — arcos amplos, combos, posturas e um alcance finalmente à altura da planta baixa.$(p)Sem itens novos, sem botões novos. A arma que você já conquistou simplesmente se move do jeito que sempre pareceu que devia."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:big_bertha",
+      "title": "A Nau Capitânia",
+      "text": "A Big Bertha luta como um montante, com bônus de 1,5 bloco de alcance — um golpe, um arco, tudo dentro dele. Segurá-la pela primeira vez concede a conquista Ambição de Varredura.$(p)Agora ela varre. A fauna local foi notificada."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Prateleira Pesada",
+      "text": "$(li)Big Bertha — montante, +1,5 de alcance$(li)Espada do Guardião Real — montante, +1,0 de alcance$(li)Machado de Batalha da Rainha — combos de machado duplo$(li)Machado de Batalha — machado pesado$(li)Machado Ultimate — machado$(p)As duas grandes espadas dividem a varredura de montante; a Bertha só alcança mais longe. A Espada do Guardião Real mantém sua postura através da têmpera de witherita — veja $(l:orespawn_integrations:royal_court/tempered_majesty)Majestade Temperada$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Prateleira Fina",
+      "text": "$(li)Espada de Fada — rapieira, estocadas rápidas de esgrima$(li)Espada do Pesadelo — fluidez de katana$(li)Cajado do Trovão — combos corpo a corpo de bastão de batalha; o raio do clique direito segue intocado$(li)Espada de Esmeralda — espada de uma mão$(li)Espada Ultimate — espada de uma mão$(p)Os combos do cajado preenchem o vão entre os raios, então um conjurador encurralado continua sendo um conjurador armado."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Letras Miúdas",
+      "text": "Estes golpes são dados puros lidos pelo carregador do próprio Better Combat — o que os torna o único recurso de Caça Grossa que ignora o interruptor threads.big_game da configuração. Desligue a linha e as receitas somem; a esgrima fica até o Better Combat sair do pack.$(p)Todo o resto deste capítulo obedece ao interruptor: $(l:orespawn_integrations:big_game/decoy_mines)minas$(), $(l:orespawn_integrations:big_game/boss_backpacks)mochilas$(), $(l:orespawn_integrations:big_game/chitin_band_plating)trajes de chefe$() e a $(l:orespawn_integrations:big_game/angel_insurance)papelada dos anjos$()."
+    }
+  ]
+}

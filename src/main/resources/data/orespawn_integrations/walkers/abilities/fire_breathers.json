@@ -1,0 +1,13 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:spyro",
+    "orespawn:terrible_terror",
+    "orespawn:baby_dragon",
+    "orespawn:basilisk"
+  ],
+  "ability": {
+    "type": "walkers:shoot_fireball",
+    "is_large": false
+  }
+}

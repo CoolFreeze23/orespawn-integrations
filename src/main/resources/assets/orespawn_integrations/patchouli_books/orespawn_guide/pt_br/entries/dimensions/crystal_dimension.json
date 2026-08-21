@@ -1,0 +1,18 @@
+{
+  "name": "A Dimensão de Cristal",
+  "icon": "orespawn:crystal_apple",
+  "category": "orespawn_integrations:dimensions",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "O Cupim cobra uma única passagem: nada. Chegue com o inventário vazio e sem armadura, ou ele recusa a viagem na hora.$(p)Do outro lado espera um mundo de árvores de cristal e campos de vidro — lar dos únicos veios de $(l:orespawn_integrations:ores_gems/tigers_eye)Olho de Tigre$() e turmalina rosa que existem."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Começando do Nada",
+      "text": "Tudo de que você precisa pode ser feito no local: ferramentas de madeira de cristal, uma bancada de cristal, uma fornalha de cristal. Minere, fabrique, estoque — depois pegue um cupim para casa e carregue a fortuna em etapas.$(p)Um labirinto serpenteia sob a superfície, semeado de baús de cristal. As coisas que os guardam se escondem melhor que os baús."
+    }
+  ]
+}

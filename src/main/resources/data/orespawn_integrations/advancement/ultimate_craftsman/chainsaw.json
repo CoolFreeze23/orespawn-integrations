@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ultimate_craftsman/big_bertha",
+  "criteria": {
+    "has_chainsaw": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:chainsaw"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chainsaw"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:chainsaw"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ultimate_craftsman.chainsaw.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ultimate_craftsman.chainsaw.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

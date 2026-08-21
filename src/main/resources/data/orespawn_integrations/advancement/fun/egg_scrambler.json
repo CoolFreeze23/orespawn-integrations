@@ -1,0 +1,844 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:root",
+  "criteria": {
+    "alien_spawn_egg_from_alien_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:alien_spawn_egg_from_alien_spawn_block"
+      }
+    },
+    "alosaurus_spawn_egg_from_alosaurus_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:alosaurus_spawn_egg_from_alosaurus_spawn_block"
+      }
+    },
+    "attack_squid_spawn_egg_from_attack_squid_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:attack_squid_spawn_egg_from_attack_squid_spawn_block"
+      }
+    },
+    "band_p_spawn_egg_from_band_p_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:band_p_spawn_egg_from_band_p_spawn_block"
+      }
+    },
+    "baryonyx_spawn_egg_from_baryonyx_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:baryonyx_spawn_egg_from_baryonyx_spawn_block"
+      }
+    },
+    "basilisk_spawn_egg_from_basilisk_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:basilisk_spawn_egg_from_basilisk_spawn_block"
+      }
+    },
+    "bat_spawn_egg_from_bat_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:bat_spawn_egg_from_bat_spawn_block"
+      }
+    },
+    "beaver_spawn_egg_from_beaver_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:beaver_spawn_egg_from_beaver_spawn_block"
+      }
+    },
+    "bee_spawn_egg_from_bee_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:bee_spawn_egg_from_bee_spawn_block"
+      }
+    },
+    "blaze_spawn_egg_from_blaze_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:blaze_spawn_egg_from_blaze_spawn_block"
+      }
+    },
+    "boyfriend_spawn_egg_from_boyfriend_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:boyfriend_spawn_egg_from_boyfriend_spawn_block"
+      }
+    },
+    "brutalfly_spawn_egg_from_brutalfly_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:brutalfly_spawn_egg_from_brutalfly_spawn_block"
+      }
+    },
+    "camarasaurus_spawn_egg_from_camarasaurus_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:camarasaurus_spawn_egg_from_camarasaurus_spawn_block"
+      }
+    },
+    "cassowary_spawn_egg_from_cassowary_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cassowary_spawn_egg_from_cassowary_spawn_block"
+      }
+    },
+    "cater_killer_spawn_egg_from_cater_killer_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cater_killer_spawn_egg_from_cater_killer_spawn_block"
+      }
+    },
+    "cave_fisher_spawn_egg_from_cave_fisher_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cave_fisher_spawn_egg_from_cave_fisher_spawn_block"
+      }
+    },
+    "cave_spider_spawn_egg_from_cave_spider_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cave_spider_spawn_egg_from_cave_spider_spawn_block"
+      }
+    },
+    "cephadrome_spawn_egg_from_cephadrome_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cephadrome_spawn_egg_from_cephadrome_spawn_block"
+      }
+    },
+    "chicken_spawn_egg_from_chicken_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:chicken_spawn_egg_from_chicken_spawn_block"
+      }
+    },
+    "chipmunk_spawn_egg_from_chipmunk_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:chipmunk_spawn_egg_from_chipmunk_spawn_block"
+      }
+    },
+    "cliff_racer_spawn_egg_from_cliff_racer_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cliff_racer_spawn_egg_from_cliff_racer_spawn_block"
+      }
+    },
+    "cloud_shark_spawn_egg_from_cloud_shark_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cloud_shark_spawn_egg_from_cloud_shark_spawn_block"
+      }
+    },
+    "cockateil_spawn_egg_from_cockateil_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cockateil_spawn_egg_from_cockateil_spawn_block"
+      }
+    },
+    "cow_spawn_egg_from_cow_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cow_spawn_egg_from_cow_spawn_block"
+      }
+    },
+    "crab_spawn_egg_from_crab_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:crab_spawn_egg_from_crab_spawn_block"
+      }
+    },
+    "creeper_spawn_egg_from_creeper_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:creeper_spawn_egg_from_creeper_spawn_block"
+      }
+    },
+    "creeping_horror_spawn_egg_from_creeping_horror_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:creeping_horror_spawn_egg_from_creeping_horror_spawn_block"
+      }
+    },
+    "cricket_spawn_egg_from_cricket_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cricket_spawn_egg_from_cricket_spawn_block"
+      }
+    },
+    "cryolophosaurus_spawn_egg_from_cryolophosaurus_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:cryolophosaurus_spawn_egg_from_cryolophosaurus_spawn_block"
+      }
+    },
+    "crystal_cow_spawn_egg_from_crystal_cow_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:crystal_cow_spawn_egg_from_crystal_cow_spawn_block"
+      }
+    },
+    "dragon_spawn_egg_from_dragon_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:dragon_spawn_egg_from_dragon_spawn_block"
+      }
+    },
+    "dragonfly_spawn_egg_from_dragonfly_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:dragonfly_spawn_egg_from_dragonfly_spawn_block"
+      }
+    },
+    "dungeon_beast_spawn_egg_from_ore_dungeon_beast": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:dungeon_beast_spawn_egg_from_ore_dungeon_beast"
+      }
+    },
+    "easter_bunny_spawn_egg_from_easter_bunny_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:easter_bunny_spawn_egg_from_easter_bunny_spawn_block"
+      }
+    },
+    "emperor_scorpion_spawn_egg_from_emperor_scorpion_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:emperor_scorpion_spawn_egg_from_emperor_scorpion_spawn_block"
+      }
+    },
+    "enchanted_apple_cow_spawn_egg_from_enchanted_apple_cow_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:enchanted_apple_cow_spawn_egg_from_enchanted_apple_cow_spawn_block"
+      }
+    },
+    "ender_dragon_spawn_egg_from_ender_dragon_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:ender_dragon_spawn_egg_from_ender_dragon_spawn_block"
+      }
+    },
+    "ender_knight_spawn_egg_from_ender_knight_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:ender_knight_spawn_egg_from_ender_knight_spawn_block"
+      }
+    },
+    "ender_reaper_spawn_egg_from_ender_reaper_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:ender_reaper_spawn_egg_from_ender_reaper_spawn_block"
+      }
+    },
+    "enderman_spawn_egg_from_enderman_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:enderman_spawn_egg_from_enderman_spawn_block"
+      }
+    },
+    "fairy_spawn_egg_from_ore_fairy": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:fairy_spawn_egg_from_ore_fairy"
+      }
+    },
+    "flounder_spawn_egg_from_ore_flounder": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:flounder_spawn_egg_from_ore_flounder"
+      }
+    },
+    "frog_spawn_egg_from_frog_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:frog_spawn_egg_from_frog_spawn_block"
+      }
+    },
+    "gamma_metroid_spawn_egg_from_gamma_metroid_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:gamma_metroid_spawn_egg_from_gamma_metroid_spawn_block"
+      }
+    },
+    "gazelle_spawn_egg_from_gazelle_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:gazelle_spawn_egg_from_gazelle_spawn_block"
+      }
+    },
+    "ghast_spawn_egg_from_ghast_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:ghast_spawn_egg_from_ghast_spawn_block"
+      }
+    },
+    "girlfriend_spawn_egg_from_girlfriend_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:girlfriend_spawn_egg_from_girlfriend_spawn_block"
+      }
+    },
+    "godzilla_spawn_egg_from_godzilla_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:godzilla_spawn_egg_from_godzilla_spawn_block"
+      }
+    },
+    "gold_cow_spawn_egg_from_gold_cow_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:gold_cow_spawn_egg_from_gold_cow_spawn_block"
+      }
+    },
+    "gold_fish_spawn_egg_from_gold_fish_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:gold_fish_spawn_egg_from_gold_fish_spawn_block"
+      }
+    },
+    "hammerhead_spawn_egg_from_hammerhead_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:hammerhead_spawn_egg_from_hammerhead_spawn_block"
+      }
+    },
+    "hercules_beetle_spawn_egg_from_hercules_beetle_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:hercules_beetle_spawn_egg_from_hercules_beetle_spawn_block"
+      }
+    },
+    "horse_spawn_egg_from_horse_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:horse_spawn_egg_from_horse_spawn_block"
+      }
+    },
+    "hydrolisc_spawn_egg_from_hydrolisc_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:hydrolisc_spawn_egg_from_hydrolisc_spawn_block"
+      }
+    },
+    "iron_golem_spawn_egg_from_iron_golem_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:iron_golem_spawn_egg_from_iron_golem_spawn_block"
+      }
+    },
+    "irukandji_spawn_egg_from_ore_irukandji": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:irukandji_spawn_egg_from_ore_irukandji"
+      }
+    },
+    "kraken_spawn_egg_from_kraken_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:kraken_spawn_egg_from_kraken_spawn_block"
+      }
+    },
+    "kyuubi_spawn_egg_from_kyuubi_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:kyuubi_spawn_egg_from_kyuubi_spawn_block"
+      }
+    },
+    "leaf_monster_spawn_egg_from_leaf_monster_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:leaf_monster_spawn_egg_from_leaf_monster_spawn_block"
+      }
+    },
+    "leon_spawn_egg_from_leon_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:leon_spawn_egg_from_leon_spawn_block"
+      }
+    },
+    "lizard_spawn_egg_from_lizard_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:lizard_spawn_egg_from_lizard_spawn_block"
+      }
+    },
+    "lurking_terror_spawn_egg_from_lurking_terror_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:lurking_terror_spawn_egg_from_lurking_terror_spawn_block"
+      }
+    },
+    "magma_cube_spawn_egg_from_magma_cube_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:magma_cube_spawn_egg_from_magma_cube_spawn_block"
+      }
+    },
+    "mantis_spawn_egg_from_mantis_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:mantis_spawn_egg_from_mantis_spawn_block"
+      }
+    },
+    "molenoid_spawn_egg_from_molenoid_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:molenoid_spawn_egg_from_molenoid_spawn_block"
+      }
+    },
+    "mooshroom_spawn_egg_from_mooshroom_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:mooshroom_spawn_egg_from_mooshroom_spawn_block"
+      }
+    },
+    "mothra_spawn_egg_from_mothra_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:mothra_spawn_egg_from_mothra_spawn_block"
+      }
+    },
+    "nastysaurus_spawn_egg_from_nastysaurus_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:nastysaurus_spawn_egg_from_nastysaurus_spawn_block"
+      }
+    },
+    "ocelot_spawn_egg_from_ocelot_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:ocelot_spawn_egg_from_ocelot_spawn_block"
+      }
+    },
+    "ostrich_spawn_egg_from_ostrich_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:ostrich_spawn_egg_from_ostrich_spawn_block"
+      }
+    },
+    "peacock_spawn_egg_from_ore_peacock": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:peacock_spawn_egg_from_ore_peacock"
+      }
+    },
+    "pig_spawn_egg_from_pig_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:pig_spawn_egg_from_pig_spawn_block"
+      }
+    },
+    "pitch_black_spawn_egg_from_pitch_black_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:pitch_black_spawn_egg_from_pitch_black_spawn_block"
+      }
+    },
+    "pointysaurus_spawn_egg_from_pointysaurus_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:pointysaurus_spawn_egg_from_pointysaurus_spawn_block"
+      }
+    },
+    "rat_spawn_egg_from_ore_rat": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:rat_spawn_egg_from_ore_rat"
+      }
+    },
+    "red_cow_spawn_egg_from_red_cow_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:red_cow_spawn_egg_from_red_cow_spawn_block"
+      }
+    },
+    "rotator_spawn_egg_from_ore_rotator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:rotator_spawn_egg_from_ore_rotator"
+      }
+    },
+    "rubber_ducky_spawn_egg_from_rubber_ducky_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:rubber_ducky_spawn_egg_from_rubber_ducky_spawn_block"
+      }
+    },
+    "scorpion_spawn_egg_from_scorpion_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:scorpion_spawn_egg_from_scorpion_spawn_block"
+      }
+    },
+    "sea_monster_spawn_egg_from_sea_monster_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:sea_monster_spawn_egg_from_sea_monster_spawn_block"
+      }
+    },
+    "sea_viper_spawn_egg_from_sea_viper_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:sea_viper_spawn_egg_from_sea_viper_spawn_block"
+      }
+    },
+    "sheep_spawn_egg_from_sheep_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:sheep_spawn_egg_from_sheep_spawn_block"
+      }
+    },
+    "silverfish_spawn_egg_from_silverfish_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:silverfish_spawn_egg_from_silverfish_spawn_block"
+      }
+    },
+    "skate_spawn_egg_from_ore_skate": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:skate_spawn_egg_from_ore_skate"
+      }
+    },
+    "skeleton_spawn_egg_from_skeleton_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:skeleton_spawn_egg_from_skeleton_spawn_block"
+      }
+    },
+    "slime_spawn_egg_from_slime_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:slime_spawn_egg_from_slime_spawn_block"
+      }
+    },
+    "snow_golem_spawn_egg_from_snow_golem_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:snow_golem_spawn_egg_from_snow_golem_spawn_block"
+      }
+    },
+    "spider_driver_spawn_egg_from_spider_driver_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:spider_driver_spawn_egg_from_spider_driver_spawn_block"
+      }
+    },
+    "spider_spawn_egg_from_spider_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:spider_spawn_egg_from_spider_spawn_block"
+      }
+    },
+    "spit_bug_spawn_egg_from_spit_bug_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:spit_bug_spawn_egg_from_spit_bug_spawn_block"
+      }
+    },
+    "spyro_spawn_egg_from_spyro_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:spyro_spawn_egg_from_spyro_spawn_block"
+      }
+    },
+    "squid_spawn_egg_from_squid_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:squid_spawn_egg_from_squid_spawn_block"
+      }
+    },
+    "stink_bug_spawn_egg_from_stink_bug_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:stink_bug_spawn_egg_from_stink_bug_spawn_block"
+      }
+    },
+    "stinky_spawn_egg_from_stinky_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:stinky_spawn_egg_from_stinky_spawn_block"
+      }
+    },
+    "terrible_terror_spawn_egg_from_terrible_terror_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:terrible_terror_spawn_egg_from_terrible_terror_spawn_block"
+      }
+    },
+    "the_king_spawn_egg_from_the_king_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:the_king_spawn_egg_from_the_king_spawn_block"
+      }
+    },
+    "the_queen_spawn_egg_from_the_queen_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:the_queen_spawn_egg_from_the_queen_spawn_block"
+      }
+    },
+    "trex_spawn_egg_from_trex_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:trex_spawn_egg_from_trex_spawn_block"
+      }
+    },
+    "triffid_spawn_egg_from_triffid_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:triffid_spawn_egg_from_triffid_spawn_block"
+      }
+    },
+    "trooper_bug_spawn_egg_from_trooper_bug_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:trooper_bug_spawn_egg_from_trooper_bug_spawn_block"
+      }
+    },
+    "tshirt_spawn_egg_from_tshirt_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:tshirt_spawn_egg_from_tshirt_spawn_block"
+      }
+    },
+    "urchin_spawn_egg_from_ore_urchin": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:urchin_spawn_egg_from_ore_urchin"
+      }
+    },
+    "velocity_raptor_spawn_egg_from_velocity_raptor_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:velocity_raptor_spawn_egg_from_velocity_raptor_spawn_block"
+      }
+    },
+    "villager_spawn_egg_from_villager_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:villager_spawn_egg_from_villager_spawn_block"
+      }
+    },
+    "vortex_spawn_egg_from_ore_vortex": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:vortex_spawn_egg_from_ore_vortex"
+      }
+    },
+    "water_dragon_spawn_egg_from_water_dragon_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:water_dragon_spawn_egg_from_water_dragon_spawn_block"
+      }
+    },
+    "whale_spawn_egg_from_ore_whale": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:whale_spawn_egg_from_ore_whale"
+      }
+    },
+    "witch_spawn_egg_from_witch_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:witch_spawn_egg_from_witch_spawn_block"
+      }
+    },
+    "wither_skeleton_spawn_egg_from_wither_skeleton_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:wither_skeleton_spawn_egg_from_wither_skeleton_spawn_block"
+      }
+    },
+    "wither_spawn_egg_from_wither_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:wither_spawn_egg_from_wither_spawn_block"
+      }
+    },
+    "wolf_spawn_egg_from_wolf_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:wolf_spawn_egg_from_wolf_spawn_block"
+      }
+    },
+    "worm_large_spawn_egg_from_worm_large_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:worm_large_spawn_egg_from_worm_large_spawn_block"
+      }
+    },
+    "worm_medium_spawn_egg_from_worm_medium_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:worm_medium_spawn_egg_from_worm_medium_spawn_block"
+      }
+    },
+    "worm_small_spawn_egg_from_worm_small_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:worm_small_spawn_egg_from_worm_small_spawn_block"
+      }
+    },
+    "zombie_spawn_egg_from_zombie_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:zombie_spawn_egg_from_zombie_spawn_block"
+      }
+    },
+    "zombified_piglin_spawn_egg_from_zombified_piglin_spawn_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:zombified_piglin_spawn_egg_from_zombified_piglin_spawn_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "alien_spawn_egg_from_alien_spawn_block",
+      "alosaurus_spawn_egg_from_alosaurus_spawn_block",
+      "attack_squid_spawn_egg_from_attack_squid_spawn_block",
+      "band_p_spawn_egg_from_band_p_spawn_block",
+      "baryonyx_spawn_egg_from_baryonyx_spawn_block",
+      "basilisk_spawn_egg_from_basilisk_spawn_block",
+      "bat_spawn_egg_from_bat_spawn_block",
+      "beaver_spawn_egg_from_beaver_spawn_block",
+      "bee_spawn_egg_from_bee_spawn_block",
+      "blaze_spawn_egg_from_blaze_spawn_block",
+      "boyfriend_spawn_egg_from_boyfriend_spawn_block",
+      "brutalfly_spawn_egg_from_brutalfly_spawn_block",
+      "camarasaurus_spawn_egg_from_camarasaurus_spawn_block",
+      "cassowary_spawn_egg_from_cassowary_spawn_block",
+      "cater_killer_spawn_egg_from_cater_killer_spawn_block",
+      "cave_fisher_spawn_egg_from_cave_fisher_spawn_block",
+      "cave_spider_spawn_egg_from_cave_spider_spawn_block",
+      "cephadrome_spawn_egg_from_cephadrome_spawn_block",
+      "chicken_spawn_egg_from_chicken_spawn_block",
+      "chipmunk_spawn_egg_from_chipmunk_spawn_block",
+      "cliff_racer_spawn_egg_from_cliff_racer_spawn_block",
+      "cloud_shark_spawn_egg_from_cloud_shark_spawn_block",
+      "cockateil_spawn_egg_from_cockateil_spawn_block",
+      "cow_spawn_egg_from_cow_spawn_block",
+      "crab_spawn_egg_from_crab_spawn_block",
+      "creeper_spawn_egg_from_creeper_spawn_block",
+      "creeping_horror_spawn_egg_from_creeping_horror_spawn_block",
+      "cricket_spawn_egg_from_cricket_spawn_block",
+      "cryolophosaurus_spawn_egg_from_cryolophosaurus_spawn_block",
+      "crystal_cow_spawn_egg_from_crystal_cow_spawn_block",
+      "dragon_spawn_egg_from_dragon_spawn_block",
+      "dragonfly_spawn_egg_from_dragonfly_spawn_block",
+      "dungeon_beast_spawn_egg_from_ore_dungeon_beast",
+      "easter_bunny_spawn_egg_from_easter_bunny_spawn_block",
+      "emperor_scorpion_spawn_egg_from_emperor_scorpion_spawn_block",
+      "enchanted_apple_cow_spawn_egg_from_enchanted_apple_cow_spawn_block",
+      "ender_dragon_spawn_egg_from_ender_dragon_spawn_block",
+      "ender_knight_spawn_egg_from_ender_knight_spawn_block",
+      "ender_reaper_spawn_egg_from_ender_reaper_spawn_block",
+      "enderman_spawn_egg_from_enderman_spawn_block",
+      "fairy_spawn_egg_from_ore_fairy",
+      "flounder_spawn_egg_from_ore_flounder",
+      "frog_spawn_egg_from_frog_spawn_block",
+      "gamma_metroid_spawn_egg_from_gamma_metroid_spawn_block",
+      "gazelle_spawn_egg_from_gazelle_spawn_block",
+      "ghast_spawn_egg_from_ghast_spawn_block",
+      "girlfriend_spawn_egg_from_girlfriend_spawn_block",
+      "godzilla_spawn_egg_from_godzilla_spawn_block",
+      "gold_cow_spawn_egg_from_gold_cow_spawn_block",
+      "gold_fish_spawn_egg_from_gold_fish_spawn_block",
+      "hammerhead_spawn_egg_from_hammerhead_spawn_block",
+      "hercules_beetle_spawn_egg_from_hercules_beetle_spawn_block",
+      "horse_spawn_egg_from_horse_spawn_block",
+      "hydrolisc_spawn_egg_from_hydrolisc_spawn_block",
+      "iron_golem_spawn_egg_from_iron_golem_spawn_block",
+      "irukandji_spawn_egg_from_ore_irukandji",
+      "kraken_spawn_egg_from_kraken_spawn_block",
+      "kyuubi_spawn_egg_from_kyuubi_spawn_block",
+      "leaf_monster_spawn_egg_from_leaf_monster_spawn_block",
+      "leon_spawn_egg_from_leon_spawn_block",
+      "lizard_spawn_egg_from_lizard_spawn_block",
+      "lurking_terror_spawn_egg_from_lurking_terror_spawn_block",
+      "magma_cube_spawn_egg_from_magma_cube_spawn_block",
+      "mantis_spawn_egg_from_mantis_spawn_block",
+      "molenoid_spawn_egg_from_molenoid_spawn_block",
+      "mooshroom_spawn_egg_from_mooshroom_spawn_block",
+      "mothra_spawn_egg_from_mothra_spawn_block",
+      "nastysaurus_spawn_egg_from_nastysaurus_spawn_block",
+      "ocelot_spawn_egg_from_ocelot_spawn_block",
+      "ostrich_spawn_egg_from_ostrich_spawn_block",
+      "peacock_spawn_egg_from_ore_peacock",
+      "pig_spawn_egg_from_pig_spawn_block",
+      "pitch_black_spawn_egg_from_pitch_black_spawn_block",
+      "pointysaurus_spawn_egg_from_pointysaurus_spawn_block",
+      "rat_spawn_egg_from_ore_rat",
+      "red_cow_spawn_egg_from_red_cow_spawn_block",
+      "rotator_spawn_egg_from_ore_rotator",
+      "rubber_ducky_spawn_egg_from_rubber_ducky_spawn_block",
+      "scorpion_spawn_egg_from_scorpion_spawn_block",
+      "sea_monster_spawn_egg_from_sea_monster_spawn_block",
+      "sea_viper_spawn_egg_from_sea_viper_spawn_block",
+      "sheep_spawn_egg_from_sheep_spawn_block",
+      "silverfish_spawn_egg_from_silverfish_spawn_block",
+      "skate_spawn_egg_from_ore_skate",
+      "skeleton_spawn_egg_from_skeleton_spawn_block",
+      "slime_spawn_egg_from_slime_spawn_block",
+      "snow_golem_spawn_egg_from_snow_golem_spawn_block",
+      "spider_driver_spawn_egg_from_spider_driver_spawn_block",
+      "spider_spawn_egg_from_spider_spawn_block",
+      "spit_bug_spawn_egg_from_spit_bug_spawn_block",
+      "spyro_spawn_egg_from_spyro_spawn_block",
+      "squid_spawn_egg_from_squid_spawn_block",
+      "stink_bug_spawn_egg_from_stink_bug_spawn_block",
+      "stinky_spawn_egg_from_stinky_spawn_block",
+      "terrible_terror_spawn_egg_from_terrible_terror_spawn_block",
+      "the_king_spawn_egg_from_the_king_spawn_block",
+      "the_queen_spawn_egg_from_the_queen_spawn_block",
+      "trex_spawn_egg_from_trex_spawn_block",
+      "triffid_spawn_egg_from_triffid_spawn_block",
+      "trooper_bug_spawn_egg_from_trooper_bug_spawn_block",
+      "tshirt_spawn_egg_from_tshirt_spawn_block",
+      "urchin_spawn_egg_from_ore_urchin",
+      "velocity_raptor_spawn_egg_from_velocity_raptor_spawn_block",
+      "villager_spawn_egg_from_villager_spawn_block",
+      "vortex_spawn_egg_from_ore_vortex",
+      "water_dragon_spawn_egg_from_water_dragon_spawn_block",
+      "whale_spawn_egg_from_ore_whale",
+      "witch_spawn_egg_from_witch_spawn_block",
+      "wither_skeleton_spawn_egg_from_wither_skeleton_spawn_block",
+      "wither_spawn_egg_from_wither_spawn_block",
+      "wolf_spawn_egg_from_wolf_spawn_block",
+      "worm_large_spawn_egg_from_worm_large_spawn_block",
+      "worm_medium_spawn_egg_from_worm_medium_spawn_block",
+      "worm_small_spawn_egg_from_worm_small_spawn_block",
+      "zombie_spawn_egg_from_zombie_spawn_block",
+      "zombified_piglin_spawn_egg_from_zombified_piglin_spawn_block"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:water_bucket"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.egg_scrambler.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.egg_scrambler.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

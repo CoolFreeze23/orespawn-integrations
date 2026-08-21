@@ -1,0 +1,106 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pandorasbox"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "effect_creator": {
+    "time": {
+      "min": 5,
+      "max": 10,
+      "type": "minecraft:linear"
+    },
+    "number": {
+      "values": [
+        2,
+        3,
+        4
+      ],
+      "weights": [
+        80,
+        40,
+        5
+      ],
+      "type": "minecraft:weighted"
+    },
+    "spawn_from_effect_center": {
+      "guaranteed": true,
+      "type": "minecraft:constant"
+    },
+    "entities": [
+      {
+        "entity": "orespawn:velocity_raptor",
+        "min_count": 3,
+        "max_count": 6,
+        "weight": 100.0
+      },
+      {
+        "entity": "orespawn:alosaurus",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 60.0
+      },
+      {
+        "entity": "orespawn:baryonyx",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 55.0
+      },
+      {
+        "entity": "orespawn:cryolophosaurus",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 50.0
+      },
+      {
+        "entity": "orespawn:pointysaurus",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 45.0
+      },
+      {
+        "entity": "orespawn:nastysaurus",
+        "min_count": 2,
+        "max_count": 3,
+        "weight": 35.0
+      },
+      {
+        "entity": "orespawn:trex",
+        "min_count": 1,
+        "max_count": 2,
+        "weight": 15.0
+      }
+    ],
+    "value_throw": {
+      "throw_strength_horizontal": {
+        "min": 0.1,
+        "max": 0.4,
+        "type": "minecraft:linear"
+      },
+      "throw_strength_vertical": {
+        "min": 0.2,
+        "max": 1.0,
+        "type": "minecraft:linear"
+      }
+    },
+    "value_spawn": {
+      "spawn_range": {
+        "min": 8.0,
+        "max": 30.0,
+        "type": "minecraft:linear"
+      },
+      "spawn_shift": {
+        "value": 0.0,
+        "type": "minecraft:constant"
+      }
+    },
+    "type": "pandorasbox:spawn_entities"
+  },
+  "positive": false,
+  "type": "minecraft:positive_or_negative"
+}

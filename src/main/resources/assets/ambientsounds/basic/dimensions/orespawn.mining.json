@@ -1,0 +1,71 @@
+{
+    "name": "orespawn.mining",
+    "dimension-names": [
+        "orespawn:mining"
+    ],
+    "rain": false,
+    "storm": false,
+    "biome-selector": {
+        "always": false
+    },
+    "regions": [
+        {
+            "name": "orespawn.mining.shafts",
+            "bad-regions": [
+                "cave.ambience"
+            ],
+            "sounds": [
+                {
+                    "name": "mining-cave",
+                    "category": "cave",
+                    "files": [
+                        "ambientsounds:cave.cave1",
+                        "ambientsounds:cave.cave2",
+                        "ambientsounds:cave.cave3"
+                    ],
+                    "length": {
+                        "min": 400,
+                        "max": 700
+                    },
+                    "volume": 0.5,
+                    "transition": 200
+                },
+                {
+                    "name": "mining-drips",
+                    "category": "cave",
+                    "files": [
+                        "ambientsounds:cave.cave-water1",
+                        "ambientsounds:cave.cave-water2",
+                        "ambientsounds:cave.cave-water3",
+                        "ambientsounds:cave.cave-water4",
+                        "ambientsounds:cave.cave-water5"
+                    ],
+                    "length": {
+                        "min": 400,
+                        "max": 700
+                    },
+                    "volume": 0.4,
+                    "transition": 200
+                },
+                {
+                    "name": "mining-cavern",
+                    "category": "cave",
+                    "files": [
+                        "ambientsounds:cave.cave-large1",
+                        "ambientsounds:cave.cave-large2"
+                    ],
+                    "length": {
+                        "min": 400,
+                        "max": 700
+                    },
+                    "pause": {
+                        "min": 200,
+                        "max": 1000
+                    },
+                    "volume": 0.35,
+                    "transition": 200
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Bosses",
+  "description": "Titans with health bars. How to find them, how to wake them, and how to maybe outlive them.",
+  "icon": "orespawn:big_bertha",
+  "flag": "mod:orespawn",
+  "sortnum": 3
+}

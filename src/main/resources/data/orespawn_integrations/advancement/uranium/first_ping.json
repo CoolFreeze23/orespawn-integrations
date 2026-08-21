@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "hbmsntm"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "uranium"
+    }
+  ],
+  "parent": "orespawn_integrations:uranium/root",
+  "criteria": {
+    "witnessed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "witnessed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "hbmsntm:geiger_counter"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.uranium.first_ping.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.uranium.first_ping.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 50
+  }
+}

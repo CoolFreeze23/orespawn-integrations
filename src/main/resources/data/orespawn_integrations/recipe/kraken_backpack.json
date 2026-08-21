@@ -1,0 +1,38 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "travelersbackpack"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        },
+        {
+            "type": "orespawn_integrations:thread_enabled",
+            "thread": "big_game"
+        }
+    ],
+    "type": "travelersbackpack:backpack_shaped",
+    "category": "misc",
+    "key": {
+        "T": {
+            "item": "orespawn:kraken_tooth"
+        },
+        "S": {
+            "item": "orespawn:sea_monster_scale"
+        },
+        "D": {
+            "item": "travelersbackpack:standard"
+        }
+    },
+    "pattern": [
+        "TST",
+        "SDS",
+        "TST"
+    ],
+    "result": {
+        "count": 1,
+        "id": "orespawn_integrations:kraken_backpack"
+    }
+}

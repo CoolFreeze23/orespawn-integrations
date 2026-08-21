@@ -1,0 +1,33 @@
+{
+  "name": "Creature Kinship",
+  "icon": "minecraft:bone",
+  "category": "orespawn_integrations:living_world",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "OreSpawn happened, and the world's creatures have opinions about it. Village guards drill against its menaces, dogs celebrate its victories, and two ecosystems quietly merged their food chains.$(p)None of it asks anything of you. The world is simply participating now."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Standing Orders",
+      "text": "Village guards ship with OreSpawn's menaces already on the target list — rats, stinkies, leaf monsters, and aliens get met at the gate — and guards can spawn wearing ruby or amethyst plate from the pack's own armory.$(p)When a Royal boss falls within 48 blocks of a garrison, they salute: crossbow guards fire two or three celebratory rockets skyward, shield guards raise shields for a solemn three seconds, and the unarmed manage a happy hop. Boss kills draw a crowd now."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Victory Backflips",
+      "text": "The moment a boss celebration fires, every dog within 48 blocks does a backflip — staggered, so a pack of dogs reads as a wave. That's it. That's the feature this pack will be remembered for.$(p)Bring a Guard Dog-talent companion to a Royal boss kill — dog and owner both within 32 blocks when it falls — and the hidden $(thing)Big Game Hound$() advancement certifies what you already knew. Who's a good boy? Certified."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "One Food Chain",
+      "text": "Naturalist's predators learned the local menu: great white sharks chase gold fish, lions stalk gazelles, and snakes handle our rat problem. Two ecosystems, one lunch schedule.$(p)Peace treaties followed. Every crab in the pack now feeds the crabby patty, and OreSpawn's rice and the dog trainers' rice finally cook in each other's recipes — one shared tag ended the three-crab schism and the two-rice standoff in the same afternoon."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Menagerie Grows",
+      "text": "The zoo wing doubled overnight: seven Naturalist showpieces — Mammoth, Komodo Dragon, Blobfish, Elephant, Giraffe, Great White Shark, and Capybara — each with its own caging advancement, plus a capstone, $(thing)The Menagerie Grows$(), for collecting all seven.$(p)Cage the shark from a boat. Please, from a boat."
+    }
+  ]
+}

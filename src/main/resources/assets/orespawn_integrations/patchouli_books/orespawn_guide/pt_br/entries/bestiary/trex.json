@@ -1,0 +1,19 @@
+{
+  "name": "T-Rex",
+  "icon": "orespawn:trex_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:trex",
+      "scale": 0.6,
+      "text": "Só dente, nada de negociação."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "O T-Rex patrulha as terras quentes em permanente mau humor, achatando cercas, rebanhos e o valor dos imóveis.$(p)Derrube um e guarde o dente — Dentes de T-Rex afiam algumas das melhores armas já forjadas, Big Bertha inclusa.$(p)Se o chão começou a tremer em ritmo, já é tarde demais para ler mais rápido."
+    }
+  ]
+}

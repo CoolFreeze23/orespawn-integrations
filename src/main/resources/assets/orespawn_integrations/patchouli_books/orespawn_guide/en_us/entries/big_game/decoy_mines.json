@@ -1,0 +1,48 @@
+{
+  "name": "Decoy Ore Mines",
+  "icon": "orespawn_integrations:ruby_ore_mine",
+  "category": "orespawn_integrations:big_game",
+  "flag": "mod:securitycraft",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Some ore veins were never ore. A decoy mine is a SecurityCraft mine wearing an OreSpawn costume — ruby, titanium, tiger's eye, or uranium — sitting in your tunnels looking exactly like payday.$(p)Stepping on one is harmless. The trap is greed: the decoy detonates on the final crack of mining progress, because the one thing every raider eventually does to ore is swing at it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:ruby_ore_mine",
+      "recipe2": "orespawn_integrations:titanium_ore_mine"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:tigers_eye_ore_mine",
+      "recipe2": "orespawn_integrations:uranium_ore_mine"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Field Manual",
+      "text": "Shapeless, all four flavors: one real ore block plus one SecurityCraft mine. Each decoy copies its ore's hardness and tool rules, so it mines like the genuine article until the last half-heart of progress.$(p)In your inventory the item admits everything — 'Looks like ore. Isn't.' — and all four sit in SecurityCraft's Block Mines tab. Once placed, the disguise is total. Almost."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/decoy_tell.png"
+      ],
+      "title": "The Tell",
+      "border": true,
+      "text": "The fairness tell: a white mote or two per second drifting off any face open to air, plus a soft tick every eight-odd seconds. Buried decoys stay quiet until someone digs close — exactly when the warning matters."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Counterplay",
+      "text": "Spotted the shimmer? You have options. Right-click with wire cutters and the mine converts, in place, into a Suspicious Ore trophy — that's the Minesweeper advancement, and picking the trophy up earns It Was Never Ore.$(p)Choose violence instead and the blast is tuned for drama over craters: strength 2.8 against TNT's 4.0, no fire, shallow scarring. Survivable, memorable, and in creative mode it never triggers at all."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:suspicious_ore",
+      "title": "Suspicious Ore",
+      "text": "Proof somebody tried to bait you and you out-played them. Breaks by hand, no tool gate, always drops itself — even with the thread toggled off — and displays beautifully next to the pickaxe that nearly did it.$(p)You mined the vein. The vein disagreed. You won anyway."
+    }
+  ]
+}

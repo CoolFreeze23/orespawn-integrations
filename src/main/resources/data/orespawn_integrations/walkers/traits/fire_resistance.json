@@ -1,0 +1,21 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:baby_dragon",
+    "orespawn:basilisk",
+    "orespawn:dragon",
+    "orespawn:spyro",
+    "orespawn:terrible_terror"
+  ],
+  "traits": [
+    {
+      "type": "walkers:mob_effect",
+      "mob_effect": {
+        "id": "minecraft:fire_resistance",
+        "duration": 0,
+        "amplifier": 0
+      },
+      "show_in_inventory": false
+    }
+  ]
+}

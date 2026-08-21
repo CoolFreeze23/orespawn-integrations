@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:mining_biome",
+      "required": false
+    }
+  ]
+}

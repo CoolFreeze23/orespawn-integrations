@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:trex_tooth",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:worm_tooth",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:rock_crystal_blue",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:rock_crystal_green",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:rock_crystal_red",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 24
+        }
+      ]
+    }
+  ]
+}

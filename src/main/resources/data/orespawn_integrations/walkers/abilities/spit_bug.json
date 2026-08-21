@@ -1,0 +1,12 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:spit_bug"
+  ],
+  "ability": {
+    "type": "walkers:throw_potion",
+    "potions": [
+      "minecraft:slowness"
+    ]
+  }
+}

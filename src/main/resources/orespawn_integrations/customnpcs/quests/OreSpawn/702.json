@@ -1,0 +1,52 @@
+{
+    "Id": 702,
+    "ModRev": 18,
+    "Type": 0,
+    "Title": "Miner's Fortune",
+    "Text": "Uranium veins glow faintly in the deep dark, and nine nuggets will fetch a fine price - if the mining dimension does not fetch you first.
+
+Gather 9 Uranium Nuggets.",
+    "CompleteText": "Nine nuggets, still warm. Here - a Tiger's Eye Pickaxe, so the next haul comes up faster.",
+    "CompleterNpc": "",
+    "NextQuestId": -1,
+    "QuestCommand": "",
+    "RandomReward": 0b,
+    "RewardExp": 150,
+    "QuestCompletion": 1,
+    "QuestRepeat": 0,
+    "Items": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "orespawn:uranium_nugget",
+                "count": 9
+            }
+        ]
+    },
+    "LeaveItems": 0b,
+    "IgnoreDamage": 0b,
+    "IgnoreNBT": 1b,
+    "Rewards": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "orespawn:tigers_eye_pickaxe",
+                "count": 1
+            }
+        ]
+    },
+    "QuestFactionPoints": {
+    },
+    "QuestMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    }
+}

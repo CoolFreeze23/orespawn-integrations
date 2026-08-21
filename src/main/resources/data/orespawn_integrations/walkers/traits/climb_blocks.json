@@ -1,0 +1,26 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:cater_killer",
+    "orespawn:cave_fisher",
+    "orespawn:creeping_horror",
+    "orespawn:emperor_scorpion",
+    "orespawn:jeffery",
+    "orespawn:lizard",
+    "orespawn:scorpion",
+    "orespawn:spider_driver",
+    "orespawn:spider_robot",
+    "orespawn:worm_small",
+    "orespawn:worm_medium",
+    "orespawn:worm_large"
+  ],
+  "traits": [
+    {
+      "type": "walkers:climb_blocks",
+      "horizontal_collision": true,
+      "invalid_blocks": [
+        "minecraft:bedrock"
+      ]
+    }
+  ]
+}

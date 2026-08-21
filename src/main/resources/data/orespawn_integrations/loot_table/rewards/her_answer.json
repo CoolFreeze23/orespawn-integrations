@@ -1,0 +1,108 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "bibliocraft"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "girlfriend"
+    }
+  ],
+  "type": "minecraft:advancement_reward",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bibliocraft:written_big_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "bibliocraft:written_big_book_content": {
+                  "title": "Her Answer",
+                  "author": "Your Fiancee",
+                  "generation": 0,
+                  "current_page": 0,
+                  "pages": [
+                    [
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "YES.", "style": {"color": "light_purple", "bold": true}, "size": 30, "mode": "glowing", "alignment": "center"}
+                    ],
+                    [
+                      {"text": "obviously yes.", "style": {}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "what took you so long?", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "rose gold.", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "you remembered.", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "eight gifts, one ring,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "and not a single", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "dandelion mixed up", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "with a poppy. i chose", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "well.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "the boyfriend cried.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "he says he didn't.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "he did.", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "even the prince did a", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "flyover. low and slow,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "like a salute.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "i didn't throw", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "anything.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "now, about that", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "binding ritual in the", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "mages' books.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "study the worn", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "notebook. learn their", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "ways. and one day i'll", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "follow you anywhere -", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "through portals,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "through everything.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "hearts included.", "style": {}, "size": 12, "mode": "normal", "alignment": "center"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "- yours.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "center"},
+                      {"text": "always.", "style": {"color": "dark_purple", "italic": true}, "size": 12, "mode": "normal", "alignment": "center"}
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:heart",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

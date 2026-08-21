@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "railcraft"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "type": "railcraft:crusher",
+  "ingredient": {
+    "item": "orespawn:tigers_eye_ore"
+  },
+  "outputs": [
+    {
+      "probability": 1.0,
+      "result": {
+        "item": "orespawn:tigers_eye_ingot"
+      }
+    },
+    {
+      "probability": 0.35,
+      "result": {
+        "item": "orespawn:tigers_eye_ingot"
+      }
+    }
+  ]
+}

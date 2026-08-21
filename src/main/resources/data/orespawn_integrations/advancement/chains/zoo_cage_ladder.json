@@ -1,0 +1,98 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:menagerie/zoo_built",
+  "criteria": {
+    "zoo_cage_2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:zoo_cage_2"
+          }
+        ]
+      }
+    },
+    "zoo_cage_4": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:zoo_cage_4"
+          }
+        ]
+      }
+    },
+    "zoo_cage_6": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:zoo_cage_6"
+          }
+        ]
+      }
+    },
+    "zoo_cage_8": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:zoo_cage_8"
+          }
+        ]
+      }
+    },
+    "zoo_cage_10": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:zoo_cage_10"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "zoo_cage_2"
+    ],
+    [
+      "zoo_cage_4"
+    ],
+    [
+      "zoo_cage_6"
+    ],
+    [
+      "zoo_cage_8"
+    ],
+    [
+      "zoo_cage_10"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:zoo_cage_10"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.chains.zoo_cage_ladder.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.chains.zoo_cage_ladder.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

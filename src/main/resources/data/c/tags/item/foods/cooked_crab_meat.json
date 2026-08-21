@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:cooked_crab_meat",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_crab_meat",
+      "required": false
+    }
+  ]
+}

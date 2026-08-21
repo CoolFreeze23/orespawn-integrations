@@ -1,0 +1,433 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:landmarks/root",
+  "criteria": {
+    "found_royal_tree_king": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:royal_tree_king"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_royal_tree_queen": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:royal_tree_queen"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_king_altar": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:king_altar"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_queen_altar": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:queen_altar"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_cephadrome_altar": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:cephadrome_altar"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_nightmare_rookery": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:nightmare_rookery"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_mantis_nest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:mantis_nest"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_inca_pyramid": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:inca_pyramid"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_hospital": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:hospital"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_girlfriend_island": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:girlfriend_island"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_monster_island": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:monster_island"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_water_dragon_lair": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:water_dragon_lair"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_basilisk_maze": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:basilisk_maze"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_shadow_dungeon": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:shadow_dungeon"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_wtf_alien_dungeon": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:wtf_alien_dungeon"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_beehive": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:beehive",
+                  "orespawn:small_beehive"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_bouncy_castle": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:bouncy_castle"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_kyuubi_dungeon": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:kyuubi_dungeon"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "found_damsel_in_distress": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": [
+                  "orespawn:damsel_in_distress"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "found_royal_tree_king"
+    ],
+    [
+      "found_royal_tree_queen"
+    ],
+    [
+      "found_king_altar"
+    ],
+    [
+      "found_queen_altar"
+    ],
+    [
+      "found_cephadrome_altar"
+    ],
+    [
+      "found_nightmare_rookery"
+    ],
+    [
+      "found_mantis_nest"
+    ],
+    [
+      "found_inca_pyramid"
+    ],
+    [
+      "found_hospital"
+    ],
+    [
+      "found_girlfriend_island"
+    ],
+    [
+      "found_monster_island"
+    ],
+    [
+      "found_water_dragon_lair"
+    ],
+    [
+      "found_basilisk_maze"
+    ],
+    [
+      "found_shadow_dungeon"
+    ],
+    [
+      "found_wtf_alien_dungeon"
+    ],
+    [
+      "found_beehive"
+    ],
+    [
+      "found_bouncy_castle"
+    ],
+    [
+      "found_kyuubi_dungeon"
+    ],
+    [
+      "found_damsel_in_distress"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:filled_map"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.landmarks.cartographer_of_chaos.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.landmarks.cartographer_of_chaos.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 500
+  }
+}

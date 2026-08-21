@@ -1,0 +1,85 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apotheosis"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        }
+    ],
+    "type": "apotheosis:gem",
+    "constraints": {
+        "dimensions": [
+            "orespawn:chaos",
+            "orespawn:crystal",
+            "orespawn:islands",
+            "orespawn:mining",
+            "orespawn:utopia",
+            "orespawn:village"
+        ]
+    },
+    "min_purity": "flawed",
+    "unique": true,
+    "weights": {
+        "summit": {
+            "quality": 2.0,
+            "weight": 25
+        },
+        "pinnacle": {
+            "quality": 2.0,
+            "weight": 50
+        }
+    },
+    "bonuses": [
+        {
+            "type": "apotheosis:attribute",
+            "attribute": "neoforge:swim_speed",
+            "gem_class": "apotheosis:boots",
+            "operation": "add_multiplied_total",
+            "values": {
+                "flawed": 0.2,
+                "normal": 0.3,
+                "flawless": 0.4,
+                "perfect": 0.6
+            }
+        },
+        {
+            "type": "apotheosis:attribute",
+            "attribute": "minecraft:generic.oxygen_bonus",
+            "gem_class": "apotheosis:helmet",
+            "operation": "add_value",
+            "values": {
+                "flawed": 0.25,
+                "normal": 0.5,
+                "flawless": 0.75,
+                "perfect": 1.0
+            }
+        },
+        {
+            "type": "apotheosis:mob_effect",
+            "gem_class": {
+                "key": "ranged_weapon",
+                "types": [
+                    "apotheosis:bow",
+                    "apotheosis:trident"
+                ]
+            },
+            "mob_effect": "minecraft:slowness",
+            "target": "arrow_target",
+            "values": {
+                "flawless": {
+                    "duration": 100,
+                    "amplifier": 1,
+                    "cooldown": 400
+                },
+                "perfect": {
+                    "duration": 160,
+                    "amplifier": 2,
+                    "cooldown": 400
+                }
+            }
+        }
+    ]
+}

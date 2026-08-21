@@ -1,0 +1,50 @@
+{
+  "name": "The Vault Heist",
+  "icon": "orespawn_integrations:mobzilla_vault_key",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/vault_heist.png"
+      ],
+      "title": "The Vault Heist",
+      "border": true,
+      "text": "Two bosses. Two keys. Two doors that pay out exactly once per burglar."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Keys",
+      "text": "$(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() and the $(l:orespawn_integrations:bosses/kraken)Kraken$() each drop their vault key on death. Every kill, 100% — no begging the loot gods.$(p)The advancement is called $(thing)Keys to the Kingdom$() because subtlety died with the boss."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:mobzilla_vault_key",
+      "title": "Mobzilla Vault",
+      "text": "An ominous blue-flame vault sits on the north edge of the arena's magma centerpiece, cycling a hologram of the goods as you walk up. Right-click with the key and it pays you on the spot.$(p)Only newly generated arenas have one — old arenas predate the security upgrade. Explore fresh chunks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:kraken_vault_key",
+      "title": "Kraken Vault",
+      "text": "The Kraken Lair's vault opens the same way, and its first item never rolls: a guaranteed $(l:orespawn_integrations:modern_wonders/armor_trims)Kraken smithing template$(), plus sea treasure behind it.$(p)Same rule as the arena — freshly generated lairs only."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "House Rules",
+      "text": "Rewards are per player. Everyone who brings a key collects their own payout from the same vault — nobody loots your loot.$(p)One reward each, though: try the same key on the same vault twice and you get the rejection buzz and nothing else. The vault remembers you. Fondly, but firmly."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Take",
+      "text": "Mobzilla's vault: 3-5 rolls of rubies, bottled XP, uranium and titanium in every denomination, godzilla scales — then the headline: $(l:orespawn_integrations:modern_wonders/new_enchantments)Dragon's Breath$() books about 2 in 5, a $(item)Heavy Core$() about 1 in 3, or a netherite ingot.$(p)The Kraken's: kraken teeth, rubies, prismarine, Kraken's Grip books, tridents, hearts of the sea."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Footnotes",
+      "text": "With End Remastered installed, both boss vaults also hold the pack-exclusive Royal Eye — see $(l:orespawn_integrations:living_world/the_eye_hunt)The Eye Hunt$(). YUNG stronghold treasure rooms sell vault-key lottery tickets at trace odds — see $(l:orespawn_integrations:living_world/structure_treasures)Structure Treasures$().$(p)Quest 705, $(thing)Vault Heist$(), pays a bonus for doing all of the above on the record."
+    }
+  ]
+}

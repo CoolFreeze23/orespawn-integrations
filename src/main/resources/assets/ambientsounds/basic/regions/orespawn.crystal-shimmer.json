@@ -1,0 +1,24 @@
+{
+    "name": "orespawn.crystal-shimmer",
+    "biomes": [
+        "orespawn:crystal_plains"
+    ],
+    "sounds": [
+        {
+            "name": "crystal-shimmer",
+            "category": "animal",
+            "files": [
+                "ambientsounds:animals.special-mushroom-fields"
+            ],
+            "volume": 0.4,
+            "length": {
+                "min": 40,
+                "max": 120
+            },
+            "pause": {
+                "min": 500,
+                "max": 2200
+            }
+        }
+    ]
+}

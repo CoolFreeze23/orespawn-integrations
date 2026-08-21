@@ -1,0 +1,111 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:menagerie/farmers_market",
+  "criteria": {
+    "popcorn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:popcorn"
+          }
+        ]
+      }
+    },
+    "butter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:butter"
+          }
+        ]
+      }
+    },
+    "salt": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:salt"
+          }
+        ]
+      }
+    },
+    "buttered_popcorn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:buttered_popcorn"
+          }
+        ]
+      }
+    },
+    "buttered_salted_popcorn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:buttered_salted_popcorn"
+          }
+        ]
+      }
+    },
+    "popcorn_bag": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:popcorn_bag"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "popcorn"
+    ],
+    [
+      "butter"
+    ],
+    [
+      "salt"
+    ],
+    [
+      "buttered_popcorn"
+    ],
+    [
+      "buttered_salted_popcorn"
+    ],
+    [
+      "popcorn_bag"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:popcorn_bag"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.chains.snack_stack.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.chains.snack_stack.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

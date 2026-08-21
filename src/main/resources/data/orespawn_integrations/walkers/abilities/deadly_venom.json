@@ -1,0 +1,13 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:emperor_scorpion",
+    "orespawn:irukandji"
+  ],
+  "ability": {
+    "type": "walkers:throw_potion",
+    "potions": [
+      "minecraft:strong_poison"
+    ]
+  }
+}

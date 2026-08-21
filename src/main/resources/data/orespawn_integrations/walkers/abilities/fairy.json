@@ -1,0 +1,9 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:fairy"
+  ],
+  "ability": {
+    "type": "walkers:clear_effects"
+  }
+}

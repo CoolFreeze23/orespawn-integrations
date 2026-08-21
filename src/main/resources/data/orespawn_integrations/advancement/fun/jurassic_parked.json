@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:menagerie/critter_caged",
+  "criteria": {
+    "caged_trex": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:cage_empty"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:trex"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "caged_trex"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:trex_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.jurassic_parked.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.jurassic_parked.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "The Royal Dragon Egg",
+  "icon": "orespawn_integrations:royal_dragon_egg",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:aether",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:royal_dragon_egg",
+      "text": "One ordinary egg, eight extraordinary scales, and a full day of patience."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:royal_dragon_egg",
+      "text": "Eight $(l:orespawn_integrations:bosses/the_queen)Queen Scales$() pressed around one ordinary chicken egg. The scales do the heavy lifting; the egg mostly signs the paperwork."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Brooding",
+      "text": "Set the egg in the Aether's Incubator and keep the flame fed with ambrosium torches. Brooding takes 24,000 ticks — one full Minecraft day, twenty real minutes, zero shortcuts.$(p)Long incubation, longer loyalty. Pressing the egg earns Royal Brood; the hatching earns Long Live."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Imprint",
+      "text": "The Prince hatches already tamed: he imprints on the nearest face within ten blocks the moment he draws breath. Stand by the incubator for the finale — this is not the moment to go check on the farm.$(p)What walks out is a living trophy that follows you home. The Court considers the matter of succession settled."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:the_prince",
+      "scale": 0.3,
+      "name": "The Prince",
+      "text": "Her $(l:orespawn_integrations:her_side/the_diary)diary$() has strong opinions about his flyovers. He has never once read the reviews."
+    }
+  ]
+}

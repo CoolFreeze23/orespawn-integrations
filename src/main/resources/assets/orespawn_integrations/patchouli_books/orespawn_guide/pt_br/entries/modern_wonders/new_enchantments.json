@@ -1,0 +1,38 @@
+{
+  "name": "Novos Encantamentos",
+  "icon": "minecraft:enchanted_book",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Três novas maneiras de deixar uma espada mal-educada: veneno, tentáculos e fogo. Nenhuma delas tem receita de criação, porque encantamento não se fabrica — se rola na mesa, se saqueia dos $(l:orespawn_integrations:modern_wonders/vault_heist)cofres de chefe$() ou, em um caso brilhante, se infunde direto do urânio bruto.$(p)Os três caem em livros, então a bigorna é sempre uma opção."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Radioativo I-III",
+      "text": "\"Golpes envenenam o alvo. Esgrima à base de urânio: perfeitamente segura para quem empunha, notavelmente menos para todos os outros.\"$(p)Acertos diretos envenenam — 2 segundos no nível I, mais um segundo e um grau de potência por nível. Rola em qualquer mesa de encantamento, altares do Apotheosis inclusos. Para as melhores chances, monte suas estantes com os blocos certos — veja $(l:orespawn_integrations:always_uranium/enchanting_corner)o Canto dos Encantamentos$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Infusão",
+      "text": "Prefere certeza à roleta da mesa? Um altar de encantamento Apothic no talo aceita uma única $(l:orespawn_integrations:ores_gems/uranium)barra de urânio$() e a infunde direto num livro de $(item)Radioativo II$(). Sem apostar XP, sem rerolar — combustível entra, maldade sai.$(p)As notas completas de montagem ficam no $(l:orespawn_integrations:always_uranium/enchanting_corner)Canto dos Encantamentos$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Aperto do Kraken I-II",
+      "text": "\"Golpes retardam o alvo, como se agarrado por tentáculos vindos de algum lugar profundo e nada amistoso.\"$(p)Acertos diretos aplicam lentidão — 1,5 segundo no nível I, mais um segundo e um grau de potência no II. Rola na mesa de encantamento, e o $(l:orespawn_integrations:modern_wonders/vault_heist)cofre do Kraken$() entrega os livros na mão, até o nível II."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Bafo de Dragão I-II",
+      "text": "\"Golpes incendeiam o alvo. O Rei não divide seu fogo por pouco - tesouro de cofre, apenas.\"$(p)Acertos diretos incendeiam — 3 segundos no nível I, 5 no II. Este é um encantamento de tesouro: ele $(bold)nunca$() aparece em mesa de encantamento alguma. Os livros do cofre do Mobzilla e a bigorna são o único caminho, e a bigorna cobra o dobro pelo privilégio."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Cláusula da Maça",
+      "text": "Radioativo e Aperto do Kraken se aplicam a espadas e, sim, à $(item)Maça$() — um esmagamento que envenena ou retarda é exatamente tão justo quanto parece. Bafo de Dragão serve em qualquer arma, mas a maça recusa fogo. Até instrumentos rombudos têm padrões.$(p)Conseguir qualquer equipamento Radioativo concede $(thing)Arsenal Radioativo$(); a missão 706, $(thing)Encantador Lendário$(), compra o seu excedente."
+    }
+  ]
+}

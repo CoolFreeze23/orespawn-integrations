@@ -1,0 +1,89 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pandorasbox"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "tooltip": {
+    "translate": "effect_holder.orespawn_integrations.gem_shower",
+    "fallback": "Gem Shower"
+  },
+  "effect_creator": {
+    "spawns_from_effect_center": {
+      "guaranteed": false,
+      "type": "minecraft:constant"
+    },
+    "value_throw": {
+      "throw_strength_horizontal": {
+        "min": 0.05,
+        "max": 0.2,
+        "type": "minecraft:linear"
+      },
+      "throw_strength_vertical": {
+        "min": 0.2,
+        "max": 1.0,
+        "type": "minecraft:linear"
+      }
+    },
+    "number": {
+      "min": 2,
+      "max": 6,
+      "type": "minecraft:linear"
+    },
+    "ticks_per_item": {
+      "min": 0,
+      "max": 15,
+      "type": "minecraft:linear"
+    },
+    "items": [
+      {
+        "stack": {
+          "id": "orespawn:ruby"
+        },
+        "min_count": 3,
+        "max_count": 10,
+        "weight": 40.0
+      },
+      {
+        "stack": {
+          "id": "minecraft:emerald"
+        },
+        "min_count": 3,
+        "max_count": 10,
+        "weight": 40.0
+      },
+      {
+        "stack": {
+          "id": "orespawn:amethyst_gem"
+        },
+        "min_count": 2,
+        "max_count": 6,
+        "weight": 25.0
+      },
+      {
+        "stack": {
+          "id": "orespawn:tigers_eye_ingot"
+        },
+        "min_count": 1,
+        "max_count": 4,
+        "weight": 15.0
+      },
+      {
+        "stack": {
+          "id": "minecraft:diamond"
+        },
+        "min_count": 1,
+        "max_count": 3,
+        "weight": 10.0
+      }
+    ],
+    "type": "pandorasbox:spawn_items"
+  },
+  "positive": true,
+  "type": "minecraft:positive_or_negative"
+}

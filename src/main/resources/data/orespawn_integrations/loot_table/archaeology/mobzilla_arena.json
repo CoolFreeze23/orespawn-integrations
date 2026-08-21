@@ -1,0 +1,77 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:uranium_nugget",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:titanium_nugget",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ruby",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone_block",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:trex_tooth",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:godzilla_scale",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ingot_uranium",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ingot_titanium",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_pigstep",
+          "weight": 1
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "orespawn_integrations:archaeology/mobzilla_arena"
+}

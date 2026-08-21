@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn_integrations:liquid_uranium",
+      "required": false
+    }
+  ]
+}

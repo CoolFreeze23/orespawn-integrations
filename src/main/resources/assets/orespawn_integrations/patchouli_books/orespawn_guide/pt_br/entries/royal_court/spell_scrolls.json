@@ -1,0 +1,34 @@
+{
+  "name": "Pergaminhos das Escolas dos Chefes",
+  "icon": "irons_spellbooks:scroll",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:irons_spellbooks",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:scroll",
+      "text": "Cada membro da realeza ensina exatamente uma escola. A mensalidade se paga em violência."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Currículo",
+      "text": "O $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() sopra Fogo. O $(l:orespawn_integrations:bosses/kraken)Kraken$() distribui Gelo. O $(l:orespawn_integrations:bosses/the_king)Rei$() arremessa Relâmpago, a $(l:orespawn_integrations:bosses/the_queen)Rainha$() guarda o Sagrado, e o chefe da $(l:orespawn_integrations:bestiary/alien)ninhada alienígena$() acumula Ender.$(p)Desfira você mesmo o golpe fatal — a Corte não avalia trabalho em grupo — e o pergaminho cai pronto para aprender ou negociar."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "As Chances",
+      "text": "O Rei e a Rainha ensinam com mais generosidade: 40% por abate, com pergaminhos rolados a 50-100% do nível máximo da escola. O Mobzilla paga 30% a 40-90%, o Kraken 30% a 30-80%, e o Chefe Alienígena 15% a 20-70%.$(p)Raro o bastante para negociar, comum o bastante para caçar — e Pilhagem adoça todas as tabelas. Pilhagem I eleva o Rei e a Rainha a 45% e o Mobzilla e o Kraken a 35%, +5% por nível seguinte; a ninhada sobe 18, 21, 24."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Prêmio Máximo",
+      "text": "O Rei e a Rainha carregam cada um uma segunda rolagem, separada: 5% fixos de chance de um pergaminho rolado a 90-100% do nível máximo. Esse prêmio quase garantido de nível máximo é a moeda de troca da Corte — o pergaminho que você emoldura, ou o pergaminho que você usa de resgate.$(p)Seu primeiro pergaminho de chefe concede Estudioso dos Pergaminhos. Colecione o currículo."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Gastando",
+      "text": "Leia um pergaminho para aprender a magia na hora, ou guarde-o — as mesmas escolas alimentam os $(l:orespawn_integrations:royal_court/upgrade_orbs)orbes de aprimoramento$() da Corte, porque pergaminhos e orbes são uma ideia só usando dois chapéus.$(p)O equipamento real excedente financia o vício: a $(l:orespawn_integrations:royal_court/court_economy)Mesa de Desfabricação$() o derrete de volta em escamas da rainha."
+    }
+  ]
+}

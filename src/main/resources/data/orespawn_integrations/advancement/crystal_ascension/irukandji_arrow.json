@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:crystal_ascension/crystal_weapons",
+  "criteria": {
+    "has_irukandji_arrow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:irukandji_arrow"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_irukandji_arrow"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:irukandji_arrow"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.irukandji_arrow.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.irukandji_arrow.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

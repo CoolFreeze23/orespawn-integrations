@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:surface_riches/first_ruby",
+  "criteria": {
+    "any_ruby_tool": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "orespawn:ruby_sword",
+              "orespawn:ruby_pickaxe",
+              "orespawn:ruby_axe",
+              "orespawn:ruby_shovel",
+              "orespawn:ruby_hoe"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "any_ruby_tool"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:ruby_sword"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.surface_riches.ruby_arsenal.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.surface_riches.ruby_arsenal.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

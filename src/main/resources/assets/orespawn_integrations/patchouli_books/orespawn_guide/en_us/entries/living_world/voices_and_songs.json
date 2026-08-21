@@ -1,0 +1,28 @@
+{
+  "name": "Voices & Songs",
+  "icon": "minecraft:note_block",
+  "category": "orespawn_integrations:living_world",
+  "flag": "mod:orespawn",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Six dimensions used to sound like silent overworld clones. Then the pack hired a composer, and later a foley artist. Between them, every OreSpawn dimension now has a voice — and a mood you can navigate by with your eyes closed."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Score",
+      "text": "Each dimension carries its own music: Frozen Peaks over the Crystal Dimension's glass meadows, Dripstone Caves in Mining, Soul Sand Valley's moans in Chaos, Meadow over $(l:orespawn_integrations:dimensions/beyond_the_tunnels)Utopia$(), Forest in the Village dimension, Sparse Jungle over the Islands.$(p)Ambience to match: drifting motes in Crystal, ash fall in Chaos, spore blossoms in Utopia. One stagehand's note — music binds at world load, so hear changes on a fresh world load, not a /reload."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Soundscapes",
+      "text": "AmbientSounds layers in the fine grain: cave breath and dripping water through the Mining shafts with a faint geiger tick under it (the real instrument is $(l:orespawn_integrations:always_uranium/geiger_prospecting)Geiger Prospecting$()), a glassy breeze in Crystal, birdsong over Utopia, and a low drone in Chaos you will learn to stop noticing. You won't like learning that.$(p)Cross into the crystal plains or Utopia's meadows and a shimmer layer fades in — the biome border is audible."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Nobody Loots Your Loot",
+      "text": "A note for Lootr worlds: every chest injection in this pack lands on the loot $(thing)table$(), never the placed chest. Inside Lootr's per-player containers, each of you rolls your own — your friend's Miner's Dream did not come out of your share.$(p)That covers the whole $(l:orespawn_integrations:living_world/structure_treasures)treasure tour$() and the $(l:orespawn_integrations:living_world/the_eye_hunt)eye hunt$() alike. Envy remains available; theft does not."
+    }
+  ]
+}

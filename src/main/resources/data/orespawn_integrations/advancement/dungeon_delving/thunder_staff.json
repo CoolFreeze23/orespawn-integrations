@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:dungeon_delving/dungeon_loot",
+  "criteria": {
+    "has_thunder_staff": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:thunder_staff"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_thunder_staff"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:thunder_staff"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.dungeon_delving.thunder_staff.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.dungeon_delving.thunder_staff.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

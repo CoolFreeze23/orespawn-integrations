@@ -1,0 +1,35 @@
+{
+  "name": "Royal Upgrade Orbs",
+  "icon": "irons_spellbooks:upgrade_orb",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:irons_spellbooks",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:upgrade_orb",
+      "text": "Boss materials power magic. The Court presses three orbs of its own."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:royal_fire_orb",
+      "recipe2": "orespawn_integrations:royal_ice_orb",
+      "text": "Eight $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() scales make Fire; eight $(l:orespawn_integrations:bosses/kraken)Kraken$() teeth make Ice. Both wrap a plain upgrade orb."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:royal_mana_orb",
+      "text": "Eight $(l:orespawn_integrations:bestiary/water_dragon)Water Dragon$() scales press the third orb — pure mana, no elemental opinions."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "At the Anvil",
+      "text": "Apply an orb at Iron's Spellbooks' arcane anvil, onto any gear that accepts upgrades:$(p)Royal Fire Orb — +8% fire spell power.$(p)Royal Ice Orb — +8% ice spell power.$(p)Royal Mana Orb — +100 maximum mana.$(p)All three are epic-rarity and ride Iron's Spellbooks' own orb system as pure data — no custom machinery, no surprises."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "One Idea, Two Hats",
+      "text": "$(l:orespawn_integrations:royal_court/spell_scrolls)Scrolls$() and orbs share one advancement branch because they're one idea wearing two hats: the Court's bosses teach the schools, and the Court's materials strengthen them.$(p)Note the currencies: these three run on Mobzilla, Kraken, and Water Dragon parts. Queen scales stay reserved for the $(l:orespawn_integrations:royal_court/royal_dragon_egg)egg$() and the $(l:orespawn_integrations:royal_court/court_economy)treasury$()."
+    }
+  ]
+}

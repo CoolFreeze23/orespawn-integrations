@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "railcraft"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "type": "railcraft:crusher",
+  "ingredient": {
+    "item": "orespawn:ore_ruby"
+  },
+  "outputs": [
+    {
+      "count": 2,
+      "probability": 1.0,
+      "result": {
+        "item": "orespawn:ruby"
+      }
+    },
+    {
+      "probability": 0.5,
+      "result": {
+        "item": "orespawn:ruby"
+      }
+    }
+  ]
+}

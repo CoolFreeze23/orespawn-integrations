@@ -1,0 +1,19 @@
+{
+  "name": "The Other Worlds",
+  "icon": "orespawn:butterfly_spawn_egg",
+  "category": "orespawn_integrations:dimensions",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Utopia & Village",
+      "text": "$(6)Utopia$() is the reward dimension: gentle skies, magic apple trees, and the $(l:orespawn_integrations:bosses/the_king)King Altar$() for whenever peace gets boring.$(p)$(6)The Village Dimension$() (Rainbow Ant) is settled country — streets of villagers who have never met a creeper and would very much like to keep it that way."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Islands & Chaos",
+      "text": "$(6)The Islands$() (Unstable Ant) drift over open sky. Pack spare blocks, watch your step, and raid the monster isles for their vaults.$(p)$(4)Chaos$() (Butterfly) closes the list for a reason: Pitch Blacks, Lurking Terrors and worse own that sky. Arrive armed like you mean it. Leave before it gets personal."
+    }
+  ]
+}

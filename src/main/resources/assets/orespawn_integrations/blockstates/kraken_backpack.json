@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=south": {
+            "model": "orespawn_integrations:block/kraken_backpack"
+        },
+        "facing=east": {
+            "model": "orespawn_integrations:block/kraken_backpack",
+            "y": 270
+        },
+        "facing=west": {
+            "model": "orespawn_integrations:block/kraken_backpack",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "orespawn_integrations:block/kraken_backpack",
+            "y": 180
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "The Mobzilla Statue",
+  "icon": "orespawn_integrations:mobzilla_statue",
+  "category": "orespawn_integrations:world_remembers",
+  "flag": "mod:statues",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:mobzilla_statue",
+      "text": "The pack's worst day, rendered in stone. Desk-sized, for the desk it would have flattened."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mobzilla_statue",
+      "text": "A Zombie Statue re-carved under four Godzilla Scales, three uranium ingots, and a Statue Core. The zombie doesn't mind."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Working Statue",
+      "text": "This is a first-class Statues citizen, not shelf decor. Run it through the Statue Table and it wakes up for a living: the mob-killer upgrade has it quietly cull nearby hostiles, the looting upgrade makes it drip genuine Godzilla Scales, and the spawner upgrade — the flex — summons the actual $(l:orespawn_integrations:bosses/mobzilla)thing$().$(p)Yes, it roars. You knew it would roar."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Uranium Catalyst",
+      "text": "The statue brought a gift for the whole garden: one OreSpawn $(l:orespawn_integrations:ores_gems/uranium)uranium$() ingot on the Statue Table is now a straight alternate route to the mob-killer upgrade for ANY upgradeable statue. Three uranium blocks and an enchanted book buy the rank above it.$(p)A statue armed with raw uranium. Danger looked at it and said it's fine. The statue agrees."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Small Print",
+      "text": "You will never fish this out of an ancient-city chest — the trophy stays behind its catalyst grind, on purpose. Earn the worst day; then display it.$(p)And once placed, the statue always drops itself when broken, even if this thread is later switched off in the config. The world remembers. So does your inventory."
+    }
+  ]
+}

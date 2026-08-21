@@ -1,0 +1,57 @@
+{
+    "Id": 705,
+    "ModRev": 18,
+    "Type": 0,
+    "Title": "Vault Heist",
+    "Text": "Two vaults, two keys. Somewhere out there is a key stamped with Mobzilla's likeness, and another that reeks of the Kraken's lair. I don't need them - I need to know they can be found.
+
+Bring me both vault keys to see. Keep them; whatever waits behind those doors is yours.",
+    "CompleteText": "So they're real. Mobzilla's vault and the Kraken's hoard, waiting on the pair of keys you carry. Take these diamonds - and whatever you find in there, don't tell me what it cost.",
+    "CompleterNpc": "",
+    "NextQuestId": 706,
+    "QuestCommand": "",
+    "RandomReward": 0b,
+    "RewardExp": 500,
+    "QuestCompletion": 1,
+    "QuestRepeat": 0,
+    "Items": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "orespawn_integrations:mobzilla_vault_key",
+                "count": 1
+            },
+            {
+                "Slot": 1b,
+                "id": "orespawn_integrations:kraken_vault_key",
+                "count": 1
+            }
+        ]
+    },
+    "LeaveItems": 1b,
+    "IgnoreDamage": 0b,
+    "IgnoreNBT": 1b,
+    "Rewards": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "minecraft:diamond",
+                "count": 8
+            }
+        ]
+    },
+    "QuestFactionPoints": {
+    },
+    "QuestMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    }
+}

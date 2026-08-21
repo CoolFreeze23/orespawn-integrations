@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "orespawn_integrations:block/suspicious_ore"
+    }
+  }
+}

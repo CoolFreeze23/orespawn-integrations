@@ -1,0 +1,40 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:baby_dragon",
+    "orespawn:bee",
+    "orespawn:brutalfly",
+    "orespawn:butterfly",
+    "orespawn:cephadrome",
+    "orespawn:cliff_racer",
+    "orespawn:cloud_shark",
+    "orespawn:cockateil",
+    "orespawn:dragon",
+    "orespawn:dragonfly",
+    "orespawn:fairy",
+    "orespawn:firefly",
+    "orespawn:gamma_metroid",
+    "orespawn:ghost",
+    "orespawn:ghost_skelly",
+    "orespawn:hercules_beetle",
+    "orespawn:leonopteryx",
+    "orespawn:luna_moth",
+    "orespawn:mosquito",
+    "orespawn:peacock",
+    "orespawn:pitch_black",
+    "orespawn:rotator",
+    "orespawn:ruby_bird",
+    "orespawn:spyro",
+    "orespawn:terrible_terror",
+    "orespawn:the_prince",
+    "orespawn:the_prince_teen",
+    "orespawn:the_prince_adult",
+    "orespawn:the_princess",
+    "orespawn:vortex"
+  ],
+  "traits": [
+    {
+      "type": "walkers:flying"
+    }
+  ]
+}

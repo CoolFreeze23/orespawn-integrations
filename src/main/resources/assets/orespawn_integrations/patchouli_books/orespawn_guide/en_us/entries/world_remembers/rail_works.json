@@ -1,0 +1,33 @@
+{
+  "name": "OreSpawn Rail Works",
+  "icon": "railcraft:reinforced_rail",
+  "category": "orespawn_integrations:world_remembers",
+  "flag": "mod:railcraft",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Railcraft's heavy machinery finally takes OreSpawn contracts. Feed the Crusher whole silk-touched ores and it does the math in public; hand the Rolling Machine titanium and it acts like it has been waiting years. It has.$(p)The full ledger — yields, odds, and one deliberate insult to diamonds — is on the following pages."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Crusher Ledger, p.1",
+      "text": "$(li)Ruby ore: 2 rubies, plus a coin flip on a third$(li)Salt ore: 2 salt, plus a coin flip on 2 more — up to four a block$(li)Tiger's Eye ore: 1 ingot, and 35% odds of a second$(p)$(l:orespawn_integrations:ores_gems/ruby)Ruby$() crushes generous, salt crushes cheap and cheerful, and the machine never asks how you got to the $(l:orespawn_integrations:dimensions/crystal_dimension)Crystal Dimension$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Crusher Ledger, p.2",
+      "text": "$(li)Titanium ore: 1 ingot, 50% for 4 nuggets, 25% for 2 more$(li)Uranium ore: 1 ingot, 50% for 3 nuggets, 20% for 2 more — and a 10% smear of sulfur dust, because industry always leaves something behind$(p)Those two carry the lowest multipliers in the shop, under Railcraft's own diamond rate — deliberately. 'Rarer than diamond' stays true inside a rock crusher."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Rolling Machine",
+      "text": "$(l:orespawn_integrations:ores_gems/titanium)Titanium$() answers back:$(li)Three ingots on the diagonal roll into 16 lengths of rebar$(li)Six ingots flanking three obsidian dust roll into 16 reinforced rails$(p)Steel manages eight either way. The best rail metal in the pack manages double, because it should act like it — and the machine reads the titanium tag, not the label on the smelter."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Rail Baron",
+      "text": "Roll your first reinforced rail and the Rail Baron advancement signs off: industry has acknowledged the ores, and the ores are flattered.$(p)No appetite for laying track? The $(l:orespawn_integrations:living_world/structure_treasures)mineshafts$() already thread titanium through their rails — you can inherit a railway instead of building one. The Rail Works won't judge. Much."
+    }
+  ]
+}

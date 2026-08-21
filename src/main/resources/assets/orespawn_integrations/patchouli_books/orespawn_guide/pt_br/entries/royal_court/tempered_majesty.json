@@ -1,0 +1,29 @@
+{
+  "name": "Majestade Temperada",
+  "icon": "orespawn:royal_guardian_sword",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:cataclysm",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:royal_guardian_sword",
+      "text": "A espada mais forte que o OreSpawn já fez. A Corte olhou para 749 de dano e chamou de rascunho."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Merecendo a Bigorna",
+      "text": "A Bigorna de Fusão Mecânica é a forja de último recurso do Cataclysm, e construir uma custa seis barras de witherita. A witherita cai de exatamente uma criatura — o Harbinger — então ninguém tropeça nesta página por acidente.$(p)Derrube o Harbinger, prense as barras numa bigorna, e a ferraria da Corte está aberta. A bigorna é merecida. Esse é o ponto."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Têmpera",
+      "text": "Coloque sua $(l:orespawn_integrations:bosses/the_king)Espada do Guardião Real$() na bigorna como base e alimente-a com mais uma barra de witherita como adição. O maquinário cuida da cerimônia; a espada volta com atitude nova:$(p)861 de dano, acima dos 749. Um golpe mais rápido. Um título púrpura-real — Espada do Guardião Real Temperada em Witherita — e um brilho permanente à altura."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Que Se Mantém",
+      "text": "Tudo o que importa. Seus encantamentos atravessam a forja intocados, assim como qualquer nome que você deu à lâmina — a Corte aprimora, nunca confisca.$(p)A conquista se chama Majestade Temperada. O Harbinger pagou o metal; você só paga a visita. O equipamento real excedente, por sua vez, tem um $(l:orespawn_integrations:royal_court/court_economy)programa de recompra$()."
+    }
+  ]
+}

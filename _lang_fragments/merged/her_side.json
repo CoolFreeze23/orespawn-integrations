@@ -1,0 +1,23 @@
+{
+  "advancements.orespawn_integrations.her_side.root.title": "Her Side of the Story",
+  "advancements.orespawn_integrations.her_side.root.description": "There is more to her than poppies and thrown shoes. Court her properly and find out.",
+  "advancements.orespawn_integrations.her_side.first_date.title": "First Date",
+  "advancements.orespawn_integrations.her_side.first_date.description": "Bring your girlfriend a real gift - a rose, a sweet, a teddy bear. Not a poppy. She's SEEN poppies.",
+  "advancements.orespawn_integrations.her_side.going_steady.title": "Going Steady",
+  "advancements.orespawn_integrations.her_side.going_steady.description": "Three thoughtful gifts in. She wrote you into the diary - Volume II is yours.",
+  "advancements.orespawn_integrations.her_side.practically_family.title": "Practically Family",
+  "advancements.orespawn_integrations.her_side.practically_family.description": "Six gifts. Even the Boyfriend approves now. Volume III comes with a secret on the last page.",
+  "advancements.orespawn_integrations.her_side.the_question.title": "The Question",
+  "advancements.orespawn_integrations.her_side.the_question.description": "Eight milestones, one rose-gold ring, one answer. You already know what it says.",
+  "advancements.orespawn_integrations.her_side.tome_reader.title": "Tome Reader",
+  "advancements.orespawn_integrations.her_side.tome_reader.description": "Pull the pink one out of a dungeon chest: the Tome of the Girlfriend. Cast it and think of her.",
+  "advancements.orespawn_integrations.her_side.familiar_bound.title": "Wherever You Go",
+  "advancements.orespawn_integrations.her_side.familiar_bound.description": "Bound as a familiar, she follows you anywhere - through portals, through everything.",
+  "message.orespawn_integrations.date_night.thanks.1": "%s loves it! She feels a little stronger.",
+  "message.orespawn_integrations.date_night.thanks.2": "%s hugs the gift tight. Something about her seems tougher now.",
+  "message.orespawn_integrations.date_night.thanks.3": "%s beams at you. She won't forget this.",
+  "message.orespawn_integrations.date_night.already_gifted": "%s already treasures one of those. Try something new.",
+  "message.orespawn_integrations.date_night.ring_too_soon": "%s eyes the ring... not yet. Court her properly first - eight milestones, then ask.",
+  "message.orespawn_integrations.date_night.ring_again": "%s taps her ring finger. Already spoken for - by you.",
+  "message.orespawn_integrations.date_night.ring_accepted": "%s said YES!"
+}

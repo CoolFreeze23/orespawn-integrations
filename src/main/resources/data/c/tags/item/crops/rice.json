@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:rice",
+      "required": false
+    },
+    {
+      "id": "doggytalents:uncooked_rice",
+      "required": false
+    }
+  ]
+}

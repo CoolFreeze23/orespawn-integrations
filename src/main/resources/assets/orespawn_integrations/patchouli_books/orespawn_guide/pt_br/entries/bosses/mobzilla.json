@@ -1,0 +1,36 @@
+{
+  "name": "Mobzilla",
+  "icon": "orespawn:godzilla_spawn_egg",
+  "category": "orespawn_integrations:bosses",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:godzilla",
+      "scale": 0.25,
+      "name": "Mobzilla",
+      "text": "Mostrado a um quarto da escala. Os outros três quartos também estão vindo."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Arena",
+      "text": "Nos ermos e desertos ergue-se nossa colossal Arena do Mobzilla — no máximo uma por região, porque a região faz questão. A fera espera lá dentro, e uma Pedra do Caminho junto ao portão poupa a viagem na próxima tentativa.$(p)A papelada o chama de 'Godzilla'. Os sobreviventes o chamam de Mobzilla. Na maior parte do tempo, só chamam por socorro."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn:godzilla_spawn_block_from_parts",
+      "text": "Nove Partes de Mobzilla enterradas reconstroem seu ovo ressecado — caso uma arena, de algum jeito, não tenha sido suficiente."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Prêmio",
+      "text": "O tesouro do Mobzilla é um absurdo: dezenas de rolagens de espólio de primeira, equipamento Ultimate entre elas, e escamas que forjam a armadura de Mobzilla, rival da linha Real.$(p)Isso é intencional. Um Mobzilla financia um reino — sobreviver à fatura é a parte difícil."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Que Eles Deixam",
+      "text": "A fatura continua crescendo. Todo abate solta a chave do $(l:orespawn_integrations:modern_wonders/vault_heist)cofre ominoso$() da arena e pode render $(l:orespawn_integrations:royal_court/spell_scrolls)pergaminhos de Fogo$(); quatro escamas blindam um $(l:orespawn_integrations:big_game/chitin_band_plating)Colete de Viajante$(), e o couro costura uma $(l:orespawn_integrations:big_game/boss_backpacks)mochila$().$(p)As bruxas talharam seu pior dia em $(l:orespawn_integrations:world_remembers/mobzilla_statue)pedra$() — ou invocam um novo por $(l:orespawn_integrations:world_remembers/summoning_rites)rito$(), tempestade obrigatória."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "O Kraken",
+  "icon": "orespawn:kraken_spawn_egg",
+  "category": "orespawn_integrations:bosses",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:kraken",
+      "scale": 0.4,
+      "text": "Motivo número um de o fundo do oceano não ter mercado imobiliário."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Covil",
+      "text": "Os oceanos profundos agora escondem nosso Covil do Kraken submerso, enrodilhado no leito do mar em volta do inquilino adormecido. Uma Pedra do Caminho espera por perto — úmida, mas funcional.$(p)Leve respiração aquática, passos profundos e força de vontade. O aperto do Kraken despedaça barcos e valentia na mesma medida."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Espólios e Defesa",
+      "text": "A vitória rende Dentes de Kraken — a forja da Big Bertha exige um — e tinta suficiente para assinar suas memórias.$(p)Prefere prevenir? Os blocos de Repelente de Kraken existem, funcionam, e o seu porto os merece. Forre as docas e durma tranquilo."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Que Eles Deixam",
+      "text": "As profundezas pagam dividendos. O abate solta a chave do $(l:orespawn_integrations:modern_wonders/vault_heist)cofre submerso$() do covil — com um $(l:orespawn_integrations:modern_wonders/armor_trims)molde de aplique do Kraken$() garantido lá dentro — e o ocasional $(l:orespawn_integrations:royal_court/spell_scrolls)pergaminho de Gelo$(). O couro costura uma $(l:orespawn_integrations:big_game/boss_backpacks)mochila$() estampada de ventosas.$(p)E bruxas com chuva por cima e oceano por baixo podem chamar outro à tona por $(l:orespawn_integrations:world_remembers/summoning_rites)rito$(). Motivo número dois."
+    }
+  ]
+}

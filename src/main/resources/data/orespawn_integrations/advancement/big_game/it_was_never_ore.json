@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "securitycraft"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "big_game"
+    }
+  ],
+  "parent": "orespawn_integrations:big_game/root",
+  "criteria": {
+    "trophy_claimed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn_integrations:suspicious_ore"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "trophy_claimed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn_integrations:suspicious_ore"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.big_game.it_was_never_ore.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.big_game.it_was_never_ore.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 50
+  }
+}

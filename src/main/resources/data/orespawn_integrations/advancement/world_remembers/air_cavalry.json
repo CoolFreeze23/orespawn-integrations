@@ -1,0 +1,60 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mcheli"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "parent": "orespawn_integrations:world_remembers/root",
+  "criteria": {
+    "aircraft_acquired": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mcheli:ah-64",
+              "mcheli:ec665",
+              "mcheli:a-10",
+              "mcheli:b-2a",
+              "mcheli:mh-53e"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "aircraft_acquired"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "mcheli:ah-64"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.world_remembers.air_cavalry.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.world_remembers.air_cavalry.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 50
+  }
+}

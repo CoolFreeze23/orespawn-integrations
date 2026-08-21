@@ -1,0 +1,23 @@
+{
+  "name": "O Que É o OreSpawn?",
+  "icon": "orespawn:heart",
+  "category": "orespawn_integrations:getting_started",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "O OreSpawn está de volta. O mod lendário dos rubis, dos dinossauros e das escolhas de vida extremamente questionáveis agora percorre o pack inteiro — seus minérios semeados em todos os mundos, seus monstros soltos em cada bioma, seus titãs esperando no fim de tudo.$(p)Este guia é o seu mapa em meio ao caos. Leia antes que o caos leia você."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Como Continuar Vivo",
+      "text": "$(li)Construa muros de verdade. Boa parte do que existe lá fora cava, voa ou cospe.$(li)Cuidado com blocos de spawn enterrados — ovos ressecados ancestrais que chocam quando perturbados, e um tesouro para quem minera ao redor deles.$(li)Não dê tapa na $(l:orespawn_integrations:bestiary/girlfriend)Namorada$().$(li)Não acorde o $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$(). Principalmente o Mobzilla."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Caminho Para Cima",
+      "text": "Comece com equipamento de $(l:orespawn_integrations:ores_gems/ruby)Rubi$(), depois forje a linha Ultimate com $(l:orespawn_integrations:ores_gems/uranium)Urânio$() e $(l:orespawn_integrations:ores_gems/titanium)Titânio$(). O $(l:orespawn_integrations:ores_gems/tigers_eye)Olho de Tigre$() espera em outro mundo por completo.$(p)Os equipamentos das linhas Real e da Rainha não podem ser minerados nem comprados. São arrancados das $(l:orespawn_integrations:bosses/the_king)criaturas coroadas$() dos capítulos finais deste livro."
+    }
+  ]
+}

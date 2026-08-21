@@ -1,0 +1,181 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "naturalist"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "parent": "orespawn_integrations:menagerie/critter_caged",
+  "criteria": {
+    "caged_mammoth": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:cage_empty"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "naturalist:mammoth"
+            }
+          }
+        ]
+      }
+    },
+    "caged_komodo_dragon": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:cage_empty"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "naturalist:komodo_dragon"
+            }
+          }
+        ]
+      }
+    },
+    "caged_blobfish": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:cage_empty"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "naturalist:blobfish"
+            }
+          }
+        ]
+      }
+    },
+    "caged_elephant": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:cage_empty"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "naturalist:elephant"
+            }
+          }
+        ]
+      }
+    },
+    "caged_giraffe": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:cage_empty"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "naturalist:giraffe"
+            }
+          }
+        ]
+      }
+    },
+    "caged_great_white_shark": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:cage_empty"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "naturalist:great_white_shark"
+            }
+          }
+        ]
+      }
+    },
+    "caged_capybara": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:cage_empty"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "naturalist:capybara"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "caged_mammoth"
+    ],
+    [
+      "caged_komodo_dragon"
+    ],
+    [
+      "caged_blobfish"
+    ],
+    [
+      "caged_elephant"
+    ],
+    [
+      "caged_giraffe"
+    ],
+    [
+      "caged_great_white_shark"
+    ],
+    [
+      "caged_capybara"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:caged_mob"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.menagerie.menagerie_grows.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.menagerie.menagerie_grows.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:crystal_ascension/crystal_entry",
+  "criteria": {
+    "has_crystal_workbench": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:crystal_workbench"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crystal_workbench"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:crystal_workbench"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.crystal_workbench.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.crystal_workbench.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

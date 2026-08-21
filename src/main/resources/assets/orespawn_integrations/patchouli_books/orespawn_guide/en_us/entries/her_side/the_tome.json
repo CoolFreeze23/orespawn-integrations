@@ -1,0 +1,30 @@
+{
+  "name": "Tome of the Girlfriend",
+  "icon": "ars_nouveau:caster_tome",
+  "category": "orespawn_integrations:her_side",
+  "flag": "mod:ars_nouveau",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "ars_nouveau:caster_tome",
+      "title": "Tome of the Girlfriend",
+      "text": "A pink caster tome with her name on it, written long ago by a mage who understood. The flavor text reads like a love letter because it is one: \"She takes the field; you keep standing.\""
+    },
+    {
+      "type": "patchouli:text",
+      "title": "What It Casts",
+      "text": "One inscribed spell: $(thing)Self → Summon Decoy (Extend Time) → Heal (Amplify)$().$(p)In practice: a decoy of $(bold)you$() takes the field and holds every hostile eye — with Extend Time, it holds them a good while — and an amplified Heal patches you up behind it. Like every Ars Nouveau caster tome, it casts straight from the book: no mana pool, no setup, no excuses.$(p)It pairs beautifully with the $(l:orespawn_integrations:her_side/the_familiar)familiar's$() jealousy clause: the decoy draws the crowd, and anything that gets through regrets it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Where It Hides",
+      "text": "It cannot be crafted at any bench — the recipe in this addon's files is a registration, teaching Ars Nouveau's tome library that she exists. Three roads lead to it:$(li)$(bold)Ars dungeon treasure$() — Ars salts dungeon chests with tomes from its library, hers included: strongholds, temples, buried places, wherever cobwebs collect$(li)$(bold)A girlfriend's own copy$() — 5% when one falls at a player's hand$(li)$(bold)The diary$() — $(l:orespawn_integrations:her_side/the_diary)Volume II$() narrows the search considerably$(p)The moment it reaches your inventory you earn $(thing)Tome Reader$(). The advancement checks the name on the cover, so no, renaming a spare tome does not count."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Field Notes",
+      "text": "The decoy works on anything that targets by sight — which in this pack is a long and hungry list. Cast it walking into a room you don't trust, cast it mid-boss when the bar isn't moving fast enough, cast it because the Heal alone is worth the page.$(p)Rumor said the tome was lost \"out in the world where the rumors always said it was.\" The rumors were right. They usually are, around here."
+    }
+  ]
+}

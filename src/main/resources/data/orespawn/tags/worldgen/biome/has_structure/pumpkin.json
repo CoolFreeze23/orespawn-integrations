@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "biomesoplenty:pumpkin_patch",
+      "required": false
+    }
+  ]
+}

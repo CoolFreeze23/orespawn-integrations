@@ -1,0 +1,36 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:modern_wonders/chamber_of_trials",
+  "criteria": {
+    "witnessed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "witnessed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:the_prince_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.modern_wonders.royal_escort.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.modern_wonders.royal_escort.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "sends_telemetry_event": false
+}

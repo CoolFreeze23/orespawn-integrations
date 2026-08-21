@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "uranium"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "orespawn:uranium_nugget"
+    },
+    {
+      "item": "orespawn:uranium_nugget"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "orespawn_integrations:uranium_bottle"
+  }
+}

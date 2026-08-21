@@ -1,0 +1,9 @@
+{
+  "asset_name": "queen_scale",
+  "description": {
+    "color": "#C86FC9",
+    "translate": "trim_material.orespawn_integrations.queen_scale"
+  },
+  "ingredient": "orespawn:queen_scale",
+  "item_model_index": 0.75
+}

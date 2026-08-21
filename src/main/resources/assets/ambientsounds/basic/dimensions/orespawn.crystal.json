@@ -1,0 +1,32 @@
+{
+    "name": "orespawn.crystal",
+    "dimension-names": [
+        "orespawn:crystal"
+    ],
+    "rain": false,
+    "storm": false,
+    "biome-selector": {
+        "always": true
+    },
+    "regions": [
+        {
+            "name": "orespawn.crystal.air",
+            "sounds": [
+                {
+                    "name": "crystal-breeze",
+                    "category": "wind",
+                    "files": [
+                        "ambientsounds:wind.light-wind",
+                        "ambientsounds:wind.light-wind2"
+                    ],
+                    "length": {
+                        "min": 1000,
+                        "max": 5000
+                    },
+                    "volume": 0.25,
+                    "transition": 200
+                }
+            ]
+        }
+    ]
+}

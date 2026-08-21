@@ -1,0 +1,15 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        }
+    ],
+    "block": "orespawn:block_titanium",
+    "stats": {
+        "maxEterna": 60,
+        "eterna": 6,
+        "quanta": -3,
+        "arcana": 2
+    }
+}

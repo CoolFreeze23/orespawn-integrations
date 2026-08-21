@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ultimate_craftsman/big_bertha",
+  "criteria": {
+    "crafted_slice": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "orespawn:slice"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crafted_slice"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:slice"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ultimate_craftsman.slice_crafted.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ultimate_craftsman.slice_crafted.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 350
+  }
+}

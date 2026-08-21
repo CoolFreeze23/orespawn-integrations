@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#c:ingots/titanium",
+    "#c:ingots/uranium",
+    "#c:ingots/tigers_eye",
+    "#c:ingots/crystal_pink"
+  ]
+}
