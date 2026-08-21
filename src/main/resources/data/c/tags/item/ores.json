@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#c:ores/amethyst",
+    "#c:ores/crystal_pink",
+    "#c:ores/ruby",
+    "#c:ores/salt",
+    "#c:ores/tigers_eye",
+    "#c:ores/titanium",
+    "#c:ores/uranium"
+  ]
+}

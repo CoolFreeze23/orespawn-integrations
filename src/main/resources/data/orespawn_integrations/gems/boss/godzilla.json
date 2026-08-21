@@ -1,0 +1,88 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apotheosis"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        }
+    ],
+    "type": "apotheosis:gem",
+    "constraints": {
+        "dimensions": [
+            "orespawn:chaos",
+            "orespawn:crystal",
+            "orespawn:islands",
+            "orespawn:mining",
+            "orespawn:utopia",
+            "orespawn:village"
+        ]
+    },
+    "min_purity": "flawed",
+    "unique": true,
+    "weights": {
+        "summit": {
+            "quality": 2.0,
+            "weight": 25
+        },
+        "pinnacle": {
+            "quality": 2.0,
+            "weight": 50
+        }
+    },
+    "bonuses": [
+        {
+            "type": "apotheosis:attribute",
+            "attribute": "minecraft:generic.attack_damage",
+            "gem_class": "apotheosis:melee_weapon",
+            "operation": "add_multiplied_total",
+            "values": {
+                "flawed": 0.1,
+                "normal": 0.15,
+                "flawless": 0.2,
+                "perfect": 0.3
+            }
+        },
+        {
+            "type": "apotheosis:multi_attribute",
+            "desc": "bonus.apotheosis:multi_attr.desc.and",
+            "gem_class": "apotheosis:chestplate",
+            "modifiers": [
+                {
+                    "attribute": "minecraft:generic.armor",
+                    "operation": "add_value",
+                    "values": {
+                        "flawed": 2.0,
+                        "normal": 3.0,
+                        "flawless": 4.0,
+                        "perfect": 6.0
+                    }
+                },
+                {
+                    "attribute": "minecraft:generic.max_health",
+                    "operation": "add_multiplied_total",
+                    "values": {
+                        "flawed": 0.05,
+                        "normal": 0.1,
+                        "flawless": 0.15,
+                        "perfect": 0.2
+                    }
+                }
+            ]
+        },
+        {
+            "type": "apotheosis:attribute",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "gem_class": "apotheosis:helmet",
+            "operation": "add_value",
+            "values": {
+                "flawed": 0.1,
+                "normal": 0.2,
+                "flawless": 0.3,
+                "perfect": 0.4
+            }
+        }
+    ]
+}

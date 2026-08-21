@@ -1,0 +1,92 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ant_farm_frontier/anthill_raider",
+  "criteria": {
+    "ant_block": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "orespawn:ant_block"
+          }
+        ]
+      }
+    },
+    "red_ant_block": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "orespawn:red_ant_block"
+          }
+        ]
+      }
+    },
+    "rainbow_ant_block": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "orespawn:rainbow_ant_block"
+          }
+        ]
+      }
+    },
+    "unstable_ant_block": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "orespawn:unstable_ant_block"
+          }
+        ]
+      }
+    },
+    "termite_block": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "orespawn:termite_block"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ant_block",
+      "red_ant_block",
+      "rainbow_ant_block",
+      "unstable_ant_block",
+      "termite_block"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:red_ant_block"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.ant_block_placed.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.ant_block_placed.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

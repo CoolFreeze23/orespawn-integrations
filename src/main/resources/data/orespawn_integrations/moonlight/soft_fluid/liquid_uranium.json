@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "moonlight"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "uranium"
+    }
+  ],
+  "color": "#4dff2a",
+  "containers": [
+    {
+      "filled": [
+        "orespawn_integrations:uranium_bottle"
+      ],
+      "fill_sound": "minecraft:item.bottle.fill",
+      "empty_sound": "minecraft:item.bottle.empty",
+      "empty": "minecraft:glass_bottle",
+      "capacity": "BOTTLE"
+    }
+  ],
+  "food": {
+    "item": "orespawn_integrations:uranium_bottle"
+  },
+  "still_texture": "moonlight:block/soft_fluids/potion_still",
+  "flowing_texture": "moonlight:block/soft_fluids/potion_flow",
+  "luminosity": 7,
+  "emissivity": 5,
+  "translation_key": "fluid.orespawn_integrations.liquid_uranium"
+}

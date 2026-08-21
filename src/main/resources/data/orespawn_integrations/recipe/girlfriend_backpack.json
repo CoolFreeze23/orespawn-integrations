@@ -1,0 +1,45 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "travelersbackpack"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn_delight"
+        },
+        {
+            "type": "orespawn_integrations:thread_enabled",
+            "thread": "big_game"
+        }
+    ],
+    "type": "travelersbackpack:backpack_shaped",
+    "category": "misc",
+    "key": {
+        "W": {
+            "item": "minecraft:pink_wool"
+        },
+        "P": {
+            "item": "minecraft:poppy"
+        },
+        "C": {
+            "item": "orespawn_delight:heart_box_chocolates"
+        },
+        "D": {
+            "item": "travelersbackpack:standard"
+        }
+    },
+    "pattern": [
+        "WPW",
+        "CDC",
+        "WPW"
+    ],
+    "result": {
+        "count": 1,
+        "id": "orespawn_integrations:girlfriend_backpack"
+    }
+}

@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:crystal_ascension/crystal_entry",
+  "criteria": {
+    "killed_dungeon_beast": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:dungeon_beast"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_dungeon_beast"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:dungeon_beast_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.dungeon_beast_slain.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.dungeon_beast_slain.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

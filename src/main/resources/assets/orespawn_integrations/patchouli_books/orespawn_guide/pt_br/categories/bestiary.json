@@ -1,0 +1,7 @@
+{
+  "name": "Bestiário",
+  "description": "Um censo de campo da fauna do OreSpawn, do meramente faminto ao francamente absurdo.",
+  "icon": "orespawn:trex_spawn_egg",
+  "flag": "mod:orespawn",
+  "sortnum": 2
+}

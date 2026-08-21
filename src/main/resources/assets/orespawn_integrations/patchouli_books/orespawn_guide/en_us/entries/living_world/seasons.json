@@ -1,0 +1,42 @@
+{
+  "name": "Seasons on the Farm",
+  "icon": "sereneseasons:calendar",
+  "category": "orespawn_integrations:living_world",
+  "flag": "mod:sereneseasons",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The world finally has a calendar, and Danger's farm signed up on day one. OreSpawn crops now ripen with the seasons instead of the clock: plant with the calendar and the field cooperates; plant against it and the crop simply waits, unbothered, for you to notice.$(p)No withering, no penalties. The season forgives — it just doesn't negotiate."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "The Crop Calendar",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/seasons_calendar.png"
+      ],
+      "border": true,
+      "text": "Cut this out and nail it to the barn."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Planting by Season",
+      "text": "$(li)Spring — radishes and lettuce.$(li)Summer — corn, tomatoes, and strawberries.$(li)Autumn — quinoa and rice.$(li)All year — the experience, moth, firefly, butterfly, and mosquito plants, which are magic and decline to acknowledge weather.$(p)Out of season a crop pauses its growth entirely, so stagger your fields and something is always coming in."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Climate Zones",
+      "text": "The pack's dimensions are climate-zoned on purpose. The $(l:orespawn_integrations:dimensions/mining_dimension)Mining Dimension$() and the Chaos dimension don't do seasons at all, while $(l:orespawn_integrations:dimensions/beyond_the_tunnels)Utopia$() files as tropical — an eternal growing season on the King's own lawn.$(p)The overworld carries the full four-season cycle, exactly as the calendar item reports it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Seasons Celebrate",
+      "text": "Boss celebrations now read the sky before loading the fireworks: victory volleys launch in the current season's colors — blossom pink and fresh green in spring, gold and clear-sky blue in summer, harvest orange and maple red in autumn, snow white and ice blue in winter.$(p)The celebrations themselves are covered in $(l:orespawn_integrations:modern_wonders/a_reactive_world)A Reactive World$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Season of the King",
+      "text": "When a full season turns — a real turn, not a sub-season shuffle — the Prince takes wing over the overworld to announce it, gliding across the sky near one lucky witness. Being that witness grants the $(thing)Season of the King$() advancement.$(p)If Serene Seasons ever leaves the pack, all of this quietly falls back to the real-world holiday calendar. Nothing breaks. House rules."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "orespawn:ender_knight",
+      "required": false
+    },
+    {
+      "id": "orespawn:ender_reaper",
+      "required": false
+    },
+    {
+      "id": "orespawn:vortex",
+      "required": false
+    },
+    {
+      "id": "orespawn:fairy",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:tower_challenges/robot_lab_found",
+  "criteria": {
+    "has_ray_gun": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:ray_gun"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ray_gun"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:ray_gun"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.tower_challenges.ray_gun_get.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.tower_challenges.ray_gun_get.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

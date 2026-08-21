@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:dungeon_delving/dungeon_loot",
+  "criteria": {
+    "has_big_hammer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:big_hammer"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_big_hammer"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:big_hammer"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.dungeon_delving.big_hammer.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.dungeon_delving.big_hammer.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

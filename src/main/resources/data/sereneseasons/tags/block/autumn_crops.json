@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "orespawn:quinoa_0", "required": false },
+    { "id": "orespawn:quinoa_1", "required": false },
+    { "id": "orespawn:quinoa_2", "required": false },
+    { "id": "orespawn:quinoa_3", "required": false },
+    { "id": "orespawn:rice_plant", "required": false }
+  ]
+}

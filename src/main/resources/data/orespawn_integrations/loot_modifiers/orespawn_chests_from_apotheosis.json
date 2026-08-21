@@ -1,0 +1,61 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "apotheosis"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/battle_tower_dungeon_beast"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/battle_tower_rat"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/battle_tower_rotator"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/battle_tower_urchin"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/battle_tower_vortex"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/ender_castle"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/ender_knight_dungeon"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/challenge_tower_level4"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/challenge_tower_level5"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "orespawn:chests/kyuubi_dungeon"
+        }
+      ]
+    }
+  ],
+  "table": "orespawn_integrations:inject/from_apotheosis"
+}

@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:menagerie/girlfriend_gifted",
+  "criteria": {
+    "gifted_ultimate_sword": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": "orespawn:ultimate_sword"
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "orespawn:girlfriend"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "gifted_ultimate_sword"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:ultimate_sword"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.shiniest_gift.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.shiniest_gift.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enchanted"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "parent": "orespawn_integrations:world_remembers/root",
+  "criteria": {
+    "witnessed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "witnessed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "enchanted:ritual_chalk"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.world_remembers.rite_of_gojira.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.world_remembers.rite_of_gojira.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 50
+  }
+}

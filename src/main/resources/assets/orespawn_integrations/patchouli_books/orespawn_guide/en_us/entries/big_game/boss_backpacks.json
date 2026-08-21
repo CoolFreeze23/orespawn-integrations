@@ -1,0 +1,42 @@
+{
+  "name": "Boss-Hide Backpacks",
+  "icon": "orespawn_integrations:kraken_backpack",
+  "category": "orespawn_integrations:big_game",
+  "flag": "mod:travelersbackpack",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Traveler's Backpack, OreSpawn tailoring: three boss-hide skins with the full feature set intact. You carried the fight to them; they carry your stuff home.$(p)Each one is crafted around a standard backpack — the hide is the upgrade, the engineering underneath is stock, and the strap art shows on your back the moment you wear it."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/backpacks_trio.png"
+      ],
+      "title": "The Collection",
+      "border": true,
+      "text": "Left to right: Mobzilla-Hide in black and purple scale plate, Kraken in teal with sucker prints, Girlfriend's in pink with a heart clasp. The suckers don't do anything. They're suckers."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mobzilla_hide_backpack",
+      "text": "Six Godzilla Scales, two Mobzilla Scale blocks, one standard pack. See $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() about sourcing."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:kraken_backpack",
+      "text": "Four Kraken Teeth, four Sea Monster Scales, one standard pack. The $(l:orespawn_integrations:bosses/kraken)Kraken$() contributes reluctantly."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:girlfriend_backpack",
+      "text": "Pink wool, poppies, and two heart boxes of chocolates from her own kitchen. No OreSpawn Delight in the pack? The grid accepts hearts instead."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Standard Issue, Boss Grade",
+      "text": "Everything a Traveler's Backpack does, these do: full inventory, both side fluid tanks, the sleeping bag, tool slots, and wearable on your back through Curios or Accessories. Tier upgrades apply exactly as they would to a stock pack — bigger storage, bigger tanks, same hide.$(p)Owning any of the three earns Pack Mule Royalty. The pink one also earns a diary mention — see $(l:orespawn_integrations:her_side/date_night)Date Night$()."
+    }
+  ]
+}

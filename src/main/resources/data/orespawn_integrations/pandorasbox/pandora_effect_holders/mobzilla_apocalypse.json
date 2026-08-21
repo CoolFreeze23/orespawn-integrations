@@ -1,0 +1,65 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pandorasbox"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "tooltip": {
+    "translate": "effect_holder.orespawn_integrations.mobzilla_apocalypse",
+    "fallback": "Mobzilla Apocalypse"
+  },
+  "effect_creator": {
+    "entities": [
+      {
+        "entity": "orespawn:godzilla",
+        "min_count": 1,
+        "max_count": 1,
+        "weight": 100.0
+      }
+    ],
+    "value_throw": {
+      "throw_strength_horizontal": {
+        "min": 0.1,
+        "max": 0.4,
+        "type": "minecraft:linear"
+      },
+      "throw_strength_vertical": {
+        "min": 0.2,
+        "max": 1.0,
+        "type": "minecraft:linear"
+      }
+    },
+    "value_spawn": {
+      "spawn_range": {
+        "min": 24.0,
+        "max": 48.0,
+        "type": "minecraft:linear"
+      },
+      "spawn_shift": {
+        "value": 0.0,
+        "type": "minecraft:constant"
+      }
+    },
+    "spawn_from_effect_center": {
+      "guaranteed": false,
+      "type": "minecraft:constant"
+    },
+    "time": {
+      "min": 20,
+      "max": 40,
+      "type": "minecraft:linear"
+    },
+    "number": {
+      "value": 1,
+      "type": "minecraft:constant"
+    },
+    "type": "pandorasbox:spawn_entities"
+  },
+  "chance": 0.005,
+  "type": "minecraft:fixed_chance"
+}

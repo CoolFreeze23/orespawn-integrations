@@ -1,0 +1,39 @@
+{
+  "name": "The Uranium Economy",
+  "icon": "orespawn:ingot_uranium",
+  "category": "orespawn_integrations:always_uranium",
+  "flag": "mod:projecte",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:ingot_uranium",
+      "text": "ProjectE priced it at exactly nine diamonds. The market held."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Reviewed Table",
+      "text": "$(thing)Uranium Ingot$() — 73,728 EMC, nine diamonds on the nose. $(thing)Uranium Nugget$() — 8,192 EMC, exact parity with Aeternalis Fuel. Blocks and nuggets compress and split ninefold, so the ledger balances in every direction.$(p)Every value here is priced as an exchange, never a printer. The dupe audit says so in writing."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Collector Fuel",
+      "text": "Energy Collectors accept uranium in all three sizes — nugget, ingot, and block — as legitimate fuel. With the nugget sitting at exact Aeternalis parity, the collector chain trades fuel for fuel, one to one: Danger's ore joins ProjectE's fuel ladder at the top rung without bending it.$(p)Yes, that means a wall of collectors quietly running on $(l:orespawn_integrations:ores_gems/uranium)Uranium$(). It was always going to."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "EMC Hygiene",
+      "text": "$(l:orespawn_integrations:always_uranium/bottled_uranium)Bottled Uranium$() and the $(l:orespawn_integrations:always_uranium/dirty_arc_reactor)Dirty Arc Reactor$() are pinned EMC-free on purpose. Both craft from EMC-bearing uranium, so without the pin the condenser would quietly become a triple-buff brewery and a reactor mint. It doesn't, and it never will. You're welcome."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Warthog",
+      "text": "This thread's endgame is literally a warthog. An additive MCHeli content pack fields a depleted-uranium-belt $(thing)A-10$() whose GAU-8 resupplies with uranium ingots — and MCHeli matches ammo by path, not namespace, so Danger's uranium and HBM's uranium both feed the belt. Stock aircraft untouched.$(p)There's a hidden advancement in it: $(thing)Warthog Diet$(). Consider this a standing invitation."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Further Reading",
+      "text": "Survival crafting for the A-10 itself lives in $(l:orespawn_integrations:world_remembers/air_cavalry)Air Cavalry$(), and the crusher math for uranium ore in $(l:orespawn_integrations:world_remembers/rail_works)Rail Works$().$(p)The whole chapter answers to the $(thing)threads.uranium$() switch in the config — flip it, reload, and every recipe here politely steps aside."
+    }
+  ]
+}

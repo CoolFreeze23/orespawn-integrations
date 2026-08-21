@@ -1,0 +1,46 @@
+{
+    "Id": 701,
+    "ModRev": 18,
+    "Type": 2,
+    "Title": "Hunt: Mobzilla",
+    "Text": "The ground will not stop shaking, and whole forests are going missing overnight. The old-timers call the beast Mobzilla; the bestiary calls it Godzilla. Either way, it has to die.
+
+Track it down and slay it.",
+    "CompleteText": "You actually killed it. The tremors have stopped. Take Big Bertha - you have more than earned her.",
+    "CompleterNpc": "",
+    "NextQuestId": -1,
+    "QuestCommand": "",
+    "RandomReward": 0b,
+    "RewardExp": 500,
+    "QuestCompletion": 1,
+    "QuestRepeat": 0,
+    "QuestDialogs": [
+        {
+            "Slot": "orespawn:godzilla",
+            "Value": 1
+        }
+    ],
+    "Rewards": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "orespawn:big_bertha",
+                "count": 1
+            }
+        ]
+    },
+    "QuestFactionPoints": {
+    },
+    "QuestMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    }
+}

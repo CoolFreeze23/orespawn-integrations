@@ -1,0 +1,30 @@
+{
+  "name": "The Kraken",
+  "icon": "orespawn:kraken_spawn_egg",
+  "category": "orespawn_integrations:bosses",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:kraken",
+      "scale": 0.4,
+      "text": "Reason number one the deep ocean has no property market."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Lair",
+      "text": "Deep oceans now hide our sunken Kraken Lair, coiled on the seafloor around its sleeping tenant. A Waystone waits nearby — damp, but functional.$(p)Bring water breathing, depth strider, and a will. The Kraken's grip tears apart boats and bravado alike."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Spoils & Defense",
+      "text": "Victory yields Kraken Teeth — Big Bertha's forge demands one — and ink enough to sign your memoirs.$(p)Prefer prevention? Kraken Repellent blocks are real, they work, and your harbor deserves them. Line the docks and sleep soundly."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "What They Leave Behind",
+      "text": "The deep pays dividends. The kill drops a key to the lair's $(l:orespawn_integrations:modern_wonders/vault_heist)sunken vault$() — a guaranteed $(l:orespawn_integrations:modern_wonders/armor_trims)Kraken trim template$() inside — plus the odd $(l:orespawn_integrations:royal_court/spell_scrolls)Ice scroll$(). The hide sews a sucker-printed $(l:orespawn_integrations:big_game/boss_backpacks)backpack$().$(p)And witches with rain overhead and ocean underfoot can call another up by $(l:orespawn_integrations:world_remembers/summoning_rites)rite$(). Reason number two."
+    }
+  ]
+}

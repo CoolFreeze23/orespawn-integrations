@@ -1,0 +1,17 @@
+{
+  "comment": "Thread 1 EMC hygiene (policy 3). Both items are craftable from EMC-bearing uranium, so without a pin the crafting mapper would price them and the condenser would mass-produce a triple-buff drink / an arc reactor. ProjectE's value codec only accepts positive longs or the string 'free' (literal 0 is rejected by IPECodecHelper.positiveLong, verified against ProjectE-1.21.1-PE1.1.0), so 'free' is the blacklist sentinel: the item ends up with no learnable EMC and cannot be produced by transmutation or the condenser. File is deliberately unconditional - the items always register, and the pin must hold even when the uranium thread's recipes are toggled off.",
+  "values": {
+    "before": [
+      {
+        "type": "projecte:item",
+        "emc_value": "free",
+        "id": "orespawn_integrations:uranium_bottle"
+      },
+      {
+        "type": "projecte:item",
+        "emc_value": "free",
+        "id": "orespawn_integrations:dirty_arc_reactor"
+      }
+    ]
+  }
+}

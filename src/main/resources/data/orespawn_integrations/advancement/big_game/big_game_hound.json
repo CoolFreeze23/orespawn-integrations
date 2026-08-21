@@ -1,0 +1,51 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "doggytalents"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "big_game"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "parent": "orespawn_integrations:big_game/root",
+  "criteria": {
+    "witnessed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "witnessed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "doggytalents:training_treat"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.big_game.big_game_hound.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.big_game.big_game_hound.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 50
+  }
+}

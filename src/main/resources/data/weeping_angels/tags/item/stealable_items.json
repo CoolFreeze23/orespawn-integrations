@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "orespawn:ruby",
+      "required": false
+    },
+    {
+      "id": "orespawn:ingot_titanium",
+      "required": false
+    }
+  ]
+}

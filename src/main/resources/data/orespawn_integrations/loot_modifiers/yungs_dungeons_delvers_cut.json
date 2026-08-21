@@ -1,0 +1,57 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "betterdungeons"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterdungeons:skeleton_dungeon/chests/common"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterdungeons:skeleton_dungeon/chests/middle"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterdungeons:small_dungeon/chests/loot_piles"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterdungeons:small_nether_dungeon/chests/common"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterdungeons:zombie_dungeon/chests/common"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterdungeons:zombie_dungeon/chests/special"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterdungeons:zombie_dungeon/chests/tombstone"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterdungeons:spider_dungeon/chests/egg_room"
+        }
+      ]
+    }
+  ],
+  "table": "orespawn_integrations:inject/yungs_dungeons_delvers_cut"
+}

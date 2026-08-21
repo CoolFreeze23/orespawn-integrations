@@ -1,0 +1,10 @@
+{
+  "item.orespawn_integrations.mobzilla_vault_key": "Mobzilla Vault Key",
+  "item.orespawn_integrations.kraken_vault_key": "Kraken Vault Key",
+  "item.orespawn_integrations.kraken_armor_trim_smithing_template": "Smithing Template",
+  "trim_material.orespawn_integrations.ruby": "Ruby Material",
+  "trim_material.orespawn_integrations.uranium": "Uranium Material",
+  "trim_material.orespawn_integrations.titanium": "Titanium Material",
+  "trim_material.orespawn_integrations.queen_scale": "Queen Scale Material",
+  "trim_pattern.orespawn_integrations.kraken": "Kraken Armor Trim"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Pre-Bound Soul Shards",
+  "icon": "soulshards:soul_shard",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:soulshards",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "soulshards:soul_shard",
+      "text": "The Court's welcome gift: sixty-four kills, signed and notarized."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Who Signs",
+      "text": "Four royals can drop a soul shard already bound to them: $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$(), the $(l:orespawn_integrations:bosses/kraken)Kraken$(), the $(l:orespawn_integrations:bosses/the_queen)Queen$(), and the $(l:orespawn_integrations:bestiary/emperor_scorpion)Emperor Scorpion$(). Ten percent per kill, and the killing blow must be yours.$(p)The shard arrives at tier one — 64 of its 1,024 kills already credited. Bound by Blood, says the advancement, and it isn't wrong."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Fine Print",
+      "text": "The remaining 960 kills are still your problem. The grind stays honest; only the introduction is free.$(p)Keep the shard on you and every further kill of its bound boss ticks the counter up the ladder, exactly as Soul Shards has always demanded. The Court signs welcome gifts, not blank checks."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Cage Basics",
+      "text": "Drop the shard into a Soul Cage and it starts producing its bound boss — the cage works from tier one, day one. Feed it more kills and higher tiers spawn faster and meaner.$(p)You are, to be clear, building a machine that dispenses Mobzilla. The Court assumes you have a plan for the output end."
+    }
+  ]
+}

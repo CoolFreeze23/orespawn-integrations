@@ -1,0 +1,28 @@
+{
+  "name": "Provações Melhoradas",
+  "icon": "minecraft:trial_key",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "As câmaras de provação agora contratam mão de obra local. Cerca de uma câmara em três equipa seus geradores com criaturas do OreSpawn em vez do elenco vanilla — mesmas salas, mesmas regras, inquilinos consideravelmente piores.$(p)Só em chunks novos: câmaras geradas antes deste addon mantêm a folha de pagamento antiga. Explore território virgem."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Elenco",
+      "text": "Os geradores corpo a corpo escalam $(thing)Cavaleiros Ender$() e $(thing)Louva-a-Deuses$() — grandes, rápidos e nada impressionados com o seu escudo. Os geradores de combate leve fervilham de $(thing)Escorpiões$() e $(thing)Lurking Terrors$(). O serviço à distância fica com os $(thing)Spit Bugs$(), nas variantes normal e de tiro lento, ambas com pontaria melhor do que deviam."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Salário",
+      "text": "Chaves de provação e chaves ominosas caem exatamente como o vanilla manda — não mexemos na economia dos cofres. Mas os baús de recompensa e os consumíveis dos geradores levam uma pitada de tempero OreSpawn: 2 a 4 pepitas de urânio ou titânio, pipoca salgada na manteiga, raramente uma maçã mágica ou um rubi.$(p)Metade das vezes a pitada é nada. Tempero, não banquete."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Registro em Papel",
+      "text": "Pisar numa câmara concede $(thing)Câmara de Provações$(), o primeiro nó do ramo de conquistas Maravilhas Modernas — nove nós que vão daqui, passando pelo $(l:orespawn_integrations:modern_wonders/vault_heist)assalto ao cofre$(), até a $(l:orespawn_integrations:modern_wonders/armor_trims)alta-costura do Kraken$().$(p)A missão 704, $(thing)As Provações$(), começa o mesmo passeio com contracheque, e depois encadeia na 705 e na 706."
+    }
+  ]
+}

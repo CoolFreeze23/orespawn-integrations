@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:crystal_ascension/crystal_workbench",
+  "criteria": {
+    "has_crystal_furnace": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:crystal_furnace"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crystal_furnace"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:crystal_furnace"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.crystal_furnace.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.crystal_furnace.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

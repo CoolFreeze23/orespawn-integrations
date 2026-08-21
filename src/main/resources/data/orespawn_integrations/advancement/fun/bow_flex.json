@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:surface_riches/ultimate_sword",
+  "criteria": {
+    "drew_ultimate_bow": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "orespawn:ultimate_bow"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "drew_ultimate_bow"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:ultimate_bow"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.bow_flex.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.bow_flex.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

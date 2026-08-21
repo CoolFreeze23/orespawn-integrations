@@ -1,0 +1,18 @@
+{
+  "name": "Alienígena",
+  "icon": "orespawn:alien_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:alien",
+      "text": "Ele ligou para casa. Casa respondeu: pode ficar."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Os Alienígenas chegam armados com pistolas de raios e nenhuma noção de propriedade privada. Onde vários se reúnem, procure a WTF Alien Dungeon acidentada — sim, esse é o nome verdadeiro — e seus destroços muito peculiares.$(p)Um Chefe Alienígena colossal comanda cada local de pouso. Leve cobertura sólida; ele leva um feixe de energia."
+    }
+  ]
+}

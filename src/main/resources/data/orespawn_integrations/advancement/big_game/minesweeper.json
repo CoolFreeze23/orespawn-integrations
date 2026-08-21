@@ -1,0 +1,62 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "securitycraft"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "big_game"
+    }
+  ],
+  "parent": "orespawn_integrations:big_game/root",
+  "criteria": {
+    "mine_defused": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "#orespawn_integrations:decoy_ore_mines"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "securitycraft:wire_cutters"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mine_defused"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "securitycraft:wire_cutters"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.big_game.minesweeper.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.big_game.minesweeper.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

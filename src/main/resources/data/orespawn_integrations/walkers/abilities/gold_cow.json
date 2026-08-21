@@ -1,0 +1,11 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:gold_cow"
+  ],
+  "ability": {
+    "type": "walkers:get_item",
+    "item": "minecraft:gold_nugget",
+    "amount": 1
+  }
+}

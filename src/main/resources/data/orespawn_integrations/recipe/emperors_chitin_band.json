@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "artifacts"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "big_game"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "sss",
+    "geg",
+    "sss"
+  ],
+  "key": {
+    "s": { "item": "orespawn:emperor_scorpion_scale" },
+    "g": { "item": "minecraft:gold_ingot" },
+    "e": { "item": "minecraft:spider_eye" }
+  },
+  "result": {
+    "id": "orespawn_integrations:emperors_chitin_band",
+    "count": 1
+  }
+}

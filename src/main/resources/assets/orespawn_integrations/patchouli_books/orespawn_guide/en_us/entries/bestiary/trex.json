@@ -1,0 +1,19 @@
+{
+  "name": "T-Rex",
+  "icon": "orespawn:trex_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:trex",
+      "scale": 0.6,
+      "text": "All teeth, no negotiating."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The T-Rex patrols the warm wilds in a permanent bad mood, flattening fences, livestock and property values.$(p)Fell one and keep the tooth — T-Rex Teeth edge some of the finest weapons ever forged, Big Bertha included.$(p)If the ground has started thumping rhythmically, it is too late to read faster."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apothic_enchanting"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        },
+        {
+            "type": "orespawn_integrations:thread_enabled",
+            "thread": "uranium"
+        }
+    ],
+    "type": "apothic_enchanting:infusion",
+    "input": {
+        "item": "orespawn:ingot_uranium"
+    },
+    "requirements": {
+        "eterna": 60,
+        "quanta": 85,
+        "arcana": 25
+    },
+    "result": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+            "minecraft:stored_enchantments": {
+                "levels": {
+                    "orespawn_integrations:radioactive": 2
+                }
+            }
+        }
+    }
+}

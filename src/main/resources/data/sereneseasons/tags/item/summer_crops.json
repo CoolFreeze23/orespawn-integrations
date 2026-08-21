@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "orespawn:corn_seed", "required": false },
+    { "id": "orespawn:tomato_seed", "required": false },
+    { "id": "orespawn:strawberry_seed", "required": false }
+  ]
+}

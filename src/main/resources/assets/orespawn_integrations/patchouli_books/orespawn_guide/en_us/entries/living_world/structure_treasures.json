@@ -1,0 +1,44 @@
+{
+  "name": "Structure Treasures",
+  "icon": "orespawn:miners_dream",
+  "category": "orespawn_integrations:living_world",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A whole wave of structure mods rebuilt the world's ruins, and every one of them got the same tenant-improvement package: they build the rooms, Danger stocks them.$(p)What follows is a walking tour of where OreSpawn treasure now hides — highlights only. Exhaustive tables are for people who've stopped enjoying doors."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Dungeon Circuit",
+      "text": "YUNG's dungeon chests cough up $(l:orespawn_integrations:ores_gems/ruby)rubies$(), amethyst, and the rare Miner's Dream. Zombie-crypt tombstones carry graveyard loot — open one on Halloween and a friendly ghost may rise to greet you. The spider dungeon's egg room was never just spiders.$(p)Mineshafts thread $(l:orespawn_integrations:ores_gems/titanium)titanium$() through their rails and wind clear into the $(l:orespawn_integrations:dimensions/mining_dimension)Mining Dimension$(), where they always belonged."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Tombs & Temples",
+      "text": "The pharaoh hoarded $(l:orespawn_integrations:ores_gems/tigers_eye)tiger's eye$() — and prying open his tomb can wake an $(l:orespawn_integrations:bestiary/emperor_scorpion)Emperor Scorpion$(). Curses localize.$(p)Ocean monuments display trophies from the pack's sea bosses, plus the kraken repellent that kept the Guardians sleeping. Nether fortress vaults run on $(l:orespawn_integrations:ores_gems/uranium)uranium$() and enshrine the Nether Lost, and witch huts stock brewing oddities no vanilla witch could source."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Stronghold",
+      "text": "YUNG's strongholds answered to the Ender Knight — the armoury proves it, ender-pearl blocks and all. The grand library shelves $(l:orespawn_integrations:getting_started/the_guide)this very book$(), because librarians have taste.$(p)And the treasure room sells lottery tickets: roughly one chest in fifty holds a genuine $(l:orespawn_integrations:modern_wonders/vault_heist)boss vault key$() — the only source in the world that doesn't involve the boss."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Countryside",
+      "text": "Village pantries grow OreSpawn produce, the smith keeps titanium in the back, and the library spreads rumors about the pack's own landmarks. Towns & Towers archaeology digs brush up trex teeth and rock crystal, and coastal outposts keep kraken repellent by the door.$(p)Structory's bandit camps fence stolen rubies, its ruined miner camps prove the prospectors right, the wizard's attic hides a thunder staff, and the lighthouse keeper's rod says Ultimate — he was never fishing for cod."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Fire & Sail",
+      "text": "Incendium's Nether reactor leaks the uranium it always ran on, its lab was bottling the stuff, and downing its minibosses earns a fire-palette salute from the celebration system. Taverns serve pizza and crabby patties off the pack's own menu, while the illager mansion's secret room fences $(l:orespawn_integrations:royal_court/court_economy)Royal contraband$().$(p)The Seven Seas pirate fleet sails these waters to hunt our $(l:orespawn_integrations:bosses/kraken)Kraken$(): treasure holds carry teeth and skate bows, captains chart courses to the Water Dragon's lair, and the deckhands nail kraken repellent to the mast. Learning from them grants $(thing)Pirate's Wisdom$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:miners_dream",
+      "title": "The White Whale",
+      "text": "Pull a Miner's Dream out of somebody else's dungeon and the $(thing)Dungeon Delver$() advancement is yours. Dungeon chests, mineshaft cargo, ruined miner camps — it's out there, and it was always addressed to you."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "moonlight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "amendments"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "uranium"
+    }
+  ],
+  "parent": "orespawn_integrations:uranium/root",
+  "criteria": {
+    "bottoms_up": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "orespawn_integrations:uranium_bottle"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "bottoms_up"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn_integrations:uranium_bottle"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.uranium.uranium_rush.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.uranium.uranium_rush.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

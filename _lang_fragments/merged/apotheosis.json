@@ -1,0 +1,10 @@
+{
+    "affix.orespawn_integrations:melee/mob_effect/irradiated": "Irradiated",
+    "affix.orespawn_integrations:melee/mob_effect/irradiated.suffix": "of Uranium Fever",
+    "affix.orespawn_integrations:armor/attribute/kraken_touched": "Kraken-Touched",
+    "affix.orespawn_integrations:armor/attribute/kraken_touched.suffix": "of the Drowned Deep",
+    "affix.orespawn_integrations:melee/attribute/titanic": "Titanic",
+    "affix.orespawn_integrations:melee/attribute/titanic.suffix": "of Titanium Might",
+    "item.apotheosis.gem.orespawn_integrations:boss/godzilla": "Heart of Godzilla",
+    "item.apotheosis.gem.orespawn_integrations:boss/kraken": "Eye of the Kraken"
+}

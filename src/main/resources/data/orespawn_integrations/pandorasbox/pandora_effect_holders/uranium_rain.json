@@ -1,0 +1,89 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pandorasbox"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "tooltip": {
+    "translate": "effect_holder.orespawn_integrations.uranium_rain",
+    "fallback": "Uranium Rain"
+  },
+  "effect_creator": {
+    "spawns_from_effect_center": {
+      "guaranteed": false,
+      "type": "minecraft:constant"
+    },
+    "value_throw": {
+      "throw_strength_horizontal": {
+        "min": 0.05,
+        "max": 0.2,
+        "type": "minecraft:linear"
+      },
+      "throw_strength_vertical": {
+        "min": 0.2,
+        "max": 1.0,
+        "type": "minecraft:linear"
+      }
+    },
+    "number": {
+      "min": 2,
+      "max": 5,
+      "type": "minecraft:linear"
+    },
+    "ticks_per_item": {
+      "min": 0,
+      "max": 20,
+      "type": "minecraft:linear"
+    },
+    "items": [
+      {
+        "stack": {
+          "id": "orespawn:uranium_nugget"
+        },
+        "min_count": 4,
+        "max_count": 12,
+        "weight": 50.0
+      },
+      {
+        "stack": {
+          "id": "orespawn:ingot_uranium"
+        },
+        "min_count": 2,
+        "max_count": 6,
+        "weight": 40.0
+      },
+      {
+        "stack": {
+          "id": "orespawn:green_goo"
+        },
+        "min_count": 1,
+        "max_count": 3,
+        "weight": 20.0
+      },
+      {
+        "stack": {
+          "id": "orespawn:acid"
+        },
+        "min_count": 1,
+        "max_count": 2,
+        "weight": 15.0
+      },
+      {
+        "stack": {
+          "id": "orespawn:ingot_titanium"
+        },
+        "min_count": 1,
+        "max_count": 3,
+        "weight": 10.0
+      }
+    ],
+    "type": "pandorasbox:spawn_items"
+  },
+  "positive": true,
+  "type": "minecraft:positive_or_negative"
+}

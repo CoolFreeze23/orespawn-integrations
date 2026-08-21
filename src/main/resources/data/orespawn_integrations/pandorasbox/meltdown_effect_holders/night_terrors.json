@@ -1,0 +1,106 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pandorasbox"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "effect_creator": {
+    "time": {
+      "min": 5,
+      "max": 10,
+      "type": "minecraft:linear"
+    },
+    "number": {
+      "values": [
+        2,
+        3,
+        4
+      ],
+      "weights": [
+        80,
+        40,
+        5
+      ],
+      "type": "minecraft:weighted"
+    },
+    "spawn_from_effect_center": {
+      "guaranteed": true,
+      "type": "minecraft:constant"
+    },
+    "entities": [
+      {
+        "entity": "orespawn:creeping_horror",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 100.0
+      },
+      {
+        "entity": "orespawn:terrible_terror",
+        "min_count": 2,
+        "max_count": 5,
+        "weight": 80.0
+      },
+      {
+        "entity": "orespawn:ghost",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 70.0
+      },
+      {
+        "entity": "orespawn:lurking_terror",
+        "min_count": 1,
+        "max_count": 3,
+        "weight": 55.0
+      },
+      {
+        "entity": "orespawn:ghost_skelly",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 50.0
+      },
+      {
+        "entity": "orespawn:pitch_black",
+        "min_count": 1,
+        "max_count": 2,
+        "weight": 25.0
+      },
+      {
+        "entity": "orespawn:ender_reaper",
+        "min_count": 1,
+        "max_count": 2,
+        "weight": 20.0
+      }
+    ],
+    "value_throw": {
+      "throw_strength_horizontal": {
+        "min": 0.1,
+        "max": 0.4,
+        "type": "minecraft:linear"
+      },
+      "throw_strength_vertical": {
+        "min": 0.2,
+        "max": 1.0,
+        "type": "minecraft:linear"
+      }
+    },
+    "value_spawn": {
+      "spawn_range": {
+        "min": 8.0,
+        "max": 30.0,
+        "type": "minecraft:linear"
+      },
+      "spawn_shift": {
+        "value": 0.0,
+        "type": "minecraft:constant"
+      }
+    },
+    "type": "pandorasbox:spawn_entities"
+  },
+  "positive": false,
+  "type": "minecraft:positive_or_negative"
+}

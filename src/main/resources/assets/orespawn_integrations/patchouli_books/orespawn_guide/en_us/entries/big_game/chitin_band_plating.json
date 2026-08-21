@@ -1,0 +1,45 @@
+{
+  "name": "Chitin Band & Plating",
+  "icon": "orespawn:emperor_scorpion_scale",
+  "category": "orespawn_integrations:big_game",
+  "flag": "|mod:artifacts,mod:twilightforest",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "OreSpawn's monsters shed the best material science in the pack, and it would be rude not to wear it. Two projects in this chapter: a venom-loaded band cut from Emperor Scorpion chitin, and vest plating pressed from Mobzilla's own scales.$(p)Both come off the same shopping list — kill something enormous, keep the pieces."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:emperors_chitin_band",
+      "flag": "mod:artifacts",
+      "title": "Emperor's Chitin Band",
+      "text": "An 8% drop from player-killed Emperor Scorpions — the $(l:orespawn_integrations:bestiary/emperor_scorpion)donor$() is house-sized, so bring conviction. Wears in the Artifacts hands slot; Curios and Accessories slots both recognize it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:emperors_chitin_band",
+      "flag": "mod:artifacts",
+      "text": "The patient alternative: six Emperor Scorpion Scales, two gold ingots, one spider eye. Same band, no gambling."
+    },
+    {
+      "type": "patchouli:text",
+      "flag": "mod:artifacts",
+      "title": "The Venom",
+      "text": "While worn, every melee hit envenoms the target: Poison II for 4 seconds, every single hit, on a 5-second cooldown. Venom particles announce the effect and the tooltip spells it out. Claiming a band earns Venom Wristwear.$(p)Short on scorpions? Desert tombs aren't — cracking the pharaoh's hoard can wake an Emperor Scorpion on the spot. See $(l:orespawn_integrations:living_world/structure_treasures)Structure Treasures$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mobzilla_plating",
+      "flag": "mod:twilightforest",
+      "title": "Mobzilla Plating",
+      "text": "Four Godzilla Scales, compass points around a Twilight Forest Traveller's Vest. The grid does the riveting."
+    },
+    {
+      "type": "patchouli:text",
+      "flag": "mod:twilightforest",
+      "title": "The Plating",
+      "text": "The plated vest gains +4 Armor and +0.3 knockback resistance, with tooltip lines to prove it; a grindstone strips the plating whenever you want the featherweight back. Rounding up vest and scales earns Wearing the Boss.$(p)$(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() took the hit so you don't have to. Repeatedly. That is the entire theory of armor."
+    }
+  ]
+}

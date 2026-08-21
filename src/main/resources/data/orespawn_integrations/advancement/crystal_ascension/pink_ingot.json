@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:crystal_ascension/crystal_furnace",
+  "criteria": {
+    "has_pink_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:crystal_pink_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pink_ingot"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:crystal_pink_ingot"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.pink_ingot.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.pink_ingot.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,29 @@
+{
+  "name": "O Reator Arc Sujo",
+  "icon": "orespawn_integrations:dirty_arc_reactor",
+  "category": "orespawn_integrations:always_uranium",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:dirty_arc_reactor",
+      "text": "Oito barras de urânio em anel ao redor de um Bloco de Urânio inteiro. O rótulo diz $(thing)Reator Arc de Urânio$(); todo mundo que constrói um o chama de sujo."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Isso Aqui É Tranquilo",
+      "text": "É um núcleo de reator arc reconstruído em volta de um tarugo de urânio do OreSpawn, e ele se encaixa na bancada de melhoria de trajes do Marvel em qualquer lugar onde o reator arc de diamante entrava. O paládio quase matou o Tony. Isso aqui é tranquilo.$(p)Colocar as mãos em um assina a conquista $(thing)Isso Aqui É Tranquilo$() — e não, ele não tem EMC. É política; veja $(l:orespawn_integrations:always_uranium/uranium_economy)A Economia do Urânio$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Três Trajes, Um Tarugo",
+      "text": "Com o mod do Marvel carregado, três receitas de melhoria de traje aceitam o núcleo sujo na bancada de melhorias.$(p)$(thing)Mark 11$() — traga um peitoral Mark 7, mais três barras de ouro-titânio, duas barras de ouro, uma barra de ferro, um pó de redstone e o reator."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "...e os Outros Dois",
+      "text": "$(thing)Mark 15$() — um peitoral Mark 11, mais quatro barras de titânio, duas barras de ferro, um pó de redstone, um vidro fumê e o reator.$(p)$(thing)Mark 17$() — um peitoral Mark 15, mais duas barras de ouro-titânio, três barras de ouro, uma barra de ferro, um bloco inteiro de redstone e o reator.$(p)Os mesmos trajes que o Marvel sempre vendeu. Só a conta de luz trocou de combustível."
+    }
+  ]
+}

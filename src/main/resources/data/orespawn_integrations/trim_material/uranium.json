@@ -1,0 +1,9 @@
+{
+  "asset_name": "uranium",
+  "description": {
+    "color": "#6DBF2E",
+    "translate": "trim_material.orespawn_integrations.uranium"
+  },
+  "ingredient": "orespawn:ingot_uranium",
+  "item_model_index": 0.55
+}

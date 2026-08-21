@@ -1,0 +1,6 @@
+{
+  "item.orespawn_integrations.uranium_bottle": "Bottled Uranium",
+  "item.orespawn_integrations.dirty_arc_reactor": "Uranium Arc Reactor",
+  "item.orespawn_integrations.dirty_arc_reactor.tooltip": "Palladium nearly killed Tony. This is fine.",
+  "fluid.orespawn_integrations.liquid_uranium": "Liquid Uranium"
+}

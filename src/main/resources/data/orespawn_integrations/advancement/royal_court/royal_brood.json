@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "royal_court"
+    }
+  ],
+  "parent": "orespawn_integrations:royal_court/root",
+  "criteria": {
+    "egg_claimed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn_integrations:royal_dragon_egg"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "egg_claimed"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn_integrations:royal_dragon_egg"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.royal_court.royal_brood.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.royal_court.royal_brood.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

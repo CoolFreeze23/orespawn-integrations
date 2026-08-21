@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:crystal_ascension/crystal_entry",
+  "criteria": {
+    "crystal_chest": {
+      "trigger": "minecraft:player_generates_container_loot",
+      "conditions": {
+        "loot_table": "orespawn:chests/crystal_chest"
+      }
+    },
+    "crystal_chest_maze": {
+      "trigger": "minecraft:player_generates_container_loot",
+      "conditions": {
+        "loot_table": "orespawn:chests/crystal_chest_maze"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crystal_chest",
+      "crystal_chest_maze"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:crystal_crystal"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.crystal_loot.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.crystal_loot.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

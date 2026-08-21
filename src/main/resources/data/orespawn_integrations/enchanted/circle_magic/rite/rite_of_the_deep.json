@@ -1,0 +1,28 @@
+{
+    "neoforge:conditions": [
+        { "type": "neoforge:mod_loaded", "modid": "enchanted" },
+        { "type": "neoforge:mod_loaded", "modid": "orespawn" },
+        { "type": "orespawn_integrations:thread_enabled", "thread": "world_remembers" }
+    ],
+    "items": [
+        { "id": "orespawn:kraken_tooth", "count": 4 },
+        { "id": "enchanted:demonic_blood", "count": 1 },
+        { "id": "enchanted:attuned_stone", "count": 1 }
+    ],
+    "shapes": {
+        "enchanted:medium_circle": "enchanted:otherwhere_chalk"
+    },
+    "power": 6000,
+    "weather": "raining",
+    "factory": {
+        "type": "orespawn_integrations:summon_in_biome",
+        "commands": [
+            [
+                "summon orespawn:kraken ~ ~ ~"
+            ]
+        ],
+        "delay": 0,
+        "biome": "minecraft:is_ocean",
+        "failure_message": "compat.orespawn_integrations.rite.needs_ocean"
+    }
+}

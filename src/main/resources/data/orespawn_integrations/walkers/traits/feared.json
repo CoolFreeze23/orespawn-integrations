@@ -1,0 +1,54 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:alosaurus",
+    "orespawn:baryonyx",
+    "orespawn:basilisk",
+    "orespawn:cryolophosaurus",
+    "orespawn:dungeon_beast",
+    "orespawn:emperor_scorpion",
+    "orespawn:kyuubi",
+    "orespawn:leon",
+    "orespawn:leonopteryx",
+    "orespawn:lurking_terror",
+    "orespawn:mantis",
+    "orespawn:nastysaurus",
+    "orespawn:pointysaurus",
+    "orespawn:scorpion",
+    "orespawn:trex",
+    "orespawn:velocity_raptor"
+  ],
+  "traits": [
+    {
+      "type": "walkers:feared",
+      "fearful": [
+        "minecraft:sheep",
+        "minecraft:cow",
+        "minecraft:mooshroom",
+        "minecraft:pig",
+        "minecraft:chicken",
+        "minecraft:rabbit",
+        "minecraft:goat",
+        "minecraft:horse",
+        "minecraft:donkey",
+        "minecraft:mule",
+        "minecraft:llama",
+        "minecraft:cat",
+        "minecraft:ocelot",
+        "minecraft:fox",
+        "orespawn:gazelle",
+        "orespawn:ostrich",
+        "orespawn:apple_cow",
+        "orespawn:gold_cow",
+        "orespawn:golden_apple_cow",
+        "orespawn:enchanted_apple_cow",
+        "orespawn:crystal_cow",
+        "orespawn:red_cow",
+        "orespawn:beaver",
+        "orespawn:chipmunk",
+        "orespawn:frog",
+        "orespawn:rat"
+      ]
+    }
+  ]
+}

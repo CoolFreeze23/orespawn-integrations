@@ -1,0 +1,14 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:scorpion",
+    "orespawn:sea_viper",
+    "orespawn:triffid"
+  ],
+  "ability": {
+    "type": "walkers:throw_potion",
+    "potions": [
+      "minecraft:poison"
+    ]
+  }
+}

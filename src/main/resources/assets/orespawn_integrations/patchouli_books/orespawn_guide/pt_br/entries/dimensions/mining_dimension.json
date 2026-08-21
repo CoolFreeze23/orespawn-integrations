@@ -1,0 +1,18 @@
+{
+  "name": "A Dimensão de Mineração",
+  "icon": "orespawn:miners_dream",
+  "category": "orespawn_integrations:dimensions",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Desça com uma Formiga Vermelha e entre em um mundo forrado de minério: todo veio do OreSpawn corre mais rico aqui, ao lado de blocos de rubi, lápis-lazúli denso e diamante, esmeralda e ouro turbinados.$(p)Melhor ainda: nosso pack agora bombeia os minérios dos outros mods para esta pedra também — um mundo, todos os recursos. Considere-a a pedreira oficial do pack."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Cuidado com os Moradores",
+      "text": "Poços de mina e fortalezas atravessam as profundezas, e nem tudo que está enterrado é minério — blocos de spawn cheios de mobs e o ocasional Labirinto do Basilisco pontuam o lucro.$(p)Planeje sua Formiga Vermelha de volta. Ou leve um Sonho do Minerador — e não, não vamos estragar a surpresa do que ele faz."
+    }
+  ]
+}

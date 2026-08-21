@@ -1,0 +1,156 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:thunder_staff",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:battle_axe",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:big_hammer",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:rat_sword",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:skate_bow",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:poison_sword",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ruby_sword",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:amethyst_sword",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:rose_sword",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:fairy_sword",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:emerald_sword",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ruby_pickaxe",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:amethyst_pickaxe",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 60
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:amethyst_helmet",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:amethyst_chestplate",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:amethyst_leggings",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:amethyst_boots",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ruby_helmet",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ruby_chestplate",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ruby_leggings",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ruby_boots",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:emerald_helmet",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:emerald_chestplate",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:peacock_helmet",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:peacock_chestplate",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 70
+        }
+      ]
+    }
+  ]
+}

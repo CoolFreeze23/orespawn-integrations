@@ -1,0 +1,57 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_nouveau"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "girlfriend"
+    }
+  ],
+  "parent": "orespawn_integrations:her_side/root",
+  "criteria": {
+    "found_her_tome": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "ars_nouveau:caster_tome",
+            "components": {
+              "minecraft:custom_name": "{\"text\":\"Tome of the Girlfriend\",\"color\":\"dark_purple\",\"italic\":false}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "found_her_tome"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "ars_nouveau:caster_tome"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.her_side.tome_reader.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.her_side.tome_reader.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 50
+  }
+}

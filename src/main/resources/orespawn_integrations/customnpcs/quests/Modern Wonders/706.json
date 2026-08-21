@@ -1,0 +1,57 @@
+{
+    "Id": 706,
+    "ModRev": 18,
+    "Type": 0,
+    "Title": "Enchanter of Legend",
+    "Text": "The old enchanters bound a dragon's breath and a kraken's grip into common books - a lost art, they say. Uranium was the catalyst; a bound book, the vessel.
+
+Deliver one enchanted book and eight uranium nuggets, and I'll show you what legends are made of.",
+    "CompleteText": "A vessel and a catalyst. Give me time and a lead-lined room, and we'll see about those lost enchantments. Rubies for your trouble - four, cut from the Queen's own hills.",
+    "CompleterNpc": "",
+    "NextQuestId": -1,
+    "QuestCommand": "",
+    "RandomReward": 0b,
+    "RewardExp": 300,
+    "QuestCompletion": 1,
+    "QuestRepeat": 0,
+    "Items": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "minecraft:enchanted_book",
+                "count": 1
+            },
+            {
+                "Slot": 1b,
+                "id": "orespawn:uranium_nugget",
+                "count": 8
+            }
+        ]
+    },
+    "LeaveItems": 0b,
+    "IgnoreDamage": 0b,
+    "IgnoreNBT": 1b,
+    "Rewards": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "orespawn:ruby",
+                "count": 4
+            }
+        ]
+    },
+    "QuestFactionPoints": {
+    },
+    "QuestMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    }
+}

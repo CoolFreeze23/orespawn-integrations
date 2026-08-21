@@ -1,0 +1,65 @@
+{
+    "name": "orespawn.islands",
+    "dimension-names": [
+        "orespawn:islands"
+    ],
+    "biome-selector": {
+        "always": false
+    },
+    "regions": [
+        {
+            "name": "orespawn.islands.shore",
+            "sounds": [
+                {
+                    "name": "islands-ocean",
+                    "files": [
+                        "ambientsounds:water.ocean"
+                    ],
+                    "volume": 0.15
+                },
+                {
+                    "name": "islands-breeze",
+                    "category": "wind",
+                    "files": [
+                        "ambientsounds:wind.light-wind",
+                        "ambientsounds:wind.light-wind2"
+                    ],
+                    "length": {
+                        "min": 1000,
+                        "max": 5000
+                    },
+                    "volume": 0.3,
+                    "transition": 200
+                },
+                {
+                    "name": "islands-seagull",
+                    "category": "bird_day",
+                    "files": [
+                        "ambientsounds:animals.seagull"
+                    ],
+                    "pause": {
+                        "min": 750,
+                        "max": 1000
+                    },
+                    "volume": 0.35
+                },
+                {
+                    "name": "islands-seagull-long",
+                    "category": "bird_day",
+                    "files": [
+                        "ambientsounds:animals.seagull-long"
+                    ],
+                    "length": {
+                        "min": 30,
+                        "max": 600
+                    },
+                    "pause": {
+                        "min": 750,
+                        "max": 1000
+                    },
+                    "volume": 0.35
+                }
+            ]
+        }
+    ]
+}

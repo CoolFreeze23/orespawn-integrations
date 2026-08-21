@@ -1,0 +1,52 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:chains/snack_stack",
+  "criteria": {
+    "ate_popcorn_bag": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "orespawn:popcorn_bag"
+        }
+      }
+    },
+    "ate_corn_dog": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "orespawn:corn_dog"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ate_popcorn_bag"
+    ],
+    [
+      "ate_corn_dog"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:corn_dog"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.movie_night.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.movie_night.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

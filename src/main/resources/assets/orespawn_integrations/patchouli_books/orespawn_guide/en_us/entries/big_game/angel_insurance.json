@@ -1,0 +1,34 @@
+{
+  "name": "Angel Insurance",
+  "icon": "weeping_angels:timey_wimey_detector",
+  "category": "orespawn_integrations:big_game",
+  "flag": "mod:weeping_angels",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "weeping_angels:weeping_angel",
+      "text": "Don't blink. It has already priced your rubies."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Policy",
+      "text": "Weeping Angels and OreSpawn now share paperwork — three clauses, all quiet data stitched into the angels' own rulebook: detection, theft, retaliation.$(p)Read the clauses in order. For once in this pack's insurance history, you are the beneficiary."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Clause One — Detection",
+      "text": "The Timey Wimey Detector now pings OreSpawn's teleporting anomalies: Ender Knights, Ender Reapers, the Vortex, and Fairies all register as angel-adjacent physics.$(p)So when the detector starts ticking with no statue in sight, one of Danger's teleporters is working the area. Or there is a statue, and you simply haven't seen it yet. Treat the tick as load-bearing information either way."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Clause Two — Theft",
+      "text": "Angels pickpocket: loose rubies and titanium ingots can vanish from your pockets into theirs. The upside of institutional theft is recovery — an angel that robbed you is carrying your valuables, which converts 'terrifying statue' into 'walking strongbox'.$(p)Fencing stolen rubies is an established economy out there — see $(l:orespawn_integrations:living_world/structure_treasures)Structure Treasures$() for who else deals in them."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Clause Three — Retaliation",
+      "text": "Angels shrug off nearly every weapon ever made. The shortlist of exceptions now includes Big Bertha and the Royal Guardian Sword — ten feet of ruby-edged steel does not need to blink. Felling one earns Don't Blink, Bertha.$(p)Both swords also learned how to move — see $(l:orespawn_integrations:big_game/weapon_movesets)Weapon Move-Sets$() before you go statue-tipping."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_nouveau"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "girlfriend"
+    }
+  ],
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.05
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ars_nouveau:caster_tome",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": "{\"text\":\"Tome of the Girlfriend\",\"color\":\"dark_purple\",\"italic\":false}",
+                "ars_nouveau:tome_caster": {
+                  "current_slot": 0,
+                  "max_slots": 1,
+                  "flavor_text": "She takes the field; you keep standing. A love letter in glyph form.",
+                  "spells": {
+                    "0": {
+                      "name": "Tome of the Girlfriend",
+                      "color": {
+                        "b": 180,
+                        "g": 105,
+                        "id": "ars_nouveau:constant",
+                        "r": 255
+                      },
+                      "particleTimeline": {},
+                      "recipe": [
+                        "ars_nouveau:glyph_self",
+                        "ars_nouveau:glyph_summon_decoy",
+                        "ars_nouveau:glyph_extend_time",
+                        "ars_nouveau:glyph_heal",
+                        "ars_nouveau:glyph_amplify"
+                      ],
+                      "sound": {}
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

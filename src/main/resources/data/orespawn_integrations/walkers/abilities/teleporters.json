@@ -1,0 +1,11 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:ender_knight",
+    "orespawn:ender_reaper",
+    "orespawn:vortex"
+  ],
+  "ability": {
+    "type": "walkers:random_teleportation"
+  }
+}

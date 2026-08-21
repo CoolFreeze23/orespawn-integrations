@@ -1,0 +1,46 @@
+{
+    "Id": 703,
+    "ModRev": 18,
+    "Type": 2,
+    "Title": "Tea with the Queen",
+    "Text": "The Queen does not take visitors, and her dragons do not take prisoners. An invitation to tea, then, delivered at sword-point.
+
+Slay The Queen.",
+    "CompleteText": "Regicide, and before the kettle even boiled. The Royal Guardian Sword is yours by right of conquest.",
+    "CompleterNpc": "",
+    "NextQuestId": 704,
+    "QuestCommand": "",
+    "RandomReward": 0b,
+    "RewardExp": 750,
+    "QuestCompletion": 1,
+    "QuestRepeat": 0,
+    "QuestDialogs": [
+        {
+            "Slot": "orespawn:the_queen",
+            "Value": 1
+        }
+    ],
+    "Rewards": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "orespawn:royal_guardian_sword",
+                "count": 1
+            }
+        ]
+    },
+    "QuestFactionPoints": {
+    },
+    "QuestMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    }
+}

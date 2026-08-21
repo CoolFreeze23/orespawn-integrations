@@ -1,0 +1,19 @@
+{
+  "name": "Dragão-d'Água",
+  "icon": "orespawn:water_dragon_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:water_dragon",
+      "scale": 0.5,
+      "text": "O motivo de o oceano parecer estar te observando."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Os Dragões-d'Água reinam nas profundezas, emergindo de vez em quando para lembrar aos barcos quem emitiu suas licenças. Seus covis pontilham o fundo do mar, abastecidos de tesouros afogados.$(p)Escamas de Dragão-d'Água também aparecem na lista de compras da Big Bertha — porque é claro que a receita menciona 'dragão marinho' em algum lugar."
+    }
+  ]
+}

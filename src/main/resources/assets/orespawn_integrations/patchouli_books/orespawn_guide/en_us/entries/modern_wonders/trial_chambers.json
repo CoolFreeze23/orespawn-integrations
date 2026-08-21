@@ -1,0 +1,28 @@
+{
+  "name": "Trials, Upgraded",
+  "icon": "minecraft:trial_key",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Trial chambers hire local. Roughly one chamber in three now staffs its spawners with OreSpawn creatures instead of the vanilla roster — same rooms, same rules, considerably worse tenants.$(p)New chunks only: chambers generated before this addon keep their old payroll. Explore fresh territory."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Roster",
+      "text": "Melee spawners field $(thing)Ender Knights$() and $(thing)Mantises$() — big, fast, and unimpressed by your shield. Small-melee spawners skitter with $(thing)Scorpions$() and $(thing)Lurking Terrors$(). Ranged duty goes to $(thing)Spit Bugs$(), in regular and slow-firing varieties, both of which aim better than they should."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Pay",
+      "text": "Trial keys and ominous keys drop exactly as vanilla intended — we don't touch the vault economy. But reward chests and spawner consumables get a pinch of OreSpawn salt: 2-4 uranium or titanium nuggets, buttered salted popcorn, rarely a magic apple or a ruby.$(p)About half the time the pinch is nothing at all. Salt, not gravy."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Paper Trail",
+      "text": "Setting foot in a chamber earns $(thing)Chamber of Trials$(), the first node of the Modern Wonders advancement branch — nine nodes running from here through the $(l:orespawn_integrations:modern_wonders/vault_heist)vault heist$() to $(l:orespawn_integrations:modern_wonders/armor_trims)Kraken couture$().$(p)Quest 704, $(thing)The Trials$(), starts the same tour with a paycheck, then chains into 705 and 706."
+    }
+  ]
+}

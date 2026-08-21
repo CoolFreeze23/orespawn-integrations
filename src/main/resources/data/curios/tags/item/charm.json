@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:kraken_repellent",
+      "required": false
+    },
+    {
+      "id": "orespawn:tigers_eye_ingot",
+      "required": false
+    },
+    {
+      "id": "orespawn:godzilla_scale",
+      "required": false
+    },
+    {
+      "id": "orespawn:basilisk_scale",
+      "required": false
+    },
+    {
+      "id": "orespawn:water_dragon_scale",
+      "required": false
+    },
+    "orespawn_integrations:heart_locket"
+  ]
+}

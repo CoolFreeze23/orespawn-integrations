@@ -1,0 +1,19 @@
+{
+  "name": "Water Dragon",
+  "icon": "orespawn:water_dragon_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:water_dragon",
+      "scale": 0.5,
+      "text": "The reason the ocean feels watched."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Water Dragons rule the deep, surfacing occasionally to remind boats who issued their permits. Their lairs pock the seabed, stocked with drowned treasure.$(p)Water Dragon Scales appear on Big Bertha's shopping list too — because of course the recipe says 'sea dragon' on it somewhere."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "The Dirty Arc Reactor",
+  "icon": "orespawn_integrations:dirty_arc_reactor",
+  "category": "orespawn_integrations:always_uranium",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:dirty_arc_reactor",
+      "text": "Eight uranium ingots ringed around a whole Block of Uranium. The label reads $(thing)Uranium Arc Reactor$(); everyone who builds one calls it dirty."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "This Is Fine",
+      "text": "It's an arc reactor core rebuilt around an OreSpawn uranium slug, and it slots into Marvel's suit-upgrading bench anywhere the diamond arc reactor used to go. Palladium nearly killed Tony. This is fine.$(p)Getting your hands on one signs the $(thing)This Is Fine$() advancement — and no, it has no EMC. That's policy; see $(l:orespawn_integrations:always_uranium/uranium_economy)The Uranium Economy$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Three Suits, One Slug",
+      "text": "With the Marvel mod loaded, three suit-upgrade recipes accept the dirty core at the upgrading bench.$(p)$(thing)Mark 11$() — bring a Mark 7 chestplate, plus three gold-titanium ingots, two gold ingots, one iron ingot, one redstone dust, and the reactor."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "...and the Other Two",
+      "text": "$(thing)Mark 15$() — a Mark 11 chestplate, plus four titanium ingots, two iron ingots, one redstone dust, one tinted glass, and the reactor.$(p)$(thing)Mark 17$() — a Mark 15 chestplate, plus two gold-titanium ingots, three gold ingots, one iron ingot, a whole block of redstone, and the reactor.$(p)Same suits Marvel always sold. The power bill just switched fuels."
+    }
+  ]
+}

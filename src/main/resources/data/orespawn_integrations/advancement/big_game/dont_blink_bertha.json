@@ -1,0 +1,55 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "weeping_angels"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "big_game"
+    }
+  ],
+  "parent": "orespawn_integrations:big_game/root",
+  "criteria": {
+    "angel_felled": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "weeping_angels:weeping_angel"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "angel_felled"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:big_bertha"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.big_game.dont_blink_bertha.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.big_game.dont_blink_bertha.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

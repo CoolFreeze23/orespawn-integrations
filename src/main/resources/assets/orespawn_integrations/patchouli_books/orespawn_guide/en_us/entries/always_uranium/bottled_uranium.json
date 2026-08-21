@@ -1,0 +1,29 @@
+{
+  "name": "Bottled Uranium",
+  "icon": "orespawn_integrations:uranium_bottle",
+  "category": "orespawn_integrations:always_uranium",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:uranium_bottle",
+      "text": "One glass bottle, two uranium nuggets. It stacks to sixteen, because one is never enough."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Uranium Rush",
+      "text": "Drink it — yes, even on a full stomach; it's a buff, not a meal — and the $(thing)Uranium Rush$() hits: twenty seconds of $(thing)Glowing$(), $(thing)Night Vision$() and $(thing)Speed II$(), with the empty bottle handed politely back. Not poison. Never poison.$(p)A Nether researcher named Haskov drank the first one and asked for another. The advancement is named after his condition."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Glowing Pot",
+      "text": "Pour a few bottles into an Amendments cauldron and the pot fills with $(thing)Liquid Uranium$() — acid green and genuinely glowing, light for the whole alchemy corner. Right-click the pot with empty glass bottles to draw the drink back out whenever the mood strikes.$(p)This is the intended supply line: brew a pot once, bottle it forever."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "No, the Condenser Can't Have It",
+      "text": "Bottled Uranium carries no EMC, deliberately — the full ledger lives in $(l:orespawn_integrations:always_uranium/uranium_economy)The Uranium Economy$(). The condenser doesn't get to print a triple-buff drink by the stack; you get yours from the glowing pot like a person of culture."
+    }
+  ]
+}

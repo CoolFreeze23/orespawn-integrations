@@ -1,0 +1,24 @@
+{
+  "name": "Ruby",
+  "icon": "orespawn:ruby",
+  "category": "orespawn_integrations:ores_gems",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:ruby",
+      "text": "The stone that started it all — tools, armor, and the binding of this very guide."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Where It Grows",
+      "text": "Ruby veins chase heat, forming near lava below y=50 — search ravine floors and lava lakes. The Nether hides veins of its own, and the $(l:orespawn_integrations:dimensions/mining_dimension)Mining Dimension$() is riddled with them, sometimes as whole blocks of solid ruby.$(p)Our new cross-world veins reach further still: rubies now grow beneath the Twilight Forest and in the Bumblezone's waxen walls."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Ruby Gear",
+      "text": "A full ruby kit — sword, tools, armor — is the intended first step past diamond, and rubies stay common enough to spend freely.$(p)Field tip: follow the lava. The ore literally grows toward it, and one fire resistance potion turns a hazard into a shopping trip."
+    }
+  ]
+}

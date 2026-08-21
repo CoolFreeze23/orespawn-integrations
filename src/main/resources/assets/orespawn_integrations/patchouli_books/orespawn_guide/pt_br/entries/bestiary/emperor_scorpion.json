@@ -1,0 +1,19 @@
+{
+  "name": "Escorpião Imperador",
+  "icon": "orespawn:emperor_scorpion_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:emperor_scorpion",
+      "scale": 0.7,
+      "text": "Grande o bastante para selar. Ambicioso o bastante para experimentar você primeiro."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Um predador de emboscada do tamanho de uma casa, com temperamento curto e, dizem as histórias, uma fraqueza em formato de sela para quem tem paciência de criar um.$(p)Suas placas blindadas sobrevivem a ele: a Escama de Escorpião Imperador é um dos troféus exigidos pela forja da Big Bertha, a maior espada já feita."
+    }
+  ]
+}

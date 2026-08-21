@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "orespawn:big_bertha",
+      "required": false
+    },
+    {
+      "id": "orespawn:royal_guardian_sword",
+      "required": false
+    }
+  ]
+}

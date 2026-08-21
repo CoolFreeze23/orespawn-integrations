@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "orespawn:experience_tree_seed", "required": false },
+    { "id": "orespawn:moth_seed", "required": false },
+    { "id": "orespawn:firefly_seed", "required": false },
+    { "id": "orespawn:butterfly_seed", "required": false },
+    { "id": "orespawn:mosquito_seed", "required": false }
+  ]
+}

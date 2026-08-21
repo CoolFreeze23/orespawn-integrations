@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mcheli"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": {
+      "item": "orespawn:block_titanium"
+    },
+    "U": {
+      "item": "orespawn:ingot_uranium"
+    }
+  },
+  "pattern": [
+    "TTT",
+    "TUT",
+    "T T"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mcheli:a-10"
+  }
+}

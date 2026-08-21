@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:mining_dimension/mining_dim_entry",
+  "criteria": {
+    "has_ultimate_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:ultimate_pickaxe"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ultimate_pickaxe"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:ultimate_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.mining_dimension.ultimate_pickaxe.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.mining_dimension.ultimate_pickaxe.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

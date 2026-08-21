@@ -1,0 +1,174 @@
+{
+  "__comment": "Mobzilla mini-statue, statues-mod scale (~11px tall). Facing north like every statues model; blockstate y-rotations handle the rest. 32x32 texture, UVs in 16-space (1 unit = 2px).",
+  "textures": {
+    "particle": "orespawn_integrations:block/mobzilla_statue",
+    "base": "orespawn_integrations:block/mobzilla_statue"
+  },
+  "elements": [
+    {
+      "__comment": "Legs and hips (wide stance)",
+      "from": [ 5.5, 0, 6.5 ],
+      "to": [ 10.5, 3, 10.5 ],
+      "faces": {
+        "down": { "uv": [ 10, 9, 14, 12 ], "texture": "#base" },
+        "up": { "uv": [ 0, 0, 5, 4 ], "texture": "#base" },
+        "north": { "uv": [ 6, 2, 10, 5 ], "texture": "#base" },
+        "south": { "uv": [ 0, 0, 5, 3 ], "texture": "#base" },
+        "west": { "uv": [ 0, 3, 4, 6 ], "texture": "#base" },
+        "east": { "uv": [ 0, 3, 4, 6 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Torso",
+      "from": [ 6, 3, 7 ],
+      "to": [ 10, 8, 10 ],
+      "faces": {
+        "down": { "uv": [ 0, 3, 4, 6 ], "texture": "#base" },
+        "up": { "uv": [ 0, 0, 4, 3 ], "texture": "#base" },
+        "north": { "uv": [ 6, 0, 10, 5 ], "texture": "#base" },
+        "south": { "uv": [ 0, 0, 4, 5 ], "texture": "#base" },
+        "west": { "uv": [ 0, 0, 3, 5 ], "texture": "#base" },
+        "east": { "uv": [ 3, 0, 6, 5 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Head (amber eyes on the north face)",
+      "from": [ 6.5, 8, 6.5 ],
+      "to": [ 9.5, 11, 9.5 ],
+      "faces": {
+        "down": { "uv": [ 13, 3, 16, 6 ], "texture": "#base" },
+        "up": { "uv": [ 13, 0, 16, 3 ], "texture": "#base" },
+        "north": { "uv": [ 10, 3, 13, 6 ], "texture": "#base" },
+        "south": { "uv": [ 10, 0, 13, 3 ], "texture": "#base" },
+        "west": { "uv": [ 10, 0, 13, 3 ], "texture": "#base" },
+        "east": { "uv": [ 10, 0, 13, 3 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Snout (nostrils on the north face)",
+      "from": [ 7, 8.5, 5 ],
+      "to": [ 9, 10, 6.5 ],
+      "faces": {
+        "down": { "uv": [ 12, 7.5, 14, 9 ], "texture": "#base" },
+        "up": { "uv": [ 12, 6, 14, 7.5 ], "texture": "#base" },
+        "north": { "uv": [ 10, 6, 12, 7.5 ], "texture": "#base" },
+        "south": { "uv": [ 10, 6, 12, 7.5 ], "texture": "#base" },
+        "west": { "uv": [ 12, 7.5, 13.5, 9 ], "texture": "#base" },
+        "east": { "uv": [ 12, 7.5, 13.5, 9 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Tail base",
+      "from": [ 6.75, 0.5, 10.5 ],
+      "to": [ 9.25, 2.75, 13 ],
+      "faces": {
+        "down": { "uv": [ 7, 8, 9.5, 10 ], "texture": "#base" },
+        "up": { "uv": [ 4, 8, 6.5, 10 ], "texture": "#base" },
+        "north": { "uv": [ 4, 6, 6.5, 8.25 ], "texture": "#base" },
+        "south": { "uv": [ 4, 6, 6.5, 8.25 ], "texture": "#base" },
+        "west": { "uv": [ 6.5, 6, 9, 8.25 ], "texture": "#base" },
+        "east": { "uv": [ 6.5, 6, 9, 8.25 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Tail tip",
+      "from": [ 7.25, 0, 12.5 ],
+      "to": [ 8.75, 1.75, 15.25 ],
+      "faces": {
+        "down": { "uv": [ 7, 8, 8.5, 10 ], "texture": "#base" },
+        "up": { "uv": [ 4, 8, 5.5, 10 ], "texture": "#base" },
+        "north": { "uv": [ 4, 6, 5.5, 7.75 ], "texture": "#base" },
+        "south": { "uv": [ 4, 6, 5.5, 7.75 ], "texture": "#base" },
+        "west": { "uv": [ 6.5, 6, 9.25, 7.75 ], "texture": "#base" },
+        "east": { "uv": [ 6.5, 6, 9.25, 7.75 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Dorsal fin, lower plate",
+      "from": [ 7.6, 4, 10 ],
+      "to": [ 8.4, 7, 11.4 ],
+      "faces": {
+        "down": { "uv": [ 0, 9, 1.4, 9.8 ], "texture": "#base" },
+        "up": { "uv": [ 0, 9, 1.4, 9.8 ], "texture": "#base" },
+        "north": { "uv": [ 2, 6, 2.8, 9 ], "texture": "#base" },
+        "south": { "uv": [ 2, 6, 2.8, 9 ], "texture": "#base" },
+        "west": { "uv": [ 0, 6, 1.4, 9 ], "texture": "#base" },
+        "east": { "uv": [ 1.5, 6, 2.9, 9 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Dorsal fin, upper plate",
+      "from": [ 7.6, 7.5, 9 ],
+      "to": [ 8.4, 10, 10.6 ],
+      "faces": {
+        "down": { "uv": [ 0, 9, 1.6, 9.8 ], "texture": "#base" },
+        "up": { "uv": [ 0, 9, 1.6, 9.8 ], "texture": "#base" },
+        "north": { "uv": [ 2, 6, 2.8, 8.5 ], "texture": "#base" },
+        "south": { "uv": [ 2, 6, 2.8, 8.5 ], "texture": "#base" },
+        "west": { "uv": [ 0, 6, 1.6, 8.5 ], "texture": "#base" },
+        "east": { "uv": [ 1.6, 6, 3.2, 8.5 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Left arm (tiny, of course)",
+      "from": [ 5, 4.5, 6.2 ],
+      "to": [ 6, 6.5, 8.2 ],
+      "faces": {
+        "down": { "uv": [ 14, 10, 16, 12 ], "texture": "#base" },
+        "up": { "uv": [ 14, 10, 16, 12 ], "texture": "#base" },
+        "north": { "uv": [ 14, 8, 15, 10 ], "texture": "#base" },
+        "south": { "uv": [ 14, 8, 15, 10 ], "texture": "#base" },
+        "west": { "uv": [ 14, 6, 16, 8 ], "texture": "#base" },
+        "east": { "uv": [ 14, 6, 16, 8 ], "texture": "#base" }
+      }
+    },
+    {
+      "__comment": "Right arm (tiny, of course)",
+      "from": [ 10, 4.5, 6.2 ],
+      "to": [ 11, 6.5, 8.2 ],
+      "faces": {
+        "down": { "uv": [ 14, 10, 16, 12 ], "texture": "#base" },
+        "up": { "uv": [ 14, 10, 16, 12 ], "texture": "#base" },
+        "north": { "uv": [ 14, 8, 15, 10 ], "texture": "#base" },
+        "south": { "uv": [ 14, 8, 15, 10 ], "texture": "#base" },
+        "west": { "uv": [ 14, 6, 16, 8 ], "texture": "#base" },
+        "east": { "uv": [ 14, 6, 16, 8 ], "texture": "#base" }
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ -89, 0, 0 ],
+      "translation": [ 0, -1.9, -3.478 ],
+      "scale": [ 0.5, 0.5, 0.5 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ -89, 0, 0 ],
+      "translation": [ 0, -1.9, -3.478 ],
+      "scale": [ 0.5, 0.5, 0.5 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, 0, 30 ],
+      "translation": [ 2, 3, 0 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 0, 30 ],
+      "translation": [ 2, 3, 0 ]
+    },
+    "gui": {
+      "rotation": [ 19, -150, 0 ],
+      "translation": [ 0, 2.0869, 0 ]
+    },
+    "head": {
+      "translation": [ 0, 14.608, 0 ]
+    },
+    "ground": {
+      "translation": [ 0, 2, 0 ],
+      "scale": [ 0.5, 0.5, 0.5 ]
+    },
+    "fixed": {
+      "translation": [ 0, 5, 1 ],
+      "scale": [ 2, 2, 2 ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "hbmsntm"
+    }
+  ],
+  "type": "neoforge:remove_features",
+  "biomes": "orespawn:crystal_plains",
+  "features": [
+    "hbmsntm:ore_aluminium",
+    "hbmsntm:ore_asbestos",
+    "hbmsntm:ore_beryllium",
+    "hbmsntm:ore_cinnabar",
+    "hbmsntm:ore_cobalt",
+    "hbmsntm:ore_fluorite",
+    "hbmsntm:ore_lead",
+    "hbmsntm:ore_lignite",
+    "hbmsntm:ore_niter",
+    "hbmsntm:ore_rare",
+    "hbmsntm:ore_sulfur",
+    "hbmsntm:ore_thorium",
+    "hbmsntm:ore_titanium",
+    "hbmsntm:ore_tungsten",
+    "hbmsntm:ore_uranium",
+    "hbmsntm:ore_aluminium_deepslate",
+    "hbmsntm:ore_asbestos_deepslate",
+    "hbmsntm:ore_beryllium_deepslate",
+    "hbmsntm:ore_cinnabar_deepslate",
+    "hbmsntm:ore_cobalt_deepslate",
+    "hbmsntm:ore_fluorite_deepslate",
+    "hbmsntm:ore_lead_deepslate",
+    "hbmsntm:ore_niter_deepslate",
+    "hbmsntm:ore_rare_deepslate",
+    "hbmsntm:ore_sulfur_deepslate",
+    "hbmsntm:ore_thorium_deepslate",
+    "hbmsntm:ore_titanium_deepslate",
+    "hbmsntm:ore_tungsten_deepslate",
+    "hbmsntm:ore_uranium_deepslate",
+    "hbmsntm:resource_limestone"
+  ],
+  "steps": [
+    "underground_ores"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ant_farm_frontier/ant_block_placed",
+  "criteria": {
+    "entered_utopia": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:utopia"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_utopia"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:sunflower"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.utopia_visit.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.utopia_visit.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

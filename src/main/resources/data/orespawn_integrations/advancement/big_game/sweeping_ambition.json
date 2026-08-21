@@ -1,0 +1,51 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "bettercombat"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "big_game"
+    }
+  ],
+  "parent": "orespawn_integrations:big_game/root",
+  "criteria": {
+    "has_big_bertha": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:big_bertha"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_big_bertha"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:big_bertha"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.big_game.sweeping_ambition.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.big_game.sweeping_ambition.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

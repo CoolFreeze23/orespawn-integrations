@@ -1,0 +1,35 @@
+{
+  "name": "Apliques de Armadura",
+  "icon": "orespawn_integrations:kraken_armor_trim_smithing_template",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "O OreSpawn entra para a indústria da moda: quatro novos materiais de aplique para todos os padrões vanilla, mais um padrão só nosso, pescado de um $(l:orespawn_integrations:modern_wonders/vault_heist)cofre$() guardado por um kraken.$(p)Armadura de fim de jogo deveria ter a cara dos lugares por onde passou. Agora pode."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Como Aplicar",
+      "text": "Numa mesa de ferraria:$(p)1. Qualquer molde de aplique vanilla no primeiro espaço.$(br)2. Uma peça de armadura aplicável no segundo.$(br)3. No espaço de material: um $(l:orespawn_integrations:ores_gems/ruby)rubi$(), uma $(l:orespawn_integrations:ores_gems/uranium)barra de urânio$(), uma $(l:orespawn_integrations:ores_gems/titanium)barra de titânio$() ou uma escama da rainha.$(p)Retire a peça decorada. O molde não sobrevive a nada; a armadura sobrevive a tudo."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Paleta",
+      "text": "O rubi aplica $(thing)carmesim$(). O urânio aplica $(thing)verde ácido$() — e não, não fica tiquetaqueando. O titânio aplica $(thing)aço$() frio. A escama da rainha aplica $(thing)orquídea$() — realeza por cortesia da $(l:orespawn_integrations:bosses/the_queen)Rainha$(), que não foi consultada.$(p)Um aviso: o ícone do item no inventário não mostra a decoração. É o esperado — vista a peça e o aplique aparece por inteiro na armadura equipada."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:kraken_armor_trim_smithing_template",
+      "title": "O Padrão Kraken",
+      "text": "Nosso padrão próprio: um redemoinho de tentáculos que envolve a armadura como quem tira as medidas para o jantar. O molde é um achado $(bold)garantido$() no $(l:orespawn_integrations:modern_wonders/vault_heist)cofre do Kraken$() e aceita qualquer material de aplique, deles ou nosso.$(p)Encontrá-lo concede $(thing)Tesouro do Mar Profundo$(); vesti-lo concede $(thing)Alta-Costura do Kraken$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:kraken_armor_trim_smithing_template",
+      "title": "Duplicação",
+      "text": "Economia padrão de moldes: sete diamantes e um bloco de prismarinho copiam um molde em dois. O Kraken cobra em prismarinho porque nunca precisou de diamantes na vida."
+    }
+  ]
+}

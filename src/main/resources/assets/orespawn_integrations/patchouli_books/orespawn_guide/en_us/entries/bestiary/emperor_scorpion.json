@@ -1,0 +1,19 @@
+{
+  "name": "Emperor Scorpion",
+  "icon": "orespawn:emperor_scorpion_spawn_egg",
+  "category": "orespawn_integrations:bestiary",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:emperor_scorpion",
+      "scale": 0.7,
+      "text": "Big enough to saddle. Ambitious enough to try you first."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A house-sized ambush predator with a temper and, so the stories go, a saddle-shaped weakness for those patient enough to raise one.$(p)Its armored plates outlive it: the Emperor Scorpion Scale is one of the trophies demanded by the forging of Big Bertha, the largest sword ever made."
+    }
+  ]
+}

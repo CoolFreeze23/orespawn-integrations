@@ -1,0 +1,87 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ant_farm_frontier/chaos_visit",
+  "criteria": {
+    "entered_utopia": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:utopia"
+      }
+    },
+    "entered_mining": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:mining"
+      }
+    },
+    "entered_village": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:village"
+      }
+    },
+    "entered_crystal": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:crystal"
+      }
+    },
+    "entered_islands": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:islands"
+      }
+    },
+    "entered_chaos": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:chaos"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_utopia"
+    ],
+    [
+      "entered_mining"
+    ],
+    [
+      "entered_village"
+    ],
+    [
+      "entered_crystal"
+    ],
+    [
+      "entered_islands"
+    ],
+    [
+      "entered_chaos"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:rainbow_ant_block"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.dimension_six.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ant_farm_frontier.dimension_six.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 350
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:ant",
+    "orespawn:red_ant",
+    "orespawn:rainbow_ant",
+    "orespawn:unstable_ant"
+  ],
+  "traits": [
+    {
+      "type": "walkers:reinforcements",
+      "range": 32,
+      "reinforcements": [
+        "orespawn:ant",
+        "orespawn:red_ant",
+        "orespawn:rainbow_ant",
+        "orespawn:unstable_ant"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:attack_squid",
+    "orespawn:flounder",
+    "orespawn:gold_fish",
+    "orespawn:hammerhead",
+    "orespawn:irukandji",
+    "orespawn:sea_monster",
+    "orespawn:sea_viper",
+    "orespawn:skate",
+    "orespawn:urchin",
+    "orespawn:water_dragon",
+    "orespawn:whale"
+  ],
+  "traits": [
+    {
+      "type": "walkers:aquatic",
+      "is_aquatic": 0
+    },
+    {
+      "type": "walkers:undrownable"
+    }
+  ]
+}

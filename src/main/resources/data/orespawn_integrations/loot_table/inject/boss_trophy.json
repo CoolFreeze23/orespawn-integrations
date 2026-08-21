@@ -1,0 +1,256 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ruby",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3.0,
+                "max": 8.0
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:amethyst_gem",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3.0,
+                "max": 6.0
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:nightmare_scale",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:moth_scale",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:basilisk_scale",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:emperor_scorpion_scale",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:kraken_tooth",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 2.0
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:trex_tooth",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 2.0
+              },
+              "add": false
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:queen_scale",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 2.0
+              },
+              "add": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ultimate_sword",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ultimate_bow",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ultimate_pickaxe",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ultimate_axe",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ultimate_helmet",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ultimate_chestplate",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ultimate_leggings",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ultimate_boots",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:queen_battle_axe",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:royal_guardian_sword",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:big_bertha",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 40
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:experience_catcher",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:thunder_staff",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:ray_gun",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:chainsaw",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 30
+        }
+      ]
+    }
+  ]
+}

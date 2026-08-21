@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "g g",
+    "grg",
+    " p "
+  ],
+  "key": {
+    "g": { "item": "minecraft:gold_ingot" },
+    "r": { "item": "orespawn:ruby" },
+    "p": { "item": "minecraft:poppy" }
+  },
+  "result": {
+    "id": "orespawn_integrations:heart_locket",
+    "count": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "orespawn_integrations:block/mobzilla_statue",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "orespawn_integrations:block/mobzilla_statue"
+    },
+    "facing=south": {
+      "model": "orespawn_integrations:block/mobzilla_statue",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "orespawn_integrations:block/mobzilla_statue",
+      "y": 270
+    }
+  }
+}

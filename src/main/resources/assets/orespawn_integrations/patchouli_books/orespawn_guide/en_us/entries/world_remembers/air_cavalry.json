@@ -1,0 +1,48 @@
+{
+  "name": "Air Cavalry",
+  "icon": "mcheli:a-10",
+  "category": "orespawn_integrations:world_remembers",
+  "flag": "mod:mcheli",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The aircraft files have carried recipe lines since day one — parsed faithfully into a field nothing ever read. Dead data. In this pack's whole life, no survival player has ever crafted an aircraft.$(p)Fixed. Six real recipes, priced in boss materials, one per page ahead. That's not a tweak; that's a repair."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mcheli_ah_64",
+      "text": "The AH-64 Apache Longbow: three $(l:orespawn_integrations:bosses/the_queen)Queen$() scales riding four blocks of titanium. Royalty pays for the rotors."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mcheli_ec665",
+      "text": "The EC665 Tiger: $(l:orespawn_integrations:bestiary/emperor_scorpion)Emperor Scorpion$() scales over Tiger's Eye blocks. One apex predator, dressed as another."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mcheli_mh_53e",
+      "text": "The MH-53E Sea Dragon: five $(l:orespawn_integrations:bestiary/water_dragon)Water Dragon$() scales on titanium. The name was never a coincidence."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mcheli_b_2a",
+      "text": "The B-2A Spirit: five Nightmare scales folded around a Vortex eye. Stealth, as taught by things that were never quite there."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mcheli_merkava_mk4",
+      "text": "The Merkava Mk4: $(l:orespawn_integrations:bestiary/basilisk)Basilisk$() scales over solid titanium plate. Somebody in the motor pool got jealous."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:mcheli_a_10",
+      "text": "The A-10 Thunderbolt II: seven blocks of titanium wrapped around one uranium ingot. The airframe is a formality — you are crafting the gun."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Warthog's Diet",
+      "text": "The A-10 flies in a depleted-uranium belt variant whose GAU-8 resupplies on uranium ingots — Danger's or anyone's. The warthog matches the ammo path and never checks the label; the full DU story lives with the $(l:orespawn_integrations:always_uranium/uranium_economy)uranium economy$().$(p)Craft any airframe with your own two hands and the Air Cavalry advancement is yours. The hangar's open."
+    }
+  ]
+}

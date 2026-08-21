@@ -1,0 +1,35 @@
+{
+  "name": "The King",
+  "icon": "orespawn:the_king_spawn_egg",
+  "category": "orespawn_integrations:bosses",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:the_king",
+      "scale": 0.35,
+      "text": "The strongest thing OreSpawn ever made. It knows."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Finding Him",
+      "text": "The King holds court at the King Altar on $(l:orespawn_integrations:dimensions/beyond_the_tunnels)Utopia$()'s plains, and his five-level Challenge Towers rise across the world — every floor's vault richer, and meaner, than the last.$(p)Our pack plants a Waystone shrine at the gate of every tower, altar and royal tree: activate it first, and defeat costs you a walk instead of a war."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn:the_king_spawn_block_from_parts",
+      "text": "Nine King Parts lie buried among the world's hidden spawn blocks. Dig, combine, place... regret."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Prize",
+      "text": "Fell him and the Royal tier is yours: every kill yields a full set of Royal armor and the Royal Guardian Sword.$(p)That is the only source of Royal gear in this pack — no recipe, no shortcut. Just the King, a preposterous health bar, and you."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "What They Leave Behind",
+      "text": "The Royal tier is currency now. His $(l:orespawn_integrations:royal_court/spell_scrolls)Lightning scrolls$() carry a rare max-level jackpot, the Harbinger's anvil $(l:orespawn_integrations:royal_court/tempered_majesty)tempers his sword$() harder still, and surplus Royal gear $(l:orespawn_integrations:royal_court/court_economy)melts back into queen scales$(). He may even hand over a $(l:orespawn_integrations:royal_court/soul_shards)soul shard$() with 64 kills pre-signed.$(p)The King funds the Court. The Court never confiscates."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:modern_wonders/keys_to_the_kingdom",
+  "criteria": {
+    "unlocked_kraken_vault": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "minecraft:vault"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "orespawn_integrations:kraken_vault_key"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "unlocked_kraken_vault"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn_integrations:kraken_vault_key"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.modern_wonders.davy_jones_locker.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.modern_wonders.davy_jones_locker.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

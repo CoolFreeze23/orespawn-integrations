@@ -1,0 +1,24 @@
+{
+  "name": "Viagem de Formiga",
+  "icon": "orespawn:ant_spawn_egg",
+  "category": "orespawn_integrations:dimensions",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "A Rede de Correios",
+      "text": "As dimensões do OreSpawn não têm portais para construir — têm funcionários. Certos insetos escavam túneis entre mundos e carregam qualquer viajante que clicar neles com a $(4)mão vazia$().$(p)Encontre-os perto de seus blocos de spawn: posicione um bloco de formiga que você escavou, e os correios saem rastejando no horário deles."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Rotas",
+      "text": "$(li)Formiga → Utopia$(li)Formiga Vermelha → Dimensão de Mineração$(li)Formiga Arco-Íris → Dimensão das Vilas$(li)Formiga Instável → As Ilhas$(li)Cupim → Dimensão de Cristal$(li)Borboleta → Caos$(p)Clicar na mesma espécie dentro do destino traz você de volta ao Mundo Superior. O bloco de Portal de Utopia oferece uma rota mais digna até Utopia."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:ant",
+      "text": "A gerência. Gorjetas são apreciadas, mas não obrigatórias."
+    }
+  ]
+}

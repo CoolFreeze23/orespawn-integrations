@@ -1,0 +1,23 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apothic_enchanting"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "orespawn"
+        },
+        {
+            "type": "orespawn_integrations:thread_enabled",
+            "thread": "uranium"
+        }
+    ],
+    "block": "orespawn:block_uranium",
+    "stats": {
+        "maxEterna": 0,
+        "eterna": -10,
+        "quanta": 85,
+        "arcana": 0
+    }
+}

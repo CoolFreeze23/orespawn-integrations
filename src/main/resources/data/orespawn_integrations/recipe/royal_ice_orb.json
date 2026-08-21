@@ -1,0 +1,42 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "irons_spellbooks"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "royal_court"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": {
+      "item": "irons_spellbooks:upgrade_orb"
+    },
+    "S": {
+      "item": "orespawn:kraken_tooth"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SOS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "irons_spellbooks:upgrade_orb",
+    "components": {
+      "irons_spellbooks:upgrade_orb_type": "orespawn_integrations:royal_ice_power",
+      "minecraft:item_name": {
+        "translate": "item.orespawn_integrations.royal_ice_orb"
+      },
+      "minecraft:rarity": "epic"
+    }
+  }
+}

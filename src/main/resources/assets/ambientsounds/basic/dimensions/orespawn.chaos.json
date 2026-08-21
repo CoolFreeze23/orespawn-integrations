@@ -1,0 +1,52 @@
+{
+    "name": "orespawn.chaos",
+    "dimension-names": [
+        "orespawn:chaos"
+    ],
+    "rain": false,
+    "storm": false,
+    "biome-selector": {
+        "always": false
+    },
+    "regions": [
+        {
+            "name": "orespawn.chaos.dread",
+            "volume": 0.25,
+            "sound-collections": [
+                "suspense"
+            ]
+        },
+        {
+            "name": "orespawn.chaos.winds",
+            "sounds": [
+                {
+                    "name": "chaos-howl",
+                    "category": "wind",
+                    "files": [
+                        "ambientsounds:wind.howling-wind"
+                    ],
+                    "length": {
+                        "min": 1000,
+                        "max": 5000
+                    },
+                    "volume": 0.3,
+                    "transition": 200
+                },
+                {
+                    "name": "chaos-gale",
+                    "category": "wind",
+                    "files": [
+                        "ambientsounds:wind.heavy-wind",
+                        "ambientsounds:wind.heavy-wind2"
+                    ],
+                    "length": {
+                        "min": 1000,
+                        "max": 5000
+                    },
+                    "volume": 0.25,
+                    "transition": 200
+                }
+            ]
+        }
+    ]
+}

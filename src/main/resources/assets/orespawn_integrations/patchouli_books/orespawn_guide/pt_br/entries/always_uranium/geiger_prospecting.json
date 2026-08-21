@@ -1,0 +1,38 @@
+{
+  "name": "Garimpo com Geiger",
+  "icon": "hbmsntm:geiger_counter",
+  "category": "orespawn_integrations:always_uranium",
+  "flag": "mod:hbmsntm",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hbmsntm:geiger_counter",
+      "text": "O NTM o construiu para medir o quão ruim as coisas estão. Por aqui, ele mede o quão boas elas estão prestes a ficar."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Vara de Rabdomante",
+      "text": "Segure o contador geiger em qualquer uma das mãos e ele faz bico de vara rabdomante de minério. Uma vez por segundo, ele varre seis blocos em todas as direções a partir das suas botas atrás de $(l:orespawn_integrations:ores_gems/ruby)Rubi$(), $(l:orespawn_integrations:ores_gems/titanium)Titânio$() e $(l:orespawn_integrations:ores_gems/uranium)Urânio$() enterrados, e então canta sobre a coisa mais forte que encontrou. Funciona em toda dimensão em que os veios existem — os filões apinhados da $(l:orespawn_integrations:dimensions/mining_dimension)Dimensão de Mineração$() leem exatamente igual."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "orespawn_integrations:textures/gui/guide/geiger_bands.png"
+      ],
+      "title": "Conheça Suas Faixas",
+      "border": true,
+      "text": "Três minérios, três canções. Aprenda-as e o chão vira partitura."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Escala 2 / 8 / 22",
+      "text": "O contador alimenta a força do sinal direto nas faixas de áudio do próprio HBM. O rubi lê $(thing)2$() — um clique preguiçoso, curioso. O titânio lê $(thing)8$() — tagarelice constante. Um veio de urânio do OreSpawn lê $(thing)22$() — a canção completa do pânico.$(p)Blocos de armazenamento também contam: uma parede de blocos de urânio canta exatamente como o veio de onde veio, o que transforma caça a cofres em exercício de escuta."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Zero. Sempre Zero.",
+      "text": "Sua dose fica em exatamente zero o tempo todo — clique com o contador e veja-o jurar isso por escrito. Nós acionamos o canal de telemetria do HBM, nunca a radiação dele: detecção e dano são fios separados, e só tocamos no que não morde.$(p)O primeiro veio que você detectar assina a conquista $(thing)Primeiro Ping$(). O dosímetro do NTM escuta o mesmo sinal, se você preferir seu garimpo em formato de relógio de pulso."
+    }
+  ]
+}

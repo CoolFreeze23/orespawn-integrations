@@ -1,0 +1,36 @@
+{
+  "name": "O Ovo de Dragão Real",
+  "icon": "orespawn_integrations:royal_dragon_egg",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:aether",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn_integrations:royal_dragon_egg",
+      "text": "Um ovo comum, oito escamas extraordinárias e um dia inteiro de paciência."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:royal_dragon_egg",
+      "text": "Oito $(l:orespawn_integrations:bosses/the_queen)Escamas da Rainha$() prensadas ao redor de um ovo de galinha comum. As escamas fazem o trabalho pesado; o ovo basicamente assina a papelada."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Chocagem",
+      "text": "Coloque o ovo na Incubadora do Aether e mantenha a chama alimentada com tochas de ambrósio. A chocagem leva 24.000 ticks — um dia inteiro de Minecraft, vinte minutos reais, zero atalhos.$(p)Incubação longa, lealdade mais longa ainda. Prensar o ovo concede Ninhada Real; a eclosão concede Vida Longa."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Vínculo",
+      "text": "O Príncipe nasce já domesticado: ele se vincula ao rosto mais próximo a até dez blocos no instante em que respira. Fique ao lado da incubadora para o grande final — este não é o momento de ir dar uma olhada na fazenda.$(p)O que sai dali é um troféu vivo que segue você para casa. A Corte considera a questão da sucessão resolvida."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:the_prince",
+      "scale": 0.3,
+      "name": "O Príncipe",
+      "text": "O $(l:orespawn_integrations:her_side/the_diary)diário$() dela tem opiniões fortes sobre os sobrevoos dele. Ele nunca leu as resenhas."
+    }
+  ]
+}

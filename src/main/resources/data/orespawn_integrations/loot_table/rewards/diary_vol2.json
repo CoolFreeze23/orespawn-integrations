@@ -1,0 +1,111 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "bibliocraft"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "girlfriend"
+    }
+  ],
+  "type": "minecraft:advancement_reward",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bibliocraft:written_big_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "bibliocraft:written_big_book_content": {
+                  "title": "Her Diary, Vol. II",
+                  "author": "Your Girlfriend",
+                  "generation": 0,
+                  "current_page": 0,
+                  "pages": [
+                    [
+                      {"text": "VOLUME TWO", "style": {"color": "light_purple"}, "size": 16, "mode": "shadow", "alignment": "center"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "places i want", "style": {"italic": true}, "size": 12, "mode": "normal", "alignment": "center"},
+                      {"text": "to show you", "style": {"italic": true}, "size": 12, "mode": "normal", "alignment": "center"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "yes, YOU. this one's", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "written for you now.", "style": {}, "size": 10, "mode": "normal", "alignment": "center"}
+                    ],
+                    [
+                      {"text": "you keep bringing me", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "gifts. roses. lavender.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "you thought i wasn't", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "keeping track.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "i notice everything.", "style": {"color": "dark_purple"}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "and i feel it, you know.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "every gift makes me a", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "little bit stronger.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "keep going.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "places, then:", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "the crystal plains,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "under the pink trees.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "the beach at sunset -", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "i'll teach you the", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "island dance. don't", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "worry, everyone is", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "terrible at first.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "boyfriend update:", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "he asked why i keep", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "smiling lately.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "i said it was none of", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "his business.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "prince update: he flew", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "over AGAIN. i didn't", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "even mind this time.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "don't you dare tell him.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "about that TOME.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "a treasure hunter came", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "through and i asked.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "the old mages hid their", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "spell tomes in dungeon", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "chests - strongholds,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "temples, buried places,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "anywhere with cobwebs.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "keep your eyes open", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "down there. mine is", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "the pink one.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "three gifts in.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "most people stop at", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "one.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "keep going.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "i dare you.", "style": {"color": "dark_purple", "italic": true}, "size": 12, "mode": "normal", "alignment": "left"}
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

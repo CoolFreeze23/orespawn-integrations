@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:menagerie/girlfriend_tamed",
+  "criteria": {
+    "has_heart": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn:heart"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_heart"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:heart"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.love_hurts.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.love_hurts.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "experience": 100
+  }
+}

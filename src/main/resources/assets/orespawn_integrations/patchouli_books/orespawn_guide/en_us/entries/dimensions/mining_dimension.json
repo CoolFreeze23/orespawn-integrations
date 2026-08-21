@@ -1,0 +1,18 @@
+{
+  "name": "The Mining Dimension",
+  "icon": "orespawn:miners_dream",
+  "category": "orespawn_integrations:dimensions",
+  "flag": "mod:orespawn",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Take a Red Ant down and step into wall-to-wall ore: every OreSpawn vein runs richer here, alongside ruby blocks, dense lapis, and boosted diamond, emerald and gold.$(p)Better yet, our pack now pumps other mods' ores into this stone as well — one world, every resource. Consider it the pack's official quarry."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Mind the Locals",
+      "text": "Mineshafts and strongholds thread the depths, and not everything buried is ore — mob-filled spawn blocks and the odd Basilisk Maze punctuate the profit.$(p)Plan your Red Ant home. Or bring a Miner's Dream, and no, we will not spoil what that one does."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "A Economia do Urânio",
+  "icon": "orespawn:ingot_uranium",
+  "category": "orespawn_integrations:always_uranium",
+  "flag": "mod:projecte",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:ingot_uranium",
+      "text": "O ProjectE o precificou em exatamente nove diamantes. O mercado segurou."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Tabela Auditada",
+      "text": "$(thing)Barra de Urânio$() — 73.728 EMC, nove diamantes na lata. $(thing)Pepita de Urânio$() — 8.192 EMC, paridade exata com o Combustível Aeternalis. Blocos e pepitas comprimem e dividem por nove, então o livro-razão fecha em todas as direções.$(p)Cada valor aqui é precificado como troca, nunca como impressora. A auditoria antidupe atesta por escrito."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Combustível de Coletor",
+      "text": "Os Coletores de Energia aceitam urânio nos três tamanhos — pepita, barra e bloco — como combustível legítimo. Com a pepita em paridade exata com o Aeternalis, a cadeia de coletores troca combustível por combustível, um por um: o minério do Danger entra na escada de combustíveis do ProjectE pelo degrau de cima, sem entortá-la.$(p)Sim, isso significa uma parede de coletores rodando discretamente à base de $(l:orespawn_integrations:ores_gems/uranium)Urânio$(). Sempre ia acabar assim."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Higiene de EMC",
+      "text": "O $(l:orespawn_integrations:always_uranium/bottled_uranium)Urânio Engarrafado$() e o $(l:orespawn_integrations:always_uranium/dirty_arc_reactor)Reator Arc Sujo$() ficam presos em EMC zero de propósito. Ambos se fabricam com urânio que tem EMC, então sem a trava o condensador viraria, na surdina, uma cervejaria de três bônus e uma casa da moeda de reatores. Não vira, e nunca vai virar. De nada."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Warthog",
+      "text": "O fim de jogo desta linha é literalmente um javali. Um pacote de conteúdo adicional do MCHeli traz um $(thing)A-10$() com esteira de urânio empobrecido cujo GAU-8 reabastece com barras de urânio — e o MCHeli casa a munição pelo caminho, não pelo namespace, então o urânio do Danger e o urânio do HBM alimentam a mesma esteira. As aeronaves originais ficam intocadas.$(p)Há uma conquista oculta nisso: $(thing)Dieta de Warthog$(). Considere um convite em aberto."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Leitura Complementar",
+      "text": "A fabricação sobrevivencialista do próprio A-10 mora em $(l:orespawn_integrations:world_remembers/air_cavalry)Cavalaria Aérea$(), e a matemática do triturador para o minério de urânio em $(l:orespawn_integrations:world_remembers/rail_works)Obras Ferroviárias$().$(p)O capítulo inteiro responde ao interruptor $(thing)threads.uranium$() da configuração — desligue, recarregue, e cada receita daqui se retira educadamente."
+    }
+  ]
+}

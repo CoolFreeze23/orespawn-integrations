@@ -1,0 +1,62 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:surface_riches/first_ruby",
+  "criteria": {
+    "used_instant_shelter": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "orespawn:instant_shelter"
+            }
+          }
+        ]
+      }
+    },
+    "used_instant_garden": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "orespawn:instant_garden"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "used_instant_shelter"
+    ],
+    [
+      "used_instant_garden"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:instant_shelter"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.fun.prefab_living.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.fun.prefab_living.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

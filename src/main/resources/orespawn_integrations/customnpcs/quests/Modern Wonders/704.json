@@ -1,0 +1,57 @@
+{
+    "Id": 704,
+    "ModRev": 18,
+    "Type": 0,
+    "Title": "The Trials",
+    "Text": "Word from the deep dark: chambers of copper and tuff, built for one purpose - testing whoever walks in. The locals call them trial chambers. I call them a job interview.
+
+Best a trial spawner's gauntlet and deliver the Trial Key it surrenders.",
+    "CompleteText": "A genuine Trial Key. So the chambers found you worthy - or careless enough to look it. Emeralds, as promised, and a little something ominous for your next visit.",
+    "CompleterNpc": "",
+    "NextQuestId": 705,
+    "QuestCommand": "",
+    "RandomReward": 0b,
+    "RewardExp": 250,
+    "QuestCompletion": 1,
+    "QuestRepeat": 0,
+    "Items": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "minecraft:trial_key",
+                "count": 1
+            }
+        ]
+    },
+    "LeaveItems": 0b,
+    "IgnoreDamage": 0b,
+    "IgnoreNBT": 1b,
+    "Rewards": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "minecraft:emerald",
+                "count": 16
+            },
+            {
+                "Slot": 1b,
+                "id": "minecraft:ominous_bottle",
+                "count": 1
+            }
+        ]
+    },
+    "QuestFactionPoints": {
+    },
+    "QuestMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    }
+}

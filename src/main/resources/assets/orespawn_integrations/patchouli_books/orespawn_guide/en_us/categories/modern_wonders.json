@@ -1,0 +1,7 @@
+{
+  "name": "Modern Wonders",
+  "description": "Boss vaults, upgraded trials, new enchantments, armor trims, fine art, and a sky that has started doing things. Minecraft modernized. OreSpawn read the patch notes.",
+  "icon": "orespawn_integrations:mobzilla_vault_key",
+  "flag": "mod:orespawn",
+  "sortnum": 6
+}

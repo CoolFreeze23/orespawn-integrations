@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "betterstrongholds"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "patchouli"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "alive_world"
+    }
+  ],
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "betterstrongholds:chests/grand_library"
+    }
+  ],
+  "table": "orespawn_integrations:inject/yungs_strongholds_library"
+}

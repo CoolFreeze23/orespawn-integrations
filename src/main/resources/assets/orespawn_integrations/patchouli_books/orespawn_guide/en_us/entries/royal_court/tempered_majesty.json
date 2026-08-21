@@ -1,0 +1,29 @@
+{
+  "name": "Tempered Majesty",
+  "icon": "orespawn:royal_guardian_sword",
+  "category": "orespawn_integrations:royal_court",
+  "flag": "mod:cataclysm",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:royal_guardian_sword",
+      "text": "The strongest sword OreSpawn ever made. The Court looked at 749 damage and called it a rough draft."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Earning the Anvil",
+      "text": "The Mechanical Fusion Anvil is Cataclysm's forge of last resort, and building one costs six witherite ingots. Witherite drops from exactly one creature — The Harbinger — so nobody stumbles onto this page by accident.$(p)Fell the Harbinger, press the ingots into an anvil, and the Court's smithy is open. The anvil is earned. That's the point."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Temper",
+      "text": "Set your $(l:orespawn_integrations:bosses/the_king)Royal Guardian Sword$() on the anvil as the base and feed it one more witherite ingot as the addition. The machinery handles the ceremony; the sword comes back with a new attitude:$(p)861 damage, up from 749. A quicker swing. A royal-purple title — Witherite-Tempered Royal Guardian Sword — and a permanent glint to match."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "What Carries Over",
+      "text": "Everything that matters. Your enchantments survive the forge untouched, and so does any custom name you gave the blade — the Court upgrades, it never confiscates.$(p)The advancement is called Tempered Majesty. The Harbinger paid for the metal; you only pay the visit. Surplus royal gear, meanwhile, has a $(l:orespawn_integrations:royal_court/court_economy)buyback program$()."
+    }
+  ]
+}

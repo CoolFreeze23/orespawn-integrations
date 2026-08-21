@@ -1,0 +1,9 @@
+{
+  "entity_types": [
+    "orespawn:the_king",
+    "orespawn:the_queen",
+    "orespawn:kraken",
+    "orespawn:godzilla",
+    "orespawn:mothra"
+  ]
+}

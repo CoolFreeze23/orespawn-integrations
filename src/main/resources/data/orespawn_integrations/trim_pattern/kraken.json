@@ -1,0 +1,8 @@
+{
+  "asset_id": "orespawn_integrations:kraken",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.orespawn_integrations.kraken"
+  },
+  "template_item": "orespawn_integrations:kraken_armor_trim_smithing_template"
+}

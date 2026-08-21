@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:crystal_ascension/crystal_entry",
+  "criteria": {
+    "ate_crystal_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "orespawn:crystal_apple"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ate_crystal_apple"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:crystal_apple"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.crystal_apple_eaten.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.crystal_ascension.crystal_apple_eaten.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

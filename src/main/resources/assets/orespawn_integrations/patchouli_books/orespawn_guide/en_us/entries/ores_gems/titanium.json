@@ -1,0 +1,19 @@
+{
+  "name": "Titanium",
+  "icon": "orespawn:ingot_titanium",
+  "category": "orespawn_integrations:ores_gems",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:ingot_titanium",
+      "text": "Light, unbending, and stubborn to find — the skeleton of every Ultimate tool."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Where It Grows",
+      "text": "Titanium runs deeper than uranium: thin veins below y=20 in the Overworld, and richer seams in the $(l:orespawn_integrations:dimensions/mining_dimension)Mining Dimension$()'s crowded stone.$(p)Pair it with $(l:orespawn_integrations:ores_gems/uranium)Uranium$() and plain iron to craft the Ultimate line — sword, bow, tools and full armor. Expect to strip a few chunks bare for the set. It is worth it."
+    }
+  ]
+}

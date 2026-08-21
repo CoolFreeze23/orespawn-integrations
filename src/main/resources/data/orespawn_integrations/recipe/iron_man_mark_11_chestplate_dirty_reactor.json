@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "marvel"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "uranium"
+    }
+  ],
+  "type": "marvel:suit_upgrading",
+  "consume_suit": false,
+  "ingredients": [
+    {
+      "tag": "c:ingots/gold_titanium"
+    },
+    {
+      "tag": "c:ingots/gold_titanium"
+    },
+    {
+      "tag": "c:ingots/gold_titanium"
+    },
+    {
+      "tag": "c:ingots/gold"
+    },
+    {
+      "tag": "c:ingots/gold"
+    },
+    {
+      "tag": "c:ingots/iron"
+    },
+    {
+      "tag": "c:dusts/redstone"
+    },
+    {
+      "item": "orespawn_integrations:dirty_arc_reactor"
+    }
+  ],
+  "results": {
+    "id": "marvel:iron_man_mark_11_chestplate"
+  },
+  "suit": {
+    "tag": "marvel:iron_man_mark_7_chestplate"
+  }
+}

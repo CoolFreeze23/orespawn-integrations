@@ -1,0 +1,12 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:frog",
+    "orespawn:cricket",
+    "orespawn:easter_bunny",
+    "orespawn:gazelle"
+  ],
+  "ability": {
+    "type": "walkers:jump"
+  }
+}

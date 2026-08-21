@@ -1,0 +1,75 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "projecte"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "comment": "THREAD 5 'The World Remembers' (CROSSMOD-THREADS.md item 25) - Crystalline world transmutation: the Philosopher's Stone remembers the Crystal Dimension. Forward entries paint crystal terrain anywhere; sneak (alt_result) picks variants; reverse entries on the three terrain blocks are the undo/escape hatch. Verified against ProjectE-1.21.1-PE1.1.0 (WorldTransmutationManager scans pe_world_transmutations/ in ALL namespaces; origin/result/alt_result schema per data/projecte/pe_world_transmutations/defaults.json). EMC policy 3: none of the crystal_* target blocks carry EMC in this addon's pe_custom_conversions tables and this file adds none - transmutation is terraforming, not a condenser feed.",
+  "transmutations": [
+    {
+      "origin": "minecraft:stone",
+      "result": "orespawn:crystal_stone"
+    },
+    {
+      "origin": "minecraft:cobblestone",
+      "result": "orespawn:crystal_stone"
+    },
+    {
+      "origin": "minecraft:dirt",
+      "result": "orespawn:crystal_grass"
+    },
+    {
+      "origin": "minecraft:grass_block",
+      "result": "orespawn:crystal_grass"
+    },
+    {
+      "origin": "minecraft:oak_log",
+      "result": "orespawn:crystal_tree_log"
+    },
+    {
+      "origin": "minecraft:oak_planks",
+      "result": "orespawn:crystal_planks"
+    },
+    {
+      "alt_result": "orespawn:crystal_leaves_2",
+      "origin": "minecraft:oak_leaves",
+      "result": "orespawn:crystal_leaves"
+    },
+    {
+      "alt_result": "orespawn:crystal_sapling_2",
+      "origin": "minecraft:oak_sapling",
+      "result": "orespawn:crystal_sapling"
+    },
+    {
+      "alt_result": "orespawn:crystal_flower_green",
+      "origin": "minecraft:dandelion",
+      "result": "orespawn:crystal_flower_yellow"
+    },
+    {
+      "alt_result": "orespawn:crystal_flower_blue",
+      "origin": "minecraft:poppy",
+      "result": "orespawn:crystal_flower_red"
+    },
+    {
+      "origin": "orespawn:crystal_stone",
+      "result": "minecraft:stone"
+    },
+    {
+      "origin": "orespawn:crystal_grass",
+      "result": "minecraft:dirt"
+    },
+    {
+      "origin": "orespawn:crystal_tree_log",
+      "result": "minecraft:oak_log"
+    }
+  ]
+}

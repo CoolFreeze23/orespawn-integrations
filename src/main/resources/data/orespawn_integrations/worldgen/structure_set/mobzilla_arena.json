@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "orespawn_integrations:mobzilla_arena",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 70,
+    "separation": 40,
+    "salt": 588291247,
+    "exclusion_zone": {
+      "other_set": "minecraft:villages",
+      "chunk_count": 10
+    }
+  }
+}

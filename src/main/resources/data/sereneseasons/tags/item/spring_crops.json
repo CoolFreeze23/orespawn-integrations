@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "orespawn:radish_seed", "required": false },
+    { "id": "orespawn:lettuce_seed", "required": false }
+  ]
+}

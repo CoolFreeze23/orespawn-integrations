@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "orespawn:the_king",
+    "orespawn:the_queen",
+    "orespawn:kraken",
+    "orespawn:godzilla",
+    "orespawn:mothra",
+    "orespawn:kyuubi",
+    "orespawn:alien_boss"
+  ]
+}

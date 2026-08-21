@@ -1,0 +1,24 @@
+{
+  "name": "Ant Travel",
+  "icon": "orespawn:ant_spawn_egg",
+  "category": "orespawn_integrations:dimensions",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "The Courier Network",
+      "text": "OreSpawn's dimensions have no portals to build — they have staff. Certain insects tunnel between worlds and will carry any traveler who right-clicks them with an $(4)empty hand$().$(p)Meet them near their spawn blocks: place an ant block you've dug up, and couriers crawl out on their own schedule."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Routes",
+      "text": "$(li)Ant → Utopia$(li)Red Ant → Mining Dimension$(li)Rainbow Ant → Village Dimension$(li)Unstable Ant → The Islands$(li)Termite → Crystal Dimension$(li)Butterfly → Chaos$(p)Clicking the same species inside its destination brings you home to the Overworld. The Utopia Portal block offers a more dignified route to Utopia."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:ant",
+      "text": "Management. Tips are appreciated but not required."
+    }
+  ]
+}

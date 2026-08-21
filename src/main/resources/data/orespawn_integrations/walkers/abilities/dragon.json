@@ -1,0 +1,10 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:dragon"
+  ],
+  "ability": {
+    "type": "walkers:shoot_fireball",
+    "is_large": true
+  }
+}

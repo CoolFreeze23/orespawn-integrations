@@ -1,0 +1,11 @@
+{
+  "parent": "securitycraft:item/template_block_mine",
+  "textures": {
+    "down": "orespawn:blocks/oretitanium",
+    "east": "orespawn:blocks/oretitanium",
+    "north": "orespawn:blocks/oretitanium",
+    "south": "orespawn:blocks/oretitanium",
+    "up": "orespawn:blocks/oretitanium",
+    "west": "orespawn:blocks/oretitanium"
+  }
+}

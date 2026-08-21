@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn_integrations:tigers_eye_ore_mine"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "orespawn_integrations:blocks/tigers_eye_ore_mine"
+}

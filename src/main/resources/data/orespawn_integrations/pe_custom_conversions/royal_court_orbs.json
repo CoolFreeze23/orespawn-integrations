@@ -1,0 +1,12 @@
+{
+ "comment": "Royal Court EMC guard (policy 3). The Royal Scale Upgrade Orb recipes turn EMC-carrying boss drops (godzilla_scale / kraken_tooth / water_dragon_scale) into irons_spellbooks:upgrade_orb stacks. Pinning the blank orb EMC-less keeps ProjectE's crafting mapper from ever assigning EMC to the crafted Royal orbs, so boss-gated magic upgrades can never be bought at a transmutation table. ProjectE's value codec only accepts positive longs or the string 'free' (IPECodecHelper.positiveLong + the Long.MIN_VALUE 'free' sentinel in FixedValues, verified against ProjectE-1.21.1-PE1.1.0) - literal 0 is a parse error, so 'free' is the blacklist mechanism. Scrolls and pre-bound soul shards are loot-only (no vanilla crafting recipe reaches them), so they need no entry here.",
+ "values": {
+  "before": [
+   {
+    "type": "projecte:item",
+    "emc_value": "free",
+    "id": "irons_spellbooks:upgrade_orb"
+   }
+  ]
+ }
+}

@@ -1,0 +1,143 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "bibliocraft"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "girlfriend"
+    }
+  ],
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.1
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bibliocraft:written_big_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "bibliocraft:written_big_book_content": {
+                  "title": "Her Diary, Vol. I",
+                  "author": "Your Girlfriend",
+                  "generation": 0,
+                  "current_page": 0,
+                  "pages": [
+                    [
+                      {"text": "HER SIDE", "style": {"color": "light_purple"}, "size": 16, "mode": "shadow", "alignment": "center"},
+                      {"text": "OF THE STORY", "style": {"color": "light_purple"}, "size": 16, "mode": "shadow", "alignment": "center"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "the diary of a girlfriend", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "volume one", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "if lost, return to", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "Girlfriend Island.", "style": {}, "size": 10, "mode": "normal", "alignment": "center"},
+                      {"text": "or don't. i'll find you.", "style": {}, "size": 10, "mode": "normal", "alignment": "center"}
+                    ],
+                    [
+                      {"text": "day 12.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "the boyfriend next door", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "flexed at his own", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "reflection for an HOUR.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "he fights monsters", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "shirtless so everyone", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "can see.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "we are NOT talking.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "this is a permanent", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "policy.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "day 19.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "that overgrown lizard", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "prince did ANOTHER", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "flyover at six in the", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "morning. wingspan of a", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "barn. subtlety of a", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "creeper.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "some of us are trying", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "to sleep, your majesty.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "i threw a shoe. i missed.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "i never miss twice.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "day 23.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "a wanderer gave me a", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "poppy today. just like", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "that. red suits me.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "note to self: anyone", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "who shows up with", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "poppies is worth a", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "second look.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "anyone with dandelions", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "gets a makeover instead.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "day 31.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "polished my heart", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "locket. every girl on", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "the island keeps one.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "wear one, and no", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "girlfriend could ever", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "stay mad at you - not", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "even on the fourteenth", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "of february.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "that's not a legend.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "that's a promise.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "day 40.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "the older girls talk", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "about a TOME. pink", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "cover, our name on it,", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "written by a mage who", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "understood us.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "lost in some dusty ruin", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "with the rest of the", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "treasure. someday", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "somebody will dig", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "it back up.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ],
+                    [
+                      {"text": "day 41.", "style": {"color": "dark_purple"}, "size": 12, "mode": "normal", "alignment": "left"},
+                      {"text": "he waved at me today.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "the shirtless one. ugh.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "(i waved back.)", "style": {"italic": true}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "someday i'll write", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "volume two. bring me", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "something pretty and", "style": {}, "size": 10, "mode": "normal", "alignment": "left"},
+                      {"text": "maybe you'll read it.", "style": {}, "size": 10, "mode": "normal", "alignment": "left"}
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "What is OreSpawn?",
+  "icon": "orespawn:heart",
+  "category": "orespawn_integrations:getting_started",
+  "flag": "mod:orespawn",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "OreSpawn is back. The legendary mod of rubies, dinosaurs and extremely questionable life choices now runs through this whole pack — its ores seeded across every world, its monsters loose in every biome, its titans waiting at the end of it all.$(p)This guide is your map through the chaos. Read it before the chaos reads you."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Staying Alive",
+      "text": "$(li)Build real walls. Much of what's out there digs, flies, or spits.$(li)Watch for buried spawn blocks — ancient dried eggs that hatch when disturbed, and treasure to those who mine around them.$(li)Do not slap the $(l:orespawn_integrations:bestiary/girlfriend)Girlfriend$().$(li)Do not wake $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$(). Especially not Mobzilla."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Road Up",
+      "text": "Start with $(l:orespawn_integrations:ores_gems/ruby)Ruby$() gear, then forge the Ultimate line from $(l:orespawn_integrations:ores_gems/uranium)Uranium$() and $(l:orespawn_integrations:ores_gems/titanium)Titanium$(). $(l:orespawn_integrations:ores_gems/tigers_eye)Tiger's Eye$() waits in another world entirely.$(p)Royal and Queen tier gear cannot be mined or bought. It is torn from the $(l:orespawn_integrations:bosses/the_king)crowned things$() in this book's final chapters."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Olho de Tigre",
+  "icon": "orespawn:tigers_eye_ingot",
+  "category": "orespawn_integrations:ores_gems",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:tigers_eye_ingot",
+      "text": "Faixas de ouro e sombra. Encontrado em exatamente um mundo — e não é este."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Uma Pedra de Outro Lugar",
+      "text": "O Olho de Tigre se forma em um único lugar: a $(l:orespawn_integrations:dimensions/crystal_dimension)Dimensão de Cristal$(), em faixas na pedra cristalina ao lado de veios de turmalina rosa.$(p)Chegar lá custa tudo — literalmente. Os cupins-correio só carregam viajantes de bolsos vazios. Planeje a expedição, guarde seu equipamento em casa e minere rápido."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Equipamento de Olho de Tigre",
+      "text": "Ferramentas e armadura de Olho de Tigre andam ombro a ombro com a linha Ultimate — e brilham consideravelmente mais.$(p)Cada barra atravessa dois mundos até chegar à sua bigorna, então um conjunto completo é uma declaração: você foi, sobreviveu e voltou rico."
+    }
+  ]
+}

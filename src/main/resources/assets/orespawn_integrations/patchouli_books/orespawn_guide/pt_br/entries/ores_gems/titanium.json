@@ -1,0 +1,19 @@
+{
+  "name": "Titânio",
+  "icon": "orespawn:ingot_titanium",
+  "category": "orespawn_integrations:ores_gems",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:ingot_titanium",
+      "text": "Leve, inflexível e teimoso de achar — o esqueleto de toda ferramenta Ultimate."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Onde Ele Cresce",
+      "text": "O titânio corre mais fundo que o urânio: veios finos abaixo de y=20 no Mundo Superior, e filões mais ricos na pedra apinhada da $(l:orespawn_integrations:dimensions/mining_dimension)Dimensão de Mineração$().$(p)Combine-o com $(l:orespawn_integrations:ores_gems/uranium)Urânio$() e ferro comum para forjar a linha Ultimate — espada, arco, ferramentas e armadura completa. Espere pelar alguns chunks inteiros pelo conjunto. Vale a pena."
+    }
+  ]
+}

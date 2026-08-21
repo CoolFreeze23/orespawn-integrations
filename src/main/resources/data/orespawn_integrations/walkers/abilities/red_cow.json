@@ -1,0 +1,11 @@
+{
+  "required_mod": "orespawn",
+  "entity_types": [
+    "orespawn:red_cow"
+  ],
+  "ability": {
+    "type": "walkers:saturate",
+    "food_level": 4,
+    "saturation_level": 4.0
+  }
+}

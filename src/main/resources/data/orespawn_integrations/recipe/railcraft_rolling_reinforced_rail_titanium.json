@@ -1,0 +1,37 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "railcraft"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "world_remembers"
+    }
+  ],
+  "type": "railcraft:rolling",
+  "key": {
+    "a": {
+      "tag": "c:ingots/titanium"
+    },
+    "b": {
+      "tag": "c:dusts/obsidian"
+    },
+    "c": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "pattern": [
+    "abc",
+    "abc",
+    "abc"
+  ],
+  "result": {
+    "count": 16,
+    "id": "railcraft:reinforced_rail"
+  }
+}

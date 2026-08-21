@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:ultrabosses/godzilla_parts",
+  "criteria": {
+    "placed_godzilla_egg": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "orespawn:godzilla_spawn_block"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "placed_godzilla_egg"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:godzilla_spawn_block"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.ultrabosses.godzilla_summoned.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.ultrabosses.godzilla_summoned.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apotheosis"
+        }
+    ],
+    "type": "apotheosis:affix_loot_entry",
+    "stack": {
+        "count": 1,
+        "id": "orespawn:ray_gun"
+    },
+    "weights": {
+        "ascent": {
+            "weight": 10,
+            "quality": 0.5
+        },
+        "summit": {
+            "weight": 15,
+            "quality": 0.5
+        },
+        "pinnacle": {
+            "weight": 12,
+            "quality": 1.0
+        }
+    }
+}

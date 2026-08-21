@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:dungeon_delving/dungeon_loot",
+  "criteria": {
+    "used_random_dungeon": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "orespawn:random_dungeon"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "used_random_dungeon"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "orespawn:random_dungeon"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.dungeon_delving.random_dungeon_used.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.dungeon_delving.random_dungeon_used.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "sends_telemetry_event": false
+}

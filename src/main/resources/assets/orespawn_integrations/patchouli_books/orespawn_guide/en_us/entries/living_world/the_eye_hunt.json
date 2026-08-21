@@ -1,0 +1,35 @@
+{
+  "name": "The Eye Hunt",
+  "icon": "endrem:royal_eye",
+  "category": "orespawn_integrations:living_world",
+  "flag": "mod:endrem",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "End Remastered swaps the End's front door for a sixteen-eye pilgrimage — and this pack routes that pilgrimage straight through OreSpawn country. One eye is exclusive to Danger's vaults, one is transmuted from his weirdest drop, and two more hide in his castles and skylines.$(p)Your first eye of any kind grants $(thing)Eye on the Prize$(). Only fifteen to go."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:royal_eye",
+      "title": "The Royal Eye",
+      "text": "Pack-exclusive, and found in exactly two places on earth: the $(l:orespawn_integrations:modern_wonders/vault_heist)Mobzilla and Kraken boss vaults$(). Kill the boss, take the key, open the vault.$(p)The hunt's final chapter runs through OreSpawn's endgame — exactly where this pack's heart is."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn_integrations:vortex_magical_eye",
+      "title": "The Vortex Sees",
+      "text": "The vortex eye finally earns its name: ring one with ender pearls and it transmutes into a Magical Eye. Danger's strangest boss drop is now a legitimate step to the End."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Ender Castle",
+      "text": "OreSpawn's own End structures join the pilgrimage. Ender Castle and Ender Knight Dungeon chests carry a Lost Eye about 6% of the time and a Cursed Eye about 4% — per chest, and those castles do not stock lightly.$(p)The garrison was guarding the way out all along."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Skyline Waypoints",
+      "text": "Structory's pillager and fortress tower tops hold an Old Eye about one climb in ten — the skyline is now a waypoint network for the hunt. Witch huts shelve a Witch Eye at 1-in-25 odds, a mercy for anyone who prefers looting witches to fighting them.$(p)Everything here lands on the loot table, not the chest, so with Lootr in the pack every hunter rolls their own — details in $(l:orespawn_integrations:living_world/voices_and_songs)Voices & Songs$()."
+    }
+  ]
+}

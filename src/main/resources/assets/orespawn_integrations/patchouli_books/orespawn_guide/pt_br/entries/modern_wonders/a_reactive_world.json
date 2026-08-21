@@ -1,0 +1,33 @@
+{
+  "name": "Um Mundo Reativo",
+  "icon": "minecraft:bell",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "O mundo costumava assistir você enfrentar titãs sem dizer nada. Grosseria, francamente. Agora ele celebra suas vitórias, derruba pedras do céu e agenda realeza sobre a sua cabeça.$(p)Nada nesta entrada exige apertar um botão. Viva no mundo; o mundo responde."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Celebrações de Chefe",
+      "text": "Derrube qualquer chefe do OreSpawn a até 128 blocos de uma vila e a vila percebe: uma mensagem no chat, o sino toca sozinho e fogos de artifício sobem por cima dos telhados. Os mobs hostis baixam a guarda por 60 segundos inteiros de trégua — até monstro respeita quem mata monstro.$(p)Com os mods de criaturas instalados, os guardas disparam uma salva de bestas em saudação e todo cachorro por perto dá um mortal — veja $(l:orespawn_integrations:living_world/creature_kinship)Parentesco das Criaturas$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Noites de Meteoro",
+      "text": "Raramente — mais ou menos uma chance a cada duas noites — um meteoro escolhe um ponto a 60-100 blocos de alguém e se compromete. Sinalizadores em chamas pairam no alto por um ou dois suspiros, e então o impacto: uma cratera semeada com até cinco blocos de $(thing)minério de urânio e titânio$(), e três $(l:orespawn_integrations:bestiary/alien)Alienígenas$() rastejando para fora dela.$(p)Estar a até 64 blocos concede a conquista oculta $(thing)Contato Imediato$(). O minério é o pedido de desculpas."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Sobrevoos do Príncipe",
+      "text": "De dia, mantenha um olho no alto. Em raras ocasiões o $(thing)Príncipe$() — um dragão branco da linhagem real — plana pelo céu a uns 45 blocos do chão, cruza o horizonte e some. Ele não pousa para ninguém e desaparece fora de alcance; isto é um desfile, não um encontro.$(p)Assistir a até 96 blocos concede a oculta $(thing)Escolta Real$(). Quer um que fique? Veja o $(l:orespawn_integrations:royal_court/royal_dragon_egg)Ovo de Dragão Real$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "O Calendário",
+      "text": "As celebrações seguem um calendário. No $(thing)Halloween$(), os fogos de chefe queimam em laranja e roxo. Nas noites de $(thing)31 de dezembro e 1º de janeiro$(), as vilas lançam salvas sobre seus sinos a cada dois minutos, com chefe ou sem chefe — o ano mereceu.$(p)Com o Serene Seasons instalado, o sistema inteiro se gradua para as estações do jogo, sobrevoo sazonal incluso — veja $(l:orespawn_integrations:living_world/seasons)Estações$()."
+    }
+  ]
+}

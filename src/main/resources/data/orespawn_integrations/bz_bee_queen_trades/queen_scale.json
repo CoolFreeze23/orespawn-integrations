@@ -1,0 +1,37 @@
+{
+  "wants": [
+    {
+      "id": "orespawn:queen_scale",
+      "required": false
+    }
+  ],
+  "possible_rewards": [
+    {
+      "item": {
+        "id": "the_bumblezone:royal_jelly_bottle",
+        "count": 1
+      },
+      "xp_reward": 3,
+      "weight": 2,
+      "required": true
+    },
+    {
+      "item": {
+        "id": "the_bumblezone:honey_crystal_shards",
+        "count": 4
+      },
+      "xp_reward": 2,
+      "weight": 5,
+      "required": true
+    },
+    {
+      "item": {
+        "id": "the_bumblezone:honey_crystal_shards",
+        "count": 2
+      },
+      "xp_reward": 1,
+      "weight": 8,
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "parent": "securitycraft:item/template_block_mine",
+  "textures": {
+    "down": "orespawn:blocks/oreruby",
+    "east": "orespawn:blocks/oreruby",
+    "north": "orespawn:blocks/oreruby",
+    "south": "orespawn:blocks/oreruby",
+    "up": "orespawn:blocks/oreruby",
+    "west": "orespawn:blocks/oreruby"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Quadros e Arqueologia",
+  "icon": "minecraft:brush",
+  "category": "orespawn_integrations:modern_wonders",
+  "flag": "mod:orespawn",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Seis novas telas entram para o acervo de quadros, todas assinadas pelo pintor da corte do pack, $(thing)CoolFreeze23$(). Posicione um quadro e elas entram no sorteio junto com as do vanilla; no modo criativo você as escolhe diretamente.$(p)Cada uma retrata algo neste livro que já tentou te matar. A arte imita a vida; a vida morde de volta."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Galeria",
+      "text": "$(item)O Rei$() (4x3) — sua majestade, a uma distância segura. Não existe distância segura.$(br)$(item)Mobzilla Desperta$() (3x4) — o alto. O quadro também é alto.$(br)$(item)Terror das Profundezas$() (4x2) — o $(l:orespawn_integrations:bosses/kraken)Kraken$() em seu elemento, que é todo lugar molhado."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Galeria II",
+      "text": "$(item)Primeiro Encontro$() (2x2) — um momento tranquilo; veja $(l:orespawn_integrations:her_side/date_night)Noite do Encontro$() se ele te der ideias.$(br)$(item)Voo do Príncipe$() (4x2) — o dragão branco em pleno $(l:orespawn_integrations:modern_wonders/a_reactive_world)sobrevoo$().$(br)$(item)Ermos de Cristal$() (2x2) — a $(l:orespawn_integrations:dimensions/crystal_dimension)Dimensão de Cristal$(), com iluminação lisonjeira inclusa."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Escavações na Arena",
+      "text": "O piso de toda Arena do Mobzilla recém-gerada esconde $(thing)quatro áreas de cascalho suspeito$(). Leve um pincel: elas revelam pepitas de urânio e titânio, rubis, blocos de ossos, dentes de t-rex e escamas de godzilla — com barras inteiras raras e, de vez em nunca, um disco Pigstep que alguém derrubou no meio da evacuação."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Escavações no Covil",
+      "text": "As escavações no leito do Covil do Kraken puxam para o náutico: dentes de kraken, cacos e cristais de prismarinho, sal, escamas de monstro marinho e de dragão-d'água, línguas de víbora-do-mar, rubis — e ainda um raro coração do mar ou um ovo de farejador por chocar.$(p)Arqueologia em profundidade de esmagamento. Leve respiração aquática e paciência, nessa ordem."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Sal nas Ruínas de Trilha",
+      "text": "As ruínas de trilha vanilla também aprenderam a geologia local. Escavações comuns agora podem revelar pepitas de urânio e titânio ou um rubi entre os cacos, e as raras somam rubis e uma $(l:orespawn_integrations:ores_gems/tigers_eye)barra inteira de olho de tigre$() ao sorteio.$(p)Os antigos estavam garimpando. Os antigos estavam certos."
+    }
+  ]
+}

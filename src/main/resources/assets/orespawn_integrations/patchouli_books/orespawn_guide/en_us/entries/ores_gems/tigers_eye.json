@@ -1,0 +1,24 @@
+{
+  "name": "Tiger's Eye",
+  "icon": "orespawn:tigers_eye_ingot",
+  "category": "orespawn_integrations:ores_gems",
+  "flag": "mod:orespawn",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "orespawn:tigers_eye_ingot",
+      "text": "Banded gold and shadow. Found in exactly one world — and it isn't this one."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "A Stone From Elsewhere",
+      "text": "Tiger's Eye forms in one place only: the $(l:orespawn_integrations:dimensions/crystal_dimension)Crystal Dimension$(), banded into crystal stone beside veins of pink tourmaline.$(p)Getting there costs everything — literally. The termite couriers carry only travelers with empty pockets. Plan the expedition, cache your gear at home, and mine fast."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Tiger's Eye Gear",
+      "text": "Tiger's Eye tools and armor stand shoulder to shoulder with the Ultimate line, and glitter considerably harder.$(p)Every ingot crosses two worlds to reach your anvil, so a full set is a statement: you went, you survived, and you came back rich."
+    }
+  ]
+}

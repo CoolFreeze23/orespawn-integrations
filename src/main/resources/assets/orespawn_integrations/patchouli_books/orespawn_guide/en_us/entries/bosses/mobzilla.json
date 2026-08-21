@@ -1,0 +1,36 @@
+{
+  "name": "Mobzilla",
+  "icon": "orespawn:godzilla_spawn_egg",
+  "category": "orespawn_integrations:bosses",
+  "flag": "mod:orespawn",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "orespawn:godzilla",
+      "scale": 0.25,
+      "name": "Mobzilla",
+      "text": "Shown at quarter scale. The other three quarters are also coming."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Arena",
+      "text": "Out in the badlands and deserts stands our colossal Mobzilla Arena — at most one per region, because the region insists. The beast waits inside, and a Waystone by the gate lets your next attempt skip the commute.$(p)The paperwork calls it 'Godzilla'. Survivors call it Mobzilla. Mostly, they just call for help."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "orespawn:godzilla_spawn_block_from_parts",
+      "text": "Nine buried Mobzilla Parts rebuild its dried egg — in case one arena somehow wasn't enough."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Prize",
+      "text": "Mobzilla's hoard is absurd: dozens of rolls of top-shelf loot, Ultimate gear among them, plus scales that forge Mobzilla armor to rival the Royal line.$(p)This is intentional. One Mobzilla funds a kingdom — surviving the invoice is the hard part."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "What They Leave Behind",
+      "text": "The invoice keeps growing. Every kill drops a key to the arena's $(l:orespawn_integrations:modern_wonders/vault_heist)ominous vault$() and can shed $(l:orespawn_integrations:royal_court/spell_scrolls)Fire scrolls$(); four scales plate a $(l:orespawn_integrations:big_game/chitin_band_plating)Traveller's Vest$(), and the hide sews a $(l:orespawn_integrations:big_game/boss_backpacks)backpack$().$(p)Witches carved its worst day in $(l:orespawn_integrations:world_remembers/mobzilla_statue)stone$() — or summon a fresh one by $(l:orespawn_integrations:world_remembers/summoning_rites)rite$(), thunderstorm required."
+    }
+  ]
+}
