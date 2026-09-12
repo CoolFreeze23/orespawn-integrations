@@ -11,6 +11,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 
 /**
@@ -24,6 +26,13 @@ import net.neoforged.neoforge.event.tick.LevelTickEvent;
  *
  * <p>Only one flyover runs at a time; the flag is cleared when the puppet is
  * discarded and on server stop.</p>
+ *
+ * <p>The puppet carries the {@link #PUPPET_TAG} entity tag and must never
+ * reach disk: its flight task lives only in the running server, so a saved
+ * copy would hang in the sky forever as a frozen, invulnerable Prince. It is
+ * discarded before the shutdown save, and any tagged Prince that still loads
+ * from disk (autosave during the glide followed by a crash, a chunk unloading
+ * mid-flight) is refused at join time.</p>
  */
 public final class PrinceFlyover {
 
@@ -36,7 +45,11 @@ public final class PrinceFlyover {
     private static final double DESPAWN_DIST_SQ = 200.0 * 200.0;
     private static final double WITNESS_RADIUS = 96.0;
 
+    /** Entity tag on the puppet, usable in selectors: {@code @e[tag=orespawn_integrations.flyover_puppet]}. */
+    public static final String PUPPET_TAG = "orespawn_integrations.flyover_puppet";
+
     private static boolean active;
+    private static ThePrinceAdult current;
 
     private PrinceFlyover() {
     }
@@ -128,7 +141,10 @@ public final class PrinceFlyover {
         prince.setNoGravity(true);
         prince.setSilent(true);
         prince.setPersistenceRequired(); // our discard logic decides its end, not despawn rules
+        prince.addTag(PUPPET_TAG);
+        current = prince;
         if (!level.addFreshEntity(prince)) {
+            current = null;
             return;
         }
         active = true;
@@ -165,13 +181,12 @@ public final class PrinceFlyover {
         public void run() {
             try {
                 if (prince.isRemoved()) {
-                    active = false;
+                    retire(prince);
                     return;
                 }
                 tick++;
                 if (tick >= MAX_TICKS || farFromAllPlayers()) {
-                    prince.discard();
-                    active = false;
+                    retire(prince);
                     return;
                 }
                 double x = startX + dirX * SPEED * tick;
@@ -188,10 +203,11 @@ public final class PrinceFlyover {
                 }
                 AliveScheduler.schedule(level.getServer(), 1, this);
             } catch (Throwable t) {
-                active = false;
                 try {
-                    prince.discard();
+                    retire(prince);
                 } catch (Throwable ignored) {
+                    active = false;
+                    current = null;
                 }
                 AliveWorldCompat.logOnce("prince_flight", t);
             }
@@ -206,7 +222,46 @@ public final class PrinceFlyover {
         }
     }
 
+    /** Ends a flyover: removes the puppet if it is still in the world and frees the single-flyover slot. */
+    private static void retire(ThePrinceAdult prince) {
+        if (prince != null && !prince.isRemoved()) {
+            prince.discard();
+        }
+        if (prince == null || prince == current) {
+            current = null;
+        }
+        active = false;
+    }
+
+    /** Runs before the shutdown save, so an airborne puppet is never written to disk. */
+    static void onServerStopping(ServerStoppingEvent event) {
+        try {
+            retire(current);
+        } catch (Throwable t) {
+            AliveWorldCompat.logOnce("prince_stop", t);
+        }
+    }
+
+    /**
+     * Refuses a puppet that reached disk anyway. Fresh puppets are not loaded
+     * from disk and pass through untouched.
+     */
+    static void onEntityJoin(EntityJoinLevelEvent event) {
+        try {
+            if (event.getLevel().isClientSide() || !event.loadedFromDisk()) {
+                return;
+            }
+            if (event.getEntity() instanceof ThePrinceAdult adult && adult.getTags().contains(PUPPET_TAG)) {
+                event.setCanceled(true);
+                adult.discard();
+            }
+        } catch (Throwable t) {
+            AliveWorldCompat.logOnce("prince_join", t);
+        }
+    }
+
     static void reset() {
         active = false;
+        current = null;
     }
 }

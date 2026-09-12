@@ -46,6 +46,8 @@ public final class AliveWorldCompat {
         NeoForge.EVENT_BUS.addListener(CelebrationHandler::onNewYearTick);
         NeoForge.EVENT_BUS.addListener(MeteorEvent::onLevelTick);
         NeoForge.EVENT_BUS.addListener(PrinceFlyover::onLevelTick);
+        NeoForge.EVENT_BUS.addListener(PrinceFlyover::onServerStopping);
+        NeoForge.EVENT_BUS.addListener(PrinceFlyover::onEntityJoin);
     }
 
     private static void onServerStopped(ServerStoppedEvent event) {

@@ -28,3 +28,16 @@ Danger saw a capybara and asked why it was not already sitting on the porch.
 ## Config
 - New toggle `threads.brazil` (default on). The thread-count line in the log now says
   seven.
+
+---
+
+# 0.5.1 — two fixes
+
+- **The Prince flyover can no longer leave a Prince stuck in the sky.** The glide puppet
+  is now discarded before the shutdown save, and a puppet that still reaches disk
+  (autosave mid-glide, then a crash) is refused when it loads back. Puppets carry the
+  entity tag `orespawn_integrations.flyover_puppet`; an old leftover in an existing world
+  goes away on its own the next time its chunk loads.
+- **The Royal Fire / Ice / Mana Upgrade Orb recipes load again.** Their result wrote the
+  item name as a JSON object where 1.21 expects a JSON string, so all three had failed
+  to parse since the Royal Court thread shipped and were never craftable.
