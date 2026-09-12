@@ -1,0 +1,18 @@
+{
+  "type": "neoorigins:persistent_effect",
+  "toggleable": false,
+  "ambient": true,
+  "show_particles": false,
+  "show_icon": false,
+  "effects": [
+    {
+      "effect": "minecraft:glowing",
+      "amplifier": 0
+    }
+  ],
+  "condition": {
+    "type": "neoorigins:night"
+  },
+  "name": "power.orespawn_integrations.mula_night_glow.name",
+  "description": "power.orespawn_integrations.mula_night_glow.description"
+}

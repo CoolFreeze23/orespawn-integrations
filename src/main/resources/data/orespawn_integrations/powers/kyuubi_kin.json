@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "minecraft:cat",
+    "minecraft:ocelot",
+    "minecraft:fox",
+    "orespawn:kyuubi"
+  ],
+  "name": "power.orespawn_integrations.kyuubi_kin.name",
+  "description": "power.orespawn_integrations.kyuubi_kin.description"
+}

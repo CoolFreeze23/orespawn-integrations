@@ -1,0 +1,14 @@
+{
+  "type": "neoorigins:resource",
+  "min": 0,
+  "max": 100,
+  "start_value": 100,
+  "regen_rate": 3,
+  "regen_interval": 20,
+  "hud_render": {
+    "label": "Witchcraft",
+    "color": "#55AA33"
+  },
+  "name": "power.orespawn_integrations.cuca_bruxaria.name",
+  "description": "power.orespawn_integrations.cuca_bruxaria.description"
+}

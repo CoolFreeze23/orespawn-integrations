@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 120,
+  "cooldown_icon": "minecraft:feather",
+  "entity_action": {
+    "type": "neoorigins:launch",
+    "speed": 1.2
+  },
+  "name": "power.orespawn_integrations.luna_moth_flutter.name",
+  "description": "power.orespawn_integrations.luna_moth_flutter.description"
+}

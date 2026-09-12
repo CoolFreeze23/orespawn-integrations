@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:food_restriction",
+  "mode": "whitelist",
+  "item_tag": [
+    "orespawn_integrations:origins/meat_foods"
+  ],
+  "name": "power.orespawn_integrations.raptor_meat_only.name",
+  "description": "power.orespawn_integrations.raptor_meat_only.description"
+}

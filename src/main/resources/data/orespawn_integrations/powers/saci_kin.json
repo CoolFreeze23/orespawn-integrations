@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "brazil_legends:saci_perere",
+    "brasilcoisas:saci"
+  ],
+  "name": "power.orespawn_integrations.saci_kin.name",
+  "description": "power.orespawn_integrations.saci_kin.description"
+}

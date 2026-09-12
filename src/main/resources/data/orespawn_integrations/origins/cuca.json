@@ -1,0 +1,49 @@
+{
+  "name": "origins.orespawn_integrations.cuca.name",
+  "description": "origins.orespawn_integrations.cuca.description",
+  "icon": "brazil_legends:magic_hat_helmet",
+  "impact": "high",
+  "order": 115,
+  "powers": [
+    "orespawn_integrations:cuca_bruxaria",
+    "orespawn_integrations:cuca_feitico",
+    "orespawn_integrations:cuca_louca",
+    "orespawn_integrations:cuca_caldeirao",
+    "orespawn_integrations:cuca_swim",
+    "orespawn_integrations:cuca_gills",
+    "orespawn_integrations:cuca_immune",
+    "orespawn_integrations:cuca_night_eyes",
+    "orespawn_integrations:cuca_kin",
+    "orespawn_integrations:cuca_sun_weak",
+    "orespawn_integrations:cuca_frail",
+    "orespawn_integrations:cuca_fire_weak"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:cuca_evolved_feitico"
+      ],
+      "remove": [
+        "orespawn_integrations:cuca_feitico"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:cuca_ascended_louca"
+      ],
+      "remove": [
+        "orespawn_integrations:cuca_louca"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:cuca_apex_cuca"
+      ],
+      "remove": []
+    }
+  ]
+}

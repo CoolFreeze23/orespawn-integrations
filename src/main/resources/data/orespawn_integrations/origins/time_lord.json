@@ -1,0 +1,47 @@
+{
+  "name": "origins.orespawn_integrations.time_lord.name",
+  "description": "origins.orespawn_integrations.time_lord.description",
+  "icon": "vortexmod:tardis_key",
+  "impact": "medium",
+  "order": 118,
+  "powers": [
+    "orespawn_integrations:time_lord_regeneration",
+    "orespawn_integrations:time_lord_salto",
+    "orespawn_integrations:time_lord_rebobinar",
+    "orespawn_integrations:time_lord_two_hearts",
+    "orespawn_integrations:time_lord_steady",
+    "orespawn_integrations:time_lord_long_potions",
+    "orespawn_integrations:time_lord_tinker",
+    "orespawn_integrations:time_lord_pacifist"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:time_lord_evolved_regen"
+      ],
+      "remove": [
+        "orespawn_integrations:time_lord_regeneration"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:time_lord_ascended_salto"
+      ],
+      "remove": [
+        "orespawn_integrations:time_lord_salto"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:time_lord_apex_regen"
+      ],
+      "remove": [
+        "orespawn_integrations:time_lord_evolved_regen"
+      ]
+    }
+  ]
+}

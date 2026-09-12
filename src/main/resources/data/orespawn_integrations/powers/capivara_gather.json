@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:attract_mobs",
+  "radius": 8.0,
+  "speed": 1.0,
+  "name": "power.orespawn_integrations.capivara_gather.name",
+  "description": "power.orespawn_integrations.capivara_gather.description"
+}

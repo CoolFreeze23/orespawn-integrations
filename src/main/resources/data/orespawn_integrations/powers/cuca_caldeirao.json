@@ -1,0 +1,35 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 1200,
+  "cooldown_icon": "minecraft:cauldron",
+  "entity_action": {
+    "type": "neoorigins:spawn_lingering_area",
+    "radius": 5.0,
+    "duration_ticks": 300,
+    "interval_ticks": 20,
+    "particle_type": "minecraft:witch",
+    "entity_action": {
+      "type": "neoorigins:if_else",
+      "condition": {
+        "type": "neoorigins:entity_type",
+        "entity_type": "minecraft:player"
+      },
+      "if_action": {
+        "type": "neoorigins:apply_effect",
+        "effect": "minecraft:regeneration",
+        "duration": 40,
+        "amplifier": 0,
+        "show_particles": true
+      },
+      "else_action": {
+        "type": "neoorigins:apply_effect",
+        "effect": "minecraft:weakness",
+        "duration": 60,
+        "amplifier": 0,
+        "show_particles": true
+      }
+    }
+  },
+  "name": "power.orespawn_integrations.cuca_caldeirao.name",
+  "description": "power.orespawn_integrations.cuca_caldeirao.description"
+}

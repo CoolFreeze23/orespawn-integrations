@@ -1,0 +1,47 @@
+{
+  "name": "origins.orespawn_integrations.luna_moth.name",
+  "description": "origins.orespawn_integrations.luna_moth.description",
+  "icon": "orespawn:moth_scale",
+  "impact": "medium",
+  "order": 105,
+  "powers": [
+    "orespawn_integrations:luna_moth_dust",
+    "orespawn_integrations:luna_moth_flutter",
+    "orespawn_integrations:luna_moth_glide",
+    "orespawn_integrations:luna_moth_no_fall",
+    "orespawn_integrations:luna_moth_night_eyes",
+    "orespawn_integrations:luna_moth_drawn_to_light",
+    "orespawn_integrations:luna_moth_dim",
+    "orespawn_integrations:luna_moth_nectar",
+    "orespawn_integrations:luna_moth_no_meat",
+    "orespawn_integrations:luna_moth_fire_weak",
+    "orespawn_integrations:luna_moth_light_armor"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:luna_moth_evolved_dust"
+      ],
+      "remove": [
+        "orespawn_integrations:luna_moth_dust"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:luna_moth_ascended_flight"
+      ],
+      "remove": []
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:luna_moth_apex_mothra",
+        "orespawn_integrations:luna_moth_apex_kin"
+      ],
+      "remove": []
+    }
+  ]
+}

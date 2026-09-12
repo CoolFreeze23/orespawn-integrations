@@ -1,0 +1,14 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "orespawn:the_king",
+    "orespawn:the_queen",
+    "orespawn:the_prince",
+    "orespawn:the_prince_teen",
+    "orespawn:the_prince_adult",
+    "orespawn:the_princess",
+    "orespawn:godzilla"
+  ],
+  "name": "power.orespawn_integrations.royal_blood_court.name",
+  "description": "power.orespawn_integrations.royal_blood_court.description"
+}

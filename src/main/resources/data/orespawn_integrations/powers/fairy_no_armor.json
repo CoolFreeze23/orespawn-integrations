@@ -1,0 +1,23 @@
+{
+  "type": "neoorigins:restrict_armor",
+  "restrictions": [
+    {
+      "slot": "head",
+      "tag": "orespawn_integrations:origins/all_armor"
+    },
+    {
+      "slot": "chest",
+      "tag": "orespawn_integrations:origins/all_armor"
+    },
+    {
+      "slot": "legs",
+      "tag": "orespawn_integrations:origins/all_armor"
+    },
+    {
+      "slot": "feet",
+      "tag": "orespawn_integrations:origins/all_armor"
+    }
+  ],
+  "name": "power.orespawn_integrations.fairy_no_armor.name",
+  "description": "power.orespawn_integrations.fairy_no_armor.description"
+}

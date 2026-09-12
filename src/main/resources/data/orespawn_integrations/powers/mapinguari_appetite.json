@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:hunger_drain_modifier",
+  "multiplier": 1.6,
+  "name": "power.orespawn_integrations.mapinguari_appetite.name",
+  "description": "power.orespawn_integrations.mapinguari_appetite.description"
+}

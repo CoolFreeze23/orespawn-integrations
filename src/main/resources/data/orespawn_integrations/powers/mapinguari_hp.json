@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:max_health",
+  "amount": 10.0,
+  "operation": "add_value",
+  "name": "power.orespawn_integrations.mapinguari_hp.name",
+  "description": "power.orespawn_integrations.mapinguari_hp.description"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 800,
+  "cooldown_icon": "minecraft:leather",
+  "entity_action": {
+    "type": "neoorigins:area_of_effect",
+    "radius": 5.0,
+    "entity_action": {
+      "type": "neoorigins:steal_item",
+      "slot": "mainhand"
+    },
+    "entity_condition": {
+      "type": "neoorigins:living"
+    },
+    "include_source": false
+  },
+  "name": "power.orespawn_integrations.saci_furto.name",
+  "description": "power.orespawn_integrations.saci_furto.description"
+}

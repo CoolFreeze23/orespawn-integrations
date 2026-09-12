@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:active_teleport",
+  "range": 24.0,
+  "cooldown_ticks": 240,
+  "mode": "target",
+  "cooldown_icon": "minecraft:ender_pearl",
+  "name": "power.orespawn_integrations.kyuubi_nine_steps.name",
+  "description": "power.orespawn_integrations.kyuubi_nine_steps.description"
+}

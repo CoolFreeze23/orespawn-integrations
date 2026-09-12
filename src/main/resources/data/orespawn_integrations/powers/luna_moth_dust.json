@@ -1,0 +1,29 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 200,
+  "cooldown_icon": "orespawn:moth_scale",
+  "entity_action": {
+    "type": "neoorigins:spawn_lingering_area",
+    "radius": 3.0,
+    "duration_ticks": 100,
+    "interval_ticks": 20,
+    "particle_type": "minecraft:end_rod",
+    "entity_action": {
+      "type": "neoorigins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:blindness",
+          "duration": 100,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:levitation",
+          "duration": 60,
+          "amplifier": 0
+        }
+      ]
+    }
+  },
+  "name": "power.orespawn_integrations.luna_moth_dust.name",
+  "description": "power.orespawn_integrations.luna_moth_dust.description"
+}

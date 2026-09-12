@@ -1,0 +1,15 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 600,
+  "cooldown_icon": "minecraft:blaze_powder",
+  "entity_action": {
+    "type": "neoorigins:cast_iron_spell",
+    "spell": "irons_spellbooks:fire_breath",
+    "level": 2,
+    "consume_mana": false,
+    "trigger_cooldown": false,
+    "mode": "instant"
+  },
+  "name": "power.orespawn_integrations.mula_relincho.name",
+  "description": "power.orespawn_integrations.mula_relincho.description"
+}

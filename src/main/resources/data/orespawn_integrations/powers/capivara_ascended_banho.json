@@ -1,0 +1,31 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 400,
+  "cooldown_icon": "minecraft:water_bucket",
+  "entity_action": {
+    "type": "neoorigins:area_of_effect",
+    "radius": 4.0,
+    "entity_action": {
+      "type": "neoorigins:and",
+      "actions": [
+        {
+          "type": "neoorigins:apply_effect",
+          "effect": "minecraft:regeneration",
+          "duration": 160,
+          "amplifier": 1,
+          "show_particles": true
+        },
+        {
+          "type": "neoorigins:clear_effect",
+          "effect": "minecraft:poison"
+        }
+      ]
+    },
+    "include_source": true
+  },
+  "condition": {
+    "type": "neoorigins:in_water"
+  },
+  "name": "power.orespawn_integrations.capivara_ascended_banho.name",
+  "description": "power.orespawn_integrations.capivara_ascended_banho.description"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:bare_hand_tool",
+  "tool": "minecraft:stone_axe",
+  "name": "power.orespawn_integrations.beaver_teeth.name",
+  "description": "power.orespawn_integrations.beaver_teeth.description"
+}

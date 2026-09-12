@@ -1,0 +1,12 @@
+{
+  "type": "neoorigins:mobs_target_player",
+  "entity_types": [
+    "minecraft:spider",
+    "minecraft:cave_spider",
+    "orespawn:scorpion",
+    "orespawn:emperor_scorpion"
+  ],
+  "range": 24.0,
+  "name": "power.orespawn_integrations.antling_prey.name",
+  "description": "power.orespawn_integrations.antling_prey.description"
+}

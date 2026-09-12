@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:restrict_items",
+  "item_condition": {
+    "tag": "c:tools/shield"
+  },
+  "prevent_use": true,
+  "prevent_equip": false,
+  "deny": true,
+  "name": "power.orespawn_integrations.beaver_no_shield.name",
+  "description": "power.orespawn_integrations.beaver_no_shield.description"
+}

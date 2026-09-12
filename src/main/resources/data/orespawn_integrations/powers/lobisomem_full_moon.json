@@ -1,0 +1,32 @@
+{
+  "type": "neoorigins:persistent_effect",
+  "toggleable": false,
+  "ambient": true,
+  "show_particles": false,
+  "show_icon": false,
+  "effects": [
+    {
+      "effect": "minecraft:strength",
+      "amplifier": 1
+    },
+    {
+      "effect": "minecraft:speed",
+      "amplifier": 0
+    }
+  ],
+  "condition": {
+    "type": "neoorigins:and",
+    "conditions": [
+      {
+        "type": "neoorigins:night"
+      },
+      {
+        "type": "neoorigins:moon_phase",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    ]
+  },
+  "name": "power.orespawn_integrations.lobisomem_full_moon.name",
+  "description": "power.orespawn_integrations.lobisomem_full_moon.description"
+}

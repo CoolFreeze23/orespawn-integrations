@@ -1,0 +1,51 @@
+{
+  "name": "origins.orespawn_integrations.gamma_metroid.name",
+  "description": "origins.orespawn_integrations.gamma_metroid.description",
+  "icon": "orespawn:rock_crystal_green",
+  "impact": "high",
+  "order": 108,
+  "powers": [
+    "orespawn_integrations:gamma_metroid_latch",
+    "orespawn_integrations:gamma_metroid_drain_hit",
+    "orespawn_integrations:gamma_metroid_float",
+    "orespawn_integrations:gamma_metroid_spring",
+    "orespawn_integrations:gamma_metroid_dark_eyes",
+    "orespawn_integrations:gamma_metroid_hardened",
+    "orespawn_integrations:gamma_metroid_aura",
+    "orespawn_integrations:gamma_metroid_no_regen",
+    "orespawn_integrations:gamma_metroid_cold_death",
+    "orespawn_integrations:gamma_metroid_frost_weak",
+    "orespawn_integrations:gamma_metroid_unsettling"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:gamma_metroid_evolved_drain"
+      ],
+      "remove": [
+        "orespawn_integrations:gamma_metroid_drain_hit"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:gamma_metroid_ascended_latch"
+      ],
+      "remove": [
+        "orespawn_integrations:gamma_metroid_latch"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:gamma_metroid_apex_aura",
+        "orespawn_integrations:gamma_metroid_apex_split"
+      ],
+      "remove": [
+        "orespawn_integrations:gamma_metroid_aura"
+      ]
+    }
+  ]
+}

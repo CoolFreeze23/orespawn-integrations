@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:modify_damage",
+  "direction": "in",
+  "multiplier": 2.0,
+  "damage_type": "#minecraft:is_fire",
+  "name": "power.orespawn_integrations.cuca_fire_weak.name",
+  "description": "power.orespawn_integrations.cuca_fire_weak.description"
+}

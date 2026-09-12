@@ -1,0 +1,18 @@
+{
+  "type": "neoorigins:condition_passive",
+  "interval": 20,
+  "condition": {
+    "type": "neoorigins:light_level",
+    "comparison": "<=",
+    "compare_to": 4
+  },
+  "entity_action": {
+    "type": "neoorigins:apply_effect",
+    "effect": "minecraft:weakness",
+    "duration": 40,
+    "amplifier": 0,
+    "show_particles": false
+  },
+  "name": "power.orespawn_integrations.luna_moth_dim.name",
+  "description": "power.orespawn_integrations.luna_moth_dim.description"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "origins.orespawn_integrations.curupira.name",
+  "description": "origins.orespawn_integrations.curupira.description",
+  "icon": "minecraft:jungle_sapling",
+  "impact": "medium",
+  "order": 116,
+  "powers": [
+    "orespawn_integrations:curupira_chamado",
+    "orespawn_integrations:curupira_raiz",
+    "orespawn_integrations:curupira_backward_feet",
+    "orespawn_integrations:curupira_forest_feet",
+    "orespawn_integrations:curupira_forest_grace",
+    "orespawn_integrations:curupira_green_thumb",
+    "orespawn_integrations:curupira_wild_friend",
+    "orespawn_integrations:curupira_attract",
+    "orespawn_integrations:curupira_forager",
+    "orespawn_integrations:curupira_silent",
+    "orespawn_integrations:curupira_out_of_woods",
+    "orespawn_integrations:curupira_out_hunger",
+    "orespawn_integrations:curupira_no_felling"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:curupira_evolved_grace"
+      ],
+      "remove": [
+        "orespawn_integrations:curupira_forest_grace"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:curupira_ascended_raiz"
+      ],
+      "remove": [
+        "orespawn_integrations:curupira_raiz"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:curupira_apex_rebirth"
+      ],
+      "remove": []
+    }
+  ]
+}

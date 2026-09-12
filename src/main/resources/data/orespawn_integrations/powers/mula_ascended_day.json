@@ -1,0 +1,14 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:movement_speed",
+  "amount": 0.0,
+  "operation": "add_multiplied_base",
+  "condition": {
+    "type": "neoorigins:not",
+    "condition": {
+      "type": "neoorigins:night"
+    }
+  },
+  "name": "power.orespawn_integrations.mula_ascended_day.name",
+  "description": "power.orespawn_integrations.mula_ascended_day.description"
+}

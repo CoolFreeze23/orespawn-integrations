@@ -1,0 +1,17 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 900,
+  "cooldown_icon": "minecraft:bone",
+  "entity_action": {
+    "type": "neoorigins:apply_effect",
+    "effect": "minecraft:speed",
+    "duration": 200,
+    "amplifier": 1,
+    "show_particles": true
+  },
+  "condition": {
+    "type": "neoorigins:night"
+  },
+  "name": "power.orespawn_integrations.lobisomem_uivo.name",
+  "description": "power.orespawn_integrations.lobisomem_uivo.description"
+}

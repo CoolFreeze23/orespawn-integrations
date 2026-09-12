@@ -1,0 +1,49 @@
+{
+  "name": "origins.orespawn_integrations.beaver.name",
+  "description": "origins.orespawn_integrations.beaver.description",
+  "icon": "minecraft:oak_log",
+  "impact": "low",
+  "order": 110,
+  "powers": [
+    "orespawn_integrations:beaver_plank",
+    "orespawn_integrations:beaver_timber",
+    "orespawn_integrations:beaver_swim",
+    "orespawn_integrations:beaver_lungs",
+    "orespawn_integrations:beaver_wet_work",
+    "orespawn_integrations:beaver_wood_diet",
+    "orespawn_integrations:beaver_sawmill",
+    "orespawn_integrations:beaver_teeth",
+    "orespawn_integrations:beaver_lodge",
+    "orespawn_integrations:beaver_soft",
+    "orespawn_integrations:beaver_waddle",
+    "orespawn_integrations:beaver_no_shield"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:beaver_evolved_lodge"
+      ],
+      "remove": [
+        "orespawn_integrations:beaver_lodge"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:beaver_ascended_hp"
+      ],
+      "remove": []
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:beaver_apex_plank"
+      ],
+      "remove": [
+        "orespawn_integrations:beaver_plank"
+      ]
+    }
+  ]
+}

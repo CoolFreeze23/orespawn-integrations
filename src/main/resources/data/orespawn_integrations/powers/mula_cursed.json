@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:prevent_action",
+  "action": "SLEEP",
+  "name": "power.orespawn_integrations.mula_cursed.name",
+  "description": "power.orespawn_integrations.mula_cursed.description"
+}

@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:apple",
+    "minecraft:sweet_berries",
+    "minecraft:glow_berries",
+    "minecraft:melon_slice",
+    "minecraft:chorus_fruit",
+    "minecraft:honey_bottle",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "minecraft:mushroom_stew",
+    "orespawn:strawberry",
+    "orespawn:crystal_apple",
+    {
+      "id": "brasilcoisas:manga",
+      "required": false
+    }
+  ]
+}

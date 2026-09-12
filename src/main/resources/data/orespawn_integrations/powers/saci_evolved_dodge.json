@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:dodge_chance",
+  "chance": 0.4,
+  "name": "power.orespawn_integrations.saci_evolved_dodge.name",
+  "description": "power.orespawn_integrations.saci_evolved_dodge.description"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "minecraft:wolf",
+    "brasilcoisas:cachorro_caramelo",
+    "brasilcoisas:lobisomem"
+  ],
+  "name": "power.orespawn_integrations.lobisomem_kin.name",
+  "description": "power.orespawn_integrations.lobisomem_kin.description"
+}

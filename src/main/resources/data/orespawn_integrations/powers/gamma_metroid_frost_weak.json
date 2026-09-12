@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:modify_damage",
+  "direction": "in",
+  "multiplier": 3.0,
+  "damage_type": "#minecraft:is_freezing",
+  "name": "power.orespawn_integrations.gamma_metroid_frost_weak.name",
+  "description": "power.orespawn_integrations.gamma_metroid_frost_weak.description"
+}

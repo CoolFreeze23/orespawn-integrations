@@ -1,0 +1,39 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 600,
+  "cooldown_icon": "orespawn:queen_scale",
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:area_of_effect",
+        "radius": 10.0,
+        "entity_action": {
+          "type": "neoorigins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:weakness",
+              "duration": 160,
+              "amplifier": 1
+            },
+            {
+              "effect": "minecraft:slowness",
+              "duration": 160,
+              "amplifier": 0
+            }
+          ]
+        },
+        "include_source": false
+      },
+      {
+        "type": "neoorigins:apply_effect",
+        "effect": "minecraft:strength",
+        "duration": 160,
+        "amplifier": 0,
+        "show_particles": true
+      }
+    ]
+  },
+  "name": "power.orespawn_integrations.royal_blood_evolved_decree.name",
+  "description": "power.orespawn_integrations.royal_blood_evolved_decree.description"
+}

@@ -1,0 +1,29 @@
+{
+  "type": "neoorigins:persistent_effect",
+  "toggleable": false,
+  "ambient": true,
+  "show_particles": false,
+  "show_icon": false,
+  "effects": [
+    {
+      "effect": "minecraft:slow_falling",
+      "amplifier": 0
+    }
+  ],
+  "condition": {
+    "type": "neoorigins:and",
+    "conditions": [
+      {
+        "type": "neoorigins:sneaking"
+      },
+      {
+        "type": "neoorigins:not",
+        "condition": {
+          "type": "neoorigins:on_ground"
+        }
+      }
+    ]
+  },
+  "name": "power.orespawn_integrations.capivara_sit.name",
+  "description": "power.orespawn_integrations.capivara_sit.description"
+}

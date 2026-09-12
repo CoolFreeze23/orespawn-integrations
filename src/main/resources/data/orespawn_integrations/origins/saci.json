@@ -1,0 +1,51 @@
+{
+  "name": "origins.orespawn_integrations.saci.name",
+  "description": "origins.orespawn_integrations.saci.description",
+  "icon": "brazil_legends:cachimbo",
+  "impact": "high",
+  "order": 111,
+  "powers": [
+    "orespawn_integrations:saci_travessura",
+    "orespawn_integrations:saci_redemoinho",
+    "orespawn_integrations:saci_cachimbo",
+    "orespawn_integrations:saci_furto",
+    "orespawn_integrations:saci_hop",
+    "orespawn_integrations:saci_no_fall",
+    "orespawn_integrations:saci_dodge",
+    "orespawn_integrations:saci_sneaky",
+    "orespawn_integrations:saci_kin",
+    "orespawn_integrations:saci_one_leg",
+    "orespawn_integrations:saci_running_water",
+    "orespawn_integrations:saci_frail",
+    "orespawn_integrations:saci_form",
+    "orespawn_integrations:saci_form_toggle"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:saci_evolved_dodge"
+      ],
+      "remove": [
+        "orespawn_integrations:saci_dodge"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:saci_ascended_redemoinho"
+      ],
+      "remove": [
+        "orespawn_integrations:saci_redemoinho"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:saci_apex_twin"
+      ],
+      "remove": []
+    }
+  ]
+}

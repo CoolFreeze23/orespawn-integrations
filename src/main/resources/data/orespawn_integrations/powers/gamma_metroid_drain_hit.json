@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:action_on_hit",
+  "action": "restore_health",
+  "amount": 1.5,
+  "min_damage": 1.0,
+  "name": "power.orespawn_integrations.gamma_metroid_drain_hit.name",
+  "description": "power.orespawn_integrations.gamma_metroid_drain_hit.description"
+}

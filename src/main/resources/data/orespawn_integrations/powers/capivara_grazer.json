@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:modify_food_nutrition",
+  "nutrition": 8,
+  "food_tag": "orespawn_integrations:origins/plant_foods",
+  "name": "power.orespawn_integrations.capivara_grazer.name",
+  "description": "power.orespawn_integrations.capivara_grazer.description"
+}

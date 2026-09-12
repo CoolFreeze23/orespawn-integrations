@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#orespawn_integrations:origins/meat_foods",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "minecraft:mushroom_stew",
+    "minecraft:honey_bottle",
+    "minecraft:honeycomb"
+  ]
+}

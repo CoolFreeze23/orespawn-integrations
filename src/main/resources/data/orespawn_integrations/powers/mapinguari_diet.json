@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:food_restriction",
+  "mode": "whitelist",
+  "item_tag": [
+    "orespawn_integrations:origins/mapinguari_foods"
+  ],
+  "name": "power.orespawn_integrations.mapinguari_diet.name",
+  "description": "power.orespawn_integrations.mapinguari_diet.description"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:invulnerability",
+  "damage_tags": [
+    "minecraft:is_fire"
+  ],
+  "name": "power.orespawn_integrations.kyuubi_fire_immune.name",
+  "description": "power.orespawn_integrations.kyuubi_fire_immune.description"
+}

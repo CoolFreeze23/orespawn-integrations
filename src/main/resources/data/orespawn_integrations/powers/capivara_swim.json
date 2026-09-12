@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:movement_speed",
+  "amount": 0.6,
+  "operation": "add_multiplied_base",
+  "condition": "in_water",
+  "name": "power.orespawn_integrations.capivara_swim.name",
+  "description": "power.orespawn_integrations.capivara_swim.description"
+}

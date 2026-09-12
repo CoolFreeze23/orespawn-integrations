@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "brazil_legends:cuca",
+    "brazil_legends:cuclin",
+    "brazil_legends:cuclin_ally",
+    "brazil_legends:possessed_bowl",
+    "brazil_legends:possessed_dish",
+    "brazil_legends:possessed_spoon"
+  ],
+  "name": "power.orespawn_integrations.cuca_kin.name",
+  "description": "power.orespawn_integrations.cuca_kin.description"
+}

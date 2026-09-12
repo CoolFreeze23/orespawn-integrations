@@ -1,0 +1,47 @@
+{
+  "name": "origins.orespawn_integrations.capivara.name",
+  "description": "origins.orespawn_integrations.capivara.description",
+  "icon": "brasilcoisas:manga",
+  "impact": "low",
+  "order": 113,
+  "powers": [
+    "orespawn_integrations:capivara_banho",
+    "orespawn_integrations:capivara_tranquil",
+    "orespawn_integrations:capivara_swim",
+    "orespawn_integrations:capivara_lungs",
+    "orespawn_integrations:capivara_grazer",
+    "orespawn_integrations:capivara_gather",
+    "orespawn_integrations:capivara_sit",
+    "orespawn_integrations:capivara_soft",
+    "orespawn_integrations:capivara_no_hurry",
+    "orespawn_integrations:capivara_ears",
+    "orespawn_integrations:capivara_form",
+    "orespawn_integrations:capivara_form_toggle"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:capivara_evolved_hp"
+      ],
+      "remove": []
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:capivara_ascended_banho"
+      ],
+      "remove": [
+        "orespawn_integrations:capivara_banho"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:capivara_apex_entourage"
+      ],
+      "remove": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:food_restriction",
+  "mode": "whitelist",
+  "item_tag": [
+    "orespawn_integrations:origins/sea_foods"
+  ],
+  "name": "power.orespawn_integrations.kraken_spawn_sea_diet.name",
+  "description": "power.orespawn_integrations.kraken_spawn_sea_diet.description"
+}

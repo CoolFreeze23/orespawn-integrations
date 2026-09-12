@@ -1,0 +1,46 @@
+{
+  "name": "origins.orespawn_integrations.fairy.name",
+  "description": "origins.orespawn_integrations.fairy.description",
+  "icon": "orespawn:fairy_sword",
+  "impact": "high",
+  "order": 107,
+  "powers": [
+    "orespawn_integrations:fairy_sparkle",
+    "orespawn_integrations:fairy_blessing",
+    "orespawn_integrations:fairy_flight",
+    "orespawn_integrations:fairy_tiny",
+    "orespawn_integrations:fairy_green_thumb",
+    "orespawn_integrations:fairy_mist",
+    "orespawn_integrations:fairy_gentle",
+    "orespawn_integrations:fairy_frail",
+    "orespawn_integrations:fairy_no_armor",
+    "orespawn_integrations:fairy_cold_iron",
+    "orespawn_integrations:fairy_weak_hands"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:fairy_evolved_hp"
+      ],
+      "remove": []
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:fairy_ascended_blessing"
+      ],
+      "remove": [
+        "orespawn_integrations:fairy_blessing"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:fairy_apex_second_dawn"
+      ],
+      "remove": []
+    }
+  ]
+}

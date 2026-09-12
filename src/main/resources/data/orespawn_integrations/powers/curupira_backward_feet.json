@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:dodge_chance",
+  "chance": 0.35,
+  "name": "power.orespawn_integrations.curupira_backward_feet.name",
+  "description": "power.orespawn_integrations.curupira_backward_feet.description"
+}

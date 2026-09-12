@@ -1,0 +1,19 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "minecraft:wolf",
+    "minecraft:fox",
+    "minecraft:ocelot",
+    "minecraft:parrot",
+    "minecraft:bee",
+    "brasilcoisas:quero_quero",
+    "brasilcoisas:urutau",
+    "brasilcoisas:capivara",
+    "orespawn:beaver",
+    "orespawn:chipmunk",
+    "orespawn:gazelle",
+    "orespawn:butterfly"
+  ],
+  "name": "power.orespawn_integrations.curupira_wild_friend.name",
+  "description": "power.orespawn_integrations.curupira_wild_friend.description"
+}

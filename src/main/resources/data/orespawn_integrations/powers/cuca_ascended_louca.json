@@ -1,0 +1,15 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "brazil_legends:cuclin_ally",
+  "max_count": 5,
+  "quantity": 5,
+  "cooldown_ticks": 600,
+  "despawn_ticks": 2400,
+  "death_damage": 0.5,
+  "cooldown_icon": "minecraft:bowl",
+  "resource_cost": "orespawn_integrations:cuca_bruxaria",
+  "resource_cost_amount": 40,
+  "hunger_cost": 4,
+  "name": "power.orespawn_integrations.cuca_ascended_louca.name",
+  "description": "power.orespawn_integrations.cuca_ascended_louca.description"
+}

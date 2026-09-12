@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "orespawn:mothra",
+    "orespawn:luna_moth",
+    "orespawn:butterfly",
+    "orespawn:vampire_butterfly"
+  ],
+  "name": "power.orespawn_integrations.luna_moth_apex_kin.name",
+  "description": "power.orespawn_integrations.luna_moth_apex_kin.description"
+}

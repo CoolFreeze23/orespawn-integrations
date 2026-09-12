@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:attack_damage",
+  "amount": -2.0,
+  "operation": "add_value",
+  "name": "power.orespawn_integrations.time_lord_pacifist.name",
+  "description": "power.orespawn_integrations.time_lord_pacifist.description"
+}

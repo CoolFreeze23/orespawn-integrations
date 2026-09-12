@@ -1,0 +1,19 @@
+{
+  "type": "neoorigins:prevent_death",
+  "set_health": 4.0,
+  "cooldown_ticks": 24000,
+  "entity_action": {
+    "type": "neoorigins:spawn_particles",
+    "particle": "minecraft:sculk_soul",
+    "count": 40,
+    "speed": 0.05,
+    "offset_y": 1.0,
+    "spread": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    }
+  },
+  "name": "power.orespawn_integrations.gamma_metroid_apex_split.name",
+  "description": "power.orespawn_integrations.gamma_metroid_apex_split.description"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:efficient_repairs",
+  "cost_multiplier": 0.5,
+  "name": "power.orespawn_integrations.time_lord_tinker.name",
+  "description": "power.orespawn_integrations.time_lord_tinker.description"
+}

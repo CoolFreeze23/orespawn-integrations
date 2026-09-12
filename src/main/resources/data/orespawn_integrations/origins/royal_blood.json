@@ -1,0 +1,48 @@
+{
+  "name": "origins.orespawn_integrations.royal_blood.name",
+  "description": "origins.orespawn_integrations.royal_blood.description",
+  "icon": "orespawn:queen_scale",
+  "impact": "medium",
+  "order": 103,
+  "powers": [
+    "orespawn_integrations:royal_blood_decree",
+    "orespawn_integrations:royal_blood_court",
+    "orespawn_integrations:royal_blood_vigor",
+    "orespawn_integrations:royal_blood_might",
+    "orespawn_integrations:royal_blood_poise",
+    "orespawn_integrations:royal_blood_patronage",
+    "orespawn_integrations:royal_blood_heirloom",
+    "orespawn_integrations:royal_blood_appetite",
+    "orespawn_integrations:royal_blood_marked",
+    "orespawn_integrations:royal_blood_haughty"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:royal_blood_evolved_decree"
+      ],
+      "remove": [
+        "orespawn_integrations:royal_blood_decree"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:royal_blood_ascended_guard"
+      ],
+      "remove": []
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:royal_blood_apex_vigor",
+        "orespawn_integrations:royal_blood_apex_decree"
+      ],
+      "remove": [
+        "orespawn_integrations:royal_blood_evolved_decree"
+      ]
+    }
+  ]
+}

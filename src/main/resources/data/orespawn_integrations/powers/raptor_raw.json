@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:modify_food_nutrition",
+  "nutrition": 8,
+  "food_tag": "orespawn_integrations:origins/raw_meats",
+  "name": "power.orespawn_integrations.raptor_raw.name",
+  "description": "power.orespawn_integrations.raptor_raw.description"
+}

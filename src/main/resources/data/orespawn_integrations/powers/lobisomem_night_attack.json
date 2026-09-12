@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:attack_damage",
+  "amount": 4.0,
+  "operation": "add_value",
+  "condition": {
+    "type": "neoorigins:night"
+  },
+  "name": "power.orespawn_integrations.lobisomem_night_attack.name",
+  "description": "power.orespawn_integrations.lobisomem_night_attack.description"
+}

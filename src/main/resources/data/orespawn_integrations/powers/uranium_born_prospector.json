@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:break_speed_modifier",
+  "multiplier": 1.5,
+  "block_tag": "orespawn:ore_uranium",
+  "name": "power.orespawn_integrations.uranium_born_prospector.name",
+  "description": "power.orespawn_integrations.uranium_born_prospector.description"
+}

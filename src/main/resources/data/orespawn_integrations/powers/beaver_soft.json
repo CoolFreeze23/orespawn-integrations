@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:modify_damage",
+  "direction": "out",
+  "multiplier": 0.7,
+  "name": "power.orespawn_integrations.beaver_soft.name",
+  "description": "power.orespawn_integrations.beaver_soft.description"
+}

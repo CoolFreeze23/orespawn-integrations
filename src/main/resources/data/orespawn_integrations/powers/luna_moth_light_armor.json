@@ -1,0 +1,23 @@
+{
+  "type": "neoorigins:restrict_armor",
+  "restrictions": [
+    {
+      "slot": "head",
+      "tag": "orespawn_integrations:origins/heavy_armor"
+    },
+    {
+      "slot": "chest",
+      "tag": "orespawn_integrations:origins/heavy_armor"
+    },
+    {
+      "slot": "legs",
+      "tag": "orespawn_integrations:origins/heavy_armor"
+    },
+    {
+      "slot": "feet",
+      "tag": "orespawn_integrations:origins/heavy_armor"
+    }
+  ],
+  "name": "power.orespawn_integrations.luna_moth_light_armor.name",
+  "description": "power.orespawn_integrations.luna_moth_light_armor.description"
+}

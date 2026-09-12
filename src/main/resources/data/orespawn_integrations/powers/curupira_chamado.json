@@ -1,0 +1,19 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 800,
+  "cooldown_icon": "minecraft:jungle_sapling",
+  "entity_action": {
+    "type": "neoorigins:area_of_effect",
+    "radius": 16.0,
+    "entity_action": {
+      "type": "neoorigins:apply_effect",
+      "effect": "minecraft:slowness",
+      "duration": 120,
+      "amplifier": 3,
+      "show_particles": true
+    },
+    "include_source": false
+  },
+  "name": "power.orespawn_integrations.curupira_chamado.name",
+  "description": "power.orespawn_integrations.curupira_chamado.description"
+}

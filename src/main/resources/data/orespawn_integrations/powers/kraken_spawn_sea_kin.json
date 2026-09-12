@@ -1,0 +1,23 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "minecraft:guardian",
+    "minecraft:elder_guardian",
+    "minecraft:drowned",
+    "minecraft:squid",
+    "minecraft:glow_squid",
+    "orespawn:sea_viper",
+    "orespawn:hammerhead",
+    "orespawn:irukandji",
+    "orespawn:attack_squid",
+    "orespawn:kraken",
+    "orespawn:sea_monster",
+    "orespawn:skate",
+    "orespawn:whale",
+    "orespawn:urchin",
+    "orespawn:sunspot_urchin",
+    "orespawn:water_dragon"
+  ],
+  "name": "power.orespawn_integrations.kraken_spawn_sea_kin.name",
+  "description": "power.orespawn_integrations.kraken_spawn_sea_kin.description"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:craft_amount_bonus",
+  "item_id": "minecraft:oak_planks",
+  "bonus_count": 2,
+  "name": "power.orespawn_integrations.beaver_sawmill.name",
+  "description": "power.orespawn_integrations.beaver_sawmill.description"
+}

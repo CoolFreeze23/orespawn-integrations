@@ -1,0 +1,14 @@
+{
+  "type": "neoorigins:condition_passive",
+  "interval": 60,
+  "condition": {
+    "type": "neoorigins:out_of_combat",
+    "ticks": 100
+  },
+  "entity_action": {
+    "type": "neoorigins:heal",
+    "amount": 2.0
+  },
+  "name": "power.orespawn_integrations.mapinguari_apex_regen.name",
+  "description": "power.orespawn_integrations.mapinguari_apex_regen.description"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:effect_immunity",
+  "effects": [
+    "minecraft:nausea",
+    "minecraft:darkness",
+    "minecraft:slowness"
+  ],
+  "name": "power.orespawn_integrations.time_lord_steady.name",
+  "description": "power.orespawn_integrations.time_lord_steady.description"
+}

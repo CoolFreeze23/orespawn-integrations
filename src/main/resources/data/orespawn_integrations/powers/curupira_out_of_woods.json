@@ -1,0 +1,22 @@
+{
+  "type": "neoorigins:persistent_effect",
+  "toggleable": false,
+  "ambient": true,
+  "show_particles": false,
+  "show_icon": false,
+  "effects": [
+    {
+      "effect": "minecraft:slowness",
+      "amplifier": 0
+    }
+  ],
+  "condition": {
+    "type": "neoorigins:not",
+    "condition": {
+      "type": "neoorigins:biome",
+      "tag": "orespawn_integrations:origins/forest"
+    }
+  },
+  "name": "power.orespawn_integrations.curupira_out_of_woods.name",
+  "description": "power.orespawn_integrations.curupira_out_of_woods.description"
+}

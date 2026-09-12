@@ -1,0 +1,17 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "minecraft:wolf",
+  "max_count": 4,
+  "quantity": 4,
+  "cooldown_ticks": 900,
+  "despawn_ticks": 1800,
+  "death_damage": 0.5,
+  "cooldown_icon": "minecraft:bone",
+  "hunger_cost": 4,
+  "power_condition": {
+    "type": "neoorigins:night"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.lobisomem_ascended_pack.name",
+  "description": "power.orespawn_integrations.lobisomem_ascended_pack.description"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:bare_hand_tool",
+  "tool": "minecraft:diamond_axe",
+  "name": "power.orespawn_integrations.mapinguari_claws.name",
+  "description": "power.orespawn_integrations.mapinguari_claws.description"
+}

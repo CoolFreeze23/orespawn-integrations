@@ -1,0 +1,32 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 500,
+  "cooldown_icon": "brazil_legends:cachimbo",
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:spawn_tornado",
+        "radius": 4.0,
+        "duration_ticks": 160,
+        "pull_strength": 1.0,
+        "lift_strength": 0.8,
+        "spin_strength": 0.8,
+        "damage_per_interval": 1.0,
+        "damage_interval_ticks": 10,
+        "move_speed": 0.25
+      },
+      {
+        "type": "neoorigins:add_velocity",
+        "x": 0.0,
+        "y": 0.6,
+        "z": 1.6,
+        "space": "local_horizontal_normalized"
+      }
+    ]
+  },
+  "resource_cost": "orespawn_integrations:saci_travessura",
+  "resource_cost_amount": 40,
+  "name": "power.orespawn_integrations.saci_ascended_redemoinho.name",
+  "description": "power.orespawn_integrations.saci_ascended_redemoinho.description"
+}

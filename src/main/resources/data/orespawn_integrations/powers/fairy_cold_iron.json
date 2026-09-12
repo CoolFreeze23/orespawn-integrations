@@ -1,0 +1,17 @@
+{
+  "type": "neoorigins:modify_damage",
+  "direction": "in",
+  "multiplier": 1.5,
+  "condition": {
+    "type": "neoorigins:actor_condition",
+    "condition": {
+      "type": "neoorigins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "tag": "orespawn_integrations:origins/iron_weapons"
+      }
+    }
+  },
+  "name": "power.orespawn_integrations.fairy_cold_iron.name",
+  "description": "power.orespawn_integrations.fairy_cold_iron.description"
+}

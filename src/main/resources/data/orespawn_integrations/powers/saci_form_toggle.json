@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:toggle",
+  "default": false,
+  "name": "power.orespawn_integrations.saci_form_toggle.name",
+  "description": "power.orespawn_integrations.saci_form_toggle.description"
+}

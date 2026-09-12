@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:jump_strength",
+  "amount": 0.25,
+  "operation": "add_value",
+  "condition": {
+    "type": "neoorigins:night"
+  },
+  "name": "power.orespawn_integrations.mula_night_jump.name",
+  "description": "power.orespawn_integrations.mula_night_jump.description"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:active_dash",
+  "power": 2.2,
+  "cooldown_ticks": 60,
+  "allow_vertical": false,
+  "set_velocity": true,
+  "damage": 5.0,
+  "damage_radius": 1.5,
+  "weapon_damage_scale": 0.5,
+  "cooldown_icon": "orespawn:trex_tooth",
+  "name": "power.orespawn_integrations.raptor_evolved_pounce.name",
+  "description": "power.orespawn_integrations.raptor_evolved_pounce.description"
+}

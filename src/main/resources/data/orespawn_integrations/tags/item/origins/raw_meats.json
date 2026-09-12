@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:beef",
+    "minecraft:porkchop",
+    "minecraft:chicken",
+    "minecraft:mutton",
+    "minecraft:rabbit",
+    "orespawn:raw_bacon",
+    "orespawn:raw_peacock",
+    "orespawn:raw_crab_meat"
+  ]
+}

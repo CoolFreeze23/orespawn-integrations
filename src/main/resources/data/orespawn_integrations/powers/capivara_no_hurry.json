@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:hunger_drain_modifier",
+  "multiplier": 3.0,
+  "power_condition": {
+    "type": "neoorigins:sprinting"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.capivara_no_hurry.name",
+  "description": "power.orespawn_integrations.capivara_no_hurry.description"
+}

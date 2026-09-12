@@ -1,0 +1,27 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 600,
+  "cooldown_icon": "brazil_legends:mapinguari_eye",
+  "entity_action": {
+    "type": "neoorigins:area_of_effect",
+    "radius": 12.0,
+    "entity_action": {
+      "type": "neoorigins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:weakness",
+          "duration": 160,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:slowness",
+          "duration": 60,
+          "amplifier": 0
+        }
+      ]
+    },
+    "include_source": false
+  },
+  "name": "power.orespawn_integrations.mapinguari_rugido.name",
+  "description": "power.orespawn_integrations.mapinguari_rugido.description"
+}

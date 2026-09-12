@@ -1,0 +1,23 @@
+{
+  "type": "neoorigins:mobs_target_player",
+  "entity_types": [
+    "orespawn:kraken",
+    "orespawn:mothra",
+    "orespawn:basilisk",
+    "orespawn:alien_boss",
+    "orespawn:ender_reaper",
+    "orespawn:ender_knight",
+    "orespawn:leonopteryx",
+    "orespawn:giant_robot",
+    "orespawn:water_dragon",
+    "orespawn:cephadrome",
+    "minecraft:zombie",
+    "minecraft:skeleton",
+    "minecraft:creeper",
+    "minecraft:pillager",
+    "minecraft:vindicator"
+  ],
+  "range": 32.0,
+  "name": "power.orespawn_integrations.royal_blood_marked.name",
+  "description": "power.orespawn_integrations.royal_blood_marked.description"
+}

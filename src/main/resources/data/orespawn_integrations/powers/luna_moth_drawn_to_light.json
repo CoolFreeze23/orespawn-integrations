@@ -1,0 +1,26 @@
+{
+  "type": "neoorigins:condition_passive",
+  "interval": 20,
+  "condition": {
+    "type": "neoorigins:light_level",
+    "comparison": ">=",
+    "compare_to": 12
+  },
+  "entity_action": {
+    "type": "neoorigins:apply_effect",
+    "effects": [
+      {
+        "effect": "minecraft:speed",
+        "duration": 40,
+        "amplifier": 0
+      },
+      {
+        "effect": "minecraft:regeneration",
+        "duration": 40,
+        "amplifier": 0
+      }
+    ]
+  },
+  "name": "power.orespawn_integrations.luna_moth_drawn_to_light.name",
+  "description": "power.orespawn_integrations.luna_moth_drawn_to_light.description"
+}

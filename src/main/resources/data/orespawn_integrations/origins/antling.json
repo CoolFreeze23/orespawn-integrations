@@ -1,0 +1,50 @@
+{
+  "name": "origins.orespawn_integrations.antling.name",
+  "description": "origins.orespawn_integrations.antling.description",
+  "icon": "orespawn:ant_robot_kit",
+  "impact": "high",
+  "order": 101,
+  "powers": [
+    "orespawn_integrations:antling_swarm_call",
+    "orespawn_integrations:antling_tunnel",
+    "orespawn_integrations:antling_small",
+    "orespawn_integrations:antling_climb",
+    "orespawn_integrations:antling_no_fall",
+    "orespawn_integrations:antling_quick",
+    "orespawn_integrations:antling_colony",
+    "orespawn_integrations:antling_sweet_tooth",
+    "orespawn_integrations:antling_fragile",
+    "orespawn_integrations:antling_light_only",
+    "orespawn_integrations:antling_prey",
+    "orespawn_integrations:antling_form",
+    "orespawn_integrations:antling_form_toggle"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:antling_evolved_hp"
+      ],
+      "remove": []
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:antling_ascended_swarm"
+      ],
+      "remove": [
+        "orespawn_integrations:antling_swarm_call"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:antling_apex_swarm"
+      ],
+      "remove": [
+        "orespawn_integrations:antling_ascended_swarm"
+      ]
+    }
+  ]
+}

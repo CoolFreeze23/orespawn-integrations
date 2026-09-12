@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:effect_immunity",
+  "effects": [
+    "minecraft:poison",
+    "minecraft:wither"
+  ],
+  "name": "power.orespawn_integrations.uranium_born_hardened.name",
+  "description": "power.orespawn_integrations.uranium_born_hardened.description"
+}

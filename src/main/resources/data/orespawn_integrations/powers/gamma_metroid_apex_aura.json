@@ -1,0 +1,26 @@
+{
+  "type": "neoorigins:effect_over_time",
+  "activation": "passive",
+  "interval": 40,
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:area_of_effect",
+        "radius": 5.0,
+        "entity_action": {
+          "type": "neoorigins:damage",
+          "amount": 0.5,
+          "damage_type": "minecraft:magic"
+        },
+        "include_source": false
+      },
+      {
+        "type": "neoorigins:heal",
+        "amount": 0.5
+      }
+    ]
+  },
+  "name": "power.orespawn_integrations.gamma_metroid_apex_aura.name",
+  "description": "power.orespawn_integrations.gamma_metroid_apex_aura.description"
+}

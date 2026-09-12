@@ -1,0 +1,16 @@
+{
+  "type": "neoorigins:active_dash",
+  "power": 2.0,
+  "cooldown_ticks": 160,
+  "allow_vertical": false,
+  "set_velocity": true,
+  "damage": 6.0,
+  "damage_radius": 1.5,
+  "cooldown_icon": "minecraft:bone",
+  "power_condition": {
+    "type": "neoorigins:night"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.lobisomem_salto.name",
+  "description": "power.orespawn_integrations.lobisomem_salto.description"
+}

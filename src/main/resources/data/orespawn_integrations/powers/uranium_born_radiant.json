@@ -1,0 +1,19 @@
+{
+  "type": "neoorigins:scare_entities",
+  "entity_types": [
+    "minecraft:cow",
+    "minecraft:sheep",
+    "minecraft:pig",
+    "minecraft:chicken",
+    "minecraft:horse",
+    "minecraft:donkey",
+    "minecraft:rabbit",
+    "minecraft:villager",
+    "minecraft:wandering_trader",
+    "orespawn:apple_cow",
+    "orespawn:gold_cow",
+    "orespawn:crystal_cow"
+  ],
+  "name": "power.orespawn_integrations.uranium_born_radiant.name",
+  "description": "power.orespawn_integrations.uranium_born_radiant.description"
+}

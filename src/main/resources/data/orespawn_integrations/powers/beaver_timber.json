@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:tree_felling",
+  "max_blocks": 64,
+  "name": "power.orespawn_integrations.beaver_timber.name",
+  "description": "power.orespawn_integrations.beaver_timber.description"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "neoorigins:resource",
+  "min": 0,
+  "max": 100,
+  "start_value": 100,
+  "regen_rate": 3,
+  "regen_interval": 20,
+  "hud_render": {
+    "label": "Heat",
+    "color": "#66FF33"
+  },
+  "name": "power.orespawn_integrations.uranium_born_evolved_heat.name",
+  "description": "power.orespawn_integrations.uranium_born_evolved_heat.description"
+}

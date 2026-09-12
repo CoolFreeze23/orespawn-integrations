@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:prevent_action",
+  "action": "SLEEP",
+  "name": "power.orespawn_integrations.lobisomem_no_sleep.name",
+  "description": "power.orespawn_integrations.lobisomem_no_sleep.description"
+}

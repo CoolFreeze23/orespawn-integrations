@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:scare_entities",
+  "entity_types": [
+    "minecraft:villager",
+    "minecraft:wandering_trader"
+  ],
+  "power_condition": {
+    "type": "neoorigins:sprinting"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.royal_blood_haughty.name",
+  "description": "power.orespawn_integrations.royal_blood_haughty.description"
+}

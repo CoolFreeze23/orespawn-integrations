@@ -1,0 +1,57 @@
+{
+  "name": "origins.orespawn_integrations.lobisomem.name",
+  "description": "origins.orespawn_integrations.lobisomem.description",
+  "icon": "minecraft:bone",
+  "impact": "high",
+  "order": 114,
+  "powers": [
+    "orespawn_integrations:lobisomem_uivo",
+    "orespawn_integrations:lobisomem_pack",
+    "orespawn_integrations:lobisomem_salto",
+    "orespawn_integrations:lobisomem_day_form",
+    "orespawn_integrations:lobisomem_night_attack",
+    "orespawn_integrations:lobisomem_night_speed",
+    "orespawn_integrations:lobisomem_night_hp",
+    "orespawn_integrations:lobisomem_night_eyes",
+    "orespawn_integrations:lobisomem_night_jump",
+    "orespawn_integrations:lobisomem_bleed",
+    "orespawn_integrations:lobisomem_full_moon",
+    "orespawn_integrations:lobisomem_full_form",
+    "orespawn_integrations:lobisomem_kin",
+    "orespawn_integrations:lobisomem_no_sleep",
+    "orespawn_integrations:lobisomem_night_diet",
+    "orespawn_integrations:lobisomem_hunted"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:lobisomem_evolved_day"
+      ],
+      "remove": [
+        "orespawn_integrations:lobisomem_day_form"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:lobisomem_ascended_pack"
+      ],
+      "remove": [
+        "orespawn_integrations:lobisomem_pack"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:lobisomem_apex_moon",
+        "orespawn_integrations:lobisomem_apex_bleed"
+      ],
+      "remove": [
+        "orespawn_integrations:lobisomem_full_moon",
+        "orespawn_integrations:lobisomem_bleed"
+      ]
+    }
+  ]
+}

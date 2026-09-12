@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:jump_strength",
+  "amount": 0.35,
+  "operation": "add_value",
+  "name": "power.orespawn_integrations.saci_hop.name",
+  "description": "power.orespawn_integrations.saci_hop.description"
+}

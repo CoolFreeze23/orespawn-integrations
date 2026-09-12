@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:breath_out_of_fluid",
+  "fluid": "water",
+  "drain_interval_ticks": 3,
+  "name": "power.orespawn_integrations.kraken_spawn_dries_out.name",
+  "description": "power.orespawn_integrations.kraken_spawn_dries_out.description"
+}

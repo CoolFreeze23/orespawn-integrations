@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:movement_speed",
+  "amount": 0.25,
+  "operation": "add_multiplied_base",
+  "condition": {
+    "type": "neoorigins:night"
+  },
+  "name": "power.orespawn_integrations.mula_night_speed.name",
+  "description": "power.orespawn_integrations.mula_night_speed.description"
+}

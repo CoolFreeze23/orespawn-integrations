@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "orespawn:kraken",
+  "max_count": 1,
+  "quantity": 1,
+  "cooldown_ticks": 18000,
+  "despawn_ticks": 2400,
+  "death_damage": 0.0,
+  "cooldown_icon": "orespawn:kraken_tooth",
+  "hunger_cost": 10,
+  "name": "power.orespawn_integrations.kraken_spawn_apex_kraken.name",
+  "description": "power.orespawn_integrations.kraken_spawn_apex_kraken.description"
+}

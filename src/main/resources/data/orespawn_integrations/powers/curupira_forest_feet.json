@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:dodge_chance",
+  "chance": 0.15,
+  "power_condition": {
+    "type": "neoorigins:biome",
+    "tag": "orespawn_integrations:origins/forest"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.curupira_forest_feet.name",
+  "description": "power.orespawn_integrations.curupira_forest_feet.description"
+}

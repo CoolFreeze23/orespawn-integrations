@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:active_teleport",
+  "range": 24.0,
+  "cooldown_ticks": 400,
+  "mode": "target",
+  "cooldown_icon": "vortexmod:tardis_key",
+  "name": "power.orespawn_integrations.time_lord_ascended_salto.name",
+  "description": "power.orespawn_integrations.time_lord_ascended_salto.description"
+}

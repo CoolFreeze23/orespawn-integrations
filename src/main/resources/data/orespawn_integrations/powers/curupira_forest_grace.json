@@ -1,0 +1,23 @@
+{
+  "type": "neoorigins:persistent_effect",
+  "toggleable": false,
+  "ambient": true,
+  "show_particles": false,
+  "show_icon": false,
+  "effects": [
+    {
+      "effect": "minecraft:speed",
+      "amplifier": 0
+    },
+    {
+      "effect": "minecraft:regeneration",
+      "amplifier": 0
+    }
+  ],
+  "condition": {
+    "type": "neoorigins:biome",
+    "tag": "orespawn_integrations:origins/forest"
+  },
+  "name": "power.orespawn_integrations.curupira_forest_grace.name",
+  "description": "power.orespawn_integrations.curupira_forest_grace.description"
+}

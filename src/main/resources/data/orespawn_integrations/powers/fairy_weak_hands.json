@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:modify_damage",
+  "direction": "out",
+  "multiplier": 0.6,
+  "name": "power.orespawn_integrations.fairy_weak_hands.name",
+  "description": "power.orespawn_integrations.fairy_weak_hands.description"
+}

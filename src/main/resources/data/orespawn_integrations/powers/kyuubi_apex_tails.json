@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "orespawn:kyuubi",
+  "max_count": 2,
+  "quantity": 2,
+  "cooldown_ticks": 6000,
+  "despawn_ticks": 1200,
+  "death_damage": 0.0,
+  "cooldown_icon": "orespawn:nightmare_scale",
+  "hunger_cost": 8,
+  "name": "power.orespawn_integrations.kyuubi_apex_tails.name",
+  "description": "power.orespawn_integrations.kyuubi_apex_tails.description"
+}

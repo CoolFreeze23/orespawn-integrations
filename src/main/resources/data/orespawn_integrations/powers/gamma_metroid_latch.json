@@ -1,0 +1,33 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 300,
+  "cooldown_icon": "orespawn:rock_crystal_green",
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:chain_to_nearest",
+        "radius": 8.0,
+        "speed": 1.2
+      },
+      {
+        "type": "neoorigins:area_of_effect",
+        "radius": 3.0,
+        "entity_action": {
+          "type": "neoorigins:apply_effect",
+          "effect": "minecraft:wither",
+          "duration": 80,
+          "amplifier": 0,
+          "show_particles": true
+        },
+        "include_source": false
+      },
+      {
+        "type": "neoorigins:heal",
+        "amount": 4.0
+      }
+    ]
+  },
+  "name": "power.orespawn_integrations.gamma_metroid_latch.name",
+  "description": "power.orespawn_integrations.gamma_metroid_latch.description"
+}

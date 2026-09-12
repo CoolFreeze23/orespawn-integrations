@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:food_restriction",
+  "mode": "whitelist",
+  "item_tag": [
+    "orespawn_integrations:origins/meat_foods"
+  ],
+  "power_condition": {
+    "type": "neoorigins:night"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.lobisomem_night_diet.name",
+  "description": "power.orespawn_integrations.lobisomem_night_diet.description"
+}

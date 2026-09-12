@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:stealth",
+  "activation_ticks": 40,
+  "cooldown_icon": "brazil_legends:cachimbo",
+  "name": "power.orespawn_integrations.saci_sneaky.name",
+  "description": "power.orespawn_integrations.saci_sneaky.description"
+}

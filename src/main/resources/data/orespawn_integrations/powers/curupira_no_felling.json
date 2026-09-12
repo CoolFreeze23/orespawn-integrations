@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:break_speed_modifier",
+  "multiplier": 0.25,
+  "block_tag": "#minecraft:logs",
+  "name": "power.orespawn_integrations.curupira_no_felling.name",
+  "description": "power.orespawn_integrations.curupira_no_felling.description"
+}

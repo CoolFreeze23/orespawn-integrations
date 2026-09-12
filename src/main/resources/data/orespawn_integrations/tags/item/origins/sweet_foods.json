@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:sugar",
+    "minecraft:honey_bottle",
+    "minecraft:cookie",
+    "minecraft:cake",
+    "minecraft:pumpkin_pie",
+    "minecraft:sweet_berries",
+    "minecraft:glow_berries",
+    "orespawn:popcorn",
+    "orespawn:buttered_popcorn",
+    "orespawn:buttered_salted_popcorn",
+    "orespawn:corn_cob",
+    "orespawn:strawberry",
+    {
+      "id": "brasilcoisas:manga_com_leite",
+      "required": false
+    }
+  ]
+}

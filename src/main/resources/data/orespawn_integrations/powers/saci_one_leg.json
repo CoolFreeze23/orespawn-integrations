@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:movement_speed",
+  "amount": -0.2,
+  "operation": "add_multiplied_base",
+  "name": "power.orespawn_integrations.saci_one_leg.name",
+  "description": "power.orespawn_integrations.saci_one_leg.description"
+}

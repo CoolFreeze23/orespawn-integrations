@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:active_place_block",
+  "block_id": "minecraft:oak_planks",
+  "max_distance": 8.0,
+  "cooldown_ticks": 10,
+  "cooldown_icon": "minecraft:oak_planks",
+  "name": "power.orespawn_integrations.beaver_apex_plank.name",
+  "description": "power.orespawn_integrations.beaver_apex_plank.description"
+}

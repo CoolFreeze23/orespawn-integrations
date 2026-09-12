@@ -1,0 +1,15 @@
+{
+  "type": "neoorigins:restrict_armor",
+  "restrictions": [
+    {
+      "slot": "chest",
+      "tag": "orespawn_integrations:origins/heavy_armor"
+    },
+    {
+      "slot": "legs",
+      "tag": "orespawn_integrations:origins/heavy_armor"
+    }
+  ],
+  "name": "power.orespawn_integrations.antling_light_only.name",
+  "description": "power.orespawn_integrations.antling_light_only.description"
+}

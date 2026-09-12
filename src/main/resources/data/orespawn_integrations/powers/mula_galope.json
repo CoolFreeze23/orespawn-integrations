@@ -1,0 +1,17 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 300,
+  "cooldown_icon": "brazil_legends:flaming_leather",
+  "entity_action": {
+    "type": "neoorigins:apply_effect",
+    "effect": "minecraft:speed",
+    "duration": 160,
+    "amplifier": 3,
+    "show_particles": true
+  },
+  "condition": {
+    "type": "neoorigins:night"
+  },
+  "name": "power.orespawn_integrations.mula_galope.name",
+  "description": "power.orespawn_integrations.mula_galope.description"
+}

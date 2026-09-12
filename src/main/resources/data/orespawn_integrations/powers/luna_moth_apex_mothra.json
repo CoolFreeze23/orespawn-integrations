@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "orespawn:mothra",
+  "max_count": 1,
+  "quantity": 1,
+  "cooldown_ticks": 24000,
+  "despawn_ticks": 2400,
+  "death_damage": 0.0,
+  "cooldown_icon": "orespawn:moth_scale",
+  "hunger_cost": 10,
+  "name": "power.orespawn_integrations.luna_moth_apex_mothra.name",
+  "description": "power.orespawn_integrations.luna_moth_apex_mothra.description"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "neoorigins:condition_passive",
+  "interval": 20,
+  "condition": {
+    "type": "neoorigins:biome",
+    "tag": "orespawn_integrations:origins/cold"
+  },
+  "entity_action": {
+    "type": "neoorigins:damage",
+    "amount": 1.0,
+    "damage_type": "minecraft:freeze"
+  },
+  "name": "power.orespawn_integrations.gamma_metroid_cold_death.name",
+  "description": "power.orespawn_integrations.gamma_metroid_cold_death.description"
+}

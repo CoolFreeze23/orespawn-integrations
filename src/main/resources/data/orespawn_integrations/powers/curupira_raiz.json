@@ -1,0 +1,15 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 240,
+  "cooldown_icon": "minecraft:vine",
+  "entity_action": {
+    "type": "neoorigins:cast_iron_spell",
+    "spell": "irons_spellbooks:root",
+    "level": 2,
+    "consume_mana": false,
+    "trigger_cooldown": false,
+    "mode": "instant"
+  },
+  "name": "power.orespawn_integrations.curupira_raiz.name",
+  "description": "power.orespawn_integrations.curupira_raiz.description"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "neoorigins:condition_passive",
+  "interval": 20,
+  "condition": {
+    "type": "neoorigins:biome",
+    "tag": "orespawn_integrations:origins/cold"
+  },
+  "entity_action": {
+    "type": "neoorigins:apply_effect",
+    "effect": "minecraft:slowness",
+    "duration": 40,
+    "amplifier": 1,
+    "show_particles": false
+  },
+  "name": "power.orespawn_integrations.raptor_cold_blood.name",
+  "description": "power.orespawn_integrations.raptor_cold_blood.description"
+}

@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "#neoorigins:meat_foods",
+    "#orespawn_integrations:origins/raw_meats",
+    "orespawn:cooked_bacon",
+    "orespawn:cooked_peacock",
+    "orespawn:cooked_crab_meat",
+    "orespawn:corn_dog",
+    "orespawn:raw_corn_dog",
+    {
+      "id": "brazil_legends:cooked_tongue_slices",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:tongue_slices",
+      "required": false
+    }
+  ]
+}

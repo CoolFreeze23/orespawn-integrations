@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:modify_damage",
+  "direction": "out",
+  "multiplier": 1.25,
+  "condition": {
+    "type": "neoorigins:submerged_in_water"
+  },
+  "name": "power.orespawn_integrations.kraken_spawn_crush.name",
+  "description": "power.orespawn_integrations.kraken_spawn_crush.description"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:modify_food_nutrition",
+  "nutrition": 1,
+  "food_tag": "orespawn_integrations:origins/meat_foods",
+  "name": "power.orespawn_integrations.luna_moth_no_meat.name",
+  "description": "power.orespawn_integrations.luna_moth_no_meat.description"
+}

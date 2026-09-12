@@ -1,0 +1,15 @@
+{
+  "type": "neoorigins:mobs_ignore_player",
+  "entity_types": [
+    "orespawn:velocity_raptor",
+    "orespawn:trex",
+    "orespawn:alosaurus",
+    "orespawn:baryonyx",
+    "orespawn:cryolophosaurus",
+    "orespawn:nastysaurus",
+    "orespawn:pointysaurus",
+    "orespawn:camarasaurus"
+  ],
+  "name": "power.orespawn_integrations.raptor_kin.name",
+  "description": "power.orespawn_integrations.raptor_kin.description"
+}

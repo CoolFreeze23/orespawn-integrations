@@ -1,0 +1,29 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 400,
+  "cooldown_icon": "orespawn:fairy_sword",
+  "entity_action": {
+    "type": "neoorigins:area_of_effect",
+    "radius": 8.0,
+    "entity_action": {
+      "type": "neoorigins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 200,
+          "amplifier": 1
+        },
+        {
+          "effect": "minecraft:absorption",
+          "duration": 600,
+          "amplifier": 0
+        }
+      ]
+    },
+    "include_source": true
+  },
+  "resource_cost": "orespawn_integrations:fairy_sparkle",
+  "resource_cost_amount": 40,
+  "name": "power.orespawn_integrations.fairy_blessing.name",
+  "description": "power.orespawn_integrations.fairy_blessing.description"
+}

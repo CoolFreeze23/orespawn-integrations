@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:modify_damage",
+  "direction": "out",
+  "multiplier": 0.5,
+  "name": "power.orespawn_integrations.capivara_soft.name",
+  "description": "power.orespawn_integrations.capivara_soft.description"
+}

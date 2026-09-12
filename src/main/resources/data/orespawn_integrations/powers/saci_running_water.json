@@ -1,0 +1,18 @@
+{
+  "type": "neoorigins:persistent_effect",
+  "toggleable": false,
+  "ambient": true,
+  "show_particles": false,
+  "show_icon": false,
+  "effects": [
+    {
+      "effect": "minecraft:slowness",
+      "amplifier": 2
+    }
+  ],
+  "condition": {
+    "type": "neoorigins:in_water"
+  },
+  "name": "power.orespawn_integrations.saci_running_water.name",
+  "description": "power.orespawn_integrations.saci_running_water.description"
+}

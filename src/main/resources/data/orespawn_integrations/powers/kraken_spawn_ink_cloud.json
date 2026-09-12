@@ -1,0 +1,29 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 240,
+  "cooldown_icon": "minecraft:ink_sac",
+  "entity_action": {
+    "type": "neoorigins:spawn_lingering_area",
+    "radius": 4.0,
+    "duration_ticks": 120,
+    "interval_ticks": 20,
+    "particle_type": "minecraft:squid_ink",
+    "entity_action": {
+      "type": "neoorigins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:blindness",
+          "duration": 120,
+          "amplifier": 0
+        },
+        {
+          "effect": "minecraft:slowness",
+          "duration": 120,
+          "amplifier": 1
+        }
+      ]
+    }
+  },
+  "name": "power.orespawn_integrations.kraken_spawn_ink_cloud.name",
+  "description": "power.orespawn_integrations.kraken_spawn_ink_cloud.description"
+}

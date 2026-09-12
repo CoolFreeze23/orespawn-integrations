@@ -1,0 +1,55 @@
+{
+  "name": "origins.orespawn_integrations.mapinguari.name",
+  "description": "origins.orespawn_integrations.mapinguari.description",
+  "icon": "brazil_legends:mapinguari_fang",
+  "impact": "high",
+  "order": 112,
+  "powers": [
+    "orespawn_integrations:mapinguari_terremoto",
+    "orespawn_integrations:mapinguari_rugido",
+    "orespawn_integrations:mapinguari_huge",
+    "orespawn_integrations:mapinguari_hp",
+    "orespawn_integrations:mapinguari_might",
+    "orespawn_integrations:mapinguari_unmovable",
+    "orespawn_integrations:mapinguari_hide",
+    "orespawn_integrations:mapinguari_claws",
+    "orespawn_integrations:mapinguari_kin",
+    "orespawn_integrations:mapinguari_slow",
+    "orespawn_integrations:mapinguari_fire_weak",
+    "orespawn_integrations:mapinguari_appetite",
+    "orespawn_integrations:mapinguari_diet",
+    "orespawn_integrations:mapinguari_no_ranged",
+    "orespawn_integrations:mapinguari_hunted"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:mapinguari_evolved_terremoto"
+      ],
+      "remove": [
+        "orespawn_integrations:mapinguari_terremoto"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:mapinguari_ascended_hide"
+      ],
+      "remove": [
+        "orespawn_integrations:mapinguari_hide"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:mapinguari_apex_rugido",
+        "orespawn_integrations:mapinguari_apex_regen"
+      ],
+      "remove": [
+        "orespawn_integrations:mapinguari_rugido"
+      ]
+    }
+  ]
+}

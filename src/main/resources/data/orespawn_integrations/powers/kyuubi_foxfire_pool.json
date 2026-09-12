@@ -1,0 +1,37 @@
+{
+  "type": "neoorigins:resource",
+  "min": 0,
+  "max": 100,
+  "start_value": 100,
+  "regen_rate": 4,
+  "regen_interval": 20,
+  "regen_condition": {
+    "type": "neoorigins:and",
+    "conditions": [
+      {
+        "type": "neoorigins:out_of_combat",
+        "ticks": 100
+      },
+      {
+        "type": "neoorigins:not",
+        "condition": {
+          "type": "neoorigins:or",
+          "conditions": [
+            {
+              "type": "neoorigins:in_water"
+            },
+            {
+              "type": "neoorigins:in_rain"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "hud_render": {
+    "label": "Fox-fire",
+    "color": "#FF6A00"
+  },
+  "name": "power.orespawn_integrations.kyuubi_foxfire_pool.name",
+  "description": "power.orespawn_integrations.kyuubi_foxfire_pool.description"
+}

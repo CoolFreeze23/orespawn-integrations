@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:longer_potions",
+  "duration_multiplier": 1.5,
+  "name": "power.orespawn_integrations.time_lord_long_potions.name",
+  "description": "power.orespawn_integrations.time_lord_long_potions.description"
+}

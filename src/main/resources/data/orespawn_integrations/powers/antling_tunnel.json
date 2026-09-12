@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:active_phase",
+  "max_depth": 3,
+  "cooldown_ticks": 160,
+  "cooldown_icon": "minecraft:iron_shovel",
+  "name": "power.orespawn_integrations.antling_tunnel.name",
+  "description": "power.orespawn_integrations.antling_tunnel.description"
+}

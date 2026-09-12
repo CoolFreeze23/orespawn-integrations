@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "brasilcoisas:capivara",
+  "max_count": 2,
+  "quantity": 2,
+  "cooldown_ticks": 6000,
+  "despawn_ticks": 2400,
+  "death_damage": 0.0,
+  "cooldown_icon": "brasilcoisas:manga",
+  "hunger_cost": 4,
+  "name": "power.orespawn_integrations.capivara_apex_entourage.name",
+  "description": "power.orespawn_integrations.capivara_apex_entourage.description"
+}

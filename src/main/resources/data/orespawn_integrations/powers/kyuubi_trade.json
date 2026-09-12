@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:active_swap",
+  "range": 10.0,
+  "cooldown_ticks": 500,
+  "cooldown_icon": "minecraft:orange_dye",
+  "name": "power.orespawn_integrations.kyuubi_trade.name",
+  "description": "power.orespawn_integrations.kyuubi_trade.description"
+}

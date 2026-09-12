@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:action_on_event",
+  "event": "hit_taken",
+  "entity_action": {
+    "type": "neoorigins:ignite_attacker",
+    "ticks": 60
+  },
+  "name": "power.orespawn_integrations.mula_hot_hide.name",
+  "description": "power.orespawn_integrations.mula_hot_hide.description"
+}

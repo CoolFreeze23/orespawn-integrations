@@ -1,0 +1,9 @@
+{
+  "type": "neoorigins:action_on_hit",
+  "action": "target_effect",
+  "effect": "minecraft:wither",
+  "duration": 60,
+  "amplifier": 0,
+  "name": "power.orespawn_integrations.raptor_bleed.name",
+  "description": "power.orespawn_integrations.raptor_bleed.description"
+}

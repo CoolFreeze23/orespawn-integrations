@@ -1,0 +1,34 @@
+{
+  "type": "neoorigins:prevent_death",
+  "set_health": 4.0,
+  "cooldown_ticks": 24000,
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:spawn_particles",
+        "particle": "minecraft:flame",
+        "count": 60,
+        "speed": 0.05,
+        "offset_y": 1.0,
+        "spread": {
+          "x": 1.5,
+          "y": 1.5,
+          "z": 1.5
+        }
+      },
+      {
+        "type": "neoorigins:apply_effect",
+        "effect": "minecraft:fire_resistance",
+        "duration": 200,
+        "amplifier": 0,
+        "show_particles": true
+      }
+    ]
+  },
+  "condition": {
+    "type": "neoorigins:night"
+  },
+  "name": "power.orespawn_integrations.mula_apex_flame.name",
+  "description": "power.orespawn_integrations.mula_apex_flame.description"
+}

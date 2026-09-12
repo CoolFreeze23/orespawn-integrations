@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:attack_damage",
+  "amount": 1.0,
+  "operation": "add_value",
+  "name": "power.orespawn_integrations.royal_blood_might.name",
+  "description": "power.orespawn_integrations.royal_blood_might.description"
+}

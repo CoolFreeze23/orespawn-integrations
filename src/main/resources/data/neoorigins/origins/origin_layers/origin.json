@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "origins": [
+    "orespawn_integrations:antling",
+    "orespawn_integrations:kraken_spawn",
+    "orespawn_integrations:royal_blood",
+    "orespawn_integrations:uranium_born",
+    "orespawn_integrations:luna_moth",
+    "orespawn_integrations:kyuubi",
+    "orespawn_integrations:fairy",
+    "orespawn_integrations:gamma_metroid",
+    "orespawn_integrations:raptor",
+    "orespawn_integrations:beaver",
+    "orespawn_integrations:saci",
+    "orespawn_integrations:mapinguari",
+    "orespawn_integrations:capivara",
+    "orespawn_integrations:lobisomem",
+    "orespawn_integrations:cuca",
+    "orespawn_integrations:curupira",
+    "orespawn_integrations:mula",
+    "orespawn_integrations:time_lord"
+  ]
+}

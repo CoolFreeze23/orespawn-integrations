@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:damage_in_water",
+  "damage_per_second": 1.0,
+  "include_rain": true,
+  "power_condition": {
+    "type": "neoorigins:night"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.mula_quenched.name",
+  "description": "power.orespawn_integrations.mula_quenched.description"
+}

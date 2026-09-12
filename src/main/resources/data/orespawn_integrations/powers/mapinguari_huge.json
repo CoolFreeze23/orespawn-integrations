@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:size_scaling",
+  "scale": 1.3,
+  "modify_reach": true,
+  "name": "power.orespawn_integrations.mapinguari_huge.name",
+  "description": "power.orespawn_integrations.mapinguari_huge.description"
+}

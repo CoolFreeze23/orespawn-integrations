@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:edible_item",
+  "tags": [
+    "orespawn_integrations:origins/uranium_foods"
+  ],
+  "nutrition": 8,
+  "saturation": 1.0,
+  "always_edible": true,
+  "name": "power.orespawn_integrations.uranium_born_fuel.name",
+  "description": "power.orespawn_integrations.uranium_born_fuel.description"
+}

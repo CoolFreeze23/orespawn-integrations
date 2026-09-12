@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:edible_item",
+  "tags": [
+    "orespawn_integrations:origins/beaver_foods"
+  ],
+  "nutrition": 3,
+  "saturation": 0.6,
+  "always_edible": false,
+  "name": "power.orespawn_integrations.beaver_wood_diet.name",
+  "description": "power.orespawn_integrations.beaver_wood_diet.description"
+}

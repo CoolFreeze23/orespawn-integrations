@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:crop_growth_accelerator",
+  "radius": 6,
+  "tick_interval": 20,
+  "growths_per_interval": 2,
+  "power_condition": {
+    "type": "neoorigins:biome",
+    "tag": "orespawn_integrations:origins/forest"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.curupira_green_thumb.name",
+  "description": "power.orespawn_integrations.curupira_green_thumb.description"
+}

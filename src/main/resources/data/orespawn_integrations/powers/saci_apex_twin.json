@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "brazil_legends:saci_perere",
+  "max_count": 1,
+  "quantity": 1,
+  "cooldown_ticks": 6000,
+  "despawn_ticks": 1200,
+  "death_damage": 0.0,
+  "cooldown_icon": "brazil_legends:cachimbo",
+  "hunger_cost": 6,
+  "name": "power.orespawn_integrations.saci_apex_twin.name",
+  "description": "power.orespawn_integrations.saci_apex_twin.description"
+}

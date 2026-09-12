@@ -1,0 +1,50 @@
+{
+  "name": "origins.orespawn_integrations.kyuubi.name",
+  "description": "origins.orespawn_integrations.kyuubi.description",
+  "icon": "orespawn:nightmare_scale",
+  "impact": "high",
+  "order": 106,
+  "powers": [
+    "orespawn_integrations:kyuubi_foxfire_pool",
+    "orespawn_integrations:kyuubi_foxfire",
+    "orespawn_integrations:kyuubi_nine_steps",
+    "orespawn_integrations:kyuubi_trade",
+    "orespawn_integrations:kyuubi_dodge",
+    "orespawn_integrations:kyuubi_fire_immune",
+    "orespawn_integrations:kyuubi_quick",
+    "orespawn_integrations:kyuubi_night_eyes",
+    "orespawn_integrations:kyuubi_kin",
+    "orespawn_integrations:kyuubi_frail",
+    "orespawn_integrations:kyuubi_hounded",
+    "orespawn_integrations:kyuubi_form",
+    "orespawn_integrations:kyuubi_form_toggle"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:kyuubi_evolved_dodge"
+      ],
+      "remove": [
+        "orespawn_integrations:kyuubi_dodge"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:kyuubi_ascended_foxfire"
+      ],
+      "remove": [
+        "orespawn_integrations:kyuubi_foxfire"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:kyuubi_apex_tails"
+      ],
+      "remove": []
+    }
+  ]
+}

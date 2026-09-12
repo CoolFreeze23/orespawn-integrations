@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:mobs_target_player",
+  "entity_types": [
+    "brazil_legends:capelobo",
+    "brazil_legends:capelobo_stare"
+  ],
+  "range": 24.0,
+  "name": "power.orespawn_integrations.mapinguari_hunted.name",
+  "description": "power.orespawn_integrations.mapinguari_hunted.description"
+}

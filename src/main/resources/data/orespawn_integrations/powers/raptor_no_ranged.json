@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:restrict_items",
+  "item_condition": {
+    "tag": "orespawn_integrations:origins/ranged_weapons"
+  },
+  "prevent_use": true,
+  "prevent_equip": false,
+  "deny": true,
+  "name": "power.orespawn_integrations.raptor_no_ranged.name",
+  "description": "power.orespawn_integrations.raptor_no_ranged.description"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:command_pack",
+  "range": 32.0,
+  "cooldown_ticks": 40,
+  "cooldown_icon": "minecraft:lead",
+  "name": "power.orespawn_integrations.raptor_command.name",
+  "description": "power.orespawn_integrations.raptor_command.description"
+}

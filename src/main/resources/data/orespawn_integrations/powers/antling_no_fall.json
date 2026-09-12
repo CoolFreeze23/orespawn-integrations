@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:prevent_action",
+  "action": "FALL_DAMAGE",
+  "name": "power.orespawn_integrations.antling_no_fall.name",
+  "description": "power.orespawn_integrations.antling_no_fall.description"
+}

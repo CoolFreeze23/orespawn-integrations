@@ -1,0 +1,46 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 120,
+  "cooldown_icon": "minecraft:splash_potion",
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:spawn_projectile",
+        "entity_type": "minecraft:potion",
+        "speed": 1.4,
+        "count": 1,
+        "inaccuracy": 0.0
+      },
+      {
+        "type": "neoorigins:area_of_effect",
+        "radius": 3.0,
+        "entity_action": {
+          "type": "neoorigins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:poison",
+              "duration": 100,
+              "amplifier": 1
+            },
+            {
+              "effect": "minecraft:slowness",
+              "duration": 100,
+              "amplifier": 1
+            },
+            {
+              "effect": "minecraft:blindness",
+              "duration": 60,
+              "amplifier": 0
+            }
+          ]
+        },
+        "include_source": false
+      }
+    ]
+  },
+  "resource_cost": "orespawn_integrations:cuca_bruxaria",
+  "resource_cost_amount": 15,
+  "name": "power.orespawn_integrations.cuca_evolved_feitico.name",
+  "description": "power.orespawn_integrations.cuca_evolved_feitico.description"
+}

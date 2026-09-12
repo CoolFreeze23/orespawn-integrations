@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:tamed_animal_boost",
+  "health_bonus": 6.0,
+  "speed_bonus": 0.1,
+  "radius": 32.0,
+  "name": "power.orespawn_integrations.raptor_pack_bond.name",
+  "description": "power.orespawn_integrations.raptor_pack_bond.description"
+}

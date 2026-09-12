@@ -1,0 +1,17 @@
+{
+  "type": "neoorigins:resource",
+  "min": 0,
+  "max": 100,
+  "start_value": 100,
+  "regen_rate": 3,
+  "regen_interval": 20,
+  "regen_condition": {
+    "type": "neoorigins:in_water"
+  },
+  "hud_render": {
+    "label": "Tide",
+    "color": "#2266CC"
+  },
+  "name": "power.orespawn_integrations.kraken_spawn_tide.name",
+  "description": "power.orespawn_integrations.kraken_spawn_tide.description"
+}

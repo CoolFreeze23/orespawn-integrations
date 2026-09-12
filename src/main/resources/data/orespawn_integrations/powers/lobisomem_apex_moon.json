@@ -1,0 +1,22 @@
+{
+  "type": "neoorigins:persistent_effect",
+  "toggleable": false,
+  "ambient": true,
+  "show_particles": false,
+  "show_icon": false,
+  "effects": [
+    {
+      "effect": "minecraft:strength",
+      "amplifier": 1
+    },
+    {
+      "effect": "minecraft:speed",
+      "amplifier": 0
+    }
+  ],
+  "condition": {
+    "type": "neoorigins:night"
+  },
+  "name": "power.orespawn_integrations.lobisomem_apex_moon.name",
+  "description": "power.orespawn_integrations.lobisomem_apex_moon.description"
+}

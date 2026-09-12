@@ -1,0 +1,43 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 300,
+  "cooldown_icon": "orespawn:kraken_tooth",
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:pull_entities",
+        "radius": 12.0,
+        "strength": 0.9,
+        "include_players": false
+      },
+      {
+        "type": "neoorigins:delay",
+        "ticks": 10,
+        "action": {
+          "type": "neoorigins:area_of_effect",
+          "radius": 4.0,
+          "entity_action": {
+            "type": "neoorigins:damage",
+            "amount": 6.0,
+            "damage_type": "minecraft:generic"
+          },
+          "include_source": false
+        }
+      },
+      {
+        "type": "neoorigins:area_of_effect",
+        "radius": 4.0,
+        "entity_action": {
+          "type": "neoorigins:heal",
+          "amount": 2.0
+        },
+        "include_source": true
+      }
+    ]
+  },
+  "resource_cost": "orespawn_integrations:kraken_spawn_tide",
+  "resource_cost_amount": 30,
+  "name": "power.orespawn_integrations.kraken_spawn_ascended_undertow.name",
+  "description": "power.orespawn_integrations.kraken_spawn_ascended_undertow.description"
+}

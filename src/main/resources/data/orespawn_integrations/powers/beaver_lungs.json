@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:breath_in_fluid",
+  "fluid": "water",
+  "drain_interval_ticks": 60,
+  "name": "power.orespawn_integrations.beaver_lungs.name",
+  "description": "power.orespawn_integrations.beaver_lungs.description"
+}

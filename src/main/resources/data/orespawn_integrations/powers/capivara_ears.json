@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:prevent_action",
+  "action": "ARMOR_EQUIP",
+  "head": true,
+  "name": "power.orespawn_integrations.capivara_ears.name",
+  "description": "power.orespawn_integrations.capivara_ears.description"
+}

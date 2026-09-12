@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:hunger_drain_modifier",
+  "multiplier": 2.0,
+  "power_condition": {
+    "type": "neoorigins:sprinting"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.beaver_waddle.name",
+  "description": "power.orespawn_integrations.beaver_waddle.description"
+}

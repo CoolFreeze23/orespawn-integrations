@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "brazil_legends:cuca",
+  "max_count": 1,
+  "quantity": 1,
+  "cooldown_ticks": 18000,
+  "despawn_ticks": 2400,
+  "death_damage": 0.0,
+  "cooldown_icon": "brazil_legends:magic_hat_helmet",
+  "hunger_cost": 10,
+  "name": "power.orespawn_integrations.cuca_apex_cuca.name",
+  "description": "power.orespawn_integrations.cuca_apex_cuca.description"
+}

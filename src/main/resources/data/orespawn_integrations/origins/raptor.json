@@ -1,0 +1,51 @@
+{
+  "name": "origins.orespawn_integrations.raptor.name",
+  "description": "origins.orespawn_integrations.raptor.description",
+  "icon": "orespawn:trex_tooth",
+  "impact": "high",
+  "order": 109,
+  "powers": [
+    "orespawn_integrations:raptor_pounce",
+    "orespawn_integrations:raptor_howl",
+    "orespawn_integrations:raptor_command",
+    "orespawn_integrations:raptor_quick",
+    "orespawn_integrations:raptor_spring",
+    "orespawn_integrations:raptor_bleed",
+    "orespawn_integrations:raptor_raw",
+    "orespawn_integrations:raptor_meat_only",
+    "orespawn_integrations:raptor_kin",
+    "orespawn_integrations:raptor_pack_bond",
+    "orespawn_integrations:raptor_no_ranged",
+    "orespawn_integrations:raptor_cold_blood",
+    "orespawn_integrations:raptor_form",
+    "orespawn_integrations:raptor_form_toggle"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:raptor_evolved_pounce"
+      ],
+      "remove": [
+        "orespawn_integrations:raptor_pounce"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:raptor_ascended_bleed"
+      ],
+      "remove": [
+        "orespawn_integrations:raptor_bleed"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:raptor_apex_pack"
+      ],
+      "remove": []
+    }
+  ]
+}

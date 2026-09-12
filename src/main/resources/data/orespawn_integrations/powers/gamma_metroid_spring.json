@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:jump_strength",
+  "amount": 0.2,
+  "operation": "add_value",
+  "name": "power.orespawn_integrations.gamma_metroid_spring.name",
+  "description": "power.orespawn_integrations.gamma_metroid_spring.description"
+}

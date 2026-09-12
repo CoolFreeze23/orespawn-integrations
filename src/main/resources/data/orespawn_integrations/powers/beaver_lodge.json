@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:extra_inventory",
+  "size": 9,
+  "drop_on_death": false,
+  "title": "Lodge",
+  "name": "power.orespawn_integrations.beaver_lodge.name",
+  "description": "power.orespawn_integrations.beaver_lodge.description"
+}

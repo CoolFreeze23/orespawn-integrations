@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:active_recall",
+  "cooldown_ticks": 1800,
+  "cooldown_icon": "minecraft:clock",
+  "name": "power.orespawn_integrations.time_lord_rebobinar.name",
+  "description": "power.orespawn_integrations.time_lord_rebobinar.description"
+}

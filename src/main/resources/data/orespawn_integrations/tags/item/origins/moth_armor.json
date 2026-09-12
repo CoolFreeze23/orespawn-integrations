@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "orespawn:mothscale_helmet",
+    "orespawn:mothscale_chestplate",
+    "orespawn:mothscale_leggings",
+    "orespawn:mothscale_boots",
+    "minecraft:leather_helmet",
+    "minecraft:leather_chestplate",
+    "minecraft:leather_leggings",
+    "minecraft:leather_boots"
+  ]
+}

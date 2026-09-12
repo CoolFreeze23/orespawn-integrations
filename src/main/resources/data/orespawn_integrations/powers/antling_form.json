@@ -1,0 +1,16 @@
+{
+  "type": "neoorigins:entity_model",
+  "entity_type": "orespawn:ant",
+  "scale": 1.0,
+  "hitbox": false,
+  "render_held_item": true,
+  "render_armor": false,
+  "first_person": "item",
+  "power_condition": {
+    "type": "neoorigins:power_active",
+    "power": "orespawn_integrations:antling_form_toggle"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.antling_form.name",
+  "description": "power.orespawn_integrations.antling_form.description"
+}

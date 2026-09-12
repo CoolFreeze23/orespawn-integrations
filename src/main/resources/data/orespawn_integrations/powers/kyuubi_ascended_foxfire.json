@@ -1,0 +1,31 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 120,
+  "cooldown_icon": "minecraft:fire_charge",
+  "entity_action": {
+    "type": "neoorigins:cast_iron_spell",
+    "spell": "irons_spellbooks:fireball",
+    "level": 2,
+    "consume_mana": false,
+    "trigger_cooldown": false,
+    "mode": "instant"
+  },
+  "resource_cost": "orespawn_integrations:kyuubi_foxfire_pool",
+  "resource_cost_amount": 25,
+  "condition": {
+    "type": "neoorigins:not",
+    "condition": {
+      "type": "neoorigins:or",
+      "conditions": [
+        {
+          "type": "neoorigins:in_water"
+        },
+        {
+          "type": "neoorigins:in_rain"
+        }
+      ]
+    }
+  },
+  "name": "power.orespawn_integrations.kyuubi_ascended_foxfire.name",
+  "description": "power.orespawn_integrations.kyuubi_ascended_foxfire.description"
+}

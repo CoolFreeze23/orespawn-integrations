@@ -1,0 +1,14 @@
+{
+  "type": "neoorigins:mobs_target_player",
+  "entity_types": [
+    "minecraft:iron_golem",
+    "guardvillagers:guard"
+  ],
+  "range": 24.0,
+  "power_condition": {
+    "type": "neoorigins:night"
+  },
+  "power_condition_mode": "ALLOW",
+  "name": "power.orespawn_integrations.lobisomem_hunted.name",
+  "description": "power.orespawn_integrations.lobisomem_hunted.description"
+}

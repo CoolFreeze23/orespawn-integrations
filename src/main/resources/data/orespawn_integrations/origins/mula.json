@@ -1,0 +1,52 @@
+{
+  "name": "origins.orespawn_integrations.mula.name",
+  "description": "origins.orespawn_integrations.mula.description",
+  "icon": "brazil_legends:flaming_leather",
+  "impact": "medium",
+  "order": 117,
+  "powers": [
+    "orespawn_integrations:mula_galope",
+    "orespawn_integrations:mula_relincho",
+    "orespawn_integrations:mula_fire_immune",
+    "orespawn_integrations:mula_hot_hide",
+    "orespawn_integrations:mula_hooves",
+    "orespawn_integrations:mula_night_speed",
+    "orespawn_integrations:mula_night_jump",
+    "orespawn_integrations:mula_night_glow",
+    "orespawn_integrations:mula_fire_eyes",
+    "orespawn_integrations:mula_terror",
+    "orespawn_integrations:mula_kin",
+    "orespawn_integrations:mula_cursed",
+    "orespawn_integrations:mula_quenched",
+    "orespawn_integrations:mula_night_hunger",
+    "orespawn_integrations:mula_day_slow"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:mula_evolved_galope"
+      ],
+      "remove": [
+        "orespawn_integrations:mula_galope"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:mula_ascended_day"
+      ],
+      "remove": [
+        "orespawn_integrations:mula_day_slow"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:mula_apex_flame"
+      ],
+      "remove": []
+    }
+  ]
+}

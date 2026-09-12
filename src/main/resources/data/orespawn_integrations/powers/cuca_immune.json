@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:effect_immunity",
+  "effects": [
+    "minecraft:poison"
+  ],
+  "name": "power.orespawn_integrations.cuca_immune.name",
+  "description": "power.orespawn_integrations.cuca_immune.description"
+}

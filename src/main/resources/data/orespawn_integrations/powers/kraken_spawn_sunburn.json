@@ -1,0 +1,31 @@
+{
+  "type": "neoorigins:condition_passive",
+  "interval": 20,
+  "condition": {
+    "type": "neoorigins:and",
+    "conditions": [
+      {
+        "type": "neoorigins:exposed_to_sun"
+      },
+      {
+        "type": "neoorigins:not",
+        "condition": {
+          "type": "neoorigins:in_water"
+        }
+      },
+      {
+        "type": "neoorigins:not",
+        "condition": {
+          "type": "neoorigins:in_rain"
+        }
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "neoorigins:damage",
+    "amount": 1.0,
+    "damage_type": "minecraft:dry_out"
+  },
+  "name": "power.orespawn_integrations.kraken_spawn_sunburn.name",
+  "description": "power.orespawn_integrations.kraken_spawn_sunburn.description"
+}

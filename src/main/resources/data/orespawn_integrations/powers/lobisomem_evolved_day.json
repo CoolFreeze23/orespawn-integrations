@@ -1,0 +1,14 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:attack_damage",
+  "amount": 0.0,
+  "operation": "add_value",
+  "condition": {
+    "type": "neoorigins:not",
+    "condition": {
+      "type": "neoorigins:night"
+    }
+  },
+  "name": "power.orespawn_integrations.lobisomem_evolved_day.name",
+  "description": "power.orespawn_integrations.lobisomem_evolved_day.description"
+}

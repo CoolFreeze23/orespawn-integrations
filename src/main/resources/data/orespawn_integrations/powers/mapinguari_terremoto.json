@@ -1,0 +1,10 @@
+{
+  "type": "neoorigins:ground_slam",
+  "damage": 9.0,
+  "knockback_strength": 2.0,
+  "radius": 6.0,
+  "cooldown_ticks": 240,
+  "cooldown_icon": "brazil_legends:mapinguari_fang",
+  "name": "power.orespawn_integrations.mapinguari_terremoto.name",
+  "description": "power.orespawn_integrations.mapinguari_terremoto.description"
+}

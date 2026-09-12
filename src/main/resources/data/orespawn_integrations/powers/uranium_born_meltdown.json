@@ -1,0 +1,31 @@
+{
+  "type": "neoorigins:active_ability",
+  "cooldown_ticks": 800,
+  "cooldown_icon": "orespawn:ingot_uranium",
+  "entity_action": {
+    "type": "neoorigins:and",
+    "actions": [
+      {
+        "type": "neoorigins:explode",
+        "power": 4.0,
+        "destruction_type": "none",
+        "create_fire": false
+      },
+      {
+        "type": "neoorigins:set_on_fire",
+        "ticks": 40
+      },
+      {
+        "type": "neoorigins:apply_effect",
+        "effect": "minecraft:fire_resistance",
+        "duration": 200,
+        "amplifier": 0,
+        "show_particles": true
+      }
+    ]
+  },
+  "resource_cost": "orespawn_integrations:uranium_born_heat",
+  "resource_cost_amount": 60,
+  "name": "power.orespawn_integrations.uranium_born_meltdown.name",
+  "description": "power.orespawn_integrations.uranium_born_meltdown.description"
+}

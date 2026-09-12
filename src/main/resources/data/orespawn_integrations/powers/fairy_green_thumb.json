@@ -1,0 +1,8 @@
+{
+  "type": "neoorigins:crop_growth_accelerator",
+  "radius": 4,
+  "tick_interval": 40,
+  "growths_per_interval": 1,
+  "name": "power.orespawn_integrations.fairy_green_thumb.name",
+  "description": "power.orespawn_integrations.fairy_green_thumb.description"
+}

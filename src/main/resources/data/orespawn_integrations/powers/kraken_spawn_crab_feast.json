@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:modify_food_nutrition",
+  "nutrition": 12,
+  "food_tag": "orespawn_integrations:origins/crab_meat",
+  "name": "power.orespawn_integrations.kraken_spawn_crab_feast.name",
+  "description": "power.orespawn_integrations.kraken_spawn_crab_feast.description"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "neoorigins:summon_minion",
+  "mob_type": "orespawn:the_prince_teen",
+  "max_count": 1,
+  "quantity": 1,
+  "cooldown_ticks": 24000,
+  "despawn_ticks": 3600,
+  "death_damage": 0.0,
+  "cooldown_icon": "orespawn:queen_scale",
+  "hunger_cost": 8,
+  "name": "power.orespawn_integrations.royal_blood_ascended_guard.name",
+  "description": "power.orespawn_integrations.royal_blood_ascended_guard.description"
+}

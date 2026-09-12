@@ -1,0 +1,55 @@
+{
+  "name": "origins.orespawn_integrations.kraken_spawn.name",
+  "description": "origins.orespawn_integrations.kraken_spawn.description",
+  "icon": "orespawn:kraken_tooth",
+  "impact": "high",
+  "order": 102,
+  "powers": [
+    "orespawn_integrations:kraken_spawn_tide",
+    "orespawn_integrations:kraken_spawn_ink_cloud",
+    "orespawn_integrations:kraken_spawn_undertow",
+    "orespawn_integrations:kraken_spawn_gills",
+    "orespawn_integrations:kraken_spawn_deep_sight",
+    "orespawn_integrations:kraken_spawn_swift_swim",
+    "orespawn_integrations:kraken_spawn_crush",
+    "orespawn_integrations:kraken_spawn_sea_kin",
+    "orespawn_integrations:kraken_spawn_sea_diet",
+    "orespawn_integrations:kraken_spawn_crab_feast",
+    "orespawn_integrations:kraken_spawn_dries_out",
+    "orespawn_integrations:kraken_spawn_sunburn",
+    "orespawn_integrations:kraken_spawn_fire_weak"
+  ],
+  "upgrades": [],
+  "tier_powers": [
+    {
+      "tier": 1,
+      "add": [
+        "orespawn_integrations:kraken_spawn_evolved_gills"
+      ],
+      "remove": [
+        "orespawn_integrations:kraken_spawn_dries_out"
+      ]
+    },
+    {
+      "tier": 2,
+      "add": [
+        "orespawn_integrations:kraken_spawn_ascended_undertow"
+      ],
+      "remove": [
+        "orespawn_integrations:kraken_spawn_undertow"
+      ]
+    },
+    {
+      "tier": 3,
+      "add": [
+        "orespawn_integrations:kraken_spawn_apex_kraken"
+      ],
+      "remove": []
+    }
+  ],
+  "spawn_location": {
+    "dimension": "minecraft:overworld",
+    "biome_tag": "minecraft:is_ocean",
+    "allow_ocean_floor": true
+  }
+}

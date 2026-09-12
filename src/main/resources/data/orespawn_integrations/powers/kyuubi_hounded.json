@@ -1,0 +1,11 @@
+{
+  "type": "neoorigins:mobs_target_player",
+  "entity_types": [
+    "minecraft:wolf",
+    "brasilcoisas:cachorro_caramelo",
+    "orespawn:cliff_racer"
+  ],
+  "range": 20.0,
+  "name": "power.orespawn_integrations.kyuubi_hounded.name",
+  "description": "power.orespawn_integrations.kyuubi_hounded.description"
+}

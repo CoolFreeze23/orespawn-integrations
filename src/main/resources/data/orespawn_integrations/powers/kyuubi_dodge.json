@@ -1,0 +1,6 @@
+{
+  "type": "neoorigins:dodge_chance",
+  "chance": 0.25,
+  "name": "power.orespawn_integrations.kyuubi_dodge.name",
+  "description": "power.orespawn_integrations.kyuubi_dodge.description"
+}

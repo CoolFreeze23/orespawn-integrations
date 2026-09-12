@@ -1,0 +1,17 @@
+{
+  "type": "neoorigins:resource",
+  "min": 0,
+  "max": 100,
+  "start_value": 100,
+  "regen_rate": 3,
+  "regen_interval": 20,
+  "regen_condition": {
+    "type": "neoorigins:exposed_to_sun"
+  },
+  "hud_render": {
+    "label": "Sparkle",
+    "color": "#FF99FF"
+  },
+  "name": "power.orespawn_integrations.fairy_sparkle.name",
+  "description": "power.orespawn_integrations.fairy_sparkle.description"
+}
