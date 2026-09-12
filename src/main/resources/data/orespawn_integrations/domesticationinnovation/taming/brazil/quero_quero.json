@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "brasilcoisas"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "domesticationinnovation"
+        },
+        {
+            "type": "orespawn_integrations:thread_enabled",
+            "thread": "brazil"
+        }
+    ],
+    "entities": "brasilcoisas:quero_quero",
+    "items": {
+        "tag": "minecraft:parrot_food"
+    },
+    "chance": 0.33
+}

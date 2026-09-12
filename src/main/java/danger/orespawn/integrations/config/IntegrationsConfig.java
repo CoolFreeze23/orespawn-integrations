@@ -34,6 +34,8 @@ public final class IntegrationsConfig {
     /** THREAD 5 — "The World Remembers" (atmosphere). */
     public static final ModConfigSpec.BooleanValue threadWorldRemembers;
     public static final ModConfigSpec.BooleanValue threadAliveWorld;
+    /** THREAD 6 — "Brasil" (the Brazilian mods). */
+    public static final ModConfigSpec.BooleanValue threadBrazil;
 
     public static final ModConfigSpec SPEC;
 
@@ -83,6 +85,12 @@ public final class IntegrationsConfig {
                 "eyes, pirate fleets, guard salutes, dog backflips, and friends).")
                 .define("alive_world", true);
 
+        threadBrazil = builder.comment(
+                "THREAD 6 \"Brasil\" - the Brazilian mods: Brasil e Coisas critters become",
+                "Domestication Innovation pets (capivara, quero-quero, urutau) through the",
+                "domesticationinnovation:taming datapack registry.")
+                .define("brazil", true);
+
         builder.pop();
         SPEC = builder.build();
     }
@@ -94,7 +102,7 @@ public final class IntegrationsConfig {
      * thread gate) goes through.
      *
      * <p>Known ids: {@code big_game}, {@code uranium}, {@code royal_court},
-     * {@code girlfriend}, {@code world_remembers}.
+     * {@code girlfriend}, {@code world_remembers}, {@code alive_world}, {@code brazil}.
      *
      * <p>Fails OPEN by design (north star: never punish): if the config has not
      * loaded yet when a datapack parse asks — or a condition JSON carries an
@@ -113,6 +121,7 @@ public final class IntegrationsConfig {
             case "girlfriend" -> threadGirlfriend.getAsBoolean();
             case "world_remembers" -> threadWorldRemembers.getAsBoolean();
             case "alive_world" -> threadAliveWorld.getAsBoolean();
+            case "brazil" -> threadBrazil.getAsBoolean();
             default -> {
                 OreSpawnIntegrations.LOGGER.warn(
                         "thread_enabled condition references unknown thread id '{}' - treating as enabled",

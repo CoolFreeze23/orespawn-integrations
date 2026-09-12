@@ -1,0 +1,21 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "brasilcoisas"
+        },
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "domesticationinnovation"
+        },
+        {
+            "type": "orespawn_integrations:thread_enabled",
+            "thread": "brazil"
+        }
+    ],
+    "entities": "brasilcoisas:urutau",
+    "items": {
+        "item": "orespawn:moth_scale"
+    },
+    "chance": 0.5
+}

@@ -57,7 +57,7 @@ public final class ConfigInit {
         CONDITION_CODECS.register(modBus);
         container.registerConfig(ModConfig.Type.COMMON, IntegrationsConfig.SPEC);
         OreSpawnIntegrations.LOGGER.info(
-                "Thread config registered - 5 thread toggles, condition '{}:thread_enabled' active",
+                "Thread config registered - 7 thread toggles, condition '{}:thread_enabled' active",
                 OreSpawnIntegrations.MODID);
     }
 }
