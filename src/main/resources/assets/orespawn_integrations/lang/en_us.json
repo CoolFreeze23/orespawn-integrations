@@ -1219,5 +1219,18 @@
   "power.orespawn_integrations.time_lord_ascended_salto.name": "Ascended Time Skip",
   "power.orespawn_integrations.time_lord_ascended_salto.description": "24 blocks.",
   "power.orespawn_integrations.time_lord_apex_regen.name": "Apex Regeneration",
-  "power.orespawn_integrations.time_lord_apex_regen.description": "The burst also fully heals players within 6 blocks."
+  "power.orespawn_integrations.time_lord_apex_regen.description": "The burst also fully heals players within 6 blocks.",
+  "orespawn_integrations.hud_label.energy": "Energy",
+  "orespawn_integrations.hud_label.essence": "Essence",
+  "orespawn_integrations.hud_label.mana": "Mana",
+  "orespawn_integrations.hud_label.qi": "Qi",
+  "orespawn_integrations.hud_label.stamina": "Stamina",
+  "orespawn_integrations.hud_label.vitality": "Vitality",
+  "orespawn_integrations.hud_label.tide": "Tide",
+  "orespawn_integrations.hud_label.heat": "Heat",
+  "orespawn_integrations.hud_label.fox_fire": "Fox-fire",
+  "orespawn_integrations.hud_label.sparkle": "Sparkle",
+  "orespawn_integrations.hud_label.mischief": "Mischief",
+  "orespawn_integrations.hud_label.witchcraft": "Witchcraft",
+  "orespawn_integrations.hud_label.moisture": "Moisture"
 }

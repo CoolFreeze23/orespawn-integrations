@@ -600,5 +600,18 @@
   "power.orespawn_integrations.time_lord_ascended_salto.name": "Salto Temporal Ascendido",
   "power.orespawn_integrations.time_lord_ascended_salto.description": "24 blocos.",
   "power.orespawn_integrations.time_lord_apex_regen.name": "Regeneração Apex",
-  "power.orespawn_integrations.time_lord_apex_regen.description": "A explosão também cura totalmente jogadores num raio de 6 blocos."
+  "power.orespawn_integrations.time_lord_apex_regen.description": "A explosão também cura totalmente jogadores num raio de 6 blocos.",
+  "orespawn_integrations.hud_label.energy": "Energia",
+  "orespawn_integrations.hud_label.essence": "Essência",
+  "orespawn_integrations.hud_label.mana": "Mana",
+  "orespawn_integrations.hud_label.qi": "Qi",
+  "orespawn_integrations.hud_label.stamina": "Vigor",
+  "orespawn_integrations.hud_label.vitality": "Vitalidade",
+  "orespawn_integrations.hud_label.tide": "Maré",
+  "orespawn_integrations.hud_label.heat": "Calor",
+  "orespawn_integrations.hud_label.fox_fire": "Fogo Vulpino",
+  "orespawn_integrations.hud_label.sparkle": "Brilho",
+  "orespawn_integrations.hud_label.mischief": "Travessura",
+  "orespawn_integrations.hud_label.witchcraft": "Bruxaria",
+  "orespawn_integrations.hud_label.moisture": "Umidade"
 }
