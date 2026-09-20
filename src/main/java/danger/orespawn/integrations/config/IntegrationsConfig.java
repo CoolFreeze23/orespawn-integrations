@@ -36,6 +36,8 @@ public final class IntegrationsConfig {
     public static final ModConfigSpec.BooleanValue threadAliveWorld;
     /** THREAD 6 — "Brasil" (the Brazilian mods). */
     public static final ModConfigSpec.BooleanValue threadBrazil;
+    /** Client compat, not a content thread: hats on the OreSpawn rigs' head bones (compat/hats). */
+    public static final ModConfigSpec.BooleanValue hatsOnRigs;
 
     public static final ModConfigSpec SPEC;
 
@@ -91,6 +93,16 @@ public final class IntegrationsConfig {
                 "domesticationinnovation:taming datapack registry.")
                 .define("brazil", true);
 
+        builder.pop();
+
+        builder.comment(
+                "Cross-mod client compat that is not a content thread.")
+                .push("compat");
+        hatsOnRigs = builder.comment(
+                "Hats Renewed: draw a mob's hat on the OreSpawn rig's own head bone (the top-centre",
+                "of the head, upright, sized to the head) instead of the mod's guess. Hats Renewed's",
+                "per-entity placement files still apply on top. false = the mod's own placement.")
+                .define("hats_on_rigs", true);
         builder.pop();
         SPEC = builder.build();
     }

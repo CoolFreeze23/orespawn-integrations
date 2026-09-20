@@ -51,6 +51,8 @@ public class OreSpawnIntegrations {
             // Thread 5 "The World Remembers"
             {"enchanted", "danger.orespawn.integrations.compat.enchanted.OceanRiteCompat"},
             {"statues", "danger.orespawn.integrations.compat.statues.MobzillaStatueCompat"},
+            // Hats Renewed: hats on the OreSpawn rigs' head bones (client layer; compat/hats)
+            {"hats", "danger.orespawn.integrations.compat.hats.HatsCompat"},
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };

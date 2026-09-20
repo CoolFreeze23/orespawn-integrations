@@ -14,6 +14,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 repositories {
     mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
@@ -22,6 +23,15 @@ dependencies {
     // official mappings, so shipped jars are valid compile deps). All soft deps
     // are compileOnly and classloading is guarded at runtime.
     compileOnly fileTree(dir: 'libs', include: '*.jar')
+
+    // The hat-anchor table test reads the OreSpawn jar in libs/ and the shipped JSON; no Minecraft classes.
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test', Test) {
+    useJUnitPlatform()
 }
 
 tasks.withType(ProcessResources).configureEach {

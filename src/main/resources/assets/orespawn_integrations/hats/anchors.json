@@ -1,0 +1,504 @@
+{
+  "orespawn:alien": {
+    "geo": "alien",
+    "bone": "head"
+  },
+  "orespawn:alien_boss": {
+    "geo": "alien",
+    "bone": "head"
+  },
+  "orespawn:alosaurus": {
+    "geo": "alosaurus",
+    "bone": "shape5"
+  },
+  "orespawn:ant": {
+    "geo": "ant",
+    "bone": "head"
+  },
+  "orespawn:attack_squid": {
+    "geo": "attacksquid",
+    "bone": "body"
+  },
+  "orespawn:baby_dragon": {
+    "geo": "dragon",
+    "bone": "head"
+  },
+  "orespawn:band_p": {
+    "geo": "bandp",
+    "bone": "head"
+  },
+  "orespawn:baryonyx": {
+    "geo": "baryonyx",
+    "bone": "shape4"
+  },
+  "orespawn:basilisk": {
+    "geo": "basilisk",
+    "bone": "head"
+  },
+  "orespawn:beaver": {
+    "geo": "beaver",
+    "bone": "head"
+  },
+  "orespawn:bee": {
+    "geo": "bee",
+    "bone": "Head"
+  },
+  "orespawn:boyfriend": {
+    "geo": "boyfriend",
+    "bone": "head",
+    "offset": [
+      0,
+      0.5,
+      0
+    ]
+  },
+  "orespawn:brutalfly": {
+    "geo": "brutalfly",
+    "bone": "head"
+  },
+  "orespawn:butterfly": {
+    "geo": "butterfly",
+    "bone": "head"
+  },
+  "orespawn:camarasaurus": {
+    "geo": "camarasaurus",
+    "bone": "Head1"
+  },
+  "orespawn:cannon_fodder": {
+    "geo": "cannonfodder",
+    "bone": "head"
+  },
+  "orespawn:cassowary": {
+    "geo": "cassowary",
+    "bone": "head",
+    "also": [
+      "crest"
+    ]
+  },
+  "orespawn:cater_killer": {
+    "geo": "caterkiller",
+    "bone": "falsehead"
+  },
+  "orespawn:cave_fisher": {
+    "geo": "cavefisher",
+    "bone": "HeadBase"
+  },
+  "orespawn:cephadrome": {
+    "geo": "cephadrome",
+    "bone": "head"
+  },
+  "orespawn:chipmunk": {
+    "geo": "chipmunk",
+    "bone": "hat2"
+  },
+  "orespawn:cliff_racer": {
+    "geo": "cliffracer",
+    "bone": "head"
+  },
+  "orespawn:cloud_shark": {
+    "geo": "cloudshark",
+    "bone": "head"
+  },
+  "orespawn:cockateil": {
+    "geo": "cockateil",
+    "bone": "Head"
+  },
+  "orespawn:coin": {
+    "geo": "coin",
+    "mode": "none"
+  },
+  "orespawn:crab": {
+    "geo": "crab",
+    "bone": "body6"
+  },
+  "orespawn:creeping_horror": {
+    "geo": "creepinghorror",
+    "bone": "body"
+  },
+  "orespawn:cricket": {
+    "geo": "cricket",
+    "bone": "head"
+  },
+  "orespawn:cryolophosaurus": {
+    "geo": "cryolophosaurus",
+    "bone": "shape3"
+  },
+  "orespawn:dragon": {
+    "geo": "dragon",
+    "bone": "head"
+  },
+  "orespawn:dragonfly": {
+    "geo": "dragonfly",
+    "bone": "Shape3"
+  },
+  "orespawn:dungeon_beast": {
+    "geo": "dungeonbeast",
+    "bone": "head1"
+  },
+  "orespawn:easter_bunny": {
+    "geo": "easterbunny",
+    "bone": "head"
+  },
+  "orespawn:elevator": {
+    "geo": "elevator",
+    "mode": "none"
+  },
+  "orespawn:emperor_scorpion": {
+    "geo": "emperorscorpion",
+    "bone": "Head"
+  },
+  "orespawn:ender_knight": {
+    "geo": "enderknight",
+    "bone": "head"
+  },
+  "orespawn:ender_reaper": {
+    "geo": "enderreaper",
+    "bone": "head"
+  },
+  "orespawn:fairy": {
+    "geo": "fairy",
+    "bone": "head"
+  },
+  "orespawn:firefly": {
+    "geo": "firefly",
+    "bone": "head"
+  },
+  "orespawn:flounder": {
+    "geo": "flounder",
+    "bone": "head"
+  },
+  "orespawn:frog": {
+    "geo": "frog",
+    "bone": "leye",
+    "also": [
+      "reye"
+    ]
+  },
+  "orespawn:gamma_metroid": {
+    "geo": "gammametroid",
+    "bone": "head"
+  },
+  "orespawn:gazelle": {
+    "geo": "gazelle",
+    "bone": "head"
+  },
+  "orespawn:ghost": {
+    "geo": "ghost",
+    "bone": "HeadAndBody"
+  },
+  "orespawn:ghost_skelly": {
+    "geo": "ghostskelly",
+    "bone": "head"
+  },
+  "orespawn:giant_robot": {
+    "geo": "giantrobot",
+    "bone": "head"
+  },
+  "orespawn:girlfriend": {
+    "geo": "girlfriend",
+    "bone": "head",
+    "offset": [
+      0,
+      0.5,
+      0
+    ]
+  },
+  "orespawn:godzilla": {
+    "geo": "godzilla",
+    "bone": "Head"
+  },
+  "orespawn:gold_fish": {
+    "geo": "goldfish",
+    "bone": "Head"
+  },
+  "orespawn:hammerhead": {
+    "geo": "hammerhead",
+    "bone": "head"
+  },
+  "orespawn:hercules_beetle": {
+    "geo": "herculesbeetle",
+    "bone": "head1"
+  },
+  "orespawn:hydrolisc": {
+    "geo": "hydrolisc",
+    "bone": "head1",
+    "also": [
+      "head3"
+    ]
+  },
+  "orespawn:irukandji": {
+    "geo": "irukandji",
+    "bone": "body"
+  },
+  "orespawn:island": {
+    "geo": "island",
+    "mode": "none"
+  },
+  "orespawn:island_too": {
+    "geo": "islandtoo",
+    "mode": "none"
+  },
+  "orespawn:jeffery": {
+    "geo": "giantrobot",
+    "bone": "head"
+  },
+  "orespawn:kraken": {
+    "geo": "kraken",
+    "bone": "Head"
+  },
+  "orespawn:kyuubi": {
+    "geo": "kyuubi",
+    "bone": "head",
+    "offset": [
+      0,
+      1,
+      0
+    ]
+  },
+  "orespawn:leaf_monster": {
+    "geo": "leafmonster",
+    "bone": "body"
+  },
+  "orespawn:leon": {
+    "geo": "leon",
+    "bone": "head"
+  },
+  "orespawn:leonopteryx": {
+    "geo": "leon",
+    "bone": "head"
+  },
+  "orespawn:lizard": {
+    "geo": "lizard",
+    "bone": "Hat2"
+  },
+  "orespawn:luna_moth": {
+    "geo": "butterfly",
+    "bone": "head"
+  },
+  "orespawn:lurking_terror": {
+    "geo": "lurkingterror",
+    "bone": "head"
+  },
+  "orespawn:mantis": {
+    "geo": "mantis",
+    "bone": "head1",
+    "also": [
+      "head2"
+    ]
+  },
+  "orespawn:molenoid": {
+    "geo": "molenoid",
+    "bone": "head1"
+  },
+  "orespawn:mosquito": {
+    "geo": "mosquito",
+    "bone": "body"
+  },
+  "orespawn:mothra": {
+    "geo": "butterfly",
+    "bone": "head"
+  },
+  "orespawn:nastysaurus": {
+    "geo": "nastysaurus",
+    "bone": "head7"
+  },
+  "orespawn:ostrich": {
+    "geo": "ostrich",
+    "bone": "Hat2"
+  },
+  "orespawn:peacock": {
+    "geo": "peacock",
+    "bone": "head1"
+  },
+  "orespawn:pitch_black": {
+    "geo": "pitchblack",
+    "bone": "head7"
+  },
+  "orespawn:pointysaurus": {
+    "geo": "pointysaurus",
+    "bone": "head"
+  },
+  "orespawn:purple_power": {
+    "geo": "purplepower",
+    "mode": "none"
+  },
+  "orespawn:rainbow_ant": {
+    "geo": "ant",
+    "bone": "head"
+  },
+  "orespawn:rat": {
+    "geo": "rat",
+    "bone": "head"
+  },
+  "orespawn:red_ant": {
+    "geo": "ant",
+    "bone": "head"
+  },
+  "orespawn:robot_1": {
+    "geo": "robot1",
+    "bone": "Shape16"
+  },
+  "orespawn:robot_2": {
+    "geo": "robot2",
+    "bone": "head"
+  },
+  "orespawn:robot_3": {
+    "geo": "robot3",
+    "bone": "body4"
+  },
+  "orespawn:robot_4": {
+    "geo": "robot4",
+    "bone": "head"
+  },
+  "orespawn:robot_5": {
+    "geo": "robot5",
+    "bone": "ammobox"
+  },
+  "orespawn:rock_base": {
+    "geo": "rockbase",
+    "mode": "none"
+  },
+  "orespawn:rotator": {
+    "geo": "rotator",
+    "mode": "none"
+  },
+  "orespawn:rubber_ducky": {
+    "geo": "rubberducky",
+    "bone": "head"
+  },
+  "orespawn:ruby_bird": {
+    "geo": "cockateil",
+    "bone": "Head"
+  },
+  "orespawn:scorpion": {
+    "geo": "scorpion",
+    "bone": "head"
+  },
+  "orespawn:sea_monster": {
+    "geo": "seamonster",
+    "bone": "TopJaw"
+  },
+  "orespawn:sea_viper": {
+    "geo": "seaviper",
+    "bone": "Head"
+  },
+  "orespawn:skate": {
+    "geo": "skate",
+    "bone": "body"
+  },
+  "orespawn:spit_bug": {
+    "geo": "spitbug",
+    "bone": "upperjawbase"
+  },
+  "orespawn:spyro": {
+    "geo": "spyro",
+    "bone": "HeadPieceTop"
+  },
+  "orespawn:stink_bug": {
+    "geo": "stinkbug",
+    "bone": "head"
+  },
+  "orespawn:stinky": {
+    "geo": "stinky",
+    "bone": "head"
+  },
+  "orespawn:termite": {
+    "geo": "ant",
+    "bone": "head"
+  },
+  "orespawn:terrible_terror": {
+    "geo": "terribleterror",
+    "bone": "head"
+  },
+  "orespawn:the_king": {
+    "geo": "theking",
+    "bone": "CHead1"
+  },
+  "orespawn:the_prince": {
+    "geo": "theprince",
+    "bone": "Lhead"
+  },
+  "orespawn:the_prince_adult": {
+    "geo": "theprinceadult",
+    "bone": "CHead1"
+  },
+  "orespawn:the_prince_teen": {
+    "geo": "theprinceteen",
+    "bone": "head7"
+  },
+  "orespawn:the_princess": {
+    "geo": "theprincess",
+    "bone": "Lhead"
+  },
+  "orespawn:the_queen": {
+    "geo": "the_queen",
+    "bone": "LHead13"
+  },
+  "orespawn:trex": {
+    "geo": "trex",
+    "bone": "shape5"
+  },
+  "orespawn:triffid": {
+    "geo": "triffid",
+    "bone": "h5",
+    "also": [
+      "h12",
+      "h17",
+      "h13"
+    ]
+  },
+  "orespawn:trooper_bug": {
+    "geo": "trooperbug",
+    "bone": "headbase10"
+  },
+  "orespawn:tshirt": {
+    "geo": "tshirt",
+    "mode": "none"
+  },
+  "orespawn:unstable_ant": {
+    "geo": "ant",
+    "bone": "head"
+  },
+  "orespawn:urchin": {
+    "geo": "urchin",
+    "bone": "center"
+  },
+  "orespawn:vampire_butterfly": {
+    "geo": "butterfly",
+    "bone": "head"
+  },
+  "orespawn:velocity_raptor": {
+    "geo": "velocityraptor",
+    "bone": "Hat2"
+  },
+  "orespawn:vortex": {
+    "geo": "vortex",
+    "mode": "none"
+  },
+  "orespawn:water_dragon": {
+    "geo": "waterdragon",
+    "bone": "Head"
+  },
+  "orespawn:whale": {
+    "geo": "whale",
+    "bone": "head"
+  },
+  "orespawn:worm_large": {
+    "geo": "wormlarge",
+    "bone": "head1",
+    "also": [
+      "head4"
+    ]
+  },
+  "orespawn:worm_medium": {
+    "geo": "wormmedium",
+    "bone": "head",
+    "also": [
+      "head2"
+    ]
+  },
+  "orespawn:worm_small": {
+    "geo": "wormsmall",
+    "bone": "head"
+  }
+}
