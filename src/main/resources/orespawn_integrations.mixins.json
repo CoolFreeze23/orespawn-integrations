@@ -9,7 +9,10 @@
   "client": [
     "PortalGunKeybindFixMixin",
     "NeoOriginsHudLabelMixin",
-    "NeoOriginsMoistureLabelMixin"
+    "NeoOriginsMoistureLabelMixin",
+    "EmfModelPartRootMixin",
+    "ItemInHandLayerSwingMixin",
+    "LivingEntitySwingMixin"
   ],
   "injectors": {
     "defaultRequire": 1

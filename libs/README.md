@@ -1,4 +1,4 @@
-﻿# libs/ — compile-only dependency jars
+# libs/ — compile-only dependency jars
 
 These jars are not tracked in git. To build, copy them here from the
 CrazyCraft 5.0 `minecraft/mods` folder (or the versions listed below):
@@ -8,6 +8,10 @@ CrazyCraft 5.0 `minecraft/mods` folder (or the versions listed below):
 - `ars_nouveau-1.21.1-5.13.0.jar`
 - `artifacts-neoforge-13.2.1.jar`
 - `balm-neoforge-1.21.1-21.0.64.jar`
+- `bettercombat-neoforge-2.4.0+1.21.1.jar`
+- `entity_model_features-3.2.4-1.21-neoforge.jar`
+- `entity_texture_features_1.21-neoforge-7.1.jar`
+- `player-animation-lib-forge-2.0.4+1.21.1.jar`
 - `craftedcore-5.8.2.jar`
 - `curios-neoforge-9.5.1+1.21.1.jar`
 - `DoggyTalentsNext-1.21.1-1.19.0.jar`
@@ -21,7 +25,7 @@ CrazyCraft 5.0 `minecraft/mods` folder (or the versions listed below):
 - `journeymap-api-neoforge-2.0.0-1.21.1.jar`
 - `journeymap-neoforge-1.21.1-6.0.4.jar`
 - `lootr-neoforge-1.21.1-1.11.38.123.jar`
-- `orespawn-1.21.1-2.0.0-beta.1.jar`
+- `orespawn-1.21.1-2.0.0-beta.9.jar` (from the OreSpawn repository's build/libs)
 - `Patchouli-1.21.1-93-NEOFORGE.jar`
 - `Placebo-1.21.1-9.9.2.jar`
 - `SecurityCraft-1.21.1-v1.10.1.jar`

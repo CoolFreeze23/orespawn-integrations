@@ -38,6 +38,9 @@ public final class IntegrationsConfig {
     public static final ModConfigSpec.BooleanValue threadBrazil;
     /** Client compat, not a content thread: hats on the OreSpawn rigs' head bones (compat/hats). */
     public static final ModConfigSpec.BooleanValue hatsOnRigs;
+    public static final ModConfigSpec.BooleanValue playerModelBipeds;
+    public static final ModConfigSpec.BooleanValue betterCombatBipeds;
+    public static final ModConfigSpec.BooleanValue betterCombatOnPlayers;
 
     public static final ModConfigSpec SPEC;
 
@@ -103,6 +106,23 @@ public final class IntegrationsConfig {
                 "of the head, upright, sized to the head) instead of the mod's guess. Hats Renewed's",
                 "per-entity placement files still apply on top. false = the mod's own placement.")
                 .define("hats_on_rigs", true);
+        playerModelBipeds = builder.comment(
+                "With Entity Model Features or Better Combat installed, draw the Girlfriend and the Boyfriend",
+                "with the vanilla player model (slim arms for her) instead of OreSpawn's own rig, so a player",
+                "animation pack such as Fresh Animations: Player Extension animates them as it animates you.",
+                "Their skins are converted to the player layout as they load. Takes effect on restart.")
+                .define("player_model_bipeds", true);
+        betterCombatBipeds = builder.comment(
+                "With Better Combat installed, the Girlfriend and the Boyfriend swing a weapon Better Combat",
+                "knows with that weapon's own attack animation, the way you do (needs player_model_bipeds).",
+                "With a player animation pack, the swing is laid over the pack's pose of the torso and arms.")
+                .define("better_combat_bipeds", true);
+        betterCombatOnPlayers = builder.comment(
+                "With Better Combat and Entity Model Features installed, keep Better Combat's attacks and",
+                "weapon-holding poses on players when a player animation pack (such as Fresh Animations:",
+                "Player Extension) animates the player model; without this the pack draws over them.",
+                "false = the pack's animation wins, as it does without this mod.")
+                .define("better_combat_on_players", true);
         builder.pop();
         SPEC = builder.build();
     }

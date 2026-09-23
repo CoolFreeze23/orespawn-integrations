@@ -53,6 +53,9 @@ public class OreSpawnIntegrations {
             {"statues", "danger.orespawn.integrations.compat.statues.MobzillaStatueCompat"},
             // Hats Renewed: hats on the OreSpawn rigs' head bones (client layer; compat/hats)
             {"hats", "danger.orespawn.integrations.compat.hats.HatsCompat"},
+            // The Girlfriend and the Boyfriend on the player model for EMF animation packs and Better Combat swings
+            // (compat/bipeds; the class checks for either mod itself)
+            {"orespawn", "danger.orespawn.integrations.compat.bipeds.BipedsCompat"},
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };
