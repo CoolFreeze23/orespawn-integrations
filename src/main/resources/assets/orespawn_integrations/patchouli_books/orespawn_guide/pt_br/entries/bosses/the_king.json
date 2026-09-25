@@ -14,7 +14,7 @@
     {
       "type": "patchouli:text",
       "title": "Encontrando o Rei",
-      "text": "O Rei mantém sua corte no Altar do Rei, nas planícies de $(l:orespawn_integrations:dimensions/beyond_the_tunnels)Utopia$(), e suas Torres de Desafio de cinco andares se erguem pelo mundo — o cofre de cada andar mais rico, e mais cruel, que o anterior.$(p)Nosso pack planta um santuário de Pedra do Caminho no portão de cada torre, altar e árvore real: ative-o primeiro, e a derrota custa uma caminhada em vez de uma guerra."
+      "text": "O Rei mantém sua corte no Altar do Rei, nas planícies de $(l:orespawn_integrations:dimensions/beyond_the_tunnels)Utopia$(), e suas Torres de Desafio de cinco andares se erguem pelo mundo, com o cofre de cada andar mais rico, e mais cruel, que o anterior.$(p)Nosso pack planta um santuário de Pedra do Caminho no portão de cada torre, altar e árvore real: ative-o primeiro, e a derrota custa uma caminhada em vez de uma guerra."
     },
     {
       "type": "patchouli:crafting",
@@ -24,7 +24,7 @@
     {
       "type": "patchouli:text",
       "title": "O Prêmio",
-      "text": "Derrube-o e a linha Real é sua: todo abate rende um conjunto completo de armadura Real e a Espada do Guardião Real.$(p)Essa é a única fonte de equipamento Real neste pack — sem receita, sem atalho. Só o Rei, uma barra de vida descabida e você."
+      "text": "Derrube-o e a linha Real é sua: todo abate rende um conjunto completo de armadura Real e a Espada do Guardião Real.$(p)Essa é a única fonte de equipamento Real neste pack: sem receita, sem atalho. Só o Rei, uma barra de vida descabida e você."
     },
     {
       "type": "patchouli:text",

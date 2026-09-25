@@ -7,14 +7,14 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "OreSpawn's monsters shed the best material science in the pack, and it would be rude not to wear it. Two projects in this chapter: a venom-loaded band cut from Emperor Scorpion chitin, and vest plating pressed from Mobzilla's own scales.$(p)Both come off the same shopping list — kill something enormous, keep the pieces."
+      "text": "OreSpawn's monsters drop some of the best materials in the pack, and it would be rude not to wear them. This chapter has two projects: a venom band cut from Emperor Scorpion chitin, and vest plating pressed from Mobzilla's own scales.$(p)Both follow the same plan: kill something enormous and keep the pieces."
     },
     {
       "type": "patchouli:spotlight",
       "item": "orespawn_integrations:emperors_chitin_band",
       "flag": "mod:artifacts",
       "title": "Emperor's Chitin Band",
-      "text": "An 8% drop from player-killed Emperor Scorpions — the $(l:orespawn_integrations:bestiary/emperor_scorpion)donor$() is house-sized, so bring conviction. Wears in the Artifacts hands slot; Curios and Accessories slots both recognize it."
+      "text": "An 8% drop from Emperor Scorpions killed by a player. The $(l:orespawn_integrations:bestiary/emperor_scorpion)donor$() is the size of a house, so come ready. It goes in the Artifacts hands slot, and Curios and Accessories slots accept it too."
     },
     {
       "type": "patchouli:crafting",
@@ -26,7 +26,7 @@
       "type": "patchouli:text",
       "flag": "mod:artifacts",
       "title": "The Venom",
-      "text": "While worn, every melee hit envenoms the target: Poison II for 4 seconds, every single hit, on a 5-second cooldown. Venom particles announce the effect and the tooltip spells it out. Claiming a band earns Venom Wristwear.$(p)Short on scorpions? Desert tombs aren't — cracking the pharaoh's hoard can wake an Emperor Scorpion on the spot. See $(l:orespawn_integrations:living_world/structure_treasures)Structure Treasures$()."
+      "text": "While worn, every melee hit poisons the target: Poison II for 4 seconds, on a 5-second cooldown. Venom particles show when it triggers and the tooltip spells it out. Getting a band earns Venom Wristwear.$(p)Short on scorpions? Desert tombs have plenty. Cracking the pharaoh's hoard can wake an Emperor Scorpion on the spot. See $(l:orespawn_integrations:living_world/structure_treasures)Structure Treasures$()."
     },
     {
       "type": "patchouli:crafting",

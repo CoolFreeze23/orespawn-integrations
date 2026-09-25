@@ -12,22 +12,22 @@
     {
       "type": "patchouli:text",
       "title": "Boss Celebrations",
-      "text": "Fell any OreSpawn boss within 128 blocks of a village and the village notices: a message in chat, the bell rings itself, and fireworks climb over the rooftops. Hostile mobs stand down for a full 60 seconds of grace — even monsters respect a monster-slayer.$(p)With the creature mods in, guards fire a crossbow volley in salute and every nearby dog does a backflip — see $(l:orespawn_integrations:living_world/creature_kinship)Creature Kinship$()."
+      "text": "Fell any OreSpawn boss within 128 blocks of a village and the village notices: a message in chat, the bell rings itself, and fireworks climb over the rooftops. Hostile mobs stand down for a full 60 seconds of grace. Even monsters respect a monster-slayer.$(p)With the creature mods in, guards fire a crossbow volley in salute and every nearby dog does a backflip. See $(l:orespawn_integrations:living_world/creature_kinship)Creature Kinship$()."
     },
     {
       "type": "patchouli:text",
       "title": "Meteor Nights",
-      "text": "Rarely — about one chance every couple of nights — a meteor picks a spot 60-100 blocks from someone and commits. Burning warning flares hang overhead for a breath or two, then impact: a crater seeded with up to five blocks of $(thing)uranium and titanium ore$(), and three $(l:orespawn_integrations:bestiary/alien)Aliens$() crawling out of it.$(p)Standing within 64 blocks earns the hidden $(thing)Close Encounter$() advancement. The ore is the apology."
+      "text": "Every so often (about one chance every couple of nights), a meteor picks a spot 60-100 blocks from someone and comes down. Burning warning flares hang overhead for a moment or two, then it hits: a crater seeded with up to five blocks of $(thing)uranium and titanium ore$(), and three $(l:orespawn_integrations:bestiary/alien)Aliens$() crawling out of it.$(p)Standing within 64 blocks earns the hidden $(thing)Close Encounter$() advancement. The ore is the apology."
     },
     {
       "type": "patchouli:text",
       "title": "Prince Flyovers",
-      "text": "By day, keep one eye up. On rare occasions the $(thing)Prince$() — a white dragon out of the royal line — glides across the sky some 45 blocks above the ground, crosses the horizon, and is gone. He lands for no one and despawns beyond reach; this is a parade, not an encounter.$(p)Watching from within 96 blocks earns the hidden $(thing)Royal Escort$(). Want one that stays? See the $(l:orespawn_integrations:royal_court/royal_dragon_egg)Royal Dragon Egg$()."
+      "text": "By day, keep one eye up. On rare occasions the $(thing)Prince$(), a white dragon of the royal line, glides across the sky some 45 blocks above the ground, crosses the horizon, and is gone. He lands for no one and despawns beyond reach; this is a parade, not an encounter.$(p)Watching from within 96 blocks earns the hidden $(thing)Royal Escort$(). Want one that stays? See the $(l:orespawn_integrations:royal_court/royal_dragon_egg)Royal Dragon Egg$()."
     },
     {
       "type": "patchouli:text",
       "title": "The Calendar",
-      "text": "The celebrations keep a calendar. On $(thing)Halloween$(), boss fireworks burn orange and purple. On the nights of $(thing)Dec 31 and Jan 1$(), villages launch volleys over their bells every couple of minutes, boss or no boss — the year earned it.$(p)With Serene Seasons installed the whole system graduates to in-game seasons, seasonal flyover included — see $(l:orespawn_integrations:living_world/seasons)Seasons$()."
+      "text": "The celebrations keep a calendar. On $(thing)Halloween$(), boss fireworks burn orange and purple. On the nights of $(thing)Dec 31 and Jan 1$(), villages launch volleys over their bells every couple of minutes, boss or no boss. The year earned it.$(p)With Serene Seasons installed, the whole system follows the in-game seasons instead, seasonal flyover included. See $(l:orespawn_integrations:living_world/seasons)Seasons$()."
     }
   ]
 }

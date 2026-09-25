@@ -13,22 +13,22 @@
     {
       "type": "patchouli:text",
       "title": "The Curriculum",
-      "text": "$(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() breathes Fire. The $(l:orespawn_integrations:bosses/kraken)Kraken$() deals Ice. The $(l:orespawn_integrations:bosses/the_king)King$() throws Lightning, the $(l:orespawn_integrations:bosses/the_queen)Queen$() keeps Holy, and the $(l:orespawn_integrations:bestiary/alien)alien brood$()'s boss hoards Ender.$(p)Land the killing blow yourself — the Court does not grade group work — and the scroll drops ready to learn or trade."
+      "text": "$(l:orespawn_integrations:bosses/mobzilla)Mobzilla$() breathes Fire. The $(l:orespawn_integrations:bosses/kraken)Kraken$() deals Ice. The $(l:orespawn_integrations:bosses/the_king)King$() throws Lightning, the $(l:orespawn_integrations:bosses/the_queen)Queen$() keeps Holy, and the $(l:orespawn_integrations:bestiary/alien)alien brood$()'s boss hoards Ender.$(p)Land the killing blow yourself (the Court does not grade group work) and the scroll drops ready to learn or trade."
     },
     {
       "type": "patchouli:text",
       "title": "The Odds",
-      "text": "The King and Queen teach most generously: 40% per kill, with scrolls rolled at 50-100% of their school's maximum level. Mobzilla pays 30% at 40-90%, the Kraken 30% at 30-80%, and the Alien Boss 15% at 20-70%.$(p)Rare enough to trade, common enough to chase — and Looting sweetens every table. Looting I lifts the King and Queen to 45% and Mobzilla and the Kraken to 35%, +5% per level after; the brood climbs 18, 21, 24."
+      "text": "The King and Queen teach most generously: 40% per kill, with scrolls rolled at 50-100% of their school's maximum level. Mobzilla pays 30% at 40-90%, the Kraken 30% at 30-80%, and the Alien Boss 15% at 20-70%.$(p)Rare enough to trade, common enough to chase, and Looting improves every table. Looting I lifts the King and Queen to 45% and Mobzilla and the Kraken to 35%, +5% per level after; the brood climbs 18, 21, 24."
     },
     {
       "type": "patchouli:text",
       "title": "The Jackpot",
-      "text": "The King and the Queen each carry a second, separate roll: a flat 5% chance at a scroll rolled at 90-100% of maximum level. That near-guaranteed-max jackpot is the Court's trade currency — the scroll you frame, or the scroll you ransom.$(p)Your first boss scroll earns Scroll Scholar. Collect the curriculum."
+      "text": "The King and the Queen each carry a second, separate roll: a flat 5% chance at a scroll rolled at 90-100% of maximum level. That near-guaranteed-max jackpot is the Court's trade currency: the scroll you frame, or the scroll you ransom.$(p)Your first boss scroll earns Scroll Scholar. Collect the curriculum."
     },
     {
       "type": "patchouli:text",
       "title": "Spending It",
-      "text": "Read a scroll to learn its spell on the spot, or bank it — the same schools power the Court's $(l:orespawn_integrations:royal_court/upgrade_orbs)upgrade orbs$(), because scrolls and orbs are one idea wearing two hats.$(p)Surplus royal gear funds the habit: the $(l:orespawn_integrations:royal_court/court_economy)Uncrafting Table$() melts it back into queen scales."
+      "text": "Read a scroll to learn its spell on the spot, or bank it. The same schools power the Court's $(l:orespawn_integrations:royal_court/upgrade_orbs)upgrade orbs$(), because scrolls and orbs are one idea wearing two hats.$(p)Surplus royal gear funds the habit: the $(l:orespawn_integrations:royal_court/court_economy)Uncrafting Table$() melts it back into queen scales."
     }
   ]
 }

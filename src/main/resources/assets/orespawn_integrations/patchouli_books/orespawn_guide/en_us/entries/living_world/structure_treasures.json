@@ -7,27 +7,27 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A whole wave of structure mods rebuilt the world's ruins, and every one of them got the same tenant-improvement package: they build the rooms, Danger stocks them.$(p)What follows is a walking tour of where OreSpawn treasure now hides — highlights only. Exhaustive tables are for people who've stopped enjoying doors."
+      "text": "A whole wave of structure mods rebuilt the world's ruins, and every one of them got the same tenant-improvement package: they build the rooms, Danger stocks them.$(p)What follows is a walking tour of where OreSpawn treasure now hides. Highlights only. Exhaustive tables are for people who've stopped enjoying doors."
     },
     {
       "type": "patchouli:text",
       "title": "The Dungeon Circuit",
-      "text": "YUNG's dungeon chests cough up $(l:orespawn_integrations:ores_gems/ruby)rubies$(), amethyst, and the rare Miner's Dream. Zombie-crypt tombstones carry graveyard loot — open one on Halloween and a friendly ghost may rise to greet you. The spider dungeon's egg room was never just spiders.$(p)Mineshafts thread $(l:orespawn_integrations:ores_gems/titanium)titanium$() through their rails and wind clear into the $(l:orespawn_integrations:dimensions/mining_dimension)Mining Dimension$(), where they always belonged."
+      "text": "YUNG's dungeon chests cough up $(l:orespawn_integrations:ores_gems/ruby)rubies$(), amethyst, and the rare Miner's Dream. Zombie-crypt tombstones carry graveyard loot. Open one on Halloween and a friendly ghost may rise to greet you. The spider dungeon's egg room was never just spiders.$(p)Mineshafts thread $(l:orespawn_integrations:ores_gems/titanium)titanium$() through their rails and wind clear into the $(l:orespawn_integrations:dimensions/mining_dimension)Mining Dimension$(), where they always belonged."
     },
     {
       "type": "patchouli:text",
       "title": "Tombs & Temples",
-      "text": "The pharaoh hoarded $(l:orespawn_integrations:ores_gems/tigers_eye)tiger's eye$() — and prying open his tomb can wake an $(l:orespawn_integrations:bestiary/emperor_scorpion)Emperor Scorpion$(). Curses localize.$(p)Ocean monuments display trophies from the pack's sea bosses, plus the kraken repellent that kept the Guardians sleeping. Nether fortress vaults run on $(l:orespawn_integrations:ores_gems/uranium)uranium$() and enshrine the Nether Lost, and witch huts stock brewing oddities no vanilla witch could source."
+      "text": "The pharaoh hoarded $(l:orespawn_integrations:ores_gems/tigers_eye)tiger's eye$(), and prying open his tomb can wake an $(l:orespawn_integrations:bestiary/emperor_scorpion)Emperor Scorpion$(). Curses localize.$(p)Ocean monuments display trophies from the pack's sea bosses, plus the kraken repellent that kept the Guardians sleeping. Nether fortress vaults run on $(l:orespawn_integrations:ores_gems/uranium)uranium$() and enshrine the Nether Lost, and witch huts stock brewing oddities no vanilla witch could source."
     },
     {
       "type": "patchouli:text",
       "title": "The Stronghold",
-      "text": "YUNG's strongholds answered to the Ender Knight — the armoury proves it, ender-pearl blocks and all. The grand library shelves $(l:orespawn_integrations:getting_started/the_guide)this very book$(), because librarians have taste.$(p)And the treasure room sells lottery tickets: roughly one chest in fifty holds a genuine $(l:orespawn_integrations:modern_wonders/vault_heist)boss vault key$() — the only source in the world that doesn't involve the boss."
+      "text": "YUNG's strongholds answered to the Ender Knight. The armoury proves it, ender-pearl blocks and all. The grand library shelves $(l:orespawn_integrations:getting_started/the_guide)this very book$(), because librarians have taste.$(p)And the treasure room sells lottery tickets: roughly one chest in fifty holds a genuine $(l:orespawn_integrations:modern_wonders/vault_heist)boss vault key$(). It's the only source in the world that doesn't involve the boss."
     },
     {
       "type": "patchouli:text",
       "title": "The Countryside",
-      "text": "Village pantries grow OreSpawn produce, the smith keeps titanium in the back, and the library spreads rumors about the pack's own landmarks. Towns & Towers archaeology digs brush up trex teeth and rock crystal, and coastal outposts keep kraken repellent by the door.$(p)Structory's bandit camps fence stolen rubies, its ruined miner camps prove the prospectors right, the wizard's attic hides a thunder staff, and the lighthouse keeper's rod says Ultimate — he was never fishing for cod."
+      "text": "Village pantries grow OreSpawn produce, the smith keeps titanium in the back, and the library spreads rumors about the pack's own landmarks. Towns & Towers archaeology digs brush up trex teeth and rock crystal, and coastal outposts keep kraken repellent by the door.$(p)Structory's bandit camps fence stolen rubies, its ruined miner camps prove the prospectors right, the wizard's attic hides a thunder staff, and the lighthouse keeper's rod says Ultimate. He was never fishing for cod."
     },
     {
       "type": "patchouli:text",
@@ -38,7 +38,7 @@
       "type": "patchouli:spotlight",
       "item": "orespawn:miners_dream",
       "title": "The White Whale",
-      "text": "Pull a Miner's Dream out of somebody else's dungeon and the $(thing)Dungeon Delver$() advancement is yours. Dungeon chests, mineshaft cargo, ruined miner camps — it's out there, and it was always addressed to you."
+      "text": "Pull a Miner's Dream out of somebody else's dungeon and the $(thing)Dungeon Delver$() advancement is yours. It's out there in dungeon chests, mineshaft cargo and ruined miner camps, and it was always addressed to you."
     }
   ]
 }

@@ -14,7 +14,7 @@
     {
       "type": "patchouli:text",
       "title": "Finding Him",
-      "text": "The King holds court at the King Altar on $(l:orespawn_integrations:dimensions/beyond_the_tunnels)Utopia$()'s plains, and his five-level Challenge Towers rise across the world — every floor's vault richer, and meaner, than the last.$(p)Our pack plants a Waystone shrine at the gate of every tower, altar and royal tree: activate it first, and defeat costs you a walk instead of a war."
+      "text": "The King holds court at the King Altar on $(l:orespawn_integrations:dimensions/beyond_the_tunnels)Utopia$()'s plains, and his five-level Challenge Towers rise across the world. Every floor's vault is richer, and meaner, than the last.$(p)Our pack plants a Waystone shrine at the gate of every tower, altar and royal tree: activate it first, and defeat costs you a walk instead of a war."
     },
     {
       "type": "patchouli:crafting",
@@ -24,7 +24,7 @@
     {
       "type": "patchouli:text",
       "title": "The Prize",
-      "text": "Fell him and the Royal tier is yours: every kill yields a full set of Royal armor and the Royal Guardian Sword.$(p)That is the only source of Royal gear in this pack — no recipe, no shortcut. Just the King, a preposterous health bar, and you."
+      "text": "Fell him and the Royal tier is yours: every kill yields a full set of Royal armor and the Royal Guardian Sword.$(p)That is the only source of Royal gear in this pack. There's no recipe and no shortcut, just the King, a ridiculous health bar, and you."
     },
     {
       "type": "patchouli:text",

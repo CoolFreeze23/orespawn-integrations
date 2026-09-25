@@ -17,7 +17,7 @@
     {
       "type": "patchouli:text",
       "title": "A Paleta",
-      "text": "O rubi aplica $(thing)carmesim$(). O urânio aplica $(thing)verde ácido$() — e não, não fica tiquetaqueando. O titânio aplica $(thing)aço$() frio. A escama da rainha aplica $(thing)orquídea$() — realeza por cortesia da $(l:orespawn_integrations:bosses/the_queen)Rainha$(), que não foi consultada.$(p)Um aviso: o ícone do item no inventário não mostra a decoração. É o esperado — vista a peça e o aplique aparece por inteiro na armadura equipada."
+      "text": "O rubi aplica $(thing)carmesim$(). O urânio aplica $(thing)verde ácido$(). E não, não fica tiquetaqueando. O titânio aplica $(thing)aço$() frio. A escama da rainha aplica $(thing)orquídea$(): realeza por cortesia da $(l:orespawn_integrations:bosses/the_queen)Rainha$(), que não foi consultada.$(p)Um aviso: o ícone do item no inventário não mostra a decoração. É o esperado: vista a peça e o aplique aparece por inteiro na armadura equipada."
     },
     {
       "type": "patchouli:spotlight",

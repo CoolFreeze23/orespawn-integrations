@@ -13,17 +13,17 @@
     {
       "type": "patchouli:text",
       "title": "The Uranium Rush",
-      "text": "Drink it — yes, even on a full stomach; it's a buff, not a meal — and the $(thing)Uranium Rush$() hits: twenty seconds of $(thing)Glowing$(), $(thing)Night Vision$() and $(thing)Speed II$(), with the empty bottle handed politely back. Not poison. Never poison.$(p)A Nether researcher named Haskov drank the first one and asked for another. The advancement is named after his condition."
+      "text": "Drink it and the $(thing)Uranium Rush$() hits: twenty seconds of $(thing)Glowing$(), $(thing)Night Vision$() and $(thing)Speed II$(), and you get the empty bottle back. Yes, you can drink it on a full stomach; it's a buff, not a meal. Not poison. Never poison.$(p)A Nether researcher named Haskov drank the first one and asked for another. The advancement is named after his condition."
     },
     {
       "type": "patchouli:text",
       "title": "The Glowing Pot",
-      "text": "Pour a few bottles into an Amendments cauldron and the pot fills with $(thing)Liquid Uranium$() — acid green and genuinely glowing, light for the whole alchemy corner. Right-click the pot with empty glass bottles to draw the drink back out whenever the mood strikes.$(p)This is the intended supply line: brew a pot once, bottle it forever."
+      "text": "Pour a few bottles into an Amendments cauldron and the pot fills with $(thing)Liquid Uranium$(). It's acid green and really glows, so it lights up the whole alchemy corner. Right-click the pot with empty glass bottles to draw the drink back out whenever the mood strikes.$(p)This is the intended supply line: brew a pot once, bottle it forever."
     },
     {
       "type": "patchouli:text",
       "title": "No, the Condenser Can't Have It",
-      "text": "Bottled Uranium carries no EMC, deliberately — the full ledger lives in $(l:orespawn_integrations:always_uranium/uranium_economy)The Uranium Economy$(). The condenser doesn't get to print a triple-buff drink by the stack; you get yours from the glowing pot like a person of culture."
+      "text": "Bottled Uranium has no EMC, on purpose. The full ledger is in $(l:orespawn_integrations:always_uranium/uranium_economy)The Uranium Economy$(). The condenser doesn't get to print a triple-buff drink by the stack; you get yours from the glowing pot like a person of culture."
     }
   ]
 }

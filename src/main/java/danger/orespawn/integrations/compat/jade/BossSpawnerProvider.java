@@ -29,7 +29,7 @@ enum BossSpawnerProvider implements IComponentProvider<BlockAccessor> {
 
     private static final Component FUSE_HINT = Component
             .translatableWithFallback("tooltip.orespawn_integrations.jade.spawner.fuse",
-                    "Erupts moments after being placed — stand clear!")
+                    "Erupts moments after being placed. Stand clear!")
             .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC);
     private static final Component ONCE_HINT = Component
             .translatableWithFallback("tooltip.orespawn_integrations.jade.spawner.once_per_world",

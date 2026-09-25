@@ -13,12 +13,12 @@
     {
       "type": "patchouli:text",
       "title": "Matemática de Estante",
-      "text": "Disponha blocos de armazenamento do OreSpawn ao redor de uma mesa de encantamento Apothic, como estantes, e eles contam como atributos:$(p)$(thing)Urânio$() — Quanta +85, Eterna -10.$(br)$(thing)Rubi$() — Eterna +5 (teto 75), Arcana +17,5.$(br)$(thing)Olho de Tigre$() — Eterna +15 (teto 90), uma pista extra.$(br)$(thing)Titânio$() — Eterna +6 (teto 60), Quanta -3, Arcana +2."
+      "text": "Disponha blocos de armazenamento do OreSpawn ao redor de uma mesa de encantamento Apothic, como estantes, e eles contam como atributos:$(p)$(thing)Urânio$(): Quanta +85, Eterna -10.$(br)$(thing)Rubi$(): Eterna +5 (teto 75), Arcana +17,5.$(br)$(thing)Olho de Tigre$(): Eterna +15 (teto 90), uma pista extra.$(br)$(thing)Titânio$(): Eterna +6 (teto 60), Quanta -3, Arcana +2."
     },
     {
       "type": "patchouli:text",
       "title": "Volátil, de Propósito",
-      "text": "Um bloco de urânio cobre a conta inteira de Quanta de todas as receitas deste livro — a mesa fica volátil, você fica com opções. Quanta alto significa oscilações mais selvagens no que a mesa oferece; quando ela ficar criativa demais, o titânio é o seu calmante.$(p)Colocar seu primeiro bloco de urânio na estante assina a conquista $(thing)Canto Reprodutor$(). O bibliotecário se mudou. O físico se instalou."
+      "text": "Um bloco de urânio cobre a conta inteira de Quanta de todas as receitas deste livro: a mesa fica volátil, você fica com opções. Quanta alto significa oscilações mais selvagens no que a mesa oferece; quando ela ficar criativa demais, o titânio é o seu calmante.$(p)Colocar seu primeiro bloco de urânio na estante assina a conquista $(thing)Canto Reprodutor$(). O bibliotecário se mudou. O físico se instalou."
     },
     {
       "type": "patchouli:text",
@@ -28,7 +28,7 @@
     {
       "type": "patchouli:text",
       "title": "Radioativo, o Encantamento",
-      "text": "Fora da infusão, o Radioativo rola até o nível III e assenta em espadas e na maça igualmente — o veneno corre mais longo e mais cruel a cada nível. O texto completo mora com os outros $(l:orespawn_integrations:modern_wonders/new_enchantments)Novos Encantamentos$(), ao lado do irmão de sangue frio, o Aperto do Kraken."
+      "text": "Fora da infusão, o Radioativo rola até o nível III e assenta em espadas e na maça igualmente. O veneno corre mais longo e mais cruel a cada nível. O texto completo mora com os outros $(l:orespawn_integrations:modern_wonders/new_enchantments)Novos Encantamentos$(), ao lado do irmão de sangue frio, o Aperto do Kraken."
     }
   ]
 }

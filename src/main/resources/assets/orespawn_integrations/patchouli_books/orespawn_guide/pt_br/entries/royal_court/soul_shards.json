@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Quem Assina",
-      "text": "Quatro membros da realeza podem soltar um fragmento de alma já vinculado a eles: o $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$(), o $(l:orespawn_integrations:bosses/kraken)Kraken$(), a $(l:orespawn_integrations:bosses/the_queen)Rainha$() e o $(l:orespawn_integrations:bestiary/emperor_scorpion)Escorpião Imperador$(). Dez por cento por abate, e o golpe fatal precisa ser seu.$(p)O fragmento chega no nível um — 64 dos seus 1.024 abates já creditados. Vinculado pelo Sangue, diz a conquista, e ela não está errada."
+      "text": "Quatro membros da realeza podem soltar um fragmento de alma já vinculado a eles: o $(l:orespawn_integrations:bosses/mobzilla)Mobzilla$(), o $(l:orespawn_integrations:bosses/kraken)Kraken$(), a $(l:orespawn_integrations:bosses/the_queen)Rainha$() e o $(l:orespawn_integrations:bestiary/emperor_scorpion)Escorpião Imperador$(). Dez por cento por abate, e o golpe fatal precisa ser seu.$(p)O fragmento chega no nível um, com 64 dos seus 1.024 abates já creditados. Vinculado pelo Sangue, diz a conquista, e ela não está errada."
     },
     {
       "type": "patchouli:text",
@@ -23,7 +23,7 @@
     {
       "type": "patchouli:text",
       "title": "O Básico da Jaula",
-      "text": "Solte o fragmento numa Jaula de Almas e ela começa a produzir o chefe vinculado — a jaula funciona do nível um, dia um. Alimente-a com mais abates e os níveis mais altos geram mais rápido e mais cruel.$(p)Você está, para deixar claro, construindo uma máquina que dispensa Mobzilla. A Corte presume que você tem um plano para a saída do produto."
+      "text": "Solte o fragmento numa Jaula de Almas e ela começa a produzir o chefe vinculado. A jaula funciona do nível um, dia um. Alimente-a com mais abates e os níveis mais altos geram mais rápido e mais cruel.$(p)Você está, para deixar claro, construindo uma máquina que dispensa Mobzilla. A Corte presume que você tem um plano para a saída do produto."
     }
   ]
 }

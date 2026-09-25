@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Some ore veins were never ore. A decoy mine is a SecurityCraft mine wearing an OreSpawn costume — ruby, titanium, tiger's eye, or uranium — sitting in your tunnels looking exactly like payday.$(p)Stepping on one is harmless. The trap is greed: the decoy detonates on the final crack of mining progress, because the one thing every raider eventually does to ore is swing at it."
+      "text": "Some ore veins were never ore. A decoy mine is a SecurityCraft mine dressed up as OreSpawn ore (ruby, titanium, tiger's eye or uranium), sitting in your tunnels and looking exactly like payday.$(p)Stepping on one is harmless. The trap is greed: the decoy blows up on the last crack of mining progress, because the one thing every raider eventually does to ore is swing at it."
     },
     {
       "type": "patchouli:crafting",
@@ -22,7 +22,7 @@
     {
       "type": "patchouli:text",
       "title": "Field Manual",
-      "text": "Shapeless, all four flavors: one real ore block plus one SecurityCraft mine. Each decoy copies its ore's hardness and tool rules, so it mines like the genuine article until the last half-heart of progress.$(p)In your inventory the item admits everything — 'Looks like ore. Isn't.' — and all four sit in SecurityCraft's Block Mines tab. Once placed, the disguise is total. Almost."
+      "text": "Shapeless, all four flavors: one real ore block plus one SecurityCraft mine. Each decoy copies its ore's hardness and tool rules, so it mines like the real thing until the last half-heart of progress.$(p)In your inventory the item is honest about it: 'Looks like ore. Isn't.' All four sit in SecurityCraft's Block Mines tab. Once placed, the disguise is total. Almost."
     },
     {
       "type": "patchouli:image",
@@ -31,18 +31,18 @@
       ],
       "title": "The Tell",
       "border": true,
-      "text": "The fairness tell: a white mote or two per second drifting off any face open to air, plus a soft tick every eight-odd seconds. Buried decoys stay quiet until someone digs close — exactly when the warning matters."
+      "text": "To keep it fair, there's a tell: a white mote or two per second drifting off any face open to air, plus a soft tick about every eight seconds. Buried decoys stay quiet until someone digs close, which is exactly when the warning matters."
     },
     {
       "type": "patchouli:text",
       "title": "Counterplay",
-      "text": "Spotted the shimmer? You have options. Right-click with wire cutters and the mine converts, in place, into a Suspicious Ore trophy — that's the Minesweeper advancement, and picking the trophy up earns It Was Never Ore.$(p)Choose violence instead and the blast is tuned for drama over craters: strength 2.8 against TNT's 4.0, no fire, shallow scarring. Survivable, memorable, and in creative mode it never triggers at all."
+      "text": "Spotted the shimmer? You have options. Right-click with wire cutters and the mine turns, in place, into a Suspicious Ore trophy. That's the Minesweeper advancement, and picking the trophy up earns It Was Never Ore.$(p)If you set it off instead, the blast is made for show, not craters: strength 2.8 against TNT's 4.0, no fire, and only a shallow dent in the ground. You'll survive it, and in creative mode it never triggers at all."
     },
     {
       "type": "patchouli:spotlight",
       "item": "orespawn_integrations:suspicious_ore",
       "title": "Suspicious Ore",
-      "text": "Proof somebody tried to bait you and you out-played them. Breaks by hand, no tool gate, always drops itself — even with the thread toggled off — and displays beautifully next to the pickaxe that nearly did it.$(p)You mined the vein. The vein disagreed. You won anyway."
+      "text": "Proof somebody tried to bait you and you outplayed them. It breaks by hand with no tool needed and always drops itself, even with the thread turned off. It looks great on display next to the pickaxe that nearly set it off.$(p)You mined the vein. The vein disagreed. You won anyway."
     }
   ]
 }

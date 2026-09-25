@@ -18,12 +18,12 @@
     {
       "type": "patchouli:text",
       "title": "A Chocagem",
-      "text": "Coloque o ovo na Incubadora do Aether e mantenha a chama alimentada com tochas de ambrósio. A chocagem leva 24.000 ticks — um dia inteiro de Minecraft, vinte minutos reais, zero atalhos.$(p)Incubação longa, lealdade mais longa ainda. Prensar o ovo concede Ninhada Real; a eclosão concede Vida Longa."
+      "text": "Coloque o ovo na Incubadora do Aether e mantenha a chama alimentada com tochas de ambrósio. A chocagem leva 24.000 ticks: um dia inteiro de Minecraft, vinte minutos reais, zero atalhos.$(p)Incubação longa, lealdade mais longa ainda. Prensar o ovo concede Ninhada Real; a eclosão concede Vida Longa."
     },
     {
       "type": "patchouli:text",
       "title": "O Vínculo",
-      "text": "O Príncipe nasce já domesticado: ele se vincula ao rosto mais próximo a até dez blocos no instante em que respira. Fique ao lado da incubadora para o grande final — este não é o momento de ir dar uma olhada na fazenda.$(p)O que sai dali é um troféu vivo que segue você para casa. A Corte considera a questão da sucessão resolvida."
+      "text": "O Príncipe nasce já domesticado: ele se vincula ao rosto mais próximo a até dez blocos no instante em que respira. Fique ao lado da incubadora para o grande final. Este não é o momento de ir dar uma olhada na fazenda.$(p)O que sai dali é um troféu vivo que segue você para casa. A Corte considera a questão da sucessão resolvida."
     },
     {
       "type": "patchouli:entity",

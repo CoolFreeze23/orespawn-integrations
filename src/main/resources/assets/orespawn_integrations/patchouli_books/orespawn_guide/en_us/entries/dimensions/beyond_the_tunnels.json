@@ -8,7 +8,7 @@
     {
       "type": "patchouli:text",
       "title": "Utopia & Village",
-      "text": "$(6)Utopia$() is the reward dimension: gentle skies, magic apple trees, and the $(l:orespawn_integrations:bosses/the_king)King Altar$() for whenever peace gets boring.$(p)$(6)The Village Dimension$() (Rainbow Ant) is settled country — streets of villagers who have never met a creeper and would very much like to keep it that way."
+      "text": "$(6)Utopia$() is the reward dimension: gentle skies, magic apple trees, and the $(l:orespawn_integrations:bosses/the_king)King Altar$() for whenever peace gets boring.$(p)$(6)The Village Dimension$() (Rainbow Ant) is settled country: streets of villagers who have never met a creeper and would very much like to keep it that way."
     },
     {
       "type": "patchouli:text",

@@ -66,7 +66,7 @@ public class GirlfriendFamiliarHolder extends AbstractFamiliarHolder {
     @Override
     public String getBookDescription() {
         return "A pocket-sized devoted companion. While she is summoned, any living attacker"
-                + " that hurts her player is struck with Weakness II for 5 seconds - jealousy is"
+                + " that hurts her player is struck with Weakness II for 5 seconds. Jealousy is"
                 + " a powerful motivator. Obtained by performing the Ritual of Binding near a wild"
                 + " Girlfriend; a tamed girlfriend is never taken by the ritual.";
     }

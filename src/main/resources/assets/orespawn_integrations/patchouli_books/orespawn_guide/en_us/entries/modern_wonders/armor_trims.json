@@ -17,7 +17,7 @@
     {
       "type": "patchouli:text",
       "title": "The Palette",
-      "text": "Ruby trims $(thing)crimson$(). Uranium trims $(thing)acid green$(), and no, it doesn't tick. Titanium trims cold $(thing)steel$(). Queen scale trims $(thing)orchid$() — royalty courtesy of $(l:orespawn_integrations:bosses/the_queen)the Queen$(), who was not consulted.$(p)One heads-up: the item sprite in your inventory shows no overlay. That's expected — put it on and the trim renders in full on the worn armor."
+      "text": "Ruby trims $(thing)crimson$(). Uranium trims $(thing)acid green$(), and no, it doesn't tick. Titanium trims cold $(thing)steel$(). Queen scale trims $(thing)orchid$(), royalty courtesy of $(l:orespawn_integrations:bosses/the_queen)the Queen$(), who was not consulted.$(p)One heads-up: the item sprite in your inventory shows no overlay. That's expected. Put it on and the trim renders in full on the worn armor."
     },
     {
       "type": "patchouli:spotlight",

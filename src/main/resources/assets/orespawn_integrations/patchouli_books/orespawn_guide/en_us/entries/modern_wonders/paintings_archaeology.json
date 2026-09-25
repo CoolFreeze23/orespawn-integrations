@@ -12,22 +12,22 @@
     {
       "type": "patchouli:text",
       "title": "The Gallery",
-      "text": "$(item)The King$() (4x3) — his majesty, from a safe distance. There is no safe distance.$(br)$(item)Mobzilla Rises$() (3x4) — the tall one. The painting is also tall.$(br)$(item)Terror of the Deep$() (4x2) — the $(l:orespawn_integrations:bosses/kraken)Kraken$() in its element, which is everywhere wet."
+      "text": "$(item)The King$() (4x3): his majesty, from a safe distance. There is no safe distance.$(br)$(item)Mobzilla Rises$() (3x4): the tall one. The painting is also tall.$(br)$(item)Terror of the Deep$() (4x2): the $(l:orespawn_integrations:bosses/kraken)Kraken$() in its element, which is everywhere wet."
     },
     {
       "type": "patchouli:text",
       "title": "The Gallery II",
-      "text": "$(item)First Date$() (2x2) — a quiet moment; see $(l:orespawn_integrations:her_side/date_night)Date Night$() if it gives you ideas.$(br)$(item)Flight of the Prince$() (4x2) — the white dragon mid-$(l:orespawn_integrations:modern_wonders/a_reactive_world)flyover$().$(br)$(item)Crystal Wastes$() (2x2) — the $(l:orespawn_integrations:dimensions/crystal_dimension)Crystal Dimension$(), flattering light included."
+      "text": "$(item)First Date$() (2x2): a quiet moment; see $(l:orespawn_integrations:her_side/date_night)Date Night$() if it gives you ideas.$(br)$(item)Flight of the Prince$() (4x2): the white dragon mid-$(l:orespawn_integrations:modern_wonders/a_reactive_world)flyover$().$(br)$(item)Crystal Wastes$() (2x2): the $(l:orespawn_integrations:dimensions/crystal_dimension)Crystal Dimension$(), flattering light included."
     },
     {
       "type": "patchouli:text",
       "title": "Arena Digs",
-      "text": "Every newly generated Mobzilla Arena floor hides $(thing)four suspicious gravel$() patches. Bring a brush: they surface uranium and titanium nuggets, rubies, bone blocks, trex teeth, and godzilla scales — with rare full ingots and, once in a blue moon, a Pigstep disc somebody dropped mid-evacuation."
+      "text": "Every newly generated Mobzilla Arena floor hides $(thing)four suspicious gravel$() patches. Bring a brush: they surface uranium and titanium nuggets, rubies, bone blocks, trex teeth, and godzilla scales. Full ingots turn up rarely, and once in a blue moon there's a Pigstep disc somebody dropped mid-evacuation."
     },
     {
       "type": "patchouli:text",
       "title": "Lair Digs",
-      "text": "The Kraken Lair's seabed digs skew nautical: kraken teeth, prismarine shards and crystals, salt, sea monster and water dragon scales, sea viper tongues, rubies — plus a rare heart of the sea or an unhatched sniffer egg.$(p)Archaeology at crush depth. Bring water breathing and patience, in that order."
+      "text": "The Kraken Lair's seabed digs skew nautical: kraken teeth, prismarine shards and crystals, salt, sea monster and water dragon scales, sea viper tongues and rubies, plus a rare heart of the sea or an unhatched sniffer egg.$(p)Archaeology at crush depth. Bring water breathing and patience, in that order."
     },
     {
       "type": "patchouli:text",

@@ -7,12 +7,12 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Take a Red Ant down and step into wall-to-wall ore: every OreSpawn vein runs richer here, alongside ruby blocks, dense lapis, and boosted diamond, emerald and gold.$(p)Better yet, our pack now pumps other mods' ores into this stone as well — one world, every resource. Consider it the pack's official quarry."
+      "text": "Take a Red Ant down and step into wall-to-wall ore: every OreSpawn vein runs richer here, alongside ruby blocks, dense lapis, and boosted diamond, emerald and gold.$(p)Better yet, our pack now pumps other mods' ores into this stone too, so one world holds every resource. Consider it the pack's official quarry."
     },
     {
       "type": "patchouli:text",
       "title": "Mind the Locals",
-      "text": "Mineshafts and strongholds thread the depths, and not everything buried is ore — mob-filled spawn blocks and the odd Basilisk Maze punctuate the profit.$(p)Plan your Red Ant home. Or bring a Miner's Dream, and no, we will not spoil what that one does."
+      "text": "Mineshafts and strongholds thread the depths, and not everything buried is ore. Mob-filled spawn blocks and the odd Basilisk Maze break up the profit.$(p)Plan your Red Ant home. Or bring a Miner's Dream, and no, we will not spoil what that one does."
     }
   ]
 }

@@ -25,7 +25,7 @@
   "tooltip.orespawn_integrations.jade.drop.leonopteryx": "Battle Axe & Kraken Repellent",
   "tooltip.orespawn_integrations.jade.drop.sea_monster": "Sea Monster Scale",
   "tooltip.orespawn_integrations.jade.spawner.summons": "Summons: %s",
-  "tooltip.orespawn_integrations.jade.spawner.fuse": "Erupts moments after being placed — stand clear!",
+  "tooltip.orespawn_integrations.jade.spawner.fuse": "Erupts moments after being placed. Stand clear!",
   "tooltip.orespawn_integrations.jade.spawner.once_per_world": "Only one may awaken per world",
-  "tooltip.orespawn_integrations.jade.kraken.revenge": "Vengeful — this Kraken is hunting you!"
+  "tooltip.orespawn_integrations.jade.kraken.revenge": "Vengeful: this Kraken is hunting you!"
 }

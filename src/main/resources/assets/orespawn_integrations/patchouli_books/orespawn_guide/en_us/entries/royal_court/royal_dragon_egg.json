@@ -18,12 +18,12 @@
     {
       "type": "patchouli:text",
       "title": "The Brooding",
-      "text": "Set the egg in the Aether's Incubator and keep the flame fed with ambrosium torches. Brooding takes 24,000 ticks — one full Minecraft day, twenty real minutes, zero shortcuts.$(p)Long incubation, longer loyalty. Pressing the egg earns Royal Brood; the hatching earns Long Live."
+      "text": "Set the egg in the Aether's Incubator and keep the flame fed with ambrosium torches. Brooding takes 24,000 ticks: one full Minecraft day, twenty real minutes, no shortcuts.$(p)Long incubation, longer loyalty. Pressing the egg earns Royal Brood; the hatching earns Long Live."
     },
     {
       "type": "patchouli:text",
       "title": "The Imprint",
-      "text": "The Prince hatches already tamed: he imprints on the nearest face within ten blocks the moment he draws breath. Stand by the incubator for the finale — this is not the moment to go check on the farm.$(p)What walks out is a living trophy that follows you home. The Court considers the matter of succession settled."
+      "text": "The Prince hatches already tamed: he imprints on the nearest face within ten blocks the moment he draws breath. Stand by the incubator for the finale. This is not the moment to go check on the farm.$(p)What walks out is a living trophy that follows you home. The Court considers the matter of succession settled."
     },
     {
       "type": "patchouli:entity",

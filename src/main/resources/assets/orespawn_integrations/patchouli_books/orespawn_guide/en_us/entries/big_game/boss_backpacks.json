@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Traveler's Backpack, OreSpawn tailoring: three boss-hide skins with the full feature set intact. You carried the fight to them; they carry your stuff home.$(p)Each one is crafted around a standard backpack — the hide is the upgrade, the engineering underneath is stock, and the strap art shows on your back the moment you wear it."
+      "text": "Traveler's Backpack, OreSpawn style: three backpacks made from boss hides, with every normal feature still there. You carried the fight to them; now they carry your stuff home.$(p)Each one is crafted around a standard backpack. The hide is the upgrade, everything underneath works like a normal pack, and the strap art shows on your back as soon as you wear it."
     },
     {
       "type": "patchouli:image",
@@ -36,7 +36,7 @@
     {
       "type": "patchouli:text",
       "title": "Standard Issue, Boss Grade",
-      "text": "Everything a Traveler's Backpack does, these do: full inventory, both side fluid tanks, the sleeping bag, tool slots, and wearable on your back through Curios or Accessories. Tier upgrades apply exactly as they would to a stock pack — bigger storage, bigger tanks, same hide.$(p)Owning any of the three earns Pack Mule Royalty. The pink one also earns a diary mention — see $(l:orespawn_integrations:her_side/date_night)Date Night$()."
+      "text": "Everything a Traveler's Backpack does, these do: full inventory, both side fluid tanks, the sleeping bag, tool slots, and you can wear them on your back through Curios or Accessories. Tier upgrades work exactly like they do on a normal pack: bigger storage, bigger tanks, same hide.$(p)Owning any of the three earns Pack Mule Royalty. The pink one also gets a mention in her diary. See $(l:orespawn_integrations:her_side/date_night)Date Night$()."
     }
   ]
 }

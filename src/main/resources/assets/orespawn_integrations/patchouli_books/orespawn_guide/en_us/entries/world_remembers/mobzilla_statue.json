@@ -18,7 +18,7 @@
     {
       "type": "patchouli:text",
       "title": "A Working Statue",
-      "text": "This is a first-class Statues citizen, not shelf decor. Run it through the Statue Table and it wakes up for a living: the mob-killer upgrade has it quietly cull nearby hostiles, the looting upgrade makes it drip genuine Godzilla Scales, and the spawner upgrade — the flex — summons the actual $(l:orespawn_integrations:bosses/mobzilla)thing$().$(p)Yes, it roars. You knew it would roar."
+      "text": "This statue does more than sit on a shelf. Run it through the Statue Table and it gets to work: the mob-killer upgrade has it quietly cull nearby hostiles, the looting upgrade makes it drip real Godzilla Scales, and the spawner upgrade, the big one, summons the actual $(l:orespawn_integrations:bosses/mobzilla)thing$().$(p)Yes, it roars. You knew it would roar."
     },
     {
       "type": "patchouli:text",
@@ -28,7 +28,7 @@
     {
       "type": "patchouli:text",
       "title": "Small Print",
-      "text": "You will never fish this out of an ancient-city chest — the trophy stays behind its catalyst grind, on purpose. Earn the worst day; then display it.$(p)And once placed, the statue always drops itself when broken, even if this thread is later switched off in the config. The world remembers. So does your inventory."
+      "text": "You will never fish this out of an ancient-city chest. The trophy stays behind its catalyst grind, on purpose. Earn the worst day; then display it.$(p)And once placed, the statue always drops itself when broken, even if this thread is later switched off in the config. The world remembers. So does your inventory."
     }
   ]
 }

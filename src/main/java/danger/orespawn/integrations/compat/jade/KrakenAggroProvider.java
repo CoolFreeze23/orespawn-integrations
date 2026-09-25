@@ -34,7 +34,7 @@ enum KrakenAggroProvider implements IComponentProvider<EntityAccessor>, IServerD
 
     private static final Component REVENGE = Component
             .translatableWithFallback("tooltip.orespawn_integrations.jade.kraken.revenge",
-                    "Vengeful — this Kraken is hunting you!")
+                    "Vengeful: this Kraken is hunting you!")
             .withStyle(ChatFormatting.DARK_RED, ChatFormatting.ITALIC);
 
     private static boolean warnedServer = false;

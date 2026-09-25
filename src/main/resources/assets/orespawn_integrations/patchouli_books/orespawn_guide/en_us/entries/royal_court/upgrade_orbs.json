@@ -19,12 +19,12 @@
     {
       "type": "patchouli:crafting",
       "recipe": "orespawn_integrations:royal_mana_orb",
-      "text": "Eight $(l:orespawn_integrations:bestiary/water_dragon)Water Dragon$() scales press the third orb — pure mana, no elemental opinions."
+      "text": "Eight $(l:orespawn_integrations:bestiary/water_dragon)Water Dragon$() scales press the third orb: pure mana, no elemental opinions."
     },
     {
       "type": "patchouli:text",
       "title": "At the Anvil",
-      "text": "Apply an orb at Iron's Spellbooks' arcane anvil, onto any gear that accepts upgrades:$(p)Royal Fire Orb — +8% fire spell power.$(p)Royal Ice Orb — +8% ice spell power.$(p)Royal Mana Orb — +100 maximum mana.$(p)All three are epic-rarity and ride Iron's Spellbooks' own orb system as pure data — no custom machinery, no surprises."
+      "text": "Apply an orb at Iron's Spellbooks' arcane anvil, onto any gear that accepts upgrades:$(p)Royal Fire Orb: +8% fire spell power.$(p)Royal Ice Orb: +8% ice spell power.$(p)Royal Mana Orb: +100 maximum mana.$(p)All three are epic rarity and use Iron's Spellbooks' own orb system as plain data. No custom machinery, no surprises."
     },
     {
       "type": "patchouli:text",

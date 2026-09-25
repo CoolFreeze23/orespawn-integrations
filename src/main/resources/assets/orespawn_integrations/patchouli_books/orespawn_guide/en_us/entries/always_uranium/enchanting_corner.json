@@ -13,12 +13,12 @@
     {
       "type": "patchouli:text",
       "title": "Shelf Math",
-      "text": "Set OreSpawn storage blocks around an Apothic enchanting table like bookshelves and they read as stats:$(p)$(thing)Uranium$() — Quanta +85, Eterna -10.$(br)$(thing)Ruby$() — Eterna +5 (cap 75), Arcana +17.5.$(br)$(thing)Tiger's Eye$() — Eterna +15 (cap 90), one extra clue.$(br)$(thing)Titanium$() — Eterna +6 (cap 60), Quanta -3, Arcana +2."
+      "text": "Set OreSpawn storage blocks around an Apothic enchanting table like bookshelves and they read as stats:$(p)$(thing)Uranium$(): Quanta +85, Eterna -10.$(br)$(thing)Ruby$(): Eterna +5 (cap 75), Arcana +17.5.$(br)$(thing)Tiger's Eye$(): Eterna +15 (cap 90), one extra clue.$(br)$(thing)Titanium$(): Eterna +6 (cap 60), Quanta -3, Arcana +2."
     },
     {
       "type": "patchouli:text",
       "title": "Volatile, On Purpose",
-      "text": "One uranium block covers the entire Quanta bill of every recipe in this book — the table gets volatile, you get options. High Quanta means wilder swings on what the table offers; when it gets too creative, titanium is your calming agent.$(p)Shelving your first uranium block signs the $(thing)Breeder Corner$() advancement. The librarian moved out. The physicist moved in."
+      "text": "One uranium block covers the entire Quanta bill of every recipe in this book. The table gets volatile, and you get options. High Quanta means wilder swings on what the table offers; when it gets too creative, titanium is your calming agent.$(p)Shelving your first uranium block signs the $(thing)Breeder Corner$() advancement. The librarian moved out. The physicist moved in."
     },
     {
       "type": "patchouli:text",
@@ -28,7 +28,7 @@
     {
       "type": "patchouli:text",
       "title": "Radioactive, the Enchant",
-      "text": "Off the table itself, Radioactive rolls up to level III and sits on swords and the mace alike — the poison runs longer and meaner with every level. The full write-up lives with the other $(l:orespawn_integrations:modern_wonders/new_enchantments)New Enchantments$(), next to its cold-blooded sibling, Kraken's Grip."
+      "text": "Off the table itself, Radioactive rolls up to level III and sits on swords and the mace alike. The poison lasts longer and hits harder with every level. The full write-up lives with the other $(l:orespawn_integrations:modern_wonders/new_enchantments)New Enchantments$(), next to its cold-blooded sibling, Kraken's Grip."
     }
   ]
 }
