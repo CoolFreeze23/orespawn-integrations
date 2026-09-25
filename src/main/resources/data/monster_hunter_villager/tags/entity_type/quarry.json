@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "orespawn:rat",
+    "orespawn:scorpion",
+    "orespawn:cave_fisher",
+    "orespawn:creeping_horror",
+    "orespawn:leaf_monster"
+  ]
+}
