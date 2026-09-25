@@ -13,7 +13,7 @@
       "thread": "world_remembers"
     }
   ],
-  "comment": "THREAD 5 'The World Remembers' (CROSSMOD-THREADS.md item 25) - Crystalline world transmutation: the Philosopher's Stone remembers the Crystal Dimension. Forward entries paint crystal terrain anywhere; sneak (alt_result) picks variants; reverse entries on the three terrain blocks are the undo/escape hatch. Verified against ProjectE-1.21.1-PE1.1.0 (WorldTransmutationManager scans pe_world_transmutations/ in ALL namespaces; origin/result/alt_result schema per data/projecte/pe_world_transmutations/defaults.json). EMC policy 3: none of the crystal_* target blocks carry EMC in this addon's pe_custom_conversions tables and this file adds none - transmutation is terraforming, not a condenser feed.",
+  "comment": "THREAD 5 'The World Remembers', Crystalline world transmutation: the Philosopher's Stone remembers the Crystal Dimension. Forward entries paint crystal terrain anywhere; sneak (alt_result) picks variants; reverse entries on the three terrain blocks are the undo/escape hatch. Verified against ProjectE-1.21.1-PE1.1.0 (WorldTransmutationManager scans pe_world_transmutations/ in ALL namespaces; origin/result/alt_result schema per data/projecte/pe_world_transmutations/defaults.json). No EMC: none of the crystal_* target blocks carry EMC in this addon's pe_custom_conversions tables and this file adds none - transmutation is terraforming, not a condenser feed.",
   "transmutations": [
     {
       "origin": "minecraft:stone",

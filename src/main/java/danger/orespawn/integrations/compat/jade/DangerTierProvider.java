@@ -54,7 +54,7 @@ enum DangerTierProvider implements IComponentProvider<EntityAccessor> {
             .withStyle(ChatFormatting.GREEN);
 
     /**
-     * entity path -> pre-built "Drops: ..." line. Contents verified against
+     * Maps an entity path to its pre-built "Drops: ..." line. Contents verified against
      * {@code data/orespawn/loot_table/entities/<path>.json} in beta.3.
      */
     private static final Map<String, Component> DROP_HINTS = buildDropHints();

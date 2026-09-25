@@ -14,7 +14,7 @@ import java.util.function.Supplier;
  * three OreSpawn packs. TB only wires this extension for items in its own
  * DeferredRegister (verified in ModClientEventHandler.registerClientExtenstions,
  * travelersbackpack-neoforge-1.21.1-10.1.38 bytecode), and its backpack loader
- * model bakes no standard quads — without the extension a foreign backpack item
+ * model bakes no standard quads, so without the extension a foreign backpack item
  * is invisible in the inventory, in hand, and worn. Mirrors TB's own anonymous
  * IClientItemExtensions: renderer constructed lazily so no client classes load
  * before the first render.

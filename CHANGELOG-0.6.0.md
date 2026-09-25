@@ -1,56 +1,56 @@
-# OreSpawn Integrations 0.6.0 — "Origins"
+# OreSpawn Integrations 0.6.0 - "Origins"
 
 Neo Origins is in the pack, so CrazyCraft gets its own origins: eighteen of them, built from
 the pack's own creatures and folklore, each with a signature ability, a real drawback and a
-three-tier evolution arc (1,000 / 2,500 / 5,000 kills). They sit in the normal picker next to
-the built-ins, in English and Portuguese. Pure data.
+three-tier evolution arc (1,000, 2,500 and 5,000 kills). They sit in the normal picker next
+to the built-ins, in English and Portuguese. Pure data.
 
 ---
 
-## Thread 7 — Origins
+## Thread 7: Origins
 
 Danger asked what an ant would do with a crafting table. Then a capybara. Then a fox spirit.
 
-**OreSpawn**
-- **Antling** — two-thirds size, climbs walls, tunnels through stone, calls red ants (later ant
+### OreSpawn
+- Antling: two-thirds size, climbs walls, tunnels through stone, calls red ants (later ant
   robots) to fight for you; ants leave you alone, spiders and scorpions do not.
-- **Kraken Spawn** — born in the ocean; ink clouds, an undertow that drags a crowd to you;
+- Kraken Spawn: born in the ocean; ink clouds, an undertow that drags a crowd to you;
   the shore dries you out and the sun burns you dry. The Apex tier calls the Kraken itself.
-- **Royal Blood** — the King, Queen, Princes and Mobzilla spare you; a Royal Decree that
+- Royal Blood: the King, Queen, Princes and Mobzilla spare you; a Royal Decree that
   weakens a crowd; enemies of the court hunt you from further away.
-- **Uranium-Born** — glows, poisons attackers, eats uranium, Meltdown blast; explosions
+- Uranium-Born: glows, poisons attackers, eats uranium, Meltdown blast; explosions
   and water hurt.
-- **Luna Moth** — glides, feeds on light and fruit, Moth Dust that lifts and blinds; fire is
+- Luna Moth: glides, feeds on light and fruit, Moth Dust that lifts and blinds; fire is
   the end of you. The Apex tier calls Mothra.
-- **Kyuubi** — Fox-fire (Iron's Spellbooks Firebolt, no book), Nine Steps teleport,
+- Kyuubi: Fox-fire (Iron's Spellbooks Firebolt, no book), Nine Steps teleport,
   Trickster's Trade swap, a dodge chance; water snuffs the flame, dogs hunt you.
-- **Fairy** — half size, true flight, a healing aura and a group Blessing; three hearts,
+- Fairy: half size, true flight, a healing aura and a group Blessing; three hearts,
   no armour, iron weapons hurt extra.
-- **Gamma Metroid** — life drain on every hit and an energy aura, Latch pulls prey in; no
+- Gamma Metroid: life drain on every hit and an energy aura, Latch pulls prey in; no
   natural regeneration, and cold kills you.
-- **Raptor** — pounce dash, bleeding bites, orders your pets at a target, raw meat is a
+- Raptor: pounce dash, bleeding bites, orders your pets at a target, raw meat is a
   meal; meat only, no bows, slow in the cold. The Apex tier hunts with a raptor pack.
-- **Beaver** — fells whole trees, places planks at range, eats logs, an extra pouch;
+- Beaver: fells whole trees, places planks at range, eats logs, an extra pouch;
   the cosy one.
 
-**Brazilian folklore**
-- **Saci** — Redemoinho whirlwind, pipe smoke, Furto steals held items, vanishes when
+### Brazilian folklore
+- Saci: Redemoinho whirlwind, pipe smoke, Furto steals held items, vanishes when
   sneaking; hops instead of walking, and running water is his old weakness.
-- **Mapinguari** — 30% larger, Terremoto slam and a Roar; slow, fire-shy, meat and
+- Mapinguari: 30% larger, Terremoto slam and a Roar; slow, fire-shy, meat and
   mushrooms only; the Capelobo remembers you.
-- **Capivara** — nothing attacks you until you attack; heals the group in water; animals
+- Capivara: nothing attacks you until you attack; heals the group in water; animals
   gather round; a capybara form.
-- **Lobisomem** — human by day, wolf by night, more wolf under a full moon; cannot sleep,
+- Lobisomem: human by day, wolf by night, more wolf under a full moon; cannot sleep,
   golems and guards attack at night.
-- **Cuca** — hexes, a cauldron cloud, and Brazil Legends' own Cuclins as minions; the sun
+- Cuca: hexes, a cauldron cloud, and Brazil Legends' own Cuclins as minions; the sun
   weakens you. The Apex tier calls the Cuca.
-- **Curupira** — backward feet make hits miss, the forest heals and speeds you, Iron's
+- Curupira: backward feet make hits miss, the forest heals and speeds you, Iron's
   Root on demand; slow and hungry outside the woods, and logs refuse your axe.
-- **Mula sem Cabeça** — fire immune, attackers burn, night gallop and a fire neigh;
+- Mula sem Cabeça: fire immune, attackers burn, night gallop and a fire neigh;
   cursed sleepless, water hurts at night.
 
-**Other**
-- **Time Lord** — regenerates from a killing blow once every fifteen minutes, then blinks,
+### Other
+- Time Lord: regenerates from a killing blow once every fifteen minutes, then blinks,
   drops what it held and stays weak a while; Time Skip and Rewind.
 
 ## Notes

@@ -31,27 +31,27 @@ import java.util.List;
  *
  * <p>While worn in any curios slot:
  * <ul>
- *   <li><b>Love aura</b> — a {@code Girlfriend} or {@code Boyfriend} within
+ *   <li>Love aura: a {@code Girlfriend} or {@code Boyfriend} within
  *       {@value #RANGE} blocks grants the wearer Regeneration I (server-side,
  *       rescanned once a second, beacon-style short refresh).</li>
- *   <li><b>Calming</b> — Girlfriends never turn on the wearer. Verified via
+ *   <li>Calming: Girlfriends never turn on the wearer. Verified via
  *       {@code javap} against orespawn-1.21.1-1.0.0-beta.3: the only hostile
  *       path a Girlfriend has is {@code Girlfriend$ValentineTargetGoal}
  *       (a {@code NearestAttackableTargetGoal} gated on
  *       {@code isValentineAngry()}, i.e. Feb 14 + {@code DATA_FEELING_BETTER
  *       == 0}) whose predicate targets any living entity except her owner and
- *       fellow tames — so the entity she acquires <i>is the wearer</i>, not
+ *       fellow tames, so the entity she acquires <i>is the wearer</i>, not
  *       "the wearer's attacker". There is no public anger setter, so calming
  *       means suppressing that acquisition: a {@link LivingChangeTargetEvent}
  *       hook cancels her targeting a locket wearer within range, and the tick
  *       scan clears a target already latched before the locket was equipped.</li>
- *   <li><b>ALWAYS_KEEP everywhere</b> — unlike {@link OreSpawnCurio}'s
+ *   <li>ALWAYS_KEEP everywhere: unlike {@link OreSpawnCurio}'s
  *       dimension-gated rule, a keepsake is never dropped on death, in any
  *       dimension (both drop-rule arities overridden; Curios 9.5.1's
  *       ItemizedCurioCapability forwards the int-arity one).</li>
  * </ul>
  *
- * <p>Only ever classloaded when the curios mod is present — {@code ItemsInit}
+ * <p>Only ever classloaded when the curios mod is present; {@code ItemsInit}
  * guards the {@link #register()} call behind {@code ModList.isLoaded("curios")}
  * on the same FMLCommonSetupEvent/enqueueWork path {@link CuriosCompat} uses.
  * CuriosCompat only registers behavior for the five {@code orespawn:*} drops,

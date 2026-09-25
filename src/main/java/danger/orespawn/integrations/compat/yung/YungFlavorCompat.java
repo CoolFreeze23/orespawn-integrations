@@ -38,46 +38,46 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  * detection:
  *
  * <ul>
- *   <li><b>Tombstone Hauntings</b> — on Halloween (the port's own
+ *   <li>Tombstone Hauntings: on Halloween (the port's own
  *       {@link SeasonalDates#isHalloween()} clock), first-opening a Better
  *       Dungeons zombie-dungeon tombstone chest raises a friendly
  *       {@code orespawn:ghost} apparition: its ATTACK_DAMAGE attribute is
  *       zeroed (the port's Ghost routes all contact damage through
- *       {@code Attributes.ATTACK_DAMAGE} — verified in the mirror's
+ *       {@code Attributes.ATTACK_DAMAGE}, verified in the mirror's
  *       Ghost.doHurtTarget), and it dissolves after 30s.</li>
- *   <li><b>Scorpion Tomb Trap</b> — first-opening the Better Desert Temples
+ *   <li>Scorpion Tomb Trap: first-opening the Better Desert Temples
  *       pharaoh tomb chest has a 25% chance to wake an
  *       {@code orespawn:emperor_scorpion} (1.5x1.5 blocks, fits the burial
  *       chamber). The mummy's curse is also Thread 4's themed source: the
  *       emperor scorpion feeds the Chitin Band drop GLM. The chest's loot is
- *       untouched — the trap is pure spice on top of an unchanged reward.</li>
+ *       untouched; the trap is pure spice on top of an unchanged reward.</li>
  * </ul>
  *
- * <p><b>Detection:</b> {@code PlayerInteractEvent.RightClickBlock}
+ * <p>Detection: {@code PlayerInteractEvent.RightClickBlock}
  * (server-side, main hand) + {@code RandomizableContainerBlockEntity
  * .getLootTable()}. Structure chests keep their loot-table id until the menu
  * first opens and unpacks it, so a non-null id both identifies the chest and
- * makes each trigger naturally once-per-chest — after the first open the id
+ * makes each trigger naturally once-per-chest: after the first open the id
  * is gone. Target ids verified in the pack jars:
  * {@code betterdungeons:zombie_dungeon/chests/tombstone}
  * (YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar) and
  * {@code betterdeserttemples:chests/tomb_pharaoh}
  * (YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar). Known edge: if the
  * click doesn't actually open the chest (blocked lid, another handler
- * cancels), the flavor may fire while the table stays armed — harmless, and
+ * cancels), the flavor may fire while the table stays armed. That is harmless, and
  * the sneak-with-item case (a block placement, not an open) is filtered via
  * {@code isSecondaryUseActive}.</p>
  *
- * <p><b>Classload safety:</b> imports the port's {@code SeasonalDates}, so
+ * <p>Classload safety: imports the port's {@code SeasonalDates}, so
  * the mod's setup must init this class only after a ModList check for
  * "orespawn" (same reflective pattern as compat/alive/AliveWorldCompat). The
- * YUNG mods themselves are never classloaded — pure loot-table-id string
+ * YUNG mods themselves are never classloaded; this is pure loot-table-id string
  * matching; without them no chest ever carries these ids and the class is
  * inert.</p>
  *
- * <p>POLICY 4 — API surfaces verified via javap: MC 1.21.1 (NeoForge
- * 21.1.223 dev jar): {@code RandomizableContainer.getLootTable() ->
- * ResourceKey<LootTable>} (nullable) implemented by
+ * <p>API surfaces verified via javap: MC 1.21.1 (NeoForge
+ * 21.1.223 dev jar): {@code RandomizableContainer.getLootTable()}
+ * returning {@code ResourceKey<LootTable>} (nullable) implemented by
  * {@code RandomizableContainerBlockEntity}; {@code Player.isSecondaryUseActive()},
  * {@code Player.displayClientMessage(Component, boolean)},
  * {@code LivingEntity.getAttribute(Holder<Attribute>)},
@@ -87,7 +87,7 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  * neoforge-21.1.223-universal.jar: {@code PlayerInteractEvent.RightClickBlock}
  * with {@code getHand()/getPos()/getLevel()}. Port jar
  * orespawn-1.21.1-2.0.0-beta.1 (libs/): {@code
- * danger.orespawn.util.SeasonalDates.isHalloween() -> boolean} (public
+ * danger.orespawn.util.SeasonalDates.isHalloween()} returning {@code boolean} (public
  * static). Pack runtime is NeoForge 21.1.248; stable across 21.1.x.</p>
  *
  * <p>House defensive style (compat/alive): try/catch + log-once handler
@@ -249,7 +249,7 @@ public final class YungFlavorCompat {
     }
 
     /**
-     * Resolves an entity type by id, or null (log-once) if absent — local
+     * Resolves an entity type by id, or null (log-once) if absent. Local
      * copy of the compat/alive helper (package-private there). containsKey
      * guard because ENTITY_TYPE is a defaulted registry.
      */
@@ -316,7 +316,7 @@ public final class YungFlavorCompat {
 
     /**
      * Lootr soft-hook, classloaded only behind the isLoaded("lootr") guard
-     * above. POLICY 4: {@code noobanidus.mods.lootr.common.api.data
+     * above. Lootr API: {@code noobanidus.mods.lootr.common.api.data
      * .blockentity.ILootrBlockEntity extends ILootrInfoProvider extends
      * ILootrInfo}, whose {@code getInfoLootTable()} returns
      * {@code ResourceKey<LootTable>} - javap-verified against

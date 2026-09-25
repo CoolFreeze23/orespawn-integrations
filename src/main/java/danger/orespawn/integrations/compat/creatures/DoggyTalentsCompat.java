@@ -31,15 +31,15 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
  * does NOT touch CelebrationHandler; it is its own parallel LivingDeathEvent
  * listener.</p>
  *
- * <p><b>API citations (policy 4)</b>, all javap-verified against
+ * <p>API citations, all javap-verified against
  * {@code DoggyTalentsNext-1.21.1-1.19.0.jar}:
  * <ul>
- *   <li>{@code doggytalents.common.entity.Dog} — public class (registered as
+ *   <li>{@code doggytalents.common.entity.Dog}: public class (registered as
  *       entity id {@code doggytalents:dog}; {@code DoggyEntityTypes} static
  *       init, bytecode {@code ldc "doggytalents"} / {@code ldc "dog"});
  *       {@code public boolean triggerAction(TriggerableAction)}.</li>
  *   <li>{@code doggytalents.common.entity.ai.triggerable.DogBackFlipAction}
- *       — public class extending {@code AnimationAction}, public ctor
+ *       is a public class extending {@code AnimationAction}, public ctor
  *       {@code DogBackFlipAction(Dog)}. This is DTN's OWN backflip trigger:
  *       {@code doggytalents.common.event.EventHandler} bytecode does exactly
  *       {@code dog.triggerAction(new DogBackFlipAction(dog))} server-side, so
@@ -47,15 +47,15 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
  *       {@code assets/doggytalents/doggytalents/dog_animations/backflip.json}
  *       animation and syncs it to clients itself; no fallback spin needed).</li>
  *   <li>{@code doggytalents.api.feature.IDog.getDogLevel(Supplier<? extends Talent>)}
- *       — public default (implemented by {@code Dog} via {@code AbstractDog});
+ *       is a public default method (implemented by {@code Dog} via {@code AbstractDog});
  *       returns 0 when the talent is untrained.</li>
- *   <li>{@code doggytalents.DoggyTalents.GUARD_DOG} — public static
+ *   <li>{@code doggytalents.DoggyTalents.GUARD_DOG}: public static
  *       {@code Supplier<Talent>}.</li>
  * </ul>
  * Verified against Doggy Talents Next 1.19.0; the triggerable-action surface
- * is DTN-internal-but-stable — re-verify on a DTN major bump.
+ * is DTN-internal but stable; re-verify on a DTN major bump.
  *
- * <p>Only ever classloaded when the doggytalents mod is present — the main mod
+ * <p>Only ever classloaded when the doggytalents mod is present; the main mod
  * class invokes {@link #init(IEventBus)} reflectively behind
  * {@code ModList.isLoaded("doggytalents")}. All handler bodies are try/catch +
  * log-once (house defensive style); everything runs server-side, so no
@@ -97,7 +97,7 @@ public final class DoggyTalentsCompat {
             RandomSource random = level.random;
             double houndRadiusSq = HOUND_RADIUS * HOUND_RADIUS;
             for (Dog dog : dogs) {
-                // (a) Victory backflip — staggered; triggerAction quietly
+                // (a) Victory backflip, staggered; triggerAction quietly
                 // returns false if the dog is busy/incapacitated, which is
                 // exactly the no-punish behavior we want.
                 CreaturesSupport.schedule(server, random.nextInt(30), () -> {
@@ -106,7 +106,7 @@ public final class DoggyTalentsCompat {
                     }
                 });
 
-                // (b) Big Game Hound — Guard Dog talent, dog AND owner at the
+                // (b) Big Game Hound: Guard Dog talent, dog AND owner at the
                 // kill site. The owner need not be the killer (reward, never
                 // punish: a hunting party all standing there counts).
                 if (dog.distanceToSqr(died) <= houndRadiusSq

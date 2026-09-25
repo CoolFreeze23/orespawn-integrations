@@ -42,13 +42,13 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  */
 final class CreaturesSupport {
 
-    /** Entity-type tag marking boss mobs — the same tag the addon's alive-package
+    /** Entity-type tag marking boss mobs, the same tag the addon's alive-package
      *  CelebrationHandler fires its boss celebration on, so these compats trigger
      *  exactly when the celebration does. */
     static final TagKey<EntityType<?>> BOSSES_TAG =
             TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath("c", "bosses"));
 
-    /** Celebration firework palette — same gold/red the alive package uses. */
+    /** Celebration firework palette, the same gold/red the alive package uses. */
     static final int GOLD = 0xF0C334;
     static final int RED = 0xDE3F2C;
 
@@ -137,7 +137,7 @@ final class CreaturesSupport {
     /**
      * Grants criterion "witnessed" of one of this addon's advancements to the
      * given player. Missing advancement (thread toggled off / conditions
-     * stripped it) logs once and no-ops — never punishes.
+     * stripped it) logs once and no-ops; it never punishes.
      */
     static void grantWitnessed(ServerPlayer player, String advancementPath) {
         AdvancementHolder holder = player.server.getAdvancements()

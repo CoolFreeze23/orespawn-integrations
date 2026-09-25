@@ -19,29 +19,29 @@ import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.level.Level;
 
 /**
- * Pocket-sized Girlfriend familiar — the Ars Nouveau wrapper entity summoned by
+ * Pocket-sized Girlfriend familiar: the Ars Nouveau wrapper entity summoned by
  * {@link GirlfriendFamiliarHolder}.
  *
  * <p>Extends AN's {@code common.entity.familiar.FamiliarEntity}
  * (ars_nouveau-1.21.1-5.13.0, javap): {@code PathfinderMob + GeoEntity} with
  * follow/owner goals, self-managed lifecycle (ctor adds to
- * {@code FAMILIAR_SET}; {@code tick()} discards when the owner is gone —
+ * {@code FAMILIAR_SET}; {@code tick()} discards when the owner is gone,
  * bytecode-verified), and exactly one abstract member left for subclasses,
  * {@code getTexture()}. The geckolib plumbing
  * ({@code registerControllers}/{@code getAnimatableInstanceCache}) is fully
  * implemented by the base class; it stays dormant because this addon renders
  * the familiar with the port's vanilla humanoid model instead of a geo model
- * (see {@code ArsFamiliarClient}) — the port's Girlfriend is a
+ * (see {@code ArsFamiliarClient}). The port's Girlfriend is a
  * {@code HumanoidMobRenderer}, not a geckolib entity (mirror
  * entity/client/GirlfriendRenderer.java), so reusing its baked layer + skin
  * textures is the faithful look.
  *
- * <p><b>Skins:</b> the port ships 41 girlfriend skins
+ * <p>Skins: the port ships 41 girlfriend skins
  * ({@code orespawn:textures/entity/girlfriend<0..40>.png}, mirror
  * Girlfriend.java:87 MAX_SKINS=41). The familiar picks a random skin at
- * construction, then — when the summon event confirms her owner
+ * construction, then, once the summon event confirms her owner
  * ({@code FamiliarEntity.onFamiliarSpawned} is broadcast for every summon, so
- * the {@code getEntity() == this} guard is required, bytecode-verified) —
+ * the {@code getEntity() == this} guard is required, bytecode-verified),
  * settles on a skin derived from the owner's UUID: the same player always gets
  * "his" girlfriend back. Synched so the client renderer sees it; persisted in
  * NBT for save/reload within one summon.
@@ -51,12 +51,12 @@ public class FamiliarGirlfriend extends FamiliarEntity {
     private static final EntityDataAccessor<Integer> DATA_SKIN =
             SynchedEntityData.defineId(FamiliarGirlfriend.class, EntityDataSerializers.INT);
 
-    /** Mirror Girlfriend.java:87 — girlfriend0.png .. girlfriend40.png. */
+    /** Mirror Girlfriend.java:87 (girlfriend0.png .. girlfriend40.png). */
     private static final int MAX_SKINS = 41;
 
     private static final String SKIN_TAG = "OrespawnIntegrationsSkin";
 
-    /** Weakness II — amplifier 1 — for 5 seconds (100 ticks). */
+    /** Weakness II (amplifier 1) for 5 seconds (100 ticks). */
     private static final int JEALOUSY_WEAKNESS_TICKS = 100;
     private static final int JEALOUSY_WEAKNESS_AMPLIFIER = 1;
     /** Retaliation rate limit so a mob crowd cannot spam particles. */
@@ -103,7 +103,7 @@ public class FamiliarGirlfriend extends FamiliarEntity {
     /**
      * The jealousy payoff, invoked by {@code ArsFamiliarCompat.onOwnerDamaged}
      * (server side): Weakness II for 5s on whoever hurt her player, plus angry
-     * particles over her head. Cooldown-limited; reward-not-punish — the buff
+     * particles over her head. Cooldown-limited, and never aimed at the player: the debuff
      * only ever lands on the owner's attacker.
      */
     public void defendOwner(LivingEntity attacker) {

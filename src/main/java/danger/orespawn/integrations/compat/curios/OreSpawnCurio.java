@@ -98,7 +98,7 @@ final class OreSpawnCurio implements ICurioItem {
 
     // Deprecated-for-removal upstream, but in Curios 9.5.1 this int-arity overload
     // is the one ItemizedCurioCapability forwards to on death (verified in the jar's
-    // bytecode), and its default skips straight to defaultInstance — so it must be
+    // bytecode), and its default skips straight to defaultInstance, so it must be
     // overridden too or the drop rule never fires.
     @SuppressWarnings("removal")
     @Override

@@ -35,13 +35,13 @@ swings play on them. Better Combat's attacks also show properly on you again whe
 - Works with OreSpawn 2.0.0-beta.9 and later. With 2.0.0-beta.10 the pair also throw shoes between their swings again.
 
 ## Details
-- **The pair on the player model.** With Entity Model Features or Better Combat installed, the Girlfriend and the
+- The pair on the player model: with Entity Model Features or Better Combat installed, the Girlfriend and the
   Boyfriend are drawn with the vanilla player model (slim arms for her, as her original model had) instead of
   OreSpawn's own rig. Entity Model Features animates any model built from the player layer, so a player animation
   pack animates them as it animates you. Without such a pack they move as vanilla humanoids, which is how their
   original model moved. Their skins are the original 64x32 sheets, converted to the player layout as they load; a
   resource pack that retextures them is followed.
-- **Better Combat swings on the pair**, played as Better Combat plays a player's: the weapon's attacks in turn, fitted
+- Better Combat swings on the pair are played as Better Combat plays a player's: the weapon's attacks in turn, fitted
   to the weapon's attack speed, mirrored for a left-handed one, faded in from the previous swing, the whole-body twist
   included, the legs left to their stride while walking and the head left to its gaze. The weapon also turns in the hand
   as Better Combat turns a player's (without it a claymore hung upside down through overhead swings), and a weapon with
@@ -52,15 +52,15 @@ swings play on them. Better Combat's attacks also show properly on you again whe
   other tick. A swing that arrives while the game stutters still plays: a swing is dropped only when the creature was
   not on screen as it arrived, and that is counted in frames, not game ticks (a lagging game runs several ticks before
   it draws the next frame).
-- **Attacks and poses over an animation pack as offsets.** The pack moves the torso, head and shoulders as a body walks,
+- Attacks and poses over an animation pack are offsets: the pack moves the torso, head and shoulders as a body walks,
   bobs and leans, so Better Combat's part positions are laid over the pack's as offsets from rest instead of fixed
   spots, and arms stay attached to the body, for the pair and for players.
-- **Attacks over an animation pack.** Entity Model Features animates a model after the game has posed it, so a player
+- Attacks over an animation pack: Entity Model Features animates a model after the game has posed it, so a player
   animation pack overwrites a Better Combat attack or weapon pose. This mod now lays the attack or pose back over the
   torso and arms right after the pack's animation, starting from the pack's own pose, so a swing eases in and out of
   the pack's motion instead of snapping. The same is done for players (`better_combat_on_players`). Entity Model
   Features' own per-part pause could not be used: in 3.2.4 its animations ignore it.
-- **Config** (`[compat]`): `player_model_bipeds` (restart), `better_combat_bipeds`, `better_combat_on_players`.
+- Config (`[compat]`): `player_model_bipeds` (restart), `better_combat_bipeds`, `better_combat_on_players`.
 
 ## Notes
 - Client-side only; nothing from Fresh Animations or Better Combat is copied into this mod. Their animations are read

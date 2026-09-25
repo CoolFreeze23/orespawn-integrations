@@ -8,7 +8,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
 /**
  * Hats Renewed x OreSpawn: hats drawn on the port's GeckoLib rigs at each species' head bone.
  *
- * <p><b>Why.</b> Hats Renewed (21.1.1) places a hat on a GeckoLib entity from its dispatcher fallback: it finds a bone
+ * <p>Hats Renewed (21.1.1) places a hat on a GeckoLib entity from its dispatcher fallback: it finds a bone
  * from a short name list ({@code head}, {@code Head}, {@code skull}, {@code neck}, ...), assumes that bone's pivot sits at
  * the bottom-centre of the head cube and lifts the hat by the cube's height, then scales the hat by the mob's
  * bounding-box width ({@code MixinEntityRenderDispatcher.hats$fallbackRender}, {@code GeckoLibCompat.buildMatrix}). The
@@ -16,7 +16,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
  * the head; a fifth of the species name their head bone differently or have no head at all; and body width says
  * nothing about head size. So hats floated, sank, sat off-centre or came out three times too big.
  *
- * <p><b>What this does.</b> A {@link OreSpawnHatLayer} on every OreSpawn GeckoLib renderer (attached through GeckoLib's
+ * <p>A {@link OreSpawnHatLayer} on every OreSpawn GeckoLib renderer (attached through GeckoLib's
  * CompileRenderLayers events, so nothing in the port changes) draws the hat with Hats Renewed's own renderer at the
  * true top-centre of the species' designated head bone - the bone's cubes rotated by the bone's rest tilt through its
  * parent chain - upright at rest and following the bone's animation, sized from the head's own width. Hats Renewed's

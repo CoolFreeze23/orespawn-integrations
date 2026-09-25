@@ -17,7 +17,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  * class is initialized unconditionally from the mod constructor: registry
  * events must always fire, whether or not any optional partner mod is present.
  *
- * <p>Items registered here must stay plain {@link Item}s — any behavior that
+ * <p>Items registered here must stay plain {@link Item}s. Any behavior that
  * touches an optional mod's classes (e.g. the Heart Locket's Curios trinket
  * logic in {@link GirlfriendCharm}) is attached from a guarded listener so the
  * optional class is never loaded when its mod is absent.
@@ -28,7 +28,7 @@ public final class ItemsInit {
             DeferredRegister.createItems(OreSpawnIntegrations.MODID);
 
     /**
-     * Heart Locket — a craftable keepsake (gold + ruby + poppy) that is also a
+     * Heart Locket: a craftable keepsake (gold + ruby + poppy) that is also a
      * rare Girlfriend drop. As a Curios charm it grants a Regeneration aura
      * near a Girlfriend/Boyfriend and keeps Girlfriends from turning on the
      * wearer; see {@link GirlfriendCharm} for the verified behavior notes.

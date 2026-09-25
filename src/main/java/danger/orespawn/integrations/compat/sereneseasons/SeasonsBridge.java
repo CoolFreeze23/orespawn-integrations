@@ -36,11 +36,11 @@ import sereneseasons.api.season.SeasonHelper;
  *       sub-season) turns - the Royal Court announcing the new season.</li>
  * </ul>
  *
- * <p>POLICY 4 - verified partner surfaces (all javap-verified against the
+ * <p>Verified partner surfaces (all javap-verified against the
  * exact pack jars, copied into this project's {@code libs/}):</p>
  * <ul>
  *   <li>{@code sereneseasons.api.season.SeasonHelper.getSeasonState(Level)}
- *       returning {@code ISeasonState} with {@code getSeason()} ->
+ *       returning {@code ISeasonState} with {@code getSeason()} returning the
  *       {@code Season} enum (SPRING/SUMMER/AUTUMN/WINTER) -
  *       SereneSeasons-neoforge-1.21.1-10.1.0.3.jar.</li>
  *   <li>{@code sereneseasons.api.season.SeasonChangedEvent$Standard} (extends

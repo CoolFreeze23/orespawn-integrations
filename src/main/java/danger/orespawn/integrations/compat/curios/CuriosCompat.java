@@ -19,18 +19,18 @@ import java.util.List;
  * Curios integration: turns five existing OreSpawn drops into wearable trinkets.
  *
  * <ul>
- *   <li>kraken_repellent — ward: Kraken-family mobs will not target the wearer</li>
- *   <li>godzilla_scale — +4 max health, +1 armor toughness</li>
- *   <li>basilisk_scale — +2 armor</li>
- *   <li>water_dragon_scale — water breathing while equipped</li>
- *   <li>tigers_eye_ingot — +0.5 attack damage, +1 luck</li>
+ *   <li>kraken_repellent (ward): Kraken-family mobs will not target the wearer</li>
+ *   <li>godzilla_scale: +4 max health, +1 armor toughness</li>
+ *   <li>basilisk_scale: +2 armor</li>
+ *   <li>water_dragon_scale: water breathing while equipped</li>
+ *   <li>tigers_eye_ingot: +0.5 attack damage, +1 luck</li>
  * </ul>
  *
  * <p>All five are ALWAYS_KEEP on death inside OreSpawn dimensions (see
  * {@link OreSpawnCurio}). Slot wiring ("charm") is data-driven and lives in
  * {@code data/curios/tags/item/charm.json} + {@code data/orespawn_integrations/curios/}.
  *
- * <p>Only ever classloaded when the curios mod is present — the main mod class
+ * <p>Only ever classloaded when the curios mod is present; the main mod class
  * invokes {@link #init(IEventBus)} reflectively.
  */
 public final class CuriosCompat {
@@ -50,7 +50,7 @@ public final class CuriosCompat {
 
     public static void init(IEventBus modBus) {
         // Item registry lookups + CuriosApi.registerCurio belong in common setup:
-        // registries are frozen and Curios' item->ICurioItem map is ready by then.
+        // registries are frozen and Curios' item-to-ICurioItem map is ready by then.
         // enqueueWork keeps the map writes on the main thread.
         modBus.addListener((FMLCommonSetupEvent event) -> event.enqueueWork(CuriosCompat::registerCurios));
         NeoForge.EVENT_BUS.addListener(CuriosCompat::onLivingChangeTarget);

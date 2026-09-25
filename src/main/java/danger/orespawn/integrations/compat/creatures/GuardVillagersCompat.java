@@ -21,39 +21,39 @@ import it.unimi.dsi.fastutil.ints.IntList;
 
 /**
  * "Guards Join the Celebration" (alive-world wave): when a {@code #c:bosses}
- * mob falls, every Guard Villagers guard within 48 blocks salutes — crossbow
+ * mob falls, every Guard Villagers guard within 48 blocks salutes: crossbow
  * guards fire celebratory firework volleys skyward, shield guards raise their
  * shields for a few seconds, and everyone else does a happy hop with villager
  * particles. Pure reward/ambience: no damage, no aggro, no AI rewrites.
  *
  * <p>The boss guard clauses (client-side check + {@code #c:bosses} tag check)
  * copy the house pattern shared by WalkersCompat and the alive package's
- * CelebrationHandler; like CelebrationHandler — and unlike WalkersCompat's
- * orespawn-namespace-restricted shape absorption — this listener is tag-only,
+ * CelebrationHandler; like CelebrationHandler (and unlike WalkersCompat's
+ * orespawn-namespace-restricted shape absorption), this listener is tag-only,
  * so the guards celebrate exactly when the addon's boss celebration fires.
  * This class deliberately does NOT touch CelebrationHandler; it is its own
  * parallel LivingDeathEvent listener.</p>
  *
- * <p><b>API citations (policy 4)</b>, all javap-verified against
+ * <p>API citations, all javap-verified against
  * {@code guardvillagers-2.4.10-1.21.1.jar}:
  * <ul>
- *   <li>{@code tallestegg.guardvillagers.common.entities.Guard} — public class
+ *   <li>{@code tallestegg.guardvillagers.common.entities.Guard}: public class
  *       extending {@code PathfinderMob}, implements {@code CrossbowAttackMob};
  *       registered as entity id {@code guardvillagers:guard}
  *       ({@code GuardEntityType} static init, bytecode {@code ldc "guardvillagers"}
  *       / {@code ldc "guard"}).</li>
- *   <li>{@code Guard.startUsingItem(InteractionHand)} — public override; bytecode
+ *   <li>{@code Guard.startUsingItem(InteractionHand)}: public override; bytecode
  *       shows it calls super then applies the mod's own shield-walk slowdown when
  *       the stack {@code canPerformAction(ItemAbilities.SHIELD_BLOCK)}, i.e. this
  *       is the mod's supported "raise shield" entry point.</li>
- *   <li>{@code Guard.stopUsingItem()} — public override (removes the slowdown).</li>
+ *   <li>{@code Guard.stopUsingItem()}: public override (removes the slowdown).</li>
  *   <li>{@code LivingEntity.getOffhandItem()/getMainHandItem()/isUsingItem()/
- *       getUsedItemHand()} — vanilla surface used for the hand checks.</li>
+ *       getUsedItemHand()}: vanilla surface used for the hand checks.</li>
  * </ul>
  * Verified against Guard Villagers 2.4.10; re-verify the Guard class package on
  * a major-version bump.
  *
- * <p>Only ever classloaded when the guardvillagers mod is present — the main mod
+ * <p>Only ever classloaded when the guardvillagers mod is present; the main mod
  * class invokes {@link #init(IEventBus)} reflectively behind
  * {@code ModList.isLoaded("guardvillagers")}. All handler bodies are
  * try/catch + log-once (house defensive style); everything runs server-side,

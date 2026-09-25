@@ -13,8 +13,8 @@ import net.minecraft.world.level.Level;
 import tocraft.walkers.ability.ShapeAbility;
 
 /**
- * Water Dragon's R-key: a twin {@link WaterBall} volley. The audit notes the
- * ported WaterDragon lost its ranged WaterBall volleys (AUDIT_INVENTORY) - the
+ * Water Dragon's R-key: a twin {@link WaterBall} volley. The ported
+ * WaterDragon lost its ranged WaterBall volleys; the
  * morph gives that attack back using the port's own projectile, whose shooter
  * ctor spawns at the eye with ownership set.
  */

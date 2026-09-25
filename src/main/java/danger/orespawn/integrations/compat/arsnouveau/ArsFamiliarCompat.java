@@ -27,23 +27,23 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 /**
- * Thread 3 "Her Side of the Story" — Girlfriend Familiar (Ars Nouveau bridge).
+ * Girlfriend Familiar, the Ars Nouveau bridge (Thread 3 "Her Side of the Story").
  * Registers a familiar holder so the standard Ars Nouveau Ritual of Binding,
  * performed near a <b>wild (untamed)</b> Girlfriend, drops a Bound Script that
  * unlocks a pocket-sized Girlfriend familiar. The jealousy payoff: while she is
  * summoned, any living attacker that hurts her owner is hit with Weakness II
  * for 5 seconds plus angry particles.
  *
- * <p><b>Verified against (policy 4)</b> ars_nouveau-1.21.1-5.13.0 (jar in
+ * <p>Verified against ars_nouveau-1.21.1-5.13.0 (jar in
  * {@code libs/}, all via javap):
  * <ul>
- * <li>{@code api.registry.FamiliarRegistry.registerFamiliar(AbstractFamiliarHolder)}
- *     — static, code-side registry (the jar ships no data-driven familiar
- *     JSONs). <b>Timing is load-bearing:</b>
+ * <li>{@code api.registry.FamiliarRegistry.registerFamiliar(AbstractFamiliarHolder)}:
+ *     static, code-side registry (the jar ships no data-driven familiar
+ *     JSONs). Timing matters here:
  *     {@code setup.registry.ItemsRegistry.onItemRegistry} iterates
  *     {@code getFamiliarHolderMap()} during the item {@code RegisterEvent},
  *     auto-creating and registering one {@code FamiliarScript} item per holder
- *     under the holder's own ResourceLocation (bytecode-verified) — so the
+ *     under the holder's own ResourceLocation (bytecode-verified), so the
  *     holder must already be registered when registry events fire. This
  *     addon's compat table runs inside the {@code OreSpawnIntegrations} mod
  *     constructor, which FML completes for every mod before any
@@ -51,25 +51,25 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  *     no earlier parent hook is needed. The auto item for this holder is
  *     {@code orespawn_integrations:girlfriend} (model + texture shipped in
  *     this addon's assets).</li>
- * <li>{@code api.event.FamiliarSummonEvent(Entity familiar, Entity owner)} —
+ * <li>{@code api.event.FamiliarSummonEvent(Entity familiar, Entity owner)}:
  *     posted on {@code NeoForge.EVENT_BUS} by
  *     {@code common.network.PacketSummonFamiliar} <i>before</i>
  *     {@code addFreshEntity}, cancellable; our advancement listener runs at
  *     {@code EventPriority.LOWEST} without {@code receiveCanceled} so a
  *     cancelled summon never awards.</li>
- * <li>{@code common.entity.familiar.FamiliarEntity.attributes()} — the static
+ * <li>{@code common.entity.familiar.FamiliarEntity.attributes()}: the static
  *     {@code AttributeSupplier.Builder} AN's own familiars use; wired below via
  *     {@code EntityAttributeCreationEvent}. AN registers its familiar entity
  *     types as {@code MobCategory.CREATURE} (ModEntities bytecode); mirrored
  *     here.</li>
  * </ul>
  *
- * <p><b>NeoForge 21.1.223</b> (dev jar; pack runs 21.1.248, API stable across
+ * <p>NeoForge 21.1.223 (dev jar; pack runs 21.1.248, API stable across
  * 21.1.x): {@code LivingDamageEvent.Post} exposes {@code getSource()} /
- * {@code getNewDamage()} on the damaged {@code LivingEntity} — used for the
+ * {@code getNewDamage()} on the damaged {@code LivingEntity}, used for the
  * jealousy hook, server side only.
  *
- * <p><b>Both partners required:</b> the compat table row gates on
+ * <p>Both partners are required: the compat table row gates on
  * {@code ars_nouveau}; {@link #init} additionally bails unless {@code orespawn}
  * is loaded, because the holder predicate and the familiar's model/texture
  * reference port classes and assets. The {@code girlfriend} thread config
@@ -82,7 +82,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  */
 public final class ArsFamiliarCompat {
 
-    /** Thread 3 config id — {@link IntegrationsConfig#isThreadEnabled}. */
+    /** Thread 3 config id, see {@link IntegrationsConfig#isThreadEnabled}. */
     static final String THREAD_ID = "girlfriend";
 
     private static final Set<String> LOGGED = ConcurrentHashMap.newKeySet();
@@ -139,7 +139,7 @@ public final class ArsFamiliarCompat {
      * LOWEST priority + no receiveCanceled = only uncancelled summons count;
      * re-awarding an already-earned criterion is a vanilla no-op, so "first"
      * needs no bookkeeping. Missing advancement (her_side datapack tree not
-     * landed / stripped) logs once and no-ops — same contract as
+     * landed / stripped) logs once and no-ops, the same contract as
      * {@code AliveWorldCompat.grantWitnessed}.
      */
     private static void onFamiliarSummoned(FamiliarSummonEvent event) {
@@ -162,10 +162,10 @@ public final class ArsFamiliarCompat {
     }
 
     /**
-     * The jealousy payoff (north star: empowers the player, punishes nobody's
+     * The jealousy payoff (it helps the player and spoils nobody's
      * fun): when the owner takes damage from a living attacker, a nearby
      * summoned Girlfriend familiar hits the attacker with Weakness II (5s) and
-     * fumes angry particles. Server side by construction —
+     * fumes angry particles. Server side by construction:
      * {@code LivingDamageEvent.Post} only fires there and the damaged entity is
      * matched as {@code ServerPlayer}.
      */

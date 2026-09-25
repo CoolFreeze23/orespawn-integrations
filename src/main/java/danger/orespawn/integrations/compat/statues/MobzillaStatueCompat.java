@@ -35,32 +35,32 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 /**
- * Thread 5 "The World Remembers" — the Mobzilla Statue: a full first-class
+ * The Mobzilla Statue (Thread 5 "The World Remembers"): a full first-class
  * Statues-mod statue of OreSpawn's Godzilla, carved from a humble zombie
  * statue with Godzilla scales, uranium, and a statue core. It rides the
  * Statues mod's whole progression untouched: statue-table upgrades (including
  * this addon's uranium mob-killer catalyst, pure data in
  * {@code data/orespawn_integrations/recipe/upgrade/}), the LOOTING upgrade
  * dripping {@code orespawn:godzilla_scale} (a {@code statues:loot} recipe),
- * and — the thread's flex — the SPAWNER upgrade, which lets a fully-ground
+ * and the SPAWNER upgrade (the thread's flex), which lets a fully-ground
  * statue summon the real thing. The world remembers, and if you feed the
- * memory enough uranium it remembers OUT LOUD. North star: every step is a
+ * memory enough uranium it remembers OUT LOUD. Every step is a
  * reward for engaging with both mods' grinds; nothing here punishes.
  *
- * <p>POLICY 4 — light-code integration, verified by javap against
+ * <p>Light-code integration, verified by javap against
  * {@code Statues-1.21.1-0.4.18.jar} (pack mods folder; compileOnly via
  * {@code libs/}):
  * <ul>
- *   <li>{@code blocks.AbstractStatueBase} — public ctor
+ *   <li>{@code blocks.AbstractStatueBase}: public ctor
  *       {@code (BlockBehaviour.Properties)} (bytecode forces
  *       {@code strength(0.6F)} and defaults FACING=north, WATERLOGGED=false,
  *       INTERACTIVE=false, so properties only need a map color, matching
  *       their own {@code blockBuilder()} which passes
  *       {@code Properties.of().mapColor(...)} alone). {@code getEntity()}
  *       defaults to {@code EntityType.EGG} and {@code getSound} to
- *       {@code ANVIL_LAND} — both overridden here with registry-guarded
+ *       {@code ANVIL_LAND}; both are overridden here with registry-guarded
  *       OreSpawn lookups.</li>
- *   <li>CRITICAL — own BlockEntityType: upstream
+ *   <li>CRITICAL: the statue needs its own BlockEntityType. Upstream
  *       {@code newBlockEntity} binds {@code new StatueBlockEntity(pos,state)}
  *       to the {@code statues:statue} BE type whose valid-blocks set is fixed
  *       at registration. Vanilla 1.21.1 {@code LevelChunk} gates both
@@ -76,42 +76,42 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  *       {@code createStatueTicker(level, givenType, ourType)} (protected
  *       static, reachable from our subclass).</li>
  *   <li>{@code items.StatueBlockItem} (public ctor {@code (Block,
- *       Item.Properties)}) — REQUIRED, not optional: its
+ *       Item.Properties)}) is REQUIRED, not optional: its
  *       {@code getPlacementState} bytecode sets INTERACTIVE=true when the
  *       stack carries the UPGRADED data component. A plain BlockItem would
  *       place upgraded statues inert forever.</li>
- *   <li>Capabilities — {@code registry.StatueBlockEntities
+ *   <li>Capabilities: {@code registry.StatueBlockEntities
  *       .registerCapabilities} bytecode registers
  *       {@code Capabilities.EnergyStorage.BLOCK} for the plain statue type
  *       via {@code AbstractStatueBlockEntity.getEnergyStorage(Direction)}
  *       (ItemHandler.BLOCK goes only to shulker statue + statue table), so
  *       that is exactly what our type mirrors.</li>
- *   <li>Creative tab — Statues registers {@code statues:blocks}
+ *   <li>Creative tab: Statues registers {@code statues:blocks}
  *       ("itemGroup.statues.blocks"); we append via
  *       {@link BuildCreativeModeTabContentsEvent} against the tab's
  *       ResourceKey, no compile dep on their registry class.</li>
- *   <li>Recipe conventions — the statue-table center slot filters on item
+ *   <li>Recipe conventions: the statue-table center slot filters on item
  *       tag {@code statues:statues/upgradeable}
  *       ({@code StatueTableBlockEntity$1} bytecode), which our datapack tag
- *       joins (optional entries, ungated — tags are the sanctioned
+ *       joins (optional entries, ungated; tags are the sanctioned
  *       exception). The crafting recipe is plain
  *       {@code minecraft:crafting_shaped} mirroring their player-statue
- *       pattern slot-for-slot, NOT {@code statues:hardcore_shaped} — that
+ *       pattern slot-for-slot, NOT {@code statues:hardcore_shaped}, because that
  *       serializer's {@code matches()} bytecode also requires
  *       {@code LevelData.isHardcore()}, i.e. it only ever crafts in hardcore
- *       worlds. Deliberately NOT joined: item tag {@code statues:statues} —
+ *       worlds. Deliberately NOT joined: item tag {@code statues:statues};
  *       {@code CityStatuesLootModifier} draws ancient-city chest statues
  *       from it, which would leak the trophy past its catalyst grind.</li>
  * </ul>
  * Version-range note: verified against Statues 0.4.18; re-verify the
  * BE-type/ticker plumbing and the capability set on any Statues bump.
  *
- * <p>No client code at all — Statues renders plain statues as baked JSON
+ * <p>No client code at all: Statues renders plain statues as baked JSON
  * models (their {@code client/ber} package only has a BER for the statue
  * TABLE), so our blockstate/model/texture JSONs carry the whole client side
  * and no {@code FMLEnvironment.dist} guard is needed here.
  *
- * <p>Only ever classloaded when the statues mod is present — the main mod
+ * <p>Only ever classloaded when the statues mod is present; the main mod
  * class invokes {@link #init(IEventBus)} reflectively after a ModList check,
  * so the direct references to {@code com.shynieke.statues.*} above are safe.
  * OreSpawn ids used: entity {@code orespawn:godzilla}, sound
@@ -122,7 +122,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  * {@code neoforge:mod_loaded} + the Thread-5
  * {@code orespawn_integrations:thread_enabled "world_remembers"} condition;
  * the block's self-drop loot table stays ungated so a mid-world config flip
- * never voids the trophy (north star: never punish).
+ * never voids the trophy.
  */
 public final class MobzillaStatueCompat {
 
@@ -135,7 +135,7 @@ public final class MobzillaStatueCompat {
 
     private static final Set<String> LOGGED = ConcurrentHashMap.newKeySet();
 
-    /** Statues' "blocks" creative tab, referenced by id — no compile dep needed. */
+    /** Statues' "blocks" creative tab, referenced by id, so no compile dep is needed. */
     private static final ResourceKey<CreativeModeTab> STATUES_BLOCKS_TAB = ResourceKey.create(
             Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath("statues", "blocks"));
 
@@ -154,7 +154,7 @@ public final class MobzillaStatueCompat {
 
     /**
      * Our OWN BE type wired with statues' public
-     * {@code StatueBlockEntity(BlockEntityType, BlockPos, BlockState)} ctor —
+     * {@code StatueBlockEntity(BlockEntityType, BlockPos, BlockState)} ctor;
      * the qualified self-reference inside the lambda is only evaluated after
      * registration, the standard vanilla BE-type pattern.
      */
@@ -226,7 +226,7 @@ public final class MobzillaStatueCompat {
 
     /**
      * The statue block itself. Everything gameplay-bearing is inherited from
-     * AbstractStatueBase — this class only points the machinery at Godzilla
+     * AbstractStatueBase; this class only points the machinery at Godzilla
      * and at our own BE type (see class header for why both are required).
      */
     public static final class MobzillaStatueBlock extends AbstractStatueBase {
@@ -255,7 +255,7 @@ public final class MobzillaStatueCompat {
             return BuiltInRegistries.ENTITY_TYPE.get(GODZILLA_ID);
         }
 
-        /** SOUND_EVENT is not defaulted — a plain null check suffices. */
+        /** SOUND_EVENT is not defaulted, so a plain null check suffices. */
         @Override
         public SoundEvent getSound(BlockState state) {
             SoundEvent sound = BuiltInRegistries.SOUND_EVENT.get(GODZILLA_LIVING_ID);
@@ -266,7 +266,7 @@ public final class MobzillaStatueCompat {
             return sound;
         }
 
-        /** Bind to OUR type, not statues' — see class header (ticking gate). */
+        /** Bind to OUR type, not statues'. See class header (ticking gate). */
         @Override
         public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
             return new StatueBlockEntity(MOBZILLA_STATUE_BE.get(), pos, state);

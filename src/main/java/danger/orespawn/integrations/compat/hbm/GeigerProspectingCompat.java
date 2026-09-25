@@ -25,38 +25,38 @@ import net.neoforged.neoforge.event.server.ServerStoppedEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 /**
- * Thread 1 "It Was Always Uranium" — Geiger Prospecting: HBM's geiger counter
+ * Geiger Prospecting (Thread 1 "It Was Always Uranium"): HBM's geiger counter
  * doubles as an ore-dowsing rod. Hold it in either hand and it ticks faster
- * near OreSpawn ruby / titanium / uranium veins — with ZERO radiation dose,
- * ever. North star: the geiger sings but never bites; right-clicking it shows
+ * near OreSpawn ruby / titanium / uranium veins, with ZERO radiation dose,
+ * ever. The geiger sings but never bites; right-clicking it shows
  * the player's dose still at 0, which IS the fantasy.
  *
- * <p>POLICY 4 — light-code integration, verified against
+ * <p>Light-code integration, verified against
  * {@code hbmsntm-198A.jar} (pack mods folder, javap on the shipped classes;
  * compileOnly via {@code libs/hbmsntm-198A.jar}):
  * <ul>
- *   <li>{@code com.hbm.extprop.HbmLivingAttachments} — javap-confirmed
+ *   <li>{@code com.hbm.extprop.HbmLivingAttachments}: javap-confirmed
  *       {@code public static float getRadEnv(LivingEntity)} /
  *       {@code public static void setRadEnv(LivingEntity, float)}. radEnv is
  *       telemetry only: actual dose is applied exclusively inside
  *       {@code ContaminationUtil.contaminate(...)}, which this class never
  *       calls. Writing radEnv moves the needle, not the health bar.</li>
- *   <li>{@code com.hbm.handler.EntityEffectHandler.tick(LivingEntity)} —
+ *   <li>{@code com.hbm.handler.EntityEffectHandler.tick(LivingEntity)}:
  *       bytecode-confirmed: every 20 ticks ({@code tickCount % 20}) it runs
  *       {@code setRadBuf(getRadEnv(e))} then {@code setRadEnv(e, 0)}. HBM
  *       therefore SELF-CLEARS the channel: if we stop writing, the reading
- *       dies within at most two transfer windows (~2 s). Per the design
- *       directive we deliberately do NOT write 0 ourselves — a max-only write
+ *       dies within at most two transfer windows (~2 s). We
+ *       deliberately do NOT write 0 ourselves: a max-only write
  *       can never mask genuine HBM ambient telemetry (chunk radiation
  *       accumulates into the same field via contaminate).</li>
- *   <li>{@code com.hbm.items.tools.GeigerCounterItem.inventoryTick} —
+ *   <li>{@code com.hbm.items.tools.GeigerCounterItem.inventoryTick}:
  *       bytecode-confirmed: every 5 ticks it reads {@code getRadBuf} and picks
  *       a sound from overlapping bands: v&lt;1 occasional single click,
  *       1&le;v&lt;5 GEIGER1, 5&lt;v&lt;15 GEIGER2/3, 15&lt;v&lt;25 GEIGER4/5,
  *       v&gt;25 GEIGER6 ({@code NtmSoundEvents}). The signal strengths below
  *       (ruby 2, titanium 8, uranium 22) land in escalating audible bands:
  *       slow tick / medium chatter / frantic GEIGER4-5.</li>
- *   <li>{@code com.hbm.items.NtmItems} — registers the item as
+ *   <li>{@code com.hbm.items.NtmItems}: registers the item as
  *       {@code hbmsntm:geiger_counter} (registration string confirmed in
  *       bytecode). Looked up by id here, so no compile dep on the item class;
  *       HBM's {@code hbmsntm:dosimeter} reads the same radBuf and reacts near
@@ -64,15 +64,15 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
  * </ul>
  * Version-range note: radEnv/radBuf are an internal telemetry contract of
  * hbmsntm, verified against 198A only. If a future HBM build moves or renames
- * them this class dies into its log-once catch and the pack keeps running —
+ * them this class dies into its log-once catch and the pack keeps running;
  * re-verify on any hbmsntm bump.
  *
  * <p>Scanned blocks (ids verified against ORESPAWN-IDS.json "blocks"):
  * {@code orespawn:ore_ruby}, {@code orespawn:ore_titanium},
  * {@code orespawn:ore_uranium} plus their storage blocks {@code block_ruby},
- * {@code block_titanium}, {@code block_uranium} (a vault wall sings too — the
- * verification report's suggested list). NOTE: OreSpawn has no
- * {@code *_mining} / {@code *_nether} ore BLOCKS — those suffixes in
+ * {@code block_titanium}, {@code block_uranium} (a vault wall sings too).
+ * NOTE: OreSpawn has no
+ * {@code *_mining} / {@code *_nether} ore BLOCKS; those suffixes in
  * ORESPAWN-IDS are placed features that re-place the same three ore blocks in
  * the Mining dimension / Nether, so the three ids above cover every dimension
  * automatically.
@@ -86,8 +86,8 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
  * advancement {@code orespawn_integrations:uranium/first_ping} (JSON ships
  * with the Thread 1 advancement module; missing = log-once no-op).
  *
- * <p>POLICY 1+2: only ever classloaded when hbmsntm is present — the main mod
- * class invokes {@link #init(IEventBus)} reflectively after a ModList check —
+ * <p>Only ever classloaded when hbmsntm is present (the main mod
+ * class invokes {@link #init(IEventBus)} reflectively after a ModList check),
  * and every scan re-checks the Thread 1 "uranium" config toggle, so flipping
  * the toggle silences prospecting live (no /reload needed for this Java-side
  * feature). House defensive style: every handler body is try/catch with a
@@ -96,16 +96,16 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
  */
 public final class GeigerProspectingCompat {
 
-    /** Thread toggle id in {@link IntegrationsConfig} (POLICY 2). */
+    /** Thread toggle id in {@link IntegrationsConfig}. */
     private static final String THREAD_ID = "uranium";
 
-    /** Rescan cadence; matches HBM's own radEnv-&gt;radBuf transfer window. */
+    /** Rescan cadence; matches HBM's own radEnv-to-radBuf transfer window. */
     private static final int SCAN_INTERVAL_TICKS = 20;
     /** Cube "radius" in blocks around the player's feet (13^3 = 2197 reads/scan). */
     private static final int SCAN_RADIUS = 6;
 
     // Signal strengths, empirically mapped to GeigerCounterItem's sound bands
-    // (see class header). Emission and harm are fully independent here — harm
+    // (see class header). Emission and harm are fully independent here; harm
     // is exactly zero.
     private static final float SIGNAL_RUBY = 2.0F;      // slow, curious ticking
     private static final float SIGNAL_TITANIUM = 8.0F;  // medium chatter
@@ -158,7 +158,7 @@ public final class GeigerProspectingCompat {
                 return;
             }
             // Phase-proof, max-only re-assert: whatever tick HBM's transfer
-            // lands on, it sees at least our signal — and a genuine (stronger)
+            // lands on, it sees at least our signal, and a genuine (stronger)
             // HBM ambient reading is never lowered.
             if (signal > HbmLivingAttachments.getRadEnv(player)) {
                 HbmLivingAttachments.setRadEnv(player, signal);
@@ -190,7 +190,7 @@ public final class GeigerProspectingCompat {
             if (signal != null && signal > strongest) {
                 strongest = signal;
                 if (strongest >= SIGNAL_URANIUM) {
-                    break scan; // already at max — save the remaining reads
+                    break scan; // already at max, save the remaining reads
                 }
             }
         }
@@ -225,7 +225,7 @@ public final class GeigerProspectingCompat {
 
     /**
      * Resolves the OreSpawn signal blocks once. A missing id degrades to
-     * "that block just doesn't ping" with a log-once — never a crash; if NONE
+     * "that block just doesn't ping" with a log-once, never a crash; if NONE
      * resolve (orespawn absent/renamed everything) the feature goes inert.
      */
     private static Map<Block, Float> signalBlocks() {

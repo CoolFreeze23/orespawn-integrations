@@ -33,14 +33,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  * {@code orespawn_integrations:thread_enabled("uranium")} conditions, so this
  * class references no partner classes at all.
  *
- * <p>POLICY 4 - APIs verified against jars (2026-08-17):</p>
+ * <p>APIs verified against jars (2026-08-17):</p>
  * <ul>
  * <li>{@link FoodProperties} record ({@code nutrition}, {@code saturation},
  *     {@code canAlwaysEat}, {@code eatSeconds}, {@code usingConvertsTo},
  *     {@code effects} of {@code PossibleEffect(effect, probability)}) and the
- *     drink pattern ({@code getUseAnimation -> UseAnim.DRINK}, default
+ *     drink pattern ({@code getUseAnimation} returning {@code UseAnim.DRINK}, default
  *     {@code Item.use} starting the food use, default
- *     {@code Item.getUseDuration -> eatDurationTicks()}) - verified in the
+ *     {@code Item.getUseDuration} returning {@code eatDurationTicks()}) - verified in the
  *     decompiled 1.21.1 sources (neoFormJoined1.21.1-20240808.144430,
  *     NeoForge 21.1.223 dev): {@code net.minecraft.world.food.FoodProperties},
  *     {@code net.minecraft.world.item.OminousBottleItem},

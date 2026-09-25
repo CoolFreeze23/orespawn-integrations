@@ -136,7 +136,7 @@ public final class PrinceFlyover {
 
         prince.moveTo(startX, y, startZ, yaw, 0.0F);
         prince.setActivity(1);          // flight pose
-        prince.setOrderedToSit(true);   // freezes wing flap -> steady glide
+        prince.setOrderedToSit(true);   // freezes the wing flap for a steady glide
         prince.setInvulnerable(true);
         prince.setNoGravity(true);
         prince.setSilent(true);

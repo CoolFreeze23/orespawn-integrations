@@ -16,14 +16,14 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
  * (mirror entity/client/GirlfriendRenderer.java: {@code HumanoidMobRenderer}
  * over {@code ModelGirlfriend extends HumanoidModel<Girlfriend>}, layer
  * {@code orespawn:girlfriend/main} registered in
- * OreSpawnClient.registerLayerDefinitions:351) — so this renderer bakes the
+ * OreSpawnClient.registerLayerDefinitions:351), so this renderer bakes the
  * same {@link GirlfriendRenderer#MODEL_LAYER} into a plain
  * {@code HumanoidModel<FamiliarGirlfriend>} (ModelGirlfriend adds no members
  * beyond its {@code createBodyLayer}, so the baked geometry is identical;
  * bakeLayer resolves by ModelLayerLocation equality regardless of which mod
  * registered it) and pulls the skin texture from the entity. AN familiars are
  * shoulder-height critters (its own are registered 0.5x0.5, ModEntities
- * bytecode, ars_nouveau-1.21.1-5.13.0), so she renders at 0.4 scale — matching
+ * bytecode, ars_nouveau-1.21.1-5.13.0), so she renders at 0.4 scale, matching
  * the 0.25x0.7 hitbox in {@link ArsFamiliarCompat}.
  *
  * <p>Referenced only from a {@code FMLEnvironment.dist.isClient()} branch so

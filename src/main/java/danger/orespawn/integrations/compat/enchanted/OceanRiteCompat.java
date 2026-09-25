@@ -22,15 +22,15 @@ import net.minecraft.world.level.biome.Biome;
 import net.neoforged.bus.api.IEventBus;
 
 /**
- * Thread 5 "The World Remembers" — Summoning Rites: registers the
+ * Summoning Rites (Thread 5 "The World Remembers"): registers the
  * {@code orespawn_integrations:summon_in_biome} rite factory, a biome-gated
  * wrapper around Enchanted's command rite. The Rite of the Deep (data JSON in
  * {@code data/orespawn_integrations/enchanted/circle_magic/rite/}) uses it to
  * demand an ocean biome for the Kraken; on a mismatch every consumed offering
- * is refunded on the spot and the caster gets a friendly actionbar hint —
- * north star: the world says "not here", never "too bad".
+ * is refunded on the spot and the caster gets a friendly actionbar hint.
+ * The world says "not here", never "too bad".
  *
- * <p>Only classloaded when the "enchanted" mod is present —
+ * <p>Only classloaded when the "enchanted" mod is present;
  * {@link danger.orespawn.integrations.OreSpawnIntegrations} invokes
  * {@link #init(IEventBus)} reflectively after a ModList check, so referencing
  * {@code net.favouriteless.enchanted.*} directly from this class is safe.
@@ -38,13 +38,13 @@ import net.neoforged.bus.api.IEventBus;
  * our rites is handled by Enchanted itself), so there is no
  * {@code FMLEnvironment.dist} guard to need.
  *
- * <p>POLICY 4 — light-code integration, verified against
+ * <p>Light-code integration, verified against
  * {@code enchanted-neoforge-1.21.1-4.2.7.jar} (pack mods folder, javap +
  * bytecode disassembly on the shipped classes; compileOnly via
  * {@code libs/enchanted-neoforge-1.21.1-4.2.7.jar}):
  * <ul>
  *   <li>{@code net.favouriteless.enchanted.api.circle_magic.RiteFactoryRegistry}
- *       — javap-confirmed {@code static RiteFactoryRegistry get()} (bytecode:
+ *       has a javap-confirmed {@code static RiteFactoryRegistry get()} (bytecode:
  *       plain {@code getstatic RiteFactoryRegistryImpl.INSTANCE}, an eager
  *       static singleton with no event/registry machinery, so calling it at
  *       mod-construction time is safe regardless of Enchanted's own init
@@ -52,40 +52,40 @@ import net.neoforged.bus.api.IEventBus;
  *       MapCodec<? extends RiteFactory>)}. Rite JSONs are decoded at datapack
  *       load (datapack registry {@code enchanted:circle_magic/rite}), long
  *       after every mod constructor has run.</li>
- *   <li>{@code net.favouriteless.enchanted.api.circle_magic.RiteFactory} —
+ *   <li>{@code net.favouriteless.enchanted.api.circle_magic.RiteFactory}:
  *       javap-confirmed contract {@code Rite create(Rite.BaseRiteParams,
  *       Rite.RiteParams)}, {@code ResourceLocation id()}, default
  *       {@code List<ItemStack> getOutputs()}.</li>
- *   <li>{@code ...common.enchanted.circle_magic.rites.CommandRite} —
+ *   <li>{@code ...common.enchanted.circle_magic.rites.CommandRite}:
  *       javap-confirmed public ctor {@code (Rite.BaseRiteParams,
  *       Rite.RiteParams, List<List<String>>, int)}. onStart bytecode: builds a
  *       {@code CommandSourceStack} at {@code Vec3.atCenterOf(pos)} (circle
  *       center, so {@code ~ ~ ~} in commands is the circle), permission level
- *       2 ({@code iconst_2} — enough for /summon and /weather), named
+ *       2 ({@code iconst_2}, enough for /summon and /weather), named
  *       "Command Rite"; with {@code delay == 0} every command batch runs
  *       inside onStart and the rite finishes immediately (one-shot).</li>
- *   <li>{@code ...common.enchanted.circle_magic.rites.Rite} — protected fields
+ *   <li>{@code ...common.enchanted.circle_magic.rites.Rite}: protected fields
  *       {@code level}/{@code pos}; {@code start()} bytecode: an onStart
  *       returning false calls {@code stop()} then
- *       {@code RiteManager.removeRite} — i.e. returning false is a clean
+ *       {@code RiteManager.removeRite}, i.e. returning false is a clean
  *       abort/finish, safe for the refusal path. {@code cancel()} bytecode:
  *       plays NOTE_BLOCK_SNARE at the circle and respawns EVERY
  *       {@code RiteParams.consumedItems} stack as an ItemEntity at
- *       pos + 0.5 — this is the refund contract the north star leans on.
+ *       pos + 0.5. The no-loss refusal relies on this refund contract.
  *       {@code Rite.RiteParams} exposes {@code public final UUID caster}.</li>
  * </ul>
  * Version-range note: the api package ({@code net.favouriteless.enchanted.api})
  * is stable within [4.2,5.0); {@code CommandRite}/{@code Rite} live in
- * {@code common} and are an internal surface verified against 4.2.7 only — on
+ * {@code common} and are an internal surface verified against 4.2.7 only. On
  * any Enchanted bump, re-verify the ctor and the start()/cancel() flow. If a
  * future build breaks them, {@link #init} dies into its log-once catch, the
  * unresolved factory type makes our rite JSONs fail decode, and NeoForge's
- * datapack-registry loader skips those entries with a log line — the pack
+ * datapack-registry loader skips those entries with a log line. The pack
  * keeps running, the two rites simply sit out.
  *
  * <p>Thread gating: the rite JSONs carry the full
  * {@code neoforge:conditions} set (mod_loaded enchanted + orespawn,
- * thread_enabled world_remembers) — verified honored for datapack registry
+ * thread_enabled world_remembers), verified as honored for datapack registry
  * entries by the NeoForge 21.1.223 {@code RegistryDataLoader} patch
  * (ConditionalOps-wrapped element decode). Registering the factory itself is
  * NOT config-gated: with the thread off it is just an unused codec in a map.
@@ -126,10 +126,10 @@ public final class OceanRiteCompat {
      * {@code enchanted:command} ({@code commands} = list of command batches,
      * {@code delay} = ticks between batches) plus:
      * <ul>
-     *   <li>{@code biome} — biome tag id (no leading '#'), e.g.
+     *   <li>{@code biome}: biome tag id (no leading '#'), e.g.
      *       {@code "minecraft:is_ocean"}; the circle-center biome must carry
      *       the tag or the rite refuses.</li>
-     *   <li>{@code failure_message} — translation key for the actionbar hint
+     *   <li>{@code failure_message}: translation key for the actionbar hint
      *       shown to the caster on refusal (optional; defaults to the generic
      *       wrong-biome line).</li>
      * </ul>
@@ -165,7 +165,7 @@ public final class OceanRiteCompat {
      * The rite itself: checks the circle-center biome before handing over to
      * {@link CommandRite}. On the wrong biome it {@code cancel()}s (full item
      * refund + snare-drum tell, both base-class behavior) and tells the caster
-     * where to go — then returns false, which {@code Rite.start()} turns into
+     * where to go, then returns false, which {@code Rite.start()} turns into
      * a clean removal. Nothing is ever lost to a mislaid circle.
      */
     static final class BiomeGatedCommandRite extends CommandRite {
@@ -197,7 +197,7 @@ public final class OceanRiteCompat {
             }
         }
 
-        /** Refund everything, then a friendly actionbar nudge — never punish. */
+        /** Refund everything, then a friendly actionbar nudge. Never punish. */
         private void refuse(Rite.RiteParams params) {
             cancel();
             if (params.caster == null) {

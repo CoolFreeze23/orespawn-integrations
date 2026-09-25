@@ -13,8 +13,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  * Registered items for the "modern wonders" content (Tier 3): the two boss
  * vault keys and the Kraken armor-trim smithing template. Like
  * {@link ItemsInit} this class is initialized unconditionally from the mod
- * constructor — registry events must always fire regardless of which optional
- * partner mods are present — and every item here stays a plain {@link Item}:
+ * constructor (registry events must always fire regardless of which optional
+ * partner mods are present), and every item here stays a plain {@link Item}:
  * the keys are loot-table/lock tokens and the template is referenced only from
  * data (trim_pattern/kraken.json and the smithing recipes), so none of them
  * need item-class behavior.

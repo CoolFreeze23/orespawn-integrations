@@ -39,64 +39,64 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 /**
- * THREAD 3 "Her Side of the Story" — the DATE NIGHT gift chain
+ * THREAD 3 "Her Side of the Story": the DATE NIGHT gift chain
  *
  *
  * <p>Eight verified cross-mod gifts, each ONE-TIME per girlfriend per gift
  * type, each granting her a small PERMANENT attribute buff plus hearts and a
  * happy voice line. A per-player milestone count (survives death, see below)
- * drives the {@code her_side} advancement spine: any gift → {@code first_date};
- * 3 → {@code going_steady} (Diary Vol. II); 6 → {@code practically_family}
+ * drives the {@code her_side} advancement spine: any gift unlocks {@code first_date};
+ * 3 milestones unlock {@code going_steady} (Diary Vol. II); 6 milestones unlock {@code practically_family}
  * (Diary Vol. III); with 8 milestones banked, presenting a decocraft
- * engagement ring is the finale → {@code the_question} ("Her Answer" + hearts).
- * North star: reward, never punish — a repeat gift or a too-early ring is
+ * engagement ring is the finale and unlocks {@code the_question} ("Her Answer" + hearts).
+ * Reward, never punish: a repeat gift or a too-early ring is
  * never consumed, it just gets a gentle nudge message.
  *
- * <p><b>Gift table</b> (ids verified against the pack jars —
+ * <p>Gift table (ids verified against these pack jars:
  * BiomesOPlenty-neoforge-1.21.1-21.1.0.14, aether-1.21.1-1.5.10,
  * ars_nouveau-1.21.1-5.13.0, orespawn_delight-0.1.0, decocraft-3.0.11-1.21.1;
  * items are looked up by registry id at event time, so any absent partner mod
- * simply means its gift never matches — zero hard deps, policy 1):
+ * simply means its gift never matches, with zero hard deps):
  * <ul>
- *   <li>{@code biomesoplenty:rose} — +2 max health (then heal the bonus)</li>
- *   <li>{@code biomesoplenty:lavender} — +5% movement speed</li>
- *   <li>{@code biomesoplenty:pink_daffodil} — +2 armor</li>
- *   <li>{@code aether:white_flower} — +0.1 knockback resistance</li>
- *   <li>{@code ars_nouveau:sourceberry_bush} — +1 attack damage</li>
- *   <li>{@code orespawn_delight:strawberry_shortcake} — +4 max health (heals)</li>
- *   <li>{@code orespawn_delight:luna_moth_macaron} — +2 armor toughness</li>
+ *   <li>{@code biomesoplenty:rose}: +2 max health (then heal the bonus)</li>
+ *   <li>{@code biomesoplenty:lavender}: +5% movement speed</li>
+ *   <li>{@code biomesoplenty:pink_daffodil}: +2 armor</li>
+ *   <li>{@code aether:white_flower}: +0.1 knockback resistance</li>
+ *   <li>{@code ars_nouveau:sourceberry_bush}: +1 attack damage</li>
+ *   <li>{@code orespawn_delight:strawberry_shortcake}: +4 max health (heals)</li>
+ *   <li>{@code orespawn_delight:luna_moth_macaron}: +2 armor toughness</li>
  *   <li>{@code decocraft:teddy_bear_*} (any of the 13 colors, one shared
- *       flag) — +2 max health (heals)</li>
+ *       flag): +2 max health (heals)</li>
  *   <li>{@code decocraft:engagement_ring_*} (rosegold canon; gold/silver
- *       also accepted) — the finale, no stat, requires 8 milestones</li>
+ *       also accepted): the finale, no stat, requires 8 milestones</li>
  * </ul>
  * {@code minecraft:poppy} and {@code minecraft:dandelion} are HER items
  * (tame/heal and skin-cycle, Girlfriend.java:423-457) and are deliberately
  * absent from the table. {@code orespawn_delight:heart_box_chocolates} is
  * OWNED BY orespawn_delight (InteractionsHandler.java:446-452 cancels and
- * runs its regen + cook-back) — this class never re-handles it; a LOWEST
+ * runs its regen + cook-back). This class never re-handles it; a LOWEST
  * priority, receiveCanceled=true observer counts a bonus milestone when the
  * delight event arrives already canceled, so registration order between the
  * two mods never matters.
  *
- * <p><b>POLICY 4 — light-code integration, verified against:</b>
+ * <p>Light-code integration, verified against:
  * <ul>
  *   <li>{@code orespawn-1.21.1-2.0.0-beta.1.jar} (libs/, compileOnly; mirror
- *       source Girlfriend.java:419-510) — {@code mobInteract} equips ANY
+ *       source Girlfriend.java:419-510): {@code mobInteract} equips ANY
  *       unhandled non-food item as her mainhand weapon and eats any food, so
  *       every gift here MUST cancel the interact event;
  *       {@code ModSounds.O_HAPPY1..O_HAPPY7} are public
  *       {@code DeferredHolder<SoundEvent,...>} voice-bank holders (jar +
  *       mirror ModSounds.java:406-419).</li>
  *   <li>NeoForge 21.1.223 sources, {@code CommonHooks.java:797-801} +
- *       decompiled MC 1.21.1 {@code Player.java:1086-1098} —
+ *       decompiled MC 1.21.1 {@code Player.java:1086-1098}:
  *       {@code Player.interactOn} posts {@code PlayerInteractEvent.EntityInteract}
  *       BEFORE {@code Entity.interact}, and cancelling with
  *       {@code setCancellationResult(InteractionResult.sidedSuccess(...))}
  *       fully preempts {@code mobInteract}. Pack runs NeoForge 21.1.248; the
  *       hook shape is stable across the 21.1.x line.</li>
  *   <li>Decompiled MC 1.21.1 {@code AttributeInstance.java:68-128,181-217} and
- *       {@code AttributeModifier.java:22-46} —
+ *       {@code AttributeModifier.java:22-46}:
  *       {@code addPermanentModifier(new AttributeModifier(id, amount, op))}
  *       with {@code hasModifier(id)} idempotency; permanent modifiers
  *       serialize inside the entity's vanilla {@code attributes} NBT, so the
@@ -104,11 +104,11 @@ import net.neoforged.neoforge.registries.DeferredHolder;
  *       {@code applyValentineState}'s base-value swaps
  *       (Girlfriend.java:140-147 only touches base values).</li>
  *   <li>Decompiled NeoForge-patched 1.21.1 {@code ServerPlayer.restoreFrom}
- *       (bytecode) — the {@code PlayerPersisted}
+ *       (bytecode): the {@code PlayerPersisted}
  *       ({@code Player.PERSISTED_NBT_TAG}, Player.java:117) subtag of the
  *       player's persistent data is copied to the respawned player, so the
  *       milestone count survives death.</li>
- *   <li>{@code orespawn_delight-0.1.0} InteractionsHandler.java:433-471 —
+ *   <li>{@code orespawn_delight-0.1.0} InteractionsHandler.java:433-471:
  *       the {@code cancelAndRun} idiom copied here, and the
  *       heart_box_chocolates ownership contract observed above.</li>
  * </ul>
@@ -119,7 +119,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
  * no-ops. All server-side effects run behind the {@code cancelAndRun} client
  * guard; there is no client-only code in this class, so no
  * {@code FMLEnvironment.dist} gate is needed. Only ever classloaded when the
- * "orespawn" mod is present — the main mod class invokes
+ * "orespawn" mod is present; the main mod class invokes
  * {@link #init(IEventBus)} reflectively after a ModList check. The Java side
  * additionally re-checks the thread toggle live so a config flip +
  * {@code /reload} silences the handlers together with the datapack half.
@@ -226,7 +226,7 @@ public final class DateNightCompat {
 
     /**
      * Cancels with the vanilla sided-success result (arm swing, no weapon
-     * equip) and runs the action server-side only — the delight house idiom.
+     * equip) and runs the action server-side only (the delight house idiom).
      */
     private static void cancelAndRun(PlayerInteractEvent.EntityInteract event, Runnable serverAction) {
         boolean clientSide = event.getLevel().isClientSide;
@@ -275,7 +275,7 @@ public final class DateNightCompat {
     /**
      * Permanent, save-persistent, idempotent attribute buff. After a
      * +max-health gift she is healed by the bonus so the new hearts fill
-     * (empowering — matches her poppy heal idiom, verification Q2).
+     * (the same idiom as her poppy heal).
      */
     private static void applyBuff(Girlfriend girlfriend, Gift gift) {
         AttributeInstance instance = girlfriend.getAttribute(gift.attribute());
@@ -295,7 +295,7 @@ public final class DateNightCompat {
 
     /**
      * Server side. The finale: with all {@value #MILESTONES_FOR_RING}
-     * milestones banked, the ring is accepted — big celebration, full heal,
+     * milestones banked, the ring is accepted: big celebration, full heal,
      * {@code the_question} advancement (whose reward loot hands over
      * "Her Answer" + 8 hearts). Too early or repeated: nothing is consumed.
      */
@@ -366,7 +366,7 @@ public final class DateNightCompat {
     /**
      * Bumps the per-player milestone count (death-proof, see class javadoc)
      * and grants every advancement tier the new count reaches. Grants are
-     * idempotent — award() on a done advancement is a no-op.
+     * idempotent: award() on a done advancement is a no-op.
      */
     private static void recordMilestone(Player player) {
         if (!(player instanceof ServerPlayer serverPlayer)) {
@@ -397,7 +397,7 @@ public final class DateNightCompat {
         AdvancementHolder holder = server.getAdvancements()
                 .get(ResourceLocation.fromNamespaceAndPath(OreSpawnIntegrations.MODID, advancementPath));
         if (holder == null) {
-            // Partner mod absent -> the conditions stripped the JSON. Fine.
+            // Partner mod absent, so the conditions stripped the JSON. Fine.
             logMissingOnce("advancement " + advancementPath);
             return;
         }
@@ -419,7 +419,7 @@ public final class DateNightCompat {
 
     /**
      * Live date-night sub-compound inside the player's {@code PlayerPersisted}
-     * tag — the one subtree {@code ServerPlayer.restoreFrom} carries across
+     * tag, the one subtree {@code ServerPlayer.restoreFrom} carries across
      * death (bytecode-verified, class javadoc).
      */
     private static CompoundTag persistedDateNightTag(Player player) {

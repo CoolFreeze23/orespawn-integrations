@@ -39,8 +39,8 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  * over the corpse; downing one of Incendium's structure minibosses earns a
  * smaller two-rocket salute.
  *
- * <p><b>Detection (Incendium is a datapack mod — there is nothing to
- * classload, so the soft-dep is pure string matching):</b> Incendium 5.4.4
+ * <p>Detection (Incendium is a datapack mod: there is nothing to
+ * classload, so the soft-dep is pure string matching): Incendium 5.4.4
  * summons its bosses as vanilla mobs decorated with NBT. Verified against
  * {@code Incendium_1.21.x_v5.4.4.jar} (base data, not the 1.21.2+/1.21.4+
  * overlays):
@@ -49,7 +49,7 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  *       {@code in.hovering_inferno} and
  *       {@code DeathLootTable:"incendium:hovering_inferno"}
  *       ({@code data/incendium/function/hovering_inferno/summon.mcfunction}).
- *       We match the command tag — it survives the "disgraceful kill" path
+ *       We match the command tag, since it survives the "disgraceful kill" path
  *       ({@code kill/disgracefully.mcfunction}) swapping the loot table to
  *       {@code minecraft:empty}, and that path uses {@code /kill} which our
  *       player-credit guard filters out anyway.</li>
@@ -62,7 +62,7 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  *       Deliberately excluded: {@code incendium:entity/dune_blaze}
  *       (mass-summoned "Infernal Minion" adds during the Inferno fight),
  *       the {@code incendium:cvill/mob/*} piglin villagers (civilians), and
- *       the castle elites ({@code incendium:castle/entity/*} — lesser named
+ *       the castle elites ({@code incendium:castle/entity/*}, lesser named
  *       mobs; the knight table is not even wired in 5.4.4 base data).</li>
  * </ul>
  *
@@ -71,11 +71,11 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  * mod's setup is expected to gate it on ModList.isLoaded("incendium") for
  * tidiness.</p>
  *
- * <p>POLICY 4 — API surfaces verified via javap: MC 1.21.1 (NeoForge
- * 21.1.223 dev jar): {@code Entity.getTags() -> Set<String>},
- * {@code Mob.getLootTable() -> ResourceKey<LootTable>} (public final,
+ * <p>API surfaces verified via javap: MC 1.21.1 (NeoForge
+ * 21.1.223 dev jar): {@code Entity.getTags()} returning {@code Set<String>},
+ * {@code Mob.getLootTable()} returning {@code ResourceKey<LootTable>} (public final,
  * non-null: falls back to the type default). neoforge-21.1.223-universal.jar:
- * {@code LivingDeathEvent.getSource() -> DamageSource},
+ * {@code LivingDeathEvent.getSource()} returning {@code DamageSource},
  * {@code ServerTickEvent.Post}, {@code ServerStoppedEvent}. Pack runtime is
  * NeoForge 21.1.248; all surfaces stable across 21.1.x.</p>
  *

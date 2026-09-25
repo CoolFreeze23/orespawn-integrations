@@ -1,4 +1,4 @@
-# libs/ — compile-only dependency jars
+# libs/ (compile-only dependency jars)
 
 These jars are not tracked in git. To build, copy them here from the
 CrazyCraft 5.0 `minecraft/mods` folder (or the versions listed below):

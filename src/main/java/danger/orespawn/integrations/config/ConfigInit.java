@@ -10,13 +10,13 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 /**
- * POLICY 2 infrastructure entry point: registers the
+ * Config infrastructure entry point: registers the
  * {@code orespawn_integrations:thread_enabled} condition codec and the
  * {@link IntegrationsConfig} COMMON spec. Called once, UNCONDITIONALLY, from
- * the {@code OreSpawnIntegrations} constructor — this is infrastructure, not
+ * the {@code OreSpawnIntegrations} constructor. This is infrastructure, not
  * compat, so it never sits behind a ModList guard.
  *
- * <p>Registration point (verification report Q3, verified against
+ * <p>Registration point (verified against
  * neoforge-21.1.223): the condition-codec registry is
  * {@code NeoForgeRegistries.CONDITION_SERIALIZERS}
  * ({@code Registry<MapCodec<? extends ICondition>>},
@@ -28,7 +28,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
  * DeferredRegister surface (bytecode-verified).
  *
  * <p>COMMON config type (not SERVER): it loads at mod construction, so the
- * toggles exist before the first datapack parse — zero ordering risk — and
+ * toggles exist before the first datapack parse (zero ordering risk), and
  * thread gating is pack-level policy anyway.
  * {@code ModContainer.registerConfig(ModConfig.Type, IConfigSpec)} signature
  * confirmed via javap against fancymodloader loader-4.0.42 (the FML shipped
@@ -47,7 +47,7 @@ public final class ConfigInit {
 
     /**
      * @param modBus    the mod event bus (registry events)
-     * @param container this mod's own container — obtained via FML constructor
+     * @param container this mod's own container, obtained via FML constructor
      *                  injection in the {@code OreSpawnIntegrations} ctor
      *                  (extend it to {@code (IEventBus, ModContainer)}), NOT
      *                  via the ModLoadingContext ambient lookup, so the config

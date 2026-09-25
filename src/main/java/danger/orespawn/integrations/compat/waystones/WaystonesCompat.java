@@ -28,7 +28,7 @@ import java.util.Locale;
  *
  * Flow (verified against waystones-neoforge-21.1.40 bytecode): the shrine's
  * waystone block auto-registers on first server chunk load
- * (WaystoneBlockEntityBase.onLoad -> initializeWaystone -> addWaystone),
+ * (WaystoneBlockEntityBase.onLoad calls initializeWaystone, which calls addWaystone),
  * which fires WaystoneInitializedEvent with a still-nameless waystone.
  * Setting a name there makes hasName() true, so the name generator that
  * would otherwise run on first player activation never replaces it.

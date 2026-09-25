@@ -36,18 +36,18 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.List;
 
 /**
- * Thread 4 "Big Game" — Decoy Ore Mines: four SecurityCraft mines disguised as
+ * Decoy Ore Mines (Thread 4 "Big Game"): four SecurityCraft mines disguised as
  * OreSpawn's most tempting ores, plus the "Suspicious Ore" trophy block a
- * defused mine converts into. North star: this is a base-defense fantasy with a
- * FAIRNESS TELL — an attentive raider sees a subtle shimmer (and hears a faint
+ * defused mine converts into. This is a base-defense fantasy with a
+ * FAIRNESS TELL: an attentive raider sees a subtle shimmer (and hears a faint
  * tick) and gets real counterplay: defuse it with wire cutters and keep the
  * trophy. Never a gotcha with no outs.
  *
- * <p>POLICY 4 — light-code integration, verified against
+ * <p>Light-code integration, verified against
  * {@code SecurityCraft-1.21.1-v1.10.1.jar} (pack mods folder, javap on the
  * shipped classes; compileOnly via {@code libs/}):
  * <ul>
- *   <li>{@code blocks.mines.BaseFullMineBlock} — public ctor
+ *   <li>{@code blocks.mines.BaseFullMineBlock}: public ctor
  *       {@code (BlockBehaviour.Properties, Block blockDisguisedAs)}; nothing in
  *       the hierarchy overrides {@code animateTick}, so ours is free to add the
  *       tell; {@code isDefusable()} and {@code defuseMine(Level, BlockPos)} are
@@ -57,12 +57,12 @@ import java.util.List;
  *       {@code newBlockEntity} upstream returns an {@code OwnableBlockEntity}
  *       whose {@code BlockEntityType.validBlocks} would not contain our block
  *       (1.21.1 {@code LevelChunk.setBlockEntity} rejects invalid BEs), so it
- *       is nulled here — decoy mines are ownerless by design.</li>
- *   <li>{@code blocks.mines.ExplosiveBlock.useItemOn} — the inherited wire
- *       cutters path: {@code isActive && isDefusable -> defuseMine}; on true it
+ *       is nulled here; decoy mines are ownerless by design.</li>
+ *   <li>{@code blocks.mines.ExplosiveBlock.useItemOn}: the inherited wire
+ *       cutters path: {@code isActive && isDefusable} leads to {@code defuseMine}; on true it
  *       damages the cutters and plays SHEEP_SHEAR itself, so
  *       {@link DecoyOreMineBlock#defuseMine} only swaps in the trophy.</li>
- *   <li>{@code SCCreativeModeTabs} — SC's mine tab is registered as
+ *   <li>{@code SCCreativeModeTabs}: SC's mine tab is registered as
  *       {@code securitycraft:mine}; its display list is built only from SC's
  *       own item groups, so appending via
  *       {@link BuildCreativeModeTabContentsEvent} cannot duplicate.</li>
@@ -71,13 +71,13 @@ import java.util.List;
  * SecurityCraft bump.
  *
  * <p>Null-BE consequences (bytecode-checked in v1.10.1): with no block entity,
- * {@code entityInside} no-ops (stepping on a decoy is harmless — the trap is
+ * {@code entityInside} no-ops (stepping on a decoy is harmless; the trap is
  * MINING what looks like ore), {@code onDestroyedByPlayer} always takes the
  * non-owner branch (survival mining detonates; creative never does unless SC's
  * own config says so), and {@code OwnableBlock.getDestroyProgress} falls back
  * to vanilla speed. All intended.
  *
- * <p>Only ever classloaded when the securitycraft mod is present — the main mod
+ * <p>Only ever classloaded when the securitycraft mod is present; the main mod
  * class invokes {@link #init(IEventBus)} reflectively. Blocks mimic
  * {@code orespawn:ore_ruby}, {@code orespawn:ore_titanium},
  * {@code orespawn:tigers_eye_ore}, {@code orespawn:ore_uranium} (ids verified
@@ -86,7 +86,7 @@ import java.util.List;
  * tags gate on {@code neoforge:mod_loaded} + the Thread-4
  * {@code orespawn_integrations:thread_enabled "big_game"} condition; block
  * self-drop loot tables stay ungated so a mid-world config flip never voids
- * drops (north star: never punish).
+ * drops.
  */
 public final class DecoyOreMinesCompat {
 
@@ -95,7 +95,7 @@ public final class DecoyOreMinesCompat {
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(OreSpawnIntegrations.MODID);
 
-    /** SC's "Block Mines" creative tab, referenced by id — no compile dep needed. */
+    /** SC's "Block Mines" creative tab, referenced by id, so no compile dep is needed. */
     private static final ResourceKey<CreativeModeTab> SC_MINE_TAB = ResourceKey.create(
             Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath("securitycraft", "mine"));
 
@@ -115,7 +115,7 @@ public final class DecoyOreMinesCompat {
     /**
      * The defusal trophy: proof somebody tried to bait you and you out-played
      * them. Plain decorative block, stone-ish stats, hand-breakable (no tool
-     * gate — a trophy that could vanish to a wrong tool would be a punishment).
+     * gate; a trophy that could vanish to a wrong tool would be a punishment).
      */
     public static final DeferredBlock<Block> SUSPICIOUS_ORE = BLOCKS.register("suspicious_ore",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -156,7 +156,7 @@ public final class DecoyOreMinesCompat {
     /**
      * Resolves the OreSpawn block to disguise as. Our block suppliers run during
      * the BLOCK RegisterEvent after orespawn's (mods.toml orders us AFTER it).
-     * A missing id degrades to plain stone with a warning — never a crash.
+     * A missing id degrades to plain stone with a warning, never a crash.
      */
     private static Block mimicBlock(String path) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath("orespawn", path);
@@ -183,7 +183,7 @@ public final class DecoyOreMinesCompat {
      */
     public static final class DecoyOreMineBlock extends BaseFullMineBlock {
 
-        /** TNT is 4.0F; a scary flash with a shallow crater, per the approved tuning. */
+        /** TNT is 4.0F; a scary flash with a shallow crater. */
         private static final float EXPLOSION_STRENGTH = 2.8F;
 
         public DecoyOreMineBlock(BlockBehaviour.Properties properties, Block blockDisguisedAs) {
@@ -196,7 +196,7 @@ public final class DecoyOreMinesCompat {
          * 0.4-0.5 times a second, so three face attempts per call yields the
          * design's ~1-2 visible end-rod motes a second, plus a faint comparator
          * tick every ~8 seconds. Motes only emit from faces open to air, so a
-         * buried mine stays quiet until someone digs close — exactly when the
+         * buried mine stays quiet until someone digs close, exactly when the
          * warning matters.
          */
         @Override
@@ -259,7 +259,7 @@ public final class DecoyOreMinesCompat {
         /**
          * (d) No block entity: upstream's OwnableBlockEntity type would be
          * rejected for our block by 1.21.1 chunk BE validation. Ownerless is
-         * also the design — defusal-first is the counterplay, not owner checks.
+         * also the design: defusal-first is the counterplay, not owner checks.
          */
         @Override
         public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -269,7 +269,7 @@ public final class DecoyOreMinesCompat {
 
     /**
      * BlockItem that carries the honesty tooltip. The tooltip is for the CRAFTER
-     * (inventory/JEI); the placed block keeps the disguise — SC's overlay hooks
+     * (inventory/JEI); the placed block keeps the disguise: SC's overlay hooks
      * show it as the mimicked ore, and the shimmer is the victim's tell.
      */
     static final class DecoyMineBlockItem extends BlockItem {

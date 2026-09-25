@@ -20,7 +20,7 @@ public class OreSpawnIntegrations {
     public static final Logger LOGGER = LoggerFactory.getLogger("OreSpawnIntegrations");
 
     /**
-     * Compat modules. Each entry: required modid -> compat class with a
+     * Compat modules. Each entry maps a required modid to a compat class with a
      * {@code public static void init(IEventBus modBus)} entry point.
      * Classes are only loaded when their mod is present, so no compat
      * class may be referenced directly from here.
@@ -32,12 +32,12 @@ public class OreSpawnIntegrations {
             {"waystones", "danger.orespawn.integrations.compat.waystones.WaystonesCompat"},
             {"patchouli", "danger.orespawn.integrations.guide.GuideCompat"},
             {"customnpcs", "danger.orespawn.integrations.npc.QuestCompat"},
-            // Thread 4 "Big Game" (cross-mod threads, CROSSMOD-THREADS.md)
+            // Thread 4 "Big Game" (cross-mod threads)
             {"securitycraft", "danger.orespawn.integrations.compat.securitycraft.DecoyOreMinesCompat"},
             {"travelersbackpack", "danger.orespawn.integrations.compat.travelersbackpack.OreSpawnPacksCompat"},
             {"artifacts", "danger.orespawn.integrations.compat.artifacts.ChitinBandCompat"},
             {"twilightforest", "danger.orespawn.integrations.compat.twilight.MobzillaPlatingCompat"},
-            // Alive-world wave integrations (WAVE-IDEAS.md)
+            // Alive-world wave integrations
             {"sereneseasons", "danger.orespawn.integrations.compat.sereneseasons.SeasonsBridge"},
             {"guardvillagers", "danger.orespawn.integrations.compat.creatures.GuardVillagersCompat"},
             {"doggytalents", "danger.orespawn.integrations.compat.creatures.DoggyTalentsCompat"},

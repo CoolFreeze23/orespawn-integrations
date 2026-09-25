@@ -4,37 +4,37 @@ import danger.orespawn.integrations.OreSpawnIntegrations;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 /**
- * POLICY 2 infrastructure: one COMMON config with a boolean per cross-mod
+ * Config infrastructure: one COMMON config with a boolean per cross-mod
  * content thread. Every piece of thread data (recipes, GLMs, advancements,
  * datapack-registry entries) carries the matching
  * {@code {"type":"orespawn_integrations:thread_enabled","thread":"<id>"}}
  * condition (see {@link ThreadEnabledCondition}), so flipping a toggle and
- * running {@code /reload} adds/removes that thread's content live — recipe
+ * running {@code /reload} adds/removes that thread's content live; recipe
  * and loot-modifier JSONs are re-parsed through NeoForge's conditional codec
  * machinery on every reload.
  *
- * <p>Verified against (policy 4): NeoForge 21.1.223
- * ({@code net.neoforged.neoforge.common.ModConfigSpec} — Builder.comment/
+ * <p>Verified against NeoForge 21.1.223
+ * ({@code net.neoforged.neoforge.common.ModConfigSpec}: Builder.comment/
  * push/define(String,boolean)/pop/build and {@code isLoaded()} checked via
  * javap; {@code LootModifierManager} + {@code RecipeManager} re-parse
  * conditions each reload, LootModifierManager.java:76-81). Pack runtime is
- * NeoForge 21.1.248 — this API is stable across the 21.1.x line; re-verify on
+ * NeoForge 21.1.248, and this API is stable across the 21.1.x line; re-verify on
  * a NeoForge major bump.
  */
 public final class IntegrationsConfig {
 
-    /** THREAD 4 — "Big Game" (combat feel). */
+    /** THREAD 4 "Big Game" (combat feel). */
     public static final ModConfigSpec.BooleanValue threadBigGame;
-    /** THREAD 1 — "It Was Always Uranium" (power). */
+    /** THREAD 1 "It Was Always Uranium" (power). */
     public static final ModConfigSpec.BooleanValue threadUranium;
-    /** THREAD 2 — "The Royal Court" (boss economy). */
+    /** THREAD 2 "The Royal Court" (boss economy). */
     public static final ModConfigSpec.BooleanValue threadRoyalCourt;
-    /** THREAD 3 — "Her Side of the Story" (Girlfriend arc). */
+    /** THREAD 3 "Her Side of the Story" (Girlfriend arc). */
     public static final ModConfigSpec.BooleanValue threadGirlfriend;
-    /** THREAD 5 — "The World Remembers" (atmosphere). */
+    /** THREAD 5 "The World Remembers" (atmosphere). */
     public static final ModConfigSpec.BooleanValue threadWorldRemembers;
     public static final ModConfigSpec.BooleanValue threadAliveWorld;
-    /** THREAD 6 — "Brasil" (the Brazilian mods). */
+    /** THREAD 6 "Brasil" (the Brazilian mods). */
     public static final ModConfigSpec.BooleanValue threadBrazil;
     /** Client compat, not a content thread: hats on the OreSpawn rigs' head bones (compat/hats). */
     public static final ModConfigSpec.BooleanValue hatsOnRigs;
@@ -136,9 +136,9 @@ public final class IntegrationsConfig {
      * <p>Known ids: {@code big_game}, {@code uranium}, {@code royal_court},
      * {@code girlfriend}, {@code world_remembers}, {@code alive_world}, {@code brazil}.
      *
-     * <p>Fails OPEN by design (north star: never punish): if the config has not
-     * loaded yet when a datapack parse asks — or a condition JSON carries an
-     * unknown thread id — the answer is {@code true}, so content is never
+     * <p>Fails OPEN by design: if the config has not
+     * loaded yet when a datapack parse asks, or a condition JSON carries an
+     * unknown thread id, the answer is {@code true}, so content is never
      * hidden permanently by config/load-order accidents. The next /reload after
      * the config lands re-evaluates with the real values.
      */
