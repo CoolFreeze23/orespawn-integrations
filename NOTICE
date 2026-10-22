@@ -1,0 +1,6 @@
+OreSpawn Integrations connects OreSpawn to other mods. The MIT License in LICENSE covers this mod's own
+code and content.
+
+Some data files here replace or extend files of Minecraft and of other mods (biome effects, loot tables,
+structure pools, tags, advancements and the like). Those changes are ours, but the files they build on keep
+their owners' terms. OreSpawn itself is not included and is not covered by this licence.
