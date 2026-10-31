@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ctov"
+    },
+    {
+      "type": "orespawn_integrations:registry_switch",
+      "switch": "registry"
+    }
+  ],
+  "type": "lithostitched:add_template_pool_elements",
+  "template_pools": "ctov:village/jungle_tree/house",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "lithostitched:delegating",
+        "delegate": {
+          "element_type": "minecraft:single_pool_element",
+          "projection": "rigid",
+          "location": "orespawn_integrations:registro/cartorio",
+          "processors": "minecraft:empty"
+        },
+        "forced_count": 1
+      }
+    }
+  ]
+}

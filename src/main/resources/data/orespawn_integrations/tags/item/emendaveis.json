@@ -1,0 +1,92 @@
+{
+  "values": [
+    {
+      "id": "hbmsntm:ingot_uranium",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:ingot_titanium",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:spanish_moss",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_crab_meat",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_helmet",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_helmet",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_chestplate",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_chestplate",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_leggings",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_leggings",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_boots",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_boots",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_sword",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_sword",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_pickaxe",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_pickaxe",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_axe",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_axe",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_shovel",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_shovel",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:emerald_hoe",
+      "required": false
+    },
+    {
+      "id": "orespawn:emerald_hoe",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enchanted"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "orespawn_integrations:correction",
+  "ingredients": [
+    {
+      "tag": "orespawn_integrations:correction_payment"
+    },
+    {
+      "item": "biomesoplenty:spanish_moss"
+    },
+    {
+      "item": "biomesoplenty:spanish_moss"
+    },
+    {
+      "item": "biomesoplenty:spanish_moss"
+    },
+    {
+      "item": "biomesoplenty:spanish_moss"
+    },
+    {
+      "item": "biomesoplenty:spanish_moss"
+    },
+    {
+      "item": "biomesoplenty:spanish_moss"
+    },
+    {
+      "item": "biomesoplenty:spanish_moss"
+    },
+    {
+      "item": "biomesoplenty:spanish_moss"
+    }
+  ],
+  "result": {
+    "id": "enchanted:spanish_moss",
+    "count": 8
+  }
+}

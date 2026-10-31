@@ -1,0 +1,5 @@
+{
+  "name": "orespawn_integrations:registro/esconderijo",
+  "fallback": "minecraft:empty",
+  "elements": []
+}

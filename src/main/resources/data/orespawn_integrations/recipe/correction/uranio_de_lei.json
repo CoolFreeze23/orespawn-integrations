@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "hbmsntm"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "orespawn_integrations:correction",
+  "ingredients": [
+    {
+      "tag": "orespawn_integrations:correction_payment"
+    },
+    {
+      "item": "hbmsntm:ingot_uranium"
+    },
+    {
+      "item": "hbmsntm:ingot_uranium"
+    },
+    {
+      "item": "hbmsntm:ingot_uranium"
+    },
+    {
+      "item": "hbmsntm:ingot_uranium"
+    },
+    {
+      "item": "hbmsntm:ingot_uranium"
+    },
+    {
+      "item": "hbmsntm:ingot_uranium"
+    },
+    {
+      "item": "hbmsntm:ingot_uranium"
+    },
+    {
+      "item": "hbmsntm:ingot_uranium"
+    }
+  ],
+  "result": {
+    "id": "orespawn:uranium_nugget",
+    "count": 8
+  }
+}
