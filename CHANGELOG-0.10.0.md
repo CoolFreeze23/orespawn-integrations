@@ -5,9 +5,9 @@ Eggshell, and is walked through their first hour one step at a time: the Prince'
 and a clerk who finally puts them on file. This is an alpha: everything here is playable and tested, and the story
 goes on in the next versions.
 
-![Opening the Eggshell on Shelf 9](docs/media/0.10.0/eggshell_opened.png)
+![The Eggshell's kit](docs/media/0.10.0/eggshell_opened.png)
 
-*A new player opens their Eggshell inside Shelf 9: the kit arrives and the Egged cap goes to the Wardrobe.*
+*A new player's Eggshell, opened: the Hoard Field Guide, a Royal Casket, a red bed, 6 torches and 3 cheese breads.*
 
 ## What's new
 - **Shelf 9, the Hatching Ground.** A new world places it at spawn. New players wake on its straw, and every name goes
@@ -25,18 +25,15 @@ goes on in the next versions.
   attacker.
 - **The Field Odete.** A Registry clerk walks up to the crate, opens your file and hands over the Field Notebook.
 - **Region names.** Crossing into a new region shows its name, and the first visit pays a Ledger Scrap.
-
-  ![Entering the Wetlands](docs/media/0.10.0/wetlands_title.png)
-
 - **Royal Caskets, Ledger Scraps and Corrections.** The lucky blocks became Royal Caskets with their own tables by
   rank, and scraps buy Corrections at the table.
 - **The Registry.** Village Registry desks (the Cartório) and their clerks, the Odetes.
 - **Players from before this version** get the late-entry line in the Register, the Summons by air, and a Back-Dated
   Fall with its own notice.
 
-![The Field Odete at the crate](docs/media/0.10.0/field_odete.png)
+![The Field Odete by Shelf 9](docs/media/0.10.0/field_odete.png)
 
-*The Field Odete arrives while the player stands in Shelf 9 with the Summons.*
+*The Field Odete, the Registry's clerk in the field, outside Shelf 9.*
 
 ## Fixes found while testing
 - Opening the Eggshell lost the Hoard Field Guide: it landed in the hand slot the shell had just left, and the game
