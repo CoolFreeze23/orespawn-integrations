@@ -1,0 +1,240 @@
+{
+  "temperature": 0.7,
+  "downfall": 0.5,
+  "has_precipitation": true,
+  "effects": {
+    "sky_color": 8960767,
+    "fog_color": 13303807,
+    "water_color": 4445678,
+    "water_fog_color": 270131,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "grass_color": 5888614,
+    "foliage_color": 6205799,
+    "particle": {
+      "options": {
+        "type": "minecraft:spore_blossom_air"
+      },
+      "probability": 0.002
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.meadow",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
+    }
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "weight": 12,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:pig",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:chicken",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:cow",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:gazelle",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:girlfriend",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "orespawn:boyfriend",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "orespawn:red_cow",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 8
+      },
+      {
+        "type": "orespawn:gold_cow",
+        "weight": 8,
+        "minCount": 2,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:enchanted_apple_cow",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ],
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      },
+      {
+        "type": "orespawn:firefly",
+        "weight": 15,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:butterfly",
+        "weight": 20,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:luna_moth",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 5
+      },
+      {
+        "type": "orespawn:chipmunk",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "orespawn:cockateil",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:gold_fish",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "orespawn:coin",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "orespawn:cricket",
+        "weight": 5,
+        "minCount": 4,
+        "maxCount": 6
+      }
+    ],
+    "water_creature": [
+      {
+        "type": "minecraft:squid",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:whale",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "orespawn:flounder",
+        "weight": 2,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:frog",
+        "weight": 5,
+        "minCount": 4,
+        "maxCount": 6
+      }
+    ],
+    "water_ambient": [],
+    "underground_water_creature": [],
+    "axolotls": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "orespawn:legacy_cave",
+      "orespawn:legacy_canyon"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "orespawn:spawn_ores_dim",
+      "orespawn:ore_uranium_dim",
+      "orespawn:ore_titanium_dim",
+      "orespawn:ore_amethyst_dim",
+      "orespawn:ore_salt_dim",
+      "orespawn:red_ant_troll_dim",
+      "orespawn:termite_troll_dim",
+      "orespawn:ore_boost_diamond_dim",
+      "orespawn:ore_boost_diamond_block_dim",
+      "orespawn:ore_boost_emerald_dim",
+      "orespawn:ore_boost_emerald_block_dim",
+      "orespawn:ore_boost_gold_dim",
+      "orespawn:ore_boost_gold_block_dim",
+      "orespawn:ore_block_ruby_dim",
+      "orespawn:ore_dirt_1710",
+      "orespawn:ore_gravel_1710",
+      "orespawn:ore_coal_1710",
+      "orespawn:ore_iron_1710",
+      "orespawn:ore_gold_1710",
+      "orespawn:ore_redstone_1710",
+      "orespawn:ore_diamond_1710",
+      "orespawn:ore_lapis_1710",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
+    ],
+    [],
+    [
+      "orespawn:spring_water_dim",
+      "orespawn:spring_lava_dim"
+    ],
+    [
+      "orespawn:legacy_plants_utopian",
+      "orespawn:anthill",
+      "orespawn:veggie_patch_utopia",
+      "orespawn:wild_strawberries",
+      "orespawn:wild_corn",
+      "orespawn:wild_tomatoes"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

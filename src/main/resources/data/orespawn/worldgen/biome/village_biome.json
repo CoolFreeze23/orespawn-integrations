@@ -7,14 +7,14 @@
     "fog_color": 12638463,
     "water_color": 4159204,
     "water_fog_color": 329011,
-    "grass_color": 7842607,
-    "foliage_color": 6266419,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0
     },
+    "grass_color": 7842607,
+    "foliage_color": 6266419,
     "music": {
       "sound": "minecraft:music.overworld.forest",
       "min_delay": 12000,
@@ -113,12 +113,6 @@
         "weight": 2,
         "minCount": 1,
         "maxCount": 1
-      },
-      {
-        "type": "orespawn:band_p",
-        "weight": 15,
-        "minCount": 1,
-        "maxCount": 2
       }
     ],
     "creature": [
@@ -183,6 +177,62 @@
         "maxCount": 4
       },
       {
+        "type": "orespawn:girlfriend",
+        "weight": 1,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "orespawn:boyfriend",
+        "weight": 1,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "orespawn:red_cow",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 8
+      },
+      {
+        "type": "orespawn:gold_cow",
+        "weight": 6,
+        "minCount": 2,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:enchanted_apple_cow",
+        "weight": 4,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ],
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      },
+      {
+        "type": "orespawn:firefly",
+        "weight": 15,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:butterfly",
+        "weight": 20,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:luna_moth",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 5
+      },
+      {
         "type": "orespawn:chipmunk",
         "weight": 3,
         "minCount": 1,
@@ -213,34 +263,22 @@
         "maxCount": 6
       },
       {
-        "type": "orespawn:girlfriend",
-        "weight": 1,
-        "minCount": 2,
-        "maxCount": 3
-      },
-      {
-        "type": "orespawn:boyfriend",
-        "weight": 1,
-        "minCount": 2,
-        "maxCount": 3
-      },
-      {
-        "type": "orespawn:red_cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 8
-      },
-      {
-        "type": "orespawn:gold_cow",
-        "weight": 6,
-        "minCount": 2,
+        "type": "orespawn:firefly",
+        "weight": 10,
+        "minCount": 3,
         "maxCount": 6
       },
       {
-        "type": "orespawn:enchanted_apple_cow",
-        "weight": 4,
-        "minCount": 2,
-        "maxCount": 4
+        "type": "orespawn:butterfly",
+        "weight": 25,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:luna_moth",
+        "weight": 20,
+        "minCount": 1,
+        "maxCount": 5
       },
       {
         "type": "orespawn:chipmunk",
@@ -265,50 +303,12 @@
         "weight": 2,
         "minCount": 1,
         "maxCount": 1
-      }
-    ],
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
       },
       {
-        "type": "orespawn:firefly",
+        "type": "orespawn:band_p",
         "weight": 15,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "orespawn:butterfly",
-        "weight": 20,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "orespawn:luna_moth",
-        "weight": 10,
         "minCount": 1,
-        "maxCount": 5
-      },
-      {
-        "type": "orespawn:firefly",
-        "weight": 10,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "orespawn:butterfly",
-        "weight": 25,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "orespawn:luna_moth",
-        "weight": 20,
-        "minCount": 1,
-        "maxCount": 5
+        "maxCount": 2
       }
     ],
     "water_creature": [
@@ -345,9 +345,8 @@
   "spawn_costs": {},
   "carvers": {
     "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
+      "orespawn:legacy_cave",
+      "orespawn:legacy_canyon"
     ]
   },
   "features": [
@@ -363,31 +362,39 @@
     [],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_coal_upper",
-      "minecraft:ore_coal_lower",
-      "minecraft:ore_iron_upper",
-      "minecraft:ore_iron_middle",
-      "minecraft:ore_gold",
-      "minecraft:ore_redstone",
-      "minecraft:ore_diamond",
-      "minecraft:ore_lapis",
-      "orespawn:ore_amethyst",
-      "orespawn:ore_uranium",
-      "orespawn:ore_titanium",
-      "orespawn:ore_salt",
-      "orespawn:red_ant_troll",
-      "orespawn:termite_troll"
+      "orespawn:spawn_ores_dim",
+      "orespawn:ore_uranium_dim",
+      "orespawn:ore_titanium_dim",
+      "orespawn:ore_amethyst_dim",
+      "orespawn:ore_salt_dim",
+      "orespawn:red_ant_troll_dim",
+      "orespawn:termite_troll_dim",
+      "orespawn:ore_boost_diamond_dim",
+      "orespawn:ore_boost_diamond_block_dim",
+      "orespawn:ore_boost_emerald_dim",
+      "orespawn:ore_boost_emerald_block_dim",
+      "orespawn:ore_boost_gold_dim",
+      "orespawn:ore_boost_gold_block_dim",
+      "orespawn:ore_block_ruby_dim",
+      "orespawn:ore_dirt_1710",
+      "orespawn:ore_gravel_1710",
+      "orespawn:ore_coal_1710",
+      "orespawn:ore_iron_1710",
+      "orespawn:ore_gold_1710",
+      "orespawn:ore_redstone_1710",
+      "orespawn:ore_diamond_1710",
+      "orespawn:ore_lapis_1710",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
-      "minecraft:spring_water"
+      "orespawn:spring_water_dim",
+      "orespawn:spring_lava_dim"
     ],
     [
-      "minecraft:trees_plains",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_plain",
+      "orespawn:legacy_plants_utopian",
       "orespawn:anthill",
       "orespawn:magic_apple_tree",
       "orespawn:wild_corn",

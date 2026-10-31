@@ -1,20 +1,20 @@
 {
-  "temperature": 0.9,
-  "downfall": 0.2,
+  "temperature": 0.8,
+  "downfall": 0.01,
   "has_precipitation": false,
   "effects": {
     "sky_color": 6684672,
     "fog_color": 8388608,
     "water_color": 3342336,
     "water_fog_color": 1644544,
-    "grass_color": 5283072,
-    "foliage_color": 5283072,
     "mood_sound": {
       "sound": "minecraft:ambient.soul_sand_valley.mood",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0
     },
+    "grass_color": 5283072,
+    "foliage_color": 5283072,
     "particle": {
       "options": {
         "type": "minecraft:ash"
@@ -281,6 +281,56 @@
         "weight": 1,
         "minCount": 2,
         "maxCount": 4
+      }
+    ],
+    "ambient": [
+      {
+        "type": "orespawn:butterfly",
+        "weight": 20,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:luna_moth",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 5
+      },
+      {
+        "type": "orespawn:cockateil",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:firefly",
+        "weight": 15,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:cliff_racer",
+        "weight": 30,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "orespawn:cloud_shark",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "orespawn:gold_fish",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:fairy",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 4
       },
       {
         "type": "orespawn:baryonyx",
@@ -329,56 +379,6 @@
         "weight": 1,
         "minCount": 1,
         "maxCount": 2
-      },
-      {
-        "type": "orespawn:cockateil",
-        "weight": 10,
-        "minCount": 2,
-        "maxCount": 4
-      },
-      {
-        "type": "orespawn:gold_fish",
-        "weight": 10,
-        "minCount": 2,
-        "maxCount": 4
-      },
-      {
-        "type": "orespawn:cliff_racer",
-        "weight": 30,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "orespawn:cloud_shark",
-        "weight": 2,
-        "minCount": 1,
-        "maxCount": 1
-      },
-      {
-        "type": "orespawn:fairy",
-        "weight": 5,
-        "minCount": 2,
-        "maxCount": 4
-      }
-    ],
-    "ambient": [
-      {
-        "type": "orespawn:butterfly",
-        "weight": 20,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "orespawn:luna_moth",
-        "weight": 10,
-        "minCount": 1,
-        "maxCount": 5
-      },
-      {
-        "type": "orespawn:firefly",
-        "weight": 15,
-        "minCount": 3,
-        "maxCount": 6
       }
     ],
     "water_creature": [],
@@ -388,13 +388,7 @@
     "misc": []
   },
   "spawn_costs": {},
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
-  },
+  "carvers": {},
   "features": [
     [],
     [],
@@ -403,35 +397,40 @@
     [],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_coal_upper",
-      "minecraft:ore_coal_lower",
-      "minecraft:ore_iron_upper",
-      "minecraft:ore_iron_middle",
-      "minecraft:ore_gold",
-      "minecraft:ore_gold_lower",
-      "minecraft:ore_redstone",
-      "minecraft:ore_diamond",
-      "minecraft:ore_diamond_large",
-      "minecraft:ore_lapis",
-      "minecraft:ore_copper",
-      "orespawn:ore_amethyst",
-      "orespawn:ore_uranium",
-      "orespawn:ore_titanium",
-      "orespawn:ore_salt",
-      "orespawn:red_ant_troll",
-      "orespawn:termite_troll"
+      "orespawn:spawn_ores_dim",
+      "orespawn:ore_uranium_dim",
+      "orespawn:ore_titanium_dim",
+      "orespawn:ore_amethyst_dim",
+      "orespawn:ore_salt_dim",
+      "orespawn:red_ant_troll_dim",
+      "orespawn:termite_troll_dim",
+      "orespawn:ore_boost_diamond_dim",
+      "orespawn:ore_boost_diamond_block_dim",
+      "orespawn:ore_boost_emerald_dim",
+      "orespawn:ore_boost_emerald_block_dim",
+      "orespawn:ore_boost_gold_dim",
+      "orespawn:ore_boost_gold_block_dim",
+      "orespawn:ore_block_ruby_dim",
+      "orespawn:ore_dirt_1710",
+      "orespawn:ore_gravel_1710",
+      "orespawn:ore_coal_1710",
+      "orespawn:ore_iron_1710",
+      "orespawn:ore_gold_1710",
+      "orespawn:ore_redstone_1710",
+      "orespawn:ore_diamond_1710",
+      "orespawn:ore_lapis_1710",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "orespawn:spring_water_dim",
+      "orespawn:spring_lava_dim"
     ],
     [
-      "minecraft:trees_plains",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_plain",
+      "orespawn:chaos_trees",
+      "orespawn:legacy_plants_chaos",
       "orespawn:anthill_chaos",
       "orespawn:veggie_patch"
     ],

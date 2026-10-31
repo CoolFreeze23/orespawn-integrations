@@ -1,20 +1,20 @@
 {
-  "temperature": 0.5,
-  "downfall": 0.3,
+  "temperature": 0.8,
+  "downfall": 0.01,
   "has_precipitation": false,
   "effects": {
     "sky_color": 11184895,
     "fog_color": 14474495,
     "water_color": 8388863,
     "water_fog_color": 4194559,
-    "grass_color": 10526687,
-    "foliage_color": 11599615,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0
     },
+    "grass_color": 10526687,
+    "foliage_color": 11599615,
     "particle": {
       "options": {
         "type": "minecraft:end_rod"
@@ -150,13 +150,7 @@
     "misc": []
   },
   "spawn_costs": {},
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
-  },
+  "carvers": {},
   "features": [
     [],
     [],
@@ -167,7 +161,9 @@
     [],
     [],
     [],
-    [],
+    [
+      "orespawn:legacy_plants_crystal"
+    ],
     []
   ]
 }

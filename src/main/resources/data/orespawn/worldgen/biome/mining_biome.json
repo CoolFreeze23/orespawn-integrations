@@ -1,6 +1,6 @@
 {
-  "temperature": 0.5,
-  "downfall": 0.0,
+  "temperature": 0.8,
+  "downfall": 0.01,
   "has_precipitation": false,
   "effects": {
     "sky_color": 5066061,
@@ -175,6 +175,48 @@
         "weight": 2,
         "minCount": 4,
         "maxCount": 8
+      },
+      {
+        "type": "orespawn:butterfly",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "orespawn:luna_moth",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "orespawn:cassowary",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "orespawn:cockateil",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "orespawn:mothra",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "orespawn:ender_knight",
+        "weight": 4,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:ender_reaper",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 2
       }
     ],
     "water_creature": [
@@ -193,9 +235,8 @@
   "spawn_costs": {},
   "carvers": {
     "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
+      "orespawn:legacy_cave",
+      "orespawn:legacy_canyon"
     ]
   },
   "features": [
@@ -211,53 +252,46 @@
     [],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_coal_upper",
-      "minecraft:ore_coal_lower",
-      "minecraft:ore_iron_upper",
-      "minecraft:ore_iron_middle",
-      "minecraft:ore_iron_small",
-      "minecraft:ore_gold",
-      "minecraft:ore_gold_lower",
-      "minecraft:ore_redstone",
-      "minecraft:ore_redstone_lower",
-      "minecraft:ore_diamond",
-      "minecraft:ore_diamond_large",
-      "minecraft:ore_diamond_buried",
-      "minecraft:ore_lapis",
-      "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:ore_copper_large",
-      "orespawn:ore_ruby_mining",
-      "orespawn:ore_amethyst_mining",
+      "orespawn:spawn_ores_mining",
       "orespawn:ore_uranium_mining",
       "orespawn:ore_titanium_mining",
+      "orespawn:ore_amethyst_mining",
       "orespawn:ore_salt_mining",
       "orespawn:red_ant_troll_mining",
       "orespawn:termite_troll_mining",
-      "orespawn:ore_lapis_mining_large",
-      "orespawn:ore_lapis_mining_small",
-      "orespawn:ore_block_ruby_mining",
       "orespawn:ore_boost_diamond_mining",
       "orespawn:ore_boost_diamond_block_mining",
       "orespawn:ore_boost_emerald_mining",
       "orespawn:ore_boost_emerald_block_mining",
       "orespawn:ore_boost_gold_mining",
-      "orespawn:ore_boost_gold_block_mining"
+      "orespawn:ore_boost_gold_block_mining",
+      "orespawn:ore_block_ruby_mining",
+      "orespawn:ore_dirt_1710",
+      "orespawn:ore_gravel_1710",
+      "orespawn:ore_coal_1710",
+      "orespawn:ore_iron_1710",
+      "orespawn:ore_gold_1710",
+      "orespawn:ore_redstone_1710",
+      "orespawn:ore_diamond_1710",
+      "orespawn:ore_lapis_1710",
+      "orespawn:ore_emerald_1710",
+      "orespawn:ore_silverfish_1710",
+      "orespawn:ore_lapis_mining_large",
+      "orespawn:ore_lapis_mining_small",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "orespawn:spring_water_dim",
+      "orespawn:spring_lava_dim"
     ],
     [
+      "orespawn:hills_decoration_1710",
+      "orespawn:lava_and_water",
+      "orespawn:legacy_plants_hills",
+      "orespawn:ore_ruby_mining",
       "orespawn:anthill_mining",
       "orespawn:veggie_patch"
     ],

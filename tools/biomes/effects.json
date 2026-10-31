@@ -1,0 +1,149 @@
+{
+  "_comment": [
+    "Our effects (sky, fog, water, foliage, grass, music, particles, ambient sounds) for OreSpawn's six dimension biomes.",
+    "tools/biomes/gen_biome_overrides.py lays each block over the port's own biome file from the OreSpawn jar in libs/,",
+    "so everything else (spawns, features, carvers, climate) always follows the port. Rerun it on every port update."
+  ],
+  "effects": {
+    "chaos_biome": {
+      "sky_color": 6684672,
+      "fog_color": 8388608,
+      "water_color": 3342336,
+      "water_fog_color": 1644544,
+      "grass_color": 5283072,
+      "foliage_color": 5283072,
+      "mood_sound": {
+        "sound": "minecraft:ambient.soul_sand_valley.mood",
+        "tick_delay": 6000,
+        "block_search_extent": 8,
+        "offset": 2.0
+      },
+      "particle": {
+        "options": {
+          "type": "minecraft:ash"
+        },
+        "probability": 0.02
+      },
+      "music": {
+        "sound": "minecraft:music.nether.soul_sand_valley",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      },
+      "additions_sound": {
+        "sound": "minecraft:ambient.soul_sand_valley.additions",
+        "tick_chance": 0.0111
+      }
+    },
+    "crystal_plains": {
+      "sky_color": 11184895,
+      "fog_color": 14474495,
+      "water_color": 8388863,
+      "water_fog_color": 4194559,
+      "grass_color": 10526687,
+      "foliage_color": 11599615,
+      "mood_sound": {
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 6000,
+        "block_search_extent": 8,
+        "offset": 2.0
+      },
+      "particle": {
+        "options": {
+          "type": "minecraft:end_rod"
+        },
+        "probability": 0.006
+      },
+      "music": {
+        "sound": "minecraft:music.overworld.frozen_peaks",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    },
+    "island_biome": {
+      "sky_color": 8364543,
+      "fog_color": 12638463,
+      "water_color": 4159204,
+      "water_fog_color": 329011,
+      "grass_color": 7842607,
+      "foliage_color": 6266419,
+      "mood_sound": {
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 6000,
+        "block_search_extent": 8,
+        "offset": 2.0
+      },
+      "music": {
+        "sound": "minecraft:music.overworld.sparse_jungle",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    },
+    "mining_biome": {
+      "sky_color": 5066061,
+      "fog_color": 5066061,
+      "water_color": 4159204,
+      "water_fog_color": 329011,
+      "mood_sound": {
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 4000,
+        "block_search_extent": 8,
+        "offset": 2.0
+      },
+      "music": {
+        "sound": "minecraft:music.overworld.dripstone_caves",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    },
+    "utopia_plains": {
+      "sky_color": 8960767,
+      "fog_color": 13303807,
+      "water_color": 4445678,
+      "water_fog_color": 270131,
+      "grass_color": 5888614,
+      "foliage_color": 6205799,
+      "mood_sound": {
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 6000,
+        "block_search_extent": 8,
+        "offset": 2.0
+      },
+      "particle": {
+        "options": {
+          "type": "minecraft:spore_blossom_air"
+        },
+        "probability": 0.002
+      },
+      "music": {
+        "sound": "minecraft:music.overworld.meadow",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    },
+    "village_biome": {
+      "sky_color": 7907327,
+      "fog_color": 12638463,
+      "water_color": 4159204,
+      "water_fog_color": 329011,
+      "grass_color": 7842607,
+      "foliage_color": 6266419,
+      "mood_sound": {
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 6000,
+        "block_search_extent": 8,
+        "offset": 2.0
+      },
+      "music": {
+        "sound": "minecraft:music.overworld.forest",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    }
+  }
+}

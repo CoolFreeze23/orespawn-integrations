@@ -1,20 +1,20 @@
 {
   "temperature": 0.8,
-  "downfall": 0.4,
+  "downfall": 0.01,
   "has_precipitation": true,
   "effects": {
     "sky_color": 8364543,
     "fog_color": 12638463,
     "water_color": 4159204,
     "water_fog_color": 329011,
-    "grass_color": 7842607,
-    "foliage_color": 6266419,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2.0
     },
+    "grass_color": 7842607,
+    "foliage_color": 6266419,
     "music": {
       "sound": "minecraft:music.overworld.sparse_jungle",
       "min_delay": 12000,
@@ -67,18 +67,31 @@
         "maxCount": 2
       }
     ],
-    "creature": [
+    "creature": [],
+    "ambient": [
       {
-        "type": "orespawn:island",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 1
+        "type": "orespawn:butterfly",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 6
       },
       {
-        "type": "orespawn:island_too",
-        "weight": 1,
+        "type": "orespawn:cockateil",
+        "weight": 4,
         "minCount": 1,
-        "maxCount": 1
+        "maxCount": 2
+      },
+      {
+        "type": "orespawn:luna_moth",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "orespawn:firefly",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 8
       },
       {
         "type": "orespawn:dragon",
@@ -111,32 +124,6 @@
         "maxCount": 4
       }
     ],
-    "ambient": [
-      {
-        "type": "orespawn:butterfly",
-        "weight": 5,
-        "minCount": 2,
-        "maxCount": 6
-      },
-      {
-        "type": "orespawn:cockateil",
-        "weight": 4,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "orespawn:luna_moth",
-        "weight": 5,
-        "minCount": 2,
-        "maxCount": 4
-      },
-      {
-        "type": "orespawn:firefly",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 8
-      }
-    ],
     "water_creature": [],
     "water_ambient": [],
     "underground_water_creature": [],
@@ -156,7 +143,8 @@
     [],
     [],
     [
-      "orespawn:unstable_anthill"
+      "orespawn:unstable_anthill",
+      "orespawn:island_block"
     ]
   ]
 }
