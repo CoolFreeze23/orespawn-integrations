@@ -72,3 +72,83 @@ tasks.withType(ProcessResources).configureEach {
         expand replaceProperties
     }
 }
+
+// The Works Schedule's release check (system-cronograma-de-obras): docs/effort.csv, generated from the cards'
+// effort clauses by tools/gen_effort_csv.py, holds one row per card and release. A Base milestone (0.10.0 to 0.10.3)
+// may carry at most 20 Core points, a themed slice at most 16 Strong and Stretch points (D 0, S 1, M 2, L 4); OI rows
+// only, since the companion projects cap their own. A Strong or Stretch part with points in the Base breaks the ship
+// rule and is reported as a warning.
+static List<String> effortTallyProblems(File csv, List<String> warnings) {
+    def core = [:].withDefault { 0 }
+    def strong = [:].withDefault { 0 }
+    def lines = csv.readLines('UTF-8').findAll { it.trim() }
+    def header = lines.head().split(',') as List
+    lines.tail().each { line ->
+        def cells = line.split(',', -1) as List
+        def row = [header, cells].transpose().collectEntries { it }
+        if (row.project != 'OI') {
+            return
+        }
+        int points = (row.points ?: '0') as int
+        if (row.tier == 'Core') {
+            core[row.release] += points
+        } else {
+            strong[row.release] += points
+        }
+    }
+    def base = ['0.10.0', '0.10.1', '0.10.2', '0.10.3']
+    def problems = []
+    (core.keySet() + strong.keySet()).unique().sort().each { String release ->
+        if (release in base) {
+            if (core[release] > 20) {
+                problems << "Base milestone ${release}: ${core[release]} Core points (cap 20)".toString()
+            }
+            if (strong[release] > 0) {
+                warnings << "Base milestone ${release}: ${strong[release]} Strong/Stretch points (the ship rule allows none)".toString()
+            }
+        } else if (strong[release] > 16) {
+            problems << "Slice ${release}: ${strong[release]} Strong and Stretch points (cap 16)".toString()
+        }
+    }
+    return problems
+}
+
+tasks.register('checkEffortTally') {
+    group = 'verification'
+    description = 'Fails when docs/effort.csv puts more than 20 Core points in a Base milestone or 16 Strong and Stretch points in a slice.'
+    def csv = file('docs/effort.csv')
+    inputs.file(csv)
+    doLast {
+        def warnings = []
+        def problems = effortTallyProblems(csv, warnings)
+        warnings.each { logger.warn("checkEffortTally: ${it}") }
+        if (problems) {
+            throw new GradleException("Effort tally over its cap:\n  " + problems.join('\n  '))
+        }
+        logger.lifecycle("checkEffortTally: every Base milestone within 20, every slice within 16")
+    }
+}
+
+// The tally's own test: a fixture with 17 points in one slice must fail, one with 16 must pass.
+tasks.register('testEffortTally') {
+    group = 'verification'
+    description = 'Checks that checkEffortTally fails at 17 points in one slice and passes at 16.'
+    def over = file('src/test/resources/effort/slice_at_17.csv')
+    def atCap = file('src/test/resources/effort/slice_at_16.csv')
+    inputs.files(over, atCap)
+    doLast {
+        def overProblems = effortTallyProblems(over, [])
+        if (overProblems.size() != 1 || !overProblems[0].contains('17')) {
+            throw new GradleException("testEffortTally: 17 points in one slice should fail once, got ${overProblems}")
+        }
+        def capProblems = effortTallyProblems(atCap, [])
+        if (capProblems) {
+            throw new GradleException("testEffortTally: 16 points in one slice should pass, got ${capProblems}")
+        }
+        logger.lifecycle("testEffortTally: 17 fails, 16 passes")
+    }
+}
+
+tasks.named('check') {
+    dependsOn 'checkEffortTally', 'testEffortTally'
+}
