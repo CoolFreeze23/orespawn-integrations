@@ -83,6 +83,9 @@ public class OreSpawnIntegrations {
             // week:
             {"orespawn_integrations", "danger.orespawn.integrations.story.week.WeekCore"},
             {"brasilcoisas", "danger.orespawn.integrations.story.week.SaturdayTruco"},
+            {"refurbished_furniture", "danger.orespawn.integrations.story.week.RefurbishedPost"},
+            {"plantz", "danger.orespawn.integrations.story.week.PlantzPost"},
+            {"customnpcs", "danger.orespawn.integrations.story.week.GazetteDialogs"},
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };

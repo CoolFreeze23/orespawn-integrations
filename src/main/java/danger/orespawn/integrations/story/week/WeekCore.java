@@ -29,9 +29,11 @@ public final class WeekCore {
     public static void init(IEventBus modBus) {
         CONDITIONS.register(modBus);
         WeekData.register(modBus);
+        GazetteItems.register(modBus);
         LandsWeek.init();
         Almanac.init();
         DuskCry.init(modBus);
+        Gazette.init();
         FirstWeek.init();
         NeoForge.EVENT_BUS.addListener(ServerLedger::onServerTick);
         NeoForge.EVENT_BUS.addListener(ServerLedger::onServerStopped);
