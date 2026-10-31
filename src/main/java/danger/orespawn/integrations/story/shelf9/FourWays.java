@@ -28,8 +28,8 @@ import java.util.List;
 public final class FourWays {
 
     public static final String[] KINDS = {"village", "henge", "tower", "bar"};
-    /** The version whose locates wrote the signs; 0.10.1 compares it to re-run them once. */
-    public static final String VERSION = "0.10.0";
+    /** The version whose locates wrote the signs; a start with older signs re-runs them once (0.10.1: the boteco's way). */
+    public static final String VERSION = "0.10.1";
     private static final int RADIUS_CHUNKS = 32;
     private static final String KEY = "orespawn_integrations.shelf9.ways.";
 
@@ -54,6 +54,9 @@ public final class FourWays {
      * At server start, before anyone can join: the survey a live placement left, if any. Returns true when it ran.
      */
     public static boolean runPending(MinecraftServer server, HatchingGroundData data) {
+        if (data.placed && !data.waysPending && !VERSION.equals(data.waysVersion)) {
+            queueResurvey(data);
+        }
         if (!data.placed || !data.waysPending) {
             return false;
         }
@@ -68,6 +71,19 @@ public final class FourWays {
         OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: the waiting survey ran at start-up in {} ms",
                 (System.nanoTime() - start) / 1_000_000L);
         return true;
+    }
+
+    /**
+     * A new hub place the Ways name (the boteco, the Hunt Lodge), or signs from an older version: the survey runs again
+     * at the next start. The signs keep what they say until then.
+     */
+    public static void queueResurvey(HatchingGroundData data) {
+        if (!data.placed) {
+            return;
+        }
+        data.waysPending = true;
+        data.waysCentre = data.origin.offset(10, 4, 10);
+        data.setDirty();
     }
 
     /** All four locates and the signs at once, for an operator re-run or a test. */
