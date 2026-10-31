@@ -1,0 +1,119 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 56,
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"orespawn_integrations:copa\":{row:\"arca\"}}"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "translate": "orespawn_integrations.extravio.copa.token"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 14,
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"orespawn_integrations:copa\":{row:\"chapeu\"}}"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "translate": "orespawn_integrations.extravio.copa.token"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"orespawn_integrations:copa\":{row:\"gaveta\"}}"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "translate": "orespawn_integrations.extravio.copa.token"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 9,
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"orespawn_integrations:copa\":{row:\"retalho\"}}"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "translate": "orespawn_integrations.extravio.copa.token"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"orespawn_integrations:copa\":{row:\"presente\"}}"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "translate": "orespawn_integrations.extravio.copa.token"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"orespawn_integrations:copa\":{row:\"parte\"}}"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "translate": "orespawn_integrations.extravio.copa.token"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
