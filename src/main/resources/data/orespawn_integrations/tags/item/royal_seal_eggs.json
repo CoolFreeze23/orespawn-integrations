@@ -1,0 +1,73 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:the_king_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_queen_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:godzilla_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:kraken_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:mothra_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:pitch_black_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:kyuubi_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:hammerhead_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:giant_robot_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:emperor_scorpion_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:basilisk_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:alien_boss_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:cater_killer_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:leon_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "orespawn:water_dragon_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "minecraft:wither_spawn_egg",
+      "required": false
+    },
+    {
+      "id": "minecraft:ender_dragon_spawn_egg",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn_integrations:mobzilla_arena",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:kraken_lair",
+      "required": false
+    },
+    {
+      "id": "orespawn:king_altar",
+      "required": false
+    },
+    {
+      "id": "orespawn:queen_altar",
+      "required": false
+    },
+    {
+      "id": "orespawn:utopia_temple_king_altar",
+      "required": false
+    },
+    {
+      "id": "orespawn:utopia_temple_queen_altar",
+      "required": false
+    },
+    {
+      "id": "orespawn:challenge_tower_king",
+      "required": false
+    },
+    {
+      "id": "orespawn:challenge_tower_queen",
+      "required": false
+    }
+  ]
+}
