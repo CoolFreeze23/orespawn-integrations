@@ -42,7 +42,7 @@
   "orespawn_integrations.first_fall.glowstone_lore": "event-first-fall | ITEM | lore on the crate's 4 glowstone | ITEM 3: Hatchery chute lamps. 4 of 10.",
   "orespawn_integrations.first_fall.item5_slip": "event-first-fall | ITEM | lore on the twin's slip (ITEM 5) | ITEM 5: 1 small egg, misfiled. It was me",
   "orespawn_integrations.first_fall.item6_notice": "event-first-fall | ITEM | lore on the Back-Dated crate's notice (ITEM 6) | ITEM 6: one notice. The recipes have bee",
-  "orespawn_integrations.odete_campo.name": "npc-odete-de-campo | CHAT | her name before her chat lines (fresh) | Odete",
+  "orespawn_integrations.odete_campo.name": "npc-odete-de-campo | CHAT | her name before her chat lines (the card's name) | Field Odete",
   "orespawn_integrations.odete_campo.greeting.morning": "npc-odete-de-campo | DIALOG | greeting, cc_turno 0 | Good morning. This fall is not in the sy",
   "orespawn_integrations.odete_campo.greeting.afternoon": "npc-odete-de-campo | DIALOG | greeting, cc_turno 1 | Good afternoon. This fall is not in the ",
   "orespawn_integrations.odete_campo.greeting.evening": "npc-odete-de-campo | DIALOG | greeting, cc_turno 2 | Good evening. This fall is not in the sy",

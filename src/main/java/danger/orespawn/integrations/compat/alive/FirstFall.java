@@ -275,6 +275,10 @@ final class FirstFall {
         if (backDated) {
             items.add(withLore(new ItemStack(Items.PAPER), "item6_notice"));
             items.add(FirstHourUtil.stack("orespawn_integrations:hatchling_shell", 1));
+            if (player != null) {
+                // Shelf 9's join handler leaves a veteran's Eggshell to this crate; it is theirs now.
+                danger.orespawn.integrations.story.shelf9.Eggshell.markGiven(player);
+            }
         }
         int slot = 0;
         for (ItemStack stack : items) {

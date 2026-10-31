@@ -116,7 +116,8 @@ KEYS = [
      "ITEM 6: um aviso. As receitas foram devolvidas. O resto, não."),
 
     # The Field Odete
-    (O + "name", "npc-odete-de-campo", "CHAT", "her name before her chat lines (fresh)", "Odete", "Odete"),
+    (O + "name", "npc-odete-de-campo", "CHAT", "her name before her chat lines (the card's name)", "Field Odete",
+     "Odete de Campo"),
     (O + "greeting.morning", "npc-odete-de-campo", "DIALOG", "greeting, cc_turno 0",
      "Good morning. This fall is not in the system. Neither is the applicant. Let's fix both.",
      "Bom dia. Esta queda não consta no sistema. O(a) requerente também não. Vamos regularizar as duas."),
