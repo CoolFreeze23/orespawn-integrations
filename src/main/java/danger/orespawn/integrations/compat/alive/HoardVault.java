@@ -179,11 +179,12 @@ public final class HoardVault {
 
     private static List<ItemStack> roll(ServerLevel level, BlockPos pos, ResourceKey<LootTable> key, ServerPlayer centre) {
         LootTable table = level.getServer().reloadableRegistries().getLootTable(key);
-        LootParams.Builder params = new LootParams.Builder(level).withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos));
-        if (centre != null) {
-            params.withParameter(LootContextParams.THIS_ENTITY, centre);
-        }
-        return table.getRandomItems(params.create(LootContextParamSets.GIFT));
+        // A chest's parameters (the vault's spot, its centre player when there is one): the gift set demands an entity,
+        // and a vault whose player has gone offline before the landing has none, which threw and left it empty.
+        return table.getRandomItems(new LootParams.Builder(level)
+                .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
+                .withOptionalParameter(LootContextParams.THIS_ENTITY, centre)
+                .create(LootContextParamSets.CHEST));
     }
 
     /** The Saci's stash's first item with its Second-hand line, taken from the stash; empty when there is none. */
