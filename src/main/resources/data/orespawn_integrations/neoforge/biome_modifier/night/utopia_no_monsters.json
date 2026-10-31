@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "neoforge:remove_spawns",
+  "biomes": "orespawn:utopia_plains",
+  "entity_types": [
+    "minecraft:zombie",
+    "minecraft:skeleton",
+    "minecraft:creeper",
+    "minecraft:spider",
+    "minecraft:enderman",
+    "minecraft:witch",
+    "minecraft:slime"
+  ]
+}
