@@ -29,7 +29,7 @@ ROWS = [
     (O + "que_sistema", "npc-odetes", "CHAT", "answer to What system? (line 13)", "The Ledger. It tore lengthwise. Next!",
      "O Livro-Razão. Rasgou no comprido. Próximo!"),
     (O + "averbado", "system-corrections", "CHAT", "a scrap registered (line 15)",
-     "Registered. One slip now; the copy's out tomorrow. Next!", "Averbado. Uma guia agora; a cópia sai amanhã. Próximo!"),
+     "Registered. One slip now; the copy's out tomorrow. Next!", "Averbado. Uma guia agora; a segunda via sai amanhã. Próximo!"),
     (O + "segunda_via", "system-corrections", "CHAT", "a copy collected (line 16)",
      "Your copy, checked by p.p. B. See? Tomorrow always comes.", "Segunda via, conferida por p.p. B. Viu? Amanhã sempre chega."),
     (O + "cedo", "system-corrections", "CHAT", "the copy asked for too early (line 17)",
