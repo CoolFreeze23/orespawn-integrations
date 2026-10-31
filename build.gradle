@@ -89,7 +89,7 @@ tasks.withType(ProcessResources).configureEach {
     }
 }
 
-// The Works Schedule's release check (system-cronograma-de-obras): docs/effort.csv, generated from the cards'
+// The Works Schedule's release check (system-cronograma-de-obras): docs/effort.csv, written from the cards'
 // effort clauses by tools/gen_effort_csv.py, holds one row per card and release. A Base milestone (0.10.0 to 0.10.3)
 // may carry at most 20 Core points, a themed slice at most 16 Strong and Stretch points (D 0, S 1, M 2, L 4); OI rows
 // only, since the companion projects cap their own. A Strong or Stretch part with points in the Base breaks the ship

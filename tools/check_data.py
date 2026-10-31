@@ -1,6 +1,7 @@
 """Static check of the mod's data: every JSON parses, every id resolves, every translate key has its lang line.
 
-  python -I tools/check_data.py [--atlas <crazycraft-world-design-claude/atlas/data>] [--verbose]
+  python -I tools/check_data.py [--atlas <the design atlas's data folder>] [--verbose]
+(without --atlas it reads the CC_DESIGN_ATLAS environment variable)
 
 What it reads:
   - every *.json under src/main/resources (parse check), and every data/*/function/**/*.mcfunction;
@@ -25,6 +26,7 @@ book) must be in a _lang_fragments/0.10.0/*.keys.json or already shipped in asse
 Exit 1 on any problem.
 """
 import json
+import os
 import re
 import sys
 import zipfile
@@ -354,9 +356,10 @@ class Checker:
 
 
 def main(argv):
-    atlas = Path(r"C:\Homework\Sessions\Japan\crazycraft-world-design-claude\atlas\data")
-    if "--atlas" in argv:
-        atlas = Path(argv[argv.index("--atlas") + 1])
+    atlas = Path(argv[argv.index("--atlas") + 1]) if "--atlas" in argv else Path(os.environ.get("CC_DESIGN_ATLAS", ""))
+    if not (atlas / "registry_dump.json").is_file():
+        print("check_data: give the design atlas's data folder with --atlas or CC_DESIGN_ATLAS")
+        return 2
     checker = Checker(Ids(atlas))
     checker.run()
     for p in checker.problems:

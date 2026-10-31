@@ -46,8 +46,8 @@ class ShelfNineDataTest {
             "tags/worldgen/structure/shelf9/henge.json",
             "tags/worldgen/structure/shelf9/tower.json",
             "tags/worldgen/structure/shelf9/bar.json");
-    private static final Path DUMP = Path.of(
-            "C:/Homework/Sessions/Japan/crazycraft-world-design-claude/atlas/data/registry_dump.json");
+    /** The design atlas's registry dump, from the CC_DESIGN_ATLAS environment variable; the checks skip without it. */
+    private static final Path DUMP = Path.of(System.getenv().getOrDefault("CC_DESIGN_ATLAS", "."), "registry_dump.json");
     private static final Set<String> OURS = Set.of(
             "orespawn_integrations:hatchling_shell", "orespawn_integrations:ledger_scrap",
             "orespawn_integrations:guia_de_averbacao");

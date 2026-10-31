@@ -19,6 +19,7 @@ Every block id is checked against the pack's registry dump when it is given (def
 """
 import json
 import math
+import os
 import random
 import sys
 from pathlib import Path
@@ -28,7 +29,7 @@ from nbtlib import Byte, Compound, Int, List, String
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "src/main/resources/data/orespawn_integrations/structure/hatching_ground.nbt"
-DUMP = Path("C:/Homework/Sessions/Japan/crazycraft-world-design-claude/atlas/data/registry_dump.json")
+DUMP = Path(os.environ.get("CC_DESIGN_ATLAS", "")) / "registry_dump.json"  # the design atlas's data folder
 DATA_VERSION = 3955
 SX, SY, SZ = 21, 16, 21
 C = 10  # centre column

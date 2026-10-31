@@ -23,7 +23,7 @@ from nbtlib import Byte, Compound, Double, Float, Int, List, String
 
 DATA_VERSION = 3955
 OUT = os.path.join("src", "main", "resources", "data", "orespawn_integrations", "structure", "registro")
-DUMP = r"C:/Homework/Sessions/Japan/crazycraft-world-design-claude/atlas/data/registry_dump.json"
+DUMP = os.path.join(os.environ.get("CC_DESIGN_ATLAS", ""), "registry_dump.json")  # the design atlas's data folder
 
 SIGN_CARTORIO = ["orespawn_integrations.odete.placa.cartorio.%d" % i for i in range(1, 5)]
 SIGN_TRONO = ["orespawn_integrations.odete.placa.trono.%d" % i for i in range(1, 5)]

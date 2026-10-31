@@ -22,7 +22,7 @@
     {
       "type": "patchouli:text",
       "title": "Arena Digs",
-      "text": "Every newly generated Mobzilla Arena floor hides $(thing)four suspicious gravel$() patches. Bring a brush: they surface uranium and titanium nuggets, rubies, bone blocks, trex teeth, and godzilla scales. Full ingots turn up rarely, and once in a blue moon there's a Pigstep disc somebody dropped mid-evacuation."
+      "text": "Every new Mobzilla Arena floor hides $(thing)four suspicious gravel$() patches. Bring a brush: they surface uranium and titanium nuggets, rubies, bone blocks, trex teeth, and godzilla scales. Full ingots turn up rarely, and once in a blue moon there's a Pigstep disc somebody dropped mid-evacuation."
     },
     {
       "type": "patchouli:text",

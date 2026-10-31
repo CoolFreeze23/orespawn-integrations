@@ -23,13 +23,13 @@
       "type": "patchouli:spotlight",
       "item": "orespawn_integrations:mobzilla_vault_key",
       "title": "Mobzilla Vault",
-      "text": "An ominous blue-flame vault sits on the north edge of the arena's magma centerpiece, cycling a hologram of the goods as you walk up. Right-click with the key and it pays you on the spot.$(p)Only newly generated arenas have one, because old arenas predate the security upgrade. Explore fresh chunks."
+      "text": "An ominous blue-flame vault sits on the north edge of the arena's magma centerpiece, cycling a hologram of the goods as you walk up. Right-click with the key and it pays you on the spot.$(p)Only new arenas have one, because old arenas predate the security upgrade. Explore fresh chunks."
     },
     {
       "type": "patchouli:spotlight",
       "item": "orespawn_integrations:kraken_vault_key",
       "title": "Kraken Vault",
-      "text": "The Kraken Lair's vault opens the same way, and its first item never rolls: a guaranteed $(l:orespawn_integrations:modern_wonders/armor_trims)Kraken smithing template$(), plus sea treasure behind it.$(p)Same rule as the arena: freshly generated lairs only."
+      "text": "The Kraken Lair's vault opens the same way, and its first item never rolls: a guaranteed $(l:orespawn_integrations:modern_wonders/armor_trims)Kraken smithing template$(), plus sea treasure behind it.$(p)Same rule as the arena: new lairs only."
     },
     {
       "type": "patchouli:text",

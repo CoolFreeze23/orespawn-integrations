@@ -1,9 +1,10 @@
 """Writes the data group's 0.10.0 files (the First Hour's data lines that no code group owns) and their lang fragments.
 
-  python -I tools/data/first_hour_data.py [--atlas <crazycraft-world-design-claude/atlas/data>]
+  python -I tools/data/first_hour_data.py [--atlas <the design atlas's data folder>]
+(without --atlas it reads the CC_DESIGN_ATLAS environment variable)
 
 Every file this script writes is listed in its part below, so a part can be rebuilt on its own and the output stays the
-same run to run. The registry dump is read only for the generated tags (the Base decor tag's mod families and the
+same run to run. The registry dump is read only for the tags this script writes (the Base decor tag's mod families and the
 Unrecorded's spawn list); every other id is written out here by hand and checked by tools/check_data.py.
 
 Parts (cards in bible/cards):
@@ -19,6 +20,7 @@ Parts (cards in bible/cards):
 """
 import itertools
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -1000,9 +1002,9 @@ def write_fragments():
 
 
 def main(argv):
-    atlas = Path(r"C:\Homework\Sessions\Japan\crazycraft-world-design-claude\atlas\data")
-    if "--atlas" in argv:
-        atlas = Path(argv[argv.index("--atlas") + 1])
+    atlas = Path(argv[argv.index("--atlas") + 1]) if "--atlas" in argv else Path(os.environ.get("CC_DESIGN_ATLAS", ""))
+    if not (atlas / "registry_dump.json").is_file():
+        sys.exit("first_hour_data: give the design atlas's data folder with --atlas or CC_DESIGN_ATLAS")
     part_twin()
     part_canopy()
     part_tree()

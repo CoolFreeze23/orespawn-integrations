@@ -15,6 +15,7 @@ and _lang_fragments/0.10.0/world.{keys,en_us,pt_br}.json.
 The default atlas path is the lore folder's; the script never writes there.
 """
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -22,8 +23,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "src" / "main" / "resources" / "data" / "orespawn_integrations"
 FRAG = ROOT / "_lang_fragments" / "0.10.0"
-ATLAS = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(
-    "C:/Homework/Sessions/Japan/crazycraft-world-design-claude/atlas/data")
+ATLAS = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(os.environ.get("CC_DESIGN_ATLAS", ""))
 CARD = {"region": "system-region-names", "sight": "system-sightings", "ante": "structure-chaos-antechamber",
         "colony": "item-court-post-and-doors", "larder": "item-the-larder", "shelf9": "structure-hatching-ground"}
 
