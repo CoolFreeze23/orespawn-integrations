@@ -330,7 +330,11 @@ public final class ChaosTests {
         helper.succeed();
     }
 
-    /** Card test (4): a Knight who joined this game day rolls the Squire row (grace on): a part, never a whole egg. */
+    /**
+     * Card test (4): a Knight who joined this game day rolls the Squire row (grace on): a part, never a whole egg. The
+     * Squire row keeps ly's full traps, and ly's water drop lifts the opener 250 blocks, so the Knight stands back by
+     * the casket before each roll, as every opener does, and every roll must read the grace.
+     */
     @GameTest(template = "empty8")
     public static void newKnightInGrace(GameTestHelper helper) {
         if (!Needs.mods(helper, "newKnightInGrace", "apotheosis")) {
@@ -344,11 +348,13 @@ public final class ChaosTests {
         award(player, "apotheosis:progression/summit");
         setScore(server, player, CasketCore.OBJ_JOIN_DAY, today(level));
         for (int i = 0; i < 120; i++) {
+            player.teleportTo(at.x, at.y, at.z);
+            player.setDeltaMovement(Vec3.ZERO);
             run(as(marker(level, at)), "function lucky_blocks:random/random");
             clear(level, at);
+            int grace = score(server, "#oi_grace", CasketCore.OBJ_WORK);
+            helper.assertTrue(grace == 1, "a Knight who joined today is not in grace (roll " + (i + 1) + ")");
         }
-        int grace = score(server, "#oi_grace", CasketCore.OBJ_WORK);
-        helper.assertTrue(grace == 1, "a Knight who joined today is not in grace");
         helper.assertTrue(score(server, "#oi_whole", CasketCore.OBJ_WORK) == 0, "a whole egg during grace");
         helper.assertTrue(score(server, "#oi_refusals", CasketCore.OBJ_WORK) == 0, "a Great Refusal during grace");
         helper.succeed();
