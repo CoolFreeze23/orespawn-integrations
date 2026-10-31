@@ -62,6 +62,8 @@ public class OreSpawnIntegrations {
             // firsthour:
             // world:
             // registry:
+            {"orespawn_integrations", "danger.orespawn.integrations.story.registry.RegistryCore"},
+            {"customnpcs", "danger.orespawn.integrations.story.registry.CartorioOdetes"},
             // chaos:
             // data:
             // JEI / Jade / JourneyMap plugins are discovered via their own
