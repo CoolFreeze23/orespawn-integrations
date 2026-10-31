@@ -2,6 +2,7 @@ package danger.orespawn.integrations.gametest;
 
 import danger.orespawn.integrations.compat.alive.FallSafety;
 import danger.orespawn.integrations.compat.alive.FirstFall;
+import danger.orespawn.integrations.compat.alive.PrincesLetter;
 import danger.orespawn.integrations.story.firsthour.EggLabel;
 import danger.orespawn.integrations.story.firsthour.FallRecord;
 import danger.orespawn.integrations.story.firsthour.FieldOdete;
@@ -180,6 +181,37 @@ public final class FirstHourTests {
         FirstFall.fill(helper.getLevel(), other, null, false);
         helper.assertTrue(((net.minecraft.world.Container) helper.getLevel().getBlockEntity(other))
                 .countItem(net.minecraft.world.item.Items.GLOWSTONE) == 4, "a crate for nobody in particular fills too");
+        helper.succeed();
+    }
+
+    /**
+     * "dropped a letter at my feet": a player under a roof still gets the Summons, which starts its fall just under the
+     * roof instead of landing on it; in the open it starts high above them.
+     */
+    @GameTest(template = "empty8")
+    public static void theLetterFallsUnderARoof(GameTestHelper helper) {
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        BlockPos feet = helper.absolutePos(new BlockPos(3, 1, 3));
+        player.teleportTo(feet.getX() + 0.5, feet.getY(), feet.getZ() + 0.5);
+        ServerLevel level = helper.getLevel();
+        helper.setBlock(new BlockPos(3, 5, 3), Blocks.STONE);
+        PrincesLetter.drop(level, player, feet.getY() + 40.0);
+        List<ItemEntity> letters = level.getEntitiesOfClass(ItemEntity.class,
+                new net.minecraft.world.phys.AABB(feet).inflate(1.0, 60.0, 1.0),
+                e -> e.getItem().is(net.minecraft.world.item.Items.WRITTEN_BOOK));
+        helper.assertTrue(letters.size() == 1, "one Summons dropped");
+        helper.assertTrue(letters.get(0).getY() < feet.getY() + 4.0, "it starts under the roof, not on it");
+        letters.get(0).discard();
+        helper.setBlock(new BlockPos(3, 5, 3), Blocks.AIR);
+        PrincesLetter.drop(level, player, feet.getY() + 40.0);
+        List<ItemEntity> open = level.getEntitiesOfClass(ItemEntity.class,
+                new net.minecraft.world.phys.AABB(feet).inflate(1.0, 60.0, 1.0),
+                e -> e.getItem().is(net.minecraft.world.item.Items.WRITTEN_BOOK));
+        // The test arena has its own ceiling above the template, so "the open" here means: above the removed roof.
+        helper.assertTrue(open.size() == 1 && open.get(0).getY() > feet.getY() + 4.0,
+                "without the roof it starts above where the roof was (at " + (open.isEmpty() ? "none"
+                        : String.format("%.1f", open.get(0).getY() - feet.getY())) + " over the feet)");
+        open.forEach(ItemEntity::discard);
         helper.succeed();
     }
 
