@@ -1,0 +1,55 @@
+{
+    "Id": 705,
+    "ModRev": 18,
+    "Type": 0,
+    "Title": "orespawn_integrations.quest.705.title",
+    "Text": "orespawn_integrations.quest.705.text",
+    "CompleteText": "orespawn_integrations.quest.705.complete",
+    "CompleterNpc": "",
+    "NextQuestId": 706,
+    "QuestCommand": "",
+    "RandomReward": 0b,
+    "RewardExp": 500,
+    "QuestCompletion": 1,
+    "QuestRepeat": 0,
+    "Items": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "orespawn_integrations:mobzilla_vault_key",
+                "count": 1
+            },
+            {
+                "Slot": 1b,
+                "id": "orespawn_integrations:kraken_vault_key",
+                "count": 1
+            }
+        ]
+    },
+    "LeaveItems": 1b,
+    "IgnoreDamage": 0b,
+    "IgnoreNBT": 1b,
+    "Rewards": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "minecraft:diamond",
+                "count": 8
+            }
+        ]
+    },
+    "QuestFactionPoints": {
+    },
+    "QuestMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    }
+}

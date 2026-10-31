@@ -33,7 +33,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -75,7 +74,6 @@ public final class HuntInstaller {
             "quests/Modern Wonders/704.json", "quests/Modern Wonders/705.json", "quests/Modern Wonders/706.json",
             "dialogs/OreSpawn/701.json", "dialogs/Registro/710.json",
     };
-    private static final String[] TEXT_FIELDS = {"Title", "Text", "CompleteText", "DialogTitle", "DialogText"};
     /** The re-keyed kill quests and their targets. */
     private static final Map<String, Integer> KILL_QUESTS = Map.of("orespawn:godzilla", 701, "orespawn:the_queen", 703);
 
@@ -143,26 +141,8 @@ public final class HuntInstaller {
         }
     }
 
-    /** The text fields of a CustomNPCs file, in order: what an operator's edit would change. */
     static List<String> fields(String file) {
-        List<String> out = new ArrayList<>();
-        if (file == null) {
-            return out;
-        }
-        for (String name : TEXT_FIELDS) {
-            String tag = "\"" + name + "\": \"";
-            int i = file.indexOf(tag);
-            while (i >= 0) {
-                int j = i + tag.length();
-                int k = j;
-                while (k < file.length() && file.charAt(k) != '"') {
-                    k += file.charAt(k) == '\\' ? 2 : 1;
-                }
-                out.add(name + "=" + file.substring(j, Math.min(k, file.length())).replace("\r", ""));
-                i = file.indexOf(tag, k);
-            }
-        }
-        return out;
+        return CnpcText.fields(file);
     }
 
     private static String resource(String path) throws java.io.IOException {
