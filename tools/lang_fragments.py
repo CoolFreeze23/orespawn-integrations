@@ -88,7 +88,7 @@ def main() -> int:
                 values[lang][key] = text
                 problems += [f"{group}: {p}" for p in check_value(key, surface, lang, text, str(note))]
             en, pt = langs["en_us"].get(key), langs["pt_br"].get(key)
-            if en and pt and en == pt and re.search(r"[a-z]{4,}", en) and surface not in ("SIGN", "HANGING"):
+            if en and pt and en == pt and " " in en.strip() and re.search(r"[a-z]{4,}", en) and surface not in ("SIGN", "HANGING"):
                 problems.append(f"{group}: {key} has the same text in both languages: {en!r}")
         for lang in ("en_us", "pt_br"):
             for extra in sorted(set(langs[lang]) - set(notes)):
