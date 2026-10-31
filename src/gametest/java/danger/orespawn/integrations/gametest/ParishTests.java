@@ -252,6 +252,17 @@ public final class ParishTests {
         var arcas = board.getObjective(StoneRecords.ARCAS);
         helper.assertTrue(arcas != null && board.getPlayerScoreInfo(marker, arcas) != null
                 && board.getPlayerScoreInfo(marker, arcas).value() == 1, "cc_arcas didn't count the swap");
+        // Rolls 1-4 pay a Distant Lands sapling or Brazilian Delight seeds, roll 6 a Brasil e Coisas capybara: on a jar
+        // set without the rolled return's mod (the dev run's) that item cannot exist, so only that roll is skipped.
+        var lucky = board.getObjective("cc_lucky");
+        var pickInfo = lucky == null ? null
+                : board.getPlayerScoreInfo(net.minecraft.world.scores.ScoreHolder.forNameOnly("#oi_pick"), lucky);
+        helper.assertTrue(pickInfo != null && pickInfo.value() >= 1 && pickInfo.value() <= 6, "no yard roll");
+        int pick = pickInfo.value();
+        String needs = pick <= 3 ? "distantlandsmc" : pick == 4 ? "braziliandelight" : pick == 6 ? "brasilcoisas" : null;
+        if (needs != null && !Needs.mods(helper, "aYardTrapPaysAtTheStone roll " + pick, needs)) {
+            return;
+        }
         helper.succeedWhen(() -> helper.assertTrue(!level.getEntities((Entity) null, new AABB(s.pos).inflate(3.0),
                 e -> e instanceof net.minecraft.world.entity.item.ItemEntity
                         || e.getTags().contains("cc_chegada")).isEmpty(), "nothing lies at the stone"));
