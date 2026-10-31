@@ -33,6 +33,7 @@ public final class Freguesia {
         LandsWeek.onDawn("freguesia", StoneDawn::onDawn);
         StoryClock.everySecond("freguesia.noon_bell", StoneDawn::noonBell);
         StoryClock.everySecond("freguesia.market", WednesdayMarket::everySecond);
+        StoryClock.everySecond("freguesia.yard_deeds", YardDeeds::everySecond);
     }
 
     private static void onStarted(ServerStartedEvent event) {

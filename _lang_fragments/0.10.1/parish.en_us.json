@@ -56,5 +56,9 @@
   "orespawn_integrations.freguesia.deed.market": "The market came to %s's place. Word is it was the craftsmanship.",
   "orespawn_integrations.freguesia.deed.newcomer": "The market went to meet the new baby: %s.",
   "advancements.orespawn_integrations.wonder.10.title": "Wednesday Market",
-  "advancements.orespawn_integrations.wonder.10.description": "The market came to your house because it's the nicest one around."
+  "advancements.orespawn_integrations.wonder.10.description": "The market came to your house because it's the nicest one around.",
+  "orespawn_integrations.lucky.yard.opener": "The casket was up to something, but this is somebody's yard.",
+  "orespawn_integrations.lucky.yard.opener_paid": "The Land paid the yard's keeper.",
+  "orespawn_integrations.lucky.yard.capybara": "A capybara has moved in.",
+  "orespawn_integrations.lucky.yard.deed": "Somebody's casket turned into an ipê in %s's yard."
 }

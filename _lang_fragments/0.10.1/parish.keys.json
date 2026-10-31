@@ -56,5 +56,9 @@
   "orespawn_integrations.freguesia.deed.market": "system-freguesia | CHAT | deed log, the host of the Wednesday market; %s the founder (line 22)",
   "orespawn_integrations.freguesia.deed.newcomer": "system-freguesia | CHAT | deed log, a newcomer's first market; %s the newcomer (line 25)",
   "advancements.orespawn_integrations.wonder.10.title": "wonder-wednesday-market | ADV | advancement title (line 1)",
-  "advancements.orespawn_integrations.wonder.10.description": "wonder-wednesday-market | ADV | advancement description (line 2)"
+  "advancements.orespawn_integrations.wonder.10.description": "wonder-wednesday-market | ADV | advancement description (line 2)",
+  "orespawn_integrations.lucky.yard.opener": "system-hoard-caskets | CHAT | Somebody's Yard, to the opener of a swapped casket, first half (line 7; the line is 93 characters, so it shows as two chat lines)",
+  "orespawn_integrations.lucky.yard.opener_paid": "system-hoard-caskets | CHAT | Somebody's Yard, to the opener, second half (line 7)",
+  "orespawn_integrations.lucky.yard.capybara": "system-hoard-caskets | CHAT | Somebody's Yard, roll 6, to the opener (line 8)",
+  "orespawn_integrations.lucky.yard.deed": "system-hoard-caskets | CHAT | deed log, the yard's keeper; %s the founder (line 9)"
 }

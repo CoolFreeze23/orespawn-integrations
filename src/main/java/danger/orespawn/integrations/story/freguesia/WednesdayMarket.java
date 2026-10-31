@@ -39,7 +39,6 @@ import java.util.UUID;
  */
 final class WednesdayMarket {
 
-    static final int WEDNESDAY = 3; // LandsWeek.today: Sunday = 0
     static final int DESPAWN_DELAY = 48000;
     private static final int FIRST_WEEK_DAYS = 7;
     private static final String K = StoneRecords.K;
@@ -63,7 +62,7 @@ final class WednesdayMarket {
 
     /** The Wednesday dawn. */
     static void onDawn(MinecraftServer server) {
-        if (LandsWeek.today(server) != WEDNESDAY || !StoneRecords.enabled()) {
+        if (LandsWeek.today(server) != LandsWeek.WEDNESDAY || !StoneRecords.enabled()) {
             return;
         }
         FreguesiaData data = FreguesiaData.get(server);

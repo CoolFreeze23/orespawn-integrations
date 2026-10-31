@@ -56,5 +56,9 @@
   "orespawn_integrations.freguesia.deed.market": "A feira veio pra casa de %s. Dizem que foi pelo capricho.",
   "orespawn_integrations.freguesia.deed.newcomer": "A feira foi conhecer o nenê novo: %s.",
   "advancements.orespawn_integrations.wonder.10.title": "Quarta de Feira",
-  "advancements.orespawn_integrations.wonder.10.description": "A feira veio pra sua casa porque é a mais caprichada da região."
+  "advancements.orespawn_integrations.wonder.10.description": "A feira veio pra sua casa porque é a mais caprichada da região.",
+  "orespawn_integrations.lucky.yard.opener": "A arca ia aprontar, mas aqui é quintal de alguém.",
+  "orespawn_integrations.lucky.yard.opener_paid": "A Terra devolveu pro dono.",
+  "orespawn_integrations.lucky.yard.capybara": "Uma capivara se mudou pra cá.",
+  "orespawn_integrations.lucky.yard.deed": "A arca da figura virou ipê no quintal de %s."
 }
