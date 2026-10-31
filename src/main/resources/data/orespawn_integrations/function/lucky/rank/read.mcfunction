@@ -11,7 +11,7 @@ scoreboard players set #oi_shell cc_lucky 0
 execute if score @p[distance=..6] cc_shell_casket matches 1.. run scoreboard players set #oi_shell cc_lucky 1
 execute if score #oi_shell cc_lucky matches 1 run scoreboard players reset @p[distance=..6] cc_shell_casket
 
-execute if score #oi_shell cc_lucky matches 0 if entity @p[distance=..6,advancements={apotheosis:progression/summit=true}] run scoreboard players set #oi_rank cc_lucky 3
+execute unless score #oi_shell cc_lucky matches 1.. if entity @p[distance=..6,advancements={apotheosis:progression/summit=true}] run scoreboard players set #oi_rank cc_lucky 3
 
 # A Knight still in their Hatchling grace (first join under three game days ago) rolls the Squire row.
 execute if score #oi_rank cc_lucky matches 2.. run function orespawn_integrations:lucky/grace
