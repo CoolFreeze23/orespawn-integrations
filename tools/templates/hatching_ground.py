@@ -100,6 +100,9 @@ def build():
     put(6, 1, 11, ("minecraft:hay_block", {"axis": "y"}))  # the empty nest
     put(7, 2, 14, ("minecraft:glow_lichen", {"up": "true", "down": "false", "north": "false", "south": "false",
                                              "east": "false", "west": "false", "waterlogged": "false"}))  # keeps it dark-free
+    # The label hangs on a vanilla bone block: rechiseled's cracked bone reads as air where Rechiseled is missing, and
+    # a wall sign with nothing behind it drops at placement. Bone, not calcite, under y 5 (the wear rule).
+    put(6, 2, 10, ("minecraft:bone_block", {"axis": "y"}))
     wall_sign(6, 2, 11, "south", "shelf10", [KEY + "shelf10.%d" % i for i in range(1, 5)])
 
     # The shell floor (y 3): a disc of cracked bone; one cracked panel over the crawlspace is a ghost block.
@@ -135,6 +138,9 @@ def build():
         for y in (4, 5, 6):
             for z in (16, 17):
                 put(x, y, z, AIR)
+    # Each hangs on a calcite block of the wall, never a cracked one, for the same reason as the Shelf 10 label.
+    put(10, 7, 17, CALCITE)
+    put(11, 5, 17, CALCITE)
     wall_sign(10, 7, 18, "south", "door", [KEY + "door.%d" % i for i in range(1, 4)])
     wall_sign(11, 5, 18, "south", "batch", [KEY + "batch.%d" % i for i in range(1, 5)])
 
@@ -173,10 +179,11 @@ def build():
                                            "waterlogged": "false"}))
 
     # Outside: the Four Ways' signs, the seat by the door, the Gallery's eight empty plinths, the shard ring.
-    standing_sign(10, 4, 1, 8, "ways_n")
-    standing_sign(19, 4, 10, 12, "ways_e")
-    standing_sign(10, 4, 19, 0, "ways_s")
-    standing_sign(1, 4, 10, 4, "ways_w")
+    # The Four Ways' posts stand outside the floor, where y 3 is the world's own; each gets its own block of dirt (as the
+    # placer props up the ring), so a post over a dip or a cave mouth does not drop at placement.
+    for x, z, rotation, side in ((10, 1, 8, "n"), (19, 10, 12, "e"), (10, 19, 0, "s"), (1, 10, 4, "w")):
+        put(x, GROUND, z, ("minecraft:dirt", {}))
+        standing_sign(x, 4, z, rotation, "ways_" + side)
     put(13, 4, 18, ("bibliocraft:white_oak_seat", {}))
     plinths = [(0, 20), (2, 20), (4, 20), (6, 20), (0, 12), (0, 14), (0, 16), (0, 18)]
     for x, z in plinths:

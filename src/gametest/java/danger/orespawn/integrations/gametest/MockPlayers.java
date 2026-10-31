@@ -17,7 +17,8 @@ import java.util.UUID;
  * mock connection then takes every mod's payloads. Without it, the first mod that sends a player data at login (Apothic
  * Attributes' config, Neo Origins' sync) throws "may not be sent to the client" and fails the test before it starts.
  * Unlike vanilla's, this player is in survival, as the players these tests describe are: in creative, using a scrap
- * would never spend it.
+ * would never spend it. Each one also has a name of its own: scores are kept by name, so under vanilla's shared
+ * "test-mock-player" one test's cc_gemeo or cc_ovo_semana was every later test's too.
  */
 final class MockPlayers {
 
@@ -25,8 +26,9 @@ final class MockPlayers {
     }
 
     static ServerPlayer inLevel(GameTestHelper helper) {
+        UUID id = UUID.randomUUID();
         CommonListenerCookie cookie = CommonListenerCookie.createInitial(
-                new GameProfile(UUID.randomUUID(), "test-mock-player"), false);
+                new GameProfile(id, "mock-" + id.toString().substring(0, 8)), false);
         ServerPlayer player = new ServerPlayer(helper.getLevel().getServer(), helper.getLevel(), cookie.gameProfile(),
                 cookie.clientInformation()) {
             @Override
