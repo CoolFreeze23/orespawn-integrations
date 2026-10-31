@@ -25,8 +25,8 @@ public final class ScrapCaps {
 
     /** The capped sources. */
     public enum Source {
-        KITE("cc_scrap_kite", 10),
-        NOTEBOOK("cc_scrap_notebook", 8);
+        KITE("cc_scrap_kite", ScrapCapRules.KITE_CAP),
+        NOTEBOOK("cc_scrap_notebook", ScrapCapRules.NOTEBOOK_CAP);
 
         public final String objective;
         public final int cap;
@@ -37,23 +37,11 @@ public final class ScrapCaps {
         }
     }
 
-    /** Stamps the Field Notebook asks per scrap at the hand-in. */
-    public static final int STAMPS_PER_SCRAP = 5;
-
     private ScrapCaps() {
     }
 
-    /** How many of {@code wanted} scraps a source may still pay, given {@code paid} so far and its {@code cap}. */
     public static int allowed(int paid, int cap, int wanted) {
-        if (wanted <= 0) {
-            return 0;
-        }
-        return Math.max(0, Math.min(wanted, cap - Math.max(0, paid)));
-    }
-
-    /** Scraps due for a notebook hand-in of {@code stamps} stamps: one per five, under the notebook cap. */
-    public static int notebookDue(int stamps, int paid) {
-        return allowed(paid, Source.NOTEBOOK.cap, Math.max(0, stamps) / STAMPS_PER_SCRAP);
+        return ScrapCapRules.allowed(paid, cap, wanted);
     }
 
     public static Item scrapItem() {
