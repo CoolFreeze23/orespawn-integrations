@@ -268,4 +268,36 @@ public final class RanksTests {
         }
         helper.succeed();
     }
+
+    // --- npc-mestre ---
+
+    /**
+     * The Mestre's queue: with P09 used, the first fresh Mestre gives the Worn Notebook (and P10 is marked), the next the
+     * scrap, the next "except the Land"; a diamond to a player never in the Twilight plays the pond line; no second
+     * notebook. R18 and Wonder 6 come with the first gift.
+     */
+    @GameTest(template = "empty8")
+    public static void mestreQueue(GameTestHelper helper) {
+        ServerPlayer ana = fresh(helper);
+        ana.setData(danger.orespawn.integrations.story.land.MestreGiftHook.MESTRE_BITS.get(), 0);
+        danger.orespawn.integrations.story.firsthour.TicketState s = danger.orespawn.integrations.story.firsthour.TicketState.fresh();
+        for (int p = 1; p <= 9; p++) {
+            s.markHanded(p);
+        }
+        s.step = 9;
+        ana.setData(danger.orespawn.integrations.story.firsthour.FirstHourData.FIRST_HOUR.get(), s);
+        boolean ars = FirstHourUtil.item("ars_nouveau:worn_notebook") != null;
+        var thing = danger.orespawn.integrations.story.land.MestreGiftHook.Gift.THING;
+        if (ars) {
+            helper.assertTrue("notebook".equals(danger.orespawn.integrations.story.land.MestreGiftHook.gifted(ana, thing)), "notebook first");
+            helper.assertTrue(s.handed(10), "P10 marked handed");
+        }
+        helper.assertTrue("scrap".equals(danger.orespawn.integrations.story.land.MestreGiftHook.gifted(ana, thing)), "then the scrap");
+        helper.assertTrue("except_land".equals(danger.orespawn.integrations.story.land.MestreGiftHook.gifted(ana, thing)), "then the Land");
+        String next = danger.orespawn.integrations.story.land.MestreGiftHook.gifted(ana,
+                danger.orespawn.integrations.story.land.MestreGiftHook.Gift.DIAMOND);
+        helper.assertTrue(next.equals("diamond_door") || next.startsWith("origin."), "the pond line (or a group line)");
+        helper.assertTrue(done(ana, "orespawn_integrations:livro/r18"), "R18 at the first gift");
+        helper.succeed();
+    }
 }
