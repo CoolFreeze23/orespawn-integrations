@@ -30,6 +30,7 @@ public final class WeekCore {
         CONDITIONS.register(modBus);
         WeekData.register(modBus);
         LandsWeek.init();
+        Almanac.init();
         FirstWeek.init();
         NeoForge.EVENT_BUS.addListener(ServerLedger::onServerTick);
         NeoForge.EVENT_BUS.addListener(ServerLedger::onServerStopped);
