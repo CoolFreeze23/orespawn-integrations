@@ -15,6 +15,8 @@ public final class WeekState {
     /** Bit 0: the "explained tomorrow" line was shown; bit 1: the dusk cry's first-heard advancement was granted. */
     public static final int FLAG_DEFERRED_SHOWN = 1;
     public static final int FLAG_FIRST_CRY = 2;
+    /** Bit 2: Seu Zé's R18 line at the first Saturday reading heard. */
+    public static final int FLAG_R18 = 4;
 
     /** The Land's day whose weekday line this player saw. */
     public int lineDay = UNSET;

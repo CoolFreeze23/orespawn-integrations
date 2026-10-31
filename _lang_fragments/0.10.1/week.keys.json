@@ -13,6 +13,8 @@
   "orespawn_integrations.almanaque.reason.taken": "system-almanac | CHAT | the Fall's reason argument when another world event holds the night (no card line)",
   "orespawn_integrations.almanaque.reason.thursday": "system-almanac | CHAT | the Fall's reason argument (line 10)",
   "orespawn_integrations.senha.explainer_deferred": "system-senha-da-primeira-hora | ACTIONBAR | a second first-time explainer the same Land's day (once)",
+  "orespawn_integrations.seu_ze.r18": "npc-seu-ze | CHAT | R18, at a player's first Saturday reading (line 14)",
+  "orespawn_integrations.seu_ze.says": "npc-seu-ze | CHAT | Saturday reading, one line from the counter (arg: the line)",
   "orespawn_integrations.week.cc.almanac.forced": "system-almanac | CHAT | /cc almanac force (operators; arg: the event)",
   "orespawn_integrations.week.cc.almanac.show": "system-almanac | CHAT | /cc almanac show and tomorrow (operators; args: day, folklore, dish, dream, needle, Fall draw, tonight)",
   "orespawn_integrations.week.cc.dawn": "system-lands-week | CHAT | /cc week dawn (operators; arg: the new Land's day)",
