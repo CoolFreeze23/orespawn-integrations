@@ -61,6 +61,7 @@ public class OreSpawnIntegrations {
             // shelf9:
             // firsthour:
             {"orespawn_integrations", "danger.orespawn.integrations.story.firsthour.FirstHour"},
+            {"neoorigins", "danger.orespawn.integrations.story.firsthour.EtiquetaHandler"},
             // world:
             // registry:
             // chaos:

@@ -1,0 +1,84 @@
+{
+  "_comment": "Groups for the 'where do you come from?' question, in this order. An origin goes in the first group that lists it (or names its namespace); anything no group names lands in Others. Names and descriptions are lang keys originawakening.category.<id> and originawakening.category.<id>.desc. A resource pack can replace this file.",
+  "categories": [
+    {
+      "id": "classic",
+      "icon": "minecraft:ender_pearl",
+      "color": "#E8D9A8",
+      "origins": [
+        "neoorigins:human", "neoorigins:merling", "neoorigins:avian", "neoorigins:blazeling", "neoorigins:elytrian",
+        "neoorigins:enderian", "neoorigins:arachnid", "neoorigins:shulk", "neoorigins:phantom", "neoorigins:feline"
+      ]
+    },
+    {
+      "id": "crazycraft",
+      "icon": "orespawn:ingot_uranium",
+      "color": "#CAE003",
+      "origins": [
+        "orespawn_integrations:antling", "orespawn_integrations:raptor", "orespawn_integrations:kraken_spawn",
+        "orespawn_integrations:royal_blood", "orespawn_integrations:luna_moth", "orespawn_integrations:fairy",
+        "orespawn_integrations:kyuubi", "orespawn_integrations:gamma_metroid", "orespawn_integrations:uranium_born",
+        "orespawn_integrations:time_lord", "orespawn_integrations:beaver"
+      ]
+    },
+    {
+      "id": "brazil",
+      "icon": "brazil_legends:cachimbo",
+      "color": "#3FD06A",
+      "origins": [
+        "orespawn_integrations:saci", "orespawn_integrations:curupira", "orespawn_integrations:mula",
+        "orespawn_integrations:lobisomem", "orespawn_integrations:cuca", "orespawn_integrations:mapinguari",
+        "orespawn_integrations:capivara"
+      ]
+    },
+    {
+      "id": "nature",
+      "icon": "minecraft:blue_ice",
+      "color": "#7FD8FF",
+      "origins": [
+        "neoorigins:sylvan", "neoorigins:verdant", "neoorigins:sporeling", "neoorigins:frostborn", "neoorigins:cinderborn",
+        "neoorigins:breeze", "neoorigins:slime", "neoorigins:abyssal", "neoorigins:siren", "neoorigins:strider"
+      ]
+    },
+    {
+      "id": "creatures",
+      "icon": "minecraft:iron_ingot",
+      "color": "#C4CCD6",
+      "origins": [
+        "neoorigins:golem", "neoorigins:stoneguard", "neoorigins:automaton", "neoorigins:gorgon", "neoorigins:kraken",
+        "neoorigins:warden", "neoorigins:sculkborn", "neoorigins:piglin", "neoorigins:hiveling", "neoorigins:caveborn",
+        "neoorigins:dwarf", "neoorigins:tiny", "neoorigins:inchling", "neoorigins:enderite"
+      ]
+    },
+    {
+      "id": "dragons",
+      "icon": "minecraft:dragon_breath",
+      "color": "#B866FF",
+      "origins": ["neoorigins:draconic", "neoorigins:cave_dragon", "neoorigins:forest_dragon", "neoorigins:sea_dragon"]
+    },
+    {
+      "id": "undead",
+      "icon": "minecraft:soul_lantern",
+      "color": "#6FE3C8",
+      "origins": ["neoorigins:revenant", "neoorigins:wraith", "neoorigins:skeleton", "neoorigins:vampire", "neoorigins:umbral", "neoorigins:voidwalker"]
+    },
+    {
+      "id": "mages",
+      "icon": "minecraft:fire_charge",
+      "color": "#FF9A4D",
+      "origins": [
+        "neoorigins:fire_mage", "neoorigins:water_mage", "neoorigins:earth_mage", "neoorigins:air_mage",
+        "neoorigins:gravity_mage", "neoorigins:darkness_mage", "neoorigins:necromancer", "neoorigins:monster_tamer"
+      ]
+    },
+    {
+      "id": "martial",
+      "icon": "minecraft:diamond_sword",
+      "color": "#FFD66B",
+      "origins": [
+        "neoorigins:sword_immortal", "neoorigins:qi_cultivator", "neoorigins:windwalker", "neoorigins:iron_monk",
+        "neoorigins:golden_body", "neoorigins:asura"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "_comment": "The Egg's Label groups (cc_ogrupo 1-10, the order below; any origin no group lists is 10, Others) and the classes (cc_classe 1-20, the order below). The groups are a copy of Origin Awakening's assets/originawakening/awakening/categories.json, which lives in its client assets where a server cannot read it; the OI build fails when the two differ (OriginGroupsTest). Classes follow Neo Origins' class layer.",
+  "groups": [
+    {
+      "id": "classic",
+      "score": 1,
+      "origins": [
+        "neoorigins:human",
+        "neoorigins:merling",
+        "neoorigins:avian",
+        "neoorigins:blazeling",
+        "neoorigins:elytrian",
+        "neoorigins:enderian",
+        "neoorigins:arachnid",
+        "neoorigins:shulk",
+        "neoorigins:phantom",
+        "neoorigins:feline"
+      ]
+    },
+    {
+      "id": "crazycraft",
+      "score": 2,
+      "origins": [
+        "orespawn_integrations:antling",
+        "orespawn_integrations:raptor",
+        "orespawn_integrations:kraken_spawn",
+        "orespawn_integrations:royal_blood",
+        "orespawn_integrations:luna_moth",
+        "orespawn_integrations:fairy",
+        "orespawn_integrations:kyuubi",
+        "orespawn_integrations:gamma_metroid",
+        "orespawn_integrations:uranium_born",
+        "orespawn_integrations:time_lord",
+        "orespawn_integrations:beaver"
+      ]
+    },
+    {
+      "id": "brazil",
+      "score": 3,
+      "origins": [
+        "orespawn_integrations:saci",
+        "orespawn_integrations:curupira",
+        "orespawn_integrations:mula",
+        "orespawn_integrations:lobisomem",
+        "orespawn_integrations:cuca",
+        "orespawn_integrations:mapinguari",
+        "orespawn_integrations:capivara"
+      ]
+    },
+    {
+      "id": "nature",
+      "score": 4,
+      "origins": [
+        "neoorigins:sylvan",
+        "neoorigins:verdant",
+        "neoorigins:sporeling",
+        "neoorigins:frostborn",
+        "neoorigins:cinderborn",
+        "neoorigins:breeze",
+        "neoorigins:slime",
+        "neoorigins:abyssal",
+        "neoorigins:siren",
+        "neoorigins:strider"
+      ]
+    },
+    {
+      "id": "creatures",
+      "score": 5,
+      "origins": [
+        "neoorigins:golem",
+        "neoorigins:stoneguard",
+        "neoorigins:automaton",
+        "neoorigins:gorgon",
+        "neoorigins:kraken",
+        "neoorigins:warden",
+        "neoorigins:sculkborn",
+        "neoorigins:piglin",
+        "neoorigins:hiveling",
+        "neoorigins:caveborn",
+        "neoorigins:dwarf",
+        "neoorigins:tiny",
+        "neoorigins:inchling",
+        "neoorigins:enderite"
+      ]
+    },
+    {
+      "id": "dragons",
+      "score": 6,
+      "origins": [
+        "neoorigins:draconic",
+        "neoorigins:cave_dragon",
+        "neoorigins:forest_dragon",
+        "neoorigins:sea_dragon"
+      ]
+    },
+    {
+      "id": "undead",
+      "score": 7,
+      "origins": [
+        "neoorigins:revenant",
+        "neoorigins:wraith",
+        "neoorigins:skeleton",
+        "neoorigins:vampire",
+        "neoorigins:umbral",
+        "neoorigins:voidwalker"
+      ]
+    },
+    {
+      "id": "mages",
+      "score": 8,
+      "origins": [
+        "neoorigins:fire_mage",
+        "neoorigins:water_mage",
+        "neoorigins:earth_mage",
+        "neoorigins:air_mage",
+        "neoorigins:gravity_mage",
+        "neoorigins:darkness_mage",
+        "neoorigins:necromancer",
+        "neoorigins:monster_tamer"
+      ]
+    },
+    {
+      "id": "martial",
+      "score": 9,
+      "origins": [
+        "neoorigins:sword_immortal",
+        "neoorigins:qi_cultivator",
+        "neoorigins:windwalker",
+        "neoorigins:iron_monk",
+        "neoorigins:golden_body",
+        "neoorigins:asura"
+      ]
+    },
+    {
+      "id": "others",
+      "score": 10,
+      "origins": []
+    }
+  ],
+  "classes": [
+    "neoorigins:class_warrior",
+    "neoorigins:class_archer",
+    "neoorigins:class_miner",
+    "neoorigins:class_beastmaster",
+    "neoorigins:class_explorer",
+    "neoorigins:class_sentinel",
+    "neoorigins:class_herbalist",
+    "neoorigins:class_scout",
+    "neoorigins:class_berserker",
+    "neoorigins:class_titan",
+    "neoorigins:class_rogue",
+    "neoorigins:class_lumberjack",
+    "neoorigins:class_blacksmith",
+    "neoorigins:class_cook",
+    "neoorigins:class_merchant",
+    "neoorigins:class_cleric",
+    "neoorigins:class_nitwit",
+    "neoorigins:class_fisher",
+    "neoorigins:class_mason",
+    "neoorigins:class_paladin"
+  ]
+}
