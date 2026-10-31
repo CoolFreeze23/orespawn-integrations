@@ -60,6 +60,7 @@ public class OreSpawnIntegrations {
             // The road (0.10.0 on). One block per system group; each class has its own init(IEventBus).
             // shelf9:
             // firsthour:
+            {"orespawn_integrations", "danger.orespawn.integrations.story.firsthour.FirstHour"},
             // world:
             // registry:
             // chaos:
