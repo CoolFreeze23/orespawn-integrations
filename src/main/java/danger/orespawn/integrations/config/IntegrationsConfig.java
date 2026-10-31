@@ -59,6 +59,11 @@ public final class IntegrationsConfig {
     public static final ModConfigSpec.BooleanValue storyAntechamber;
     public static final ModConfigSpec.BooleanValue storyHbmExemptions;
     public static final ModConfigSpec.BooleanValue storyLoanerWeapons; // chaos
+    public static final ModConfigSpec.BooleanValue storyFreguesia; // parish
+    public static final ModConfigSpec.BooleanValue storyMisfile; // parish
+    public static final ModConfigSpec.ConfigValue<java.util.List<? extends Integer>> freguesiaThresholds; // parish
+    public static final ModConfigSpec.ConfigValue<java.util.List<? extends Integer>> freguesiaBuilderKeys; // parish
+    public static final ModConfigSpec.IntValue freguesiaStoneGraceDays; // parish
     public static final ModConfigSpec.IntValue sightingsMinDistance;
     public static final ModConfigSpec.IntValue sightingsScoutDistance;
     public static final ModConfigSpec.IntValue sightingsAutoPins;
@@ -221,6 +226,31 @@ public final class IntegrationsConfig {
                 "A Loaner (the casket's Big Bertha) breaks after 24 swings and can't be refitted. false = a Loaner",
                 "is an ordinary weapon.")
                 .define("loaner_weapons", true);
+        // parish
+        storyFreguesia = builder.comment(
+                "The Freguesia: a Parish Stone at home counts its Manor decor, and the Land moves in by stages (a",
+                "Caramelo, villagers, an Odete, a Town); Wednesday's peddler visits the week's best-kept house.",
+                "false = the stone is a plain block, nothing counts and no peddler is sent.")
+                .define("freguesia", true);
+        storyMisfile = builder.comment(
+                "The Misfile's 0.10.1 half: the canopy's misfiled creatures and strays, the Day's Misfile and the dawn",
+                "release. false = those rows give a casket instead, no day is rolled and nothing is released.")
+                .define("misfile", true);
+        builder.pop();
+
+        // parish
+        builder.comment("The Freguesia's numbers.").push("freguesia");
+        freguesiaThresholds = builder.comment(
+                "Manor standing for the stages Homestead, Hamlet, Parish and Town.")
+                .defineList("thresholds", java.util.List.of(60, 150, 300, 600), () -> 0,
+                        o -> o instanceof Integer i && i >= 0);
+        freguesiaBuilderKeys = builder.comment(
+                "The builder's keys: the standing that opens Parish without a boss kill and Town without a Knight.")
+                .defineList("builder_keys", java.util.List.of(450, 900), () -> 0,
+                        o -> o instanceof Integer i && i >= 0);
+        freguesiaStoneGraceDays = builder.comment(
+                "Game days a fallen Parish Stone's record waits for a signer's new stone before it is filed away.")
+                .defineInRange("stone_grace_days", 30, 1, 3650);
         builder.pop();
 
         builder.comment("Sightings (spyglass) tuning.").push("sightings");

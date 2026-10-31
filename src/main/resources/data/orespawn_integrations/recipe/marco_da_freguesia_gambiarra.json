@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": ["###", "#S#", "###"],
+  "key": {
+    "#": {"item": "minecraft:stick"},
+    "S": {"item": "orespawn_integrations:ledger_scrap"}
+  },
+  "result": {"id": "orespawn_integrations:marco_da_freguesia", "count": 1}
+}

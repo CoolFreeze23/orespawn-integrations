@@ -346,7 +346,7 @@ class Checker:
         for f in sorted(DATA.rglob("*.mcfunction")):
             self.mcfunction(f.relative_to(ROOT).as_posix(), f.read_text(encoding="utf-8"))
         known = set(json.loads(SHIPPED_LANG.read_text(encoding="utf-8")))
-        for kf in FRAG.glob("*.keys.json"):
+        for kf in FRAG.parent.glob("*/*.keys.json"):
             known |= set(json.loads(kf.read_text(encoding="utf-8")))
         for k, where in sorted(self.keys_used.items()):
             if k not in known:

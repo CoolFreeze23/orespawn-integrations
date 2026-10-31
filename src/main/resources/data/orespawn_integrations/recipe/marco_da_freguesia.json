@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {"item": "minecraft:stone_bricks"},
+    {"item": "minecraft:stone_bricks"},
+    {"item": "minecraft:stone_bricks"},
+    {"item": "minecraft:stone_bricks"},
+    {"item": "orespawn_integrations:ledger_scrap"},
+    {"item": "minecraft:oak_sign"}
+  ],
+  "result": {"id": "orespawn_integrations:marco_da_freguesia", "count": 1}
+}

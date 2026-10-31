@@ -1,0 +1,26 @@
+{
+  "parent": "orespawn_integrations:parish/hamlet",
+  "display": {
+    "icon": {
+      "id": "orespawn_integrations:marco_da_freguesia"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.parish.parish.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.parish.parish.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}
