@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "distantlandsmc:blooming_jacaranda_grove",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:lavender_grove",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:pau_brazil_forest",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:yellow_ipe_grove",
+      "required": false
+    }
+  ]
+}

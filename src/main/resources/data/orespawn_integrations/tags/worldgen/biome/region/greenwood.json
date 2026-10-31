@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:is_forest",
+    "minecraft:cherry_grove",
+    {
+      "id": "biomesoplenty:old_growth_woodland",
+      "required": false
+    }
+  ]
+}

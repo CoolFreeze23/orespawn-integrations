@@ -62,6 +62,9 @@ public class OreSpawnIntegrations {
             {"orespawn_integrations", "danger.orespawn.integrations.story.shelf9.ShelfNine"},
             // firsthour:
             // world:
+            {"orespawn_integrations", "danger.orespawn.integrations.world.regions.RegionNames"},
+            {"orespawn_integrations", "danger.orespawn.integrations.world.sightings.Sightings"},
+            {"orespawn", "danger.orespawn.integrations.world.antechamber.Antechamber"},
             // registry:
             // chaos:
             // data:

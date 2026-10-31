@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "biomesoplenty:crag",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:highland",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:jade_cliffs",
+      "required": false
+    },
+    "minecraft:frozen_peaks",
+    "minecraft:grove",
+    "minecraft:jagged_peaks",
+    "minecraft:snowy_slopes",
+    "minecraft:stony_peaks"
+  ]
+}
