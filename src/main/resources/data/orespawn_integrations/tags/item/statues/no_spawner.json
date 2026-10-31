@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn_integrations:mobzilla_statue",
+      "required": false
+    },
+    {
+      "id": "statues:warden_statue",
+      "required": false
+    },
+    {
+      "id": "statues:elder_guardian_statue",
+      "required": false
+    }
+  ]
+}

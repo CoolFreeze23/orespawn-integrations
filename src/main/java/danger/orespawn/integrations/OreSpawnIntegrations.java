@@ -70,6 +70,12 @@ public class OreSpawnIntegrations {
             {"customnpcs", "danger.orespawn.integrations.story.registry.CartorioOdetes"},
             {"orespawn_integrations", "danger.orespawn.integrations.story.registry.LedgerScrapListener"},
             // chaos:
+            {"orespawn_integrations", "danger.orespawn.integrations.story.chaos.CasketCore"},
+            {"orespawn_integrations", "danger.orespawn.integrations.story.chaos.LoanerWeapons"},
+            {"orespawn", "danger.orespawn.integrations.story.chaos.RoyalSeal"},
+            {"orespawn", "danger.orespawn.integrations.story.chaos.BossCageRefusal"},
+            {"apothic_spawners", "danger.orespawn.integrations.story.chaos.BossSpawnerGuard"},
+            {"hbmsntm", "danger.orespawn.integrations.compat.hbm.HazardExemptions"},
             // data:
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
