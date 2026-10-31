@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "neoforge:remove_spawns",
+  "biomes": "orespawn:mining_biome",
+  "entity_types": [
+    "orespawn:ender_knight",
+    "orespawn:ender_reaper",
+    "orespawn:mothra"
+  ]
+}

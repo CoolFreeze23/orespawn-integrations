@@ -178,6 +178,24 @@ public final class DataTests {
     }
 
     /**
+     * The Royal Mines keep the port's harmless ambient visitors, but not its three ambient hostiles (Alvin's call,
+     * REPORT #15): their spawn rule always passes, so as ambient spawns they would ignore light, even in a lit base.
+     */
+    @GameTest(template = "empty8")
+    public static void minesKeepNoAmbientHostiles(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        for (String hostile : new String[]{"orespawn:ender_knight", "orespawn:ender_reaper", "orespawn:mothra"}) {
+            for (MobCategory category : MobCategory.values()) {
+                helper.assertFalse(spawns(level, "orespawn:mining_biome", category, hostile),
+                        hostile + " still spawns in the Royal Mines (" + category + ")");
+            }
+        }
+        helper.assertTrue(spawns(level, "orespawn:mining_biome", MobCategory.AMBIENT, "orespawn:luna_moth"),
+                "the luna moths stay in the Royal Mines");
+        helper.succeed();
+    }
+
+    /**
      * system-night-rebalance: Born in Chaos is gone from the Nether, Twilight and OreSpawn's worlds but keeps Chaos;
      * Utopia spawns no monster; no island spawns in the Islands; the Mestre is out of Twilight.
      */
