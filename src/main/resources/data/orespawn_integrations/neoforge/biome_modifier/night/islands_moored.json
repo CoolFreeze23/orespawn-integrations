@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "neoforge:remove_spawns",
+  "biomes": "orespawn:island_biome",
+  "entity_types": [
+    "orespawn:island",
+    "orespawn:island_too"
+  ]
+}

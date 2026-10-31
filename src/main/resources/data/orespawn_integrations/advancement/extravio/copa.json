@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "token": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:paper",
+            "predicates": {
+              "minecraft:custom_data": "{\"orespawn_integrations:copa\":{}}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "orespawn_integrations:extravio/copa/recebido"
+  }
+}

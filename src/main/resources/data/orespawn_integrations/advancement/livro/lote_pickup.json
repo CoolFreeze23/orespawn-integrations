@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    }
+  ],
+  "criteria": {
+    "lote": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "brasilcoisas:ovinho_vivo_block",
+            "predicates": {
+              "minecraft:custom_data": "{\"orespawn_integrations:lote\":{}}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "orespawn_integrations:wonder/lote_pickup"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "orespawn_integrations:wonder/1",
+  "display": {
+    "icon": {
+      "id": "minecraft:glowstone"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.gambiarra.luz_de_bruxa.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.gambiarra.luz_de_bruxa.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "minecraft:glowstone"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

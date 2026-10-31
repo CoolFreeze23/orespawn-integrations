@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p17.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 17,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p17.text",
+      "title": "orespawn_integrations.caderneta.p17.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/girlfriend_island",
+  "secret": true
+}

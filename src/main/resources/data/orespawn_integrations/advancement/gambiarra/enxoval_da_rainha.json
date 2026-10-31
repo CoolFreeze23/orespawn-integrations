@@ -1,0 +1,36 @@
+{
+  "parent": "orespawn_integrations:wonder/1",
+  "display": {
+    "icon": {
+      "id": "minecraft:bee_nest"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.gambiarra.enxoval_da_rainha.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.gambiarra.enxoval_da_rainha.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "hive": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bee_nest",
+              "minecraft:beehive"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

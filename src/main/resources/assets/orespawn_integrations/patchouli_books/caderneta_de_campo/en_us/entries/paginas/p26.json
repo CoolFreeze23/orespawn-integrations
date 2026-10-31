@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p26.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 26,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p26.text",
+      "title": "orespawn_integrations.caderneta.p26.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/hatching_ground",
+  "secret": true
+}

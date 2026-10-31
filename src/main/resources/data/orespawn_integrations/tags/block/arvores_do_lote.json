@@ -1,0 +1,73 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:acacia_log",
+    "minecraft:birch_log",
+    "minecraft:oak_log",
+    "minecraft:jungle_log",
+    "minecraft:spruce_log",
+    "minecraft:dark_oak_log",
+    "minecraft:mangrove_log",
+    "minecraft:cherry_log",
+    {
+      "id": "biomesoplenty:fir_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:pine_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:maple_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:redwood_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mahogany_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:jacaranda_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:palm_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:willow_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:dead_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:magic_log",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:umbran_log",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:jacaranda_log",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:pau_brasil_log",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:ipe_amarelo_log",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:haru_log",
+      "required": false
+    }
+  ]
+}

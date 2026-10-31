@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p56.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 56,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p56.text",
+      "title": "orespawn_integrations.caderneta.p56.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/dinosaur",
+  "secret": true
+}

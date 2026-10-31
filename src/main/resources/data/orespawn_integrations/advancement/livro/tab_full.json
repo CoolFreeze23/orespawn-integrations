@@ -1,0 +1,8 @@
+{
+  "parent": "orespawn_integrations:wonder/1",
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

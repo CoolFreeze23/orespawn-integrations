@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:wonder/2",
+  "display": {
+    "icon": {
+      "id": "orespawn:red_ant_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.wonder.17.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.wonder.17.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "mines": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:mining"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

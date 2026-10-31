@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p52.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 52,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p52.text",
+      "title": "orespawn_integrations.caderneta.p52.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/prince_from_above",
+  "secret": true
+}

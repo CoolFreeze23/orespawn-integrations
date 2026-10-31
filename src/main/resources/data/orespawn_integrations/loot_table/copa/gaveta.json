@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "decocraft:crt_tv",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "decocraft:globe",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "decocraft:jukebox",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "refurbished_furniture:dark_toaster",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "bibliocraft:typewriter",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersrespite:black_tea",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "culturaldelights:avocado_toast",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cookscollection:lemonade",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

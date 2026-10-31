@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:the_king_part_spawn_block",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:the_queen_part_spawn_block",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "orespawn:godzilla_part_spawn_block",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p63.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 63,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p63.text",
+      "title": "orespawn_integrations.caderneta.p63.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/unrecorded_lord",
+  "secret": true
+}

@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p18.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p18.text",
+      "title": "orespawn_integrations.caderneta.p18.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/mobzilla_arena",
+  "secret": true
+}

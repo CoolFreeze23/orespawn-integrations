@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:red_bed"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.parish.root.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.parish.root.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/bricks.png"
+  },
+  "criteria": {
+    "slept": {
+      "trigger": "minecraft:slept_in_bed"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  }
+}

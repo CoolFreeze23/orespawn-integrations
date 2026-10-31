@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p61.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 61,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p61.text",
+      "title": "orespawn_integrations.caderneta.p61.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/lobisomem",
+  "secret": true
+}

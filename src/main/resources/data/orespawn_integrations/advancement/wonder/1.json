@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    }
+  ],
+  "display": {
+    "icon": {
+      "id": "orespawn_integrations:ledger_scrap"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.wonder.1.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.wonder.1.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/bookshelf.png"
+  },
+  "criteria": {
+    "tamed": {
+      "trigger": "minecraft:tame_animal",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "brasilcoisas:ovinho_vivo"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10,
+    "function": "orespawn_integrations:wonder/grant_r1"
+  }
+}

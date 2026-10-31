@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:stink_bug",
+      "required": false
+    },
+    {
+      "id": "orespawn:mantis",
+      "required": false
+    }
+  ]
+}

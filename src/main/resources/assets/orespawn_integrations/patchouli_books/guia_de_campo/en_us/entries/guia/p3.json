@@ -1,0 +1,23 @@
+{
+  "name": "orespawn_integrations.guia.p3.name",
+  "category": "orespawn_integrations:guia",
+  "icon": "orespawn_integrations:ledger_scrap",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.guia.p3.text.1",
+      "title": "orespawn_integrations.guia.p3.name"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.guia.p3.text.2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.guia.p3.text.3"
+    }
+  ],
+  "advancement": "orespawn_integrations:guia/p03",
+  "secret": true
+}

@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p19.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 19,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p19.text",
+      "title": "orespawn_integrations.caderneta.p19.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/umvuthana_grove",
+  "secret": true
+}

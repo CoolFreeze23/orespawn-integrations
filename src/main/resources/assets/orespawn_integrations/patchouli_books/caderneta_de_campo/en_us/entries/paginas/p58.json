@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p58.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 58,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p58.text",
+      "title": "orespawn_integrations.caderneta.p58.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/sea_beast",
+  "secret": true
+}

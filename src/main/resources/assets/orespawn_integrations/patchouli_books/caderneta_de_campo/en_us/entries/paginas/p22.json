@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p22.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 22,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p22.text",
+      "title": "orespawn_integrations.caderneta.p22.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/bandit_towers",
+  "secret": true
+}

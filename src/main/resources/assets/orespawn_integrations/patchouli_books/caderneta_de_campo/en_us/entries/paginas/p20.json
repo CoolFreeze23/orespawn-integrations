@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p20.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p20.text",
+      "title": "orespawn_integrations.caderneta.p20.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/mountain_tower",
+  "secret": true
+}

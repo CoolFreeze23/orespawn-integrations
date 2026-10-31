@@ -1,0 +1,17 @@
+{
+  "name": "orespawn_integrations.guia.p1.name",
+  "category": "orespawn_integrations:guia",
+  "icon": "minecraft:paper",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.guia.p1.text",
+      "title": "orespawn_integrations.guia.p1.name"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.guia.p1.foot"
+    }
+  ]
+}

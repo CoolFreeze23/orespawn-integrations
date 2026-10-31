@@ -1,0 +1,10 @@
+{
+  "name": "orespawn_integrations.guia.title",
+  "landing_text": "orespawn_integrations.guia.cover",
+  "i18n": true,
+  "use_resource_pack": true,
+  "show_progress": false,
+  "book_texture": "patchouli:textures/gui/book_brown.png",
+  "model": "patchouli:book_brown",
+  "creative_tab": "tools_and_utilities"
+}

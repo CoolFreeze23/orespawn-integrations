@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p37.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 37,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p37.text",
+      "title": "orespawn_integrations.caderneta.p37.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/door_cloud",
+  "secret": true
+}

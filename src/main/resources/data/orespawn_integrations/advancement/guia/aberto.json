@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "patchouli"
+    }
+  ],
+  "criteria": {
+    "opened": {
+      "trigger": "patchouli:open_book",
+      "conditions": {
+        "book": "orespawn_integrations:guia_de_campo"
+      }
+    }
+  },
+  "rewards": {
+    "function": "orespawn_integrations:wonder/grant_r1"
+  }
+}
