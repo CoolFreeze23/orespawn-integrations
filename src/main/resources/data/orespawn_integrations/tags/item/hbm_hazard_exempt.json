@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:green_wool",
+    "minecraft:white_wool",
+    "minecraft:gold_ingot",
+    "minecraft:blaze_powder",
+    "minecraft:gunpowder",
+    "minecraft:pumpkin_pie",
+    "minecraft:tnt",
+    "minecraft:coal"
+  ]
+}

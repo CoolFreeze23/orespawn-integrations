@@ -1,0 +1,45 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:wither",
+    "minecraft:ender_dragon",
+    "minecraft:warden",
+    "minecraft:elder_guardian",
+    {
+      "id": "#c:bosses",
+      "required": false
+    },
+    {
+      "id": "#orespawn_integrations:heavyweights",
+      "required": false
+    },
+    {
+      "id": "orespawn:godzilla",
+      "required": false
+    },
+    {
+      "id": "orespawn:kraken",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_king",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_queen",
+      "required": false
+    },
+    {
+      "id": "orespawn:mothra",
+      "required": false
+    },
+    {
+      "id": "orespawn:kyuubi",
+      "required": false
+    },
+    {
+      "id": "orespawn:alien_boss",
+      "required": false
+    }
+  ]
+}

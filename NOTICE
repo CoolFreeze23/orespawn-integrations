@@ -4,3 +4,7 @@ code and content.
 Some data files here replace or extend files of Minecraft and of other mods (biome effects, loot tables,
 structure pools, tags, advancements and the like). Those changes are ours, but the files they build on keep
 their owners' terms. OreSpawn itself is not included and is not covered by this licence.
+
+Two files replace files of lullaby's Lucky Blocks (mr_ly_luckyblocks, AGPL-3.0-or-later): the casket root function
+data/lucky_blocks/function/random/random.mcfunction and the loot table data/lucky_blocks/loot_table/lucky_block.json.
+Our versions call that pack's own functions by id and copy none of its code.

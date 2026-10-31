@@ -77,6 +77,7 @@
     "orespawn_integrations:royal_shard_scorpion",
     "orespawn_integrations:girlfriend_diary_vol1",
     "orespawn_integrations:girlfriend_caster_tome",
+<<<<<<< HEAD
     "orespawn_integrations:arvore/minecraft/acacia_log",
     "orespawn_integrations:arvore/minecraft/birch_log",
     "orespawn_integrations:arvore/minecraft/oak_log",
@@ -101,5 +102,8 @@
     "orespawn_integrations:arvore/distantlandsmc/ipe_amarelo_log",
     "orespawn_integrations:arvore/distantlandsmc/haru_log",
     "orespawn_integrations:witch_hut_lamps"
+=======
+    "orespawn_integrations:arquivo/crystal_cow"
+>>>>>>> build/0.10.0-chaos
   ]
 }

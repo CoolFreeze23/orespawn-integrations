@@ -1,0 +1,77 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:the_king_part_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_king_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_queen_part_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_queen_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:godzilla_part_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:godzilla_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:hammerhead_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:hercules_beetle_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:kraken_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:kyuubi_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:leon_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:mothra_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:nastysaurus_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:pitch_black_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:basilisk_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cater_killer_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:emperor_scorpion_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:water_dragon_spawn_block",
+      "required": false
+    }
+  ]
+}

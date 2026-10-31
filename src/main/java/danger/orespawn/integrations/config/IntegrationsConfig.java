@@ -58,6 +58,7 @@ public final class IntegrationsConfig {
     public static final ModConfigSpec.BooleanValue storyRegistry;
     public static final ModConfigSpec.BooleanValue storyAntechamber;
     public static final ModConfigSpec.BooleanValue storyHbmExemptions;
+    public static final ModConfigSpec.BooleanValue storyLoanerWeapons; // chaos
     public static final ModConfigSpec.IntValue sightingsMinDistance;
     public static final ModConfigSpec.IntValue sightingsScoutDistance;
     public static final ModConfigSpec.IntValue sightingsAutoPins;
@@ -215,6 +216,11 @@ public final class IntegrationsConfig {
                 "HBM's hazards skip a short list of vanilla items (green and white wool, coal, gold ingot and a few",
                 "more, tag orespawn_integrations:hbm_hazard_exempt). false = the call is skipped.")
                 .define("hbm_exemptions", true);
+        // chaos
+        storyLoanerWeapons = builder.comment(
+                "A Loaner (the casket's Big Bertha) breaks after 24 swings and can't be refitted. false = a Loaner",
+                "is an ordinary weapon.")
+                .define("loaner_weapons", true);
         builder.pop();
 
         builder.comment("Sightings (spyglass) tuning.").push("sightings");

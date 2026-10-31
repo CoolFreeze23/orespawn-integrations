@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "statues"
+    }
+  ],
+  "type": "statues:upgrade",
+  "catalysts": [
+    {
+      "item": "minecraft:echo_shard"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:ender_pearls"
+    },
+    {
+      "tag": "minecraft:soul_fire_base_blocks"
+    }
+  ],
+  "center": {
+    "type": "neoforge:difference",
+    "base": {
+      "tag": "statues:statues/upgradeable"
+    },
+    "subtracted": {
+      "tag": "orespawn_integrations:statues/no_spawner"
+    }
+  },
+  "upgradeType": "spawner"
+}

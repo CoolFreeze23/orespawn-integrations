@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "railcraft"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "hbmsntm"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    },
+    {
+      "type": "orespawn_integrations:thread_enabled",
+      "thread": "uranium"
+    }
+  ],
+  "type": "railcraft:crusher",
+  "ingredient": {
+    "item": "hbmsntm:ingot_uranium"
+  },
+  "outputs": [
+    {
+      "count": 3,
+      "probability": 1.0,
+      "result": {
+        "item": "orespawn:uranium_nugget"
+      }
+    },
+    {
+      "probability": 1.0,
+      "result": {
+        "item": "railcraft:sulfur_dust"
+      }
+    }
+  ]
+}

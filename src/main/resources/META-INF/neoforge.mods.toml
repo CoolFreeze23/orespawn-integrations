@@ -95,3 +95,19 @@ type="optional"
 versionRange="[1.3.1,)"
 ordering="NONE"
 side="BOTH"
+
+# The Royal Casket's root and loot table override lullaby's Lucky Blocks' own (system-hoard-caskets), and the statue
+# table's spawner upgrade overrides Statues' recipe (npc-mobzilla). Ordering AFTER makes our copies load later, so they
+# win. No versionRange on purpose: an absent range is unbounded, so ly's version string "1-v1.3.3" never fails the
+# optional check, and with either mod absent no edge is added at all.
+[[dependencies.${mod_id}]]
+modId="mr_ly_luckyblocks"
+type="optional"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="statues"
+type="optional"
+ordering="AFTER"
+side="BOTH"

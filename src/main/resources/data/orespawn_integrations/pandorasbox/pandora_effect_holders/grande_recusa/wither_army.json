@@ -1,0 +1,69 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pandorasbox"
+    }
+  ],
+  "tooltip": {
+    "translate": "effect_holder.orespawn_integrations.grande_recusa.wither_army",
+    "fallback": "The Great Refusal: the Wither Army"
+  },
+  "effect_creator": {
+    "entities": [
+      {
+        "entity": "minecraft:wither",
+        "min_count": 1,
+        "max_count": 1,
+        "weight": 3.0
+      },
+      {
+        "entity": "minecraft:wither_skeleton",
+        "min_count": 3,
+        "max_count": 6,
+        "weight": 10.0
+      },
+      {
+        "entity": "minecraft:blaze",
+        "min_count": 2,
+        "max_count": 4,
+        "weight": 4.0
+      }
+    ],
+    "value_throw": {
+      "throw_strength_horizontal": {
+        "min": 0.1,
+        "max": 0.4,
+        "type": "minecraft:linear"
+      },
+      "throw_strength_vertical": {
+        "min": 0.2,
+        "max": 1.0,
+        "type": "minecraft:linear"
+      }
+    },
+    "value_spawn": {
+      "spawn_range": {
+        "min": 8.0,
+        "max": 30.0,
+        "type": "minecraft:linear"
+      },
+      "spawn_shift": {
+        "value": 0.0,
+        "type": "minecraft:constant"
+      }
+    },
+    "groups": {
+      "min": 2,
+      "max": 3,
+      "type": "minecraft:linear"
+    },
+    "spawn_from_effect_center": {
+      "guaranteed": false,
+      "type": "minecraft:constant"
+    },
+    "type": "pandorasbox:spawn_army"
+  },
+  "chance": 0.0,
+  "type": "minecraft:fixed_chance"
+}

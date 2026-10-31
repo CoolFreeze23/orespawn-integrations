@@ -1,0 +1,189 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:emperor_scorpion",
+      "required": false
+    },
+    {
+      "id": "orespawn:basilisk",
+      "required": false
+    },
+    {
+      "id": "orespawn:cater_killer",
+      "required": false
+    },
+    {
+      "id": "orespawn:pitch_black",
+      "required": false
+    },
+    {
+      "id": "orespawn:leon",
+      "required": false
+    },
+    {
+      "id": "orespawn:hammerhead",
+      "required": false
+    },
+    {
+      "id": "orespawn:giant_robot",
+      "required": false
+    },
+    {
+      "id": "orespawn:spider_robot",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_prince_adult",
+      "required": false
+    },
+    {
+      "id": "orespawn:hercules_beetle",
+      "required": false
+    },
+    {
+      "id": "orespawn:nastysaurus",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:mapinguari",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:mapinguary",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:headless_mule",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:capelobo",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:cuca",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:lord_pumpkinhead",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:krampus",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:lifestealer",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:missioner",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:supreme_bonescaller",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:sir_pumpkinhead",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:dire_hound_leader",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:mother_spider",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_enderman",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_zombie",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_skeleton",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_creeper",
+      "required": false
+    },
+    {
+      "id": "cataclysm:ender_golem",
+      "required": false
+    },
+    {
+      "id": "cataclysm:amethyst_crab",
+      "required": false
+    },
+    {
+      "id": "cataclysm:kobolediator",
+      "required": false
+    },
+    {
+      "id": "cataclysm:aptrgangr",
+      "required": false
+    },
+    {
+      "id": "cataclysm:wadjet",
+      "required": false
+    },
+    {
+      "id": "cataclysm:clawdian",
+      "required": false
+    },
+    {
+      "id": "cataclysm:the_prowler",
+      "required": false
+    },
+    {
+      "id": "plantz:gargantuar",
+      "required": false
+    },
+    {
+      "id": "plantz:super_brainz",
+      "required": false
+    },
+    {
+      "id": "plantz:robo_zombie",
+      "required": false
+    },
+    {
+      "id": "plantz:pirate_captain",
+      "required": false
+    },
+    {
+      "id": "plantz:zombie_yeti",
+      "required": false
+    },
+    {
+      "id": "marvel:red_skull",
+      "required": false
+    },
+    {
+      "id": "marvel:winter_soldier",
+      "required": false
+    },
+    {
+      "id": "marvel:baron_zemo",
+      "required": false
+    },
+    {
+      "id": "friendsandfoes:wildfire",
+      "required": false
+    },
+    {
+      "id": "pandorasbox:giant",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:ice_spider",
+      "required": false
+    }
+  ]
+}
