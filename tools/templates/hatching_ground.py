@@ -130,13 +130,12 @@ def build():
                 else:
                     put(x, y, z, CRACKED if rng.random() < 0.3 else CALCITE)
 
-    # The door (south, 2 wide, 3 high) and its signs: the label across two signs, the batch board beside it.
+    # The door (south, 2 wide, 3 high) and its signs: the three-line label over it, the batch board beside it.
     for x in (9, 10):
         for y in (4, 5, 6):
             for z in (16, 17):
                 put(x, y, z, AIR)
-    wall_sign(9, 7, 18, "south", "door_1", [KEY + "door.1"])
-    wall_sign(10, 7, 18, "south", "door_2", [KEY + "door.2"])
+    wall_sign(10, 7, 18, "south", "door", [KEY + "door.%d" % i for i in range(1, 4)])
     wall_sign(11, 5, 18, "south", "batch", [KEY + "batch.%d" % i for i in range(1, 5)])
 
     # Inside: the 8 x 8 straw, four soul lanterns (light 10, no spawns), the three larder placeholders.

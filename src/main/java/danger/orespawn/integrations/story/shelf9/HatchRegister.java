@@ -15,7 +15,8 @@ import java.util.UUID;
 
 /**
  * The Hatch Register (structure-hatching-ground): the eight signs on the west wall inside Shelf 9, one line per player
- * in join order ({@code {player} · {origin} · day {day}}). The line number is kept with the player (their fare number
+ * in join order, the player's name. Each line's origin (once picked on the Awakening screen) and world day are kept in
+ * {@link HatchingGroundData} for Jade over the sign ({@code {player} · {origin} · day {day}}). The line number is kept with the player (their fare number
  * for Mothra from 0.10.3). A player who joined before 0.10.0 gets the next free line at their first login after it,
  * with the late-entry line on the actionbar. Lines are entered whether or not Shelf 9 stands, so a hub that places it
  * later still finds every name: placing it writes all the rows at once.
@@ -104,9 +105,8 @@ public final class HatchRegister {
             writeOverflow(level, data);
             return;
         }
-        Component origin = originName(ResourceLocation.tryParse(data.origins.getOrDefault(id, "")));
-        Component text = Component.translatable(KEY + "line",
-                data.names.getOrDefault(id, "?"), origin, data.days.getOrDefault(id, 0));
+        // The sign row is the name alone; each line's origin and day stay in the SavedData for Jade over the sign.
+        Component text = Component.literal(data.names.getOrDefault(id, "?"));
         int row = RegisterLayout.row(line);
         editSign(level, data.registerSigns.get(sign), true, t -> t.setMessage(row, text));
     }
@@ -139,19 +139,5 @@ public final class HatchRegister {
         } catch (Throwable t) {
             return ResourceLocation.withDefaultNamespace("none");
         }
-    }
-
-    /**
-     * The origin's display name through Neo Origins' own key ({@code origins.<ns>.<path>.name}); our "not yet" line while
-     * none is known, and our "unlabelled" line without Neo Origins.
-     */
-    private static Component originName(ResourceLocation origin) {
-        if (origin == null || origin.getPath().isEmpty()) {
-            return Component.translatable(KEY + "origin_pending");
-        }
-        if ("minecraft".equals(origin.getNamespace())) {
-            return Component.translatable(KEY + "origin_none");
-        }
-        return Component.translatable("origins." + origin.getNamespace() + "." + origin.getPath() + ".name");
     }
 }
