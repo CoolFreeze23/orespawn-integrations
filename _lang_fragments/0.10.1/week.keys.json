@@ -56,6 +56,7 @@
   "orespawn_integrations.gazette.purses.reais": "item-diario-oficial | BOOK | the four-purse box (line 56)",
   "orespawn_integrations.gazette.purses.scraps": "item-diario-oficial | BOOK | the four-purse box (line 55)",
   "orespawn_integrations.gazette.purses.title": "item-diario-oficial | BOOK | the first Saturday's box title (line 55)",
+  "orespawn_integrations.gemeo.again": "wonder-gemeo-da-arvore | ACTIONBAR | the egg dropping again before pickup, from the second drop (line 3)",
   "orespawn_integrations.senha.explainer_deferred": "system-senha-da-primeira-hora | ACTIONBAR | a second first-time explainer the same Land's day (once)",
   "orespawn_integrations.seu_ze.r18": "npc-seu-ze | CHAT | R18, at a player's first Saturday reading (line 14)",
   "orespawn_integrations.seu_ze.says": "npc-seu-ze | CHAT | Saturday reading, one line from the counter (arg: the line)",

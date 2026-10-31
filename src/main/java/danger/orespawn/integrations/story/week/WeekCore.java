@@ -35,6 +35,7 @@ public final class WeekCore {
         DuskCry.init(modBus);
         Gazette.init();
         FirstWeek.init();
+        CanopyLines.init();
         NeoForge.EVENT_BUS.addListener(ServerLedger::onServerTick);
         NeoForge.EVENT_BUS.addListener(ServerLedger::onServerStopped);
         NeoForge.EVENT_BUS.addListener(WeekCommands::onRegisterCommands);
