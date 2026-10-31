@@ -1,0 +1,33 @@
+{
+  "parent": "orespawn_integrations:wonder/1",
+  "display": {
+    "icon": {
+      "id": "orespawn_integrations:guia_de_averbacao"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.wonder.5.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.wonder.5.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "slip": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "orespawn_integrations:guia_de_averbacao"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

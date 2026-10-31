@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "monster_hunter_villager"
+    }
+  ],
+  "display": {
+    "icon": {
+      "id": "monster_hunter_villager:hunters_table"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.hunt.root.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.hunt.root.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/spruce_planks.png"
+  },
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

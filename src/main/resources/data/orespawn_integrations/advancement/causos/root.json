@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brazil_legends"
+    }
+  ],
+  "display": {
+    "icon": {
+      "id": "brazil_legends:cachimbo"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.causos.root.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.causos.root.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/dark_oak_planks.png"
+  },
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  }
+}
