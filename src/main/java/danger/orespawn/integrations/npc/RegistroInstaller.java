@@ -54,14 +54,24 @@ public final class RegistroInstaller {
     public static final String CLONE_DESK = "odete_registro";
     public static final String CLONE_FIELD = "odete_campo";
 
-    /** The desk dialog (category Registro) and the Field Odete's dialog. Ids 710+ sit beside the shipped 701-706. */
+    /**
+     * The desk dialog (category Registro) and the Field Odete's four greetings: 720 morning (her clone's own dialog),
+     * 721 afternoon, 722 evening, 723 a veteran's Back-Dated Fall. The first-hour code opens the one the clock asks
+     * for with {@code /noppes dialog show}. Ids 710+ sit beside the shipped 701-706.
+     */
     public static final int DIALOG_DESK = 710;
     public static final int DIALOG_FIELD = 720;
+    public static final int DIALOG_FIELD_AFTERNOON = 721;
+    public static final int DIALOG_FIELD_EVENING = 722;
+    public static final int DIALOG_FIELD_VETERAN = 723;
 
     private static final String RESOURCE_ROOT = "/orespawn_integrations/customnpcs/";
     private static final String[] DIALOG_FILES = {
             "dialogs/Registro/" + DIALOG_DESK + ".json",
             "dialogs/Registro/" + DIALOG_FIELD + ".json",
+            "dialogs/Registro/" + DIALOG_FIELD_AFTERNOON + ".json",
+            "dialogs/Registro/" + DIALOG_FIELD_EVENING + ".json",
+            "dialogs/Registro/" + DIALOG_FIELD_VETERAN + ".json",
     };
 
     private RegistroInstaller() {
@@ -139,7 +149,7 @@ public final class RegistroInstaller {
                 Path dir = customNpcsDir(server);
                 Files.createDirectories(dir);
                 Files.writeString(dir.resolve(MARKER_NAME),
-                        "OreSpawn Integrations Registry install " + VERSION + " (dialogs 710, 720; clones "
+                        "OreSpawn Integrations Registry install " + VERSION + " (dialogs 710, 720-723; clones "
                         + CLONE_DESK + " and " + CLONE_FIELD + " in tab " + CLONE_TAB + ").\n"
                         + "Delete this file to rebuild any missing dialog or clone file at the next boot.\n");
                 OreSpawnIntegrations.LOGGER.info("[registro] Registry install {} complete: clones {} and {} in tab {}",

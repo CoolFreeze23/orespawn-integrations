@@ -31,7 +31,7 @@
         "TimePast": 0L
     },
     "DialogTitle": "orespawn_integrations.odete_campo.dialog.title",
-    "DialogCommand": "",
+    "DialogCommand": "execute as @dp at @s run function #orespawn_integrations:odete_campo/abertura",
     "AvailabilityDayTime": 0,
     "AvailabilityScoreboard2Type": 1,
     "AvailabilityScoreboard2Objective": "",
@@ -55,16 +55,26 @@
         },
         {
             "Option": {
+                "OptionType": 4,
+                "Title": "orespawn_integrations.odete_campo.opcao.moedas",
+                "Dialog": -1,
+                "DialogCommand": "execute as @dp at @s run function orespawn_integrations:odete_campo/moedas",
+                "DialogColor": 14737632
+            },
+            "OptionSlot": 1
+        },
+        {
+            "Option": {
                 "OptionType": 0,
                 "Title": "orespawn_integrations.odete.opcao.sair",
                 "Dialog": -1,
                 "DialogCommand": "",
                 "DialogColor": 14737632
             },
-            "OptionSlot": 1
+            "OptionSlot": 2
         }
     ],
-    "DialogText": "orespawn_integrations.odete_campo.dialog.text",
+    "DialogText": "orespawn_integrations.odete_campo.saudacao.manha",
     "AvailabilityDialog2": 0,
     "AvailabilityQuest3": 0,
     "AvailabilityQuest4": 0,
