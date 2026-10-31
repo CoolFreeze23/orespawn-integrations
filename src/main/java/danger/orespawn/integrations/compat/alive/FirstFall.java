@@ -67,7 +67,7 @@ import java.util.UUID;
  * Eggshell and ITEM 6 in the crate and the late-delivery label. Coins are never saved: refused when loaded from disk,
  * discarded at their finder's logout and 20 minutes after landing. A first-hour scene, through the scene cap.</p>
  */
-final class FirstFall {
+public final class FirstFall {
 
     static final String COIN_TAG = "orespawn_integrations.fall_coin";
     private static final String K = "orespawn_integrations.first_fall.";
@@ -266,18 +266,21 @@ final class FirstFall {
      * ITEM 5's twin, from the twin's own crate table (gemeo/ovo_do_caixote): its lore and the batch key, so picking it
      * up counts as finding the twin and no log drops another. Without Brasil e Coisas the table is empty.
      */
-    private static List<ItemStack> crateTwin(ServerLevel level, BlockPos pos) {
+    private static List<ItemStack> crateTwin(ServerLevel level, BlockPos pos, ServerPlayer player) {
         LootTable table = level.getServer().reloadableRegistries().getLootTable(CRATE_TWIN);
+        // A chest's parameters (the crate's spot, its recipient when there is one): the gift set demands an entity,
+        // and a crate filled for nobody in particular has none, which threw and stopped the landing.
         return table.getRandomItems(new LootParams.Builder(level)
                 .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
-                .create(LootContextParamSets.GIFT));
+                .withOptionalParameter(LootContextParams.THIS_ENTITY, player)
+                .create(LootContextParamSets.CHEST));
     }
 
     private static final ResourceKey<LootTable> CRATE_TWIN = ResourceKey.create(Registries.LOOT_TABLE,
             ResourceLocation.fromNamespaceAndPath("orespawn_integrations", "gemeo/ovo_do_caixote"));
 
-    /** The crate's contents, exactly as the card lists them. */
-    private static void fill(ServerLevel level, BlockPos pos, ServerPlayer player, boolean backDated) {
+    /** The crate's contents, exactly as the card lists them. Public for the GameTests. */
+    public static void fill(ServerLevel level, BlockPos pos, ServerPlayer player, boolean backDated) {
         if (!(level.getBlockEntity(pos) instanceof Container box)) {
             return;
         }
@@ -291,7 +294,7 @@ final class FirstFall {
         items.add(withLore(new ItemStack(Items.GLOWSTONE, 4), "glowstone_lore"));
         // ITEM 5: a player with no twin yet (cc_gemeo still 0) finds one in the crate.
         if (player == null || FirstHourUtil.score(player, "cc_gemeo", 0) == 0) {
-            items.addAll(crateTwin(level, pos));
+            items.addAll(crateTwin(level, pos, player));
             items.add(withLore(new ItemStack(Items.PAPER), "item5_slip"));
         }
         if (backDated) {

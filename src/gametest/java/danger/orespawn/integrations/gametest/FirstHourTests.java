@@ -1,6 +1,7 @@
 package danger.orespawn.integrations.gametest;
 
 import danger.orespawn.integrations.compat.alive.FallSafety;
+import danger.orespawn.integrations.compat.alive.FirstFall;
 import danger.orespawn.integrations.story.firsthour.EggLabel;
 import danger.orespawn.integrations.story.firsthour.FallRecord;
 import danger.orespawn.integrations.story.firsthour.FieldOdete;
@@ -154,6 +155,31 @@ public final class FirstHourTests {
         List<BlockPos> own = List.of(abs);
         helper.assertTrue(!FallSafety.farFromHomes(abs.offset(40, 0, 0), own), "40 blocks off is too close");
         helper.assertTrue(FallSafety.farFromHomes(abs.offset(70, 0, 0), own), "70 blocks off is wild");
+        helper.succeed();
+    }
+
+    /**
+     * The crate fills as the card lists it for a newcomer with no twin yet (ITEM 3's glowstone, ITEM 5's slip), and for
+     * nobody in particular: the twin's table once threw for want of an entity and stopped the landing (and the Odete).
+     */
+    @GameTest(template = "empty8")
+    public static void theFirstFallCrateFills(GameTestHelper helper) {
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        BlockPos rel = new BlockPos(3, 1, 3);
+        helper.setBlock(rel, Blocks.CHEST);
+        BlockPos abs = helper.absolutePos(rel);
+        FirstFall.fill(helper.getLevel(), abs, player, false);
+        helper.assertTrue(helper.getLevel().getBlockEntity(abs) instanceof net.minecraft.world.Container box
+                && box.countItem(net.minecraft.world.item.Items.GLOWSTONE) == 4, "4 glowstone (ITEM 3)");
+        helper.assertTrue(((net.minecraft.world.Container) helper.getLevel().getBlockEntity(abs))
+                .countItem(net.minecraft.world.item.Items.SPYGLASS) == 1, "the spyglass");
+        helper.assertTrue(((net.minecraft.world.Container) helper.getLevel().getBlockEntity(abs))
+                .countItem(net.minecraft.world.item.Items.PAPER) >= 1, "ITEM 5's slip for a player with no twin");
+        BlockPos other = helper.absolutePos(new BlockPos(5, 1, 3));
+        helper.setBlock(new BlockPos(5, 1, 3), Blocks.CHEST);
+        FirstFall.fill(helper.getLevel(), other, null, false);
+        helper.assertTrue(((net.minecraft.world.Container) helper.getLevel().getBlockEntity(other))
+                .countItem(net.minecraft.world.item.Items.GLOWSTONE) == 4, "a crate for nobody in particular fills too");
         helper.succeed();
     }
 
