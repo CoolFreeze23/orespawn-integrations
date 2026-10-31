@@ -41,7 +41,12 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 public final class DataTests {
 
     private static final String EGG = "brasilcoisas:ovinho_vivo_block";
-    private static final Set<String> COPA_ROWS = Set.of("arca", "chapeu", "gaveta", "retalho", "presente", "parte");
+    /**
+     * The canopy's rank 0-1 rows (system-extravio): the six of 0.10.0, plus 0.10.1's misfiled creature (bicho, and
+     * bicho_peixe on a Fish in the Trees day) and the stray of the batch. The Mimic and the Leaf Monster are not here.
+     */
+    private static final Set<String> COPA_ROWS = Set.of("arca", "chapeu", "gaveta", "retalho", "presente", "parte",
+            "bicho", "bicho_peixe", "desgarrado");
 
     private DataTests() {
     }
@@ -137,8 +142,8 @@ public final class DataTests {
 
     /**
      * system-extravio, roadmap 7.9 line 4(a): with the cap lifted, 480 rank-0 breaks give about 1 in 24 (15-25 expected;
-     * 6-40 is the bound a fair coin keeps well inside), every find one of the six 0.10.0 rows and never a Mimic or a
-     * Leaf Monster.
+     * 6-40 is the bound a fair coin keeps well inside), every find one of the rank-0 rows (0.10.0's six and 0.10.1's
+     * creature and stray) and never a Mimic or a Leaf Monster.
      */
     @GameTest(template = "empty8")
     public static void canopyRateWithTheCapLifted(GameTestHelper helper) {
