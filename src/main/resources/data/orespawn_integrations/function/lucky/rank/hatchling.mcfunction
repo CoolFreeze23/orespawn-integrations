@@ -1,5 +1,8 @@
 # Rank 0, the Hatchling table: ly's branch odds, every outcome aimed at the opener and none that ends a run (no boss,
 # no whole boss egg, no lava, no OP enemy).
+# Somebody's Yard: the traps and the harmful spells become the Land's return.
+execute if score #oi_yard cc_lucky matches 1 if score #oi_root cc_lucky matches 1..2 run return run function orespawn_integrations:lucky/yard
+execute if score #oi_yard cc_lucky matches 1 if score #oi_root cc_lucky matches 9 run return run function orespawn_integrations:lucky/yard/effect
 execute if score #oi_root cc_lucky matches 1..2 run return run function orespawn_integrations:lucky/hatchling/trap
 execute if score #oi_root cc_lucky matches 3 run return run function orespawn_integrations:lucky/hatchling/item
 execute if score #oi_root cc_lucky matches 4 run return run function orespawn_integrations:lucky/hatchling/entity

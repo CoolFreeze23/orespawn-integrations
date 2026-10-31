@@ -418,6 +418,7 @@ final class FirstFall {
             }
         }
         FirstHourUtil.award(player, "livro/r5");
+        FirstHourUtil.award(player, "wonder/8"); // the first Fall crate or Hoard Fall vault opened (wonder-hoard-fall)
         PriorityTicket.crateOpened(player);
         Long scene = SCENES.remove(player.getUUID());
         if (scene != null) {

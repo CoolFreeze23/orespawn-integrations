@@ -93,6 +93,10 @@ public class OreSpawnIntegrations {
             {"customnpcs", "danger.orespawn.integrations.npc.HuntInstaller"},
             {"brasilcoisas", "danger.orespawn.integrations.story.land.MestreGiftHook"},
             {"orespawn_integrations", "danger.orespawn.integrations.story.land.MapinguariSunday"},
+            // parish:
+            {"orespawn_integrations", "danger.orespawn.integrations.story.freguesia.Freguesia"},
+            {"orespawn_integrations", "danger.orespawn.integrations.story.misfile.MisfileCore"},
+            {"orespawn", "danger.orespawn.integrations.compat.alive.HoardFall"},
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };

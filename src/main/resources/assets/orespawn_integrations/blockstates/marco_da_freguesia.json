@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=lower": {"model": "orespawn_integrations:block/marco_da_freguesia_lower"},
+    "half=upper": {"model": "orespawn_integrations:block/marco_da_freguesia_upper"}
+  }
+}

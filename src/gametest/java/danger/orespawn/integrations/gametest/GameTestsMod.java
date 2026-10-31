@@ -31,7 +31,7 @@ public final class GameTestsMod {
 
     private static final List<Class<?>> HOLDERS = List.of(StoryCoreTests.class, ShelfNineTests.class,
             FirstHourTests.class, RegistryTests.class, WorldTests.class, SightingNameTests.class, ChaosTests.class,
-            DataTests.class, WeekTests.class, RanksTests.class);
+            DataTests.class, WeekTests.class, RanksTests.class, ParishTests.class);
 
     public GameTestsMod(IEventBus modBus) {
         if (!Boolean.getBoolean("oi.gametests")) {

@@ -1,0 +1,189 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cow",
+    "minecraft:pig",
+    "minecraft:sheep",
+    "minecraft:chicken",
+    "minecraft:rabbit",
+    "minecraft:horse",
+    "minecraft:donkey",
+    "minecraft:mule",
+    "minecraft:llama",
+    "minecraft:goat",
+    "minecraft:fox",
+    "minecraft:wolf",
+    "minecraft:cat",
+    "minecraft:ocelot",
+    "minecraft:panda",
+    "minecraft:polar_bear",
+    "minecraft:frog",
+    "minecraft:turtle",
+    "minecraft:armadillo",
+    "minecraft:camel",
+    "minecraft:sniffer",
+    "minecraft:bee",
+    "minecraft:parrot",
+    "minecraft:mooshroom",
+    {
+      "id": "naturalist:alligator",
+      "required": false
+    },
+    {
+      "id": "naturalist:ant",
+      "required": false
+    },
+    {
+      "id": "naturalist:bear",
+      "required": false
+    },
+    {
+      "id": "naturalist:bird",
+      "required": false
+    },
+    {
+      "id": "naturalist:black_bear",
+      "required": false
+    },
+    {
+      "id": "naturalist:boar",
+      "required": false
+    },
+    {
+      "id": "naturalist:butterfly",
+      "required": false
+    },
+    {
+      "id": "naturalist:capybara",
+      "required": false
+    },
+    {
+      "id": "naturalist:caterpillar",
+      "required": false
+    },
+    {
+      "id": "naturalist:deer",
+      "required": false
+    },
+    {
+      "id": "naturalist:desert_scorpion",
+      "required": false
+    },
+    {
+      "id": "naturalist:dragonfly",
+      "required": false
+    },
+    {
+      "id": "naturalist:duck",
+      "required": false
+    },
+    {
+      "id": "naturalist:elephant",
+      "required": false
+    },
+    {
+      "id": "naturalist:firefly",
+      "required": false
+    },
+    {
+      "id": "naturalist:giraffe",
+      "required": false
+    },
+    {
+      "id": "naturalist:hedgehog",
+      "required": false
+    },
+    {
+      "id": "naturalist:hippo",
+      "required": false
+    },
+    {
+      "id": "naturalist:jungle_scorpion",
+      "required": false
+    },
+    {
+      "id": "naturalist:komodo_dragon",
+      "required": false
+    },
+    {
+      "id": "naturalist:lion",
+      "required": false
+    },
+    {
+      "id": "naturalist:lizard",
+      "required": false
+    },
+    {
+      "id": "naturalist:mammoth",
+      "required": false
+    },
+    {
+      "id": "naturalist:mole",
+      "required": false
+    },
+    {
+      "id": "naturalist:ostrich",
+      "required": false
+    },
+    {
+      "id": "naturalist:rat",
+      "required": false
+    },
+    {
+      "id": "naturalist:rhino",
+      "required": false
+    },
+    {
+      "id": "naturalist:snail",
+      "required": false
+    },
+    {
+      "id": "naturalist:snake",
+      "required": false
+    },
+    {
+      "id": "naturalist:tiger",
+      "required": false
+    },
+    {
+      "id": "naturalist:tortoise",
+      "required": false
+    },
+    {
+      "id": "naturalist:turkey",
+      "required": false
+    },
+    {
+      "id": "naturalist:vulture",
+      "required": false
+    },
+    {
+      "id": "naturalist:zebra",
+      "required": false
+    },
+    {
+      "id": "brasilcoisas:capivara",
+      "required": false
+    },
+    {
+      "id": "brasilcoisas:quero_quero",
+      "required": false
+    },
+    {
+      "id": "brasilcoisas:urutau",
+      "required": false
+    },
+    {
+      "id": "brasilcoisas:cachorro_caramelo",
+      "required": false
+    },
+    {
+      "id": "brasilcoisas:cobra_coral",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:butterfly",
+      "required": false
+    }
+  ]
+}
