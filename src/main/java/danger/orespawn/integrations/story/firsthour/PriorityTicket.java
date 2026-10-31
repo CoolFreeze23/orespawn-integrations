@@ -329,7 +329,7 @@ public final class PriorityTicket {
                     TicketRules.markUsed(s, 8);
                     if (!s.flag(TicketState.FLAG_GUIDE_OPENED)) {
                         s.setFlag(TicketState.FLAG_GUIDE_OPENED);
-                        FirstHourUtil.award(player, "livro/why_is_nothing_where_it_belongs");
+                        FirstHourUtil.award(player, "livro/r1");
                     }
                 } else if (FirstHourUtil.oi("orespawn_guide").equals(book)) {
                     TicketRules.markUsed(s, 9);
@@ -348,7 +348,7 @@ public final class PriorityTicket {
         }
         s.setFlag(TicketState.FLAG_SUMMONS_OPENED);
         FirstHourUtil.award(player, REGENCY_ROOT);
-        FirstHourUtil.award(player, "livro/where_are_the_king_and_queen");
+        FirstHourUtil.award(player, "livro/r4");
         FirstHourUtil.selectTab(player, REGENCY_ROOT);
     }
 

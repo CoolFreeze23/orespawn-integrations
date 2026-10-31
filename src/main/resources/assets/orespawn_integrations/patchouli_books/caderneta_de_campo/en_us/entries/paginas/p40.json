@@ -10,6 +10,6 @@
       "title": "orespawn_integrations.caderneta.p40.name"
     }
   ],
-  "advancement": "orespawn_integrations:avistamentos/mula_fire_trail",
+  "advancement": "orespawn_integrations:avistamentos/mula_trail",
   "secret": true
 }

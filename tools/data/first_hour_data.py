@@ -891,7 +891,7 @@ NOTEBOOK = [
     (39, "mae_da_lua", "the mãe-da-lua", "a mãe-da-lua",
      "A bird that looks like a branch, crying at dusk. The night starts when she does.",
      "Um pássaro que parece galho, chorando no fim da tarde. A noite começa quando ela começa."),
-    (40, "mula_fire_trail", "the Mula's fire trail", "o rastro de fogo da Mula",
+    (40, "mula_trail", "the Mula's fire trail", "o rastro de fogo da Mula",
      "Fire across a field on a Thursday, and no animal in sight. File it from a distance.",
      "Fogo cortando o campo numa quinta, e bicho nenhum à vista. Lança de longe."),
     (41, "red_islands", "red islands over the void", "ilhas vermelhas sobre o vazio",

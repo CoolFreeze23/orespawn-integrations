@@ -197,7 +197,7 @@ public final class FieldOdete {
             }
             case 2 -> {
                 say(player, "r2");
-                FirstHourUtil.award(player, "livro/what_am_i");
+                FirstHourUtil.award(player, "livro/r2");
             }
             case 3 -> say(player, "file_number");
             case 4 -> {

@@ -1,5 +1,13 @@
 package danger.orespawn.integrations.compat.alive;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
 import danger.orespawn.integrations.config.IntegrationsConfig;
 import danger.orespawn.integrations.story.firsthour.FallRecord;
 import danger.orespawn.integrations.story.firsthour.FirstHourScenes;
@@ -254,6 +262,20 @@ final class FirstFall {
         level.sendBlockUpdated(pos, sign.getBlockState(), sign.getBlockState(), 3);
     }
 
+    /**
+     * ITEM 5's twin, from the twin's own crate table (gemeo/ovo_do_caixote): its lore and the batch key, so picking it
+     * up counts as finding the twin and no log drops another. Without Brasil e Coisas the table is empty.
+     */
+    private static List<ItemStack> crateTwin(ServerLevel level, BlockPos pos) {
+        LootTable table = level.getServer().reloadableRegistries().getLootTable(CRATE_TWIN);
+        return table.getRandomItems(new LootParams.Builder(level)
+                .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
+                .create(LootContextParamSets.GIFT));
+    }
+
+    private static final ResourceKey<LootTable> CRATE_TWIN = ResourceKey.create(Registries.LOOT_TABLE,
+            ResourceLocation.fromNamespaceAndPath("orespawn_integrations", "gemeo/ovo_do_caixote"));
+
     /** The crate's contents, exactly as the card lists them. */
     private static void fill(ServerLevel level, BlockPos pos, ServerPlayer player, boolean backDated) {
         if (!(level.getBlockEntity(pos) instanceof Container box)) {
@@ -269,7 +291,7 @@ final class FirstFall {
         items.add(withLore(new ItemStack(Items.GLOWSTONE, 4), "glowstone_lore"));
         // ITEM 5: a player with no twin yet (cc_gemeo still 0) finds one in the crate.
         if (player == null || FirstHourUtil.score(player, "cc_gemeo", 0) == 0) {
-            items.add(FirstHourUtil.stack("brasilcoisas:ovinho_vivo_block", 1));
+            items.addAll(crateTwin(level, pos));
             items.add(withLore(new ItemStack(Items.PAPER), "item5_slip"));
         }
         if (backDated) {
@@ -395,7 +417,7 @@ final class FirstFall {
                 level.setBlockAndUpdate(p, s.setValue(CampfireBlock.LIT, false));
             }
         }
-        FirstHourUtil.award(player, "livro/why_do_things_fall_from_the_sky");
+        FirstHourUtil.award(player, "livro/r5");
         PriorityTicket.crateOpened(player);
         Long scene = SCENES.remove(player.getUUID());
         if (scene != null) {
