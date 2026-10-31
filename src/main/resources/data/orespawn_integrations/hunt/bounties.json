@@ -1,0 +1,122 @@
+{
+  "_comment": "Monday's bounty pool (system-boss-ladder): per Wall row, the bosses the board may post; an id whose mod is absent is skipped. Pay per row: the two lower bounties pay emeralds (your own row adds one Ledger Scrap), the row above pays triple, in Reais.",
+  "pay": {
+    "1": {
+      "emeralds": 3,
+      "reais": 10
+    },
+    "2": {
+      "emeralds": 5,
+      "reais": 20
+    },
+    "3": {
+      "emeralds": 8,
+      "reais": 30
+    },
+    "4": {
+      "emeralds": 12,
+      "reais": 50
+    },
+    "5": {
+      "emeralds": 16,
+      "reais": 70
+    },
+    "6": {
+      "emeralds": 24,
+      "reais": 100
+    },
+    "7": {
+      "emeralds": 32,
+      "reais": 150
+    }
+  },
+  "pool": {
+    "1": [
+      "brazil_legends:saci_perere",
+      "brasilcoisas:lobisomem",
+      "friendsandfoes:iceologer",
+      "friendsandfoes:illusioner",
+      "irons_spellbooks:archevoker",
+      "mowziesmobs:sculptor",
+      "twilightforest:naga",
+      "brazil_legends:cuca",
+      "mowziesmobs:ferrous_wroughtnaut",
+      "friendsandfoes:wildfire",
+      "orespawn:alien_boss",
+      "orespawn:hercules_beetle",
+      "orespawn:nastysaurus",
+      "born_in_chaos_v1:mother_spider",
+      "born_in_chaos_v1:dire_hound_leader",
+      "aether:slider",
+      "irons_spellbooks:ice_spider",
+      "cataclysm:amethyst_crab",
+      "cataclysm:kobolediator",
+      "cataclysm:wadjet",
+      "twilightforest:minoshroom",
+      "pandorasbox:giant"
+    ],
+    "2": [
+      "orespawn:basilisk",
+      "orespawn:emperor_scorpion",
+      "orespawn:cater_killer",
+      "brazil_legends:capelobo",
+      "twilightforest:lich",
+      "twilightforest:alpha_yeti",
+      "born_in_chaos_v1:sir_pumpkinhead",
+      "born_in_chaos_v1:supreme_bonescaller",
+      "cataclysm:the_prowler",
+      "cataclysm:aptrgangr",
+      "cataclysm:ender_golem",
+      "minecraft:elder_guardian"
+    ],
+    "3": [
+      "brazil_legends:mapinguari",
+      "brazil_legends:mapinguary",
+      "brazil_legends:headless_mule",
+      "orespawn:pitch_black",
+      "orespawn:leon",
+      "orespawn:hammerhead",
+      "orespawn:giant_robot",
+      "orespawn:spider_robot",
+      "mowziesmobs:frostmaw",
+      "mowziesmobs:umvuthi",
+      "aether:valkyrie_queen",
+      "twilightforest:knight_phantom",
+      "irons_spellbooks:dead_king",
+      "cataclysm:netherite_monstrosity",
+      "cataclysm:clawdian",
+      "born_in_chaos_v1:lifestealer",
+      "born_in_chaos_v1:missioner",
+      "mutantmonsters:mutant_zombie",
+      "mutantmonsters:mutant_skeleton",
+      "mutantmonsters:mutant_creeper"
+    ],
+    "4": [
+      "twilightforest:snow_queen",
+      "twilightforest:ur_ghast",
+      "aether:sun_spirit",
+      "cataclysm:ancient_remnant",
+      "cataclysm:ender_guardian",
+      "mutantmonsters:mutant_enderman"
+    ],
+    "5": [
+      "orespawn:kraken",
+      "twilightforest:hydra",
+      "irons_spellbooks:fire_boss",
+      "cataclysm:ignis",
+      "cataclysm:maledictus",
+      "cataclysm:scylla",
+      "cataclysm:the_harbinger",
+      "minecraft:wither",
+      "minecraft:warden"
+    ],
+    "6": [
+      "orespawn:godzilla",
+      "cataclysm:the_leviathan"
+    ],
+    "7": [
+      "orespawn:the_king",
+      "orespawn:the_queen"
+    ]
+  }
+}

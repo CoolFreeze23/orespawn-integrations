@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "twilightforest:snow_queen",
+      "required": false
+    },
+    {
+      "id": "twilightforest:ur_ghast",
+      "required": false
+    },
+    {
+      "id": "aether:sun_spirit",
+      "required": false
+    },
+    {
+      "id": "cataclysm:ancient_remnant",
+      "required": false
+    },
+    {
+      "id": "cataclysm:ender_guardian",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:krampus",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_enderman",
+      "required": false
+    }
+  ]
+}

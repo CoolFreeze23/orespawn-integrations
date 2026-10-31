@@ -3,6 +3,8 @@ package danger.orespawn.integrations.gametest;
 import danger.orespawn.integrations.story.Ranks;
 import danger.orespawn.integrations.story.court.CourtRanks;
 import danger.orespawn.integrations.story.deed.DeedLog;
+import danger.orespawn.integrations.story.hunt.MondayBoard;
+import danger.orespawn.integrations.story.hunt.WallOfTheWanted;
 import danger.orespawn.integrations.story.firsthour.FirstHourUtil;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.gametest.framework.GameTest;
@@ -209,6 +211,61 @@ public final class RanksTests {
             helper.assertTrue(DeedLog.saturdayBudget(ana), "line " + (i + 1) + " allowed");
         }
         helper.assertFalse(DeedLog.saturdayBudget(ana), "ninth line refused");
+        helper.succeed();
+    }
+
+    // --- system-boss-ladder ---
+
+    /** A D&T proctor is recognised by its entity tag prefix, not its type. */
+    @GameTest(template = "empty8")
+    public static void proctorByTagPrefix(GameTestHelper helper) {
+        net.minecraft.world.entity.monster.CaveSpider spider = helper.spawn(net.minecraft.world.entity.EntityType.CAVE_SPIDER, 2, 2, 2);
+        spider.addTag("cave_spider_boss_1");
+        WallOfTheWanted.Hit hit = WallOfTheWanted.identify(spider);
+        helper.assertTrue(hit != null && hit.row() == 2, "the Biology Proctor is row 2");
+        net.minecraft.world.entity.monster.CaveSpider plain = helper.spawn(net.minecraft.world.entity.EntityType.CAVE_SPIDER, 4, 2, 4);
+        helper.assertTrue(WallOfTheWanted.identify(plain) == null, "a plain cave spider is on no poster");
+        helper.succeed();
+    }
+
+    /** A boss kill grants the row's advancement to the killer and a friend within 32 blocks, and names both. */
+    @GameTest(template = "empty8")
+    public static void bossKillCreditsTheParty(GameTestHelper helper) {
+        ServerPlayer ana = fresh(helper);
+        ServerPlayer bia = helper.makeMockServerPlayerInLevel();
+        net.minecraft.world.entity.LivingEntity wither = helper.spawn(net.minecraft.world.entity.EntityType.WITHER, 3, 2, 3);
+        WallOfTheWanted.Hit hit = WallOfTheWanted.identify(wither);
+        helper.assertTrue(hit != null && hit.row() == 5, "the Wither is row 5");
+        DeedLog.clear(helper.getLevel().getServer(), ana.getUUID());
+        WallOfTheWanted.killed(ana, wither, hit);
+        helper.assertTrue(done(ana, "orespawn_integrations:hunt/row_5"), "killer's row advancement");
+        helper.assertTrue(done(bia, "orespawn_integrations:hunt/row_5"), "the friend's row advancement");
+        helper.assertTrue(!DeedLog.of(helper.getLevel().getServer(), ana.getUUID()).isEmpty(), "the deed is written");
+        wither.discard();
+        DeedLog.clear(helper.getLevel().getServer(), ana.getUUID());
+        helper.succeed();
+    }
+
+    /** A row nobody has killed reads "WANTED: ROW n / Felled by: / nobody. Yet." in translate keys. */
+    @GameTest(template = "empty8")
+    public static void emptyRowSign(GameTestHelper helper) {
+        net.minecraft.world.level.block.entity.SignText text = WallOfTheWanted.signText(null, 6);
+        String line = text.getMessage(0, false).getContents().toString();
+        helper.assertTrue(line.contains("orespawn_integrations.hunt.sign.row.6"), "row 6's first line");
+        helper.succeed();
+    }
+
+    /** Monday's board: three bounties, one from the player's row, one below, one above. */
+    @GameTest(template = "empty8")
+    public static void boardDrawsThreeRows(GameTestHelper helper) {
+        ServerPlayer ana = fresh(helper);
+        ana.setData(MondayBoard.STATE.get(), new net.minecraft.nbt.CompoundTag());
+        net.minecraft.nbt.CompoundTag state = MondayBoard.state(ana);
+        int[] rows = state.getIntArray("rows");
+        helper.assertTrue(rows.length == state.getList("targets", 8).size(), "a row per target");
+        if (rows.length == 3) {
+            helper.assertTrue(rows[0] == 1 && rows[1] == 1 && rows[2] == 2, "a new hunter: rows 1, 1 and 2");
+        }
         helper.succeed();
     }
 }

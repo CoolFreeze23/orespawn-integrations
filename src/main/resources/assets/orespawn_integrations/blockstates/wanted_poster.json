@@ -1,0 +1,109 @@
+{
+  "variants": {
+    "facing=north,row=1": {
+      "model": "orespawn_integrations:block/wanted_poster_1"
+    },
+    "facing=east,row=1": {
+      "model": "orespawn_integrations:block/wanted_poster_1",
+      "y": 90
+    },
+    "facing=south,row=1": {
+      "model": "orespawn_integrations:block/wanted_poster_1",
+      "y": 180
+    },
+    "facing=west,row=1": {
+      "model": "orespawn_integrations:block/wanted_poster_1",
+      "y": 270
+    },
+    "facing=north,row=2": {
+      "model": "orespawn_integrations:block/wanted_poster_2"
+    },
+    "facing=east,row=2": {
+      "model": "orespawn_integrations:block/wanted_poster_2",
+      "y": 90
+    },
+    "facing=south,row=2": {
+      "model": "orespawn_integrations:block/wanted_poster_2",
+      "y": 180
+    },
+    "facing=west,row=2": {
+      "model": "orespawn_integrations:block/wanted_poster_2",
+      "y": 270
+    },
+    "facing=north,row=3": {
+      "model": "orespawn_integrations:block/wanted_poster_3"
+    },
+    "facing=east,row=3": {
+      "model": "orespawn_integrations:block/wanted_poster_3",
+      "y": 90
+    },
+    "facing=south,row=3": {
+      "model": "orespawn_integrations:block/wanted_poster_3",
+      "y": 180
+    },
+    "facing=west,row=3": {
+      "model": "orespawn_integrations:block/wanted_poster_3",
+      "y": 270
+    },
+    "facing=north,row=4": {
+      "model": "orespawn_integrations:block/wanted_poster_4"
+    },
+    "facing=east,row=4": {
+      "model": "orespawn_integrations:block/wanted_poster_4",
+      "y": 90
+    },
+    "facing=south,row=4": {
+      "model": "orespawn_integrations:block/wanted_poster_4",
+      "y": 180
+    },
+    "facing=west,row=4": {
+      "model": "orespawn_integrations:block/wanted_poster_4",
+      "y": 270
+    },
+    "facing=north,row=5": {
+      "model": "orespawn_integrations:block/wanted_poster_5"
+    },
+    "facing=east,row=5": {
+      "model": "orespawn_integrations:block/wanted_poster_5",
+      "y": 90
+    },
+    "facing=south,row=5": {
+      "model": "orespawn_integrations:block/wanted_poster_5",
+      "y": 180
+    },
+    "facing=west,row=5": {
+      "model": "orespawn_integrations:block/wanted_poster_5",
+      "y": 270
+    },
+    "facing=north,row=6": {
+      "model": "orespawn_integrations:block/wanted_poster_6"
+    },
+    "facing=east,row=6": {
+      "model": "orespawn_integrations:block/wanted_poster_6",
+      "y": 90
+    },
+    "facing=south,row=6": {
+      "model": "orespawn_integrations:block/wanted_poster_6",
+      "y": 180
+    },
+    "facing=west,row=6": {
+      "model": "orespawn_integrations:block/wanted_poster_6",
+      "y": 270
+    },
+    "facing=north,row=7": {
+      "model": "orespawn_integrations:block/wanted_poster_7"
+    },
+    "facing=east,row=7": {
+      "model": "orespawn_integrations:block/wanted_poster_7",
+      "y": 90
+    },
+    "facing=south,row=7": {
+      "model": "orespawn_integrations:block/wanted_poster_7",
+      "y": 180
+    },
+    "facing=west,row=7": {
+      "model": "orespawn_integrations:block/wanted_poster_7",
+      "y": 270
+    }
+  }
+}

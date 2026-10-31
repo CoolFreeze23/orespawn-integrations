@@ -37,7 +37,7 @@ JAVA = ROOT / "src" / "main" / "java"
 FRAG = ROOT / "_lang_fragments" / "0.10.0"
 MODS = Path(r"C:\Users\alvin\AppData\Roaming\PrismLauncher\instances\CrazyCraft 5.0\minecraft\mods")
 # CustomNPCs reads its own lenient JSON (bare 1b, raw newlines): those files are its format, not Minecraft data.
-LENIENT = ("orespawn_integrations/customnpcs/",)
+LENIENT = ("orespawn_integrations/customnpcs/", "orespawn_integrations/customnpcs_0101/")
 SHIPPED_LANG = RES / "assets" / "orespawn_integrations" / "lang" / "en_us.json"
 NS = "orespawn_integrations"
 
