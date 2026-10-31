@@ -87,14 +87,24 @@ public final class PrinceFlyover {
      * single-active-flyover flag as the random roll. Safe no-op when a flyover
      * is already airborne or the level is empty.
      */
-    public static void triggerNear(ServerLevel level, net.minecraft.core.BlockPos pos) {
+    public static boolean triggerNear(ServerLevel level, net.minecraft.core.BlockPos pos) {
+        return triggerNear(level, pos, ALTITUDE, null, null);
+    }
+
+    /**
+     * The same trigger with the first pass's settings: {@code altitude} above the anchor's surface (the Prince's
+     * Letter flies at 25), a {@code letter} dropped over its addressee as he passes overhead, and {@code onEnd} run
+     * when the puppet retires. Returns false when nothing started (a flyover already airborne, no players).
+     */
+    public static boolean triggerNear(ServerLevel level, net.minecraft.core.BlockPos pos, double altitude,
+                                      ServerPlayer letterFor, Runnable onEnd) {
         try {
             if (active) {
-                return;
+                return false;
             }
             List<ServerPlayer> players = level.players();
             if (players.isEmpty()) {
-                return;
+                return false;
             }
             ServerPlayer anchor = players.get(0);
             double best = Double.MAX_VALUE;
@@ -105,16 +115,25 @@ public final class PrinceFlyover {
                     anchor = p;
                 }
             }
-            begin(level, anchor);
+            if (letterFor != null) {
+                anchor = letterFor;
+            }
+            return begin(level, anchor, altitude, letterFor, onEnd);
         } catch (Throwable t) {
             AliveWorldCompat.logOnce("prince_trigger", t);
+            return false;
         }
     }
 
     private static void begin(ServerLevel level, ServerPlayer player) {
+        begin(level, player, ALTITUDE, null, null);
+    }
+
+    private static boolean begin(ServerLevel level, ServerPlayer player, double altitude, ServerPlayer letterFor,
+                                 Runnable onEnd) {
         EntityType<?> type = AliveWorldCompat.entityType("orespawn", "the_prince_adult");
         if (type == null) {
-            return;
+            return false;
         }
         Entity created = type.create(level);
         if (!(created instanceof ThePrinceAdult prince)) {
@@ -122,14 +141,14 @@ public final class PrinceFlyover {
                 created.discard();
             }
             AliveWorldCompat.logMissingOnce("the_prince_adult class (unexpected entity type)");
-            return;
+            return false;
         }
         RandomSource random = level.random;
         double angle = random.nextDouble() * Math.PI * 2.0;
         double dirX = Math.cos(angle);
         double dirZ = Math.sin(angle);
         double y = level.getHeight(Heightmap.Types.MOTION_BLOCKING,
-                player.getBlockX(), player.getBlockZ()) + ALTITUDE;
+                player.getBlockX(), player.getBlockZ()) + altitude;
         double startX = player.getX() - dirX * LEG;
         double startZ = player.getZ() - dirZ * LEG;
         float yaw = (float) Math.toDegrees(Math.atan2(dirZ, dirX)) - 90.0F;
@@ -145,11 +164,14 @@ public final class PrinceFlyover {
         current = prince;
         if (!level.addFreshEntity(prince)) {
             current = null;
-            return;
+            return false;
         }
         active = true;
-        AliveScheduler.schedule(level.getServer(), 1,
-                new Flight(level, prince, startX, startZ, y, dirX, dirZ, yaw));
+        Flight flight = new Flight(level, prince, startX, startZ, y, dirX, dirZ, yaw);
+        flight.letterFor = letterFor;
+        flight.onEnd = onEnd;
+        AliveScheduler.schedule(level.getServer(), 1, flight);
+        return true;
     }
 
     /** Per-tick flight driver; reschedules itself until the puppet is retired. */
@@ -164,6 +186,9 @@ public final class PrinceFlyover {
         private final float yaw;
         private int tick;
         private boolean granted;
+        private ServerPlayer letterFor;
+        private Runnable onEnd;
+        private boolean ended;
 
         Flight(ServerLevel level, ThePrinceAdult prince, double startX, double startZ, double y,
                double dirX, double dirZ, float yaw) {
@@ -181,12 +206,12 @@ public final class PrinceFlyover {
         public void run() {
             try {
                 if (prince.isRemoved()) {
-                    retire(prince);
+                    end();
                     return;
                 }
                 tick++;
                 if (tick >= MAX_TICKS || farFromAllPlayers()) {
-                    retire(prince);
+                    end();
                     return;
                 }
                 double x = startX + dirX * SPEED * tick;
@@ -200,16 +225,28 @@ public final class PrinceFlyover {
                     granted = true;
                     AliveWorldCompat.grantWitnessed(level, "modern_wonders/royal_escort",
                             x, y, z, WITNESS_RADIUS);
+                    if (letterFor != null) {
+                        PrincesLetter.drop(level, letterFor, y);
+                    }
                 }
                 AliveScheduler.schedule(level.getServer(), 1, this);
             } catch (Throwable t) {
                 try {
-                    retire(prince);
+                    end();
                 } catch (Throwable ignored) {
                     active = false;
                     current = null;
                 }
                 AliveWorldCompat.logOnce("prince_flight", t);
+            }
+        }
+
+        /** Retires the puppet and tells the scene's owner the flyover is over, once. */
+        private void end() {
+            retire(prince);
+            if (!ended && onEnd != null) {
+                ended = true;
+                onEnd.run();
             }
         }
 

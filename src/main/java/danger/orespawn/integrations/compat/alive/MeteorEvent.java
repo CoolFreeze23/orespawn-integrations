@@ -20,6 +20,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
+import danger.orespawn.integrations.config.IntegrationsConfig;
+import danger.orespawn.integrations.story.firsthour.FallRecord;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 
 /**
@@ -30,6 +32,12 @@ import net.neoforged.neoforge.event.tick.LevelTickEvent;
  * player near enough to witness it. The whole sequence is a chain of
  * {@link AliveScheduler} tasks, so a server stop mid-shower simply drops the
  * rest of it.
+ *
+ * <p>The Hoard Fall's safety half (0.10.0): it obeys {@code threads.alive_world}; it lands only in the wild, on a
+ * spot {@link FallSafety} passes (loaded chunks, never within 64 blocks of a respawn point, a signed Parish Stone or
+ * a {@code #orespawn_integrations:homely} block entity), and with no passing spot it does not fall; at most one a
+ * night, remembered across restarts; and with {@code alive.meteor_grief} off (the default) it breaks no blocks: no
+ * crater, no magma rocks, and its ore goes only into natural ground.</p>
  */
 final class MeteorEvent {
 
@@ -53,26 +61,39 @@ final class MeteorEvent {
             if (!level.isNight()) {
                 return;
             }
+            if (!IntegrationsConfig.isThreadEnabled("alive_world")) {
+                return;
+            }
             if (level.random.nextInt(ROLL) != 0) {
                 return;
+            }
+            FallRecord record = FallRecord.get(level.getServer());
+            long night = Math.floorDiv(level.getDayTime() - 12000L, 24000L);
+            if (record.lastHoardNight() == night) {
+                return; // at most one a night
             }
             List<ServerPlayer> players = level.players();
             if (players.isEmpty()) {
                 return;
             }
-            begin(level, players.get(level.random.nextInt(players.size())));
+            if (begin(level, players.get(level.random.nextInt(players.size())))) {
+                record.setLastHoardNight(night);
+            }
         } catch (Throwable t) {
             AliveWorldCompat.logOnce("meteor_roll", t);
         }
     }
 
-    private static void begin(ServerLevel level, ServerPlayer player) {
+    private static boolean begin(ServerLevel level, ServerPlayer player) {
         RandomSource random = level.random;
-        double angle = random.nextDouble() * Math.PI * 2.0;
-        double dist = MIN_DIST + random.nextDouble() * DIST_SPREAD;
-        double tx = player.getX() + Math.cos(angle) * dist;
-        double tz = player.getZ() + Math.sin(angle) * dist;
-        int surfaceY = level.getHeight(Heightmap.Types.MOTION_BLOCKING, Mth.floor(tx), Mth.floor(tz));
+        BlockPos spot = FallSafety.findSpot(level, player, MIN_DIST, MIN_DIST + DIST_SPREAD, 360, random);
+        if (spot == null) {
+            return false; // nowhere wild to land tonight
+        }
+        boolean grief = IntegrationsConfig.on(IntegrationsConfig.aliveMeteorGrief);
+        double tx = spot.getX() + 0.5;
+        double tz = spot.getZ() + 0.5;
+        int surfaceY = spot.getY();
         MinecraftServer server = level.getServer();
 
         // t+0..40: warning - a burning column high above the strike point + ominous ambience
@@ -87,8 +108,15 @@ final class MeteorEvent {
             });
         }
 
-        // t+20: three magma rocks streak in at an angle
+        // t+20: three magma rocks streak in at an angle (only with grief on: a landed rock is a placed block)
         AliveScheduler.schedule(server, 20, () -> {
+            if (!grief) {
+                for (int i = 0; i < 3; i++) {
+                    level.sendParticles(ParticleTypes.FLAME, tx, surfaceY + 20.0 + i * 10.0, tz,
+                            30, 1.0, 6.0, 1.0, 0.0);
+                }
+                return;
+            }
             for (int i = 0; i < 3; i++) {
                 double ox = (random.nextDouble() - 0.5) * 50.0;
                 double oz = (random.nextDouble() - 0.5) * 50.0;
@@ -103,12 +131,14 @@ final class MeteorEvent {
 
         // t+60: impact - crater, ore inlay, aliens, advancement
         AliveScheduler.schedule(server, 60, () -> {
-            level.explode(null, tx, surfaceY, tz, CRATER_POWER, Level.ExplosionInteraction.BLOCK);
-            inlayOres(level, tx, tz);
+            level.explode(null, tx, surfaceY, tz, CRATER_POWER,
+                    grief ? Level.ExplosionInteraction.BLOCK : Level.ExplosionInteraction.NONE);
+            inlayOres(level, tx, tz, grief);
             spawnAliens(level, tx, tz);
             AliveWorldCompat.grantWitnessed(level, "modern_wonders/close_encounter",
                     tx, surfaceY, tz, WITNESS_RADIUS);
         });
+        return true;
     }
 
     /**
@@ -117,7 +147,7 @@ final class MeteorEvent {
      * task as the explosion, which completes synchronously, so the fresh
      * heightmap already reflects the crater.
      */
-    private static void inlayOres(ServerLevel level, double tx, double tz) {
+    private static void inlayOres(ServerLevel level, double tx, double tz, boolean grief) {
         BlockState uranium = AliveWorldCompat.blockState("orespawn", "ore_uranium");
         BlockState titanium = AliveWorldCompat.blockState("orespawn", "ore_titanium");
         if (uranium == null && titanium == null) {
@@ -134,7 +164,8 @@ final class MeteorEvent {
                 if (spots.contains(pos)) {
                     continue;
                 }
-                if (level.getBlockState(pos).isSolidRender(level, pos)) {
+                BlockState there = level.getBlockState(pos);
+                if (there.isSolidRender(level, pos) && (grief || FallSafety.natural(there))) {
                     spots.add(pos);
                     break;
                 }

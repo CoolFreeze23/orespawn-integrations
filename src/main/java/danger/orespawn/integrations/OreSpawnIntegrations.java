@@ -61,6 +61,9 @@ public class OreSpawnIntegrations {
             // shelf9:
             {"orespawn_integrations", "danger.orespawn.integrations.story.shelf9.ShelfNine"},
             // firsthour:
+            {"orespawn_integrations", "danger.orespawn.integrations.story.firsthour.FirstHour"},
+            {"neoorigins", "danger.orespawn.integrations.story.firsthour.EtiquetaHandler"},
+            {"customnpcs", "danger.orespawn.integrations.story.firsthour.FieldOdete"},
             // world:
             // registry:
             {"orespawn_integrations", "danger.orespawn.integrations.story.registry.RegistryCore"},

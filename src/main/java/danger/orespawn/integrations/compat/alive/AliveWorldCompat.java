@@ -48,12 +48,16 @@ public final class AliveWorldCompat {
         NeoForge.EVENT_BUS.addListener(PrinceFlyover::onLevelTick);
         NeoForge.EVENT_BUS.addListener(PrinceFlyover::onServerStopping);
         NeoForge.EVENT_BUS.addListener(PrinceFlyover::onEntityJoin);
+        // The first hour's scenes (0.10.0): the Prince's forced first pass with the Summons.
+        PrincesLetter.install();
+        FirstFall.install();
     }
 
     private static void onServerStopped(ServerStoppedEvent event) {
         AliveScheduler.reset();
         CelebrationHandler.reset();
         PrinceFlyover.reset();
+        FirstFall.reset();
     }
 
     // --- defensive plumbing shared by the whole package ---
