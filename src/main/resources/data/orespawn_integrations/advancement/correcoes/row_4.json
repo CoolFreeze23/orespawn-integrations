@@ -1,0 +1,86 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orespawn_integrations:registry_switch",
+      "switch": "corrections"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "distantlandsmc"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:correcoes/primeiro_gasto",
+  "display": {
+    "icon": {
+      "id": "orespawn:emerald_sword"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.correcoes.row_4.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.correcoes.row_4.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "lights_up": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "distantlandsmc:emerald_helmet",
+              "orespawn:emerald_helmet",
+              "distantlandsmc:emerald_chestplate",
+              "orespawn:emerald_chestplate",
+              "distantlandsmc:emerald_leggings",
+              "orespawn:emerald_leggings",
+              "distantlandsmc:emerald_boots",
+              "orespawn:emerald_boots",
+              "distantlandsmc:emerald_sword",
+              "orespawn:emerald_sword",
+              "distantlandsmc:emerald_pickaxe",
+              "orespawn:emerald_pickaxe",
+              "distantlandsmc:emerald_axe",
+              "orespawn:emerald_axe",
+              "distantlandsmc:emerald_shovel",
+              "orespawn:emerald_shovel",
+              "distantlandsmc:emerald_hoe",
+              "orespawn:emerald_hoe"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 5,
+    "recipes": [
+      "orespawn_integrations:correction/dupla_entrada/helmet_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/helmet_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/chestplate_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/chestplate_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/leggings_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/leggings_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/boots_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/boots_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/sword_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/sword_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/pickaxe_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/pickaxe_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/axe_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/axe_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/shovel_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/shovel_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/hoe_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/hoe_to_distantlands"
+    ]
+  }
+}

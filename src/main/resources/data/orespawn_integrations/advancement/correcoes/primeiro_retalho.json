@@ -1,0 +1,33 @@
+{
+  "parent": "orespawn_integrations:wonder/1",
+  "display": {
+    "icon": {
+      "id": "orespawn_integrations:ledger_scrap"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.correcoes.primeiro_retalho.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.correcoes.primeiro_retalho.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "held": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#orespawn_integrations:correction_payment"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

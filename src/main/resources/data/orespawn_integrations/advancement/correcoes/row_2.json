@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orespawn_integrations:registry_switch",
+      "switch": "corrections"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enchanted"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:correcoes/primeiro_gasto",
+  "display": {
+    "icon": {
+      "id": "enchanted:spanish_moss"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.correcoes.row_2.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.correcoes.row_2.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "lights_up": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "biomesoplenty:spanish_moss"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 5,
+    "recipes": [
+      "orespawn_integrations:correction/musgo_da_cuca"
+    ]
+  }
+}

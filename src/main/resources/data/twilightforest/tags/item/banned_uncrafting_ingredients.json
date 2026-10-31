@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn_integrations:ledger_scrap",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:guia_de_averbacao",
+      "required": false
+    }
+  ]
+}

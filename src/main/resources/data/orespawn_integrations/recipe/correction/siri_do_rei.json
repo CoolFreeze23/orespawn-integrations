@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "naturalist"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "orespawn_integrations:correction",
+  "ingredients": [
+    {
+      "tag": "orespawn_integrations:correction_payment"
+    },
+    {
+      "item": "naturalist:cooked_crab_meat"
+    },
+    {
+      "item": "naturalist:cooked_crab_meat"
+    },
+    {
+      "item": "naturalist:cooked_crab_meat"
+    },
+    {
+      "item": "naturalist:cooked_crab_meat"
+    },
+    {
+      "item": "naturalist:cooked_crab_meat"
+    },
+    {
+      "item": "naturalist:cooked_crab_meat"
+    },
+    {
+      "item": "naturalist:cooked_crab_meat"
+    },
+    {
+      "item": "naturalist:cooked_crab_meat"
+    }
+  ],
+  "result": {
+    "id": "orespawn:cooked_crab_meat",
+    "count": 8
+  }
+}

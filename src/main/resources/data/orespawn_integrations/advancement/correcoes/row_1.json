@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orespawn_integrations:registry_switch",
+      "switch": "corrections"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "hbmsntm"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:correcoes/primeiro_gasto",
+  "display": {
+    "icon": {
+      "id": "orespawn:uranium_nugget"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.correcoes.row_1.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.correcoes.row_1.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "lights_up": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "hbmsntm:ingot_uranium"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 5,
+    "recipes": [
+      "orespawn_integrations:correction/uranio_de_lei"
+    ]
+  }
+}

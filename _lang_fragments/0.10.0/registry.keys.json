@@ -36,5 +36,21 @@
   "orespawn_integrations.odete.placa.trono.1": "npc-odetes | SIGN | throne sign line 1 (line 24) | THRONE",
   "orespawn_integrations.odete.placa.trono.2": "npc-odetes | SIGN | throne sign line 2 (line 24) | (PROVISIONAL)",
   "orespawn_integrations.odete.placa.trono.3": "npc-odetes | SIGN | throne sign line 3 (line 24) | Please do not sit",
-  "orespawn_integrations.odete.placa.trono.4": "npc-odetes | SIGN | throne sign line 4 (line 24) | — Management"
+  "orespawn_integrations.odete.placa.trono.4": "npc-odetes | SIGN | throne sign line 4 (line 24) | — Management",
+  "advancements.orespawn_integrations.correcoes.primeiro_retalho.title": "item-ledger-scrap | advancement title | First Scrap",
+  "advancements.orespawn_integrations.correcoes.primeiro_retalho.description": "item-ledger-scrap | advancement description | Pick up a piece of the torn Ledger.",
+  "advancements.orespawn_integrations.correcoes.primeiro_gasto.title": "item-ledger-scrap | advancement title | Paid in Paper",
+  "advancements.orespawn_integrations.correcoes.primeiro_gasto.description": "item-ledger-scrap | advancement description | Spend a Ledger Scrap on anything.",
+  "advancements.orespawn_integrations.correcoes.primeira_emenda.title": "item-ledger-scrap | advancement title | Returned to the Wardrobe",
+  "advancements.orespawn_integrations.correcoes.primeira_emenda.description": "item-ledger-scrap | advancement description | Correct a stolen hat off a creature.",
+  "advancements.orespawn_integrations.correcoes.row_1.title": "system-corrections | advancement title | Sterling Uranium",
+  "advancements.orespawn_integrations.correcoes.row_1.description": "system-corrections | advancement description | A correction is in your book.",
+  "advancements.orespawn_integrations.correcoes.row_2.title": "system-corrections | advancement title | The Cuca's Moss",
+  "advancements.orespawn_integrations.correcoes.row_2.description": "system-corrections | advancement description | A correction is in your book.",
+  "advancements.orespawn_integrations.correcoes.row_3.title": "system-corrections | advancement title | The King's Crab",
+  "advancements.orespawn_integrations.correcoes.row_3.description": "system-corrections | advancement description | A correction is in your book.",
+  "advancements.orespawn_integrations.correcoes.row_4.title": "system-corrections | advancement title | Double-Booked",
+  "advancements.orespawn_integrations.correcoes.row_4.description": "system-corrections | advancement description | A correction is in your book.",
+  "advancements.orespawn_integrations.correcoes.row_7.title": "system-corrections | advancement title | Sterling Titanium",
+  "advancements.orespawn_integrations.correcoes.row_7.description": "system-corrections | advancement description | A correction is in your book."
 }

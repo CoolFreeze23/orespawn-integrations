@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orespawn_integrations:registry_switch",
+      "switch": "corrections"
+    }
+  ],
+  "parent": "orespawn_integrations:correcoes/primeiro_retalho",
+  "criteria": {
+    "held": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#orespawn_integrations:correction_payment"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "orespawn_integrations:correction/uranio_de_lei",
+      "orespawn_integrations:correction/musgo_da_cuca",
+      "orespawn_integrations:correction/siri_do_rei",
+      "orespawn_integrations:correction/dupla_entrada/helmet_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/helmet_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/chestplate_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/chestplate_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/leggings_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/leggings_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/boots_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/boots_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/sword_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/sword_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/pickaxe_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/pickaxe_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/axe_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/axe_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/shovel_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/shovel_to_distantlands",
+      "orespawn_integrations:correction/dupla_entrada/hoe_to_orespawn",
+      "orespawn_integrations:correction/dupla_entrada/hoe_to_distantlands",
+      "orespawn_integrations:correction/titanio_de_lei",
+      "orespawn_integrations:arca_real"
+    ]
+  }
+}

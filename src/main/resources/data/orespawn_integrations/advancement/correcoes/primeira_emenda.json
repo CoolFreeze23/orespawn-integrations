@@ -1,0 +1,26 @@
+{
+  "parent": "orespawn_integrations:property/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:leather_helmet"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.correcoes.primeira_emenda.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.correcoes.primeira_emenda.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}
