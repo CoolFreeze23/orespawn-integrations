@@ -5,12 +5,15 @@ CrazyCraft 5.0 `minecraft/mods` folder (or the versions listed below):
 
 - `Apotheosis-1.21.1-8.9.0.jar`
 - `ApothicAttributes-1.21.1-2.11.0.jar`
+- `ApothicSpawners-1.21.1-1.4.0.jar`
 - `ars_nouveau-1.21.1-5.13.2.jar`
 - `artifacts-neoforge-13.2.5.jar`
 - `balm-neoforge-1.21.1-21.0.66.jar`
 - `bettercombat-neoforge-2.4.0+1.21.1.jar`
 - `craftedcore-5.8.2.jar`
 - `curios-neoforge-9.5.1+1.21.1.jar`
+- `CustomNPCs-Unofficial-NeoForge-1.21.1.20241226.jar`
+- `brasilcoisas-2.1.0-neoforge-1.21.1.jar`
 - `DoggyTalentsNext-1.21.1-1.19.1.jar`
 - `enchanted-neoforge-1.21.1-4.2.7.jar`
 - `entity_model_features-3.3.9-1.21-neoforge.jar`
@@ -25,7 +28,8 @@ CrazyCraft 5.0 `minecraft/mods` folder (or the versions listed below):
 - `journeymap-api-neoforge-2.0.0-1.21.1.jar`
 - `journeymap-neoforge-1.21.1-6.0.9.jar`
 - `lootr-neoforge-1.21.1-1.11.38.127.jar`
-- `orespawn-1.21.1-2.0.0-beta.12.jar`
+- `orespawn-1.21.1-2.0.0-beta.15.jar`
+- `neoorigins-2.2.29+1.21.1.jar`
 - `Patchouli-1.21.1-93-NEOFORGE.jar`
 - `Placebo-1.21.1-9.9.2.jar`
 - `player-animation-lib-forge-2.0.4+1.21.1.jar`
