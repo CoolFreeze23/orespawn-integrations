@@ -18,14 +18,14 @@ import java.util.Map;
  * own language: it reads our jar's {@code assets/orespawn_integrations/lang/<lang>.json} once per language, falling
  * back to English, then to the server's own language table (other mods' names, in English), then to the key.
  */
-final class SightingNames {
+public final class SightingNames {
 
     private static final Map<String, Map<String, String>> TABLES = new HashMap<>();
 
     private SightingNames() {
     }
 
-    static String resolve(ServerPlayer player, String key) {
+    public static String resolve(ServerPlayer player, String key) {
         String lang = player.clientInformation().language();
         String text = table(lang == null ? "en_us" : lang.toLowerCase(Locale.ROOT)).get(key);
         if (text == null) {

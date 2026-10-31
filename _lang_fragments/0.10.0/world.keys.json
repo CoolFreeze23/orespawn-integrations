@@ -1,4 +1,11 @@
 {
+  "orespawn_integrations.avistamento.pin.orespawn.ant_block": "system-sightings | ITEM | map pin name for orespawn:ant_block",
+  "orespawn_integrations.avistamento.pin.orespawn.red_ant_block": "system-sightings | ITEM | map pin name for orespawn:red_ant_block",
+  "orespawn_integrations.avistamento.pin.orespawn.rainbow_ant_block": "system-sightings | ITEM | map pin name for orespawn:rainbow_ant_block",
+  "orespawn_integrations.avistamento.pin.orespawn.unstable_ant_block": "system-sightings | ITEM | map pin name for orespawn:unstable_ant_block",
+  "orespawn_integrations.avistamento.pin.orespawn.termite_block": "system-sightings | ITEM | map pin name for orespawn:termite_block",
+  "orespawn_integrations.avistamento.pin.simpleluckyblock.lucky_block": "system-sightings | ITEM | map pin name for simpleluckyblock:lucky_block",
+  "orespawn_integrations.avistamento.pin.pandorasbox.pandoras_box": "system-sightings | ITEM | map pin name for pandorasbox:pandoras_box",
   "orespawn_integrations.region.l1.title": "system-region-names | TITLE | region L1 title",
   "orespawn_integrations.region.l1.subtitle": "system-region-names | TITLE | region L1 subtitle",
   "orespawn_integrations.region.l2.title": "system-region-names | TITLE | region L2 title",

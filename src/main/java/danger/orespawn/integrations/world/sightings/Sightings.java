@@ -302,7 +302,9 @@ public final class Sightings {
             return family(f.number(), "b:" + pos.asLong(), distance, pos);
         }
         if (state.is(SIGHTABLE_BLOCKS)) {
-            return new Target("p:" + pos.asLong(), 0, distance, pos, null, 0L, state.getBlock().getDescriptionId(), -1);
+            ResourceLocation id = BuiltInRegistries.BLOCK.getKey(state.getBlock());
+            return new Target("p:" + pos.asLong(), 0, distance, pos, null, 0L,
+                    KEY + "pin." + id.getNamespace() + "." + id.getPath(), -1);
         }
         StructureHit structure = structureAt(level, pos);
         if (structure != null) {

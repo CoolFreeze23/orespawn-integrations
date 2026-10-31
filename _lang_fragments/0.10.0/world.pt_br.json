@@ -1,4 +1,11 @@
 {
+  "orespawn_integrations.avistamento.pin.orespawn.ant_block": "Bloco de Formigas",
+  "orespawn_integrations.avistamento.pin.orespawn.red_ant_block": "Bloco de Formigas Vermelhas",
+  "orespawn_integrations.avistamento.pin.orespawn.rainbow_ant_block": "Bloco de Formigas Arco-íris",
+  "orespawn_integrations.avistamento.pin.orespawn.unstable_ant_block": "Bloco de Formigas Instáveis",
+  "orespawn_integrations.avistamento.pin.orespawn.termite_block": "Bloco de Cupins",
+  "orespawn_integrations.avistamento.pin.simpleluckyblock.lucky_block": "Arca Lacrada",
+  "orespawn_integrations.avistamento.pin.pandorasbox.pandoras_box": "Caixa de Pandora",
   "orespawn_integrations.region.l1.title": "O Chão Velho",
   "orespawn_integrations.region.l1.subtitle": "a Terra de antes da Casa",
   "orespawn_integrations.region.l2.title": "O Interior",

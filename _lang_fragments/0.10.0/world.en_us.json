@@ -1,4 +1,11 @@
 {
+  "orespawn_integrations.avistamento.pin.orespawn.ant_block": "Ant Block",
+  "orespawn_integrations.avistamento.pin.orespawn.red_ant_block": "Red Ant Block",
+  "orespawn_integrations.avistamento.pin.orespawn.rainbow_ant_block": "Rainbow Ant Block",
+  "orespawn_integrations.avistamento.pin.orespawn.unstable_ant_block": "Unstable Ant Block",
+  "orespawn_integrations.avistamento.pin.orespawn.termite_block": "Termite Block",
+  "orespawn_integrations.avistamento.pin.simpleluckyblock.lucky_block": "Sealed Casket",
+  "orespawn_integrations.avistamento.pin.pandorasbox.pandoras_box": "Pandora's Box",
   "orespawn_integrations.region.l1.title": "The Old Ground",
   "orespawn_integrations.region.l1.subtitle": "the Land before the House",
   "orespawn_integrations.region.l2.title": "The Countryside",

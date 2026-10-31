@@ -297,6 +297,20 @@ REGION_TEXT = [
      "Província de Zomboss, segundo o próprio Zomboss"),
     (14, "The Larder", "where the eggs fell into the stone", "A Despensa", "onde os ovos caíram na pedra"),
 ]
+# Map-pin names for the #sightable blocks: pins are literal text, so every pinned thing needs a name of ours in both
+# languages (another mod's own name would be English for a pt-BR player). Names follow the pack's renames and the
+# glossary (the lucky block is the Sealed Casket / Arca Lacrada); the rest keep the pack's shipped pt-BR names.
+PIN_NAMES = [
+    ("orespawn", "ant_block", "Ant Block", "Bloco de Formigas"),
+    ("orespawn", "red_ant_block", "Red Ant Block", "Bloco de Formigas Vermelhas"),
+    ("orespawn", "rainbow_ant_block", "Rainbow Ant Block", "Bloco de Formigas Arco-íris"),
+    ("orespawn", "unstable_ant_block", "Unstable Ant Block", "Bloco de Formigas Instáveis"),
+    ("orespawn", "termite_block", "Termite Block", "Bloco de Cupins"),
+    ("simpleluckyblock", "lucky_block", "Sealed Casket", "Arca Lacrada"),
+    ("pandorasbox", "pandoras_box", "Pandora's Box", "Caixa de Pandora"),
+]
+for ns, path, en, pt in PIN_NAMES:
+    line(f"{K}avistamento.pin.{ns}.{path}", "sight", "ITEM", f"map pin name for {ns}:{path}", en, pt)
 for n, et, es, pt_t, ps in REGION_TEXT:
     line(f"{K}region.l{n}.title", "region", "TITLE", f"region L{n} title", et, pt_t)
     line(f"{K}region.l{n}.subtitle", "region", "TITLE", f"region L{n} subtitle", es, ps)
