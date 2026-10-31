@@ -81,6 +81,9 @@ class ShelfNineLogicTest {
         WaysPlan.Found farBar = new WaysPlan.Found("bar", 0, 1834);
         assertEquals("bar", WaysPlan.assign(List.of(farBar))[2].kind(), "the farthest bar measured still shows");
         assertEquals(1830, WaysPlan.roundedDistance(farBar));
+        assertEquals(5, WaysPlan.ringsFor(34), "villages: 4 rings cover 2,048, plus one");
+        assertEquals(17, WaysPlan.ringsFor(8), "a tight spread needs more rings");
+        assertEquals(32, WaysPlan.ringsFor(1), "never more than vanilla's 32");
         assertEquals(0, WaysPlan.side(0, -1));
         assertEquals(1, WaysPlan.side(5, 5));
         assertEquals(2, WaysPlan.side(1, 5));

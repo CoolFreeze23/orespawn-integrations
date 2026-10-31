@@ -9,7 +9,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.chunk.ChunkGeneratorStructureState;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
+import net.minecraft.world.level.levelgen.structure.placement.StructurePlacement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,11 +116,28 @@ public final class FourWays {
         TagKey<Structure> tag = TagKey.create(Registries.STRUCTURE,
                 ResourceLocation.fromNamespaceAndPath(OreSpawnIntegrations.MODID, "shelf9/" + kind));
         try {
-            return level.findNearestMapStructure(tag, centre, RADIUS_CHUNKS, false);
+            return level.findNearestMapStructure(tag, centre, rings(level, tag), false);
         } catch (Throwable t) {
             OreSpawnIntegrations.LOGGER.warn("Shelf 9: the {} locate failed; that way stays empty", kind, t);
             return null;
         }
+    }
+
+    /**
+     * The locate's radius in placement-grid rings: enough for the tag's tightest random spread to reach
+     * {@link WaysPlan#MAX_DISTANCE}, so a search never walks rings no sign could name. At most {@link #RADIUS_CHUNKS}.
+     */
+    static int rings(ServerLevel level, TagKey<Structure> tag) {
+        ChunkGeneratorStructureState state = level.getChunkSource().getGeneratorState();
+        int[] minSpacing = {Integer.MAX_VALUE};
+        level.registryAccess().registryOrThrow(Registries.STRUCTURE).getTag(tag).ifPresent(set -> set.forEach(s -> {
+            for (StructurePlacement p : state.getPlacementsForStructure(s)) {
+                if (p instanceof RandomSpreadStructurePlacement spread) {
+                    minSpacing[0] = Math.min(minSpacing[0], spread.spacing());
+                }
+            }
+        }));
+        return minSpacing[0] == Integer.MAX_VALUE ? RADIUS_CHUNKS : WaysPlan.ringsFor(minSpacing[0]);
     }
 
     private static BlockPos nearestHubPlace(ServerLevel level, BlockPos centre, String thing) {

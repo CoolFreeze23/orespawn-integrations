@@ -49,6 +49,15 @@ public final class WaysPlan {
         return sides;
     }
 
+    /**
+     * Placement-grid rings a locate needs to reach {@link #MAX_DISTANCE} for a placement {@code spacing} chunks apart:
+     * one more ring than the distance covers, since a structure can sit anywhere in its cell. At most 32 (vanilla's).
+     */
+    public static int ringsFor(int spacing) {
+        int cover = (MAX_DISTANCE + spacing * 16 - 1) / (spacing * 16);
+        return Math.min(32, cover + 1);
+    }
+
     /** The distance as signed: rounded to the nearest 10 blocks ("~{distance} blocks"). */
     public static int roundedDistance(Found f) {
         return Math.max(10, (int) Math.round(f.distance() / 10.0) * 10);

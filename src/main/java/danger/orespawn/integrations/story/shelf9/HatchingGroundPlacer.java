@@ -24,7 +24,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.neoforged.fml.ModList;
-import net.neoforged.neoforge.event.server.ServerStartedEvent;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,8 +56,11 @@ public final class HatchingGroundPlacer {
     private HatchingGroundPlacer() {
     }
 
-    /** The first start of a new world: find a site near world spawn and place Shelf 9 once, or log the skip. */
-    static void onServerStarted(ServerStartedEvent event) {
+    /**
+     * While the server starts (levels loaded, before "Done" and before any player can join): a live placement's waiting
+     * Four Ways survey, then, on a new world's first start, the site search and Shelf 9 itself, or the skip logged.
+     */
+    static void onServerStarting(ServerStartingEvent event) {
         MinecraftServer server = event.getServer();
         try {
             HatchingGroundData data = HatchingGroundData.get(server);

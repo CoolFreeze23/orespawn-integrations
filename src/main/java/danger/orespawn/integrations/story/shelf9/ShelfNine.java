@@ -29,7 +29,7 @@ public final class ShelfNine {
 
     public static void init(IEventBus modBus) {
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGH, ShelfNine::onLogin);
-        NeoForge.EVENT_BUS.addListener(HatchingGroundPlacer::onServerStarted);
+        NeoForge.EVENT_BUS.addListener(HatchingGroundPlacer::onServerStarting);
         NeoForge.EVENT_BUS.addListener(danger.orespawn.integrations.command.CcCommand::register);
         StoryClock.everySecondPerPlayer("shelf9.register_origin", HatchRegister::checkPendingOrigin);
     }
