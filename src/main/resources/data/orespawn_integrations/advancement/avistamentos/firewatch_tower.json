@@ -1,0 +1,35 @@
+{
+  "parent": "orespawn_integrations:wonder/1",
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "granted"
+    ]
+  ],
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "minecraft:campfire"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.avistamentos.firewatch_tower.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.avistamentos.firewatch_tower.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "sends_telemetry_event": false,
+  "rewards": {
+    "recipes": [
+      "minecraft:spyglass"
+    ]
+  }
+}
