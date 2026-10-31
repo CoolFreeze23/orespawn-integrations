@@ -59,6 +59,7 @@ public class OreSpawnIntegrations {
             {"orespawn", "danger.orespawn.integrations.compat.bipeds.BipedsCompat"},
             // The road (0.10.0 on). One block per system group; each class has its own init(IEventBus).
             // shelf9:
+            {"orespawn_integrations", "danger.orespawn.integrations.story.shelf9.ShelfNine"},
             // firsthour:
             {"orespawn_integrations", "danger.orespawn.integrations.story.firsthour.FirstHour"},
             {"neoorigins", "danger.orespawn.integrations.story.firsthour.EtiquetaHandler"},

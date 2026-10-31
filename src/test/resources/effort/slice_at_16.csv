@@ -1,0 +1,8 @@
+card,tier,project,release,letters,points
+card-a,Strong,OI,0.12.0,L,4
+card-b,Strong,OI,0.12.0,L,4
+card-c,Stretch,OI,0.12.0,L,4
+card-d,Strong,OI,0.12.0,M+M,4
+card-e,Core,OI,0.12.0,S,1
+card-f,Strong,PK,0.12.0,M,2
+card-g,Core,OI,0.10.0,L+L+L+L+L,20
