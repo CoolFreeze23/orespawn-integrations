@@ -15,6 +15,7 @@ import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -123,6 +124,30 @@ public final class ShelfNineTests {
         helper.assertTrue(objective != null, "cc_shell_casket exists");
         var score = player.getServer().getScoreboard().getPlayerScoreInfo(player, objective);
         helper.assertTrue(score != null && score.value() == 1, "cc_shell_casket set to 1");
+        helper.succeed();
+    }
+
+    /**
+     * The same kit opened the way a player opens it, a right click in the main hand, which is where vanilla settles the
+     * used stack: every item survives, the Field Guide included (it once landed in the emptied hand and was cleared).
+     */
+    @GameTest(template = "empty8")
+    public static void eggshellOpenedByHandKeepsTheWholeKit(GameTestHelper helper) {
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        player.getInventory().clearContent();
+        player.getInventory().selected = 0;
+        ItemStack shell = new ItemStack(item("orespawn_integrations:hatchling_shell"));
+        player.setItemInHand(InteractionHand.MAIN_HAND, shell);
+        player.gameMode.useItem(player, helper.getLevel(), shell, InteractionHand.MAIN_HAND);
+        helper.assertTrue(count(player, item("orespawn_integrations:hatchling_shell")) == 0, "the shell is used up");
+        helper.assertTrue(count(player, Items.RED_BED) == 1, "a red bed");
+        helper.assertTrue(count(player, Items.TORCH) == 6, "6 torches");
+        if (ModList.get().isLoaded("patchouli")) {
+            helper.assertTrue(count(player, item("patchouli:guide_book")) == 1, "the Field Guide survives the hand");
+        }
+        if (ModList.get().isLoaded("braziliandelight")) {
+            helper.assertTrue(count(player, item("braziliandelight:cheese_bread")) == 3, "3 pães de queijo");
+        }
         helper.succeed();
     }
 
