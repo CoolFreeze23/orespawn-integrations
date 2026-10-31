@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pandorasbox"
+    }
+  ],
+  "tooltip": {
+    "translate": "effect_holder.orespawn_integrations.grande_recusa.void_30",
+    "fallback": "The Great Refusal: the Void"
+  },
+  "effect_creator": {
+    "time": {
+      "min": 30,
+      "max": 60,
+      "type": "minecraft:linear"
+    },
+    "range": {
+      "min": 30.0,
+      "max": 30.0,
+      "type": "minecraft:linear"
+    },
+    "type": "pandorasbox:create_void"
+  },
+  "chance": 0.0,
+  "type": "minecraft:fixed_chance"
+}
