@@ -36,6 +36,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -213,6 +214,107 @@ public final class FirstHourTests {
                         : String.format("%.1f", open.get(0).getY() - feet.getY())) + " over the feet)");
         open.forEach(ItemEntity::discard);
         helper.succeed();
+    }
+
+    /**
+     * "a new account standing still on Shelf 9 at night gets its Fall by the second try, 24-48 blocks out and in view"
+     * (event-first-fall, a newcomer near spawn): the second try's ring finds open ground the player can see.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 200)
+    public static void aNewcomerGetsAFallInViewOnTheSecondTry(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        // Outside the test's own barrier box (it would block every line of sight), on the flat ground beside it.
+        BlockPos feet = helper.absolutePos(new BlockPos(-12, 0, -12));
+        player.teleportTo(feet.getX() + 0.5, feet.getY(), feet.getZ() + 0.5);
+        List<Long> forced = forceAround(level, feet);
+        try {
+            // Other tests' chests and beds stand within reach and are homes too; the clearances themselves are the
+            // next test's, so this one reads the ring with no homes at all.
+            List<FallSafety.Home> homes = List.of();
+            BlockPos spot = null;
+            FallSafety.Tally tally = new FallSafety.Tally();
+            for (int i = 0; i < 5 && spot == null; i++) {
+                spot = FallSafety.ringInView(level, player, homes, level.random, tally);
+            }
+            helper.assertTrue(spot != null, "the ring found a spot (" + tally + ")");
+            double d = Math.sqrt(Math.pow(spot.getX() + 0.5 - player.getX(), 2) + Math.pow(spot.getZ() + 0.5 - player.getZ(), 2));
+            helper.assertTrue(d >= 23.0 && d <= 49.0, "24-48 blocks out, got " + (int) d);
+        } finally {
+            release(level, forced);
+        }
+        helper.succeed();
+    }
+
+    /**
+     * "a second account's Fall that night still keeps 64 from the first player's bed": a newcomer's own respawn point and
+     * the homely blocks they just placed need 24 blocks for their own Fall; for anyone else they keep the full 64.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 200)
+    public static void aNewcomersOwnHomeNeeds24AndAFriendsKeeps64(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        ServerPlayer first = MockPlayers.inLevel(helper);
+        ServerPlayer second = MockPlayers.inLevel(helper);
+        BlockPos bed = helper.absolutePos(new BlockPos(2, 1, 2));
+        first.setRespawnPosition(level.dimension(), bed, 0.0F, true, false);
+        BlockPos chest = helper.absolutePos(new BlockPos(5, 1, 5));
+        helper.setBlock(new BlockPos(5, 1, 5), Blocks.CHEST);
+        FallRecord record = FallRecord.get(level.getServer());
+        record.entry(first.getUUID()).placed(chest, level.getGameTime());
+        try {
+            List<FallSafety.Home> mine = FallSafety.homesFor(level, first, bed.getX(), bed.getZ(), 120);
+            List<FallSafety.Home> theirs = FallSafety.homesFor(level, second, bed.getX(), bed.getZ(), 120);
+            helper.assertTrue(mine.contains(new FallSafety.Home(bed, FallSafety.NEWCOMER_RADIUS)),
+                    "the newcomer's own bed needs 24 for their own Fall");
+            helper.assertTrue(mine.contains(new FallSafety.Home(chest, FallSafety.NEWCOMER_RADIUS)),
+                    "a chest they placed today needs 24 too");
+            helper.assertTrue(theirs.contains(new FallSafety.Home(bed, FallSafety.HOME_RADIUS)),
+                    "the first player's bed keeps 64 from a second player's Fall");
+            helper.assertTrue(theirs.contains(new FallSafety.Home(chest, FallSafety.HOME_RADIUS)),
+                    "and so does the first player's chest");
+            BlockPos away = bed.offset(40, 0, 0);
+            second.teleportTo(away.getX() + 0.5, away.getY(), away.getZ() + 0.5);
+            List<Long> forced = forceAround(level, away);
+            try {
+                List<FallSafety.Home> near = FallSafety.homesFor(level, second, second.getX(), second.getZ(), 120);
+                for (int i = 0; i < 5; i++) {
+                    BlockPos spot = FallSafety.ringInView(level, second, near, level.random, new FallSafety.Tally());
+                    if (spot != null) {
+                        helper.assertTrue(spot.distSqr(new BlockPos(bed.getX(), spot.getY(), bed.getZ())) >= 64 * 64,
+                                "a second account's Fall lands 64 or more from the first player's bed");
+                    }
+                }
+            } finally {
+                release(level, forced);
+            }
+        } finally {
+            record.find(first.getUUID()).placedHomely.clear();
+        }
+        helper.succeed();
+    }
+
+    /** Forces the chunks around {@code centre} that are not forced yet (other tests' stay theirs); returns them. */
+    private static List<Long> forceAround(ServerLevel level, BlockPos centre) {
+        List<Long> mine = new ArrayList<>();
+        int cx = centre.getX() >> 4;
+        int cz = centre.getZ() >> 4;
+        for (int dx = -4; dx <= 4; dx++) {
+            for (int dz = -4; dz <= 4; dz++) {
+                long key = net.minecraft.world.level.ChunkPos.asLong(cx + dx, cz + dz);
+                if (!level.getForcedChunks().contains(key)) {
+                    level.setChunkForced(cx + dx, cz + dz, true);
+                    mine.add(key);
+                }
+            }
+        }
+        return mine;
+    }
+
+    private static void release(ServerLevel level, List<Long> forced) {
+        for (long key : forced) {
+            level.setChunkForced(net.minecraft.world.level.ChunkPos.getX(key), net.minecraft.world.level.ChunkPos.getZ(key),
+                    false);
+        }
     }
 
     /** An opened, emptied First Fall crate keeps no Fall away; the same crate with one item in it does. */

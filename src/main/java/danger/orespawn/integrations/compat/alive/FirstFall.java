@@ -1,28 +1,26 @@
 package danger.orespawn.integrations.compat.alive;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
+import danger.orespawn.integrations.OreSpawnIntegrations;
 import danger.orespawn.integrations.config.IntegrationsConfig;
 import danger.orespawn.integrations.story.firsthour.FallRecord;
+import danger.orespawn.integrations.story.firsthour.FirstHourData;
 import danger.orespawn.integrations.story.firsthour.FirstHourScenes;
 import danger.orespawn.integrations.story.firsthour.FirstHourUtil;
 import danger.orespawn.integrations.story.firsthour.PriorityTicket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -39,13 +37,17 @@ import net.minecraft.world.level.block.entity.SignText;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.RotationSegment;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
-import net.minecraft.world.InteractionResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -89,6 +91,7 @@ public final class FirstFall {
         NeoForge.EVENT_BUS.addListener(FirstFall::onEntityJoin);
         NeoForge.EVENT_BUS.addListener(FirstFall::onLogout);
         NeoForge.EVENT_BUS.addListener(FirstFall::onAttack);
+        NeoForge.EVENT_BUS.addListener(FirstFall::onPlace);
     }
 
     static void reset() {
@@ -119,16 +122,30 @@ public final class FirstFall {
         RandomSource random = level.random;
         boolean crater = entry.tries < MAX_TRIES;
         BlockPos spot;
+        FallSafety.Tally tally = new FallSafety.Tally();
         if (crater) {
             boolean night = level.isNight();
-            spot = FallSafety.findSpot(level, player, night ? 50 : 60, night ? 70 : 100,
-                    entry.tries == 0 ? 120 : 360, random);
+            int min = night ? 50 : 60;
+            int max = night ? 70 : 100;
+            if (backDated) {
+                spot = FallSafety.findSpot(level, player, min, max, entry.tries == 0 ? 120 : 360, random);
+            } else {
+                // A newcomer near spawn: their own spawn, respawn point and fresh homely blocks need only 24 blocks;
+                // the first try keeps the cone, the second and later ones look 24-48 blocks round, in view.
+                List<FallSafety.Home> homes = FallSafety.homesFor(level, player, player.getX(), player.getZ(),
+                        max + FallSafety.HOME_RADIUS);
+                spot = entry.tries == 0
+                        ? FallSafety.findSpot(level, player, min, max, 120, random, homes, tally)
+                        : FallSafety.ringInView(level, player, homes, random, tally);
+            }
         } else {
             spot = player.onGround() && !player.isInWater() ? dryBlockNear(level, player, random) : null;
         }
         if (spot == null) {
             entry.tries++;
             record.setDirty();
+            OreSpawnIntegrations.LOGGER.info("First Fall for {}: no spot on try {} ({})",
+                    player.getGameProfile().getName(), entry.tries, tally);
             return FirstHourScenes.Result.BUSY; // held: P05 waits, and nothing later is issued
         }
         long scene = FirstHourScenes.CAP.start(now);
@@ -141,6 +158,27 @@ public final class FirstFall {
         AliveScheduler.schedule(level.getServer(), STREAK_TICKS,
                 () -> land(level, player.getUUID(), at, crater, backDated, yaw));
         return FirstHourScenes.Result.STARTED;
+    }
+
+    /**
+     * A homely block placed by a player whose First Fall has not landed yet: kept for a game day, so their own Fall
+     * may land 24 blocks from it instead of 64 (a newcomer near spawn).
+     */
+    private static void onPlace(BlockEvent.EntityPlaceEvent event) {
+        try {
+            if (!(event.getEntity() instanceof ServerPlayer player) || !(event.getLevel() instanceof ServerLevel level)
+                    || !event.getPlacedBlock().is(FallSafety.HOMELY) || !FirstHourData.hasTicket(player)) {
+                return;
+            }
+            FallRecord record = FallRecord.get(level.getServer());
+            FallRecord.Entry entry = record.entry(player.getUUID());
+            if (!entry.landed) {
+                entry.placed(event.getPos(), level.getGameTime());
+                record.setDirty();
+            }
+        } catch (Throwable t) {
+            AliveWorldCompat.logOnce("first_fall_place", t);
+        }
     }
 
     /** The shipped warning, a 6-second gold streak and the whistle. */
