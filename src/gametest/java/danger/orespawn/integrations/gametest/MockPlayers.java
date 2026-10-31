@@ -7,6 +7,7 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.CommonListenerCookie;
+import net.minecraft.world.level.GameType;
 import net.neoforged.neoforge.network.registration.NetworkRegistry;
 
 import java.util.UUID;
@@ -15,6 +16,8 @@ import java.util.UUID;
  * Vanilla's {@code makeMockServerPlayerInLevel}, plus NeoForge's {@code NetworkRegistry.configureMockConnection}: the
  * mock connection then takes every mod's payloads. Without it, the first mod that sends a player data at login (Apothic
  * Attributes' config, Neo Origins' sync) throws "may not be sent to the client" and fails the test before it starts.
+ * Unlike vanilla's, this player is in survival, as the players these tests describe are: in creative, using a scrap
+ * would never spend it.
  */
 final class MockPlayers {
 
@@ -33,13 +36,15 @@ final class MockPlayers {
 
             @Override
             public boolean isCreative() {
-                return true;
+                return false;
             }
         };
         Connection connection = new Connection(PacketFlow.SERVERBOUND);
         new EmbeddedChannel(connection);
         NetworkRegistry.configureMockConnection(connection);
         helper.getLevel().getServer().getPlayerList().placeNewPlayer(connection, player, cookie);
+        // the GameTest world's default mode is creative; these tests describe survival play
+        player.setGameMode(GameType.SURVIVAL);
         return player;
     }
 }

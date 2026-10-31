@@ -229,7 +229,13 @@ public final class RegistryTests {
     public static void scrapOnBareCowKept(GameTestHelper helper) {
         ServerPlayer player = player(helper);
         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(item(ScrapCaps.SCRAP)));
+        // Hats Renewed gives some new mobs a random hat; this test needs a bare cow, so spawn until one is bare
         Cow cow = helper.spawn(EntityType.COW, new BlockPos(2, 2, 2));
+        for (int tries = 0; tries < 20 && ModList.get().isLoaded("hats")
+                && HatsSavedData.get(helper.getLevel()).getEntityHat(cow.getUUID()) != null; tries++) {
+            cow.discard();
+            cow = helper.spawn(EntityType.COW, new BlockPos(2, 2, 2));
+        }
         interact(player, cow);
         helper.assertTrue(player.getMainHandItem().getCount() == 1, "scrap spent on a bare cow");
         helper.succeed();

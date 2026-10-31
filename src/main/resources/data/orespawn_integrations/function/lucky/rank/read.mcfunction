@@ -2,6 +2,12 @@
 # 0.10.0 has no court ranks yet, so Knight and up is the Apotheosis Summit holder; everyone else, and a casket nobody
 # stood by, falls through to the Hatchling table. The rank-0 branch is the fall-through (an unset score fails every
 # matches test, matches 0 included).
+# The scores this reads must exist first: a score test on a missing objective is an error that ends the function, so a
+# casket opened before anyone had opened an Eggshell rolled nothing at all.
+scoreboard objectives add cc_lucky dummy
+scoreboard objectives add cc_shell_casket dummy
+scoreboard objectives add cc_lucky_dia dummy
+scoreboard objectives add cc_ovo_semana dummy
 scoreboard players reset #oi_rank cc_lucky
 scoreboard players set #oi_grace cc_lucky 0
 scoreboard players set #oi_shell cc_lucky 0

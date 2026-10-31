@@ -3,6 +3,9 @@
 # broken block). Twelve rolls: our own outcomes 3 in 12, the traps 2 in 12, every other ly branch 1 in 12. ly's root
 # rolls 1..9, so a lucky_blocks.random of 10-12 left on the caller can only come from this file (the load-order check).
 scoreboard objectives add cc_lucky dummy
+scoreboard objectives add cc_shell_casket dummy
+scoreboard objectives add cc_lucky_dia dummy
+scoreboard objectives add cc_ovo_semana dummy
 execute store result score @s lucky_blocks.random run random value 1..12
 scoreboard players operation #oi_root cc_lucky = @s lucky_blocks.random
 

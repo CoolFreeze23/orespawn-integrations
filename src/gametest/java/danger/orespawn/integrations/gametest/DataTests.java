@@ -95,7 +95,8 @@ public final class DataTests {
             String logId = BuiltInRegistries.BLOCK.getKey(log).toString();
             helper.assertTrue(drops.stream().anyMatch(s -> s.is(log.asItem())), "the log itself drops");
             helper.assertTrue(drops.stream().anyMatch(s -> isEgg(s) && logId.equals(lote(s))),
-                    "an unset cc_gemeo drops the egg carrying " + logId);
+                    "an unset cc_gemeo drops the egg carrying " + logId + " (drops: " + drops.stream()
+                            .map(s -> BuiltInRegistries.ITEM.getKey(s.getItem()) + "/" + lote(s)).toList() + ")");
             helper.assertTrue(drops.stream().filter(DataTests::isEgg).allMatch(s -> s.get(DataComponents.LORE) != null),
                     "the egg carries its two lore lines");
         }
