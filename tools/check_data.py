@@ -346,11 +346,12 @@ class Checker:
         for f in sorted(DATA.rglob("*.mcfunction")):
             self.mcfunction(f.relative_to(ROOT).as_posix(), f.read_text(encoding="utf-8"))
         known = set(json.loads(SHIPPED_LANG.read_text(encoding="utf-8")))
-        for kf in FRAG.glob("*.keys.json"):
+        # Every release folder's fragments count (0.10.0, 0.10.1, ...), not only the first slice's.
+        for kf in FRAG.parent.glob("0.*/*.keys.json"):
             known |= set(json.loads(kf.read_text(encoding="utf-8")))
         for k, where in sorted(self.keys_used.items()):
             if k not in known:
-                self.bad(where, f"translate key {k} is in no _lang_fragments/0.10.0/*.keys.json")
+                self.bad(where, f"translate key {k} is in no _lang_fragments/<release>/*.keys.json")
 
 
 def main(argv):
