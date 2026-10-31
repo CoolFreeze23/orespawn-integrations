@@ -219,8 +219,11 @@ public final class ParishTests {
 
     // --- wonder-wednesday-market ---
 
-    /** The peddler stands beside the house with two llamas and vanilla's 48,000-tick despawn. */
-    @GameTest(template = "empty8")
+    /**
+     * The peddler stands beside the house with two llamas and vanilla's 48,000-tick despawn. The arrival finds the
+     * ground by the heightmap, so the test box has an open sky: under the barrier lid he would stand on its roof.
+     */
+    @GameTest(template = "empty8", skyAccess = true)
     public static void thePeddlerComesWithTwoLlamas(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
         BlockPos at = helper.absolutePos(new BlockPos(4, 1, 4));
