@@ -1,0 +1,537 @@
+{
+  "_comment": "Read by world/sightings/SightingFamilies. Written by tools/world/world_data.py; edit there.",
+  "families": [
+    {
+      "n": 1,
+      "slug": "village",
+      "kind": "structure",
+      "targets": [
+        "ctov:large/village_beach",
+        "ctov:large/village_christmas",
+        "ctov:large/village_dark_forest",
+        "ctov:large/village_desert",
+        "ctov:large/village_desert_oasis",
+        "ctov:large/village_jungle",
+        "ctov:large/village_jungle_tree",
+        "ctov:large/village_mesa",
+        "ctov:large/village_mesa_fortified",
+        "ctov:large/village_mountain",
+        "ctov:large/village_mountain_alpine",
+        "ctov:large/village_mushroom",
+        "ctov:large/village_plains",
+        "ctov:large/village_plains_fortified",
+        "ctov:large/village_savanna",
+        "ctov:large/village_savanna_na",
+        "ctov:large/village_snowy_igloo",
+        "ctov:large/village_swamp",
+        "ctov:large/village_swamp_fortified",
+        "ctov:large/village_taiga",
+        "ctov:large/village_taiga_fortified",
+        "ctov:large/village_underground",
+        "ctov:medium/village_beach",
+        "ctov:medium/village_christmas",
+        "ctov:medium/village_dark_forest",
+        "ctov:medium/village_desert",
+        "ctov:medium/village_desert_oasis",
+        "ctov:medium/village_jungle",
+        "ctov:medium/village_jungle_tree",
+        "ctov:medium/village_mesa",
+        "ctov:medium/village_mesa_fortified",
+        "ctov:medium/village_mountain",
+        "ctov:medium/village_mountain_alpine",
+        "ctov:medium/village_mushroom",
+        "ctov:medium/village_plains",
+        "ctov:medium/village_plains_fortified",
+        "ctov:medium/village_savanna",
+        "ctov:medium/village_savanna_na",
+        "ctov:medium/village_snowy_igloo",
+        "ctov:medium/village_swamp",
+        "ctov:medium/village_swamp_fortified",
+        "ctov:medium/village_taiga",
+        "ctov:medium/village_taiga_fortified",
+        "ctov:medium/village_underground",
+        "ctov:small/village_beach",
+        "ctov:small/village_christmas",
+        "ctov:small/village_dark_forest",
+        "ctov:small/village_desert",
+        "ctov:small/village_desert_oasis",
+        "ctov:small/village_jungle",
+        "ctov:small/village_jungle_tree",
+        "ctov:small/village_mesa",
+        "ctov:small/village_mesa_fortified",
+        "ctov:small/village_mountain",
+        "ctov:small/village_mountain_alpine",
+        "ctov:small/village_mushroom",
+        "ctov:small/village_plains",
+        "ctov:small/village_plains_fortified",
+        "ctov:small/village_savanna",
+        "ctov:small/village_savanna_na",
+        "ctov:small/village_snowy_igloo",
+        "ctov:small/village_swamp",
+        "ctov:small/village_swamp_fortified",
+        "ctov:small/village_taiga",
+        "ctov:small/village_taiga_fortified",
+        "ctov:small/village_underground",
+        "minecraft:village_desert",
+        "minecraft:village_plains",
+        "minecraft:village_savanna",
+        "minecraft:village_snowy",
+        "minecraft:village_taiga",
+        "towns_and_towers:village_badlands",
+        "towns_and_towers:village_beach",
+        "towns_and_towers:village_birch_forest",
+        "towns_and_towers:village_flower_forest",
+        "towns_and_towers:village_forest",
+        "towns_and_towers:village_grove",
+        "towns_and_towers:village_jungle",
+        "towns_and_towers:village_meadow",
+        "towns_and_towers:village_mushroom_fields",
+        "towns_and_towers:village_ocean",
+        "towns_and_towers:village_old_growth_taiga",
+        "towns_and_towers:village_savanna_plateau",
+        "towns_and_towers:village_snowy_slopes",
+        "towns_and_towers:village_snowy_taiga",
+        "towns_and_towers:village_sparse_jungle",
+        "towns_and_towers:village_sunflower_plains",
+        "towns_and_towers:village_swamp",
+        "towns_and_towers:village_wooded_badlands"
+      ]
+    },
+    {
+      "n": 2,
+      "slug": "pandora_henge",
+      "kind": "structure",
+      "targets": [
+        "pandorasbox:henge"
+      ]
+    },
+    {
+      "n": 3,
+      "slug": "pandora_shrine",
+      "kind": "structure",
+      "targets": [
+        "pandorasbox:shrine_overworld"
+      ]
+    },
+    {
+      "n": 4,
+      "slug": "pretenders_tower",
+      "kind": "structure",
+      "targets": [
+        "apotheosis:tower_leaf",
+        "apotheosis:tower_main",
+        "apotheosis:tower_sand",
+        "apotheosis:tower_spruce"
+      ]
+    },
+    {
+      "n": 5,
+      "slug": "hoard_nest",
+      "kind": "structure",
+      "targets": [
+        "inventorypets:tree_top"
+      ]
+    },
+    {
+      "n": 6,
+      "slug": "sky_nest",
+      "kind": "structure",
+      "targets": [
+        "inventorypets:sky_dungeon"
+      ]
+    },
+    {
+      "n": 7,
+      "slug": "tavern",
+      "kind": "structure",
+      "targets": [
+        "nova_structures:tavern_acacia",
+        "nova_structures:tavern_birch",
+        "nova_structures:tavern_cherry",
+        "nova_structures:tavern_dark_oak",
+        "nova_structures:tavern_desert",
+        "nova_structures:tavern_jungle",
+        "nova_structures:tavern_mangrove",
+        "nova_structures:tavern_oak",
+        "nova_structures:tavern_snowy",
+        "nova_structures:tavern_spruce",
+        "nova_structures:tavern_swamp"
+      ]
+    },
+    {
+      "n": 8,
+      "slug": "firewatch_tower",
+      "kind": "structure",
+      "targets": [
+        "nova_structures:firewatch_tower_birch",
+        "nova_structures:firewatch_tower_cherry",
+        "nova_structures:firewatch_tower_dark_oak",
+        "nova_structures:firewatch_tower_forest",
+        "nova_structures:firewatch_tower_jungle",
+        "nova_structures:firewatch_tower_mangrove",
+        "nova_structures:firewatch_tower_savanna",
+        "nova_structures:firewatch_tower_swamp",
+        "nova_structures:firewatch_tower_taiga"
+      ]
+    },
+    {
+      "n": 9,
+      "slug": "watchtower",
+      "kind": "structure",
+      "targets": [
+        "structory_towers:wizard_tower",
+        "structory_towers:engineer_tower",
+        "structory_towers:taiga_outpost"
+      ]
+    },
+    {
+      "n": 10,
+      "slug": "lighthouse",
+      "kind": "structure",
+      "targets": [
+        "structory_towers:lighthouse"
+      ]
+    },
+    {
+      "n": 11,
+      "slug": "hunter_tent",
+      "kind": "structure",
+      "targets": [
+        "monster_hunter_villager:hunters_tent_blue",
+        "monster_hunter_villager:hunters_tent_brown",
+        "monster_hunter_villager:hunters_tent_cyan",
+        "monster_hunter_villager:hunters_tent_gray",
+        "monster_hunter_villager:hunters_tent_green",
+        "monster_hunter_villager:hunters_tent_light_gray",
+        "monster_hunter_villager:hunters_tent_purple",
+        "monster_hunter_villager:hunters_tent_red",
+        "monster_hunter_villager:hunters_tent_white"
+      ]
+    },
+    {
+      "n": 12,
+      "slug": "collectors_post",
+      "kind": "structure",
+      "targets": [
+        "ctov:pillager_outpost_badlands",
+        "ctov:pillager_outpost_beach",
+        "ctov:pillager_outpost_dark_forest",
+        "ctov:pillager_outpost_desert",
+        "ctov:pillager_outpost_jungle",
+        "ctov:pillager_outpost_mesa",
+        "ctov:pillager_outpost_mountain",
+        "ctov:pillager_outpost_plains",
+        "ctov:pillager_outpost_savanna",
+        "ctov:pillager_outpost_snowy",
+        "ctov:pillager_outpost_swamp",
+        "ctov:pillager_outpost_taiga",
+        "minecraft:pillager_outpost",
+        "towns_and_towers:exclusives/pillager_outpost_classic",
+        "towns_and_towers:exclusives/pillager_outpost_iberian",
+        "towns_and_towers:exclusives/pillager_outpost_mediterranean",
+        "towns_and_towers:exclusives/pillager_outpost_nilotic",
+        "towns_and_towers:exclusives/pillager_outpost_oriental",
+        "towns_and_towers:exclusives/pillager_outpost_rustic",
+        "towns_and_towers:exclusives/pillager_outpost_swedish",
+        "towns_and_towers:exclusives/pillager_outpost_tudor",
+        "towns_and_towers:pillager_outpost_badlands",
+        "towns_and_towers:pillager_outpost_beach",
+        "towns_and_towers:pillager_outpost_birch_forest",
+        "towns_and_towers:pillager_outpost_desert",
+        "towns_and_towers:pillager_outpost_flower_forest",
+        "towns_and_towers:pillager_outpost_forest",
+        "towns_and_towers:pillager_outpost_grove",
+        "towns_and_towers:pillager_outpost_jungle",
+        "towns_and_towers:pillager_outpost_meadow",
+        "towns_and_towers:pillager_outpost_mushroom_fields",
+        "towns_and_towers:pillager_outpost_ocean",
+        "towns_and_towers:pillager_outpost_old_growth_taiga",
+        "towns_and_towers:pillager_outpost_savanna",
+        "towns_and_towers:pillager_outpost_savanna_plateau",
+        "towns_and_towers:pillager_outpost_snowy_beach",
+        "towns_and_towers:pillager_outpost_snowy_plains",
+        "towns_and_towers:pillager_outpost_snowy_slopes",
+        "towns_and_towers:pillager_outpost_snowy_taiga",
+        "towns_and_towers:pillager_outpost_sparse_jungle",
+        "towns_and_towers:pillager_outpost_sunflower_plains",
+        "towns_and_towers:pillager_outpost_swamp",
+        "towns_and_towers:pillager_outpost_taiga",
+        "towns_and_towers:pillager_outpost_wooded_badlands"
+      ]
+    },
+    {
+      "n": 13,
+      "slug": "unrecorded_tower",
+      "kind": "structure",
+      "targets": [
+        "born_in_chaos_v1:dark_tower_forest",
+        "born_in_chaos_v1:dark_tower_plain",
+        "born_in_chaos_v1:dark_tower_taiga",
+        "born_in_chaos_v1:observation_tower_forest",
+        "born_in_chaos_v1:observation_tower_plains"
+      ]
+    },
+    {
+      "n": 14,
+      "slug": "cuca_hut",
+      "kind": "structure",
+      "targets": [
+        "brazil_legends:cuca_hut"
+      ]
+    },
+    {
+      "n": 15,
+      "slug": "lost_cathedral",
+      "kind": "structure",
+      "targets": [
+        "brazil_legends:lost_cathedral"
+      ]
+    },
+    {
+      "n": 16,
+      "slug": "orespawn_oddity",
+      "kind": "structure",
+      "targets": [
+        "orespawn:haunted_house",
+        "orespawn:mantis_nest",
+        "orespawn:rubber_ducky_pond",
+        "orespawn:bouncy_castle",
+        "orespawn:small_beehive",
+        "orespawn:igloo"
+      ]
+    },
+    {
+      "n": 17,
+      "slug": "girlfriend_island",
+      "kind": "structure",
+      "targets": [
+        "orespawn:girlfriend_island"
+      ]
+    },
+    {
+      "n": 18,
+      "slug": "mobzilla_arena",
+      "kind": "structure",
+      "targets": [
+        "orespawn_integrations:mobzilla_arena"
+      ]
+    },
+    {
+      "n": 19,
+      "slug": "umvuthana_grove",
+      "kind": "structure",
+      "targets": [
+        "mowziesmobs:umvuthana_grove"
+      ]
+    },
+    {
+      "n": 20,
+      "slug": "mountain_tower",
+      "kind": "structure",
+      "targets": [
+        "irons_spellbooks:mountain_tower"
+      ]
+    },
+    {
+      "n": 21,
+      "slug": "hydra_outpost",
+      "kind": "structure",
+      "targets": [
+        "marvel:hydra_outpost_classic",
+        "marvel:hydra_outpost_mountain",
+        "marvel:hydra_outpost_winter"
+      ]
+    },
+    {
+      "n": 22,
+      "slug": "bandit_towers",
+      "kind": "structure",
+      "targets": [
+        "dungeons_arise:bandit_towers"
+      ]
+    },
+    {
+      "n": 23,
+      "slug": "ruins",
+      "kind": "structure",
+      "targets": [
+        "nova_structures:wild_ruin",
+        "structory:ruin_grassy"
+      ]
+    },
+    {
+      "n": 24,
+      "slug": "boteco",
+      "kind": "hub",
+      "targets": [
+        "boteco"
+      ]
+    },
+    {
+      "n": 25,
+      "slug": "hunt_lodge",
+      "kind": "hub",
+      "targets": [
+        "hunt_lodge"
+      ]
+    },
+    {
+      "n": 26,
+      "slug": "hatching_ground",
+      "kind": "hub",
+      "targets": [
+        "hatching_ground"
+      ]
+    },
+    {
+      "n": 27,
+      "slug": "prince",
+      "kind": "entity",
+      "targets": [
+        "orespawn:the_prince",
+        "orespawn:the_prince_teen",
+        "orespawn:the_prince_adult"
+      ]
+    },
+    {
+      "n": 28,
+      "slug": "girlfriend",
+      "kind": "entity",
+      "targets": [
+        "orespawn:girlfriend"
+      ]
+    },
+    {
+      "n": 29,
+      "slug": "mestre",
+      "kind": "entity",
+      "targets": [
+        "brasilcoisas:mestre_ensinador"
+      ]
+    },
+    {
+      "n": 30,
+      "slug": "saci",
+      "kind": "entity",
+      "targets": [
+        "brazil_legends:saci_perere"
+      ]
+    },
+    {
+      "n": 31,
+      "slug": "court_beast",
+      "kind": "entity",
+      "targets": [
+        "orespawn:emperor_scorpion",
+        "orespawn:basilisk",
+        "orespawn:alien_boss",
+        "orespawn:cater_killer"
+      ]
+    },
+    {
+      "n": 32,
+      "slug": "mapinguari",
+      "kind": "entity",
+      "targets": [
+        "brazil_legends:mapinguari"
+      ]
+    },
+    {
+      "n": 33,
+      "slug": "caramelo",
+      "kind": "entity",
+      "targets": [
+        "brasilcoisas:cachorro_caramelo"
+      ]
+    },
+    {
+      "n": 34,
+      "slug": "sky_beast",
+      "kind": "entity",
+      "targets": [
+        "orespawn:cloud_shark",
+        "orespawn:leonopteryx",
+        "orespawn:cephadrome"
+      ]
+    },
+    {
+      "n": 35,
+      "slug": "mobzilla",
+      "kind": "entity",
+      "targets": [
+        "orespawn:godzilla"
+      ]
+    },
+    {
+      "n": 36,
+      "slug": "kraken",
+      "kind": "entity",
+      "targets": [
+        "orespawn:kraken"
+      ]
+    },
+    {
+      "n": 37,
+      "slug": "door_cloud",
+      "kind": "special",
+      "targets": [
+        "orespawn:butterfly"
+      ]
+    },
+    {
+      "n": 38,
+      "slug": "hoard_fall",
+      "kind": "special",
+      "targets": [
+        "minecraft:falling_block"
+      ]
+    },
+    {
+      "n": 39,
+      "slug": "mae_da_lua",
+      "kind": "none",
+      "targets": []
+    },
+    {
+      "n": 40,
+      "slug": "mula_trail",
+      "kind": "none",
+      "targets": []
+    },
+    {
+      "n": 41,
+      "slug": "red_islands",
+      "kind": "special",
+      "targets": [
+        "orespawn:chaos"
+      ]
+    },
+    {
+      "n": 43,
+      "slug": "bad_egg",
+      "kind": "block",
+      "targets": [
+        "hbmsntm:crashed_bomb",
+        "hbmsntm:mine_ap"
+      ]
+    },
+    {
+      "n": 46,
+      "slug": "oil_spill",
+      "kind": "block",
+      "targets": [
+        "hbmsntm:oil_spill"
+      ]
+    },
+    {
+      "n": 49,
+      "slug": "three_butterflies",
+      "kind": "special",
+      "targets": [
+        "orespawn:butterfly",
+        "naturalist:butterfly",
+        "distantlandsmc:butterfly"
+      ]
+    }
+  ]
+}

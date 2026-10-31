@@ -1,0 +1,141 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:beaver_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:boyfriend_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:camarasaurus_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cassowary_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cephadrome_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:chipmunk_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cockateil_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:crab_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cricket_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:crystal_cow_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:dragon_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:dragonfly_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:easter_bunny_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:enchanted_apple_cow_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:frog_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:gamma_metroid_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:gazelle_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:girlfriend_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:gold_cow_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:gold_fish_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:hydrolisc_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:lizard_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_fairy",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_flounder",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_peacock",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_skate",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_whale",
+      "required": false
+    },
+    {
+      "id": "orespawn:ostrich_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:red_cow_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:rubber_ducky_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:spyro_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:stinky_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:tshirt_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:velocity_raptor_spawn_block",
+      "required": false
+    }
+  ]
+}

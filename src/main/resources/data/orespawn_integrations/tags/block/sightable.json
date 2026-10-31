@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:ant_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:red_ant_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:rainbow_ant_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:unstable_ant_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:termite_block",
+      "required": false
+    },
+    {
+      "id": "simpleluckyblock:lucky_block",
+      "required": false
+    },
+    {
+      "id": "pandorasbox:pandoras_box",
+      "required": false
+    }
+  ]
+}

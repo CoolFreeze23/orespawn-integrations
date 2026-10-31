@@ -1,0 +1,61 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:bat_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:bee_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:chicken_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cow_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:horse_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:iron_golem_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:mooshroom_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:ocelot_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:pig_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:sheep_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:snow_golem_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:squid_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:villager_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:wolf_spawn_block",
+      "required": false
+    }
+  ]
+}

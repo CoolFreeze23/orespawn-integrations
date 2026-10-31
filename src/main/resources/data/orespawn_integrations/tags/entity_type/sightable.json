@@ -1,0 +1,85 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "brasilcoisas:cachorro_caramelo",
+      "required": false
+    },
+    {
+      "id": "brasilcoisas:mestre_ensinador",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:mapinguari",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:saci_perere",
+      "required": false
+    },
+    {
+      "id": "distantlandsmc:butterfly",
+      "required": false
+    },
+    {
+      "id": "naturalist:butterfly",
+      "required": false
+    },
+    {
+      "id": "orespawn:alien_boss",
+      "required": false
+    },
+    {
+      "id": "orespawn:basilisk",
+      "required": false
+    },
+    {
+      "id": "orespawn:butterfly",
+      "required": false
+    },
+    {
+      "id": "orespawn:cater_killer",
+      "required": false
+    },
+    {
+      "id": "orespawn:cephadrome",
+      "required": false
+    },
+    {
+      "id": "orespawn:cloud_shark",
+      "required": false
+    },
+    {
+      "id": "orespawn:emperor_scorpion",
+      "required": false
+    },
+    {
+      "id": "orespawn:girlfriend",
+      "required": false
+    },
+    {
+      "id": "orespawn:godzilla",
+      "required": false
+    },
+    {
+      "id": "orespawn:kraken",
+      "required": false
+    },
+    {
+      "id": "orespawn:leonopteryx",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_prince",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_prince_adult",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_prince_teen",
+      "required": false
+    }
+  ]
+}

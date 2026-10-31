@@ -65,6 +65,9 @@ public class OreSpawnIntegrations {
             {"neoorigins", "danger.orespawn.integrations.story.firsthour.EtiquetaHandler"},
             {"customnpcs", "danger.orespawn.integrations.story.firsthour.FieldOdete"},
             // world:
+            {"orespawn_integrations", "danger.orespawn.integrations.world.regions.RegionNames"},
+            {"orespawn_integrations", "danger.orespawn.integrations.world.sightings.Sightings"},
+            {"orespawn", "danger.orespawn.integrations.world.antechamber.Antechamber"},
             // registry:
             {"orespawn_integrations", "danger.orespawn.integrations.story.registry.RegistryCore"},
             {"customnpcs", "danger.orespawn.integrations.story.registry.CartorioOdetes"},

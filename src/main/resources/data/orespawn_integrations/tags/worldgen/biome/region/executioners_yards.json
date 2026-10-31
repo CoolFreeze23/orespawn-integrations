@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "#c:is_desert",
+    "#c:is_badlands",
+    {
+      "id": "biomesoplenty:wasteland",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:wasteland_steppe",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:volcanic_plains",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:volcano",
+      "required": false
+    }
+  ]
+}

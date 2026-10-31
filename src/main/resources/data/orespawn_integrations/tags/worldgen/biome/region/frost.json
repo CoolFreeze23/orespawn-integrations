@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#c:is_snowy",
+    {
+      "id": "biomesoplenty:tundra",
+      "required": false
+    }
+  ]
+}
