@@ -393,8 +393,8 @@ def part_tree():
                 {"slept": {"trigger": "minecraft:slept_in_bed"}}, background=tex("bricks"), xp=5)
     advancement("property/root", CARD_TREE, "orespawn:elevator",
                 ("Signed For", "Assinou a Cautela"),
-                ("Sign out your first piece of Treasury property; it is still theirs.",
-                 "Retire seu primeiro patrimônio da Tesouraria; continua sendo deles, viu?"),
+                ("Sign out your first piece of Treasury property, which is still theirs.",
+                 "Retire seu primeiro patrimônio da Tesouraria, que continua sendo deles, viu?"),
                 IMPOSSIBLE, background=tex("iron_block"), xp=10, mods=("orespawn",))
     advancement("causos/root", CARD_TREE, "brazil_legends:cachimbo",
                 ("Made to Order", "Sob Encomenda"),
@@ -500,14 +500,14 @@ def part_doors():
     # Both card descriptions are two sentences; joined with a semicolon for the spine's one-sentence rule.
     advancement("gambiarra/luz_de_bruxa", CARD_DOORS, "minecraft:glowstone",
                 ("Witch Light", "Luz de Bruxa"),
-                ("Four dust make a block, and the dust is usually a witch's; the clouds take it for a frame.",
-                 "Quatro pós fazem uma pedra, e o pó quase sempre é de bruxa; as nuvens aceitam de moldura."),
+                ("Four dust, usually a witch's, make a block the clouds take for a frame.",
+                 "Quatro pós, quase sempre de bruxa, fazem a pedra que as nuvens aceitam de moldura."),
                 {"crafted": {"trigger": "minecraft:recipe_crafted", "conditions": {"recipe_id": "minecraft:glowstone"}}},
                 frame="challenge", parent="wonder/1", xp=10)
     advancement("gambiarra/enxoval_da_rainha", CARD_DOORS, "minecraft:bee_nest",
                 ("The Queen's Trousseau", "O Enxoval da Rainha"),
-                ("Got yourself a hive; now throw a pearl at it and the Queen's sister will answer.",
-                 "Arrumou uma colmeia; agora joga uma pérola nela, que a irmã da Rainha atende."),
+                ("Got yourself a hive, so throw a pearl at it and the Queen's sister will answer.",
+                 "Arrumou uma colmeia, agora joga uma pérola nela que a irmã da Rainha atende."),
                 {"hive": {"trigger": "minecraft:inventory_changed",
                           "conditions": {"items": [{"items": ["minecraft:bee_nest", "minecraft:beehive"]}]}}},
                 frame="challenge", parent="wonder/1", xp=10)
