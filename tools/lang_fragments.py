@@ -9,7 +9,8 @@ Each system group keeps three files in _lang_fragments/<release>/:
   <group>.pt_br.json  {"<key>": "<Portuguese>"}
 
 The checks are the spine's text limits (bible/00-spine.md, "Text limits"):
-  SIGN       one sign line, at most 15 characters (a {player} placeholder counts as 12)
+  SIGN       one sign line, at most 15 characters. A placeholder counts as 12 when its note says it holds a player
+             name, else as 5 (a number, an arrow, a direction word)
   HANGING    one hanging-sign line, at most 10
   CHAT, TITLE, ACTIONBAR   at most 90 characters, pt-BR at most 103
   BOOK, GUIDE              a letter or Field Guide page at most 120 words, a Patchouli entry (GUIDE) at most 200
@@ -32,18 +33,18 @@ WORDS = {"BOOK": 120, "GUIDE": 200, "OPTION": 6}
 SENTENCES = {"BUBBLE": 2, "ADV": 1}
 
 
-def visible(text: str) -> str:
-    """The text as a player sees it: formatting codes out, a player-name placeholder as 12 characters."""
-    return PLAYER.sub("x" * 12, re.sub("§.", "", text))
+def visible(text: str, player: bool = True) -> str:
+    """The text as a player sees it: formatting codes out, a player-name placeholder as 12 characters, any other as 5."""
+    return PLAYER.sub("x" * (12 if player else 5), re.sub("§.", "", text))
 
 
 def sentences(text: str) -> int:
     return len([s for s in re.split(r"(?<=[.!?])\s+", text.strip()) if s])
 
 
-def check_value(key: str, surface: str, lang: str, text: str) -> list:
+def check_value(key: str, surface: str, lang: str, text: str, note: str = "") -> list:
     problems = []
-    seen = visible(text)
+    seen = visible(text, player=bool(re.search(r"player|jogador|\{player\}", note + text, re.I)))
     if surface in LIMITS:
         for line in seen.split("\n"):
             if len(line) > LIMITS[surface]:
@@ -85,7 +86,7 @@ def main() -> int:
                 if prior is not None and prior != text:
                     problems.append(f"{group}: {key} is defined twice with different {lang} text")
                 values[lang][key] = text
-                problems += [f"{group}: {p}" for p in check_value(key, surface, lang, text)]
+                problems += [f"{group}: {p}" for p in check_value(key, surface, lang, text, str(note))]
             en, pt = langs["en_us"].get(key), langs["pt_br"].get(key)
             if en and pt and en == pt and re.search(r"[a-z]{4,}", en) and surface not in ("SIGN", "HANGING"):
                 problems.append(f"{group}: {key} has the same text in both languages: {en!r}")
