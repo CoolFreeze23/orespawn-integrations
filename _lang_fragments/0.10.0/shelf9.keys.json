@@ -42,5 +42,16 @@
   "orespawn_integrations.shelf9.ways.hunt_lodge.thing": "structure-hatching-ground | SIGN | Ways row 2 (line 12) | the Hunt Lodge",
   "orespawn_integrations.shelf9.ways.hunt_lodge.comment": "structure-hatching-ground | SIGN | Ways row 4 (line 12) | Bring a knife.",
   "orespawn_integrations.shelf9.ways.nothing.thing": "structure-hatching-ground | SIGN | Ways row 2 (line 13) | …nothing",
-  "orespawn_integrations.shelf9.ways.nothing.comment": "structure-hatching-ground | SIGN | Ways row 4 (line 13) | Yet."
+  "orespawn_integrations.shelf9.ways.nothing.comment": "structure-hatching-ground | SIGN | Ways row 4 (line 13) | Yet.",
+  "orespawn_integrations.cc.refused_unloaded": "system-cronograma-de-obras | operator chat, %1$s thing (Works Schedule line 4) | %thing%: part of the footprint isn't loaded...",
+  "orespawn_integrations.cc.refused_close": "system-cronograma-de-obras | operator chat, %1$s thing %2$s blocks (Works Schedule line 5) | %thing%: too close to a bed, chest or Parish Stone...",
+  "orespawn_integrations.cc.placed": "system-cronograma-de-obras | operator chat, %1$s thing %2$s-%4$s x y z (Works Schedule line 6) | %thing% placed at %x% %y% %z% and added to the hub list.",
+  "orespawn_integrations.cc.upgraded": "system-cronograma-de-obras | operator chat, %1$s thing %2$s pieces %3$s version (Works Schedule line 7) | %thing%: %n% new pieces placed for version %version%.",
+  "orespawn_integrations.cc.warn_spawn": "system-cronograma-de-obras | operator chat (Works Schedule line 8) | This moves world spawn and may pause the server...",
+  "orespawn_integrations.cc.nothing": "structure-hatching-ground | operator chat, %1$s thing (line 22) | Nothing to place for {thing} in this version.",
+  "orespawn_integrations.cc.refused_twice": "system-cronograma-de-obras | operator chat, %1$s thing %2$s-%4$s the first one's x y z (no card line; Implementation: a second place refuses with its position) | (builder's line) already placed at x y z",
+  "orespawn_integrations.cc.hub_full": "system-cronograma-de-obras | operator chat, %1$s thing %2$s the cap (no card line; the hub list holds at most 32) | (builder's line) the hub list is full",
+  "orespawn_integrations.cc.failed": "structure-hatching-ground | operator chat, %1$s thing (no card line; the template is missing) | (builder's line) could not be placed",
+  "orespawn_integrations.cc.hub_list": "system-cronograma-de-obras | operator chat, /cc hub_places header, %1$s count %2$s cap (no card line) | (builder's line) hub list: n of 32",
+  "orespawn_integrations.cc.hub_entry": "system-cronograma-de-obras | operator chat, /cc hub_places row, thing x y z dim (no card line) | (builder's line) thing at x y z (dim)"
 }

@@ -57,6 +57,21 @@ for kind, line, thing, comment in [
     KEYS[P + f"ways.{kind}.thing"] = f"{SG} | SIGN | Ways row 2 (line {line}) | {thing}"
     KEYS[P + f"ways.{kind}.comment"] = f"{SG} | SIGN | Ways row 4 (line {line}) | {comment}"
 
+CC = "orespawn_integrations.cc."
+KEYS.update({
+    CC + "refused_unloaded": f"{WO} | operator chat, %1$s thing (Works Schedule line 4) | %thing%: part of the footprint isn't loaded...",
+    CC + "refused_close": f"{WO} | operator chat, %1$s thing %2$s blocks (Works Schedule line 5) | %thing%: too close to a bed, chest or Parish Stone...",
+    CC + "placed": f"{WO} | operator chat, %1$s thing %2$s-%4$s x y z (Works Schedule line 6) | %thing% placed at %x% %y% %z% and added to the hub list.",
+    CC + "upgraded": f"{WO} | operator chat, %1$s thing %2$s pieces %3$s version (Works Schedule line 7) | %thing%: %n% new pieces placed for version %version%.",
+    CC + "warn_spawn": f"{WO} | operator chat (Works Schedule line 8) | This moves world spawn and may pause the server...",
+    CC + "nothing": f"{SG} | operator chat, %1$s thing (line 22) | Nothing to place for {{thing}} in this version.",
+    CC + "refused_twice": f"{WO} | operator chat, %1$s thing %2$s-%4$s the first one's x y z (no card line; Implementation: a second place refuses with its position) | (builder's line) already placed at x y z",
+    CC + "hub_full": f"{WO} | operator chat, %1$s thing %2$s the cap (no card line; the hub list holds at most 32) | (builder's line) the hub list is full",
+    CC + "failed": f"{SG} | operator chat, %1$s thing (no card line; the template is missing) | (builder's line) could not be placed",
+    CC + "hub_list": f"{WO} | operator chat, /cc hub_places header, %1$s count %2$s cap (no card line) | (builder's line) hub list: n of 32",
+    CC + "hub_entry": f"{WO} | operator chat, /cc hub_places row, thing x y z dim (no card line) | (builder's line) thing at x y z (dim)",
+})
+
 OUT = Path(__file__).resolve().parents[1] / "_lang_fragments/0.10.0/shelf9.keys.json"
 
 
