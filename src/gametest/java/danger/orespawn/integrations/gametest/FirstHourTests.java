@@ -355,6 +355,44 @@ public final class FirstHourTests {
         helper.succeed();
     }
 
+    /**
+     * "a new account hit every 5 s by a zombie at night gets its Fall ... 24-48 blocks out, on the side opposite the
+     * zombie" (event-first-fall, a newcomer under attack): the ring lands away from the nearest hostile and never
+     * within 12 blocks of it. The timing (60 s at most past due) is TicketRulesTest's.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 200)
+    public static void aNewcomerUnderAttackGetsTheFallAwayFromTheZombie(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        BlockPos feet = helper.absolutePos(new BlockPos(-12, 0, -12));
+        player.teleportTo(feet.getX() + 0.5, feet.getY(), feet.getZ() + 0.5);
+        List<Long> forced = forceAround(level, feet);
+        net.minecraft.world.entity.monster.Zombie zombie = net.minecraft.world.entity.EntityType.ZOMBIE.create(level);
+        zombie.moveTo(feet.getX() + 6.5, feet.getY(), feet.getZ() + 0.5, 0.0F, 0.0F);
+        zombie.setNoAi(true);
+        level.addFreshEntity(zombie);
+        try {
+            BlockPos spot = null;
+            FallSafety.Tally tally = new FallSafety.Tally();
+            for (int i = 0; i < 5 && spot == null; i++) {
+                spot = FallSafety.ringAwayFrom(level, player, List.of(), level.random, tally);
+            }
+            helper.assertTrue(spot != null, "the ring found a spot under attack (" + tally + ")");
+            double dx = spot.getX() + 0.5 - player.getX();
+            double dz = spot.getZ() + 0.5 - player.getZ();
+            double d = Math.sqrt(dx * dx + dz * dz);
+            helper.assertTrue(d >= 23.0 && d <= 49.0, "24-48 blocks out, got " + (int) d);
+            double toZombieX = zombie.getX() - player.getX();
+            double toZombieZ = zombie.getZ() - player.getZ();
+            helper.assertTrue(dx * toZombieX + dz * toZombieZ < 0, "on the side away from the zombie");
+            helper.assertTrue(zombie.position().distanceTo(Vec3.atCenterOf(spot)) >= 12.0, "12 or more from it");
+        } finally {
+            zombie.discard();
+            release(level, forced);
+        }
+        helper.succeed();
+    }
+
     /** An opened, emptied First Fall crate keeps no Fall away; the same crate with one item in it does. */
     @GameTest(template = "empty8")
     public static void emptiedCrateIsNotAHome(GameTestHelper helper) {

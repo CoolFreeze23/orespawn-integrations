@@ -7,6 +7,8 @@ import danger.orespawn.integrations.story.firsthour.FirstHourData;
 import danger.orespawn.integrations.story.firsthour.FirstHourScenes;
 import danger.orespawn.integrations.story.firsthour.FirstHourUtil;
 import danger.orespawn.integrations.story.firsthour.PriorityTicket;
+import danger.orespawn.integrations.story.firsthour.TicketRules;
+import danger.orespawn.integrations.story.firsthour.TicketState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
@@ -134,9 +136,15 @@ public final class FirstFall {
                 // the first try keeps the cone, the second and later ones look 24-48 blocks round, in view.
                 List<FallSafety.Home> homes = FallSafety.homesFor(level, player, player.getX(), player.getZ(),
                         max + FallSafety.HOME_RADIUS);
-                spot = entry.tries == 0
-                        ? FallSafety.findSpot(level, player, min, max, 120, random, homes, tally)
-                        : FallSafety.ringInView(level, player, homes, random, tally);
+                if (underAttack(player)) {
+                    // A newcomer under attack: the hold let the Fall through after a minute; it lands in the ring,
+                    // on the side away from the nearest hostile and clear of every one.
+                    spot = FallSafety.ringAwayFrom(level, player, homes, random, tally);
+                } else {
+                    spot = entry.tries == 0
+                            ? FallSafety.findSpot(level, player, min, max, 120, random, homes, tally)
+                            : FallSafety.ringInView(level, player, homes, random, tally);
+                }
             }
         } else {
             spot = player.onGround() && !player.isInWater() ? dryBlockNear(level, player, random) : null;
@@ -179,6 +187,15 @@ public final class FirstFall {
         } catch (Throwable t) {
             AliveWorldCompat.logOnce("first_fall_place", t);
         }
+    }
+
+    /** Whether the player took damage in the ticket's last 10 s (the hold that a newcomer's Fall outlasts). */
+    private static boolean underAttack(ServerPlayer player) {
+        if (!FirstHourData.hasTicket(player)) {
+            return false;
+        }
+        TicketState s = FirstHourData.ticket(player);
+        return s.onlineTicks - s.lastDamage < TicketRules.DAMAGE_HOLD;
     }
 
     /** The shipped warning, a 6-second gold streak and the whistle. */

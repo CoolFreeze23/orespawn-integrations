@@ -46,6 +46,8 @@ public final class TicketState {
     public int pinZ;
     /** Online tick of the last damage taken; not saved. */
     public int lastDamage = Integer.MIN_VALUE / 2;
+    /** Online tick the First Fall first came due while damage held it (a newcomer under attack); not saved. */
+    public int attackHeldSince = Integer.MIN_VALUE / 2;
 
     public TicketState() {
     }

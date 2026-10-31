@@ -16,6 +16,8 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.RandomizableContainer;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -55,6 +57,10 @@ public final class FallSafety {
     public static final int ABOVE_SURFACE = 32;
     static final int RING_MIN = 24;
     static final int RING_MAX = 48;
+    /** A newcomer under attack: the nearest hostile this close sets the side the Fall lands away from. */
+    static final int ATTACKER_REACH = 16;
+    /** A newcomer under attack: no Fall lands this close to any hostile mob. */
+    static final int HOSTILE_CLEARANCE = 12;
 
     /** A point someone lives at, and how far a Fall must keep from it. */
     public record Home(BlockPos pos, int radius) {
@@ -62,12 +68,12 @@ public final class FallSafety {
 
     /** Why the candidates of one try were turned down, for the log line of a try that found nothing. */
     public static final class Tally {
-        int unloaded, canopy, wet, built, home, view;
+        int unloaded, canopy, wet, built, home, view, hostile;
 
         @Override
         public String toString() {
             return "unloaded " + unloaded + ", canopy " + canopy + ", water " + wet + ", built " + built
-                    + ", near a home " + home + ", out of view " + view;
+                    + ", near a home " + home + ", out of view " + view + ", near a hostile " + hostile;
         }
     }
     static final int MAX_TRIES = 24;
@@ -218,14 +224,45 @@ public final class FallSafety {
      */
     public static BlockPos ringInView(ServerLevel level, ServerPlayer player, List<Home> homes, RandomSource random,
                                       Tally tally) {
+        return ring(level, player, homes, random, tally, Double.NaN, List.of());
+    }
+
+    /**
+     * A newcomer under attack (event-first-fall): the same ring, but on the side away from the nearest hostile within
+     * {@link #ATTACKER_REACH} blocks (the half of the ring facing away from it), and never within
+     * {@link #HOSTILE_CLEARANCE} blocks of any hostile mob.
+     */
+    public static BlockPos ringAwayFrom(ServerLevel level, ServerPlayer player, List<Home> homes, RandomSource random,
+                                        Tally tally) {
+        List<Mob> hostiles = level.getEntitiesOfClass(Mob.class,
+                player.getBoundingBox().inflate(RING_MAX + HOSTILE_CLEARANCE, 24, RING_MAX + HOSTILE_CLEARANCE),
+                m -> m instanceof Enemy && m.isAlive());
+        Mob nearest = null;
+        for (Mob m : hostiles) {
+            if (m.distanceTo(player) <= ATTACKER_REACH && (nearest == null || m.distanceTo(player) < nearest.distanceTo(player))) {
+                nearest = m;
+            }
+        }
+        double away = nearest == null ? Double.NaN
+                : Math.atan2(player.getZ() - nearest.getZ(), player.getX() - nearest.getX());
+        return ring(level, player, homes, random, tally, away, hostiles);
+    }
+
+    private static BlockPos ring(ServerLevel level, ServerPlayer player, List<Home> homes, RandomSource random,
+                                 Tally tally, double away, List<Mob> hostiles) {
         Vec3 eyes = player.getEyePosition();
         for (int i = 0; i < MAX_TRIES; i++) {
-            double angle = random.nextDouble() * Math.PI * 2;
+            double angle = Double.isNaN(away) ? random.nextDouble() * Math.PI * 2
+                    : away + (random.nextDouble() - 0.5) * Math.PI; // the half of the ring facing away
             double dist = RING_MIN + random.nextDouble() * (RING_MAX - RING_MIN);
             int x = Mth.floor(player.getX() + Math.cos(angle) * dist);
             int z = Mth.floor(player.getZ() + Math.sin(angle) * dist);
             BlockPos spot = surface(level, x, z, tally);
             if (spot == null || !farFrom(spot, homes, tally)) {
+                continue;
+            }
+            if (nearAHostile(spot, hostiles)) {
+                tally.hostile++;
                 continue;
             }
             if (inView(level, eyes, spot)) {
@@ -249,6 +286,16 @@ public final class FallSafety {
             return lvl.getBlockState(pos).canOcclude() ? Boolean.FALSE : null;
         }, lvl -> Boolean.TRUE);
         return seen == null || seen;
+    }
+
+    static boolean nearAHostile(BlockPos spot, List<Mob> hostiles) {
+        Vec3 at = Vec3.atCenterOf(spot);
+        for (Mob m : hostiles) {
+            if (m.position().distanceToSqr(at) < HOSTILE_CLEARANCE * HOSTILE_CLEARANCE) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** The air block over natural, dry, open-sky ground at x, z in a loaded chunk, or null. */
