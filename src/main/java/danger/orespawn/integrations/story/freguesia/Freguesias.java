@@ -65,13 +65,17 @@ public final class Freguesias {
 
     /** A signer's stake at {@code pos}, as the stake's placement does; true when it closed a plot. */
     public static boolean stake(ServerLevel level, BlockPos pos, ServerPlayer player) {
+        // The stone the stake joins, chosen as the stake's placement chooses it: the first standing one the player signs.
+        // Any other stone in the 48 blocks (a neighbour's) keeps its plots whatever the stake does.
         FreguesiaData.Stone before = null;
         int plots = 0;
         for (FreguesiaData.Stone s : FreguesiaData.get(level.getServer()).near(StoneRecords.dim(level), pos.getX(),
                 pos.getZ(), StandingRules.RADIUS)) {
-            before = s;
-            plots = s.plots.size();
-            break;
+            if (s.standing && s.isSigner(player.getUUID())) {
+                before = s;
+                plots = s.plots.size();
+                break;
+            }
         }
         Plots.onStakePlaced(level, pos, player);
         return before != null && before.plots.size() > plots;
