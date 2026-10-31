@@ -37,7 +37,7 @@ public final class RanksTests {
      * from blank scores; the test bodies run to the end in one tick, so no two interleave.
      */
     static ServerPlayer fresh(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         for (String objective : new String[]{CourtRanks.COURT, CourtRanks.STAMP, CourtRanks.WAITING}) {
             FirstHourUtil.resetScore(player, objective);
         }
@@ -232,7 +232,7 @@ public final class RanksTests {
     @GameTest(template = "empty8")
     public static void bossKillCreditsTheParty(GameTestHelper helper) {
         ServerPlayer ana = fresh(helper);
-        ServerPlayer bia = helper.makeMockServerPlayerInLevel();
+        ServerPlayer bia = MockPlayers.inLevel(helper);
         net.minecraft.world.entity.LivingEntity wither = helper.spawn(net.minecraft.world.entity.EntityType.WITHER, 3, 2, 3);
         WallOfTheWanted.Hit hit = WallOfTheWanted.identify(wither);
         helper.assertTrue(hit != null && hit.row() == 5, "the Wither is row 5");

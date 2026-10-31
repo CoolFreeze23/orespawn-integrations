@@ -69,7 +69,7 @@ public final class ParishTests {
     /** Placing a stone leaves exactly one cc_freguesia marker at it; the placer is signer 1; the default name. */
     @GameTest(template = "empty8")
     public static void placingAStoneFoundsOneRecordAndOneMarker(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, player);
         helper.assertTrue(s != null, "no record at the stone");
         helper.assertTrue(player.getUUID().equals(s.founder()), "the placer is not signer 1");
@@ -89,7 +89,7 @@ public final class ParishTests {
     /** Breaking the stone pauses the record and leaves no marker; a signer's new stone near the spot resumes it. */
     @GameTest(template = "empty8")
     public static void aFallenStoneWaitsAndResumes(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, player);
         int id = s.id;
         s.standingHalves = 200;
@@ -105,8 +105,8 @@ public final class ParishTests {
     /** A non-signer asks with a scrap; the founder's empty-hand countersign signs them. */
     @GameTest(template = "empty8")
     public static void signingNeedsACountersign(GameTestHelper helper) {
-        ServerPlayer founder = helper.makeMockServerPlayerInLevel();
-        ServerPlayer friend = helper.makeMockServerPlayerInLevel();
+        ServerPlayer founder = MockPlayers.inLevel(helper);
+        ServerPlayer friend = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, founder);
         friend.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND,
                 new ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(
@@ -122,7 +122,7 @@ public final class ParishTests {
     /** Four stakes on an 8x8 rectangle's corners close a plot that takes the tent. */
     @GameTest(template = "empty8")
     public static void fourStakesCloseAPlot(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, player);
         BlockPos o = s.pos.offset(4, 0, 4);
         Freguesias.stake(helper.getLevel(), o, player);
@@ -140,7 +140,7 @@ public final class ParishTests {
     /** 60 decor placements bring the Homestead at the next dawn check. */
     @GameTest(template = "empty8")
     public static void sixtyDecorBringTheHomestead(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, player);
         decor(helper, player, 59);
         Freguesias.check(helper.getLevel(), s);
@@ -154,7 +154,7 @@ public final class ParishTests {
     /** One spot placed 200 times in a day scores 1, and a solo builder stops at 200 a day. */
     @GameTest(template = "empty8")
     public static void oneSpotScoresOnceAndADayStopsAt200(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, player);
         BlockPos spot = s.pos.offset(2, 0, 2);
         for (int i = 0; i < 200; i++) {
@@ -170,8 +170,8 @@ public final class ParishTests {
     /** A stranger's decor counts nothing for the stone; a placement 49 blocks out counts nothing. */
     @GameTest(template = "empty8")
     public static void onlySignersInTheRadiusCount(GameTestHelper helper) {
-        ServerPlayer founder = helper.makeMockServerPlayerInLevel();
-        ServerPlayer stranger = helper.makeMockServerPlayerInLevel();
+        ServerPlayer founder = MockPlayers.inLevel(helper);
+        ServerPlayer stranger = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, founder);
         Freguesias.countDecor(helper.getLevel(), stranger, s.pos.offset(2, 0, 0));
         Freguesias.countDecor(helper.getLevel(), founder, s.pos.offset(49, 0, 0));
@@ -183,7 +183,7 @@ public final class ParishTests {
     /** At 300 standing and 14 days with no boss kill stage 3 waits and Jade names the key; at 450 it arrives. */
     @GameTest(template = "empty8")
     public static void theParishWaitsForItsKey(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, player);
         s.stage = 2;
         s.stoneDays = 14;
@@ -202,7 +202,7 @@ public final class ParishTests {
     /** At 600 and 28 days with no Knight the Town waits; 900 brings it, with its plaque. */
     @GameTest(template = "empty8", timeoutTicks = 200)
     public static void nineHundredBringsTheTown(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, player);
         s.stage = 3;
         s.stoneDays = 28;
@@ -240,7 +240,7 @@ public final class ParishTests {
     /** A trap rolled in the yard pays at the stone: one cc_arcas, and the return lies at the marker. */
     @GameTest(template = "empty8", timeoutTicks = 100)
     public static void aYardTrapPaysAtTheStone(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         FreguesiaData.Stone s = found(helper, player);
         ServerLevel level = helper.getLevel();
         Vec3 casket = Vec3.atCenterOf(s.pos.offset(5, 1, 5));

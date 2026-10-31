@@ -110,7 +110,7 @@ public final class WeekTests {
     /** event-dusk-cry: one line per player per dusk; a second call the same evening plays nothing. */
     @GameTest(template = "empty8")
     public static void duskLineOncePerDusk(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         MinecraftServer server = helper.getLevel().getServer();
         Almanac.fireBeats(player);
         WeekState s = WeekData.of(player);
