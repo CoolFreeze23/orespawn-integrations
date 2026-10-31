@@ -1,0 +1,15 @@
+{
+  "orespawn_integrations.odete.npc.name": "npc-odetes | desk Odete's name tag | Odete",
+  "orespawn_integrations.odete.npc.title": "npc-odetes | desk Odete's title under the name | (Registry clerk)",
+  "orespawn_integrations.odete.dialog.title": "npc-odetes | desk dialog title | Odete",
+  "orespawn_integrations.odete.dialog.text": "npc-odetes | desk dialog text (line 1) | Sign here. No, here. Come back tomorrow for the copy.",
+  "orespawn_integrations.odete.opcao.averbar": "system-corrections | desk option (line 14 / npc-odetes 80) | Register a scrap",
+  "orespawn_integrations.odete.opcao.segunda_via": "system-corrections | desk option (line 14 / npc-odetes 82) | Collect the copy",
+  "orespawn_integrations.odete.opcao.cortesia": "system-corrections | desk option (line 14) | Ask for the courtesy",
+  "orespawn_integrations.odete.opcao.que_sistema": "npc-odetes | desk and Field Odete option (line 12) | What system?",
+  "orespawn_integrations.odete.opcao.sair": "npc-odetes | dialog option that closes the dialog | (Thanks.)",
+  "orespawn_integrations.odete_campo.npc.name": "npc-odete-de-campo | Field Odete's name tag | Odete",
+  "orespawn_integrations.odete_campo.npc.title": "npc-odete-de-campo | Field Odete's title | (Field Registry)",
+  "orespawn_integrations.odete_campo.dialog.title": "npc-odete-de-campo | Field Odete dialog title | Odete",
+  "orespawn_integrations.odete_campo.dialog.text": "npc-odete-de-campo | Field Odete dialog text, the default greeting (firsthour may replace it with the clock greetings) | Good morning... (her greeting)"
+}

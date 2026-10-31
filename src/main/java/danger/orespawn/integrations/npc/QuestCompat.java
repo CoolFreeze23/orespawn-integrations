@@ -62,6 +62,9 @@ public final class QuestCompat {
 
     public static void init(IEventBus modBus) {
         NeoForge.EVENT_BUS.addListener(QuestCompat::onServerAboutToStart);
+        // The Registry's versioned installer (0.10.0 on) keeps its own marker, so worlds this one skips still get it.
+        NeoForge.EVENT_BUS.addListener(RegistroInstaller::onServerAboutToStart);
+        NeoForge.EVENT_BUS.addListener(RegistroInstaller::onServerStarted);
     }
 
     private static void onServerAboutToStart(ServerAboutToStartEvent event) {
