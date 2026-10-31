@@ -23,6 +23,10 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import danger.orespawn.integrations.npc.RegistroInstaller;
 import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 
 import java.util.HashMap;
@@ -57,7 +61,7 @@ public final class FieldOdete {
     private static final int DESK_RANGE = 2000;
     private static final int VILLAGE_CHUNKS = 40;
 
-    private record Visit(long scene, Entity npc) {}
+    private record Visit(long scene, Entity npc, boolean veteran) {}
 
     private static final Map<UUID, Visit> LIVE = new HashMap<>();
 
@@ -67,6 +71,7 @@ public final class FieldOdete {
     public static void init(IEventBus modBus) {
         FirstHourScenes.odete = FieldOdete::start;
         NeoForge.EVENT_BUS.addListener(FieldOdete::onEntityJoin);
+        NeoForge.EVENT_BUS.addListener(FieldOdete::onInteract);
         NeoForge.EVENT_BUS.addListener(FieldOdete::onLogout);
         NeoForge.EVENT_BUS.addListener(FieldOdete::onServerStopping);
     }
@@ -89,7 +94,7 @@ public final class FieldOdete {
             FirstHourUtil.resetScore(player, ORIGIN_ID_SCORE);
         }
         Entity npc = spawn(level, rimPosition(level, player, crate));
-        LIVE.put(player.getUUID(), new Visit(scene, npc));
+        LIVE.put(player.getUUID(), new Visit(scene, npc, veteran));
         StoryScheduler.schedule(server, LIFE, "odete_campo_leave", () -> remove(player.getUUID()));
         walkTo(npc, player.position());
         StoryScheduler.schedule(server, LINE_GAP * 2, "odete_campo_talk", () -> talk(player, veteran, 0));
@@ -131,6 +136,36 @@ public final class FieldOdete {
             StoryCore.logOnce("odete_campo_spawn", t);
         }
         return null; // no clone: she is heard, not seen
+    }
+
+    /**
+     * A click on her opens the dialog the clock asks for (the clone's own is the morning one, 720): her options, "What
+     * system?" and the coins, live there. Her walk-up lines come in chat either way, so the dialog never pops up unasked.
+     */
+    private static void onInteract(PlayerInteractEvent.EntityInteract event) {
+        if (event.getLevel().isClientSide() || event.getHand() != InteractionHand.MAIN_HAND
+                || !(event.getEntity() instanceof ServerPlayer player) || !event.getTarget().getTags().contains(EVENT_TAG)) {
+            return;
+        }
+        Visit visit = LIVE.get(player.getUUID());
+        if (visit == null || visit.npc() != event.getTarget()) {
+            return;
+        }
+        int dialog = visit.veteran() ? RegistroInstaller.DIALOG_FIELD_VETERAN
+                : new int[]{RegistroInstaller.DIALOG_FIELD, RegistroInstaller.DIALOG_FIELD_AFTERNOON,
+                        RegistroInstaller.DIALOG_FIELD_EVENING}[turn(player.level().getDayTime())];
+        MinecraftServer server = player.getServer();
+        if (server == null) {
+            return;
+        }
+        try {
+            server.getCommands().performPrefixedCommand(server.createCommandSourceStack().withSuppressedOutput(),
+                    "noppes dialog show " + player.getGameProfile().getName() + " " + dialog + " Odete");
+            event.setCancellationResult(InteractionResult.SUCCESS);
+            event.setCanceled(true);
+        } catch (Throwable t) {
+            StoryCore.logOnce("odete_campo_dialog", t);
+        }
     }
 
     private static void walkTo(Entity npc, Vec3 target) {
