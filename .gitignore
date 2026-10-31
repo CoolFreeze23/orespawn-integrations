@@ -17,3 +17,6 @@ libs/*.jar
 
 # Own Gradle home, so builds of other projects never stop this one's daemon
 .gradle-home/
+
+# Minecraft logs from tests that start game classes
+logs/
