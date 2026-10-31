@@ -1266,5 +1266,8 @@
   "orespawn_integrations.larder.class.menagerie": "ovo de zoológico",
   "orespawn_integrations.larder.class.quarry": "ovo de caça",
   "orespawn_integrations.larder.class.royal": "ovo real, selado",
-  "orespawn_integrations.shelf9.register.jade": "%1$s · %2$s · dia %3$s"
+  "orespawn_integrations.shelf9.register.jade": "%1$s · %2$s · dia %3$s",
+  "orespawn_integrations.shelf9.ways.surveying.thing": "…em vistoria",
+  "orespawn_integrations.shelf9.ways.surveying.comment": "Até reiniciar",
+  "orespawn_integrations.cc.ways_pending": "Os Quatro Rumos serão vistoriados no próximo reinício; até lá, as placas dizem \"em vistoria\"."
 }

@@ -51,5 +51,8 @@
   "orespawn_integrations.cc.hub_full": "%1$s: a lista do hub está cheia (%2$s lugares). Nada foi colocado.",
   "orespawn_integrations.cc.failed": "%1$s: o molde não está neste jar. Nada foi colocado.",
   "orespawn_integrations.cc.hub_list": "Lista do hub: %1$s de %2$s lugares.",
-  "orespawn_integrations.cc.hub_entry": "%1$s em %2$s %3$s %4$s (%5$s)"
+  "orespawn_integrations.cc.hub_entry": "%1$s em %2$s %3$s %4$s (%5$s)",
+  "orespawn_integrations.shelf9.ways.surveying.thing": "…em vistoria",
+  "orespawn_integrations.shelf9.ways.surveying.comment": "Até reiniciar",
+  "orespawn_integrations.cc.ways_pending": "Os Quatro Rumos serão vistoriados no próximo reinício; até lá, as placas dizem \"em vistoria\"."
 }

@@ -129,6 +129,7 @@ public final class CcCommand {
         HubPlaces.add(server, thing, spawn, level.dimension().location().toString());
         source.sendSuccess(() -> Component.translatable(KEY + "placed", thing,
                 spawn.getX(), spawn.getY(), spawn.getZ()), true);
+        source.sendSuccess(() -> Component.translatable(KEY + "ways_pending"), true);
         return 1;
     }
 

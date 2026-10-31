@@ -1885,5 +1885,8 @@
   "orespawn_integrations.larder.class.menagerie": "zoo egg",
   "orespawn_integrations.larder.class.quarry": "quarry egg",
   "orespawn_integrations.larder.class.royal": "royal egg, sealed",
-  "orespawn_integrations.shelf9.register.jade": "%1$s · %2$s · day %3$s"
+  "orespawn_integrations.shelf9.register.jade": "%1$s · %2$s · day %3$s",
+  "orespawn_integrations.shelf9.ways.surveying.thing": "…surveying",
+  "orespawn_integrations.shelf9.ways.surveying.comment": "Next restart",
+  "orespawn_integrations.cc.ways_pending": "Four Ways surveyed at the next restart; the signs read \"surveying\" until then."
 }

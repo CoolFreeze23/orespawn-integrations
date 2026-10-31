@@ -1,11 +1,12 @@
 package danger.orespawn.integrations.story.shelf9;
 
 import danger.orespawn.integrations.OreSpawnIntegrations;
-import danger.orespawn.integrations.story.StoryScheduler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.levelgen.structure.Structure;
@@ -19,7 +20,7 @@ import java.util.List;
  * generate past structure starts): a village, a Pandora henge, a tower, a bar, each through a structure tag of ours
  * ({@code #orespawn_integrations:shelf9/<kind>}) so 0.10.1 can add the boteco by data. The hub list is read first for
  * the bar and the Hunt Lodge, which an operator places by hand. They run once, while the server starts or at the
- * operator's command, one locate per tick, never while players wait.
+ * at the next start after an operator's command, never on a live tick.
  */
 public final class FourWays {
 
@@ -33,27 +34,37 @@ public final class FourWays {
     }
 
     /**
-     * The placement's path: one locate per server tick (each can take most of a second on new ground), then the signs,
-     * so no single tick carries all four.
+     * A placement on a live server (the operator's command): no locate runs on a tick. The signs read "surveying ·
+     * next restart" and the survey is kept in the saved data for {@link #runPending} at the next start.
      */
-    public static void locateSpread(ServerLevel level, BlockPos centre, HatchingGroundData data) {
-        List<WaysPlan.Found> found = new ArrayList<>();
-        for (int i = 0; i < KINDS.length; i++) {
-            String kind = KINDS[i];
-            StoryScheduler.schedule(level.getServer(), i + 1, "shelf9_ways_" + kind, () -> {
-                WaysPlan.Found f = find(level, centre, kind);
-                if (f != null) {
-                    found.add(f);
-                }
-            });
+    public static void markPending(ServerLevel level, BlockPos centre, HatchingGroundData data) {
+        for (int side = 0; side < 4; side++) {
+            writeKind(level, data.waysSigns[side], side, "surveying", null);
         }
-        StoryScheduler.schedule(level.getServer(), KINDS.length + 1, "shelf9_ways_write", () -> {
-            BlockPos lodge = nearestHubPlace(level, centre, "hunt_lodge");
-            if (lodge != null) {
-                found.add(new WaysPlan.Found("hunt_lodge", lodge.getX() - centre.getX(), lodge.getZ() - centre.getZ()));
-            }
-            writeAll(level, data, found);
-        });
+        data.waysPending = true;
+        data.waysCentre = centre.immutable();
+        data.setDirty();
+        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: placed on a live server; the survey waits for the next start");
+    }
+
+    /**
+     * At server start, before anyone can join: the survey a live placement left, if any. Returns true when it ran.
+     */
+    public static boolean runPending(MinecraftServer server, HatchingGroundData data) {
+        if (!data.placed || !data.waysPending) {
+            return false;
+        }
+        ServerLevel level = server.getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(data.dimension)));
+        if (level == null) {
+            level = server.overworld();
+        }
+        long start = System.nanoTime();
+        locateAndWrite(level, data.waysCentre, data);
+        data.waysPending = false;
+        data.setDirty();
+        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: the waiting survey ran at start-up in {} ms",
+                (System.nanoTime() - start) / 1_000_000L);
+        return true;
     }
 
     /** All four locates and the signs at once, for an operator re-run or a test. */
@@ -124,7 +135,10 @@ public final class FourWays {
     }
 
     private static void write(ServerLevel level, BlockPos sign, int side, WaysPlan.Found found) {
-        String kind = found == null ? "nothing" : found.kind();
+        writeKind(level, sign, side, found == null ? "nothing" : found.kind(), found);
+    }
+
+    private static void writeKind(ServerLevel level, BlockPos sign, int side, String kind, WaysPlan.Found found) {
         Component heading = Component.translatable(KEY + "heading", WaysPlan.ARROWS[side],
                 Component.translatable(KEY + "dir." + WaysPlan.SIDES[side]));
         Component thing = Component.translatable(KEY + kind + ".thing");

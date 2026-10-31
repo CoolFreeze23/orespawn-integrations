@@ -51,5 +51,8 @@
   "orespawn_integrations.cc.hub_full": "system-cronograma-de-obras | CHAT | operators, builder (the hub list is full); %1$s thing, %2$s the cap | %1$s: the hub list is full (%2$s places)",
   "orespawn_integrations.cc.failed": "structure-hatching-ground | CHAT | operators, builder (the template is missing); %1$s thing | %1$s: the template is missing from this ",
   "orespawn_integrations.cc.hub_list": "system-cronograma-de-obras | CHAT | operators, builder (/cc hub_places header); %1$s count, %2$s cap | Hub list: %1$s of %2$s places.",
-  "orespawn_integrations.cc.hub_entry": "system-cronograma-de-obras | CHAT | operators, builder (/cc hub_places row); %1$s thing, %2$s-%4$s x y z, %5$s dimension | %1$s at %2$s %3$s %4$s (%5$s)"
+  "orespawn_integrations.cc.hub_entry": "system-cronograma-de-obras | CHAT | operators, builder (/cc hub_places row); %1$s thing, %2$s-%4$s x y z, %5$s dimension | %1$s at %2$s %3$s %4$s (%5$s)",
+  "orespawn_integrations.shelf9.ways.surveying.thing": "structure-hatching-ground | SIGN | Ways row 2, a live placement until the next start (card line 24) | …surveying",
+  "orespawn_integrations.shelf9.ways.surveying.comment": "structure-hatching-ground | SIGN | Ways row 4, a live placement until the next start (card line 24) | Next restart",
+  "orespawn_integrations.cc.ways_pending": "system-cronograma-de-obras | CHAT | operators, after /cc hatching_ground place on a live server | Four Ways surveyed at the next restart."
 }

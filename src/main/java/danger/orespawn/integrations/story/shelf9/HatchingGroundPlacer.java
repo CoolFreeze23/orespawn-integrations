@@ -61,6 +61,7 @@ public final class HatchingGroundPlacer {
         MinecraftServer server = event.getServer();
         try {
             HatchingGroundData data = HatchingGroundData.get(server);
+            FourWays.runPending(server, data);
             if (data.firstStartDone) {
                 return;
             }
@@ -198,7 +199,11 @@ public final class HatchingGroundPlacer {
         HubPlaces.writeShelf9(server, spawn, data.dimension);
         HatchRegister.writeAll(server);
         try {
-            FourWays.locateSpread(level, origin.offset(10, 4, 10), data);
+            if ("first_start".equals(placedBy)) {
+                FourWays.locateAndWrite(level, origin.offset(10, 4, 10), data);
+            } else {
+                FourWays.markPending(level, origin.offset(10, 4, 10), data);
+            }
         } catch (Throwable t) {
             StoryCore.logOnce("shelf9.ways", t);
         }
