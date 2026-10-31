@@ -97,7 +97,7 @@ public final class FieldOdete {
     }
 
     /** cc_turno: 0 from 06:00 to 11:59, 1 from 12:00 to 17:59, 2 otherwise (day time 0 is 06:00). */
-    static int turn(long dayTime) {
+    public static int turn(long dayTime) {
         int hour = (int) ((dayTime % 24000L) / 1000L + 6) % 24;
         return hour >= 6 && hour < 12 ? 0 : hour >= 12 && hour < 18 ? 1 : 2;
     }
@@ -220,7 +220,7 @@ public final class FieldOdete {
     }
 
     /** The nearest desk on the list (or the hub's registro place) within 2,000 blocks, or null. */
-    static BlockPos registryPin(ServerLevel level, BlockPos from) {
+    public static BlockPos registryPin(ServerLevel level, BlockPos from) {
         BlockPos best = null;
         double bestSq = (double) DESK_RANGE * DESK_RANGE;
         CompoundTag hub = level.getServer().getCommandStorage().get(HUB_PLACES);

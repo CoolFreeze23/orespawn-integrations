@@ -31,11 +31,11 @@ import java.util.List;
  * by one pass over the block entities already loaded in range, at landing only. An opened First Fall crate that is
  * empty is skipped; with anything stored in it, it counts like any chest. Nothing here loads or generates a chunk.
  */
-final class FallSafety {
+public final class FallSafety {
 
-    static final int HOME_RADIUS = 64;
+    public static final int HOME_RADIUS = 64;
     static final int MAX_TRIES = 24;
-    static final TagKey<Block> HOMELY = TagKey.create(Registries.BLOCK, FirstHourUtil.oi("homely"));
+    public static final TagKey<Block> HOMELY = TagKey.create(Registries.BLOCK, FirstHourUtil.oi("homely"));
     /** Signed Parish Stones, once the Freguesia record exists (0.10.1+): list {@code stones} of {pos, dim}. */
     private static final net.minecraft.resources.ResourceLocation PARISH_STORAGE = FirstHourUtil.oi("freguesia");
 
@@ -43,7 +43,7 @@ final class FallSafety {
     }
 
     /** Every "someone lives here" point within {@code reach} blocks of x, z, in one pass. */
-    static List<BlockPos> homes(ServerLevel level, double x, double z, int reach) {
+    public static List<BlockPos> homes(ServerLevel level, double x, double z, int reach) {
         List<BlockPos> homes = new ArrayList<>();
         int reachSq = reach * reach;
         for (ServerPlayer p : level.getServer().getPlayerList().getPlayers()) {
@@ -133,7 +133,7 @@ final class FallSafety {
         return top;
     }
 
-    static boolean farFromHomes(BlockPos spot, List<BlockPos> homes) {
+    public static boolean farFromHomes(BlockPos spot, List<BlockPos> homes) {
         int sq = HOME_RADIUS * HOME_RADIUS;
         for (BlockPos home : homes) {
             if (near(home, spot.getX(), spot.getZ(), sq)) {
