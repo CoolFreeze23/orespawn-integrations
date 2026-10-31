@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:ingot_uranium",
+      "required": false
+    },
+    {
+      "id": "orespawn:uranium_nugget",
+      "required": false
+    },
+    {
+      "id": "orespawn:ingot_titanium",
+      "required": false
+    },
+    {
+      "id": "orespawn:titanium_nugget",
+      "required": false
+    },
+    {
+      "id": "orespawn:ruby",
+      "required": false
+    },
+    {
+      "id": "orespawn:amethyst_gem",
+      "required": false
+    },
+    {
+      "id": "orespawn:tigers_eye_ingot",
+      "required": false
+    }
+  ]
+}
