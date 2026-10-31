@@ -29,6 +29,7 @@ public final class ShelfNine {
 
     public static void init(IEventBus modBus) {
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGH, ShelfNine::onLogin);
+        NeoForge.EVENT_BUS.addListener(HatchingGroundPlacer::onServerStarted);
         StoryClock.everySecondPerPlayer("shelf9.register_origin", HatchRegister::checkPendingOrigin);
     }
 
@@ -50,6 +51,8 @@ public final class ShelfNine {
         }
         if (newLine) {
             onFirstJoin(player);
+        } else if (HatchingGroundData.get(player.server).pendingWaystone.contains(player.getUUID())) {
+            HatchingGroundPlacer.activateWaystone(player);
         }
         try {
             Eggshell.resetCopaOnNewDay(player);
@@ -60,6 +63,16 @@ public final class ShelfNine {
 
     /** A player's first login since 0.10.0 (their Register line was just written). */
     private static void onFirstJoin(ServerPlayer player) {
+        try {
+            HatchingGroundPlacer.topUpStraw(player.server);
+        } catch (Throwable t) {
+            StoryCore.logOnce("shelf9.join.straw", t);
+        }
+        try {
+            HatchingGroundPlacer.activateWaystone(player);
+        } catch (Throwable t) {
+            StoryCore.logOnce("shelf9.join.waystone", t);
+        }
     }
 
     /**

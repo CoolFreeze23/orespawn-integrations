@@ -5,6 +5,8 @@ import net.blay09.mods.balm.api.Balm;
 import net.blay09.mods.waystones.api.MutableWaystone;
 import net.blay09.mods.waystones.api.Waystone;
 import net.blay09.mods.waystones.api.WaystoneOrigin;
+import net.blay09.mods.waystones.api.WaystoneStyles;
+import net.blay09.mods.waystones.api.WaystonesAPI;
 import net.blay09.mods.waystones.api.event.GenerateWaystoneNameEvent;
 import net.blay09.mods.waystones.api.event.WaystoneInitializedEvent;
 import net.minecraft.core.Holder;
@@ -12,7 +14,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.neoforged.bus.api.IEventBus;
@@ -20,6 +24,8 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
 
 import java.util.Locale;
+import java.util.Optional;
+import java.util.UUID;
 
 /**
  * Waystones (Balm) integration: gives structure-generated, DUNGEON-origin
@@ -48,6 +54,38 @@ public final class WaystonesCompat {
         // exists) and hop to the main thread since setup is parallel-dispatched.
         modBus.addListener(FMLCommonSetupEvent.class,
                 event -> event.enqueueWork(WaystonesCompat::registerBalmHandlers));
+    }
+
+    /**
+     * Shelf 9's waystone (structure-hatching-ground): placed by the API beside the Gallery's plinths, not inside the
+     * template, and named "Shelf 9" (a translate key). Returns its id, or null when Waystones refused the spot.
+     * Called only behind {@code ModList.isLoaded("waystones")}.
+     */
+    public static UUID placeShelfNine(ServerLevel level, BlockPos pos) {
+        Optional<Waystone> placed = WaystonesAPI.placeWaystone(level, pos, WaystoneStyles.DEFAULT);
+        if (placed.isEmpty()) {
+            return null;
+        }
+        Waystone waystone = placed.get();
+        if (waystone instanceof MutableWaystone mutable) {
+            mutable.setName(Component.translatable(OreSpawnIntegrations.MODID + ".shelf9.waystone"));
+        }
+        return waystone.getWaystoneUid();
+    }
+
+    /**
+     * Activates Shelf 9's waystone for a player at their first join, so it is everyone's way home. Returns false when
+     * the stone isn't known to Waystones (yet), so the caller can try again at a later login.
+     */
+    public static boolean activateFor(ServerPlayer player, UUID id) {
+        Optional<Waystone> waystone = WaystonesAPI.getWaystone(player.server, id);
+        if (waystone.isEmpty()) {
+            return false;
+        }
+        if (!WaystonesAPI.isWaystoneActivated(player, waystone.get())) {
+            WaystonesAPI.activateWaystone(player, waystone.get());
+        }
+        return true;
     }
 
     private static void registerBalmHandlers() {
