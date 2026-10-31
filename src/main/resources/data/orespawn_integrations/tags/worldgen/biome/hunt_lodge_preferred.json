@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#orespawn_integrations:region/countryside",
+    "#orespawn_integrations:region/greenwood",
+    "#orespawn_integrations:region/sertao",
+    "#orespawn_integrations:region/pine_north"
+  ]
+}

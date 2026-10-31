@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:is_forest",
+    "#minecraft:is_taiga",
+    "#minecraft:is_jungle",
+    "#minecraft:is_savanna",
+    "#minecraft:is_badlands",
+    "#minecraft:is_mountain",
+    "#minecraft:is_hill",
+    "#c:is_plains",
+    "#c:is_swamp",
+    "#c:is_desert",
+    "#c:is_snowy_plains",
+    "#orespawn_integrations:region/countryside",
+    "#orespawn_integrations:region/greenwood",
+    "#orespawn_integrations:region/sertao",
+    "#orespawn_integrations:region/pine_north",
+    "#orespawn_integrations:region/old_ground"
+  ]
+}
