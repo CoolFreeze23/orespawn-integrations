@@ -90,6 +90,16 @@ public final class OriginGroups {
         return originOrder.indexOf(originId) + 1;
     }
 
+    /** {@link #originNumber} for an origin known only by its path (the {@code cc_origin.<path>} tag). */
+    public int originNumberOfPath(String path) {
+        for (int i = 0; i < originOrder.size(); i++) {
+            if (originOrder.get(i).endsWith(":" + path)) {
+                return i + 1;
+            }
+        }
+        return 0;
+    }
+
     /** Every listed origin by group id, in order (the diff against Origin Awakening reads this). */
     public Map<String, List<String>> byGroup() {
         Map<String, List<String>> out = new java.util.LinkedHashMap<>();
