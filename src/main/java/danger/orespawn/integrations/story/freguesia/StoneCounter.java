@@ -107,6 +107,8 @@ final class StoneCounter {
         }
         FreguesiaData.Bed bed = data.bed(id);
         bed.name = player.getGameProfile().getName();
+        bed.bedPos = respawn.immutable();
+        bed.bedDim = dim;
         if (bed.today.contains(pos.asLong()) || bed.today.size() >= StandingRules.MAX_TODAY_POSITIONS) {
             return;
         }

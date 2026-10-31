@@ -50,5 +50,11 @@
   "advancements.orespawn_integrations.parish.town.title": "Vila",
   "advancements.orespawn_integrations.parish.town.description": "Sua Freguesia virou Vila, e o sino dela toca ao meio-dia.",
   "advancements.orespawn_integrations.parish.mutirao.title": "Mutirão",
-  "advancements.orespawn_integrations.parish.mutirao.description": "Decore o terreno de um Marco da Freguesia junto com alguém da turma, ao mesmo tempo."
+  "advancements.orespawn_integrations.parish.mutirao.description": "Decore o terreno de um Marco da Freguesia junto com alguém da turma, ao mesmo tempo.",
+  "orespawn_integrations.freguesia.peddler": "Quarta-feira é dia de feira. Chegou um mascate.",
+  "orespawn_integrations.freguesia.peddler_newcomer": "Quarta-feira é dia de feira. A feira veio ver o nenê.",
+  "orespawn_integrations.freguesia.deed.market": "A feira veio pra casa de %s. Dizem que foi pelo capricho.",
+  "orespawn_integrations.freguesia.deed.newcomer": "A feira foi conhecer o nenê novo: %s.",
+  "advancements.orespawn_integrations.wonder.10.title": "Quarta de Feira",
+  "advancements.orespawn_integrations.wonder.10.description": "A feira veio pra sua casa porque é a mais caprichada da região."
 }

@@ -32,6 +32,7 @@ public final class Freguesia {
         NeoForge.EVENT_BUS.addListener(Freguesia::onStopped);
         LandsWeek.onDawn("freguesia", StoneDawn::onDawn);
         StoryClock.everySecond("freguesia.noon_bell", StoneDawn::noonBell);
+        StoryClock.everySecond("freguesia.market", WednesdayMarket::everySecond);
     }
 
     private static void onStarted(ServerStartedEvent event) {
@@ -43,5 +44,6 @@ public final class Freguesia {
         StoneCounter.reset();
         StoneSigning.reset();
         StoneDawn.reset();
+        WednesdayMarket.reset();
     }
 }

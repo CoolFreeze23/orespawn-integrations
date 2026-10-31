@@ -50,5 +50,11 @@
   "advancements.orespawn_integrations.parish.town.title": "system-advancement-tree | ADV | advancement title (08-advancements)",
   "advancements.orespawn_integrations.parish.town.description": "system-advancement-tree | ADV | advancement description (08-advancements)",
   "advancements.orespawn_integrations.parish.mutirao.title": "system-advancement-tree | ADV | advancement title (08-advancements)",
-  "advancements.orespawn_integrations.parish.mutirao.description": "system-advancement-tree | ADV | advancement description (08-advancements)"
+  "advancements.orespawn_integrations.parish.mutirao.description": "system-advancement-tree | ADV | advancement description (08-advancements)",
+  "orespawn_integrations.freguesia.peddler": "system-freguesia | CHAT | Wednesday dawn, to everyone within 48 blocks of the best-kept house (line 23)",
+  "orespawn_integrations.freguesia.peddler_newcomer": "system-freguesia | CHAT | Wednesday dawn, a newcomer's first market, within 48 blocks of their bed or stone (line 24)",
+  "orespawn_integrations.freguesia.deed.market": "system-freguesia | CHAT | deed log, the host of the Wednesday market; %s the founder (line 22)",
+  "orespawn_integrations.freguesia.deed.newcomer": "system-freguesia | CHAT | deed log, a newcomer's first market; %s the newcomer (line 25)",
+  "advancements.orespawn_integrations.wonder.10.title": "wonder-wednesday-market | ADV | advancement title (line 1)",
+  "advancements.orespawn_integrations.wonder.10.description": "wonder-wednesday-market | ADV | advancement description (line 2)"
 }

@@ -97,6 +97,9 @@ public final class FreguesiaData extends SavedData {
         public int todayHalves;
         public final LongOpenHashSet today = new LongOpenHashSet();
         public int visits;
+        /** The respawn point the counter was last kept around. */
+        public BlockPos bedPos;
+        public String bedDim = "";
     }
 
     private final Map<Integer, Stone> stones = new LinkedHashMap<>();
@@ -320,6 +323,10 @@ public final class FreguesiaData extends SavedData {
             c.putInt("today_halves", b.todayHalves);
             c.put("today", new LongArrayTag(b.today.toLongArray()));
             c.putInt("visits", b.visits);
+            if (b.bedPos != null) {
+                c.putLong("bed_pos", b.bedPos.asLong());
+                c.putString("bed_dim", b.bedDim);
+            }
             bedList.add(c);
         }
         tag.put("beds", bedList);
@@ -416,6 +423,10 @@ public final class FreguesiaData extends SavedData {
                 b.today.add(l);
             }
             b.visits = c.getInt("visits");
+            if (c.contains("bed_pos")) {
+                b.bedPos = BlockPos.of(c.getLong("bed_pos"));
+                b.bedDim = c.getString("bed_dim");
+            }
             d.beds.put(b.player, b);
         }
         readUuids(tag.getList("had_market", Tag.TAG_STRING), d.hadMarket);

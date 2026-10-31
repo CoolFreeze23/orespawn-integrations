@@ -50,5 +50,11 @@
   "advancements.orespawn_integrations.parish.town.title": "Town",
   "advancements.orespawn_integrations.parish.town.description": "Your Freguesia became a Town, and its bell rings at noon.",
   "advancements.orespawn_integrations.parish.mutirao.title": "Work Party",
-  "advancements.orespawn_integrations.parish.mutirao.description": "Decorate a Parish Stone's ground with a friend at the same time."
+  "advancements.orespawn_integrations.parish.mutirao.description": "Decorate a Parish Stone's ground with a friend at the same time.",
+  "orespawn_integrations.freguesia.peddler": "Wednesday is market day. A peddler's here.",
+  "orespawn_integrations.freguesia.peddler_newcomer": "Wednesday is market day. The market came to see the baby.",
+  "orespawn_integrations.freguesia.deed.market": "The market came to %s's place. Word is it was the craftsmanship.",
+  "orespawn_integrations.freguesia.deed.newcomer": "The market went to meet the new baby: %s.",
+  "advancements.orespawn_integrations.wonder.10.title": "Wednesday Market",
+  "advancements.orespawn_integrations.wonder.10.description": "The market came to your house because it's the nicest one around."
 }

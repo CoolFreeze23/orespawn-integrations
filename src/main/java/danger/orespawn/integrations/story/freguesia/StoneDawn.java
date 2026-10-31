@@ -92,6 +92,11 @@ final class StoneDawn {
         if (mirror) {
             StoneRecords.mirror(server);
         }
+        try {
+            WednesdayMarket.onDawn(server);
+        } catch (Throwable t) {
+            StoryCore.logOnce("freguesia.wednesday", t);
+        }
     }
 
     /** One stone's check. Public for the GameTests, which step days by calling it. */
