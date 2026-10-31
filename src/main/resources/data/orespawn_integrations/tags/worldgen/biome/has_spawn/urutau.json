@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#orespawn_integrations:region/old_ground",
+    "#orespawn_integrations:region/greenwood"
+  ]
+}

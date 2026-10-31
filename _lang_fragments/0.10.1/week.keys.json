@@ -1,4 +1,10 @@
 {
+  "advancements.orespawn_integrations.wonder.13.description": "wonder-saturday-truco | ADV | advancement wonder/13, description",
+  "advancements.orespawn_integrations.wonder.13.title": "wonder-saturday-truco | ADV | advancement wonder/13, title",
+  "advancements.orespawn_integrations.wonder.7.description": "wonder-mae-da-lua | ADV | advancement wonder/7, description",
+  "advancements.orespawn_integrations.wonder.7.title": "wonder-mae-da-lua | ADV | advancement wonder/7, title",
+  "dream.orespawn_integrations.ghost": "event-dusk-cry | ACTIONBAR | dream word dream.ghost, the dusk line's argument (line 11)",
+  "event.orespawn_integrations.dusk_cry.ordinary": "event-dusk-cry | ACTIONBAR | the ordinary dusk line, once per dusk (line 1; arg: tonight's dream word key)",
   "orespawn_integrations.almanaque.bed_held": "system-almanac | ACTIONBAR | a bed held during a dusk scene with no line of its own (line 14)",
   "orespawn_integrations.almanaque.fall_postponed": "system-almanac | CHAT | the Hoard Fall postponed (line 9; arg: the reason)",
   "orespawn_integrations.almanaque.no_forecast": "system-almanac | CHAT | Gazette, no forecast while the clear-weather timer runs (line 3)",

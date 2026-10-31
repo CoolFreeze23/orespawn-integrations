@@ -211,6 +211,8 @@ public final class LandsWeek {
         s.lineDay = today;
         WeekData.touch(player);
         FirstHourUtil.actionbar(player, weekdayLine(today));
+        // Tab 3's root opens with the first day name a player sees (system-advancement-tree).
+        FirstHourUtil.award(player, "week/root");
     }
 
     /** The sunrise line for a Land's day: "Wednesday. Market day." */

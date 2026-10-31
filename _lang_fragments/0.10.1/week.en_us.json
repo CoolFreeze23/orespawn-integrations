@@ -1,4 +1,10 @@
 {
+  "advancements.orespawn_integrations.wonder.13.description": "Hear the bar tell your story back to you, a size bigger than it happened.",
+  "advancements.orespawn_integrations.wonder.13.title": "Saturday Truco",
+  "advancements.orespawn_integrations.wonder.7.description": "Hear the mãe-da-lua cry at dusk, when the Unrecorded get up.",
+  "advancements.orespawn_integrations.wonder.7.title": "The Mãe-da-lua Cried",
+  "dream.orespawn_integrations.ghost": "ghosts",
+  "event.orespawn_integrations.dusk_cry.ordinary": "The mãe-da-lua cried. The Unrecorded are up, and the King dreams of %s.",
   "orespawn_integrations.almanaque.bed_held": "Not now: something's happening outside.",
   "orespawn_integrations.almanaque.fall_postponed": "Tonight's Fall is postponed. Reason: %s.",
   "orespawn_integrations.almanaque.no_forecast": "No forecast. The sky hasn't made up its mind.",

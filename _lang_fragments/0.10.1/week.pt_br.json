@@ -1,4 +1,10 @@
 {
+  "advancements.orespawn_integrations.wonder.13.description": "Ouve o boteco contar o seu causo, um número maior do que foi.",
+  "advancements.orespawn_integrations.wonder.13.title": "Sábado de Truco",
+  "advancements.orespawn_integrations.wonder.7.description": "Ouve a mãe-da-lua chorar ao cair da tarde, na hora em que os Sem-Registro levantam.",
+  "advancements.orespawn_integrations.wonder.7.title": "A Mãe-da-lua Chorou",
+  "dream.orespawn_integrations.ghost": "fantasma",
+  "event.orespawn_integrations.dusk_cry.ordinary": "A mãe-da-lua chorou. Os Sem-Registro acordaram, e o Rei sonha com %s.",
   "orespawn_integrations.almanaque.bed_held": "Agora não: tem coisa acontecendo lá fora.",
   "orespawn_integrations.almanaque.fall_postponed": "A Queda de hoje foi adiada. Motivo: %s.",
   "orespawn_integrations.almanaque.no_forecast": "Sem previsão. O céu tá em cima do muro.",
