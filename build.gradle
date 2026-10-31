@@ -12,6 +12,17 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+// GameTests live in their own source set and their own small mod jar (orespawn_integrations_tests), so the
+// release jar never carries them. The tests jar goes only into a scratch copy of the pack's server, which is
+// started with -Dneoforge.gameTestServer=true -Dneoforge.enabledGameTestNamespaces=orespawn_integrations_tests:
+// it runs every test against the real pack and exits with the result.
+sourceSets {
+    gametest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
@@ -32,6 +43,14 @@ dependencies {
 
 tasks.named('test', Test) {
     useJUnitPlatform()
+}
+
+tasks.register('gametestJar', Jar) {
+    group = 'build'
+    description = 'Builds orespawn_integrations_tests, the GameTest mod for scratch server copies.'
+    archiveBaseName = 'orespawn_integrations_tests'
+    archiveVersion = mod_version
+    from sourceSets.gametest.output
 }
 
 tasks.withType(ProcessResources).configureEach {

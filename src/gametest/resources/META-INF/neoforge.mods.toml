@@ -1,0 +1,16 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="orespawn_integrations_tests"
+version="1"
+displayName="OreSpawn Integrations GameTests"
+description="GameTests for OreSpawn Integrations. Only for scratch test servers; never shipped in the pack."
+
+[[dependencies.orespawn_integrations_tests]]
+modId="orespawn_integrations"
+type="required"
+versionRange="[0,)"
+ordering="AFTER"
+side="BOTH"

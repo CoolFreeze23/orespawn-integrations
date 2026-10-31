@@ -5,6 +5,7 @@ import danger.orespawn.integrations.items.ItemsInit;
 import danger.orespawn.integrations.items.ModernItemsInit;
 import danger.orespawn.integrations.items.RoyalEggInit;
 import danger.orespawn.integrations.items.UraniumItemsInit;
+import danger.orespawn.integrations.story.StoryCore;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
@@ -56,6 +57,13 @@ public class OreSpawnIntegrations {
             // The Girlfriend and the Boyfriend on the player model for EMF animation packs and Better Combat swings
             // (compat/bipeds; the class checks for either mod itself)
             {"orespawn", "danger.orespawn.integrations.compat.bipeds.BipedsCompat"},
+            // The road (0.10.0 on). One block per system group; each class has its own init(IEventBus).
+            // shelf9:
+            // firsthour:
+            // world:
+            // registry:
+            // chaos:
+            // data:
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };
@@ -67,6 +75,7 @@ public class OreSpawnIntegrations {
         ModernItemsInit.init(modBus);
         UraniumItemsInit.init(modBus);
         RoyalEggInit.init(modBus);
+        StoryCore.init(modBus);
         for (String[] entry : COMPAT) {
             if (!ModList.get().isLoaded(entry[0])) {
                 LOGGER.debug("Compat for '{}' skipped (mod absent)", entry[0]);

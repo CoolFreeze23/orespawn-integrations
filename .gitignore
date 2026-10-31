@@ -14,3 +14,6 @@ libs/*.jar
 .idea/
 *.iml
 .vscode/
+
+# Own Gradle home, so builds of other projects never stop this one's daemon
+.gradle-home/
