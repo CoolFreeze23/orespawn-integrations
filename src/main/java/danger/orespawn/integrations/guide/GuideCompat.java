@@ -1,6 +1,7 @@
 package danger.orespawn.integrations.guide;
 
 import danger.orespawn.integrations.OreSpawnIntegrations;
+import danger.orespawn.integrations.config.IntegrationsConfig;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -16,6 +17,9 @@ import vazkii.patchouli.common.item.PatchouliItems;
 /**
  * Patchouli compat: hands every player a copy of the OreSpawn Guide
  * ({@code orespawn_integrations:orespawn_guide}) the first time they log in.
+ *
+ * From 0.10.0 the join hands out the Eggshell instead (item-hatchling-shell), and the Guide waits at the Registry
+ * desk: this handler only gives it when {@code story.guide_on_join} is true or {@code story.hatchling_shell} is false.
  *
  * The "already given" flag lives in the {@link Player#PERSISTED_NBT_TAG}
  * sub-compound of the player's persistent data - that is the only part of
@@ -44,6 +48,10 @@ public final class GuideCompat {
     private static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         try {
             if (!(event.getEntity() instanceof ServerPlayer player)) {
+                return;
+            }
+            if (!IntegrationsConfig.on(IntegrationsConfig.storyGuideOnJoin)
+                    && IntegrationsConfig.on(IntegrationsConfig.storyHatchlingShell)) {
                 return;
             }
             CompoundTag root = player.getPersistentData();

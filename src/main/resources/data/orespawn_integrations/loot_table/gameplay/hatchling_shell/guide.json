@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "patchouli"
+    }
+  ],
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "patchouli:guide_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "patchouli:book": "orespawn_integrations:guia_de_campo"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

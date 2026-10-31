@@ -1,0 +1,286 @@
+package danger.orespawn.integrations.gametest;
+
+import danger.orespawn.integrations.command.CcCommand;
+import danger.orespawn.integrations.story.shelf9.Eggshell;
+import danger.orespawn.integrations.story.shelf9.FourWays;
+import danger.orespawn.integrations.story.shelf9.HatchRegister;
+import danger.orespawn.integrations.story.shelf9.HatchingGroundData;
+import danger.orespawn.integrations.story.shelf9.HatchingGroundPlacer;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.gametest.framework.GameTest;
+import net.minecraft.gametest.framework.GameTestHelper;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.SignBlockEntity;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.util.RandomSource;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.gametest.GameTestHolder;
+import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * structure-hatching-ground and item-hatchling-shell: the card test lines a server can check alone. Run on a scratch
+ * copy of the full pack. Tests that place the Shelf 9 template do so 40 blocks above their own test area, so they never
+ * touch a neighbour's; none of them calls the placer's world-level path (no SavedData flag, no spawn move).
+ */
+@GameTestHolder("orespawn_integrations_tests")
+@PrefixGameTestTemplate(false)
+public final class ShelfNineTests {
+
+    private ShelfNineTests() {
+    }
+
+    private static Item item(String id) {
+        return BuiltInRegistries.ITEM.get(ResourceLocation.parse(id));
+    }
+
+    private static int count(ServerPlayer player, Item item) {
+        int n = 0;
+        for (ItemStack stack : player.getInventory().items) {
+            if (stack.is(item)) {
+                n += stack.getCount();
+            }
+        }
+        return n;
+    }
+
+    private static int stacks(ServerPlayer player) {
+        int n = 0;
+        for (ItemStack stack : player.getInventory().items) {
+            if (!stack.isEmpty()) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    /** "after join, the inventory holds exactly one item, the Eggshell; a second join gives none". */
+    @GameTest(template = "empty8")
+    public static void eggshellGivenOnce(GameTestHelper helper) {
+        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        player.getInventory().clearContent();
+        helper.assertTrue(Eggshell.giveOnce(player), "first give");
+        helper.assertTrue(!Eggshell.giveOnce(player), "second give refused");
+        helper.assertTrue(stacks(player) == 1, "exactly one item");
+        helper.assertTrue(count(player, item("orespawn_integrations:hatchling_shell")) == 1, "the Eggshell");
+        helper.assertTrue(Eggshell.isGiven(player), "the given bit is set");
+        helper.succeed();
+    }
+
+    /**
+     * "opening it gives the Field Guide, the casket, a red bed, 6 torches and 3 pães de queijo; opening it adds no
+     * Ledger Scrap; the casket rolls the rank-0 table" (the cc_shell_casket score the casket root reads).
+     */
+    @GameTest(template = "empty8")
+    public static void eggshellOpensIntoTheKit(GameTestHelper helper) {
+        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        player.getInventory().clearContent();
+        ItemStack shell = new ItemStack(item("orespawn_integrations:hatchling_shell"));
+        Eggshell.open(player, shell);
+        helper.assertTrue(shell.isEmpty(), "the shell crumbles");
+        helper.assertTrue(count(player, Items.RED_BED) == 1, "a red bed");
+        helper.assertTrue(count(player, Items.TORCH) == 6, "6 torches");
+        helper.assertTrue(count(player, item("orespawn_integrations:ledger_scrap")) == 0, "no Ledger Scrap");
+        helper.assertTrue(count(player, item("orespawn_integrations:hatchling_shell")) == 0, "no second shell");
+        if (ModList.get().isLoaded("braziliandelight")) {
+            helper.assertTrue(count(player, item("braziliandelight:cheese_bread")) == 3, "3 pães de queijo");
+        }
+        if (ModList.get().isLoaded("patchouli")) {
+            helper.assertTrue(count(player, item("patchouli:guide_book")) == 1, "the Field Guide");
+        }
+        if (ModList.get().isLoaded("mr_ly_luckyblocks")) {
+            helper.assertTrue(count(player, Items.ARMOR_STAND) == 1, "the Royal Casket (ly's lucky block item)");
+        }
+        if (ModList.get().isLoaded("ars_nouveau")) {
+            helper.assertTrue(count(player, item("ars_nouveau:worn_notebook")) == 0, "no notebook for a non-mage");
+        }
+        var objective = player.getServer().getScoreboard().getObjective(Eggshell.CASKET_SCORE);
+        helper.assertTrue(objective != null, "cc_shell_casket exists");
+        var score = player.getServer().getScoreboard().getPlayerScoreInfo(player, objective);
+        helper.assertTrue(score != null && score.value() == 1, "cc_shell_casket set to 1");
+        helper.succeed();
+    }
+
+    /** "a mage-class player also finds the Worn Notebook" (through the Egg's Label tag). */
+    @GameTest(template = "empty8")
+    public static void eggshellGivesAMageTheNotebook(GameTestHelper helper) {
+        if (!ModList.get().isLoaded("ars_nouveau")) {
+            helper.succeed();
+            return;
+        }
+        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        player.getInventory().clearContent();
+        player.addTag("cc_origin.fire_mage");
+        Eggshell.open(player, new ItemStack(item("orespawn_integrations:hatchling_shell")));
+        helper.assertTrue(count(player, item("ars_nouveau:worn_notebook")) == 1, "the Worn Notebook");
+        helper.succeed();
+    }
+
+    /** "Register lines for 3 joins, each player's stored line number matching their line"; a late line is a line too. */
+    @GameTest(template = "empty8")
+    public static void registerLinesInJoinOrder(GameTestHelper helper) {
+        List<Integer> lines = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            ServerPlayer player = helper.makeMockServerPlayerInLevel();
+            helper.assertTrue(HatchRegister.enter(player, i == 2), "entered");
+            helper.assertTrue(!HatchRegister.enter(player, false), "one line per player");
+            lines.add(HatchRegister.lineOf(player));
+        }
+        helper.assertTrue(lines.get(0) > 0, "line numbers start at 1");
+        helper.assertTrue(lines.get(1) == lines.get(0) + 1 && lines.get(2) == lines.get(1) + 1, "consecutive lines");
+        int next = HatchingGroundData.get(helper.getLevel().getServer()).nextLine;
+        helper.assertTrue(next == lines.get(2) + 1, "the next free line follows the last");
+        helper.succeed();
+    }
+
+    /** "three players join in turn after the first took all three larder blocks: each finds three in the straw". */
+    @GameTest(template = "empty8")
+    public static void strawToppedUpForEachNewPlayer(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        List<BlockPos> spots = List.of(helper.absolutePos(new BlockPos(1, 1, 1)),
+                helper.absolutePos(new BlockPos(3, 1, 1)), helper.absolutePos(new BlockPos(5, 1, 1)));
+        List<String> ids = List.of("orespawn:cow_spawn_block", "orespawn:sheep_spawn_block", "orespawn:chicken_spawn_block");
+        if (!BuiltInRegistries.BLOCK.containsKey(ResourceLocation.parse(ids.get(0)))) {
+            helper.succeed();
+            return;
+        }
+        helper.assertTrue(HatchingGroundPlacer.topUpStraw(level, spots, ids) == 3, "an empty straw gets three");
+        for (int join = 0; join < 3; join++) {
+            for (BlockPos spot : spots) {
+                level.setBlock(spot, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);  // the last player took them
+            }
+            helper.assertTrue(HatchingGroundPlacer.topUpStraw(level, spots, ids) == 3, "three back for join " + join);
+        }
+        helper.assertTrue(HatchingGroundPlacer.topUpStraw(level, spots, ids) == 0, "a full straw stays as it is");
+        helper.succeed();
+    }
+
+    private static BlockPos placeTemplate(GameTestHelper helper, List<StructureTemplate.StructureBlockInfo> signs) {
+        ServerLevel level = helper.getLevel();
+        StructureTemplate template = level.getStructureManager().get(HatchingGroundPlacer.TEMPLATE).orElseThrow();
+        BlockPos origin = helper.absolutePos(new BlockPos(0, 40, 0));
+        StructurePlaceSettings settings = new StructurePlaceSettings();
+        template.placeInWorld(level, origin, origin, settings, RandomSource.create(9), Block.UPDATE_CLIENTS);
+        signs.addAll(template.filterBlocks(origin, settings, Blocks.SPRUCE_WALL_SIGN));
+        signs.addAll(template.filterBlocks(origin, settings, Blocks.SPRUCE_SIGN));
+        return origin;
+    }
+
+    private static String role(StructureTemplate.StructureBlockInfo info) {
+        return info.nbt() == null ? "" : info.nbt().getString("cc_role");
+    }
+
+    /**
+     * "four signs filled; four locates during first start, log the startup delay": the Four Ways run against a
+     * placed template and every Ways sign carries four rows.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 400)
+    public static void fourWaysSignsFilled(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        List<StructureTemplate.StructureBlockInfo> signs = new ArrayList<>();
+        BlockPos origin = placeTemplate(helper, signs);
+        HatchingGroundData scratch = new HatchingGroundData();
+        for (StructureTemplate.StructureBlockInfo info : signs) {
+            String role = role(info);
+            if (role.startsWith("ways_")) {
+                scratch.waysSigns["nesw".indexOf(role.charAt(5))] = info.pos();
+            }
+        }
+        FourWays.locateAndWrite(level, origin.offset(10, 4, 10), scratch);
+        for (int side = 0; side < 4; side++) {
+            BlockPos pos = scratch.waysSigns[side];
+            helper.assertTrue(pos != null, "Ways sign " + side + " found by its role");
+            BlockEntity be = level.getBlockEntity(pos);
+            helper.assertTrue(be instanceof SignBlockEntity, "a sign at " + pos);
+            Component heading = ((SignBlockEntity) be).getFrontText().getMessage(0, false);
+            Component comment = ((SignBlockEntity) be).getFrontText().getMessage(3, false);
+            helper.assertTrue(!heading.getString().isEmpty() && !comment.getString().isEmpty(), "Ways sign " + side + " filled");
+        }
+        helper.assertTrue(FourWays.VERSION.equals(scratch.waysVersion), "the re-locate flag is written");
+        helper.succeed();
+    }
+
+    /**
+     * "Shelf 10's crawlspace opens and its label reads": the ghost panel stands over a 2-high crawlspace and the label
+     * sign carries its translate keys (both languages are the client's to check). Also: the straw is lit everywhere
+     * (no spawns inside), and the Register's eight signs are where the code looks for them.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 200)
+    public static void shelfTenAndTheInsideOfTheShell(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        List<StructureTemplate.StructureBlockInfo> signs = new ArrayList<>();
+        BlockPos origin = placeTemplate(helper, signs);
+        BlockPos panel = origin.offset(6, 3, 14);
+        ResourceLocation ghost = BuiltInRegistries.BLOCK.getKey(level.getBlockState(panel).getBlock());
+        if (ModList.get().isLoaded("secretroomsmod")) {
+            helper.assertTrue("secretroomsmod:ghost_block".equals(ghost.toString()), "the ghost panel, found " + ghost);
+        }
+        helper.assertTrue(level.getBlockState(panel.below()).isAir() && level.getBlockState(panel.below(2)).isAir(),
+                "the crawlspace under the panel");
+        int register = 0;
+        boolean label = false;
+        for (StructureTemplate.StructureBlockInfo info : signs) {
+            String role = role(info);
+            if (role.startsWith("register_")) {
+                register++;
+            }
+            if ("shelf10".equals(role) && level.getBlockEntity(info.pos()) instanceof SignBlockEntity sign) {
+                label = sign.getFrontText().getMessage(0, false).getContents()
+                        instanceof net.minecraft.network.chat.contents.TranslatableContents t
+                        && t.getKey().equals("orespawn_integrations.shelf9.shelf10.1");
+            }
+        }
+        helper.assertTrue(register == 8, "eight Register signs");
+        helper.assertTrue(label, "the Shelf 10 label is a translate key");
+        helper.succeedWhen(() -> {
+            for (int x = 6; x <= 13; x++) {
+                for (int z = 6; z <= 13; z++) {
+                    BlockPos above = origin.offset(x, 5, z);
+                    if (level.getBlockState(above).isAir()) {
+                        helper.assertTrue(level.getBrightness(LightLayer.BLOCK, above) > 0, "dark straw at " + above);
+                    }
+                }
+            }
+        });
+    }
+
+    /** The "too close" refusal's reader: a chest 5 blocks away is found at 5, and nothing past the radius. */
+    @GameTest(template = "empty8")
+    public static void tooCloseFindsAHome(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        BlockPos centre = helper.absolutePos(new BlockPos(1, 1, 1));
+        helper.setBlock(new BlockPos(6, 1, 1), Blocks.CHEST);
+        int near = CcCommand.nearestHome(level, centre, 64);
+        helper.assertTrue(near >= 0 && near <= 5, "chest found at " + near);
+        helper.succeed();
+    }
+
+    /** "A /cc subcommand with no function says so and does nothing": the command returns 0. */
+    @GameTest(template = "empty8")
+    public static void ccWithoutAFunctionDoesNothing(GameTestHelper helper) {
+        var server = helper.getLevel().getServer();
+        var source = server.createCommandSourceStack().withSuppressedOutput().withPermission(2);
+        int result;
+        try {
+            result = server.getCommands().getDispatcher().execute("cc no_such_thing place", source);
+        } catch (Exception e) {
+            result = -1;
+        }
+        helper.assertTrue(result == 0, "refused, result " + result);
+        helper.succeed();
+    }
+}

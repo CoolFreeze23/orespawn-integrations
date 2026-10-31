@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "neoorigins:fire_mage",
+    "neoorigins:water_mage",
+    "neoorigins:earth_mage",
+    "neoorigins:air_mage",
+    "neoorigins:gravity_mage",
+    "neoorigins:darkness_mage",
+    "neoorigins:necromancer",
+    "neoorigins:monster_tamer"
+  ]
+}

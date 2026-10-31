@@ -1,0 +1,41 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apotheosis:tower_leaf",
+      "required": false
+    },
+    {
+      "id": "apotheosis:tower_main",
+      "required": false
+    },
+    {
+      "id": "apotheosis:tower_sand",
+      "required": false
+    },
+    {
+      "id": "apotheosis:tower_spruce",
+      "required": false
+    },
+    {
+      "id": "structory:firetower",
+      "required": false
+    },
+    {
+      "id": "structory_towers:small_firetower",
+      "required": false
+    },
+    {
+      "id": "structory_towers:wizard_tower",
+      "required": false
+    },
+    {
+      "id": "structory_towers:engineer_tower",
+      "required": false
+    },
+    {
+      "id": "structory_towers:lighthouse",
+      "required": false
+    }
+  ]
+}
