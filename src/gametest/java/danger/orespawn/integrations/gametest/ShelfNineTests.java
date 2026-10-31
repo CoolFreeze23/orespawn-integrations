@@ -71,7 +71,7 @@ public final class ShelfNineTests {
     /** "after join, the inventory holds exactly one item, the Eggshell; a second join gives none". */
     @GameTest(template = "empty8")
     public static void eggshellGivenOnce(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.getInventory().clearContent();
         helper.assertTrue(Eggshell.giveOnce(player), "first give");
         helper.assertTrue(!Eggshell.giveOnce(player), "second give refused");
@@ -87,7 +87,7 @@ public final class ShelfNineTests {
      */
     @GameTest(template = "empty8")
     public static void eggshellOpensIntoTheKit(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.getInventory().clearContent();
         ItemStack shell = new ItemStack(item("orespawn_integrations:hatchling_shell"));
         Eggshell.open(player, shell);
@@ -122,7 +122,7 @@ public final class ShelfNineTests {
             helper.succeed();
             return;
         }
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.getInventory().clearContent();
         player.addTag("cc_origin.fire_mage");
         Eggshell.open(player, new ItemStack(item("orespawn_integrations:hatchling_shell")));
@@ -135,7 +135,7 @@ public final class ShelfNineTests {
     public static void registerLinesInJoinOrder(GameTestHelper helper) {
         List<Integer> lines = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            ServerPlayer player = helper.makeMockServerPlayerInLevel();
+            ServerPlayer player = MockPlayers.inLevel(helper);
             helper.assertTrue(HatchRegister.enter(player, i == 2), "entered");
             helper.assertTrue(!HatchRegister.enter(player, false), "one line per player");
             lines.add(HatchRegister.lineOf(player));
@@ -190,6 +190,9 @@ public final class ShelfNineTests {
      */
     @GameTest(template = "empty8", timeoutTicks = 400)
     public static void fourWaysSignsFilled(GameTestHelper helper) {
+        if (!Needs.mods(helper, "fourWaysSignsFilled", "ctov", "t_and_t")) {
+            return;
+        }
         ServerLevel level = helper.getLevel();
         List<StructureTemplate.StructureBlockInfo> signs = new ArrayList<>();
         BlockPos origin = placeTemplate(helper, signs);

@@ -547,10 +547,14 @@ def part_night(atlas: Path):
         "replace": False,
         "values": [{"id": t, "required": False} for t in unrecorded_types(atlas)],
     })
-    remove_spawns("unrecorded_out_of_realms",
-                  {"type": "neoforge:or",
-                   "values": ["#minecraft:is_nether", "#twilightforest:in_twilight_forest", BUMBLEZONE]},
-                  "#orespawn_integrations:unrecorded", ("born_in_chaos_v1", "twilightforest", "the_bumblezone"))
+    # One file per realm, each needing only its own mod: a single file conditioned on all three mods would leave the
+    # Nether's Born in Chaos spawns in place on any server without Twilight Forest or the Bumblezone.
+    remove_spawns("unrecorded_out_of_nether", "#minecraft:is_nether", "#orespawn_integrations:unrecorded",
+                  ("born_in_chaos_v1",))
+    remove_spawns("unrecorded_out_of_twilight", "#twilightforest:in_twilight_forest", "#orespawn_integrations:unrecorded",
+                  ("born_in_chaos_v1", "twilightforest"))
+    remove_spawns("unrecorded_out_of_bumblezone", BUMBLEZONE, "#orespawn_integrations:unrecorded",
+                  ("born_in_chaos_v1", "the_bumblezone"))
     remove_spawns("unrecorded_out_of_orespawn",
                   ["orespawn:mining_biome", "orespawn:village_biome", "orespawn:crystal_plains",
                    "orespawn:island_biome", "orespawn:utopia_plains"],
@@ -558,14 +562,12 @@ def part_night(atlas: Path):
     remove_spawns("utopia_no_monsters", "orespawn:utopia_plains",
                   ["minecraft:zombie", "minecraft:skeleton", "minecraft:creeper", "minecraft:spider",
                    "minecraft:enderman", "minecraft:witch", "minecraft:slime"], ("orespawn",))
-    remove_spawns("mestre_overworld_only",
-                  {"type": "neoforge:or", "values": ["#twilightforest:in_twilight_forest", BUMBLEZONE]},
-                  "brasilcoisas:mestre_ensinador", ("brasilcoisas", "twilightforest", "the_bumblezone"))
+    remove_spawns("mestre_out_of_twilight", "#twilightforest:in_twilight_forest", "brasilcoisas:mestre_ensinador",
+                  ("brasilcoisas", "twilightforest"))
+    remove_spawns("mestre_out_of_bumblezone", BUMBLEZONE, "brasilcoisas:mestre_ensinador",
+                  ("brasilcoisas", "the_bumblezone"))
     remove_spawns("islands_moored", "orespawn:island_biome", ["orespawn:island", "orespawn:island_too"],
                   ("orespawn",))
-    stale = DATA / "orespawn" / "worldgen" / "biome" / "utopia_plains.json"
-    if stale.exists():
-        stale.unlink()
     done = lang("orespawn_integrations.ops.encalhar_ilhas.done", "system-night-rebalance", "CHAT",
                 "operator, after ops/encalhar_ilhas; %s = islands removed (fresh, roadmap 4.7)",
                 "Islands beached: %s. Their blocks stay where they are.",

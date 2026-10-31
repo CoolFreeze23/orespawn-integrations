@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "type": "neoforge:remove_spawns",
+  "biomes": "#twilightforest:in_twilight_forest",
+  "entity_types": "brasilcoisas:mestre_ensinador"
+}

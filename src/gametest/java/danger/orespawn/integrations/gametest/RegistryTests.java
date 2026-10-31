@@ -58,7 +58,7 @@ public final class RegistryTests {
 
     private static ServerPlayer player(GameTestHelper helper) {
         RegistryCore.writeSwitches(helper.getLevel().getServer());
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.getInventory().clearContent();
         return player;
     }
@@ -245,7 +245,7 @@ public final class RegistryTests {
         wolf.setOwnerUUID(UUID.randomUUID());
         if (ModList.get().isLoaded("hats") && IntegrationsConfig.on(IntegrationsConfig.storyFieldCorrection)) {
             helper.assertTrue(interact(player, wolf) == InteractionResult.SUCCESS, "another player's wolf not refused");
-            ServerPlayer other = helper.makeMockServerPlayerInLevel();
+            ServerPlayer other = MockPlayers.inLevel(helper);
             helper.assertTrue(interact(player, other) == InteractionResult.SUCCESS, "a player not refused");
         }
         helper.assertTrue(player.getMainHandItem().getCount() == 1, "scrap spent on a refusal");
@@ -337,6 +337,9 @@ public final class RegistryTests {
     /** All 22 Corrections load, each shapeless with one payment. */
     @GameTest(template = "empty8")
     public static void correctionRecipesLoad(GameTestHelper helper) {
+        if (!Needs.mods(helper, "correctionRecipesLoad", "distantlandsmc", "hbmsntm")) {
+            return;
+        }
         List<ResourceLocation> ids = helper.getLevel().getRecipeManager().getRecipeIds()
                 .filter(id -> id.getNamespace().equals("orespawn_integrations") && id.getPath().startsWith("correction/"))
                 .toList();

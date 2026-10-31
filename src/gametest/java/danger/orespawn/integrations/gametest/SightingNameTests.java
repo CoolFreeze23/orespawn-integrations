@@ -22,7 +22,7 @@ public final class SightingNameTests {
     }
 
     private static ServerPlayer playerIn(GameTestHelper helper, String language) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         ClientInformation d = ClientInformation.createDefault();
         player.updateOptions(new ClientInformation(language, d.viewDistance(), d.chatVisibility(), d.chatColors(),
                 d.modelCustomisation(), d.mainHand(), d.textFilteringEnabled(), d.allowsListing()));

@@ -34,11 +34,27 @@ dependencies {
     // official mappings, so shipped jars are valid compile deps). All soft deps
     // are compileOnly and classloading is guarded at runtime.
     compileOnly fileTree(dir: 'libs', include: '*.jar')
+    // the partner mods the GameTests run against (dev runs only; never packaged)
+    runtimeOnly fileTree(dir: 'runmods', include: '*.jar')
 
     // The hat-anchor table test reads the OreSpawn jar in libs/ and the shipped JSON; no Minecraft classes.
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// GameTests in the dev environment: ./gradlew runGameTestServer runs every @GameTestHolder test with the partner mods
+// in runmods/ (copied from the pack instance by tools/fetch_runmods.py, not in git) and exits with the result.
+runs {
+    configureEach {
+        systemProperty 'forge.logging.console.level', 'info'
+        modSource project.sourceSets.main
+    }
+    gameTestServer {
+        systemProperty 'neoforge.enabledGameTestNamespaces', 'orespawn_integrations_tests'
+        workingDirectory project.file('run-gametest')
+        jvmArgument '-Xmx3G'
+    }
 }
 
 tasks.named('test', Test) {
@@ -151,4 +167,10 @@ tasks.register('testEffortTally') {
 
 tasks.named('check') {
     dependsOn 'checkEffortTally', 'testEffortTally'
+}
+
+// The dev GameTest run loads the GameTest mod as the jar it is on scratch servers: its classes and its mods.toml must
+// sit in one file, which two source-set output folders are not.
+dependencies {
+    runtimeOnly files(tasks.named('gametestJar'))
 }

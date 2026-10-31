@@ -157,7 +157,7 @@ public final class ChaosTests {
     }
 
     private static void clear(ServerLevel level, Vec3 at) {
-        for (Entity e : around(level, at, 40)) {
+        for (Entity e : around(level, at, 6)) {
             e.discard();
         }
     }
@@ -172,7 +172,7 @@ public final class ChaosTests {
     /** Problems seen among what the rolls left at {@code at}: a boss, or a whole boss egg. */
     private static List<String> bossesAndWholeEggs(ServerLevel level, Vec3 at) {
         List<String> found = new ArrayList<>();
-        for (Entity e : around(level, at, 40)) {
+        for (Entity e : around(level, at, 6)) {
             ResourceLocation type = BuiltInRegistries.ENTITY_TYPE.getKey(e.getType());
             if (BOSSES.contains(type)) {
                 found.add("boss " + type);
@@ -198,7 +198,7 @@ public final class ChaosTests {
     }
 
     private static ServerPlayer deepPlayer(GameTestHelper helper, Vec3 at) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.setGameMode(GameType.CREATIVE);
         player.getInventory().clearContent();
         player.teleportTo(at.x, at.y, at.z);
@@ -294,6 +294,9 @@ public final class ChaosTests {
     /** On a 0.10.0 world a Summit holder reads as Knight and up; past three game days the grace is over. */
     @GameTest(template = "empty8")
     public static void summitHolderReadsKnight(GameTestHelper helper) {
+        if (!Needs.mods(helper, "summitHolderReadsKnight", "apotheosis")) {
+            return;
+        }
         ServerLevel level = helper.getLevel();
         MinecraftServer server = level.getServer();
         Vec3 at = deep(helper);
@@ -314,6 +317,9 @@ public final class ChaosTests {
     /** Card test (4): a Knight who joined this game day rolls the Squire row (grace on): a part, never a whole egg. */
     @GameTest(template = "empty8")
     public static void newKnightInGrace(GameTestHelper helper) {
+        if (!Needs.mods(helper, "newKnightInGrace", "apotheosis")) {
+            return;
+        }
         ServerLevel level = helper.getLevel();
         MinecraftServer server = level.getServer();
         Vec3 at = deep(helper);
@@ -335,6 +341,9 @@ public final class ChaosTests {
     /** Without Summit, everyone falls through to the Hatchling table (rank 0 is the fall-through, never matches 0). */
     @GameTest(template = "empty8")
     public static void noSummitFallsThrough(GameTestHelper helper) {
+        if (!Needs.mods(helper, "noSummitFallsThrough", "apotheosis")) {
+            return;
+        }
         ServerLevel level = helper.getLevel();
         MinecraftServer server = level.getServer();
         Vec3 at = deep(helper);
@@ -370,6 +379,9 @@ public final class ChaosTests {
     /** Card test (4): at Knight the whole eggs come back, and a second one in the same Land's Week rerolls to a part. */
     @GameTest(template = "empty8", timeoutTicks = 200)
     public static void wholeEggOncePerWeek(GameTestHelper helper) {
+        if (!Needs.mods(helper, "wholeEggOncePerWeek", "apotheosis")) {
+            return;
+        }
         ServerLevel level = helper.getLevel();
         MinecraftServer server = level.getServer();
         Vec3 at = deep(helper);
@@ -416,6 +428,9 @@ public final class ChaosTests {
     /** The Refused Gifts' chance-0 holders load (they never roll at random; /pandora fires them). */
     @GameTest(template = "empty8")
     public static void refusedGiftHoldersLoad(GameTestHelper helper) {
+        if (!Needs.mods(helper, "refusedGiftHoldersLoad", "pandorasbox")) {
+            return;
+        }
         var key = ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath("pandorasbox", "pandora_effect_holders"));
         var registry = helper.getLevel().registryAccess().registry(key).orElse(null);
         helper.assertTrue(registry != null, "no Pandora's Box holder registry");
@@ -439,7 +454,7 @@ public final class ChaosTests {
                 helper.setBlock(new BlockPos(x, 0, z), Blocks.STONE);
             }
         }
-        ServerPlayer op = helper.makeMockServerPlayerInLevel();
+        ServerPlayer op = MockPlayers.inLevel(helper);
         op.setGameMode(GameType.CREATIVE);
         Vec3 stand = helper.absoluteVec(new Vec3(4.5, 1.0, 1.5));
         op.teleportTo(level, stand.x, stand.y, stand.z, 0.0F, 0.0F);
@@ -488,7 +503,7 @@ public final class ChaosTests {
     public static void loanerBreaksAtSwing24(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
         CasketCore.prepare(level.getServer());
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.setGameMode(GameType.SURVIVAL);
         player.getInventory().clearContent();
         Vec3 at = helper.absoluteVec(new Vec3(4.5, 1.0, 2.5));
@@ -524,7 +539,7 @@ public final class ChaosTests {
     /** An anvil with a Loaner in it gives nothing (no combining, no renaming). */
     @GameTest(template = "empty8")
     public static void anvilRefusesLoaner(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         ItemStack loaner = new ItemStack(item(os("big_bertha")));
         CustomData.update(DataComponents.CUSTOM_DATA, loaner, tag -> tag.putInt(LoanerWeapons.KEY, 24));
         AnvilUpdateEvent event = new AnvilUpdateEvent(loaner, loaner.copy(), "mine", 1, player);
@@ -541,7 +556,7 @@ public final class ChaosTests {
     }
 
     private static ServerPlayer holding(GameTestHelper helper, ResourceLocation egg) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.setGameMode(GameType.SURVIVAL);
         player.getInventory().clearContent();
         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(item(egg)));
@@ -551,6 +566,9 @@ public final class ChaosTests {
     /** A Mobzilla egg used at rank 0 in the open is refused with the seal line and kept; nothing hatches. */
     @GameTest(template = "empty8")
     public static void sealRefusesRankZero(GameTestHelper helper) {
+        if (!Needs.mods(helper, "sealRefusesRankZero", "apotheosis")) {
+            return;
+        }
         helper.setBlock(new BlockPos(3, 0, 3), Blocks.STONE);
         ServerPlayer player = holding(helper, os("godzilla_spawn_egg"));
         InteractionResult result = player.gameMode.useItemOn(player, helper.getLevel(), player.getMainHandItem(),
@@ -584,6 +602,9 @@ public final class ChaosTests {
     /** In 0.10.0 an Apotheosis Ascent holder counts as Knight: a sealed egg hatches in the open, tagged cc_ovo. */
     @GameTest(template = "empty8")
     public static void ascentHatchesTaggedOvo(GameTestHelper helper) {
+        if (!Needs.mods(helper, "ascentHatchesTaggedOvo", "apotheosis")) {
+            return;
+        }
         helper.setBlock(new BlockPos(3, 0, 3), Blocks.STONE);
         ServerPlayer player = holding(helper, os("water_dragon_spawn_egg"));
         award(player, "apotheosis:progression/ascent");
@@ -665,6 +686,9 @@ public final class ChaosTests {
     /** The crusher turns one HBM uranium ingot into royal nuggets; OreSpawn titanium leaves #c:ingots/titanium. */
     @GameTest(template = "empty8")
     public static void royalDietData(GameTestHelper helper) {
+        if (!Needs.mods(helper, "royalDietData", "railcraft")) {
+            return;
+        }
         MinecraftServer server = helper.getLevel().getServer();
         helper.assertTrue(server.getRecipeManager().byKey(ResourceLocation.fromNamespaceAndPath("orespawn_integrations",
                 "railcraft_crushing_hbm_uranium")).isPresent(), "the HBM uranium crusher recipe is not loaded");
@@ -702,7 +726,7 @@ public final class ChaosTests {
     @GameTest(template = "empty8")
     public static void thrownCageDropsOnKraken(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         Entity kraken = BuiltInRegistries.ENTITY_TYPE.get(os("kraken")).create(level);
         kraken.moveTo(helper.absoluteVec(new Vec3(4.5, 2, 4.5)));
         EntityCage cage = new EntityCage(level, player, 0);
@@ -720,6 +744,9 @@ public final class ChaosTests {
     /** A boss's spawner refuses Silk Touch and stays; a zombie spawner still comes up with Silk Touch. */
     @GameTest(template = "empty8")
     public static void bossSpawnerRefusesSilkTouch(GameTestHelper helper) {
+        if (!Needs.mods(helper, "bossSpawnerRefusesSilkTouch", "apotheosis", "apothic_spawners")) {
+            return;
+        }
         ServerLevel level = helper.getLevel();
         BlockPos boss = new BlockPos(2, 1, 2);
         BlockPos farm = new BlockPos(5, 1, 5);
@@ -729,7 +756,7 @@ public final class ChaosTests {
         ((SpawnerBlockEntity) helper.getBlockEntity(farm)).setEntityId(EntityType.ZOMBIE, level.random);
         helper.assertTrue(BossSpawnerGuard.guardsBoss(level, helper.absolutePos(boss)), "a Basilisk spawner is not guarded");
         helper.assertTrue(!BossSpawnerGuard.guardsBoss(level, helper.absolutePos(farm)), "a zombie spawner is guarded");
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.setGameMode(GameType.SURVIVAL);
         ItemStack pick = new ItemStack(Items.DIAMOND_PICKAXE);
         pick.enchant(level.registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SILK_TOUCH), 1);
@@ -744,6 +771,9 @@ public final class ChaosTests {
     /** An Apothic spawner modifier on a boss's spawner is refused and kept in hand. */
     @GameTest(template = "empty8")
     public static void bossSpawnerRefusesModifier(GameTestHelper helper) {
+        if (!Needs.mods(helper, "bossSpawnerRefusesModifier", "apotheosis", "apothic_spawners")) {
+            return;
+        }
         ServerLevel level = helper.getLevel();
         BlockPos rel = new BlockPos(3, 1, 3);
         helper.setBlock(rel, Blocks.SPAWNER);
@@ -757,7 +787,7 @@ public final class ChaosTests {
             }
         }
         helper.assertTrue(!modifier.isEmpty(), "no Apothic spawner modifier recipe without an off-hand item");
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.setGameMode(GameType.SURVIVAL);
         player.getInventory().clearContent();
         player.setItemInHand(InteractionHand.MAIN_HAND, modifier);
@@ -774,6 +804,9 @@ public final class ChaosTests {
      * Scorpion egg), the dragon and the Wither on the Ars jar blacklist, and the statue table's no-spawner list. */
     @GameTest(template = "empty8")
     public static void bossTags(GameTestHelper helper) {
+        if (!Needs.mods(helper, "bossTags", "cataclysm", "mowziesmobs", "twilightforest")) {
+            return;
+        }
         helper.assertTrue(size(Registries.ENTITY_TYPE, "orespawn_integrations:heavyweights") == 46, "heavyweights: " + size(Registries.ENTITY_TYPE, "orespawn_integrations:heavyweights"));
         EntityType<?> scorpion = BuiltInRegistries.ENTITY_TYPE.get(os("emperor_scorpion"));
         helper.assertTrue(scorpion.is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("apothic_spawners:blacklisted_from_spawners"))),

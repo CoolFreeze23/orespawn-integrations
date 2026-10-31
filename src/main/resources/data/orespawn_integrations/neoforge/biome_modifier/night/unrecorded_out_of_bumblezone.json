@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "born_in_chaos_v1"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "the_bumblezone"
+    }
+  ],
+  "type": "neoforge:remove_spawns",
+  "biomes": [
+    "the_bumblezone:bumbling_beepartments",
+    "the_bumblezone:crystal_canyon",
+    "the_bumblezone:floral_meadow",
+    "the_bumblezone:hive_pillar",
+    "the_bumblezone:hive_wall",
+    "the_bumblezone:howling_constructs",
+    "the_bumblezone:pollinated_fields",
+    "the_bumblezone:pollinated_pillar",
+    "the_bumblezone:sugar_water_floor"
+  ],
+  "entity_types": "#orespawn_integrations:unrecorded"
+}

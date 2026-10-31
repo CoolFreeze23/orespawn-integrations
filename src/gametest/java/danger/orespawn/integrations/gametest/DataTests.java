@@ -89,7 +89,7 @@ public final class DataTests {
             helper.succeed();
             return;
         }
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         for (Block log : List.of(Blocks.OAK_LOG, Blocks.BIRCH_LOG)) {
             List<ItemStack> drops = breakLog(helper, log.defaultBlockState(), player);
             String logId = BuiltInRegistries.BLOCK.getKey(log).toString();
@@ -130,7 +130,7 @@ public final class DataTests {
             helper.succeed();
             return;
         }
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         setScore(helper.getLevel(), player, "cc_gemeo", 1);
         setScore(helper.getLevel(), player, "cc_copa", -100000);
         int finds = 0;
@@ -151,6 +151,9 @@ public final class DataTests {
     /** system-advancement-tree: the eight tab roots and the 0.10.0 nodes other groups grant are loaded. */
     @GameTest(template = "empty8")
     public static void tabRootsAndNodesLoad(GameTestHelper helper) {
+        if (!Needs.mods(helper, "tabRootsAndNodesLoad", "braziliandelight", "brazil_legends", "monster_hunter_villager")) {
+            return;
+        }
         MinecraftServer server = helper.getLevel().getServer();
         for (String id : List.of("wonder/2", "wonder/1", "week/root", "hunt/root", "parish/root", "property/root",
                 "causos/root", "secrets/root", "livro/r1", "livro/r2", "livro/r4", "livro/r5", "livro/r6", "livro/r21",

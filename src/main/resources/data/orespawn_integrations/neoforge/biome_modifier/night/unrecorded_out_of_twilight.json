@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "born_in_chaos_v1"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "type": "neoforge:remove_spawns",
+  "biomes": "#twilightforest:in_twilight_forest",
+  "entity_types": "#orespawn_integrations:unrecorded"
+}

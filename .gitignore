@@ -20,3 +20,5 @@ libs/*.jar
 
 # Minecraft logs from tests that start game classes
 logs/
+runmods/
+run-gametest/

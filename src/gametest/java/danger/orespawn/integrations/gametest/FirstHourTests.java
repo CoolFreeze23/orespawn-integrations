@@ -51,7 +51,7 @@ public final class FirstHourTests {
     /** A player with no play time joins: they get a fresh ticket at P00, nothing handed yet. */
     @GameTest(template = "empty8")
     public static void newJoinStartsAtP00(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.removeData(FirstHourData.FIRST_HOUR.get());
         PriorityTicket.start(player);
         TicketState s = FirstHourData.ticket(player);
@@ -64,7 +64,7 @@ public final class FirstHourTests {
     /** The Summons has three pages, the letter custom data and its addressee; page 2 reads the label's P.S. */
     @GameTest(template = "empty8")
     public static void summonsHasThreePagesAndTheOriginPostscript(GameTestHelper helper) {
-        ServerPlayer saci = helper.makeMockServerPlayerInLevel();
+        ServerPlayer saci = MockPlayers.inLevel(helper);
         saci.addTag(EggLabel.ORIGIN_TAG + "saci");
         ItemStack book = RoyalSummons.build(saci);
         WrittenBookContent content = book.get(DataComponents.WRITTEN_BOOK_CONTENT);
@@ -74,7 +74,7 @@ public final class FirstHourTests {
         helper.assertTrue(page2.contains("princes_letter.ps.origin.saci"), "the Saci's own P.S.");
         helper.assertTrue(page2.contains("princes_letter.pps_first_fall"), "the First Fall's P.P.S.");
         helper.assertTrue(content.pages().get(2).raw().toString().contains("page3_form_7b"), "page 3 is Form 7-B");
-        ServerPlayer other = helper.makeMockServerPlayerInLevel();
+        ServerPlayer other = MockPlayers.inLevel(helper);
         helper.assertTrue(!RoyalSummons.isSummonsFor(book, other), "not addressed to a friend");
         helper.succeed();
     }
@@ -82,8 +82,8 @@ public final class FirstHourTests {
     /** The dropped Summons can only be picked up by its addressee: a friend standing on it cannot. */
     @GameTest(template = "empty8")
     public static void summonsDropIsAddressed(GameTestHelper helper) {
-        ServerPlayer to = helper.makeMockServerPlayerInLevel();
-        ServerPlayer friend = helper.makeMockServerPlayerInLevel();
+        ServerPlayer to = MockPlayers.inLevel(helper);
+        ServerPlayer friend = MockPlayers.inLevel(helper);
         BlockPos at = helper.absolutePos(new BlockPos(3, 1, 3));
         ItemEntity item = new ItemEntity(helper.getLevel(), at.getX() + 0.5, at.getY(), at.getZ() + 0.5,
                 RoyalSummons.build(to));
@@ -101,7 +101,7 @@ public final class FirstHourTests {
     /** An Orb re-pick from sylvan to golem removes cc_origin.sylvan and sets cc_ogrupo 5; the class is scored. */
     @GameTest(template = "empty8")
     public static void labelFollowsAnOrbRepick(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         EggLabel.apply(player, ResourceLocation.parse("neoorigins:sylvan"),
                 ResourceLocation.parse("neoorigins:class_scout"));
         helper.assertTrue(player.getTags().contains("cc_origin.sylvan"), "sylvan tag");
@@ -136,7 +136,7 @@ public final class FirstHourTests {
     /** An opened, emptied First Fall crate keeps no Fall away; the same crate with one item in it does. */
     @GameTest(template = "empty8")
     public static void emptiedCrateIsNotAHome(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         BlockPos rel = new BlockPos(4, 1, 4);
         helper.setBlock(rel, Blocks.CHEST);
         BlockPos abs = helper.absolutePos(rel);
@@ -161,8 +161,8 @@ public final class FirstHourTests {
     /** A second player's click on an unopened crate is refused; the recipient's opens it. */
     @GameTest(template = "empty8")
     public static void crateRefusesAnyoneButItsConsignee(GameTestHelper helper) {
-        ServerPlayer owner = helper.makeMockServerPlayerInLevel();
-        ServerPlayer other = helper.makeMockServerPlayerInLevel();
+        ServerPlayer owner = MockPlayers.inLevel(helper);
+        ServerPlayer other = MockPlayers.inLevel(helper);
         BlockPos rel = new BlockPos(5, 1, 2);
         helper.setBlock(rel, Blocks.CHEST);
         BlockPos abs = helper.absolutePos(rel);
@@ -236,7 +236,7 @@ public final class FirstHourTests {
     /** Only one gold pin is ever live: the Registry pin replaces the Fall's. */
     @GameTest(template = "empty8")
     public static void oneGoldPinAtATime(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.setData(FirstHourData.FIRST_HOUR.get(), TicketState.fresh());
         GoldPin.set(player, TicketState.PIN_FALL, 10, 64, 10);
         helper.assertTrue(FirstHourData.ticket(player).pin == TicketState.PIN_FALL, "the Fall pin is up");

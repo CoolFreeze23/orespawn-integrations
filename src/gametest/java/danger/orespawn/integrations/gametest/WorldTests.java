@@ -69,6 +69,9 @@ public final class WorldTests {
      */
     @GameTest(template = "empty8")
     public static void biomesReadAsTheirRegions(GameTestHelper helper) {
+        if (!Needs.mods(helper, "biomesReadAsTheirRegions", "biomesoplenty")) {
+            return;
+        }
         Registry<Biome> biomes = helper.getLevel().registryAccess().registryOrThrow(Registries.BIOME);
         Map<String, Integer> expected = Map.ofEntries(
                 Map.entry("minecraft:plains", 2), Map.entry("minecraft:meadow", 2),
@@ -99,7 +102,7 @@ public final class WorldTests {
      */
     @GameTest(template = "empty8")
     public static void holdThenOneScrapPerRegion(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.getInventory().clearContent();
         RegionNames.setState(player, 0);
         Item scrap = BuiltInRegistries.ITEM.get(ResourceLocation.parse("orespawn_integrations:ledger_scrap"));
@@ -136,7 +139,7 @@ public final class WorldTests {
     /** "Player#isScoping() reads true server-side while the spyglass is raised". */
     @GameTest(template = "empty8")
     public static void scopingReadsServerSide(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.SPYGLASS));
         helper.assertTrue(!player.isScoping(), "not raised yet");
         player.startUsingItem(InteractionHand.MAIN_HAND);
@@ -159,7 +162,7 @@ public final class WorldTests {
     /** "nothing under 32 blocks": a block 5 blocks ahead is no sighting. */
     @GameTest(template = "empty8")
     public static void nothingUnderThirtyTwo(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         BlockPos stand = helper.absolutePos(new BlockPos(1, 1, 4));
         helper.getLevel().setBlockAndUpdate(stand.offset(5, 1, 0), Blocks.STONE.defaultBlockState());
         player.moveTo(stand.getX() + 0.5, stand.getY(), stand.getZ() + 0.5, -90.0F, 0.0F);
@@ -173,6 +176,9 @@ public final class WorldTests {
      */
     @GameTest(template = "empty8")
     public static void familiesResolveInThePack(GameTestHelper helper) {
+        if (!Needs.mods(helper, "familiesResolveInThePack", "t_and_t", "ctov")) {
+            return;
+        }
         ServerLevel level = helper.getLevel();
         Registry<?> structures = level.registryAccess().registryOrThrow(Registries.STRUCTURE);
         for (SightingFamilies.Family f : SightingFamilies.get().all()) {
@@ -196,7 +202,7 @@ public final class WorldTests {
     /** "Land Ho! fires at the fortieth stamp, whichever pages they are". */
     @GameTest(template = "empty8")
     public static void landHoAtTheFortiethStamp(GameTestHelper helper) {
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         SightingsData data = SightingsData.get(player.server);
         SightingsData.Player record = data.player(player.getUUID());
         record.families = 0;
@@ -263,7 +269,7 @@ public final class WorldTests {
     @GameTest(template = "empty8")
     public static void interceptPerHandPassAndRank(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
-        ServerPlayer player = helper.makeMockServerPlayerInLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
         EntityType<?> type = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.parse("orespawn:luna_moth"));
         Entity moth = type.spawn(level, helper.absolutePos(new BlockPos(2, 2, 2)), MobSpawnType.EVENT);
         if (moth == null) {
