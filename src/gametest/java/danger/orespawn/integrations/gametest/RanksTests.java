@@ -233,6 +233,10 @@ public final class RanksTests {
     public static void bossKillCreditsTheParty(GameTestHelper helper) {
         ServerPlayer ana = fresh(helper);
         ServerPlayer bia = MockPlayers.inLevel(helper);
+        // Both stand at the kill, in this test's own box: a mock player joins at world spawn, among every other test's.
+        net.minecraft.world.phys.Vec3 at = helper.absoluteVec(new net.minecraft.world.phys.Vec3(2.5, 1.0, 2.5));
+        ana.teleportTo(at.x, at.y, at.z);
+        bia.teleportTo(at.x + 3.0, at.y, at.z + 3.0);
         net.minecraft.world.entity.LivingEntity wither = helper.spawn(net.minecraft.world.entity.EntityType.WITHER, 3, 2, 3);
         WallOfTheWanted.Hit hit = WallOfTheWanted.identify(wither);
         helper.assertTrue(hit != null && hit.row() == 5, "the Wither is row 5");

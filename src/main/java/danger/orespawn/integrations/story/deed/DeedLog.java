@@ -109,11 +109,20 @@ public final class DeedLog {
 
     /** The other players within 32 blocks of {@code player} (one entity query), at most four. */
     public static List<ServerPlayer> witnessesOf(ServerPlayer player) {
+        List<ServerPlayer> all = partyOf(player);
+        return all.size() > DeedRules.MAX_WITNESSES ? new ArrayList<>(all.subList(0, DeedRules.MAX_WITNESSES)) : all;
+    }
+
+    /**
+     * Every other player within 32 blocks of {@code player} (one entity query), however many: a boss kill's row
+     * advancement and bounties go to the whole party, while the deed line names at most four of them.
+     */
+    public static List<ServerPlayer> partyOf(ServerPlayer player) {
         List<ServerPlayer> out = new ArrayList<>();
         double r = DeedRules.WITNESS_RADIUS;
         for (ServerPlayer other : player.serverLevel().getEntitiesOfClass(ServerPlayer.class,
                 player.getBoundingBox().inflate(r), p -> p != player && !p.isSpectator())) {
-            if (other.distanceToSqr(player) <= r * r && out.size() < DeedRules.MAX_WITNESSES) {
+            if (other.distanceToSqr(player) <= r * r) {
                 out.add(other);
             }
         }

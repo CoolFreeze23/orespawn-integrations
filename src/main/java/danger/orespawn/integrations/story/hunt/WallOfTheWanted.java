@@ -182,7 +182,8 @@ public final class WallOfTheWanted {
         MinecraftServer server = killer.getServer();
         List<ServerPlayer> party = new ArrayList<>();
         party.add(killer);
-        party.addAll(DeedLog.witnessesOf(killer));
+        // Every player within 32 blocks shares the row advancement (system-boss-ladder), not only the four a deed names.
+        party.addAll(DeedLog.partyOf(killer));
         Data data = Data.get(server);
         boolean first = !data.kills.containsKey(hit.key());
         int day = CourtRanks.landDay(server);
@@ -206,7 +207,7 @@ public final class WallOfTheWanted {
             DeedLog.record(killer, DeedRules.Kind.WEAPON, true, "orespawn_integrations.deed.boss_first", name, bossArg, weapon);
         } else if (party.size() > 1) {
             StringBuilder names = new StringBuilder();
-            for (int i = 1; i < party.size(); i++) {
+            for (int i = 1; i < party.size() && i <= DeedRules.MAX_WITNESSES; i++) {
                 names.append(i > 1 ? ", " : "").append(party.get(i).getGameProfile().getName());
             }
             DeedLog.record(killer, DeedRules.Kind.WEAPON, true, "orespawn_integrations.deed.boss_kill_party",
