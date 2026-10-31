@@ -26,5 +26,6 @@
   "orespawn_integrations.royal_seal.tooltip": "Selo real. Choca pra Cavaleiro(a), ou num palco à altura.",
   "orespawn_integrations.royal_seal.tooltip_strict": "Selo real. Choca pra Cavaleiro(a). Palco nenhum resolve.",
   "orespawn_integrations.mobzilla.cage": "Gaiola é pra bicho, não pra chefão.",
-  "orespawn_integrations.duplicates.boss_refused": "Chefe não se duplica. Indeferido."
+  "orespawn_integrations.duplicates.boss_refused": "Chefe não se duplica. Indeferido.",
+  "orespawn_integrations.lucky.test.load_order": "Ordem de carga: %s de 40 rolagens da arca deram 10-12. Zero quer dizer que a raiz do ly ganhou."
 }

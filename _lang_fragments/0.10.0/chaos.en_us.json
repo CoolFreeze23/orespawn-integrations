@@ -26,5 +26,6 @@
   "orespawn_integrations.royal_seal.tooltip": "Royal seal. Hatches for a Knight, or on a proper stage.",
   "orespawn_integrations.royal_seal.tooltip_strict": "Royal seal. Hatches for a Knight. No stage will do.",
   "orespawn_integrations.mobzilla.cage": "The cage is for beasts, not bosses.",
-  "orespawn_integrations.duplicates.boss_refused": "A boss is not duplicated. Denied."
+  "orespawn_integrations.duplicates.boss_refused": "A boss is not duplicated. Denied.",
+  "orespawn_integrations.lucky.test.load_order": "Load order: %s of 40 casket rolls came out 10-12. Zero means ly's own root won."
 }
