@@ -1,6 +1,7 @@
 package danger.orespawn.integrations.story.shelf9;
 
 import danger.orespawn.integrations.OreSpawnIntegrations;
+import danger.orespawn.integrations.story.StoryScheduler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -18,7 +19,7 @@ import java.util.List;
  * generate past structure starts): a village, a Pandora henge, a tower, a bar, each through a structure tag of ours
  * ({@code #orespawn_integrations:shelf9/<kind>}) so 0.10.1 can add the boteco by data. The hub list is read first for
  * the bar and the Hunt Lodge, which an operator places by hand. They run once, while the server starts or at the
- * operator's command, never while players wait.
+ * operator's command, one locate per tick, never while players wait.
  */
 public final class FourWays {
 
@@ -31,28 +32,70 @@ public final class FourWays {
     private FourWays() {
     }
 
+    /**
+     * The placement's path: one locate per server tick (each can take most of a second on new ground), then the signs,
+     * so no single tick carries all four.
+     */
+    public static void locateSpread(ServerLevel level, BlockPos centre, HatchingGroundData data) {
+        List<WaysPlan.Found> found = new ArrayList<>();
+        for (int i = 0; i < KINDS.length; i++) {
+            String kind = KINDS[i];
+            StoryScheduler.schedule(level.getServer(), i + 1, "shelf9_ways_" + kind, () -> {
+                WaysPlan.Found f = find(level, centre, kind);
+                if (f != null) {
+                    found.add(f);
+                }
+            });
+        }
+        StoryScheduler.schedule(level.getServer(), KINDS.length + 1, "shelf9_ways_write", () -> {
+            BlockPos lodge = nearestHubPlace(level, centre, "hunt_lodge");
+            if (lodge != null) {
+                found.add(new WaysPlan.Found("hunt_lodge", lodge.getX() - centre.getX(), lodge.getZ() - centre.getZ()));
+            }
+            writeAll(level, data, found);
+        });
+    }
+
+    /** All four locates and the signs at once, for an operator re-run or a test. */
     public static void locateAndWrite(ServerLevel level, BlockPos centre, HatchingGroundData data) {
-        long start = System.nanoTime();
         List<WaysPlan.Found> found = new ArrayList<>();
         for (String kind : KINDS) {
-            BlockPos hub = nearestHubPlace(level, centre, "bar".equals(kind) ? "boteco" : null);
-            BlockPos pos = hub != null ? hub : locate(level, centre, kind);
-            if (pos != null) {
-                found.add(new WaysPlan.Found(kind, pos.getX() - centre.getX(), pos.getZ() - centre.getZ()));
+            WaysPlan.Found f = find(level, centre, kind);
+            if (f != null) {
+                found.add(f);
             }
         }
         BlockPos lodge = nearestHubPlace(level, centre, "hunt_lodge");
         if (lodge != null) {
             found.add(new WaysPlan.Found("hunt_lodge", lodge.getX() - centre.getX(), lodge.getZ() - centre.getZ()));
         }
+        writeAll(level, data, found);
+    }
+
+    private static WaysPlan.Found find(ServerLevel level, BlockPos centre, String kind) {
+        long start = System.nanoTime();
+        BlockPos hub = nearestHubPlace(level, centre, "bar".equals(kind) ? "boteco" : null);
+        BlockPos pos = hub != null ? hub : locate(level, centre, kind);
+        WaysPlan.Found f = pos == null ? null
+                : new WaysPlan.Found(kind, pos.getX() - centre.getX(), pos.getZ() - centre.getZ());
+        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: the {} {} in {} ms", kind,
+                f == null ? "was not found" : "is " + f.distance() + " blocks off",
+                (System.nanoTime() - start) / 1_000_000L);
+        return f;
+    }
+
+    private static void writeAll(ServerLevel level, HatchingGroundData data, List<WaysPlan.Found> found) {
         WaysPlan.Found[] sides = WaysPlan.assign(found);
         for (int side = 0; side < 4; side++) {
             write(level, data.waysSigns[side], side, sides[side]);
         }
         data.waysVersion = VERSION;
         data.setDirty();
-        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: {} found, the locates took {} ms", found.size(),
-                (System.nanoTime() - start) / 1_000_000L);
+        int named = 0;
+        for (WaysPlan.Found f : sides) {
+            named += f == null ? 0 : 1;
+        }
+        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: {} found, {} signs name one", found.size(), named);
     }
 
     private static BlockPos locate(ServerLevel level, BlockPos centre, String kind) {

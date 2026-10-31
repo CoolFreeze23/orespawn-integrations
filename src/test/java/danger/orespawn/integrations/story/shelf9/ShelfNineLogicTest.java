@@ -71,13 +71,16 @@ class ShelfNineLogicTest {
         WaysPlan.Found farVillage = new WaysPlan.Found("village", 0, -400);
         WaysPlan.Found nearTower = new WaysPlan.Found("tower", 30, -200);
         WaysPlan.Found bar = new WaysPlan.Found("bar", 300, 10);
-        WaysPlan.Found tooFar = new WaysPlan.Found("henge", -600, 0);
+        WaysPlan.Found tooFar = new WaysPlan.Found("henge", -2100, 0);
         WaysPlan.Found[] sides = WaysPlan.assign(List.of(farVillage, nearTower, bar, tooFar));
         assertEquals("tower", sides[0].kind(), "north keeps the nearer of two");
         assertEquals("bar", sides[1].kind());
         assertNull(sides[2], "nothing south");
-        assertNull(sides[3], "the henge is past 512 blocks");
+        assertNull(sides[3], "the henge is past 2,048 blocks");
         assertEquals(300, WaysPlan.roundedDistance(bar));
+        WaysPlan.Found farBar = new WaysPlan.Found("bar", 0, 1834);
+        assertEquals("bar", WaysPlan.assign(List.of(farBar))[2].kind(), "the farthest bar measured still shows");
+        assertEquals(1830, WaysPlan.roundedDistance(farBar));
         assertEquals(0, WaysPlan.side(0, -1));
         assertEquals(1, WaysPlan.side(5, 5));
         assertEquals(2, WaysPlan.side(1, 5));

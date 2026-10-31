@@ -198,7 +198,7 @@ public final class HatchingGroundPlacer {
         HubPlaces.writeShelf9(server, spawn, data.dimension);
         HatchRegister.writeAll(server);
         try {
-            FourWays.locateAndWrite(level, origin.offset(10, 4, 10), data);
+            FourWays.locateSpread(level, origin.offset(10, 4, 10), data);
         } catch (Throwable t) {
             StoryCore.logOnce("shelf9.ways", t);
         }
