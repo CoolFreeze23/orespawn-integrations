@@ -1,0 +1,13 @@
+{
+  "orespawn_integrations.senha.explainer_deferred": "Essa aí só explicam amanhã. Pode usar assim mesmo.",
+  "orespawn_integrations.week.cc.dawn": "Amanhecer rodado na mão. O Dia da Terra agora é %s.",
+  "orespawn_integrations.week.cc.ledger": "Amanhecer %s: %s na fila, %s rodadas; mais lenta %s, %s µs; %s acima de 1 ms.",
+  "orespawn_integrations.week.cc.show": "Dia da Terra %s: %s (o índice de dia do jogo marca %s).",
+  "week.orespawn_integrations.0": "Segunda-feira. O quadro da Caçada já tá pregado.",
+  "week.orespawn_integrations.1": "Terça-feira. Nada acontece. Feijoada.",
+  "week.orespawn_integrations.2": "Quarta-feira. Dia de feira.",
+  "week.orespawn_integrations.3": "Quinta-feira. Quinta pra sexta, não pega estrada.",
+  "week.orespawn_integrations.4": "Sexta-feira. Hoje alguém cumpre o fado, que é a sina do sétimo filho.",
+  "week.orespawn_integrations.5": "Sábado. Hoje tem truco. O que você aprontou já cresceu.",
+  "week.orespawn_integrations.6": "Domingo. A mata descansa."
+}

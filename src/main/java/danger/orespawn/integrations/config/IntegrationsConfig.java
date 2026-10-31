@@ -59,6 +59,12 @@ public final class IntegrationsConfig {
     public static final ModConfigSpec.BooleanValue storyAntechamber;
     public static final ModConfigSpec.BooleanValue storyHbmExemptions;
     public static final ModConfigSpec.BooleanValue storyLoanerWeapons; // chaos
+    // week (0.10.1)
+    public static final ModConfigSpec.BooleanValue storyLandsWeek;
+    public static final ModConfigSpec.BooleanValue storyDuskCry;
+    public static final ModConfigSpec.BooleanValue storyBoteco;
+    public static final ModConfigSpec.BooleanValue aliveAlmanac;
+    public static final ModConfigSpec.BooleanValue aliveGazette;
     public static final ModConfigSpec.IntValue sightingsMinDistance;
     public static final ModConfigSpec.IntValue sightingsScoutDistance;
     public static final ModConfigSpec.IntValue sightingsAutoPins;
@@ -221,6 +227,20 @@ public final class IntegrationsConfig {
                 "A Loaner (the casket's Big Bertha) breaks after 24 swings and can't be refitted. false = a Loaner",
                 "is an ordinary weapon.")
                 .define("loaner_weapons", true);
+        // week
+        storyLandsWeek = builder.comment(
+                "The Land's Week: each dawn names the day on the actionbar and runs the weekday hooks. false = no",
+                "weekday lines and no weekday hooks; the Land's day still counts, so turning it back on resumes the",
+                "week where it is.")
+                .define("lands_week", true);
+        storyDuskCry = builder.comment(
+                "The dusk line: the mae-da-lua cries once per player per dusk, and the urutau spawns in the woods",
+                "at dusk. false = no line and no urutau spawns.")
+                .define("dusk_cry", true);
+        storyBoteco = builder.comment(
+                "Seu Ze's boteco generates in new chunks as a findable structure and replaces Brasil e Coisas' bar",
+                "feature. false = no boteco structure, and the shipped bar feature comes back (restart needed).")
+                .define("boteco", true);
         builder.pop();
 
         builder.comment("Sightings (spyglass) tuning.").push("sightings");
@@ -246,6 +266,15 @@ public final class IntegrationsConfig {
                 "true = meteors crater the ground as before. false = meteors land in the wild, never near a bed,",
                 "a Parish Stone or a home, and break no blocks.")
                 .define("meteor_grief", false);
+        // week
+        aliveAlmanac = builder.comment(
+                "The Almanac: one seeded roll each dawn and one world event a night. false = no daily picks and no",
+                "slot rule; every event falls back to its own off state, and the Land's Week still turns.")
+                .define("almanac", true);
+        aliveGazette = builder.comment(
+                "The Interregnum Gazette: a newspaper in each subscriber's mailbox every dawn. false = no copies,",
+                "and the subscription options hide.")
+                .define("gazette", true);
         builder.pop();
 
         builder.comment("Places and their names.").push("world");

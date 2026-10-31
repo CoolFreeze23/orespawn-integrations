@@ -1,0 +1,13 @@
+{
+  "orespawn_integrations.senha.explainer_deferred": "That one's explained tomorrow. Use it anyway.",
+  "orespawn_integrations.week.cc.dawn": "Dawn run by hand. The Land's day is now %s.",
+  "orespawn_integrations.week.cc.ledger": "Dawn %s: %s jobs queued, %s run; slowest %s at %s µs; %s over 1 ms.",
+  "orespawn_integrations.week.cc.show": "Land's day %s: %s (the game's day index reads %s).",
+  "week.orespawn_integrations.0": "Monday. The Hunt's board is up.",
+  "week.orespawn_integrations.1": "Tuesday. Nothing happens. Feijoada.",
+  "week.orespawn_integrations.2": "Wednesday. Market day.",
+  "week.orespawn_integrations.3": "Thursday. Thursday into Friday, stay off the road.",
+  "week.orespawn_integrations.4": "Friday. Tonight someone runs the fado: the seventh son's lot.",
+  "week.orespawn_integrations.5": "Saturday. Truco tonight. Whatever you did, it's bigger now.",
+  "week.orespawn_integrations.6": "Sunday. The forest rests."
+}

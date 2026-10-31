@@ -80,6 +80,8 @@ public class OreSpawnIntegrations {
             {"apothic_spawners", "danger.orespawn.integrations.story.chaos.BossSpawnerGuard"},
             {"hbmsntm", "danger.orespawn.integrations.compat.hbm.HazardExemptions"},
             // data:
+            // week:
+            {"orespawn_integrations", "danger.orespawn.integrations.story.week.WeekCore"},
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };

@@ -1,0 +1,13 @@
+{
+  "orespawn_integrations.senha.explainer_deferred": "system-senha-da-primeira-hora | ACTIONBAR | a second first-time explainer the same Land's day (once)",
+  "orespawn_integrations.week.cc.dawn": "system-lands-week | CHAT | /cc week dawn (operators; arg: the new Land's day)",
+  "orespawn_integrations.week.cc.ledger": "system-livro-caixa-do-servidor | CHAT | /cc livrocaixa dawn (operators; args: day, queued, run, slowest job, its µs, jobs over 1 ms)",
+  "orespawn_integrations.week.cc.show": "system-lands-week | CHAT | /cc week show (operators; args: Land's day, weekday line, day index)",
+  "week.orespawn_integrations.0": "system-lands-week | ACTIONBAR | the sunrise line, Monday (land_day % 7 = 0)",
+  "week.orespawn_integrations.1": "system-lands-week | ACTIONBAR | the sunrise line, Tuesday",
+  "week.orespawn_integrations.2": "system-lands-week | ACTIONBAR | the sunrise line, Wednesday",
+  "week.orespawn_integrations.3": "system-lands-week | ACTIONBAR | the sunrise line, Thursday",
+  "week.orespawn_integrations.4": "system-lands-week | ACTIONBAR | the sunrise line, Friday",
+  "week.orespawn_integrations.5": "system-lands-week | ACTIONBAR | the sunrise line, Saturday",
+  "week.orespawn_integrations.6": "system-lands-week | ACTIONBAR | the sunrise line, Sunday"
+}
