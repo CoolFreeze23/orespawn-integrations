@@ -29,7 +29,7 @@ public final class ShelfNine {
 
     public static void init(IEventBus modBus) {
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGH, ShelfNine::onLogin);
-        NeoForge.EVENT_BUS.addListener(HatchingGroundPlacer::onServerStarted);
+        NeoForge.EVENT_BUS.addListener(HatchingGroundPlacer::onServerStarting);
         NeoForge.EVENT_BUS.addListener(danger.orespawn.integrations.command.CcCommand::register);
         StoryClock.everySecondPerPlayer("shelf9.register_origin", HatchRegister::checkPendingOrigin);
     }
@@ -100,6 +100,15 @@ public final class ShelfNine {
         if (Eggshell.isGiven(player) || HatchRegister.lineOf(player) > 0) {
             return false;
         }
+        return playedBefore0100(player);
+    }
+
+    /**
+     * Whether the player played this world before 0.10.0: the shipped join Guide's flag, or any play time. The Register's
+     * late entry and the first-hour ticket both ask this, so a player whose stats file is missing (a singleplayer world
+     * opened under another name) is a veteran to both.
+     */
+    public static boolean playedBefore0100(ServerPlayer player) {
         if (player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG).getBoolean(OLD_GUIDE_FLAG)) {
             return true;
         }

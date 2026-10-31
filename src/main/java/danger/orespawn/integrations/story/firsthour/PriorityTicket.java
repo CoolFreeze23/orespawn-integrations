@@ -4,12 +4,12 @@ import danger.orespawn.integrations.config.IntegrationsConfig;
 import danger.orespawn.integrations.story.Ranks;
 import danger.orespawn.integrations.story.StoryClock;
 import danger.orespawn.integrations.story.StoryCore;
+import danger.orespawn.integrations.story.shelf9.ShelfNine;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Display;
@@ -86,7 +86,7 @@ public final class PriorityTicket {
             }
             return;
         }
-        boolean veteran = player.getStats().getValue(Stats.CUSTOM.get(Stats.PLAY_TIME)) > 0;
+        boolean veteran = ShelfNine.playedBefore0100(player);
         TicketState s;
         if (!veteran) {
             s = TicketState.fresh();

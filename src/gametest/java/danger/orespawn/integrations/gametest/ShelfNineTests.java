@@ -11,6 +11,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -193,6 +194,49 @@ public final class ShelfNineTests {
 
     private static String role(StructureTemplate.StructureBlockInfo info) {
         return info.nbt() == null ? "" : info.nbt().getString("cc_role");
+    }
+
+    /**
+     * A live placement never locates on a tick: the Ways signs read "surveying" and the survey waits in the saved data;
+     * the next start runs it and writes the signs.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 400)
+    public static void aLivePlacementSurveysAtTheNextStart(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        List<StructureTemplate.StructureBlockInfo> signs = new ArrayList<>();
+        BlockPos origin = placeTemplate(helper, signs);
+        HatchingGroundData scratch = new HatchingGroundData();
+        for (StructureTemplate.StructureBlockInfo info : signs) {
+            String role = role(info);
+            if (role.startsWith("ways_")) {
+                scratch.waysSigns["nesw".indexOf(role.charAt(5))] = info.pos();
+            }
+        }
+        scratch.placed = true;
+        scratch.dimension = level.dimension().location().toString();
+        FourWays.markPending(level, origin.offset(10, 4, 10), scratch);
+        helper.assertTrue(scratch.waysPending, "the survey waits");
+        for (int side = 0; side < 4; side++) {
+            helper.assertTrue(waysKey(level, scratch.waysSigns[side]).endsWith("ways.surveying.thing"),
+                    "Ways sign " + side + " reads surveying");
+        }
+        helper.assertTrue(FourWays.runPending(level.getServer(), scratch), "the next start runs it");
+        helper.assertTrue(!scratch.waysPending, "and clears it");
+        helper.assertTrue(FourWays.VERSION.equals(scratch.waysVersion), "the signs carry this version's survey");
+        for (int side = 0; side < 4; side++) {
+            helper.assertTrue(!waysKey(level, scratch.waysSigns[side]).endsWith("ways.surveying.thing"),
+                    "Ways sign " + side + " no longer reads surveying");
+        }
+        helper.assertTrue(!FourWays.runPending(level.getServer(), scratch), "a second start has nothing to run");
+        helper.succeed();
+    }
+
+    private static String waysKey(ServerLevel level, BlockPos pos) {
+        BlockEntity be = level.getBlockEntity(pos);
+        if (!(be instanceof SignBlockEntity sign)) {
+            return "";
+        }
+        return sign.getFrontText().getMessage(1, false).getContents() instanceof TranslatableContents t ? t.getKey() : "";
     }
 
     /**

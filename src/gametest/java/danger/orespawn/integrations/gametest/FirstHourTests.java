@@ -10,6 +10,7 @@ import danger.orespawn.integrations.story.firsthour.GoldPin;
 import danger.orespawn.integrations.story.firsthour.PriorityTicket;
 import danger.orespawn.integrations.story.firsthour.RoyalSummons;
 import danger.orespawn.integrations.story.firsthour.TicketState;
+import danger.orespawn.integrations.story.shelf9.ShelfNine;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -20,6 +21,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.WrittenBookContent;
 import net.minecraft.world.level.block.Blocks;
@@ -58,6 +60,25 @@ public final class FirstHourTests {
         helper.assertTrue(s.step == TicketState.P00, "a new join starts at P00");
         helper.assertTrue(!s.used(TicketState.P00), "the origin screen is still open");
         helper.assertTrue(!s.flag(TicketState.FLAG_VETERAN), "a new join is not a veteran");
+        helper.succeed();
+    }
+
+    /**
+     * A player with the shipped join Guide's flag but no play time (their stats file is missing) is a veteran to the
+     * ticket, as they are to the Register: a closed ticket, never P00.
+     */
+    @GameTest(template = "empty8")
+    public static void guideFlagWithoutPlayTimeIsAVeteran(GameTestHelper helper) {
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        player.removeData(FirstHourData.FIRST_HOUR.get());
+        CompoundTag persisted = player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
+        persisted.putBoolean("orespawn_integrations:guide_given", true);
+        player.getPersistentData().put(Player.PERSISTED_NBT_TAG, persisted);
+        helper.assertTrue(ShelfNine.playedBefore0100(player), "the Guide flag alone makes a veteran");
+        PriorityTicket.start(player);
+        TicketState s = FirstHourData.ticket(player);
+        helper.assertTrue(s.flag(TicketState.FLAG_VETERAN), "the ticket sees the veteran");
+        helper.assertTrue(s.step != TicketState.P00, "a veteran never starts at P00");
         helper.succeed();
     }
 

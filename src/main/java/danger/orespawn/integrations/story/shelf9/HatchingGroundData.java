@@ -44,6 +44,9 @@ public final class HatchingGroundData extends SavedData {
     public UUID waystone;
     /** The OI version whose locates wrote the Ways signs; 0.10.1 re-runs them once when this is older. */
     public String waysVersion = "";
+    /** A live placement's Four Ways survey, run at the next server start (never on a live tick). */
+    public boolean waysPending;
+    public BlockPos waysCentre = BlockPos.ZERO;
     public int nextLine = 1;
     public final Map<UUID, Integer> lines = new HashMap<>();
     public final Map<UUID, String> names = new HashMap<>();
@@ -68,6 +71,8 @@ public final class HatchingGroundData extends SavedData {
         data.origin = NbtUtils.readBlockPos(tag, "origin").orElse(BlockPos.ZERO);
         data.dimension = tag.getString("dim").isEmpty() ? "minecraft:overworld" : tag.getString("dim");
         data.placedBy = tag.getString("placed_by");
+        data.waysPending = tag.getBoolean("ways_pending");
+        data.waysCentre = NbtUtils.readBlockPos(tag, "ways_centre").orElse(BlockPos.ZERO);
         readPositions(tag.getList("straw", Tag.TAG_INT_ARRAY), data.straw);
         for (Tag t : tag.getList("straw_blocks", Tag.TAG_STRING)) {
             data.strawBlocks.add(t.getAsString());
@@ -121,6 +126,8 @@ public final class HatchingGroundData extends SavedData {
         tag.put("origin", NbtUtils.writeBlockPos(origin));
         tag.putString("dim", dimension);
         tag.putString("placed_by", placedBy);
+        tag.putBoolean("ways_pending", waysPending);
+        tag.put("ways_centre", NbtUtils.writeBlockPos(waysCentre));
         tag.put("straw", writePositions(straw));
         ListTag blocks = new ListTag();
         for (String id : strawBlocks) {

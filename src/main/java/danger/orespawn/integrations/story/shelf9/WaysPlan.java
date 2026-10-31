@@ -4,12 +4,15 @@ import java.util.List;
 
 /**
  * The Four Ways as pure logic (unit tested): each side of Shelf 9 names the nearest found thing whose bearing falls on
- * that side (north, east, south or west, by the larger axis), within 512 blocks; a side with nothing reads
- * "...nothing · Yet."
+ * that side (north, east, south or west, by the larger axis), within {@link #MAX_DISTANCE} blocks; a side with nothing
+ * reads "...nothing · Yet."
+ *
+ * <p>The card said 512. In this pack the nearest village, henge, tower and bar from spawn measured 28-1,834 blocks over
+ * six seeds (the bar the farthest, up to 1,834), so at 512 most signs read "nothing". 2,048 names every one of them.</p>
  */
 public final class WaysPlan {
 
-    public static final int MAX_DISTANCE = 512;
+    public static final int MAX_DISTANCE = 2048;
     public static final String[] SIDES = {"north", "east", "south", "west"};
     public static final String[] ARROWS = {"↑", "→", "↓", "←"};
 
@@ -44,6 +47,15 @@ public final class WaysPlan {
             }
         }
         return sides;
+    }
+
+    /**
+     * Placement-grid rings a locate needs to reach {@link #MAX_DISTANCE} for a placement {@code spacing} chunks apart:
+     * one more ring than the distance covers, since a structure can sit anywhere in its cell. At most 32 (vanilla's).
+     */
+    public static int ringsFor(int spacing) {
+        int cover = (MAX_DISTANCE + spacing * 16 - 1) / (spacing * 16);
+        return Math.min(32, cover + 1);
     }
 
     /** The distance as signed: rounded to the nearest 10 blocks ("~{distance} blocks"). */

@@ -3,11 +3,16 @@ package danger.orespawn.integrations.story.shelf9;
 import danger.orespawn.integrations.OreSpawnIntegrations;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.chunk.ChunkGeneratorStructureState;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
+import net.minecraft.world.level.levelgen.structure.placement.StructurePlacement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +23,7 @@ import java.util.List;
  * generate past structure starts): a village, a Pandora henge, a tower, a bar, each through a structure tag of ours
  * ({@code #orespawn_integrations:shelf9/<kind>}) so 0.10.1 can add the boteco by data. The hub list is read first for
  * the bar and the Hunt Lodge, which an operator places by hand. They run once, while the server starts or at the
- * operator's command, never while players wait.
+ * at the next start after an operator's command, never on a live tick.
  */
 public final class FourWays {
 
@@ -31,39 +36,108 @@ public final class FourWays {
     private FourWays() {
     }
 
-    public static void locateAndWrite(ServerLevel level, BlockPos centre, HatchingGroundData data) {
+    /**
+     * A placement on a live server (the operator's command): no locate runs on a tick. The signs read "surveying ·
+     * next restart" and the survey is kept in the saved data for {@link #runPending} at the next start.
+     */
+    public static void markPending(ServerLevel level, BlockPos centre, HatchingGroundData data) {
+        for (int side = 0; side < 4; side++) {
+            writeKind(level, data.waysSigns[side], side, "surveying", null);
+        }
+        data.waysPending = true;
+        data.waysCentre = centre.immutable();
+        data.setDirty();
+        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: placed on a live server; the survey waits for the next start");
+    }
+
+    /**
+     * At server start, before anyone can join: the survey a live placement left, if any. Returns true when it ran.
+     */
+    public static boolean runPending(MinecraftServer server, HatchingGroundData data) {
+        if (!data.placed || !data.waysPending) {
+            return false;
+        }
+        ServerLevel level = server.getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(data.dimension)));
+        if (level == null) {
+            level = server.overworld();
+        }
         long start = System.nanoTime();
+        locateAndWrite(level, data.waysCentre, data);
+        data.waysPending = false;
+        data.setDirty();
+        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: the waiting survey ran at start-up in {} ms",
+                (System.nanoTime() - start) / 1_000_000L);
+        return true;
+    }
+
+    /** All four locates and the signs at once, for an operator re-run or a test. */
+    public static void locateAndWrite(ServerLevel level, BlockPos centre, HatchingGroundData data) {
         List<WaysPlan.Found> found = new ArrayList<>();
         for (String kind : KINDS) {
-            BlockPos hub = nearestHubPlace(level, centre, "bar".equals(kind) ? "boteco" : null);
-            BlockPos pos = hub != null ? hub : locate(level, centre, kind);
-            if (pos != null) {
-                found.add(new WaysPlan.Found(kind, pos.getX() - centre.getX(), pos.getZ() - centre.getZ()));
+            WaysPlan.Found f = find(level, centre, kind);
+            if (f != null) {
+                found.add(f);
             }
         }
         BlockPos lodge = nearestHubPlace(level, centre, "hunt_lodge");
         if (lodge != null) {
             found.add(new WaysPlan.Found("hunt_lodge", lodge.getX() - centre.getX(), lodge.getZ() - centre.getZ()));
         }
+        writeAll(level, data, found);
+    }
+
+    private static WaysPlan.Found find(ServerLevel level, BlockPos centre, String kind) {
+        long start = System.nanoTime();
+        BlockPos hub = nearestHubPlace(level, centre, "bar".equals(kind) ? "boteco" : null);
+        BlockPos pos = hub != null ? hub : locate(level, centre, kind);
+        WaysPlan.Found f = pos == null ? null
+                : new WaysPlan.Found(kind, pos.getX() - centre.getX(), pos.getZ() - centre.getZ());
+        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: the {} {} in {} ms", kind,
+                f == null ? "was not found" : "is " + f.distance() + " blocks off",
+                (System.nanoTime() - start) / 1_000_000L);
+        return f;
+    }
+
+    private static void writeAll(ServerLevel level, HatchingGroundData data, List<WaysPlan.Found> found) {
         WaysPlan.Found[] sides = WaysPlan.assign(found);
         for (int side = 0; side < 4; side++) {
             write(level, data.waysSigns[side], side, sides[side]);
         }
         data.waysVersion = VERSION;
         data.setDirty();
-        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: {} found, the locates took {} ms", found.size(),
-                (System.nanoTime() - start) / 1_000_000L);
+        int named = 0;
+        for (WaysPlan.Found f : sides) {
+            named += f == null ? 0 : 1;
+        }
+        OreSpawnIntegrations.LOGGER.info("Shelf 9's Four Ways: {} found, {} signs name one", found.size(), named);
     }
 
     private static BlockPos locate(ServerLevel level, BlockPos centre, String kind) {
         TagKey<Structure> tag = TagKey.create(Registries.STRUCTURE,
                 ResourceLocation.fromNamespaceAndPath(OreSpawnIntegrations.MODID, "shelf9/" + kind));
         try {
-            return level.findNearestMapStructure(tag, centre, RADIUS_CHUNKS, false);
+            return level.findNearestMapStructure(tag, centre, rings(level, tag), false);
         } catch (Throwable t) {
             OreSpawnIntegrations.LOGGER.warn("Shelf 9: the {} locate failed; that way stays empty", kind, t);
             return null;
         }
+    }
+
+    /**
+     * The locate's radius in placement-grid rings: enough for the tag's tightest random spread to reach
+     * {@link WaysPlan#MAX_DISTANCE}, so a search never walks rings no sign could name. At most {@link #RADIUS_CHUNKS}.
+     */
+    static int rings(ServerLevel level, TagKey<Structure> tag) {
+        ChunkGeneratorStructureState state = level.getChunkSource().getGeneratorState();
+        int[] minSpacing = {Integer.MAX_VALUE};
+        level.registryAccess().registryOrThrow(Registries.STRUCTURE).getTag(tag).ifPresent(set -> set.forEach(s -> {
+            for (StructurePlacement p : state.getPlacementsForStructure(s)) {
+                if (p instanceof RandomSpreadStructurePlacement spread) {
+                    minSpacing[0] = Math.min(minSpacing[0], spread.spacing());
+                }
+            }
+        }));
+        return minSpacing[0] == Integer.MAX_VALUE ? RADIUS_CHUNKS : WaysPlan.ringsFor(minSpacing[0]);
     }
 
     private static BlockPos nearestHubPlace(ServerLevel level, BlockPos centre, String thing) {
@@ -81,7 +155,10 @@ public final class FourWays {
     }
 
     private static void write(ServerLevel level, BlockPos sign, int side, WaysPlan.Found found) {
-        String kind = found == null ? "nothing" : found.kind();
+        writeKind(level, sign, side, found == null ? "nothing" : found.kind(), found);
+    }
+
+    private static void writeKind(ServerLevel level, BlockPos sign, int side, String kind, WaysPlan.Found found) {
         Component heading = Component.translatable(KEY + "heading", WaysPlan.ARROWS[side],
                 Component.translatable(KEY + "dir." + WaysPlan.SIDES[side]));
         Component thing = Component.translatable(KEY + kind + ".thing");

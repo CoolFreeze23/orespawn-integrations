@@ -51,5 +51,8 @@
   "orespawn_integrations.cc.hub_full": "%1$s: the hub list is full (%2$s places). Nothing was placed.",
   "orespawn_integrations.cc.failed": "%1$s: the template is missing from this jar. Nothing was placed.",
   "orespawn_integrations.cc.hub_list": "Hub list: %1$s of %2$s places.",
-  "orespawn_integrations.cc.hub_entry": "%1$s at %2$s %3$s %4$s (%5$s)"
+  "orespawn_integrations.cc.hub_entry": "%1$s at %2$s %3$s %4$s (%5$s)",
+  "orespawn_integrations.shelf9.ways.surveying.thing": "…surveying",
+  "orespawn_integrations.shelf9.ways.surveying.comment": "Next restart",
+  "orespawn_integrations.cc.ways_pending": "Four Ways surveyed at the next restart; the signs read \"surveying\" until then."
 }
