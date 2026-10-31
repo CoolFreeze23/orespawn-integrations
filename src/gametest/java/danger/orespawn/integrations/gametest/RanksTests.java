@@ -44,6 +44,14 @@ public final class RanksTests {
         return player;
     }
 
+    /**
+     * Makes {@code player} a save from before 0.10.1, which carries no cc_corte: the mock player's own join already ran
+     * the once-only backfill on an empty player, before the test granted the advancements it is meant to read.
+     */
+    static void beforeTheUpdate(ServerPlayer player) {
+        player.setData(CourtRanks.CORTE.get(), new int[3]);
+    }
+
     static void setLandDay(MinecraftServer server, int day) {
         Scoreboard board = server.getScoreboard();
         board.getOrCreatePlayerScore(ScoreHolder.forNameOnly("#dia"),
@@ -101,6 +109,7 @@ public final class RanksTests {
         setLandDay(helper.getLevel().getServer(), 12);
         grant(player, "orespawn_integrations:ant_farm_frontier/utopia_visit");
         grant(player, "minecraft:story/enter_the_nether");
+        beforeTheUpdate(player);
         CourtRanks.login(player);
         helper.assertTrue(Ranks.of(player) >= Ranks.SQUIRE, "backfilled Squire");
         helper.succeed();
@@ -112,6 +121,7 @@ public final class RanksTests {
         ServerPlayer player = fresh(helper);
         setLandDay(helper.getLevel().getServer(), 12);
         grant(player, "orespawn_integrations:ant_farm_frontier/utopia_visit");
+        beforeTheUpdate(player);
         CourtRanks.login(player);
         helper.assertFalse(Ranks.atLeast(player, Ranks.SQUIRE), "one province is 1 of 2");
         helper.assertTrue(FirstHourUtil.score(player, CourtRanks.STAMP, 0) == 11, "stamp dated before today");
