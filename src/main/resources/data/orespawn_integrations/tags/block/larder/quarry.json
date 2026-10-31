@@ -1,0 +1,209 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:alien_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:alosaurus_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:attack_squid_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:band_p_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:baryonyx_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:blaze_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:brutalfly_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cave_fisher_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cave_spider_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cliff_racer_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cloud_shark_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:creeper_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:creeping_horror_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:cryolophosaurus_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:ender_knight_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:ender_reaper_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:enderman_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:ghast_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:leaf_monster_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:lurking_terror_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:magma_cube_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:mantis_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:molenoid_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_dungeon_beast",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_irukandji",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_rat",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_rotator",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_urchin",
+      "required": false
+    },
+    {
+      "id": "orespawn:ore_vortex",
+      "required": false
+    },
+    {
+      "id": "orespawn:pointysaurus_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:scorpion_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:sea_monster_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:sea_viper_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:silverfish_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:skeleton_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:slime_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:spider_driver_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:spider_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:spit_bug_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:stink_bug_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:terrible_terror_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:trex_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:triffid_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:trooper_bug_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:witch_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:wither_skeleton_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:worm_large_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:worm_medium_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:worm_small_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:zombie_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:zombified_piglin_spawn_block",
+      "required": false
+    }
+  ]
+}
