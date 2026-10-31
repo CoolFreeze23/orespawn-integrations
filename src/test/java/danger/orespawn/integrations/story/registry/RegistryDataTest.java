@@ -73,6 +73,23 @@ class RegistryDataTest {
         }
     }
 
+    /** True when a release after 0.10.0 defines {@code key} in {@code lang}. */
+    private static boolean inLaterRelease(String key, String lang) throws IOException {
+        try (Stream<Path> dirs = Files.list(FRAGMENTS.getParent())) {
+            for (Path dir : dirs.filter(d -> d.getFileName().toString().startsWith("0.")
+                    && !d.equals(FRAGMENTS)).toList()) {
+                try (Stream<Path> files = Files.list(dir)) {
+                    for (Path f : files.filter(x -> x.getFileName().toString().endsWith("." + lang + ".json")).toList()) {
+                        if (JsonParser.parseString(Files.readString(f, StandardCharsets.UTF_8)).getAsJsonObject().has(key)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     @Test
     void everyKeyHasBothLanguages() throws IOException {
         JsonObject en = JsonParser.parseString(Files.readString(FRAGMENTS.resolve("registry.en_us.json"))).getAsJsonObject();
@@ -88,8 +105,12 @@ class RegistryDataTest {
                 Matcher m = key.matcher(Files.readString(p, StandardCharsets.UTF_8));
                 while (m.find()) {
                     found++;
-                    assertTrue(en.has(m.group(1)), "no EN line for " + m.group(1) + " in " + p);
-                    assertTrue(pt.has(m.group(1)), "no pt-BR line for " + m.group(1) + " in " + p);
+                    // A later release's lines (a boteco's ops function, the Gazette's desk page) live in its own
+                    // release folder; the Registry's own lines must be in the Registry's fragments.
+                    boolean registry = en.has(m.group(1));
+                    assertTrue(registry || inLaterRelease(m.group(1), "en_us"), "no EN line for " + m.group(1) + " in " + p);
+                    assertTrue(registry ? pt.has(m.group(1)) : inLaterRelease(m.group(1), "pt_br"),
+                            "no pt-BR line for " + m.group(1) + " in " + p);
                 }
             }
         }

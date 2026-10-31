@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "orespawn_integrations:week_switch",
+        "switch": "boteco"
+      }
+    }
+  ],
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "brasilcoisas:barzinho_feature",
+  "step": "surface_structures"
+}

@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "orespawn_integrations:boteco/bar",
+        "processors": "orespawn_integrations:boteco",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

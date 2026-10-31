@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#orespawn_integrations:region/old_ground",
+    {
+      "id": "#c:is_plains",
+      "required": false
+    },
+    "#minecraft:is_jungle",
+    "#minecraft:is_savanna"
+  ]
+}
