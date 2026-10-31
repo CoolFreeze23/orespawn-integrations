@@ -24,7 +24,7 @@ public final class DeedLog {
 
         /** The line as the listener's own client will read it. */
         public Component text() {
-            return Component.translatable(key, args.toArray());
+            return Component.translatable(key, args.stream().map(DeedLog::argument).toArray());
         }
     }
 
@@ -33,6 +33,29 @@ public final class DeedLog {
 
     /** Writes one deed for {@code player}; each argument is kept as text (a name, a number). */
     public static void record(ServerPlayer player, String deedKey, Object... args) {
+    }
+
+    /**
+     * An argument that is itself a lang key, so a tab name or an epithet reads in the listener's language too:
+     * {@code "#key"} or {@code "#key|arg|arg"}. A player name never starts with '#'.
+     */
+    public static String key(String key, Object... args) {
+        StringBuilder out = new StringBuilder("#").append(key);
+        for (Object arg : args) {
+            out.append('|').append(arg);
+        }
+        return out.toString();
+    }
+
+    /** One stored argument as a chat component: plain text, or a lang key written by {@link #key}. */
+    public static Object argument(String arg) {
+        if (arg == null || !arg.startsWith("#") || arg.length() < 2) {
+            return arg == null ? "" : arg;
+        }
+        String[] parts = arg.substring(1).split("[|]", -1);
+        Object[] inner = new Object[parts.length - 1];
+        System.arraycopy(parts, 1, inner, 0, inner.length);
+        return Component.translatable(parts[0], inner);
     }
 
     /** Every player's deeds from the current Land week, oldest first. */
