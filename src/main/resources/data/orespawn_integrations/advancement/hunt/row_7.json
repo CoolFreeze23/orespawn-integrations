@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "monster_hunter_villager"
+    }
+  ],
+  "parent": "orespawn_integrations:hunt/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:golden_helmet"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.hunt.row_7.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.hunt.row_7.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

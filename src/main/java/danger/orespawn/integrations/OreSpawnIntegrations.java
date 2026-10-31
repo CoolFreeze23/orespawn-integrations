@@ -86,6 +86,13 @@ public class OreSpawnIntegrations {
             {"refurbished_furniture", "danger.orespawn.integrations.story.week.RefurbishedPost"},
             {"plantz", "danger.orespawn.integrations.story.week.PlantzPost"},
             {"customnpcs", "danger.orespawn.integrations.story.week.GazetteDialogs"},
+            // ranks:
+            {"orespawn_integrations", "danger.orespawn.integrations.story.court.CourtRanks"},
+            {"orespawn_integrations", "danger.orespawn.integrations.story.deed.DeedLog"},
+            {"orespawn_integrations", "danger.orespawn.integrations.story.hunt.HuntCore"},
+            {"customnpcs", "danger.orespawn.integrations.npc.HuntInstaller"},
+            {"brasilcoisas", "danger.orespawn.integrations.story.land.MestreGiftHook"},
+            {"orespawn_integrations", "danger.orespawn.integrations.story.land.MapinguariSunday"},
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };

@@ -94,6 +94,15 @@ class RegistryDataTest {
     void everyKeyHasBothLanguages() throws IOException {
         JsonObject en = JsonParser.parseString(Files.readString(FRAGMENTS.resolve("registry.en_us.json"))).getAsJsonObject();
         JsonObject pt = JsonParser.parseString(Files.readString(FRAGMENTS.resolve("registry.pt_br.json"))).getAsJsonObject();
+        // A later release's group may add its own ops function beside the Registry's; its keys are in its fragments.
+        for (Path later : files(FRAGMENTS.getParent(), ".json")) {
+            String name = later.getFileName().toString();
+            if (!later.getParent().equals(FRAGMENTS) && name.endsWith(".en_us.json")) {
+                JsonParser.parseString(Files.readString(later)).getAsJsonObject().entrySet().forEach(e -> en.add(e.getKey(), e.getValue()));
+            } else if (!later.getParent().equals(FRAGMENTS) && name.endsWith(".pt_br.json")) {
+                JsonParser.parseString(Files.readString(later)).getAsJsonObject().entrySet().forEach(e -> pt.add(e.getKey(), e.getValue()));
+            }
+        }
         Pattern key = Pattern.compile("\"(?:translate|Title|DialogText|DialogTitle)\"[ ]*:[ ]*\"((?:orespawn_integrations|advancements[.]orespawn_integrations)[.][a-z0-9_.]+)\"");
         int found = 0;
         for (Path root : List.of(DATA.resolve("function/odete"), DATA.resolve("function/odete_campo"), DATA.resolve("function/ops"),

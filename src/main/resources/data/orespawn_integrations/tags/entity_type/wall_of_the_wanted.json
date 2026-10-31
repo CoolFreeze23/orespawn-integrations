@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#orespawn_integrations:wall/row_1",
+    "#orespawn_integrations:wall/row_2",
+    "#orespawn_integrations:wall/row_3",
+    "#orespawn_integrations:wall/row_4",
+    "#orespawn_integrations:wall/row_5",
+    "#orespawn_integrations:wall/row_6",
+    "#orespawn_integrations:wall/row_7"
+  ]
+}

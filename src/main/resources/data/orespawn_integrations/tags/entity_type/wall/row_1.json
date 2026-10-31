@@ -1,0 +1,113 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "brazil_legends:saci_perere",
+      "required": false
+    },
+    {
+      "id": "brasilcoisas:lobisomem",
+      "required": false
+    },
+    {
+      "id": "friendsandfoes:iceologer",
+      "required": false
+    },
+    {
+      "id": "friendsandfoes:illusioner",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:archevoker",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:citadel_keeper",
+      "required": false
+    },
+    {
+      "id": "mowziesmobs:sculptor",
+      "required": false
+    },
+    {
+      "id": "twilightforest:naga",
+      "required": false
+    },
+    {
+      "id": "the_bumblezone:bee_queen",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:cuca",
+      "required": false
+    },
+    {
+      "id": "mowziesmobs:ferrous_wroughtnaut",
+      "required": false
+    },
+    {
+      "id": "friendsandfoes:wildfire",
+      "required": false
+    },
+    {
+      "id": "orespawn:alien_boss",
+      "required": false
+    },
+    {
+      "id": "orespawn:hercules_beetle",
+      "required": false
+    },
+    {
+      "id": "orespawn:nastysaurus",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:mother_spider",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:dire_hound_leader",
+      "required": false
+    },
+    {
+      "id": "aether:slider",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:ice_spider",
+      "required": false
+    },
+    {
+      "id": "plantz:zombie_yeti",
+      "required": false
+    },
+    {
+      "id": "cataclysm:amethyst_crab",
+      "required": false
+    },
+    {
+      "id": "cataclysm:kobolediator",
+      "required": false
+    },
+    {
+      "id": "cataclysm:wadjet",
+      "required": false
+    },
+    {
+      "id": "twilightforest:minoshroom",
+      "required": false
+    },
+    {
+      "id": "marvel:baron_zemo",
+      "required": false
+    },
+    {
+      "id": "pandorasbox:giant",
+      "required": false
+    },
+    {
+      "id": "twilightforest:plateau_boss",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    }
+  ],
+  "parent": "orespawn_integrations:wonder/2",
+  "display": {
+    "icon": {
+      "id": "minecraft:egg"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.court.rank_0.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.court.rank_0.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "awakening": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "awakening"
+    ]
+  ]
+}

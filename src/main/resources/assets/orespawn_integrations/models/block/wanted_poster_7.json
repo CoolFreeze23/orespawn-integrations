@@ -1,0 +1,7 @@
+{
+  "parent": "orespawn_integrations:block/wanted_poster",
+  "textures": {
+    "poster": "orespawn_integrations:block/wanted_poster_7",
+    "particle": "orespawn_integrations:block/wanted_poster_7"
+  }
+}

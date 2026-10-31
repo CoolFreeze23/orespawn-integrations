@@ -1,0 +1,26 @@
+{
+  "parent": "orespawn_integrations:wonder/1",
+  "display": {
+    "icon": {
+      "id": "minecraft:clock"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.livro.r11.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.livro.r11.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  }
+}

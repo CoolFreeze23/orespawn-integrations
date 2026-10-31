@@ -1,0 +1,73 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:basilisk",
+      "required": false
+    },
+    {
+      "id": "orespawn:emperor_scorpion",
+      "required": false
+    },
+    {
+      "id": "orespawn:cater_killer",
+      "required": false
+    },
+    {
+      "id": "orespawn:mothra",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:capelobo",
+      "required": false
+    },
+    {
+      "id": "twilightforest:lich",
+      "required": false
+    },
+    {
+      "id": "twilightforest:alpha_yeti",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:sir_pumpkinhead",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:supreme_bonescaller",
+      "required": false
+    },
+    {
+      "id": "cataclysm:the_prowler",
+      "required": false
+    },
+    {
+      "id": "cataclysm:aptrgangr",
+      "required": false
+    },
+    {
+      "id": "cataclysm:ender_golem",
+      "required": false
+    },
+    {
+      "id": "plantz:pirate_captain",
+      "required": false
+    },
+    {
+      "id": "plantz:robo_zombie",
+      "required": false
+    },
+    {
+      "id": "plantz:super_brainz",
+      "required": false
+    },
+    {
+      "id": "marvel:winter_soldier",
+      "required": false
+    },
+    {
+      "id": "minecraft:elder_guardian",
+      "required": false
+    }
+  ]
+}

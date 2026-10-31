@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "monster_hunter_villager"
+    }
+  ],
+  "parent": "orespawn_integrations:hunt/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:netherite_sword"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.hunt.row_6.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.hunt.row_6.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

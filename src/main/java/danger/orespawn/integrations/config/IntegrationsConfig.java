@@ -65,6 +65,12 @@ public final class IntegrationsConfig {
     public static final ModConfigSpec.BooleanValue storyBoteco;
     public static final ModConfigSpec.BooleanValue aliveAlmanac;
     public static final ModConfigSpec.BooleanValue aliveGazette;
+    // ranks
+    public static final ModConfigSpec.BooleanValue storyCourtRanks;
+    public static final ModConfigSpec.BooleanValue storyDeedLog;
+    public static final ModConfigSpec.BooleanValue storyBossLadder;
+    public static final ModConfigSpec.BooleanValue storyRoyalHunt;
+    public static final ModConfigSpec.BooleanValue storyHuntLodge;
     public static final ModConfigSpec.IntValue sightingsMinDistance;
     public static final ModConfigSpec.IntValue sightingsScoutDistance;
     public static final ModConfigSpec.IntValue sightingsAutoPins;
@@ -241,6 +247,30 @@ public final class IntegrationsConfig {
                 "Seu Ze's boteco generates in new chunks as a findable structure and replaces Brasil e Coisas' bar",
                 "feature. false = no boteco structure, and the shipped bar feature comes back (restart needed).")
                 .define("boteco", true);
+        // ranks
+        storyCourtRanks = builder.comment(
+                "Court ranks (cc_court): Squire also by two provinces on two days, Knight and Fidalgo also by deeds, one",
+                "ceremony per rise. false = cc_court follows the Apotheosis tiers only; deeds still grant their own",
+                "advancements.")
+                .define("court_ranks", true);
+        storyDeedLog = builder.comment(
+                "The deed log: boss kills, sightings and the rest are written down for Saturday's retelling and the",
+                "Gazette. false = nothing is written, and the readers fall silent.")
+                .define("deed_log", true);
+        storyBossLadder = builder.comment(
+                "The Wall of the Wanted: the Lodge's poster signs name each row's latest killer and each row gives an",
+                "advancement. false = no sign rewrites or row advancements; the Captain's board falls back to her",
+                "shipped quests 701-706.")
+                .define("boss_ladder", true);
+        storyRoyalHunt = builder.comment(
+                "Captain Iracema and the Monday board: three bounties a Monday, the board at the Lodge, at any Monster",
+                "Hunter tent (sneak-use its Hunter's Workbench) and at Registry desks. false = no board; the tent's",
+                "workbench is always the shipped one.")
+                .define("royal_hunt", true);
+        storyHuntLodge = builder.comment(
+                "The Hunt Lodge generates once per new world, 300-600 blocks from spawn. false = no Lodge in new",
+                "chunks; an operator can still place one (/cc hunt_lodge place). Applies to chunks made after a restart.")
+                .define("hunt_lodge", true);
         builder.pop();
 
         builder.comment("Sightings (spyglass) tuning.").push("sightings");

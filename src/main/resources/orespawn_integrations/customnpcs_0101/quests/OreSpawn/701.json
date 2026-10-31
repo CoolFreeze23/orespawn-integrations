@@ -1,0 +1,44 @@
+{
+    "Id": 701,
+    "ModRev": 18,
+    "Type": 2,
+    "Title": "orespawn_integrations.quest.701.title",
+    "Text": "orespawn_integrations.quest.701.text",
+    "CompleteText": "orespawn_integrations.quest.701.complete",
+    "CompleterNpc": "",
+    "NextQuestId": -1,
+    "QuestCommand": "",
+    "RandomReward": 0b,
+    "RewardExp": 500,
+    "QuestCompletion": 1,
+    "QuestRepeat": 0,
+    "QuestDialogs": [
+        {
+            "Slot": "orespawn_integrations.quest.701.alvo",
+            "Value": 1
+        }
+    ],
+    "Rewards": {
+        "NpcMiscInv": [
+            {
+                "Slot": 0b,
+                "id": "orespawn:big_bertha",
+                "count": 1
+            }
+        ]
+    },
+    "QuestFactionPoints": {
+    },
+    "QuestMail": {
+        "Subject": "",
+        "MailQuest": -1,
+        "BeenRead": 0b,
+        "MailItems": [
+        ],
+        "Sender": "",
+        "Message": {
+        },
+        "Time": 0L,
+        "TimePast": 0L
+    }
+}
