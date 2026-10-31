@@ -1,6 +1,9 @@
 package danger.orespawn.integrations.gametest;
 
+import net.minecraft.gametest.framework.GameTestInfo;
 import net.minecraft.gametest.framework.GameTestRegistry;
+import net.minecraft.gametest.framework.GlobalTestReporter;
+import net.minecraft.gametest.framework.TestReporter;
 import net.minecraft.gametest.framework.TestCommand;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -10,6 +13,7 @@ import net.neoforged.neoforge.event.server.ServerAboutToStartEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,6 +57,53 @@ public final class GameTestsMod {
         for (Class<?> holder : HOLDERS) {
             GameTestRegistry.register(holder);
         }
-        LOGGER.info("Registered {} GameTests from {} classes", GameTestRegistry.getAllTestFunctions().size(), HOLDERS.size());
+        int total = GameTestRegistry.getAllTestFunctions().size();
+        GlobalTestReporter.replaceWith(new LogReporter(total));
+        LOGGER.info("Registered {} GameTests from {} classes", total, HOLDERS.size());
+    }
+
+    /**
+     * Vanilla tells only online players how the tests went. A scratch server has none, so this writes every result to
+     * the log and, once all {@code total} tests have finished, the same summary line a client would see.
+     */
+    private static final class LogReporter implements TestReporter {
+        private final int total;
+        private int done;
+        private final List<String> failedRequired = new ArrayList<>();
+        private int failedOptional;
+
+        LogReporter(int total) {
+            this.total = total;
+        }
+
+        @Override
+        public synchronized void onTestFailed(GameTestInfo info) {
+            if (info.isRequired()) {
+                failedRequired.add(info.getTestName());
+            } else {
+                failedOptional++;
+            }
+            LOGGER.error("GameTest FAILED: {} ({}): {}", info.getTestName(), info.isRequired() ? "required" : "optional",
+                    info.getError() == null ? "no message" : info.getError().getMessage());
+            count();
+        }
+
+        @Override
+        public synchronized void onTestSuccess(GameTestInfo info) {
+            LOGGER.info("GameTest passed: {}", info.getTestName());
+            count();
+        }
+
+        private void count() {
+            if (++done < total) {
+                return;
+            }
+            if (failedRequired.isEmpty()) {
+                LOGGER.info("All {} required tests passed :){}", total,
+                        failedOptional > 0 ? " (" + failedOptional + " optional failed)" : "");
+            } else {
+                LOGGER.error("{} required tests failed :( {}", failedRequired.size(), failedRequired);
+            }
+        }
     }
 }
