@@ -311,7 +311,8 @@ public final class Almanac {
         return time >= WeekRules.DUSK_END && time < 23000L && heldThisEvening.contains(player.getUUID());
     }
 
-    static void fireBeats(ServerPlayer player) {
+    /** Fires a player's dusk beats now if they haven't this Land's day (the dusk check, the bed reader, tests). */
+    public static void fireBeats(ServerPlayer player) {
         WeekState s = WeekData.of(player);
         int today = (int) LandsWeek.landDay(player.getServer());
         if (s.duskDay == today) {

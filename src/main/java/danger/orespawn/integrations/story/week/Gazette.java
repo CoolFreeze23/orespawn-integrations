@@ -200,6 +200,13 @@ public final class Gazette {
         store.setDirty();
     }
 
+    /** Prints today's copy as the dawn would, without delivering it: the full paper, or the Newcomer's Edition. */
+    public static ItemStack printCopy(MinecraftServer server, boolean newcomer, long weekStart) {
+        long day = LandsWeek.landDay(server);
+        Edition edition = Edition.build(server, day, GazetteStore.get(server));
+        return newcomer ? edition.newcomer(day, weekStart) : edition.full();
+    }
+
     static void deliver(MinecraftServer server, UUID player, ItemStack copy, GazetteStore store) {
         Delivery where = null;
         if (refurbished != null) {
