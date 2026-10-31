@@ -149,8 +149,11 @@ public final class FirstHourTests {
         ServerLevel level = helper.getLevel();
         List<BlockPos> homes = FallSafety.homes(level, abs.getX(), abs.getZ(), 100);
         helper.assertTrue(homes.contains(abs), "the placed chest is found in one pass");
-        helper.assertTrue(!FallSafety.farFromHomes(abs.offset(40, 0, 0), homes), "40 blocks off is too close");
-        helper.assertTrue(FallSafety.farFromHomes(abs.offset(70, 0, 0), homes), "70 blocks off is wild");
+        // The distances are measured from this test's own chest: the scan also finds neighbouring tests' beds and
+        // chests, which move as tests are added.
+        List<BlockPos> own = List.of(abs);
+        helper.assertTrue(!FallSafety.farFromHomes(abs.offset(40, 0, 0), own), "40 blocks off is too close");
+        helper.assertTrue(FallSafety.farFromHomes(abs.offset(70, 0, 0), own), "70 blocks off is wild");
         helper.succeed();
     }
 
