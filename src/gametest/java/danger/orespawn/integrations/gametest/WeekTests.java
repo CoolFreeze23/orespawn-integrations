@@ -1,6 +1,8 @@
 package danger.orespawn.integrations.gametest;
 
 import danger.orespawn.integrations.config.IntegrationsConfig;
+import danger.orespawn.integrations.story.firsthour.FirstHourData;
+import danger.orespawn.integrations.story.firsthour.TicketState;
 import danger.orespawn.integrations.story.week.Almanac;
 import danger.orespawn.integrations.story.week.AlmanacRules;
 import danger.orespawn.integrations.story.week.Gazette;
@@ -112,6 +114,12 @@ public final class WeekTests {
     public static void duskLineOncePerDusk(GameTestHelper helper) {
         ServerPlayer player = MockPlayers.inLevel(helper);
         MinecraftServer server = helper.getLevel().getServer();
+        // The join just handed this new player's ticket, and the world's clock keeps quiet for 30 s after a handover:
+        // the dusk comes to a player who has been online past that.
+        TicketState t = FirstHourData.ticket(player);
+        t.onlineTicks = t.lastHandover + WeekRules.HANDOVER_SLIDE;
+        player.setData(FirstHourData.FIRST_HOUR.get(), t);
+        helper.assertTrue(LandsWeek.clearOfHandover(player), "clear of the join's handover");
         Almanac.fireBeats(player);
         WeekState s = WeekData.of(player);
         int today = (int) LandsWeek.landDay(server);
