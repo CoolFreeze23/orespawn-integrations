@@ -260,5 +260,20 @@
   "advancements.orespawn_integrations.livro.r18.title": "Por que o Mestre dá as coisas?",
   "advancements.orespawn_integrations.livro.r18.description": "Cada presente é um reembolso do que o Rei levou.",
   "advancements.orespawn_integrations.livro.r11.title": "Por que os Anjos jogam a gente de um mundo pro outro?",
-  "advancements.orespawn_integrations.livro.r11.description": "Eles guardam o Relógio Real quebrado e chutam onde cada coisa mora."
+  "advancements.orespawn_integrations.livro.r11.description": "Eles guardam o Relógio Real quebrado e chutam onde cada coisa mora.",
+  "orespawn_integrations.mapinguari.sunday": "Domingo. A mata descansa.",
+  "orespawn_integrations.mapinguari.grace": "A mata perdoa Filhote. Domingo que vem, ela cobra.",
+  "orespawn_integrations.mapinguari.toll": "Deixou a carne pro Mapinguari? Ele comeu, arrotou e voltou pro mato.",
+  "orespawn_integrations.mapinguari.toll_kin": "Família paga meia. Uma carne e ele vai embora.",
+  "orespawn_integrations.mapinguari.cousin": "o primo friorento",
+  "orespawn_integrations.mapinguari.jade.bicho": "Bicho da Terra. No domingo, não.",
+  "orespawn_integrations.mapinguari.jade.predator": "Domingo. Esse aí pode caçar: é da Terra.",
+  "orespawn_integrations.mapinguari.jade.bred": "Criado em casa. Roça e cozinha não é caça.",
+  "orespawn_integrations.mapinguari.jade.kin": "O Mapinguari. Dono do Domingo. Cê sabe como é.",
+  "orespawn_integrations.mapinguari.jade.other": "O Mapinguari. Dono do Domingo. Lento, fedido. Respeita.",
+  "advancements.orespawn_integrations.lands_week.dente_de_domingo.title": "O Dente de Domingo",
+  "advancements.orespawn_integrations.lands_week.dente_de_domingo.description": "Passe três domingos sem caçar e ache a presa do Mapinguari do lado da cama.",
+  "orespawn_integrations.cobra_coral.sunday_warning": "Uma cobra-coral cruzou seu caminho. É domingo. Vai caçar de novo? Deixa três carnes pro dono.",
+  "advancements.orespawn_integrations.lands_week.nao_encosta.title": "Não Encosta",
+  "advancements.orespawn_integrations.lands_week.nao_encosta.description": "Coral verdadeira ou falsa: não encosta e pronto."
 }

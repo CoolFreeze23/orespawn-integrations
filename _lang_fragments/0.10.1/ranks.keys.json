@@ -260,5 +260,20 @@
   "advancements.orespawn_integrations.livro.r18.title": "system-advancement-tree | ADV | tab 2, R18 (the Mestre's first gift)",
   "advancements.orespawn_integrations.livro.r18.description": "system-advancement-tree | ADV | tab 2, R18",
   "advancements.orespawn_integrations.livro.r11.title": "system-advancement-tree | ADV | tab 2, R11 (the Mestre's Time Lord line)",
-  "advancements.orespawn_integrations.livro.r11.description": "system-advancement-tree | ADV | tab 2, R11"
+  "advancements.orespawn_integrations.livro.r11.description": "system-advancement-tree | ADV | tab 2, R11",
+  "orespawn_integrations.mapinguari.sunday": "npc-mapinguari | ACTIONBAR | Sunday's dawn",
+  "orespawn_integrations.mapinguari.grace": "npc-mapinguari | ACTIONBAR | Hatchling grace at a third Sunday kill",
+  "orespawn_integrations.mapinguari.toll": "npc-mapinguari | CHAT | the toll paid",
+  "orespawn_integrations.mapinguari.toll_kin": "npc-mapinguari | CHAT | the kin's toll (Mapinguari origin)",
+  "orespawn_integrations.mapinguari.cousin": "npc-mapinguari | CHAT | the Mapinguary's nickname (Jade, causos)",
+  "orespawn_integrations.mapinguari.jade.bicho": "npc-mapinguari | CHAT | Jade over a Bicho da Terra",
+  "orespawn_integrations.mapinguari.jade.predator": "npc-mapinguari | CHAT | Jade over a Land predator, Sunday",
+  "orespawn_integrations.mapinguari.jade.bred": "npc-mapinguari | CHAT | Jade over a bred animal",
+  "orespawn_integrations.mapinguari.jade.kin": "npc-mapinguari | CHAT | Jade over him, to a Brazil-group player",
+  "orespawn_integrations.mapinguari.jade.other": "npc-mapinguari | CHAT | Jade over him, anyone else",
+  "advancements.orespawn_integrations.lands_week.dente_de_domingo.title": "npc-mapinguari | ADV | tab 3, the shed fang",
+  "advancements.orespawn_integrations.lands_week.dente_de_domingo.description": "npc-mapinguari | ADV | tab 3, the shed fang",
+  "orespawn_integrations.cobra_coral.sunday_warning": "npc-cobra-coral | ACTIONBAR | the Sunday warning at a second kill",
+  "advancements.orespawn_integrations.lands_week.nao_encosta.title": "npc-cobra-coral | ADV | tab 3, Hands Off",
+  "advancements.orespawn_integrations.lands_week.nao_encosta.description": "npc-cobra-coral | ADV | tab 3, Hands Off"
 }

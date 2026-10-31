@@ -300,4 +300,66 @@ public final class RanksTests {
         helper.assertTrue(done(ana, "orespawn_integrations:livro/r18"), "R18 at the first gift");
         helper.succeed();
     }
+
+    // --- npc-mapinguari ---
+
+    /** A rank-0 player's third Sunday kill plays the grace line and calls no Mapinguari; the second warned. */
+    @GameTest(template = "empty8")
+    public static void hatchlingGrace(GameTestHelper helper) {
+        ServerPlayer ana = fresh(helper);
+        FirstHourUtil.setScore(ana, CourtRanks.COURT, 0);
+        ana.setData(danger.orespawn.integrations.story.land.MapinguariSunday.STATE.get(), new int[]{-1, 0, 0, -1, 0});
+        for (int i = 0; i < 3; i++) {
+            danger.orespawn.integrations.story.land.MapinguariSunday.count(ana);
+        }
+        int[] s = ana.getData(danger.orespawn.integrations.story.land.MapinguariSunday.STATE.get());
+        helper.assertTrue(s[1] == 3, "three kills counted");
+        helper.assertTrue((s[4] & 2) != 0, "the warning came at the second");
+        helper.assertTrue((s[4] & 1) == 0, "no Mapinguari waits for dusk");
+        helper.succeed();
+    }
+
+    /** A Squire past the first 3 game days: the third kill queues one Mapinguari for dusk. */
+    @GameTest(template = "empty8")
+    public static void thirdKillQueuesTheGiant(GameTestHelper helper) {
+        ServerPlayer ana = fresh(helper);
+        FirstHourUtil.setScore(ana, CourtRanks.COURT, 1);
+        ana.getStats().setValue(ana, net.minecraft.stats.Stats.CUSTOM.get(net.minecraft.stats.Stats.PLAY_TIME), 200000);
+        ana.setData(danger.orespawn.integrations.story.land.MapinguariSunday.STATE.get(), new int[]{-1, 0, 0, -1, 0});
+        for (int i = 0; i < 3; i++) {
+            danger.orespawn.integrations.story.land.MapinguariSunday.count(ana);
+        }
+        helper.assertTrue((ana.getData(danger.orespawn.integrations.story.land.MapinguariSunday.STATE.get())[4] & 1) != 0,
+                "the giant waits for dusk");
+        helper.succeed();
+    }
+
+    /** Three clean Sundays give the fang and The Sunday Fang; a Sunday with a kill resets the streak. */
+    @GameTest(template = "empty8")
+    public static void threeCleanSundays(GameTestHelper helper) {
+        ServerPlayer ana = fresh(helper);
+        ana.setData(danger.orespawn.integrations.story.land.MapinguariSunday.STATE.get(), new int[]{13, 1, 2, 6, 0});
+        danger.orespawn.integrations.story.land.MapinguariSunday.settle(ana, 13);
+        helper.assertTrue(ana.getData(danger.orespawn.integrations.story.land.MapinguariSunday.STATE.get())[2] == 0,
+                "a Sunday with a kill resets the streak");
+        ana.setData(danger.orespawn.integrations.story.land.MapinguariSunday.STATE.get(), new int[]{-1, 0, 0, -1, 0});
+        for (int sunday : new int[]{6, 13, 20}) {
+            danger.orespawn.integrations.story.land.MapinguariSunday.settle(ana, sunday);
+        }
+        if (FirstHourUtil.item("brazil_legends:mapinguari_fang") != null) {
+            helper.assertTrue(done(ana, "orespawn_integrations:lands_week/dente_de_domingo"), "The Sunday Fang");
+        }
+        helper.succeed();
+    }
+
+    /** The yard: a kill within 64 blocks of the killer's respawn point is home, never hunting. */
+    @GameTest(template = "empty8")
+    public static void yardKillsAreHome(GameTestHelper helper) {
+        ServerPlayer ana = fresh(helper);
+        net.minecraft.core.BlockPos bed = ana.blockPosition();
+        ana.setRespawnPosition(ana.level().dimension(), bed, 0, true, false);
+        helper.assertTrue(danger.orespawn.integrations.story.land.MapinguariSunday.atHome(ana, bed.offset(30, 0, 30)), "the yard");
+        helper.assertFalse(danger.orespawn.integrations.story.land.MapinguariSunday.atHome(ana, bed.offset(80, 0, 0)), "the wild");
+        helper.succeed();
+    }
 }

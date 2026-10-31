@@ -260,5 +260,20 @@
   "advancements.orespawn_integrations.livro.r18.title": "Why does the Mestre give things away?",
   "advancements.orespawn_integrations.livro.r18.description": "Every gift is a refund of what the King took.",
   "advancements.orespawn_integrations.livro.r11.title": "Why do the Angels throw people across worlds?",
-  "advancements.orespawn_integrations.livro.r11.description": "They guard the broken Royal Clock and guess where things belong."
+  "advancements.orespawn_integrations.livro.r11.description": "They guard the broken Royal Clock and guess where things belong.",
+  "orespawn_integrations.mapinguari.sunday": "Sunday. The forest rests.",
+  "orespawn_integrations.mapinguari.grace": "The forest forgives a Hatchling. Next Sunday, it collects.",
+  "orespawn_integrations.mapinguari.toll": "Left the meat for the Mapinguari? He ate, burped and went back to the woods.",
+  "orespawn_integrations.mapinguari.toll_kin": "Family pays half. One meat and he's gone.",
+  "orespawn_integrations.mapinguari.cousin": "the cousin who feels the cold",
+  "orespawn_integrations.mapinguari.jade.bicho": "The Land's animal. Not on Sunday.",
+  "orespawn_integrations.mapinguari.jade.predator": "Sunday. The lion may. He's the Land's.",
+  "orespawn_integrations.mapinguari.jade.bred": "Home-raised. Sunday doesn't count.",
+  "orespawn_integrations.mapinguari.jade.kin": "The Mapinguari. Keeper of Sunday. You know the rules.",
+  "orespawn_integrations.mapinguari.jade.other": "The Mapinguari. Keeper of Sunday. Slow, smelly. Respect him.",
+  "advancements.orespawn_integrations.lands_week.dente_de_domingo.title": "The Sunday Fang",
+  "advancements.orespawn_integrations.lands_week.dente_de_domingo.description": "Go three Sundays without hunting and find the Mapinguari's fang by your bed.",
+  "orespawn_integrations.cobra_coral.sunday_warning": "A coral snake crossed your path. It's Sunday. Hunt again? Leave three meats for its owner.",
+  "advancements.orespawn_integrations.lands_week.nao_encosta.title": "Hands Off",
+  "advancements.orespawn_integrations.lands_week.nao_encosta.description": "True coral or false: don't touch it, and that's that."
 }

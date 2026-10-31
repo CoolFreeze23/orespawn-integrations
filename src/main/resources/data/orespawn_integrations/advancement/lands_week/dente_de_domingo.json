@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brazil_legends"
+    }
+  ],
+  "parent": "orespawn_integrations:week/root",
+  "display": {
+    "icon": {
+      "id": "brazil_legends:mapinguari_fang"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.lands_week.dente_de_domingo.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.lands_week.dente_de_domingo.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "granted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 25
+  }
+}
