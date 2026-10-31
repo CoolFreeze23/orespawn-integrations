@@ -86,5 +86,22 @@
   "orespawn_integrations.misfile.box.row.9": "Sunday: the Land gives back",
   "orespawn_integrations.misfile.box.row.10": "Everything in Its Place",
   "orespawn_integrations.misfile.box.alert": "ALERT: everything in its place. The Treasury asks the public to remain calm.",
-  "orespawn_integrations.misfile.box.van": "The Treasury's van came by."
+  "orespawn_integrations.misfile.box.van": "The Treasury's van came by.",
+  "event.orespawn_integrations.hoard_fall.warning": "Something gold is falling. It isn't a star. Stars don't whistle.",
+  "event.orespawn_integrations.hoard_fall.first_light": "Something gold fell while you slept. The smoke's still rising.",
+  "event.orespawn_integrations.hoard_fall.notice.name": "Notice of Loss",
+  "event.orespawn_integrations.hoard_fall.notice.1": "ROYAL TREASURY OF UTOPIA. Notice of loss, copy 94.",
+  "event.orespawn_integrations.hoard_fall.notice.2": "The vault cracked the night of the Spill and its contents have been falling ever since.",
+  "event.orespawn_integrations.hoard_fall.notice.3": "To whoever finds this: the items belong to the Crown, and the Crown is asleep,",
+  "event.orespawn_integrations.hoard_fall.notice.4": "so finders keepers until further notice.",
+  "event.orespawn_integrations.hoard_fall.notice.5": "The crack has not closed. More is coming. Please do not complain to the sky.",
+  "event.orespawn_integrations.hoard_fall.notice.6": "Treasury (closed for repairs).",
+  "event.orespawn_integrations.hoard_fall.second_hand": "Second-hand. It fell before.",
+  "event.orespawn_integrations.hoard_fall.headline": "Gold fell %s of %s last night. Finders keepers until further notice.",
+  "event.orespawn_integrations.hoard_fall.quarter.north": "north",
+  "event.orespawn_integrations.hoard_fall.quarter.south": "south",
+  "event.orespawn_integrations.hoard_fall.quarter.east": "east",
+  "event.orespawn_integrations.hoard_fall.quarter.west": "west",
+  "advancements.orespawn_integrations.wonder.8.title": "The Hoard Fall",
+  "advancements.orespawn_integrations.wonder.8.description": "Open what the gold star cracked open when it whistled down: junk from ninety-four worlds."
 }

@@ -86,5 +86,22 @@
   "orespawn_integrations.misfile.box.row.9": "system-extravio | CHAT | the Gazette box, row 9 (line 17)",
   "orespawn_integrations.misfile.box.row.10": "system-extravio | CHAT | the Gazette box, row 10 (line 17)",
   "orespawn_integrations.misfile.box.alert": "system-extravio | CHAT | the Gazette box, row 10's line (line 18)",
-  "orespawn_integrations.misfile.box.van": "system-extravio | CHAT | the Gazette box, the dawn release took canopy creatures (line 16)"
+  "orespawn_integrations.misfile.box.van": "system-extravio | CHAT | the Gazette box, the dawn release took canopy creatures (line 16)",
+  "event.orespawn_integrations.hoard_fall.warning": "event-hoard-fall | ACTIONBAR | the warning, 30 s ahead, to every player within 512 blocks (line 1)",
+  "event.orespawn_integrations.hoard_fall.first_light": "event-hoard-fall | ACTIONBAR | a Fall slept through lands at first light (line 4)",
+  "event.orespawn_integrations.hoard_fall.notice.name": "event-hoard-fall | ITEM | the vault note's item name (line 5)",
+  "event.orespawn_integrations.hoard_fall.notice.1": "event-hoard-fall | ITEM | the Notice of Loss, lore line 1 (line 6)",
+  "event.orespawn_integrations.hoard_fall.notice.2": "event-hoard-fall | ITEM | the Notice of Loss, lore line 2 (line 6)",
+  "event.orespawn_integrations.hoard_fall.notice.3": "event-hoard-fall | ITEM | the Notice of Loss, lore line 3 (line 6)",
+  "event.orespawn_integrations.hoard_fall.notice.4": "event-hoard-fall | ITEM | the Notice of Loss, lore line 4 (line 6)",
+  "event.orespawn_integrations.hoard_fall.notice.5": "event-hoard-fall | ITEM | the Notice of Loss, lore line 5 (line 6)",
+  "event.orespawn_integrations.hoard_fall.notice.6": "event-hoard-fall | ITEM | the Notice of Loss, lore line 6 (line 6)",
+  "event.orespawn_integrations.hoard_fall.second_hand": "event-hoard-fall | ITEM | tooltip on the vault's stash item (line 7)",
+  "event.orespawn_integrations.hoard_fall.headline": "event-hoard-fall | CHAT | the Gazette's headline after a Fall; %s the quarter, %s the centre's name (line 16)",
+  "event.orespawn_integrations.hoard_fall.quarter.north": "event-hoard-fall | CHAT | the compass quarter in the headline (line 16)",
+  "event.orespawn_integrations.hoard_fall.quarter.south": "event-hoard-fall | CHAT | the compass quarter in the headline (line 16)",
+  "event.orespawn_integrations.hoard_fall.quarter.east": "event-hoard-fall | CHAT | the compass quarter in the headline (line 16)",
+  "event.orespawn_integrations.hoard_fall.quarter.west": "event-hoard-fall | CHAT | the compass quarter in the headline (line 16)",
+  "advancements.orespawn_integrations.wonder.8.title": "wonder-hoard-fall | ADV | advancement title (line 1)",
+  "advancements.orespawn_integrations.wonder.8.description": "wonder-hoard-fall | ADV | advancement description (line 2)"
 }

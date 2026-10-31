@@ -62,4 +62,23 @@ public final class Freguesias {
     public static boolean sneakUse(ServerLevel level, FreguesiaData.Stone stone, ServerPlayer player) {
         return StoneSigning.use(level, FreguesiaData.get(level.getServer()), stone, player, player.getMainHandItem());
     }
+
+    /** A signer's stake at {@code pos}, as the stake's placement does; true when it closed a plot. */
+    public static boolean stake(ServerLevel level, BlockPos pos, ServerPlayer player) {
+        FreguesiaData.Stone before = null;
+        int plots = 0;
+        for (FreguesiaData.Stone s : FreguesiaData.get(level.getServer()).near(StoneRecords.dim(level), pos.getX(),
+                pos.getZ(), StandingRules.RADIUS)) {
+            before = s;
+            plots = s.plots.size();
+            break;
+        }
+        Plots.onStakePlaced(level, pos, player);
+        return before != null && before.plots.size() > plots;
+    }
+
+    /** Sends Wednesday's peddler and his llamas to {@code pos} now; false when no loaded spot was found. */
+    public static boolean peddler(ServerLevel level, BlockPos pos) {
+        return WednesdayMarket.arrive(level, pos);
+    }
 }

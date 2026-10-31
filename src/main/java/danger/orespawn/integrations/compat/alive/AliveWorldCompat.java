@@ -44,7 +44,7 @@ public final class AliveWorldCompat {
         NeoForge.EVENT_BUS.addListener(CelebrationHandler::onBossDeath);
         NeoForge.EVENT_BUS.addListener(CelebrationHandler::onLivingChangeTarget);
         NeoForge.EVENT_BUS.addListener(CelebrationHandler::onNewYearTick);
-        NeoForge.EVENT_BUS.addListener(MeteorEvent::onLevelTick);
+        // The Hoard Fall rides the shared clock from 0.10.1 (HoardFall, registered with the parish systems).
         NeoForge.EVENT_BUS.addListener(PrinceFlyover::onLevelTick);
         NeoForge.EVENT_BUS.addListener(PrinceFlyover::onServerStopping);
         NeoForge.EVENT_BUS.addListener(PrinceFlyover::onEntityJoin);

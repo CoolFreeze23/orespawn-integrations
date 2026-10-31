@@ -86,5 +86,22 @@
   "orespawn_integrations.misfile.box.row.9": "Domingo: a Terra devolve",
   "orespawn_integrations.misfile.box.row.10": "Tudo no lugar",
   "orespawn_integrations.misfile.box.alert": "ALERTA: tudo no lugar. A Tesouraria pede calma à população.",
-  "orespawn_integrations.misfile.box.van": "O furgão da Tesouraria passou."
+  "orespawn_integrations.misfile.box.van": "O furgão da Tesouraria passou.",
+  "event.orespawn_integrations.hoard_fall.warning": "Tem um troço dourado caindo do céu. Não é estrela. Estrela não assobia.",
+  "event.orespawn_integrations.hoard_fall.first_light": "Caiu um troço dourado enquanto você dormia. A fumaça ainda sobe.",
+  "event.orespawn_integrations.hoard_fall.notice.name": "Aviso de Extravio",
+  "event.orespawn_integrations.hoard_fall.notice.1": "TESOURARIA REAL DE UTOPIA. Aviso de Extravio, via 94.",
+  "event.orespawn_integrations.hoard_fall.notice.2": "O Cofre rachou na noite do Derramamento, e o conteúdo encontra-se em queda desde então.",
+  "event.orespawn_integrations.hoard_fall.notice.3": "A quem o achar: os itens pertencem à Coroa, e a Coroa encontra-se adormecida;",
+  "event.orespawn_integrations.hoard_fall.notice.4": "por conseguinte, achado não é roubado até ulterior deliberação.",
+  "event.orespawn_integrations.hoard_fall.notice.5": "A rachadura não se fechou. Virão outros. Roga-se não reclamar ao céu.",
+  "event.orespawn_integrations.hoard_fall.notice.6": "Tesouraria (fechada para reforma).",
+  "event.orespawn_integrations.hoard_fall.second_hand": "Usado, mas funciona. Já caiu antes.",
+  "event.orespawn_integrations.hoard_fall.headline": "Caiu ouro pro %s de %s ontem à noite. Achado não é roubado até ulterior deliberação.",
+  "event.orespawn_integrations.hoard_fall.quarter.north": "norte",
+  "event.orespawn_integrations.hoard_fall.quarter.south": "sul",
+  "event.orespawn_integrations.hoard_fall.quarter.east": "leste",
+  "event.orespawn_integrations.hoard_fall.quarter.west": "oeste",
+  "advancements.orespawn_integrations.wonder.8.title": "A Queda do Tesouro",
+  "advancements.orespawn_integrations.wonder.8.description": "Abre o troço dourado que caiu assobiando do céu: tralha de noventa e quatro mundos."
 }

@@ -1,0 +1,26 @@
+{
+  "parent": "orespawn_integrations:wonder/1",
+  "display": {
+    "icon": {
+      "id": "minecraft:chest"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.wonder.8.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.wonder.8.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "opened": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}
