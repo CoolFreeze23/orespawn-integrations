@@ -3,9 +3,11 @@ package danger.orespawn.integrations.compat.alive;
 import danger.orespawn.integrations.story.firsthour.FallRecord;
 import danger.orespawn.integrations.story.firsthour.FirstHourUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
@@ -13,6 +15,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
+import net.minecraft.world.RandomizableContainer;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -34,6 +37,12 @@ import java.util.List;
  * by one pass over the block entities already loaded in range, at landing only. An opened First Fall crate that is
  * empty is skipped; with anything stored in it, it counts like any chest. Nothing here loads or generates a chunk.
  *
+ * <p>Only what someone could live by counts (BOSS ruling, 2026-10-31): a Lootr container, or any container still holding
+ * its unrolled loot table, is a structure's and never a home; and a homely block entity counts only from
+ * {@link #BELOW_SURFACE} blocks under to {@link #ABOVE_SURFACE} over its column's surface, so a buried dungeon or a sky
+ * ship never keeps a Fall away (the surface is the column's natural ground, as the generator makes it). A looted container, or one a player placed, counts like any other inside that window.
+ * Respawn points and signed Parish Stones count at any height.</p>
+ *
  * <p>A newcomer near spawn (event-first-fall): for a new player's own First Fall only, world spawn, their own respawn
  * point and the homely blocks they placed in the last game day need {@link #NEWCOMER_RADIUS} blocks instead of 64;
  * everyone else's keep the full 64. Its second try looks 24-48 blocks around the player, on open ground they can see.</p>
@@ -42,6 +51,8 @@ public final class FallSafety {
 
     public static final int HOME_RADIUS = 64;
     public static final int NEWCOMER_RADIUS = 24;
+    public static final int BELOW_SURFACE = 16;
+    public static final int ABOVE_SURFACE = 32;
     static final int RING_MIN = 24;
     static final int RING_MAX = 48;
 
@@ -101,7 +112,8 @@ public final class FallSafety {
                 }
                 for (BlockEntity be : chunk.getBlockEntities().values()) {
                     BlockPos pos = be.getBlockPos();
-                    if (!near(pos, x, z, reachSq) || !be.getBlockState().is(HOMELY)) {
+                    if (!near(pos, x, z, reachSq) || !be.getBlockState().is(HOMELY) || natural(be)
+                            || !inSurfaceWindow(pos.getY(), naturalSurface(level, pos.getX(), pos.getZ()))) {
                         continue;
                     }
                     if (record.isOpenedCrate(pos) && be instanceof Container c && c.isEmpty()) {
@@ -112,6 +124,33 @@ public final class FallSafety {
             }
         }
         return homes;
+    }
+
+    /** A structure's container nobody lives by: Lootr's, or one whose loot table has not been rolled yet. */
+    static boolean natural(BlockEntity be) {
+        ResourceLocation id = BuiltInRegistries.BLOCK.getKey(be.getBlockState().getBlock());
+        if ("lootr".equals(id.getNamespace())) {
+            return true;
+        }
+        return be instanceof RandomizableContainer loot && loot.getLootTable() != null;
+    }
+
+    /**
+     * Whether a block entity at {@code y} sits where a surface crater could matter: from {@link #BELOW_SURFACE} under
+     * to {@link #ABOVE_SURFACE} over the column's natural surface (see {@link #naturalSurface}).
+     */
+    public static boolean inSurfaceWindow(int y, int surface) {
+        return y >= surface - BELOW_SURFACE && y <= surface + ABOVE_SURFACE;
+    }
+
+    /**
+     * The first free block over the column's natural ground, as the generator makes it, without structures or builds.
+     * The live heightmap would not do: over a sky ship's furnace it reads the ship's own roof, so the furnace would sit
+     * "at the surface". One noise column per homely block entity, read only on a landing try.
+     */
+    static int naturalSurface(ServerLevel level, int x, int z) {
+        return level.getChunkSource().getGenerator().getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, level,
+                level.getChunkSource().randomState());
     }
 
     /**

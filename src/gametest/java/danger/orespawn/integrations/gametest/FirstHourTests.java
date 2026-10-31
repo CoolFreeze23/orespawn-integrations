@@ -317,6 +317,44 @@ public final class FirstHourTests {
         }
     }
 
+    /**
+     * Only what someone could live by keeps a Fall away (BOSS ruling, 2026-10-31): a chest still holding its loot
+     * table does not, the same chest once looted does; a furnace high over the surface does not, one on the surface
+     * does; a chest a player placed a few blocks underground does.
+     */
+    @GameTest(template = "empty8")
+    public static void onlyLivedInBlocksAreHomes(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        BlockPos lootRel = new BlockPos(1, 0, 1);
+        helper.setBlock(lootRel, Blocks.CHEST);
+        BlockPos loot = helper.absolutePos(lootRel);
+        ((net.minecraft.world.RandomizableContainer) level.getBlockEntity(loot)).setLootTable(
+                net.minecraft.world.level.storage.loot.BuiltInLootTables.SIMPLE_DUNGEON, 1L);
+        BlockPos surfaceRel = new BlockPos(3, 0, 3);
+        helper.setBlock(surfaceRel, Blocks.FURNACE);
+        BlockPos onSurface = helper.absolutePos(surfaceRel);
+        BlockPos highRel = new BlockPos(5, 40, 5);
+        helper.setBlock(highRel, Blocks.FURNACE);
+        BlockPos high = helper.absolutePos(highRel);
+        BlockPos buriedRel = new BlockPos(6, -3, 1);
+        helper.setBlock(buriedRel, Blocks.CHEST);
+        BlockPos buried = helper.absolutePos(buriedRel);
+        try {
+            List<BlockPos> homes = FallSafety.homes(level, loot.getX(), loot.getZ(), 16);
+            helper.assertTrue(!homes.contains(loot), "an unlooted loot chest is a structure's, not a home");
+            helper.assertTrue(homes.contains(onSurface), "a furnace on the surface is a home");
+            helper.assertTrue(!homes.contains(high), "a furnace 40 over the surface is not");
+            helper.assertTrue(homes.contains(buried), "a chest a player placed 3 blocks under the surface is");
+            ((net.minecraft.world.RandomizableContainer) level.getBlockEntity(loot)).setLootTable(null);
+            helper.assertTrue(FallSafety.homes(level, loot.getX(), loot.getZ(), 16).contains(loot),
+                    "the same chest, looted, is a home");
+        } finally {
+            helper.setBlock(highRel, Blocks.AIR);
+            helper.setBlock(buriedRel, Blocks.DIRT);
+        }
+        helper.succeed();
+    }
+
     /** An opened, emptied First Fall crate keeps no Fall away; the same crate with one item in it does. */
     @GameTest(template = "empty8")
     public static void emptiedCrateIsNotAHome(GameTestHelper helper) {
