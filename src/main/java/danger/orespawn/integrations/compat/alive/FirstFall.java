@@ -1,28 +1,28 @@
 package danger.orespawn.integrations.compat.alive;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
+import danger.orespawn.integrations.OreSpawnIntegrations;
 import danger.orespawn.integrations.config.IntegrationsConfig;
 import danger.orespawn.integrations.story.firsthour.FallRecord;
+import danger.orespawn.integrations.story.firsthour.FirstHourData;
 import danger.orespawn.integrations.story.firsthour.FirstHourScenes;
 import danger.orespawn.integrations.story.firsthour.FirstHourUtil;
 import danger.orespawn.integrations.story.firsthour.PriorityTicket;
+import danger.orespawn.integrations.story.firsthour.TicketRules;
+import danger.orespawn.integrations.story.firsthour.TicketState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -39,13 +39,17 @@ import net.minecraft.world.level.block.entity.SignText;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.RotationSegment;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
-import net.minecraft.world.InteractionResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,7 +71,7 @@ import java.util.UUID;
  * Eggshell and ITEM 6 in the crate and the late-delivery label. Coins are never saved: refused when loaded from disk,
  * discarded at their finder's logout and 20 minutes after landing. A first-hour scene, through the scene cap.</p>
  */
-final class FirstFall {
+public final class FirstFall {
 
     static final String COIN_TAG = "orespawn_integrations.fall_coin";
     private static final String K = "orespawn_integrations.first_fall.";
@@ -89,6 +93,7 @@ final class FirstFall {
         NeoForge.EVENT_BUS.addListener(FirstFall::onEntityJoin);
         NeoForge.EVENT_BUS.addListener(FirstFall::onLogout);
         NeoForge.EVENT_BUS.addListener(FirstFall::onAttack);
+        NeoForge.EVENT_BUS.addListener(FirstFall::onPlace);
     }
 
     static void reset() {
@@ -119,16 +124,36 @@ final class FirstFall {
         RandomSource random = level.random;
         boolean crater = entry.tries < MAX_TRIES;
         BlockPos spot;
+        FallSafety.Tally tally = new FallSafety.Tally();
         if (crater) {
             boolean night = level.isNight();
-            spot = FallSafety.findSpot(level, player, night ? 50 : 60, night ? 70 : 100,
-                    entry.tries == 0 ? 120 : 360, random);
+            int min = night ? 50 : 60;
+            int max = night ? 70 : 100;
+            if (backDated) {
+                spot = FallSafety.findSpot(level, player, min, max, entry.tries == 0 ? 120 : 360, random);
+            } else {
+                // A newcomer near spawn: their own spawn, respawn point and fresh homely blocks need only 24 blocks;
+                // the first try keeps the cone, the second and later ones look 24-48 blocks round, in view.
+                List<FallSafety.Home> homes = FallSafety.homesFor(level, player, player.getX(), player.getZ(),
+                        max + FallSafety.HOME_RADIUS);
+                if (underAttack(player)) {
+                    // A newcomer under attack: the hold let the Fall through after a minute; it lands in the ring,
+                    // on the side away from the nearest hostile and clear of every one.
+                    spot = FallSafety.ringAwayFrom(level, player, homes, random, tally);
+                } else {
+                    spot = entry.tries == 0
+                            ? FallSafety.findSpot(level, player, min, max, 120, random, homes, tally)
+                            : FallSafety.ringInView(level, player, homes, random, tally);
+                }
+            }
         } else {
             spot = player.onGround() && !player.isInWater() ? dryBlockNear(level, player, random) : null;
         }
         if (spot == null) {
             entry.tries++;
             record.setDirty();
+            OreSpawnIntegrations.LOGGER.info("First Fall for {}: no spot on try {} ({})",
+                    player.getGameProfile().getName(), entry.tries, tally);
             return FirstHourScenes.Result.BUSY; // held: P05 waits, and nothing later is issued
         }
         long scene = FirstHourScenes.CAP.start(now);
@@ -141,6 +166,36 @@ final class FirstFall {
         AliveScheduler.schedule(level.getServer(), STREAK_TICKS,
                 () -> land(level, player.getUUID(), at, crater, backDated, yaw));
         return FirstHourScenes.Result.STARTED;
+    }
+
+    /**
+     * A homely block placed by a player whose First Fall has not landed yet: kept for a game day, so their own Fall
+     * may land 24 blocks from it instead of 64 (a newcomer near spawn).
+     */
+    private static void onPlace(BlockEvent.EntityPlaceEvent event) {
+        try {
+            if (!(event.getEntity() instanceof ServerPlayer player) || !(event.getLevel() instanceof ServerLevel level)
+                    || !event.getPlacedBlock().is(FallSafety.HOMELY) || !FirstHourData.hasTicket(player)) {
+                return;
+            }
+            FallRecord record = FallRecord.get(level.getServer());
+            FallRecord.Entry entry = record.entry(player.getUUID());
+            if (!entry.landed) {
+                entry.placed(event.getPos(), level.getGameTime());
+                record.setDirty();
+            }
+        } catch (Throwable t) {
+            AliveWorldCompat.logOnce("first_fall_place", t);
+        }
+    }
+
+    /** Whether the player took damage in the ticket's last 10 s (the hold that a newcomer's Fall outlasts). */
+    private static boolean underAttack(ServerPlayer player) {
+        if (!FirstHourData.hasTicket(player)) {
+            return false;
+        }
+        TicketState s = FirstHourData.ticket(player);
+        return s.onlineTicks - s.lastDamage < TicketRules.DAMAGE_HOLD;
     }
 
     /** The shipped warning, a 6-second gold streak and the whistle. */
@@ -266,18 +321,21 @@ final class FirstFall {
      * ITEM 5's twin, from the twin's own crate table (gemeo/ovo_do_caixote): its lore and the batch key, so picking it
      * up counts as finding the twin and no log drops another. Without Brasil e Coisas the table is empty.
      */
-    private static List<ItemStack> crateTwin(ServerLevel level, BlockPos pos) {
+    private static List<ItemStack> crateTwin(ServerLevel level, BlockPos pos, ServerPlayer player) {
         LootTable table = level.getServer().reloadableRegistries().getLootTable(CRATE_TWIN);
+        // A chest's parameters (the crate's spot, its recipient when there is one): the gift set demands an entity,
+        // and a crate filled for nobody in particular has none, which threw and stopped the landing.
         return table.getRandomItems(new LootParams.Builder(level)
                 .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
-                .create(LootContextParamSets.GIFT));
+                .withOptionalParameter(LootContextParams.THIS_ENTITY, player)
+                .create(LootContextParamSets.CHEST));
     }
 
     private static final ResourceKey<LootTable> CRATE_TWIN = ResourceKey.create(Registries.LOOT_TABLE,
             ResourceLocation.fromNamespaceAndPath("orespawn_integrations", "gemeo/ovo_do_caixote"));
 
-    /** The crate's contents, exactly as the card lists them. */
-    private static void fill(ServerLevel level, BlockPos pos, ServerPlayer player, boolean backDated) {
+    /** The crate's contents, exactly as the card lists them. Public for the GameTests. */
+    public static void fill(ServerLevel level, BlockPos pos, ServerPlayer player, boolean backDated) {
         if (!(level.getBlockEntity(pos) instanceof Container box)) {
             return;
         }
@@ -291,7 +349,7 @@ final class FirstFall {
         items.add(withLore(new ItemStack(Items.GLOWSTONE, 4), "glowstone_lore"));
         // ITEM 5: a player with no twin yet (cc_gemeo still 0) finds one in the crate.
         if (player == null || FirstHourUtil.score(player, "cc_gemeo", 0) == 0) {
-            items.addAll(crateTwin(level, pos));
+            items.addAll(crateTwin(level, pos, player));
             items.add(withLore(new ItemStack(Items.PAPER), "item5_slip"));
         }
         if (backDated) {

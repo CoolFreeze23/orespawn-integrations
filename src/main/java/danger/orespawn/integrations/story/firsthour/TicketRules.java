@@ -31,6 +31,8 @@ public final class TicketRules {
 
     public static final int GAP = 90 * 20;
     public static final int DAMAGE_HOLD = 10 * 20;
+    /** A newcomer under attack: the damage hold keeps their own First Fall back for at most this long. */
+    public static final int ATTACK_HOLD_MAX = 60 * 20;
     public static final int FALLBACK = 180 * 20;
     public static final int LETTER_MIN = 120 * 20;
     public static final int LETTER_FORCE = 300 * 20;
@@ -52,6 +54,25 @@ public final class TicketRules {
         if (s.used(TicketState.P00) || s.veteranPending()) {
             s.onlineTicks += ticks;
         }
+    }
+
+    /**
+     * A newcomer under attack (event-first-fall): when damage alone holds a First Fall that is otherwise due, the hold
+     * lasts at most {@link #ATTACK_HOLD_MAX}; then P05 goes ahead, and the Fall lands in the ring away from the attacker.
+     */
+    static boolean fallUnderAttack(TicketState s, Conditions c) {
+        boolean damageOnly = s.onlineTicks - s.lastHandover >= GAP && !c.falling()
+                && s.onlineTicks - s.lastDamage < DAMAGE_HOLD;
+        // P03, the field Correction, may wait behind the Fall here, as it already does for a player with no scrap.
+        boolean fallDue = c.fallOn() && s.handed(2) && s.handed(4) && !s.handed(5)
+                && (s.used(s.step) || s.onlineTicks - s.lastHandover >= FALLBACK);
+        if (!damageOnly || !fallDue) {
+            return false;
+        }
+        if (s.attackHeldSince < 0) {
+            s.attackHeldSince = s.onlineTicks;
+        }
+        return s.onlineTicks - s.attackHeldSince >= ATTACK_HOLD_MAX;
     }
 
     /** True while a handover may not happen: inside the 90 s gap, 10 s after damage, or falling. */
@@ -79,8 +100,9 @@ public final class TicketRules {
             return decideOff(s, c);
         }
         if (blocked(s, c)) {
-            return NONE;
+            return fallUnderAttack(s, c) ? 5 : NONE;
         }
+        s.attackHeldSince = Integer.MIN_VALUE / 2;
         if (s.flag(TicketState.FLAG_REGISTRY_REACHED) && !s.handed(9)) {
             return 9;
         }

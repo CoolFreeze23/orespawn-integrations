@@ -3,9 +3,11 @@ package danger.orespawn.integrations.compat.alive;
 import danger.orespawn.integrations.story.firsthour.FallRecord;
 import danger.orespawn.integrations.story.firsthour.FirstHourUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
@@ -13,12 +15,18 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
+import net.minecraft.world.RandomizableContainer;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +38,44 @@ import java.util.List;
  * {@code #orespawn_integrations:homely}. Vanilla records no placer, so "someone lives here" is read from those blocks,
  * by one pass over the block entities already loaded in range, at landing only. An opened First Fall crate that is
  * empty is skipped; with anything stored in it, it counts like any chest. Nothing here loads or generates a chunk.
+ *
+ * <p>Only what someone could live by counts (BOSS ruling, 2026-10-31): a Lootr container, or any container still holding
+ * its unrolled loot table, is a structure's and never a home; and a homely block entity counts only from
+ * {@link #BELOW_SURFACE} blocks under to {@link #ABOVE_SURFACE} over its column's surface, so a buried dungeon or a sky
+ * ship never keeps a Fall away (the surface is the column's natural ground, as the generator makes it). A looted container, or one a player placed, counts like any other inside that window.
+ * Respawn points and signed Parish Stones count at any height.</p>
+ *
+ * <p>A newcomer near spawn (event-first-fall): for a new player's own First Fall only, world spawn, their own respawn
+ * point and the homely blocks they placed in the last game day need {@link #NEWCOMER_RADIUS} blocks instead of 64;
+ * everyone else's keep the full 64. Its second try looks 24-48 blocks around the player, on open ground they can see.</p>
  */
 public final class FallSafety {
 
     public static final int HOME_RADIUS = 64;
+    public static final int NEWCOMER_RADIUS = 24;
+    public static final int BELOW_SURFACE = 16;
+    public static final int ABOVE_SURFACE = 32;
+    static final int RING_MIN = 24;
+    static final int RING_MAX = 48;
+    /** A newcomer under attack: the nearest hostile this close sets the side the Fall lands away from. */
+    static final int ATTACKER_REACH = 16;
+    /** A newcomer under attack: no Fall lands this close to any hostile mob. */
+    static final int HOSTILE_CLEARANCE = 12;
+
+    /** A point someone lives at, and how far a Fall must keep from it. */
+    public record Home(BlockPos pos, int radius) {
+    }
+
+    /** Why the candidates of one try were turned down, for the log line of a try that found nothing. */
+    public static final class Tally {
+        int unloaded, canopy, wet, built, home, view, hostile;
+
+        @Override
+        public String toString() {
+            return "unloaded " + unloaded + ", canopy " + canopy + ", water " + wet + ", built " + built
+                    + ", near a home " + home + ", out of view " + view + ", near a hostile " + hostile;
+        }
+    }
     static final int MAX_TRIES = 24;
     public static final TagKey<Block> HOMELY = TagKey.create(Registries.BLOCK, FirstHourUtil.oi("homely"));
     /** Signed Parish Stones, once the Freguesia record exists (0.10.1+): list {@code stones} of {pos, dim}. */
@@ -76,7 +118,8 @@ public final class FallSafety {
                 }
                 for (BlockEntity be : chunk.getBlockEntities().values()) {
                     BlockPos pos = be.getBlockPos();
-                    if (!near(pos, x, z, reachSq) || !be.getBlockState().is(HOMELY)) {
+                    if (!near(pos, x, z, reachSq) || !be.getBlockState().is(HOMELY) || natural(be)
+                            || !inSurfaceWindow(pos.getY(), naturalSurface(level, pos.getX(), pos.getZ()))) {
                         continue;
                     }
                     if (record.isOpenedCrate(pos) && be instanceof Container c && c.isEmpty()) {
@@ -89,6 +132,61 @@ public final class FallSafety {
         return homes;
     }
 
+    /** A structure's container nobody lives by: Lootr's, or one whose loot table has not been rolled yet. */
+    static boolean natural(BlockEntity be) {
+        ResourceLocation id = BuiltInRegistries.BLOCK.getKey(be.getBlockState().getBlock());
+        if ("lootr".equals(id.getNamespace())) {
+            return true;
+        }
+        return be instanceof RandomizableContainer loot && loot.getLootTable() != null;
+    }
+
+    /**
+     * Whether a block entity at {@code y} sits where a surface crater could matter: from {@link #BELOW_SURFACE} under
+     * to {@link #ABOVE_SURFACE} over the column's natural surface (see {@link #naturalSurface}).
+     */
+    public static boolean inSurfaceWindow(int y, int surface) {
+        return y >= surface - BELOW_SURFACE && y <= surface + ABOVE_SURFACE;
+    }
+
+    /**
+     * The first free block over the column's natural ground, as the generator makes it, without structures or builds.
+     * The live heightmap would not do: over a sky ship's furnace it reads the ship's own roof, so the furnace would sit
+     * "at the surface". One noise column per homely block entity, read only on a landing try.
+     */
+    static int naturalSurface(ServerLevel level, int x, int z) {
+        return level.getChunkSource().getGenerator().getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, level,
+                level.getChunkSource().randomState());
+    }
+
+    /**
+     * The homes a new player's own First Fall keeps from: world spawn, their own respawn point and the homely blocks
+     * they placed in the last game day at {@link #NEWCOMER_RADIUS}; every other home at {@link #HOME_RADIUS}.
+     */
+    public static List<Home> homesFor(ServerLevel level, ServerPlayer newcomer, double x, double z, int reach) {
+        List<Home> out = new ArrayList<>();
+        BlockPos own = newcomer.getRespawnDimension() == level.dimension() ? newcomer.getRespawnPosition() : null;
+        FallRecord.Entry entry = FallRecord.get(level.getServer()).find(newcomer.getUUID());
+        long now = level.getGameTime();
+        for (BlockPos pos : homes(level, x, z, reach)) {
+            boolean mine = pos.equals(own) || (entry != null && entry.placedRecently(pos, now));
+            out.add(new Home(pos, mine ? NEWCOMER_RADIUS : HOME_RADIUS));
+        }
+        if (level.dimension() == Level.OVERWORLD) {
+            out.add(new Home(level.getSharedSpawnPos(), NEWCOMER_RADIUS));
+        }
+        return out;
+    }
+
+    /** {@code homes} at the full {@link #HOME_RADIUS}, for every Fall but a newcomer's own. */
+    static List<Home> atFullRadius(List<BlockPos> homes) {
+        List<Home> out = new ArrayList<>(homes.size());
+        for (BlockPos pos : homes) {
+            out.add(new Home(pos, HOME_RADIUS));
+        }
+        return out;
+    }
+
     /**
      * Up to {@link #MAX_TRIES} spots {@code minDist}-{@code maxDist} from the player, inside {@code coneDegrees}
      * around the look direction (360 for all around). Returns the surface position (the air above the ground) or
@@ -96,9 +194,14 @@ public final class FallSafety {
      */
     static BlockPos findSpot(ServerLevel level, ServerPlayer player, double minDist, double maxDist,
                              double coneDegrees, RandomSource random) {
+        return findSpot(level, player, minDist, maxDist, coneDegrees, random,
+                atFullRadius(homes(level, player.getX(), player.getZ(), (int) maxDist + HOME_RADIUS)), new Tally());
+    }
+
+    static BlockPos findSpot(ServerLevel level, ServerPlayer player, double minDist, double maxDist,
+                             double coneDegrees, RandomSource random, List<Home> homes, Tally tally) {
         double cx = player.getX();
         double cz = player.getZ();
-        List<BlockPos> homes = homes(level, cx, cz, (int) maxDist + HOME_RADIUS);
         double look = Math.toRadians(player.getYRot() + 90.0F); // Minecraft yaw 0 faces +z
         double half = Math.toRadians(coneDegrees) / 2.0;
         for (int i = 0; i < MAX_TRIES; i++) {
@@ -107,30 +210,130 @@ public final class FallSafety {
             double dist = minDist + random.nextDouble() * (maxDist - minDist);
             int x = Mth.floor(cx + Math.cos(angle) * dist);
             int z = Mth.floor(cz + Math.sin(angle) * dist);
-            BlockPos spot = surface(level, x, z);
-            if (spot != null && farFromHomes(spot, homes)) {
+            BlockPos spot = surface(level, x, z, tally);
+            if (spot != null && farFrom(spot, homes, tally)) {
                 return spot;
             }
         }
         return null;
     }
 
+    /**
+     * A newcomer's second try: up to {@link #MAX_TRIES} spots {@link #RING_MIN}-{@link #RING_MAX} blocks all around
+     * the player, on open ground they can see (one ray from their eyes per candidate that passes the rest).
+     */
+    public static BlockPos ringInView(ServerLevel level, ServerPlayer player, List<Home> homes, RandomSource random,
+                                      Tally tally) {
+        return ring(level, player, homes, random, tally, Double.NaN, List.of());
+    }
+
+    /**
+     * A newcomer under attack (event-first-fall): the same ring, but on the side away from the nearest hostile within
+     * {@link #ATTACKER_REACH} blocks (the half of the ring facing away from it), and never within
+     * {@link #HOSTILE_CLEARANCE} blocks of any hostile mob.
+     */
+    public static BlockPos ringAwayFrom(ServerLevel level, ServerPlayer player, List<Home> homes, RandomSource random,
+                                        Tally tally) {
+        List<Mob> hostiles = level.getEntitiesOfClass(Mob.class,
+                player.getBoundingBox().inflate(RING_MAX + HOSTILE_CLEARANCE, 24, RING_MAX + HOSTILE_CLEARANCE),
+                m -> m instanceof Enemy && m.isAlive());
+        Mob nearest = null;
+        for (Mob m : hostiles) {
+            if (m.distanceTo(player) <= ATTACKER_REACH && (nearest == null || m.distanceTo(player) < nearest.distanceTo(player))) {
+                nearest = m;
+            }
+        }
+        double away = nearest == null ? Double.NaN
+                : Math.atan2(player.getZ() - nearest.getZ(), player.getX() - nearest.getX());
+        return ring(level, player, homes, random, tally, away, hostiles);
+    }
+
+    private static BlockPos ring(ServerLevel level, ServerPlayer player, List<Home> homes, RandomSource random,
+                                 Tally tally, double away, List<Mob> hostiles) {
+        Vec3 eyes = player.getEyePosition();
+        for (int i = 0; i < MAX_TRIES; i++) {
+            double angle = Double.isNaN(away) ? random.nextDouble() * Math.PI * 2
+                    : away + (random.nextDouble() - 0.5) * Math.PI; // the half of the ring facing away
+            double dist = RING_MIN + random.nextDouble() * (RING_MAX - RING_MIN);
+            int x = Mth.floor(player.getX() + Math.cos(angle) * dist);
+            int z = Mth.floor(player.getZ() + Math.sin(angle) * dist);
+            BlockPos spot = surface(level, x, z, tally);
+            if (spot == null || !farFrom(spot, homes, tally)) {
+                continue;
+            }
+            if (nearAHostile(spot, hostiles)) {
+                tally.hostile++;
+                continue;
+            }
+            if (inView(level, eyes, spot)) {
+                return spot;
+            }
+            tally.view++;
+        }
+        return null;
+    }
+
+    /**
+     * Whether nothing opaque stands between the eyes and the spot: one walk along the ray through every block it
+     * crosses, stopped by the first block that occludes. See-through blocks (glass, leaves, barriers) do not hide it.
+     */
+    static boolean inView(ServerLevel level, Vec3 eyes, BlockPos spot) {
+        Vec3 target = Vec3.atCenterOf(spot);
+        Boolean seen = BlockGetter.traverseBlocks(eyes, target, level, (lvl, pos) -> {
+            if (pos.equals(spot)) {
+                return Boolean.TRUE;
+            }
+            return lvl.getBlockState(pos).canOcclude() ? Boolean.FALSE : null;
+        }, lvl -> Boolean.TRUE);
+        return seen == null || seen;
+    }
+
+    static boolean nearAHostile(BlockPos spot, List<Mob> hostiles) {
+        Vec3 at = Vec3.atCenterOf(spot);
+        for (Mob m : hostiles) {
+            if (m.position().distanceToSqr(at) < HOSTILE_CLEARANCE * HOSTILE_CLEARANCE) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /** The air block over natural, dry, open-sky ground at x, z in a loaded chunk, or null. */
     static BlockPos surface(ServerLevel level, int x, int z) {
+        return surface(level, x, z, new Tally());
+    }
+
+    static BlockPos surface(ServerLevel level, int x, int z, Tally tally) {
         if (!level.getChunkSource().hasChunk(x >> 4, z >> 4)) {
+            tally.unloaded++;
             return null;
         }
         int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z);
         if (y != level.getHeight(Heightmap.Types.MOTION_BLOCKING, x, z) || y <= level.getMinBuildHeight() + 2) {
+            tally.canopy++;
             return null; // under a canopy, or the void
         }
         BlockPos top = new BlockPos(x, y, z);
         BlockState ground = level.getBlockState(top.below());
-        if (!level.getFluidState(top).isEmpty() || !level.getFluidState(top.below()).isEmpty()
-                || !natural(ground)) {
+        if (!level.getFluidState(top).isEmpty() || !level.getFluidState(top.below()).isEmpty()) {
+            tally.wet++;
+            return null;
+        }
+        if (!natural(ground)) {
+            tally.built++;
             return null;
         }
         return top;
+    }
+
+    static boolean farFrom(BlockPos spot, List<Home> homes, Tally tally) {
+        for (Home home : homes) {
+            if (near(home.pos(), spot.getX(), spot.getZ(), home.radius() * home.radius())) {
+                tally.home++;
+                return false;
+            }
+        }
+        return true;
     }
 
     public static boolean farFromHomes(BlockPos spot, List<BlockPos> homes) {

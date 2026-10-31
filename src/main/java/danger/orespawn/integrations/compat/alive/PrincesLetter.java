@@ -18,7 +18,7 @@ import net.minecraft.world.phys.Vec3;
  * ticket calls it at P04 (and once for a player from before 0.10.0, with no number); it is a first-hour scene, so it
  * starts through the scene cap and frees its slot when the puppet retires. No waypoint is made.
  */
-final class PrincesLetter {
+public final class PrincesLetter {
 
     static final double FIRST_PASS_ALTITUDE = 25.0;
     private static final int FALL_TICKS = 400;
@@ -53,11 +53,11 @@ final class PrincesLetter {
     }
 
     /** Drops the addressee's Summons from the Prince's height, straight over where they stand. */
-    static void drop(ServerLevel level, ServerPlayer to, double fromY) {
+    public static void drop(ServerLevel level, ServerPlayer to, double fromY) {
         if (to.isRemoved() || to.level() != level) {
             return; // gone mid-flight: the ticket hands the book over at their next login
         }
-        Vec3 at = new Vec3(to.getX(), Math.max(fromY - 2.0, to.getY() + 4.0), to.getZ());
+        Vec3 at = new Vec3(to.getX(), dropHeight(level, to, fromY), to.getZ());
         ItemEntity item = new ItemEntity(level, at.x, at.y, at.z, RoyalSummons.build(to));
         item.setTarget(to.getUUID());
         item.setUnlimitedLifetime();
@@ -72,6 +72,22 @@ final class PrincesLetter {
     }
 
     /** Keeps the letter drifting down like a slow-falling feather, then hands it back to gravity. */
+    /**
+     * Where the Letter starts its fall: just under the Prince's pass, or, when something solid hangs over the player
+     * (a roof, a cave), just under the lowest such block, so it still comes down at their feet instead of on the roof.
+     */
+    static double dropHeight(ServerLevel level, ServerPlayer to, double fromY) {
+        double top = Math.max(fromY - 2.0, to.getY() + 4.0);
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(to.getBlockX(), 0, to.getBlockZ());
+        for (int y = (int) Math.floor(to.getEyeY()) + 1; y < top; y++) {
+            pos.setY(y);
+            if (!level.getBlockState(pos).getCollisionShape(level, pos).isEmpty()) {
+                return Math.max(to.getY() + 1.0, y - 0.6);
+            }
+        }
+        return top;
+    }
+
     private record SlowFall(ItemEntity item, int age) implements Runnable {
         @Override
         public void run() {

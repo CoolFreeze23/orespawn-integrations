@@ -25,6 +25,9 @@ public class HatchlingShellItem extends Item {
         ItemStack stack = player.getItemInHand(hand);
         if (player instanceof ServerPlayer serverPlayer) {
             Eggshell.open(serverPlayer, stack);
+            // The kit's first item can land in the slot the shell just left. Hand that item back as the result:
+            // returning the emptied shell would have vanilla clear the hand and the item with it.
+            return InteractionResultHolder.success(player.getItemInHand(hand));
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }

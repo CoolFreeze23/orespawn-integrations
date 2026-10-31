@@ -10,6 +10,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.saveddata.SavedData;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -31,7 +32,28 @@ public final class FallRecord extends SavedData {
         public BlockPos crate;
         public int tries;
         public long lastTry = Long.MIN_VALUE / 2;
+        /** Homely blocks this player placed before their Fall landed: position to the game time it was placed. */
+        public final Map<Long, Long> placedHomely = new LinkedHashMap<>();
+
+        /** Remembers one placed homely block, keeping the last {@link #MAX_PLACED} within the last game day. */
+        public void placed(BlockPos pos, long gameTime) {
+            placedHomely.values().removeIf(t -> gameTime - t > DAY_TICKS);
+            placedHomely.remove(pos.asLong());
+            placedHomely.put(pos.asLong(), gameTime);
+            while (placedHomely.size() > MAX_PLACED) {
+                placedHomely.remove(placedHomely.keySet().iterator().next());
+            }
+        }
+
+        /** Whether this player placed the homely block at {@code pos} within the last game day. */
+        public boolean placedRecently(BlockPos pos, long gameTime) {
+            Long t = placedHomely.get(pos.asLong());
+            return t != null && gameTime - t <= DAY_TICKS;
+        }
     }
+
+    static final int MAX_PLACED = 32;
+    static final long DAY_TICKS = 24000L;
 
     private final Map<UUID, Entry> entries = new HashMap<>();
     private long lastHoardNight = Long.MIN_VALUE;
@@ -105,6 +127,16 @@ public final class FallRecord extends SavedData {
             if (v.crate != null) {
                 c.putLong("crate", v.crate.asLong());
             }
+            if (!v.placedHomely.isEmpty()) {
+                ListTag placed = new ListTag();
+                v.placedHomely.forEach((pos, time) -> {
+                    CompoundTag one = new CompoundTag();
+                    one.putLong("pos", pos);
+                    one.putLong("t", time);
+                    placed.add(one);
+                });
+                c.put("placed_homely", placed);
+            }
             list.add(c);
         }
         tag.put("players", list);
@@ -126,6 +158,9 @@ public final class FallRecord extends SavedData {
             v.tries = c.getInt("tries");
             if (c.contains("crate")) {
                 v.crate = BlockPos.of(c.getLong("crate"));
+            }
+            for (Tag one : c.getList("placed_homely", Tag.TAG_COMPOUND)) {
+                v.placedHomely.put(((CompoundTag) one).getLong("pos"), ((CompoundTag) one).getLong("t"));
             }
             r.entries.put(c.getUUID("player"), v);
         }

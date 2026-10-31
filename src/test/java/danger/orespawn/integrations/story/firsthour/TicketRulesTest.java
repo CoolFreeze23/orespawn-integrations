@@ -156,6 +156,26 @@ class TicketRulesTest {
         assertGaps(sim);
     }
 
+    /**
+     * "a new account hit every 5 s by a zombie at night gets its Fall 60-120 s after P05 comes due": the damage hold
+     * keeps a newcomer's own Fall back for 60 s at most; the other steps keep the plain 10 s hold.
+     */
+    @Test
+    void aNewcomerUnderAttackGetsTheFallWithinAMinute() {
+        Sim sim = new Sim();
+        sim.run(60 * 15, (x, next) -> {
+            if (x.s.handed(4) && !x.s.handed(5) && (x.s.onlineTicks / SEC) % 5 == 0) {
+                x.s.lastDamage = x.s.onlineTicks; // a zombie's hit every 5 s once the Letter is in
+            }
+        });
+        int letter = sim.at(4);
+        int fall = sim.at(5);
+        assertTrue(fall > 0, "the Fall came under attack (P04 at " + letter + ")");
+        int due = letter + 180; // the Summons is not opened here, so P05 comes due at P04's 180 s fallback
+        assertTrue(fall - due >= 60 && fall - due <= 70,
+                "held a minute past due, then handed: P04 " + letter + ", P05 " + fall);
+    }
+
     @Test
     void damageAndFallsHoldTheNextHandover() {
         Sim sim = new Sim();

@@ -1,7 +1,10 @@
 package danger.orespawn.integrations.gametest;
 
+import com.cyberday1.neoorigins.attachment.OriginAttachments;
+import com.cyberday1.neoorigins.attachment.PlayerOriginData;
 import danger.orespawn.integrations.world.WorldUtil;
 import danger.orespawn.integrations.world.antechamber.Antechamber;
+import danger.orespawn.integrations.world.regions.OriginScreenGate;
 import danger.orespawn.integrations.world.regions.RegionNames;
 import danger.orespawn.integrations.world.regions.RegionState;
 import danger.orespawn.integrations.world.regions.RegionTable;
@@ -93,6 +96,29 @@ public final class WorldTests {
             int region = RegionNames.regionOf(holder.get());
             helper.assertTrue(region == l, id + " reads as L" + l + ", got L" + region);
         });
+        helper.succeed();
+    }
+
+    /**
+     * Region titles wait while the origin screen is open, and let go once the origin and class layers both hold one,
+     * also when an operator set them by command, which leaves Neo Origins' own "had all origins" flag unset.
+     */
+    @GameTest(template = "empty8")
+    public static void titlesFollowTheOriginLayersNotTheScreenFlag(GameTestHelper helper) {
+        if (!Needs.mods(helper, "titlesFollowTheOriginLayersNotTheScreenFlag", "neoorigins")) {
+            return;
+        }
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        PlayerOriginData data = player.getData(OriginAttachments.originData());
+        ResourceLocation originLayer = ResourceLocation.fromNamespaceAndPath("neoorigins", "origin");
+        ResourceLocation classLayer = ResourceLocation.fromNamespaceAndPath("neoorigins", "class");
+        data.removeOrigin(originLayer);
+        data.removeOrigin(classLayer);
+        data.setHadAllOrigins(false);
+        helper.assertTrue(OriginScreenGate.open(player), "no origin yet: the titles wait");
+        data.setOrigin(originLayer, ResourceLocation.fromNamespaceAndPath("neoorigins", "human"));
+        data.setOrigin(classLayer, ResourceLocation.fromNamespaceAndPath("neoorigins", "class_explorer"));
+        helper.assertTrue(!OriginScreenGate.open(player), "both layers set by command: the titles show");
         helper.succeed();
     }
 

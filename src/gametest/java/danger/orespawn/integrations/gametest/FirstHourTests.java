@@ -1,6 +1,8 @@
 package danger.orespawn.integrations.gametest;
 
 import danger.orespawn.integrations.compat.alive.FallSafety;
+import danger.orespawn.integrations.compat.alive.FirstFall;
+import danger.orespawn.integrations.compat.alive.PrincesLetter;
 import danger.orespawn.integrations.story.firsthour.EggLabel;
 import danger.orespawn.integrations.story.firsthour.FallRecord;
 import danger.orespawn.integrations.story.firsthour.FieldOdete;
@@ -34,6 +36,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -149,8 +152,244 @@ public final class FirstHourTests {
         ServerLevel level = helper.getLevel();
         List<BlockPos> homes = FallSafety.homes(level, abs.getX(), abs.getZ(), 100);
         helper.assertTrue(homes.contains(abs), "the placed chest is found in one pass");
-        helper.assertTrue(!FallSafety.farFromHomes(abs.offset(40, 0, 0), homes), "40 blocks off is too close");
-        helper.assertTrue(FallSafety.farFromHomes(abs.offset(70, 0, 0), homes), "70 blocks off is wild");
+        // The distances are measured from this test's own chest: the scan also finds neighbouring tests' beds and
+        // chests, which move as tests are added.
+        List<BlockPos> own = List.of(abs);
+        helper.assertTrue(!FallSafety.farFromHomes(abs.offset(40, 0, 0), own), "40 blocks off is too close");
+        helper.assertTrue(FallSafety.farFromHomes(abs.offset(70, 0, 0), own), "70 blocks off is wild");
+        helper.succeed();
+    }
+
+    /**
+     * The crate fills as the card lists it for a newcomer with no twin yet (ITEM 3's glowstone, ITEM 5's slip), and for
+     * nobody in particular: the twin's table once threw for want of an entity and stopped the landing (and the Odete).
+     */
+    @GameTest(template = "empty8")
+    public static void theFirstFallCrateFills(GameTestHelper helper) {
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        BlockPos rel = new BlockPos(3, 1, 3);
+        helper.setBlock(rel, Blocks.CHEST);
+        BlockPos abs = helper.absolutePos(rel);
+        FirstFall.fill(helper.getLevel(), abs, player, false);
+        helper.assertTrue(helper.getLevel().getBlockEntity(abs) instanceof net.minecraft.world.Container box
+                && box.countItem(net.minecraft.world.item.Items.GLOWSTONE) == 4, "4 glowstone (ITEM 3)");
+        helper.assertTrue(((net.minecraft.world.Container) helper.getLevel().getBlockEntity(abs))
+                .countItem(net.minecraft.world.item.Items.SPYGLASS) == 1, "the spyglass");
+        helper.assertTrue(((net.minecraft.world.Container) helper.getLevel().getBlockEntity(abs))
+                .countItem(net.minecraft.world.item.Items.PAPER) >= 1, "ITEM 5's slip for a player with no twin");
+        BlockPos other = helper.absolutePos(new BlockPos(5, 1, 3));
+        helper.setBlock(new BlockPos(5, 1, 3), Blocks.CHEST);
+        FirstFall.fill(helper.getLevel(), other, null, false);
+        helper.assertTrue(((net.minecraft.world.Container) helper.getLevel().getBlockEntity(other))
+                .countItem(net.minecraft.world.item.Items.GLOWSTONE) == 4, "a crate for nobody in particular fills too");
+        helper.succeed();
+    }
+
+    /**
+     * "dropped a letter at my feet": a player under a roof still gets the Summons, which starts its fall just under the
+     * roof instead of landing on it; in the open it starts high above them.
+     */
+    @GameTest(template = "empty8")
+    public static void theLetterFallsUnderARoof(GameTestHelper helper) {
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        BlockPos feet = helper.absolutePos(new BlockPos(3, 1, 3));
+        player.teleportTo(feet.getX() + 0.5, feet.getY(), feet.getZ() + 0.5);
+        ServerLevel level = helper.getLevel();
+        helper.setBlock(new BlockPos(3, 5, 3), Blocks.STONE);
+        PrincesLetter.drop(level, player, feet.getY() + 40.0);
+        List<ItemEntity> letters = level.getEntitiesOfClass(ItemEntity.class,
+                new net.minecraft.world.phys.AABB(feet).inflate(1.0, 60.0, 1.0),
+                e -> e.getItem().is(net.minecraft.world.item.Items.WRITTEN_BOOK));
+        helper.assertTrue(letters.size() == 1, "one Summons dropped");
+        helper.assertTrue(letters.get(0).getY() < feet.getY() + 4.0, "it starts under the roof, not on it");
+        letters.get(0).discard();
+        helper.setBlock(new BlockPos(3, 5, 3), Blocks.AIR);
+        PrincesLetter.drop(level, player, feet.getY() + 40.0);
+        List<ItemEntity> open = level.getEntitiesOfClass(ItemEntity.class,
+                new net.minecraft.world.phys.AABB(feet).inflate(1.0, 60.0, 1.0),
+                e -> e.getItem().is(net.minecraft.world.item.Items.WRITTEN_BOOK));
+        // The test arena has its own ceiling above the template, so "the open" here means: above the removed roof.
+        helper.assertTrue(open.size() == 1 && open.get(0).getY() > feet.getY() + 4.0,
+                "without the roof it starts above where the roof was (at " + (open.isEmpty() ? "none"
+                        : String.format("%.1f", open.get(0).getY() - feet.getY())) + " over the feet)");
+        open.forEach(ItemEntity::discard);
+        helper.succeed();
+    }
+
+    /**
+     * "a new account standing still on Shelf 9 at night gets its Fall by the second try, 24-48 blocks out and in view"
+     * (event-first-fall, a newcomer near spawn): the second try's ring finds open ground the player can see.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 200)
+    public static void aNewcomerGetsAFallInViewOnTheSecondTry(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        // Outside the test's own barrier box (it would block every line of sight), on the flat ground beside it.
+        BlockPos feet = helper.absolutePos(new BlockPos(-12, 0, -12));
+        player.teleportTo(feet.getX() + 0.5, feet.getY(), feet.getZ() + 0.5);
+        List<Long> forced = forceAround(level, feet);
+        try {
+            // Other tests' chests and beds stand within reach and are homes too; the clearances themselves are the
+            // next test's, so this one reads the ring with no homes at all.
+            List<FallSafety.Home> homes = List.of();
+            BlockPos spot = null;
+            FallSafety.Tally tally = new FallSafety.Tally();
+            for (int i = 0; i < 5 && spot == null; i++) {
+                spot = FallSafety.ringInView(level, player, homes, level.random, tally);
+            }
+            helper.assertTrue(spot != null, "the ring found a spot (" + tally + ")");
+            double d = Math.sqrt(Math.pow(spot.getX() + 0.5 - player.getX(), 2) + Math.pow(spot.getZ() + 0.5 - player.getZ(), 2));
+            helper.assertTrue(d >= 23.0 && d <= 49.0, "24-48 blocks out, got " + (int) d);
+        } finally {
+            release(level, forced);
+        }
+        helper.succeed();
+    }
+
+    /**
+     * "a second account's Fall that night still keeps 64 from the first player's bed": a newcomer's own respawn point and
+     * the homely blocks they just placed need 24 blocks for their own Fall; for anyone else they keep the full 64.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 200)
+    public static void aNewcomersOwnHomeNeeds24AndAFriendsKeeps64(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        ServerPlayer first = MockPlayers.inLevel(helper);
+        ServerPlayer second = MockPlayers.inLevel(helper);
+        BlockPos bed = helper.absolutePos(new BlockPos(2, 1, 2));
+        first.setRespawnPosition(level.dimension(), bed, 0.0F, true, false);
+        BlockPos chest = helper.absolutePos(new BlockPos(5, 1, 5));
+        helper.setBlock(new BlockPos(5, 1, 5), Blocks.CHEST);
+        FallRecord record = FallRecord.get(level.getServer());
+        record.entry(first.getUUID()).placed(chest, level.getGameTime());
+        try {
+            List<FallSafety.Home> mine = FallSafety.homesFor(level, first, bed.getX(), bed.getZ(), 120);
+            List<FallSafety.Home> theirs = FallSafety.homesFor(level, second, bed.getX(), bed.getZ(), 120);
+            helper.assertTrue(mine.contains(new FallSafety.Home(bed, FallSafety.NEWCOMER_RADIUS)),
+                    "the newcomer's own bed needs 24 for their own Fall");
+            helper.assertTrue(mine.contains(new FallSafety.Home(chest, FallSafety.NEWCOMER_RADIUS)),
+                    "a chest they placed today needs 24 too");
+            helper.assertTrue(theirs.contains(new FallSafety.Home(bed, FallSafety.HOME_RADIUS)),
+                    "the first player's bed keeps 64 from a second player's Fall");
+            helper.assertTrue(theirs.contains(new FallSafety.Home(chest, FallSafety.HOME_RADIUS)),
+                    "and so does the first player's chest");
+            BlockPos away = bed.offset(40, 0, 0);
+            second.teleportTo(away.getX() + 0.5, away.getY(), away.getZ() + 0.5);
+            List<Long> forced = forceAround(level, away);
+            try {
+                List<FallSafety.Home> near = FallSafety.homesFor(level, second, second.getX(), second.getZ(), 120);
+                for (int i = 0; i < 5; i++) {
+                    BlockPos spot = FallSafety.ringInView(level, second, near, level.random, new FallSafety.Tally());
+                    if (spot != null) {
+                        helper.assertTrue(spot.distSqr(new BlockPos(bed.getX(), spot.getY(), bed.getZ())) >= 64 * 64,
+                                "a second account's Fall lands 64 or more from the first player's bed");
+                    }
+                }
+            } finally {
+                release(level, forced);
+            }
+        } finally {
+            record.find(first.getUUID()).placedHomely.clear();
+        }
+        helper.succeed();
+    }
+
+    /** Forces the chunks around {@code centre} that are not forced yet (other tests' stay theirs); returns them. */
+    private static List<Long> forceAround(ServerLevel level, BlockPos centre) {
+        List<Long> mine = new ArrayList<>();
+        int cx = centre.getX() >> 4;
+        int cz = centre.getZ() >> 4;
+        for (int dx = -4; dx <= 4; dx++) {
+            for (int dz = -4; dz <= 4; dz++) {
+                long key = net.minecraft.world.level.ChunkPos.asLong(cx + dx, cz + dz);
+                if (!level.getForcedChunks().contains(key)) {
+                    level.setChunkForced(cx + dx, cz + dz, true);
+                    mine.add(key);
+                }
+            }
+        }
+        return mine;
+    }
+
+    private static void release(ServerLevel level, List<Long> forced) {
+        for (long key : forced) {
+            level.setChunkForced(net.minecraft.world.level.ChunkPos.getX(key), net.minecraft.world.level.ChunkPos.getZ(key),
+                    false);
+        }
+    }
+
+    /**
+     * Only what someone could live by keeps a Fall away (BOSS ruling, 2026-10-31): a chest still holding its loot
+     * table does not, the same chest once looted does; a furnace high over the surface does not, one on the surface
+     * does; a chest a player placed a few blocks underground does.
+     */
+    @GameTest(template = "empty8")
+    public static void onlyLivedInBlocksAreHomes(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        BlockPos lootRel = new BlockPos(1, 0, 1);
+        helper.setBlock(lootRel, Blocks.CHEST);
+        BlockPos loot = helper.absolutePos(lootRel);
+        ((net.minecraft.world.RandomizableContainer) level.getBlockEntity(loot)).setLootTable(
+                net.minecraft.world.level.storage.loot.BuiltInLootTables.SIMPLE_DUNGEON, 1L);
+        BlockPos surfaceRel = new BlockPos(3, 0, 3);
+        helper.setBlock(surfaceRel, Blocks.FURNACE);
+        BlockPos onSurface = helper.absolutePos(surfaceRel);
+        BlockPos highRel = new BlockPos(5, 40, 5);
+        helper.setBlock(highRel, Blocks.FURNACE);
+        BlockPos high = helper.absolutePos(highRel);
+        BlockPos buriedRel = new BlockPos(6, -3, 1);
+        helper.setBlock(buriedRel, Blocks.CHEST);
+        BlockPos buried = helper.absolutePos(buriedRel);
+        try {
+            List<BlockPos> homes = FallSafety.homes(level, loot.getX(), loot.getZ(), 16);
+            helper.assertTrue(!homes.contains(loot), "an unlooted loot chest is a structure's, not a home");
+            helper.assertTrue(homes.contains(onSurface), "a furnace on the surface is a home");
+            helper.assertTrue(!homes.contains(high), "a furnace 40 over the surface is not");
+            helper.assertTrue(homes.contains(buried), "a chest a player placed 3 blocks under the surface is");
+            ((net.minecraft.world.RandomizableContainer) level.getBlockEntity(loot)).setLootTable(null);
+            helper.assertTrue(FallSafety.homes(level, loot.getX(), loot.getZ(), 16).contains(loot),
+                    "the same chest, looted, is a home");
+        } finally {
+            helper.setBlock(highRel, Blocks.AIR);
+            helper.setBlock(buriedRel, Blocks.DIRT);
+        }
+        helper.succeed();
+    }
+
+    /**
+     * "a new account hit every 5 s by a zombie at night gets its Fall ... 24-48 blocks out, on the side opposite the
+     * zombie" (event-first-fall, a newcomer under attack): the ring lands away from the nearest hostile and never
+     * within 12 blocks of it. The timing (60 s at most past due) is TicketRulesTest's.
+     */
+    @GameTest(template = "empty8", timeoutTicks = 200)
+    public static void aNewcomerUnderAttackGetsTheFallAwayFromTheZombie(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        ServerPlayer player = MockPlayers.inLevel(helper);
+        BlockPos feet = helper.absolutePos(new BlockPos(-12, 0, -12));
+        player.teleportTo(feet.getX() + 0.5, feet.getY(), feet.getZ() + 0.5);
+        List<Long> forced = forceAround(level, feet);
+        net.minecraft.world.entity.monster.Zombie zombie = net.minecraft.world.entity.EntityType.ZOMBIE.create(level);
+        zombie.moveTo(feet.getX() + 6.5, feet.getY(), feet.getZ() + 0.5, 0.0F, 0.0F);
+        zombie.setNoAi(true);
+        level.addFreshEntity(zombie);
+        try {
+            BlockPos spot = null;
+            FallSafety.Tally tally = new FallSafety.Tally();
+            for (int i = 0; i < 5 && spot == null; i++) {
+                spot = FallSafety.ringAwayFrom(level, player, List.of(), level.random, tally);
+            }
+            helper.assertTrue(spot != null, "the ring found a spot under attack (" + tally + ")");
+            double dx = spot.getX() + 0.5 - player.getX();
+            double dz = spot.getZ() + 0.5 - player.getZ();
+            double d = Math.sqrt(dx * dx + dz * dz);
+            helper.assertTrue(d >= 23.0 && d <= 49.0, "24-48 blocks out, got " + (int) d);
+            double toZombieX = zombie.getX() - player.getX();
+            double toZombieZ = zombie.getZ() - player.getZ();
+            helper.assertTrue(dx * toZombieX + dz * toZombieZ < 0, "on the side away from the zombie");
+            helper.assertTrue(zombie.position().distanceTo(Vec3.atCenterOf(spot)) >= 12.0, "12 or more from it");
+        } finally {
+            zombie.discard();
+            release(level, forced);
+        }
         helper.succeed();
     }
 
