@@ -82,6 +82,7 @@ public class OreSpawnIntegrations {
             // data:
             // parish:
             {"orespawn_integrations", "danger.orespawn.integrations.story.freguesia.Freguesia"},
+            {"orespawn_integrations", "danger.orespawn.integrations.story.misfile.MisfileCore"},
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };
