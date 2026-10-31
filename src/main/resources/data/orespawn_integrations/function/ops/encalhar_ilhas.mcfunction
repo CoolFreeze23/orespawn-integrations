@@ -4,5 +4,4 @@ execute store result storage orespawn_integrations:tmp ilhas int 1 if entity @e[
 execute store result storage orespawn_integrations:tmp ilhas_too int 1 if entity @e[type=orespawn:island_too]
 kill @e[type=orespawn:island]
 kill @e[type=orespawn:island_too]
-tellraw @s {"translate": "orespawn_integrations.ops.encalhar_ilhas.done", "with": [{"nbt": "ilhas", "storage": "orespawn_integrations:tmp"}]}
-tellraw @s {"translate": "orespawn_integrations.ops.encalhar_ilhas.done", "with": [{"nbt": "ilhas_too", "storage": "orespawn_integrations:tmp"}]}
+function orespawn_integrations:night/encalhar_ilhas_feito

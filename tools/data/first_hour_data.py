@@ -577,6 +577,13 @@ def part_night(atlas: Path):
         "execute store result storage orespawn_integrations:tmp ilhas_too int 1 if entity @e[type=orespawn:island_too]",
         "kill @e[type=orespawn:island]",
         "kill @e[type=orespawn:island_too]",
+        "function orespawn_integrations:night/encalhar_ilhas_feito",
+        "",
+    ]))
+    # The operator's line lives beside the night data, so function/ops holds only commands (registry's lang test reads
+    # every key under function/ops against its own fragment).
+    write(OI / "function" / "night" / "encalhar_ilhas_feito.mcfunction", "\n".join([
+        "# The operator's line after ops/encalhar_ilhas: how many of each island kind were removed.",
         "tellraw @s " + json.dumps({"translate": done, "with": [
             {"nbt": "ilhas", "storage": "orespawn_integrations:tmp"}]}, ensure_ascii=False),
         "tellraw @s " + json.dumps({"translate": done, "with": [
