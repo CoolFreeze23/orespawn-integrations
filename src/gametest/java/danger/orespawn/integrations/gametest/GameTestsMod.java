@@ -31,6 +31,8 @@ public final class GameTestsMod {
 
     public GameTestsMod(IEventBus modBus) {
         if (!Boolean.getBoolean("oi.gametests")) {
+            LOGGER.warn("orespawn_integrations_tests is installed but -Doi.gametests=true is not set: it registers "
+                    + "nothing. This jar belongs only on scratch test servers; remove it from a real server or client.");
             return;
         }
         NeoForge.EVENT_BUS.addListener(GameTestsMod::onRegisterCommands);
