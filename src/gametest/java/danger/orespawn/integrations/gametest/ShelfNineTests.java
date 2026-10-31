@@ -252,8 +252,8 @@ public final class ShelfNineTests {
             if (role.startsWith("register_")) {
                 register++;
             }
-            // the template's positions are its own; the sign stands at the placed origin plus that offset
-            if ("shelf10".equals(role) && level.getBlockEntity(origin.offset(info.pos())) instanceof SignBlockEntity sign) {
+            // filterBlocks(origin, ...) gives world positions already (the origin is added), as the placer reads them
+            if ("shelf10".equals(role) && level.getBlockEntity(info.pos()) instanceof SignBlockEntity sign) {
                 label = sign.getFrontText().getMessage(0, false).getContents()
                         instanceof net.minecraft.network.chat.contents.TranslatableContents t
                         && t.getKey().equals("orespawn_integrations.shelf9.shelf10.1");
