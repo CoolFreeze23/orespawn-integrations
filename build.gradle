@@ -53,7 +53,7 @@ runs {
     gameTestServer {
         systemProperty 'neoforge.enabledGameTestNamespaces', 'orespawn_integrations_tests'
         workingDirectory project.file('run-gametest')
-        jvmArgument '-Xmx3G'
+        jvmArguments.addAll('-Xmx3G', '-Xms1G')
     }
 }
 
@@ -167,6 +167,17 @@ tasks.register('testEffortTally') {
 
 tasks.named('check') {
     dependsOn 'checkEffortTally', 'testEffortTally'
+}
+
+// The dev GameTest run uses the pack's own settings where they change what a test sees (tools/devrun-config: Ars Nouveau's
+// spawnBook = false, as PK v1.5.0 ships it, so a new player's only join item is the Eggshell).
+tasks.matching { it.name == 'runGameTestServer' }.configureEach {
+    doFirst {
+        copy {
+            from 'tools/devrun-config'
+            into 'run-gametest/config'
+        }
+    }
 }
 
 // The dev GameTest run loads the GameTest mod as the jar it is on scratch servers: its classes and its mods.toml must

@@ -58,6 +58,16 @@ public final class ShelfNineTests {
         return n;
     }
 
+    private static List<String> inventory(ServerPlayer player) {
+        List<String> out = new ArrayList<>();
+        for (ItemStack stack : player.getInventory().items) {
+            if (!stack.isEmpty()) {
+                out.add(BuiltInRegistries.ITEM.getKey(stack.getItem()) + " x" + stack.getCount());
+            }
+        }
+        return out;
+    }
+
     private static int stacks(ServerPlayer player) {
         int n = 0;
         for (ItemStack stack : player.getInventory().items) {
@@ -75,7 +85,7 @@ public final class ShelfNineTests {
         ServerPlayer player = MockPlayers.inLevel(helper);
         helper.assertTrue(Eggshell.isGiven(player), "the join gave the Eggshell");
         helper.assertTrue(count(player, item("orespawn_integrations:hatchling_shell")) == 1, "exactly one Eggshell");
-        // "the join's only item" across the whole pack (other mods' join gifts off) is the playtest's line 14.
+        helper.assertTrue(stacks(player) == 1, "the join's only item (inventory: " + inventory(player) + ")");
         helper.assertTrue(!Eggshell.giveOnce(player), "a second give is refused");
         helper.assertTrue(count(player, item("orespawn_integrations:hatchling_shell")) == 1, "still one Eggshell");
         helper.succeed();

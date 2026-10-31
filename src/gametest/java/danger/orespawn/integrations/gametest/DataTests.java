@@ -65,6 +65,20 @@ public final class DataTests {
         return Block.getDrops(log, helper.getLevel(), pos, null, breaker, ItemStack.EMPTY);
     }
 
+    private static List<String> tableAlone(GameTestHelper helper, BlockState state, ServerPlayer breaker, String table) {
+        BlockPos pos = helper.absolutePos(new BlockPos(1, 1, 1));
+        var key = net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE,
+                ResourceLocation.parse(table));
+        var loot = helper.getLevel().getServer().reloadableRegistries().getLootTable(key);
+        var params = new net.minecraft.world.level.storage.loot.LootParams.Builder(helper.getLevel())
+                .withParameter(net.minecraft.world.level.storage.loot.parameters.LootContextParams.ORIGIN, net.minecraft.world.phys.Vec3.atCenterOf(pos))
+                .withParameter(net.minecraft.world.level.storage.loot.parameters.LootContextParams.TOOL, ItemStack.EMPTY)
+                .withParameter(net.minecraft.world.level.storage.loot.parameters.LootContextParams.BLOCK_STATE, state)
+                .withOptionalParameter(net.minecraft.world.level.storage.loot.parameters.LootContextParams.THIS_ENTITY, breaker)
+                .create(net.minecraft.world.level.storage.loot.parameters.LootContextParamSets.BLOCK);
+        return loot.getRandomItems(params).stream().map(s -> BuiltInRegistries.ITEM.getKey(s.getItem()).toString()).toList();
+    }
+
     private static boolean isEgg(ItemStack stack) {
         return BuiltInRegistries.ITEM.getKey(stack.getItem()).toString().equals(EGG);
     }
@@ -96,7 +110,8 @@ public final class DataTests {
             helper.assertTrue(drops.stream().anyMatch(s -> s.is(log.asItem())), "the log itself drops");
             helper.assertTrue(drops.stream().anyMatch(s -> isEgg(s) && logId.equals(lote(s))),
                     "an unset cc_gemeo drops the egg carrying " + logId + " (drops: " + drops.stream()
-                            .map(s -> BuiltInRegistries.ITEM.getKey(s.getItem()) + "/" + lote(s)).toList() + ")");
+                            .map(s -> BuiltInRegistries.ITEM.getKey(s.getItem()) + "/" + lote(s)).toList() + "; table alone: "
+                            + tableAlone(helper, log.defaultBlockState(), player, "orespawn_integrations:arvore/" + logId.replace(':', '/')) + ")");
             helper.assertTrue(drops.stream().filter(DataTests::isEgg).allMatch(s -> s.get(DataComponents.LORE) != null),
                     "the egg carries its two lore lines");
         }
