@@ -82,6 +82,7 @@ public class OreSpawnIntegrations {
             // data:
             // ranks:
             {"orespawn_integrations", "danger.orespawn.integrations.story.court.CourtRanks"},
+            {"orespawn_integrations", "danger.orespawn.integrations.story.deed.DeedLog"},
             // JEI / Jade / JourneyMap plugins are discovered via their own
             // annotation scans and need no wiring here.
     };

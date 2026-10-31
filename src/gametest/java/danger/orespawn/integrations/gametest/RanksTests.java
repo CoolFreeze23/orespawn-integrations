@@ -2,6 +2,7 @@ package danger.orespawn.integrations.gametest;
 
 import danger.orespawn.integrations.story.Ranks;
 import danger.orespawn.integrations.story.court.CourtRanks;
+import danger.orespawn.integrations.story.deed.DeedLog;
 import danger.orespawn.integrations.story.firsthour.FirstHourUtil;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.gametest.framework.GameTest;
@@ -157,6 +158,57 @@ public final class RanksTests {
                 .get(ResourceLocation.parse("orespawn_integrations:court/provincia/chaos")) == null, "no Chaos stamp");
         helper.assertTrue(player.getServer().getAdvancements()
                 .get(ResourceLocation.parse("orespawn_integrations:court/provincia/the_end")) == null, "no End stamp");
+        helper.succeed();
+    }
+
+    // --- system-deed-log ---
+
+    /** Ten deeds of mixed kinds for two players: Saturday tells each listener at most four of their own. */
+    @GameTest(template = "empty8")
+    public static void saturdayTellsAtMostFour(GameTestHelper helper) {
+        MinecraftServer server = helper.getLevel().getServer();
+        ServerPlayer ana = fresh(helper);
+        DeedLog.clear(server, ana.getUUID());
+        for (int i = 0; i < 7; i++) {
+            DeedLog.record(ana, "orespawn_integrations.deed.market", ana.getGameProfile().getName());
+        }
+        for (int i = 0; i < 3; i++) {
+            DeedLog.record(ana, danger.orespawn.integrations.story.deed.DeedRules.Kind.WEAPON, false,
+                    "orespawn_integrations.deed.boss_kill", "Ana", "#entity.minecraft.wither", "#item.minecraft.stick");
+        }
+        helper.assertTrue(DeedLog.of(server, ana.getUUID()).size() == 10, "ten lines kept");
+        helper.assertTrue(DeedLog.saturdayLines(server, ana).size() <= 4, "at most four on Saturday");
+        DeedLog.clear(server, ana.getUUID());
+        helper.succeed();
+    }
+
+    /** A printed line keeps its bit through a save and a load (a restart). */
+    @GameTest(template = "empty8")
+    public static void printedBitSurvivesASave(GameTestHelper helper) {
+        MinecraftServer server = helper.getLevel().getServer();
+        ServerPlayer ana = fresh(helper);
+        DeedLog.clear(server, ana.getUUID());
+        DeedLog.record(ana, "orespawn_integrations.deed.homestead", "Ana");
+        DeedLog.markPrinted(server, ana.getUUID(), Long.MAX_VALUE);
+        net.minecraft.nbt.CompoundTag saved = DeedLog.Store.get(server)
+                .save(new net.minecraft.nbt.CompoundTag(), server.registryAccess());
+        DeedLog.Store loaded = DeedLog.Store.load(saved, server.registryAccess());
+        helper.assertTrue(loaded != null, "loaded");
+        helper.assertTrue(DeedLog.of(server, ana.getUUID()).get(0).printed(), "printed bit set");
+        helper.assertTrue(saved.toString().contains("bits:8b"), "printed bit written");
+        DeedLog.clear(server, ana.getUUID());
+        helper.succeed();
+    }
+
+    /** The Saturday chat budget: eight lines, then the ninth is refused for the Gazette. */
+    @GameTest(template = "empty8")
+    public static void saturdayBudgetIsEight(GameTestHelper helper) {
+        ServerPlayer ana = fresh(helper);
+        ana.setData(DeedLog.HEARD.get(), new int[2]);
+        for (int i = 0; i < 8; i++) {
+            helper.assertTrue(DeedLog.saturdayBudget(ana), "line " + (i + 1) + " allowed");
+        }
+        helper.assertFalse(DeedLog.saturdayBudget(ana), "ninth line refused");
         helper.succeed();
     }
 }
