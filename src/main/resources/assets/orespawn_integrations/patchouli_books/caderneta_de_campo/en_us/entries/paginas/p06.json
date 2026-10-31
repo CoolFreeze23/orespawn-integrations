@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p06.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p06.text",
+      "title": "orespawn_integrations.caderneta.p06.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/sky_nest",
+  "secret": true
+}

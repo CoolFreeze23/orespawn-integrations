@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p62.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 62,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p62.text",
+      "title": "orespawn_integrations.caderneta.p62.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/mutant",
+  "secret": true
+}

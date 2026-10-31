@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p25.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 25,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p25.text",
+      "title": "orespawn_integrations.caderneta.p25.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/hunt_lodge",
+  "secret": true
+}

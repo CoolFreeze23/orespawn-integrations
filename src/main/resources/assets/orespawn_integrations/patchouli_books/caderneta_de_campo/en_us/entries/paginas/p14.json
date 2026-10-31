@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p14.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p14.text",
+      "title": "orespawn_integrations.caderneta.p14.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/cuca_hut",
+  "secret": true
+}

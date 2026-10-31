@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p65.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 65,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p65.text",
+      "title": "orespawn_integrations.caderneta.p65.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/dusk_court_lord",
+  "secret": true
+}

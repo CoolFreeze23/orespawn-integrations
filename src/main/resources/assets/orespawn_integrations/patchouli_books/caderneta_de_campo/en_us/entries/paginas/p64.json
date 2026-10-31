@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p64.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 64,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p64.text",
+      "title": "orespawn_integrations.caderneta.p64.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/big_game",
+  "secret": true
+}

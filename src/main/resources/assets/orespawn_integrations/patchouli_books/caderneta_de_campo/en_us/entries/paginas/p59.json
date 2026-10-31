@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p59.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 59,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p59.text",
+      "title": "orespawn_integrations.caderneta.p59.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/capelobo_stare",
+  "secret": true
+}

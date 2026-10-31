@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p21.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 21,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p21.text",
+      "title": "orespawn_integrations.caderneta.p21.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/hydra_outpost",
+  "secret": true
+}

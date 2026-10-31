@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p31.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 31,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p31.text",
+      "title": "orespawn_integrations.caderneta.p31.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/court_beast",
+  "secret": true
+}

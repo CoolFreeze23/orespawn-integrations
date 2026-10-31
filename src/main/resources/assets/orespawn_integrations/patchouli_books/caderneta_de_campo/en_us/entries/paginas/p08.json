@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p08.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p08.text",
+      "title": "orespawn_integrations.caderneta.p08.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/firewatch_tower",
+  "secret": true
+}

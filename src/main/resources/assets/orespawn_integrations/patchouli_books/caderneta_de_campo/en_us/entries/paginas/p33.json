@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p33.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 33,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p33.text",
+      "title": "orespawn_integrations.caderneta.p33.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/caramelo",
+  "secret": true
+}

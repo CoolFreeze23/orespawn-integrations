@@ -1,0 +1,15 @@
+{
+  "name": "orespawn_integrations.caderneta.p66.name",
+  "category": "orespawn_integrations:paginas",
+  "icon": "minecraft:spyglass",
+  "sortnum": 66,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "orespawn_integrations.caderneta.p66.text",
+      "title": "orespawn_integrations.caderneta.p66.name"
+    }
+  ],
+  "advancement": "orespawn_integrations:avistamentos/hatchery_beast",
+  "secret": true
+}
