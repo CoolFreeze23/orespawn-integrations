@@ -271,7 +271,7 @@ class Checker:
 
     # --- functions ------------------------------------------------------------------------------------------------
     CMD = [
-        (re.compile(r"\bgive @\w(?:\[[^\]]*\])? ([a-z0-9_.-]+:[a-z0-9_/.-]+)"), "items"),
+        (re.compile(r"(?<!effect )\bgive @\w(?:\[[^\]]*\])? ([a-z0-9_.-]+:[a-z0-9_/.-]+)"), "items"),
         (re.compile(r"\bclear @\w(?:\[[^\]]*\])? ([a-z0-9_.-]+:[a-z0-9_/.-]+)"), "items"),
         (re.compile(r"\bif items entity @\w \S+ ([a-z0-9_.-]+:[a-z0-9_/.-]+)"), "items"),
         (re.compile(r"\bloot (?:give|spawn|insert|replace) .*? loot ([a-z0-9_.-]+:[a-z0-9_/.-]+)"), "loot_table"),
