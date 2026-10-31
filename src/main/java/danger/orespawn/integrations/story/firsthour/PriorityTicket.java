@@ -76,6 +76,14 @@ public final class PriorityTicket {
     /** Gives a player their ticket on their first login with this version. */
     public static void start(ServerPlayer player) {
         if (FirstHourData.hasTicket(player)) {
+            // A Summons whose flyover ended while its addressee was away is handed over at the next login.
+            TicketState s = FirstHourData.ticket(player);
+            if (s.handed(4) && IntegrationsConfig.on(IntegrationsConfig.storyPrincesLetter)
+                    && FirstHourScenes.letter != null
+                    && !FirstHourData.letterSent(player, FirstHourData.LETTER_SUMMONS)) {
+                FirstHourData.markLetterSent(player, FirstHourData.LETTER_SUMMONS);
+                FirstHourUtil.give(player, RoyalSummons.build(player));
+            }
             return;
         }
         boolean veteran = player.getStats().getValue(Stats.CUSTOM.get(Stats.PLAY_TIME)) > 0;
