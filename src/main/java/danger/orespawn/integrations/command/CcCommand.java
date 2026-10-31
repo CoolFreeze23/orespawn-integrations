@@ -205,7 +205,7 @@ public final class CcCommand {
      * {@code radius} of {@code centre}, or -1 when there is none. Only loaded chunks are read: a base no one has
      * loaded is far enough from any operator standing on the spot.
      */
-    static int nearestHome(ServerLevel level, BlockPos centre, int radius) {
+    public static int nearestHome(ServerLevel level, BlockPos centre, int radius) {
         double best = Double.MAX_VALUE;
         int cr = (radius >> 4) + 1;
         for (int cx = (centre.getX() >> 4) - cr; cx <= (centre.getX() >> 4) + cr; cx++) {

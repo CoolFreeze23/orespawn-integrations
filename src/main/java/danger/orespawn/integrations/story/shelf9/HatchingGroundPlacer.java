@@ -289,15 +289,22 @@ public final class HatchingGroundPlacer {
         if (!data.placed) {
             return;
         }
-        ServerLevel level = server.overworld();
-        for (int i = 0; i < data.straw.size() && i < data.strawBlocks.size(); i++) {
-            BlockPos pos = data.straw.get(i);
-            Block block = BuiltInRegistries.BLOCK.get(ResourceLocation.parse(data.strawBlocks.get(i)));
+        topUpStraw(server.overworld(), data.straw, data.strawBlocks);
+    }
+
+    /** Re-places each larder block missing from its spot; returns how many were put back. */
+    public static int topUpStraw(ServerLevel level, List<BlockPos> spots, List<String> ids) {
+        int placed = 0;
+        for (int i = 0; i < spots.size() && i < ids.size(); i++) {
+            BlockPos pos = spots.get(i);
+            Block block = BuiltInRegistries.BLOCK.get(ResourceLocation.parse(ids.get(i)));
             if (block == Blocks.AIR || level.getBlockState(pos).is(block)) {
                 continue;
             }
             level.setBlock(pos, block.defaultBlockState(), Block.UPDATE_ALL);
+            placed++;
         }
+        return placed;
     }
 
     /** Activates the Shelf 9 waystone for a player; a stone not reachable now is owed at their next login. */

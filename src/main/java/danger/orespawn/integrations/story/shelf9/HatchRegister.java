@@ -39,7 +39,7 @@ public final class HatchRegister {
     }
 
     /** Enters the player if they have no line yet; returns true when a new line was written. */
-    static boolean enter(ServerPlayer player, boolean late) {
+    public static boolean enter(ServerPlayer player, boolean late) {
         MinecraftServer server = player.getServer();
         if (server == null) {
             return false;
