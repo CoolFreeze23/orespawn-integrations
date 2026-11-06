@@ -32,6 +32,8 @@ CrazyCraft 5.0 `minecraft/mods` folder (or the versions listed below):
 - `neoorigins-2.2.29+1.21.1.jar`
 - `Patchouli-1.21.1-93-NEOFORGE.jar`
 - `Placebo-1.21.1-9.9.2.jar`
+- `plants-and-zombies-neoforge-1.5-neoforge.1.jar` (the Gazette's P&Z mailboxes, 0.10.1)
+- `refurbished_furniture-neoforge-1.21.1-1.0.22.jar` (the Gazette's Refurbished mailboxes, 0.10.1)
 - `player-animation-lib-forge-2.0.4+1.21.1.jar`
 - `SecurityCraft-1.21.1-v1.10.2.1.jar`
 - `SereneSeasons-neoforge-1.21.1-10.1.0.9.jar`

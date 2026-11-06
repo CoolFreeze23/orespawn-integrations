@@ -5,6 +5,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import danger.orespawn.integrations.OreSpawnIntegrations;
+import danger.orespawn.integrations.story.shelf9.FourWays;
 import danger.orespawn.integrations.story.shelf9.HatchingGroundData;
 import danger.orespawn.integrations.story.shelf9.HatchingGroundPlacer;
 import danger.orespawn.integrations.story.shelf9.HubPlaces;
@@ -198,6 +199,13 @@ public final class CcCommand {
         BlockPos at = p.length == 3 ? new BlockPos(p[0], p[1], p[2]) : feet;
         HubPlaces.add(server, thing, at, dim);
         source.sendSuccess(() -> Component.translatable(KEY + "placed", thing, at.getX(), at.getY(), at.getZ()), true);
+        if ("boteco".equals(thing) || "hunt_lodge".equals(thing)) {
+            HatchingGroundData shelf9 = HatchingGroundData.get(server);
+            if (shelf9.placed) {
+                FourWays.queueResurvey(shelf9);
+                source.sendSuccess(() -> Component.translatable(KEY + "ways_pending"), true);
+            }
+        }
         return 1;
     }
 

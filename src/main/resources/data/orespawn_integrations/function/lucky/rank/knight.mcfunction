@@ -1,5 +1,9 @@
 # Knight and up (in 0.10.0, the Summit holder past their grace): ly's table as shipped, and our OreSpawn table with
 # the whole boss eggs (one a Land's Week) and the Great Refusal.
+# Somebody's Yard: the traps and the harmful spells become the Land's return.
+execute if score #oi_yard cc_lucky matches 1 if score #oi_root cc_lucky matches 1..2 run return run function orespawn_integrations:lucky/yard
+execute if score #oi_yard cc_lucky matches 1 if score #oi_root cc_lucky matches 9 run return run function orespawn_integrations:lucky/yard/effect
+execute if score #oi_yard cc_lucky matches 1 if score #oi_root cc_lucky matches 4 run return run function orespawn_integrations:lucky/yard/entity
 execute if score #oi_root cc_lucky matches 1..2 run return run function lucky_blocks:random/trap/random
 execute if score #oi_root cc_lucky matches 3 run return run function lucky_blocks:random/summon/item/random
 execute if score #oi_root cc_lucky matches 4 run return run function lucky_blocks:random/summon/entity/random

@@ -9,3 +9,6 @@ execute if items entity @s container.* minecraft:paper[minecraft:custom_data~{"o
 execute if items entity @s container.* minecraft:paper[minecraft:custom_data~{"orespawn_integrations:copa":{row:"retalho"}}] run return run function orespawn_integrations:extravio/copa/retalho
 execute if items entity @s container.* minecraft:paper[minecraft:custom_data~{"orespawn_integrations:copa":{row:"presente"}}] run return run function orespawn_integrations:extravio/copa/presente
 execute if items entity @s container.* minecraft:paper[minecraft:custom_data~{"orespawn_integrations:copa":{row:"parte"}}] run return run function orespawn_integrations:extravio/copa/parte
+execute if items entity @s container.* minecraft:paper[minecraft:custom_data~{"orespawn_integrations:copa":{row:"bicho"}}] run return run function orespawn_integrations:extravio/copa/bicho
+execute if items entity @s container.* minecraft:paper[minecraft:custom_data~{"orespawn_integrations:copa":{row:"bicho_peixe"}}] run return run function orespawn_integrations:extravio/copa/bicho_peixe
+execute if items entity @s container.* minecraft:paper[minecraft:custom_data~{"orespawn_integrations:copa":{row:"desgarrado"}}] run return run function orespawn_integrations:extravio/copa/desgarrado

@@ -6,110 +6,121 @@
       "bonus_rolls": 0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:paper",
-          "weight": 56,
-          "functions": [
+          "type": "minecraft:alternatives",
+          "children": [
             {
-              "function": "minecraft:set_custom_data",
-              "tag": "{\"orespawn_integrations:copa\":{row:\"arca\"}}"
+              "type": "minecraft:empty",
+              "conditions": [
+                {
+                  "condition": "minecraft:value_check",
+                  "value": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "#extravio"
+                    },
+                    "score": "cc_terra"
+                  },
+                  "range": 10
+                }
+              ]
             },
             {
-              "function": "minecraft:set_name",
-              "target": "item_name",
-              "name": {
-                "translate": "orespawn_integrations.extravio.copa.token"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:paper",
-          "weight": 14,
-          "functions": [
-            {
-              "function": "minecraft:set_custom_data",
-              "tag": "{\"orespawn_integrations:copa\":{row:\"chapeu\"}}"
+              "type": "minecraft:loot_table",
+              "value": "orespawn_integrations:copa/dia/peixe",
+              "conditions": [
+                {
+                  "condition": "minecraft:value_check",
+                  "value": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "#extravio"
+                    },
+                    "score": "cc_terra"
+                  },
+                  "range": 1
+                }
+              ]
             },
             {
-              "function": "minecraft:set_name",
-              "target": "item_name",
-              "name": {
-                "translate": "orespawn_integrations.extravio.copa.token"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:paper",
-          "weight": 12,
-          "functions": [
-            {
-              "function": "minecraft:set_custom_data",
-              "tag": "{\"orespawn_integrations:copa\":{row:\"gaveta\"}}"
+              "type": "minecraft:loot_table",
+              "value": "orespawn_integrations:copa/dia/chapeu",
+              "conditions": [
+                {
+                  "condition": "minecraft:value_check",
+                  "value": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "#extravio"
+                    },
+                    "score": "cc_terra"
+                  },
+                  "range": 3
+                }
+              ]
             },
             {
-              "function": "minecraft:set_name",
-              "target": "item_name",
-              "name": {
-                "translate": "orespawn_integrations.extravio.copa.token"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:paper",
-          "weight": 9,
-          "functions": [
-            {
-              "function": "minecraft:set_custom_data",
-              "tag": "{\"orespawn_integrations:copa\":{row:\"retalho\"}}"
+              "type": "minecraft:loot_table",
+              "value": "orespawn_integrations:copa/dia/base",
+              "conditions": [
+                {
+                  "condition": "minecraft:value_check",
+                  "value": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "#extravio"
+                    },
+                    "score": "cc_terra"
+                  },
+                  "range": 8
+                },
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.5
+                }
+              ]
             },
             {
-              "function": "minecraft:set_name",
-              "target": "item_name",
-              "name": {
-                "translate": "orespawn_integrations.extravio.copa.token"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:paper",
-          "weight": 6,
-          "functions": [
-            {
-              "function": "minecraft:set_custom_data",
-              "tag": "{\"orespawn_integrations:copa\":{row:\"presente\"}}"
+              "type": "minecraft:empty",
+              "conditions": [
+                {
+                  "condition": "minecraft:value_check",
+                  "value": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "#extravio"
+                    },
+                    "score": "cc_terra"
+                  },
+                  "range": 8
+                }
+              ]
             },
             {
-              "function": "minecraft:set_name",
-              "target": "item_name",
-              "name": {
-                "translate": "orespawn_integrations.extravio.copa.token"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:paper",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_custom_data",
-              "tag": "{\"orespawn_integrations:copa\":{row:\"parte\"}}"
+              "type": "minecraft:loot_table",
+              "value": "orespawn_integrations:copa/dia/domingo",
+              "conditions": [
+                {
+                  "condition": "minecraft:value_check",
+                  "value": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "#extravio"
+                    },
+                    "score": "cc_terra"
+                  },
+                  "range": 9
+                }
+              ]
             },
             {
-              "function": "minecraft:set_name",
-              "target": "item_name",
-              "name": {
-                "translate": "orespawn_integrations.extravio.copa.token"
-              }
+              "type": "minecraft:loot_table",
+              "value": "orespawn_integrations:copa/dia/base"
             }
           ]
         }

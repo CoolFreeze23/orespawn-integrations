@@ -18,9 +18,28 @@
   "criteria": {
     "granted": {
       "trigger": "minecraft:impossible"
+    },
+    "etiqueta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:paper",
+            "predicates": {
+              "minecraft:custom_data": "{cc_misfile:{}}"
+            }
+          }
+        ]
+      }
     }
   },
   "rewards": {
     "experience": 5
-  }
+  },
+  "requirements": [
+    [
+      "granted",
+      "etiqueta"
+    ]
+  ]
 }

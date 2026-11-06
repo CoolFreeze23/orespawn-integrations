@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    }
+  ],
+  "parent": "orespawn_integrations:court/rank_3",
+  "display": {
+    "icon": {
+      "id": "minecraft:golden_helmet"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.court.rank_4.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.court.rank_4.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "apotheosis": {
+      "trigger": "minecraft:impossible"
+    },
+    "deed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "apotheosis",
+      "deed"
+    ]
+  ]
+}

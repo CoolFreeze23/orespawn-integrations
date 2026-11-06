@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    }
+  ],
+  "parent": "orespawn_integrations:court/rank_2",
+  "display": {
+    "icon": {
+      "id": "minecraft:filled_map"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.court.rank_3.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.court.rank_3.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "apotheosis": {
+      "trigger": "minecraft:impossible"
+    },
+    "deed": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "apotheosis",
+      "deed"
+    ]
+  ]
+}

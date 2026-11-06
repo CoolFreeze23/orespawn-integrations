@@ -130,7 +130,9 @@ public final class FirstFall {
             int min = night ? 50 : 60;
             int max = night ? 70 : 100;
             if (backDated) {
-                spot = FallSafety.findSpot(level, player, min, max, entry.tries == 0 ? 120 : 360, random);
+                spot = FallSafety.findSpot(level, player, min, max, entry.tries == 0 ? 120 : 360, random,
+                        FallSafety.atFullRadius(FallSafety.homes(level, player.getX(), player.getZ(),
+                                max + FallSafety.HOME_RADIUS)), tally);
             } else {
                 // A newcomer near spawn: their own spawn, respawn point and fresh homely blocks need only 24 blocks;
                 // the first try keeps the cone, the second and later ones look 24-48 blocks round, in view.
@@ -476,6 +478,7 @@ public final class FirstFall {
             }
         }
         FirstHourUtil.award(player, "livro/r5");
+        FirstHourUtil.award(player, "wonder/8"); // the first Fall crate or Hoard Fall vault opened (wonder-hoard-fall)
         PriorityTicket.crateOpened(player);
         Long scene = SCENES.remove(player.getUUID());
         if (scene != null) {

@@ -12,7 +12,9 @@
     "NeoOriginsMoistureLabelMixin",
     "EmfModelPartRootMixin",
     "ItemInHandLayerSwingMixin",
-    "LivingEntitySwingMixin"
+    "LivingEntitySwingMixin",
+    "RefurbishedCreativeFiltersMixin",
+    "GuiTitleFitMixin"
   ],
   "injectors": {
     "defaultRequire": 1

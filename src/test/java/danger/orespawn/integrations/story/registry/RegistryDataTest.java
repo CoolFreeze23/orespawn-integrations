@@ -73,10 +73,36 @@ class RegistryDataTest {
         }
     }
 
+    /** True when a release after 0.10.0 defines {@code key} in {@code lang}. */
+    private static boolean inLaterRelease(String key, String lang) throws IOException {
+        try (Stream<Path> dirs = Files.list(FRAGMENTS.getParent())) {
+            for (Path dir : dirs.filter(d -> d.getFileName().toString().startsWith("0.")
+                    && !d.equals(FRAGMENTS)).toList()) {
+                try (Stream<Path> files = Files.list(dir)) {
+                    for (Path f : files.filter(x -> x.getFileName().toString().endsWith("." + lang + ".json")).toList()) {
+                        if (JsonParser.parseString(Files.readString(f, StandardCharsets.UTF_8)).getAsJsonObject().has(key)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     @Test
     void everyKeyHasBothLanguages() throws IOException {
         JsonObject en = JsonParser.parseString(Files.readString(FRAGMENTS.resolve("registry.en_us.json"))).getAsJsonObject();
         JsonObject pt = JsonParser.parseString(Files.readString(FRAGMENTS.resolve("registry.pt_br.json"))).getAsJsonObject();
+        // A later release's group may add its own ops function beside the Registry's; its keys are in its fragments.
+        for (Path later : files(FRAGMENTS.getParent(), ".json")) {
+            String name = later.getFileName().toString();
+            if (!later.getParent().equals(FRAGMENTS) && name.endsWith(".en_us.json")) {
+                JsonParser.parseString(Files.readString(later)).getAsJsonObject().entrySet().forEach(e -> en.add(e.getKey(), e.getValue()));
+            } else if (!later.getParent().equals(FRAGMENTS) && name.endsWith(".pt_br.json")) {
+                JsonParser.parseString(Files.readString(later)).getAsJsonObject().entrySet().forEach(e -> pt.add(e.getKey(), e.getValue()));
+            }
+        }
         Pattern key = Pattern.compile("\"(?:translate|Title|DialogText|DialogTitle)\"[ ]*:[ ]*\"((?:orespawn_integrations|advancements[.]orespawn_integrations)[.][a-z0-9_.]+)\"");
         int found = 0;
         for (Path root : List.of(DATA.resolve("function/odete"), DATA.resolve("function/odete_campo"), DATA.resolve("function/ops"),
@@ -88,8 +114,12 @@ class RegistryDataTest {
                 Matcher m = key.matcher(Files.readString(p, StandardCharsets.UTF_8));
                 while (m.find()) {
                     found++;
-                    assertTrue(en.has(m.group(1)), "no EN line for " + m.group(1) + " in " + p);
-                    assertTrue(pt.has(m.group(1)), "no pt-BR line for " + m.group(1) + " in " + p);
+                    // A later release's lines (a boteco's ops function, the Gazette's desk page) live in its own
+                    // release folder; the Registry's own lines must be in the Registry's fragments.
+                    boolean registry = en.has(m.group(1));
+                    assertTrue(registry || inLaterRelease(m.group(1), "en_us"), "no EN line for " + m.group(1) + " in " + p);
+                    assertTrue(registry ? pt.has(m.group(1)) : inLaterRelease(m.group(1), "pt_br"),
+                            "no pt-BR line for " + m.group(1) + " in " + p);
                 }
             }
         }

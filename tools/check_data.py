@@ -39,7 +39,7 @@ JAVA = ROOT / "src" / "main" / "java"
 FRAG = ROOT / "_lang_fragments" / "0.10.0"
 MODS = Path(r"C:\Users\alvin\AppData\Roaming\PrismLauncher\instances\CrazyCraft 5.0\minecraft\mods")
 # CustomNPCs reads its own lenient JSON (bare 1b, raw newlines): those files are its format, not Minecraft data.
-LENIENT = ("orespawn_integrations/customnpcs/",)
+LENIENT = ("orespawn_integrations/customnpcs/", "orespawn_integrations/customnpcs_0101/")
 SHIPPED_LANG = RES / "assets" / "orespawn_integrations" / "lang" / "en_us.json"
 NS = "orespawn_integrations"
 
@@ -348,11 +348,12 @@ class Checker:
         for f in sorted(DATA.rglob("*.mcfunction")):
             self.mcfunction(f.relative_to(ROOT).as_posix(), f.read_text(encoding="utf-8"))
         known = set(json.loads(SHIPPED_LANG.read_text(encoding="utf-8")))
-        for kf in FRAG.glob("*.keys.json"):
+        # Every release's fragments: a later release's keys are as real as 0.10.0's before the merge into lang.
+        for kf in FRAG.parent.glob("*/*.keys.json"):
             known |= set(json.loads(kf.read_text(encoding="utf-8")))
         for k, where in sorted(self.keys_used.items()):
             if k not in known:
-                self.bad(where, f"translate key {k} is in no _lang_fragments/0.10.0/*.keys.json")
+                self.bad(where, f"translate key {k} is in no _lang_fragments/<release>/*.keys.json")
 
 
 def main(argv):

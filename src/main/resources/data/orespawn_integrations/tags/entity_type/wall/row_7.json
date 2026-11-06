@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "orespawn:the_king",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_queen",
+      "required": false
+    }
+  ]
+}

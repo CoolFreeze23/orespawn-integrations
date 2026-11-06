@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    }
+  ],
+  "parent": "orespawn_integrations:week/root",
+  "display": {
+    "icon": {
+      "id": "brasilcoisas:urutau_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.wonder.7.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.wonder.7.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cry": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "orespawn_integrations:reward/wonder_land"
+  }
+}

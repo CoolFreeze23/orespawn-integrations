@@ -1,0 +1,105 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "brazil_legends:mapinguari",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:mapinguary",
+      "required": false
+    },
+    {
+      "id": "brazil_legends:headless_mule",
+      "required": false
+    },
+    {
+      "id": "orespawn:pitch_black",
+      "required": false
+    },
+    {
+      "id": "orespawn:leon",
+      "required": false
+    },
+    {
+      "id": "orespawn:hammerhead",
+      "required": false
+    },
+    {
+      "id": "orespawn:giant_robot",
+      "required": false
+    },
+    {
+      "id": "orespawn:spider_robot",
+      "required": false
+    },
+    {
+      "id": "mowziesmobs:frostmaw",
+      "required": false
+    },
+    {
+      "id": "mowziesmobs:umvuthi",
+      "required": false
+    },
+    {
+      "id": "aether:valkyrie_queen",
+      "required": false
+    },
+    {
+      "id": "twilightforest:knight_phantom",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:dead_king",
+      "required": false
+    },
+    {
+      "id": "cataclysm:netherite_monstrosity",
+      "required": false
+    },
+    {
+      "id": "cataclysm:clawdian",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:lifestealer",
+      "required": false
+    },
+    {
+      "id": "born_in_chaos_v1:missioner",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_zombie",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_skeleton",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_creeper",
+      "required": false
+    },
+    {
+      "id": "marvel:red_skull",
+      "required": false
+    },
+    {
+      "id": "plantz:gargantuar",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:wilden_boss",
+      "required": false
+    },
+    {
+      "id": "the_bumblezone:cosmic_crystal_entity",
+      "required": false
+    },
+    {
+      "id": "minecraft:ender_dragon",
+      "required": false
+    }
+  ]
+}

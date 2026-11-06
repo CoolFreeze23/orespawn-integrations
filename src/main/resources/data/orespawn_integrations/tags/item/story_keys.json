@@ -1,0 +1,193 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "twilightforest:naga_trophy",
+      "required": false
+    },
+    {
+      "id": "twilightforest:lich_trophy",
+      "required": false
+    },
+    {
+      "id": "twilightforest:minoshroom_trophy",
+      "required": false
+    },
+    {
+      "id": "twilightforest:hydra_trophy",
+      "required": false
+    },
+    {
+      "id": "twilightforest:knight_phantom_trophy",
+      "required": false
+    },
+    {
+      "id": "twilightforest:ur_ghast_trophy",
+      "required": false
+    },
+    {
+      "id": "twilightforest:alpha_yeti_trophy",
+      "required": false
+    },
+    {
+      "id": "twilightforest:snow_queen_trophy",
+      "required": false
+    },
+    {
+      "id": "twilightforest:quest_ram_trophy",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:creeper_shard",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:endersoul_hand",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:hulk_hammer",
+      "required": false
+    },
+    {
+      "id": "mutantmonsters:mutant_skeleton_skull",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:mobzilla_vault_key",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:kraken_vault_key",
+      "required": false
+    },
+    {
+      "id": "securitycraft:keycard_lv1",
+      "required": false
+    },
+    {
+      "id": "securitycraft:keycard_lv2",
+      "required": false
+    },
+    {
+      "id": "securitycraft:keycard_lv3",
+      "required": false
+    },
+    {
+      "id": "securitycraft:keycard_lv4",
+      "required": false
+    },
+    {
+      "id": "securitycraft:keycard_lv5",
+      "required": false
+    },
+    {
+      "id": "securitycraft:limited_use_keycard",
+      "required": false
+    },
+    {
+      "id": "endrem:black_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:cold_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:corrupted_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:cryptic_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:cursed_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:evil_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:exotic_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:guardian_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:lost_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:magical_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:nether_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:old_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:rogue_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:royal_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:undead_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:witch_eye",
+      "required": false
+    },
+    {
+      "id": "endrem:wither_eye",
+      "required": false
+    },
+    {
+      "id": "orespawn:queen_scale",
+      "required": false
+    },
+    {
+      "id": "orespawn:queen_helmet",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_king_part_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:the_queen_part_spawn_block",
+      "required": false
+    },
+    {
+      "id": "orespawn:godzilla_part_spawn_block",
+      "required": false
+    },
+    {
+      "id": "portalgun:portal_gun",
+      "required": false
+    },
+    {
+      "id": "orespawn_integrations:ledger_spine",
+      "required": false
+    },
+    {
+      "id": "marvel:space_stone",
+      "required": false
+    },
+    {
+      "id": "the_bumblezone:essence_of_the_bees",
+      "required": false
+    }
+  ]
+}

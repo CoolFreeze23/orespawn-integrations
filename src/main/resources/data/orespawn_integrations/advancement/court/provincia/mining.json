@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "orespawn"
+    }
+  ],
+  "parent": "orespawn_integrations:court/duas_provincias",
+  "display": {
+    "icon": {
+      "id": "minecraft:iron_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.orespawn_integrations.court.provincia.mining.title"
+    },
+    "description": {
+      "translate": "advancements.orespawn_integrations.court.provincia.mining.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "entered": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "orespawn:mining"
+      }
+    }
+  },
+  "rewards": {
+    "function": "orespawn_integrations:court/provincia/mining"
+  }
+}

@@ -256,6 +256,32 @@ public final class ShelfNineTests {
         helper.succeed();
     }
 
+    /** Signs a 0.10.0 start wrote are surveyed once more at the first 0.10.1 start (the boteco's way), then never. */
+    @GameTest(template = "empty8", timeoutTicks = 400)
+    public static void olderSignsAreResurveyedOnce(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        List<StructureTemplate.StructureBlockInfo> signs = new ArrayList<>();
+        BlockPos origin = placeTemplate(helper, signs);
+        HatchingGroundData scratch = new HatchingGroundData();
+        for (StructureTemplate.StructureBlockInfo info : signs) {
+            String role = role(info);
+            if (role.startsWith("ways_")) {
+                scratch.waysSigns["nesw".indexOf(role.charAt(5))] = info.pos();
+            }
+        }
+        scratch.placed = true;
+        scratch.origin = origin;
+        scratch.dimension = level.dimension().location().toString();
+        scratch.waysVersion = "0.10.0";
+        helper.assertTrue(FourWays.runPending(level.getServer(), scratch), "0.10.0 signs are surveyed again");
+        helper.assertTrue(FourWays.VERSION.equals(scratch.waysVersion), "now at " + FourWays.VERSION);
+        helper.assertTrue(!FourWays.runPending(level.getServer(), scratch), "and only once");
+        FourWays.queueResurvey(scratch);
+        helper.assertTrue(scratch.waysPending, "a new boteco or Lodge queues one more");
+        helper.assertTrue(FourWays.runPending(level.getServer(), scratch), "run at the next start");
+        helper.succeed();
+    }
+
     private static String waysKey(ServerLevel level, BlockPos pos) {
         BlockEntity be = level.getBlockEntity(pos);
         if (!(be instanceof SignBlockEntity sign)) {

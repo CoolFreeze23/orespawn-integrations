@@ -59,6 +59,23 @@ public final class IntegrationsConfig {
     public static final ModConfigSpec.BooleanValue storyAntechamber;
     public static final ModConfigSpec.BooleanValue storyHbmExemptions;
     public static final ModConfigSpec.BooleanValue storyLoanerWeapons; // chaos
+    // week (0.10.1)
+    public static final ModConfigSpec.BooleanValue storyLandsWeek;
+    public static final ModConfigSpec.BooleanValue storyDuskCry;
+    public static final ModConfigSpec.BooleanValue storyBoteco;
+    public static final ModConfigSpec.BooleanValue aliveAlmanac;
+    public static final ModConfigSpec.BooleanValue aliveGazette;
+    // ranks
+    public static final ModConfigSpec.BooleanValue storyCourtRanks;
+    public static final ModConfigSpec.BooleanValue storyDeedLog;
+    public static final ModConfigSpec.BooleanValue storyBossLadder;
+    public static final ModConfigSpec.BooleanValue storyRoyalHunt;
+    public static final ModConfigSpec.BooleanValue storyHuntLodge;
+    public static final ModConfigSpec.BooleanValue storyFreguesia; // parish
+    public static final ModConfigSpec.BooleanValue storyMisfile; // parish
+    public static final ModConfigSpec.ConfigValue<java.util.List<? extends Integer>> freguesiaThresholds; // parish
+    public static final ModConfigSpec.ConfigValue<java.util.List<? extends Integer>> freguesiaBuilderKeys; // parish
+    public static final ModConfigSpec.IntValue freguesiaStoneGraceDays; // parish
     public static final ModConfigSpec.IntValue sightingsMinDistance;
     public static final ModConfigSpec.IntValue sightingsScoutDistance;
     public static final ModConfigSpec.IntValue sightingsAutoPins;
@@ -221,6 +238,69 @@ public final class IntegrationsConfig {
                 "A Loaner (the casket's Big Bertha) breaks after 24 swings and can't be refitted. false = a Loaner",
                 "is an ordinary weapon.")
                 .define("loaner_weapons", true);
+        // week
+        storyLandsWeek = builder.comment(
+                "The Land's Week: each dawn names the day on the actionbar and runs the weekday hooks. false = no",
+                "weekday lines and no weekday hooks; the Land's day still counts, so turning it back on resumes the",
+                "week where it is.")
+                .define("lands_week", true);
+        storyDuskCry = builder.comment(
+                "The dusk line: the mae-da-lua cries once per player per dusk, and the urutau spawns in the woods",
+                "at dusk. false = no line and no urutau spawns.")
+                .define("dusk_cry", true);
+        storyBoteco = builder.comment(
+                "Seu Ze's boteco generates in new chunks as a findable structure and replaces Brasil e Coisas' bar",
+                "feature. false = no boteco structure, and the shipped bar feature comes back (restart needed).")
+                .define("boteco", true);
+        // ranks
+        storyCourtRanks = builder.comment(
+                "Court ranks (cc_court): Squire also by two provinces on two days, Knight and Fidalgo also by deeds, one",
+                "ceremony per rise. false = cc_court follows the Apotheosis tiers only; deeds still grant their own",
+                "advancements.")
+                .define("court_ranks", true);
+        storyDeedLog = builder.comment(
+                "The deed log: boss kills, sightings and the rest are written down for Saturday's retelling and the",
+                "Gazette. false = nothing is written, and the readers fall silent.")
+                .define("deed_log", true);
+        storyBossLadder = builder.comment(
+                "The Wall of the Wanted: the Lodge's poster signs name each row's latest killer and each row gives an",
+                "advancement. false = no sign rewrites or row advancements; the Captain's board falls back to her",
+                "shipped quests 701-706.")
+                .define("boss_ladder", true);
+        storyRoyalHunt = builder.comment(
+                "Captain Iracema and the Monday board: three bounties a Monday, the board at the Lodge, at any Monster",
+                "Hunter tent (sneak-use its Hunter's Workbench) and at Registry desks. false = no board; the tent's",
+                "workbench is always the shipped one.")
+                .define("royal_hunt", true);
+        storyHuntLodge = builder.comment(
+                "The Hunt Lodge generates once per new world, 300-600 blocks from spawn. false = no Lodge in new",
+                "chunks; an operator can still place one (/cc hunt_lodge place). Applies to chunks made after a restart.")
+                .define("hunt_lodge", true);
+        // parish
+        storyFreguesia = builder.comment(
+                "The Freguesia: a Parish Stone at home counts its Manor decor, and the Land moves in by stages (a",
+                "Caramelo, villagers, an Odete, a Town); Wednesday's peddler visits the week's best-kept house.",
+                "false = the stone is a plain block, nothing counts and no peddler is sent.")
+                .define("freguesia", true);
+        storyMisfile = builder.comment(
+                "The Misfile's 0.10.1 half: the canopy's misfiled creatures and strays, the Day's Misfile and the dawn",
+                "release. false = those rows give a casket instead, no day is rolled and nothing is released.")
+                .define("misfile", true);
+        builder.pop();
+
+        // parish
+        builder.comment("The Freguesia's numbers.").push("freguesia");
+        freguesiaThresholds = builder.comment(
+                "Manor standing for the stages Homestead, Hamlet, Parish and Town.")
+                .defineList("thresholds", java.util.List.of(60, 150, 300, 600), () -> 0,
+                        o -> o instanceof Integer i && i >= 0);
+        freguesiaBuilderKeys = builder.comment(
+                "The builder's keys: the standing that opens Parish without a boss kill and Town without a Knight.")
+                .defineList("builder_keys", java.util.List.of(450, 900), () -> 0,
+                        o -> o instanceof Integer i && i >= 0);
+        freguesiaStoneGraceDays = builder.comment(
+                "Game days a fallen Parish Stone's record waits for a signer's new stone before it is filed away.")
+                .defineInRange("stone_grace_days", 30, 1, 3650);
         builder.pop();
 
         builder.comment("Sightings (spyglass) tuning.").push("sightings");
@@ -246,6 +326,15 @@ public final class IntegrationsConfig {
                 "true = meteors crater the ground as before. false = meteors land in the wild, never near a bed,",
                 "a Parish Stone or a home, and break no blocks.")
                 .define("meteor_grief", false);
+        // week
+        aliveAlmanac = builder.comment(
+                "The Almanac: one seeded roll each dawn and one world event a night. false = no daily picks and no",
+                "slot rule; every event falls back to its own off state, and the Land's Week still turns.")
+                .define("almanac", true);
+        aliveGazette = builder.comment(
+                "The Interregnum Gazette: a newspaper in each subscriber's mailbox every dawn. false = no copies,",
+                "and the subscription options hide.")
+                .define("gazette", true);
         builder.pop();
 
         builder.comment("Places and their names.").push("world");

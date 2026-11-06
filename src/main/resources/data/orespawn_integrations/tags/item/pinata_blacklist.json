@@ -1,0 +1,212 @@
+{
+  "replace": false,
+  "values": [
+    "#orespawn_integrations:story_keys",
+    "minecraft:command_block",
+    "minecraft:chain_command_block",
+    "minecraft:repeating_command_block",
+    "minecraft:command_block_minecart",
+    "minecraft:structure_block",
+    "minecraft:structure_void",
+    "minecraft:jigsaw",
+    "minecraft:barrier",
+    "minecraft:light",
+    "minecraft:debug_stick",
+    "minecraft:knowledge_book",
+    "minecraft:bedrock",
+    "minecraft:spawner",
+    "minecraft:trial_spawner",
+    "minecraft:vault",
+    "minecraft:end_portal_frame",
+    "minecraft:reinforced_deepslate",
+    "minecraft:petrified_oak_slab",
+    "minecraft:budding_amethyst",
+    "minecraft:farmland",
+    "minecraft:dirt_path",
+    "minecraft:frogspawn",
+    {
+      "id": "hbmsntm:balefire_and_steel",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:black_hole",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:bomb_caller",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:crashed_bomb",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:det_nuke",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:egg_balefire",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:fissure_bomb",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_anti_ballistic",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_bhole",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_burst",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_buster",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_buster_strong",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_cluster",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_cluster_strong",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_decoy",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_doomsday",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_doomsday_rusted",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_drill",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_emp",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_emp_strong",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_generic",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_incendiary",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_incendiary_strong",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_inferno",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_micro",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_nuclear",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_nuclear_cluster",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_rain",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_schrabidium",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_shuttle",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_soyuz",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_stealth",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_strong",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_taint",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:missile_volcano",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:n2_charge",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_fat_man",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_fleija",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_fstbmb",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_gadget",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_ivy_mike",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_little_boy",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_n2",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_prototype",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_solinium",
+      "required": false
+    },
+    {
+      "id": "hbmsntm:nuke_tsar_bomba",
+      "required": false
+    }
+  ]
+}

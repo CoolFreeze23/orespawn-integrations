@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "brasilcoisas"
+    },
+    {
+      "type": "orespawn_integrations:week_switch",
+      "switch": "boteco"
+    }
+  ],
+  "structures": [
+    {
+      "structure": "orespawn_integrations:boteco",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 48,
+    "separation": 16,
+    "salt": 1504271101,
+    "spread_type": "linear",
+    "exclusion_zone": {
+      "other_set": "minecraft:villages",
+      "chunk_count": 8
+    }
+  }
+}
