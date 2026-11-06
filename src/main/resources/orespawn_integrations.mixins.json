@@ -13,7 +13,8 @@
     "EmfModelPartRootMixin",
     "ItemInHandLayerSwingMixin",
     "LivingEntitySwingMixin",
-    "RefurbishedCreativeFiltersMixin"
+    "RefurbishedCreativeFiltersMixin",
+    "GuiTitleFitMixin"
   ],
   "injectors": {
     "defaultRequire": 1
