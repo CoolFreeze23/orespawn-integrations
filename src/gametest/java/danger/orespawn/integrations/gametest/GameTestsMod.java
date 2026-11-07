@@ -41,6 +41,14 @@ public final class GameTestsMod {
         }
         NeoForge.EVENT_BUS.addListener(GameTestsMod::onRegisterCommands);
         NeoForge.EVENT_BUS.addListener(GameTestsMod::onServerAboutToStart);
+        NeoForge.EVENT_BUS.addListener(GameTestsMod::onServerTick);
+    }
+
+    /** The server only ticks the GameTest ticker where GameTests are enabled, which a production jar never is. */
+    private static void onServerTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post event) {
+        if (!net.neoforged.neoforge.gametest.GameTestHooks.isGametestEnabled() && event.getServer().tickRateManager().runsNormally()) {
+            net.minecraft.gametest.framework.GameTestTicker.SINGLETON.tick();
+        }
     }
 
     private static void onRegisterCommands(RegisterCommandsEvent event) {
