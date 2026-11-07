@@ -358,6 +358,13 @@ class Checker:
         for k, where in sorted(self.keys_used.items()):
             if k not in known:
                 self.bad(where, f"translate key {k} is in no _lang_fragments/<release>/*.keys.json")
+        # The release this jar is built as must have its lines in the shipped files, or players read raw keys.
+        version = re.search(r"^mod_version=(\S+)", (ROOT / "gradle.properties").read_text(encoding="utf-8"), re.M).group(1)
+        shipped = json.loads(SHIPPED_LANG.read_text(encoding="utf-8"))
+        missing = [k for kf in (FRAG.parent / version).glob("*.keys.json")
+                   for k in json.loads(kf.read_text(encoding="utf-8")) if k not in shipped]
+        if missing:
+            self.bad("lang", f"{len(missing)} keys of {version} aren't merged: python -I tools/lang_fragments.py {version} --merge")
 
 
 def main(argv):
