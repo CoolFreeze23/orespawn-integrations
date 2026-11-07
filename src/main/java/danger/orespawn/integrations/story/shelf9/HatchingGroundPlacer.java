@@ -76,40 +76,75 @@ public final class HatchingGroundPlacer {
                 return;
             }
             long start = System.nanoTime();
-            BlockPos ground = findSite(level, level.getSharedSpawnPos());
-            if (ground == null) {
-                OreSpawnIntegrations.LOGGER.warn("Shelf 9: no land patch within {} blocks of spawn and no beach within"
-                        + " 128; the world plays without it", SiteSearch.RADIUS);
-                return;
+            BlockPos ground = settleFirstStart(level, SiteSearch.LAND, SiteSearch.FAR_RADIUS, SiteSearch.FAR_LIMIT_MS);
+            if (ground != null) {
+                OreSpawnIntegrations.LOGGER.info("Shelf 9 placed at {} in {} ms (site search, template, four locates)",
+                        ground, (System.nanoTime() - start) / 1_000_000L);
             }
-            place(level, ground, true, "first_start");
-            // A new world's spawn radius would scatter newborns over the shell; they wake on the straw instead.
-            level.getGameRules().getRule(GameRules.RULE_SPAWN_RADIUS).set(0, server);
-            OreSpawnIntegrations.LOGGER.info("Shelf 9 placed at {} in {} ms (site search, template, four locates)",
-                    ground, (System.nanoTime() - start) / 1_000_000L);
         } catch (Throwable t) {
             StoryCore.logOnce("shelf9.first_start", t);
         }
     }
 
     /**
-     * Spirals out up to 48 blocks from {@code spawn} for a 21 x 21 patch of land; failing that, tries the nearest
-     * beach within 128 blocks. Returns the patch's centre at ground level, or null.
+     * A new world's search and what follows it: Shelf 9 at the site with the world's spawn on its straw, or, with no
+     * site, one warning saying why and a world that plays on without it. Returns the site, or null. The rule, reach and
+     * limit are parameters so the GameTests can make every search fail.
      */
-    static BlockPos findSite(ServerLevel level, BlockPos spawn) {
-        BlockPos site = searchAround(level, spawn, SiteSearch.RADIUS);
-        if (site != null) {
-            return site;
+    public static BlockPos settleFirstStart(ServerLevel level, SiteSearch.Rule rule, int farRadius, long limitMs) {
+        Search search = findSite(level, level.getSharedSpawnPos(), rule, farRadius, limitMs);
+        if (search.ground() == null) {
+            if (search.timedOut()) {
+                OreSpawnIntegrations.LOGGER.warn("Shelf 9: the site search reached its {} ms limit before finding a land"
+                        + " patch within {} blocks of spawn; the world plays without it", limitMs, farRadius);
+            } else {
+                OreSpawnIntegrations.LOGGER.warn("Shelf 9: no land patch within {} blocks of spawn, nor by the nearest"
+                        + " beach within 128; the world plays without it", farRadius);
+            }
+            return null;
         }
-        var beach = level.findClosestBiome3d(biome -> biome.is(BiomeTags.IS_BEACH), spawn, 128, 8, 8);
-        return beach == null ? null : searchAround(level, beach.getFirst(), 24);
+        place(level, search.ground(), true, "first_start");
+        // A new world's spawn radius would scatter newborns over the shell; they wake on the straw instead.
+        level.getGameRules().getRule(GameRules.RULE_SPAWN_RADIUS).set(0, level.getServer());
+        return search.ground();
     }
 
-    private static BlockPos searchAround(ServerLevel level, BlockPos centre, int radius) {
+    /** How a site search ended: the patch's centre at ground level or null, and whether its time limit stopped it. */
+    public record Search(BlockPos ground, boolean timedOut) {
+    }
+
+    /**
+     * Spirals out up to 48 blocks from {@code spawn} for a 21 x 21 patch of land; failing that, tries the nearest beach
+     * within 128 blocks; failing that, spirals on from 48 blocks out to {@code farRadius}, with the time limit on this
+     * last step alone (checked between candidates).
+     */
+    public static Search findSite(ServerLevel level, BlockPos spawn, SiteSearch.Rule rule, int farRadius, long limitMs) {
+        BlockPos site = searchAround(level, spawn, SiteSearch.spiral(SiteSearch.RADIUS, 4), rule, Long.MAX_VALUE);
+        if (site != null) {
+            return new Search(site, false);
+        }
+        var beach = level.findClosestBiome3d(biome -> biome.is(BiomeTags.IS_BEACH), spawn, 128, 8, 8);
+        if (beach != null) {
+            site = searchAround(level, beach.getFirst(), SiteSearch.spiral(24, 4), rule, Long.MAX_VALUE);
+            if (site != null) {
+                return new Search(site, false);
+            }
+        }
+        long started = System.nanoTime();
+        site = searchAround(level, spawn, SiteSearch.spiralBeyond(SiteSearch.RADIUS, farRadius, 4), rule, limitMs);
+        return new Search(site, site == null && (System.nanoTime() - started) / 1_000_000L >= limitMs);
+    }
+
+    private static BlockPos searchAround(ServerLevel level, BlockPos centre, List<int[]> offsets, SiteSearch.Rule rule,
+                                         long limitMs) {
+        long started = System.nanoTime();
         int n = SiteSearch.OFFSETS.length;
         int[] heights = new int[n * n];
         boolean[] fluid = new boolean[n * n];
-        for (int[] offset : SiteSearch.spiral(radius, 4)) {
+        for (int[] offset : offsets) {
+            if ((System.nanoTime() - started) / 1_000_000L >= limitMs) {
+                return null;
+            }
             int cx = centre.getX() + offset[0];
             int cz = centre.getZ() + offset[1];
             int i = 0;
@@ -121,7 +156,7 @@ public final class HatchingGroundPlacer {
                     i++;
                 }
             }
-            if (SiteSearch.fits(heights, fluid)) {
+            if (rule.fits(cx, cz, heights, fluid)) {
                 return new BlockPos(cx, SiteSearch.groundOf(heights), cz);
             }
         }

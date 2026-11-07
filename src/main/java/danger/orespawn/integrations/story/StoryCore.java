@@ -33,6 +33,11 @@ public final class StoryCore {
     }
 
     /** Logs a failure once per key and server run, so a broken hook never floods the log. */
+    /** True when any system whose key starts with {@code prefix} has logged a failure. */
+    public static boolean hasFailed(String prefix) {
+        return LOGGED.stream().anyMatch(key -> key.startsWith(prefix));
+    }
+
     public static void logOnce(String key, Throwable t) {
         if (LOGGED.add(key)) {
             OreSpawnIntegrations.LOGGER.error("Story system '{}' failed; it keeps running, further errors are not logged", key, t);

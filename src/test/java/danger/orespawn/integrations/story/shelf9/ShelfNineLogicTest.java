@@ -67,6 +67,21 @@ class ShelfNineLogicTest {
     }
 
     @Test
+    void theLastStepPicksUpWhereTheFirstLeftOff() {
+        List<int[]> beyond = SiteSearch.spiralBeyond(SiteSearch.RADIUS, SiteSearch.FAR_RADIUS, 4);
+        int last = 0;
+        for (int[] o : beyond) {
+            int d = o[0] * o[0] + o[1] * o[1];
+            assertTrue(d > 48 * 48);
+            assertTrue(d <= 192 * 192);
+            assertTrue(d >= last);
+            last = d;
+        }
+        assertEquals(SiteSearch.spiral(SiteSearch.FAR_RADIUS, 4).size(),
+                SiteSearch.spiral(SiteSearch.RADIUS, 4).size() + beyond.size());
+    }
+
+    @Test
     void waysNameTheNearestThingOnEachSide() {
         WaysPlan.Found farVillage = new WaysPlan.Found("village", 0, -400);
         WaysPlan.Found nearTower = new WaysPlan.Found("tower", 30, -200);

@@ -1,11 +1,15 @@
 package danger.orespawn.integrations.gametest;
 
 import danger.orespawn.integrations.command.CcCommand;
+import danger.orespawn.integrations.story.StoryCore;
+import danger.orespawn.integrations.story.firsthour.FirstHourData;
+import danger.orespawn.integrations.story.firsthour.TicketState;
 import danger.orespawn.integrations.story.shelf9.Eggshell;
 import danger.orespawn.integrations.story.shelf9.FourWays;
 import danger.orespawn.integrations.story.shelf9.HatchRegister;
 import danger.orespawn.integrations.story.shelf9.HatchingGroundData;
 import danger.orespawn.integrations.story.shelf9.HatchingGroundPlacer;
+import danger.orespawn.integrations.story.shelf9.SiteSearch;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
@@ -19,6 +23,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -28,6 +33,8 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 import net.minecraft.world.level.block.Block;
 import net.minecraft.util.RandomSource;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
@@ -204,6 +211,77 @@ public final class ShelfNineTests {
         }
         helper.assertTrue(HatchingGroundPlacer.topUpStraw(level, spots, ids) == 0, "a full straw stays as it is");
         helper.succeed();
+    }
+
+    /** The last step: with the 48-block search and the beach turned down, a patch just past 48 blocks is the site. */
+    @GameTest(template = "empty8")
+    public static void theLastStepFindsASiteBeyondTheFirstSearch(GameTestHelper helper) {
+        BlockPos spawn = helper.absolutePos(BlockPos.ZERO);
+        SiteSearch.Rule ring = (x, z, heights, fluid) -> distance2(spawn, x, z) > 48 * 48;
+        HatchingGroundPlacer.Search search = HatchingGroundPlacer.findSite(helper.getLevel(), spawn, ring, 56, 60_000L);
+        helper.assertTrue(search.ground() != null, "no site past 48 blocks");
+        int d2 = distance2(spawn, search.ground().getX(), search.ground().getZ());
+        helper.assertTrue(d2 > 48 * 48 && d2 <= 56 * 56, "the site is outside the ring, " + d2);
+        helper.assertTrue(!search.timedOut(), "a found site never reads as timed out");
+        helper.succeed();
+    }
+
+    /** The search's two ways of finding nothing are told apart, for the warning. */
+    @GameTest(template = "empty8")
+    public static void theLastStepEndsInNoSiteOrItsLimit(GameTestHelper helper) {
+        BlockPos spawn = helper.absolutePos(BlockPos.ZERO);
+        SiteSearch.Rule never = (x, z, heights, fluid) -> false;
+        HatchingGroundPlacer.Search none = HatchingGroundPlacer.findSite(helper.getLevel(), spawn, never, 52, 60_000L);
+        helper.assertTrue(none.ground() == null && !none.timedOut(), "every candidate tried: no site, no timeout");
+        HatchingGroundPlacer.Search out = HatchingGroundPlacer.findSite(helper.getLevel(), spawn, never, 52, 0L);
+        helper.assertTrue(out.ground() == null && out.timedOut(), "a spent limit reads as timed out");
+        helper.succeed();
+    }
+
+    /**
+     * A world with no site plays on: the search leaves the first-start flag set, Shelf 9 unplaced, spawn and its radius
+     * where they were, and a newborn joining that world gets a Register line, an Eggshell and a first-hour ticket at P00
+     * with no Shelf 9 failure logged. The flags go back before the method returns, so no other test sees them.
+     */
+    @GameTest(template = "empty8", batch = "shelf9_skip")
+    public static void aWorldWithNoSitePlaysOn(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        ServerLevel overworld = level.getServer().overworld();
+        HatchingGroundData data = HatchingGroundData.get(level.getServer());
+        boolean placed = data.placed;
+        boolean firstStartDone = data.firstStartDone;
+        BlockPos spawn = overworld.getSharedSpawnPos();
+        int radius = overworld.getGameRules().getInt(GameRules.RULE_SPAWN_RADIUS);
+        boolean failedBefore = StoryCore.hasFailed("shelf9.");
+        try {
+            data.placed = false;
+            data.firstStartDone = true;
+            SiteSearch.Rule never = (x, z, heights, fluid) -> false;
+            helper.assertTrue(HatchingGroundPlacer.settleFirstStart(overworld, never, 52, 60_000L) == null, "no site");
+            helper.assertTrue(HatchingGroundPlacer.settleFirstStart(overworld, never, 52, 0L) == null, "limit spent");
+            helper.assertTrue(data.firstStartDone, "the first-start flag stays set");
+            helper.assertTrue(!data.placed, "nothing was placed");
+            helper.assertTrue(overworld.getSharedSpawnPos().equals(spawn), "spawn stayed");
+            helper.assertTrue(overworld.getGameRules().getInt(GameRules.RULE_SPAWN_RADIUS) == radius, "radius stayed");
+
+            ServerPlayer newborn = MockPlayers.inLevel(helper);
+            newborn.removeData(FirstHourData.FIRST_HOUR.get());
+            NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(newborn));
+            helper.assertTrue(HatchRegister.lineOf(newborn) > 0, "the Register still takes their name");
+            helper.assertTrue(Eggshell.isGiven(newborn), "the Eggshell still comes");
+            helper.assertTrue(FirstHourData.ticket(newborn).step == TicketState.P00, "the ticket starts at P00");
+            helper.assertTrue(failedBefore || !StoryCore.hasFailed("shelf9."), "a Shelf 9 failure was logged");
+        } finally {
+            data.placed = placed;
+            data.firstStartDone = firstStartDone;
+        }
+        helper.succeed();
+    }
+
+    private static int distance2(BlockPos from, int x, int z) {
+        int dx = x - from.getX();
+        int dz = z - from.getZ();
+        return dx * dx + dz * dz;
     }
 
     private static BlockPos placeTemplate(GameTestHelper helper, List<StructureTemplate.StructureBlockInfo> signs) {

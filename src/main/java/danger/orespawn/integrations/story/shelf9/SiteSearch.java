@@ -8,17 +8,29 @@ import java.util.List;
 /**
  * Shelf 9's site rule, as pure logic (unit tested): a 21 x 21 patch fits when its 25 heightmap reads (a 5 x 5 grid
  * across the patch) spread by 5 blocks or less and none of them is fluid. Candidates are tried nearest first, out to
- * 48 blocks from world spawn.
+ * 48 blocks from world spawn, then, after the beach, from there out to 192 under a time limit.
  */
 public final class SiteSearch {
 
     public static final int MAX_SPREAD = 5;
     public static final int RADIUS = 48;
+    /** The last step's reach: a new world's spawn moves to the straw, so the player never sees the distance. */
+    public static final int FAR_RADIUS = 192;
+    /** The last step's limit: each read of an ungenerated chunk generates it while the server is still starting. */
+    public static final long FAR_LIMIT_MS = 30_000L;
     /** The read offsets from the patch centre: -10, -5, 0, 5, 10 on each axis. */
     public static final int[] OFFSETS = {-10, -5, 0, 5, 10};
 
     private SiteSearch() {
     }
+
+    /** Whether the reads at candidate centre (x, z) make a site; {@link #LAND} is the world's own rule. */
+    @FunctionalInterface
+    public interface Rule {
+        boolean fits(int x, int z, int[] heights, boolean[] fluid);
+    }
+
+    public static final Rule LAND = (x, z, heights, fluid) -> fits(heights, fluid);
 
     /** True when the 25 reads fit: spread at most {@link #MAX_SPREAD}, no fluid. */
     public static boolean fits(int[] heights, boolean[] fluid) {
@@ -52,6 +64,13 @@ public final class SiteSearch {
             }
         }
         out.sort(Comparator.comparingInt(o -> o[0] * o[0] + o[1] * o[1]));
+        return out;
+    }
+
+    /** {@link #spiral} without the candidates an earlier search out to {@code inner} has already turned down. */
+    public static List<int[]> spiralBeyond(int inner, int radius, int step) {
+        List<int[]> out = spiral(radius, step);
+        out.removeIf(o -> o[0] * o[0] + o[1] * o[1] <= inner * inner);
         return out;
     }
 }
