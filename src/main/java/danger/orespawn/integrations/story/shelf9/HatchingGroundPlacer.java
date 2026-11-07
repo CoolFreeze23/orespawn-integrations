@@ -140,7 +140,7 @@ public final class HatchingGroundPlacer {
         long started = System.nanoTime();
         int n = SiteSearch.OFFSETS.length;
         int[] heights = new int[n * n];
-        boolean[] fluid = new boolean[n * n];
+        boolean[] unusable = new boolean[n * n];
         for (int[] offset : offsets) {
             if ((System.nanoTime() - started) / 1_000_000L >= limitMs) {
                 return null;
@@ -150,17 +150,38 @@ public final class HatchingGroundPlacer {
             int i = 0;
             for (int ox : SiteSearch.OFFSETS) {
                 for (int oz : SiteSearch.OFFSETS) {
-                    int top = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, cx + ox, cz + oz) - 1;
+                    int top = topAt(level, cx + ox, cz + oz);
                     heights[i] = top;
-                    fluid[i] = !level.getBlockState(new BlockPos(cx + ox, top, cz + oz)).getFluidState().isEmpty();
+                    unusable[i] = unusableAt(level, cx + ox, top, cz + oz);
                     i++;
                 }
             }
-            if (rule.fits(cx, cz, heights, fluid)) {
+            if (rule.fits(cx, cz, heights, unusable)) {
                 return new BlockPos(cx, SiteSearch.groundOf(heights), cz);
             }
         }
         return null;
+    }
+
+    /**
+     * The top solid block at (x, z), generating its chunk first: {@code Level.getHeight} answers the bottom of the world
+     * for a chunk that isn't loaded, without loading it.
+     */
+    public static int topAt(ServerLevel level, int x, int z) {
+        return level.getChunk(x >> 4, z >> 4).getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x & 15, z & 15);
+    }
+
+    /** True when the read at (x, top, z) can't carry Shelf 9: fluid, or a deck with air right under it. */
+    public static boolean unusableAt(ServerLevel level, int x, int top, int z) {
+        if (!level.getBlockState(new BlockPos(x, top, z)).getFluidState().isEmpty()) {
+            return true;
+        }
+        for (int down = 1; down <= SiteSearch.AIR_UNDER; down++) {
+            if (!level.getBlockState(new BlockPos(x, top - down, z)).isAir()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /** The template's origin for a patch centred on {@code ground} (the shell floor at ground level). */

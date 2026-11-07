@@ -226,6 +226,41 @@ public final class ShelfNineTests {
         helper.succeed();
     }
 
+    /** A read in a chunk nobody has loaded yet gets the real ground, not the bottom of the world. */
+    @GameTest(template = "empty8")
+    public static void aSiteReadSeesTheGroundInAnUnloadedChunk(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        BlockPos here = helper.absolutePos(BlockPos.ZERO);
+        int x = here.getX() + 4096;
+        int z = here.getZ() + 4096;
+        int offset = 0;
+        while (level.hasChunk((x + offset) >> 4, z >> 4) && offset < 4096) {
+            offset += 16;
+        }
+        x += offset;
+        helper.assertTrue(!level.hasChunk(x >> 4, z >> 4), "the test chunk was already loaded");
+        int top = HatchingGroundPlacer.topAt(level, x, z);
+        helper.assertTrue(top >= level.getMinBuildHeight(), "the read fell through to " + top);
+        helper.succeed();
+    }
+
+    /** A sky-ship's deck is not land: air right under a read rules it out, as fluid does; solid ground under it doesn't. */
+    @GameTest(template = "empty8")
+    public static void aDeckWithAirUnderItIsNoSite(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        helper.setBlock(new BlockPos(2, 6, 2), Blocks.DARK_PRISMARINE);
+        BlockPos deck = helper.absolutePos(new BlockPos(2, 6, 2));
+        helper.assertTrue(HatchingGroundPlacer.unusableAt(level, deck.getX(), deck.getY(), deck.getZ()), "a deck over air");
+        helper.setBlock(new BlockPos(2, 3, 2), Blocks.STONE);
+        helper.assertTrue(!HatchingGroundPlacer.unusableAt(level, deck.getX(), deck.getY(), deck.getZ()),
+                "a block within reach below makes it ground");
+        helper.setBlock(new BlockPos(5, 2, 5), Blocks.STONE);
+        helper.setBlock(new BlockPos(5, 3, 5), Blocks.WATER);
+        BlockPos water = helper.absolutePos(new BlockPos(5, 3, 5));
+        helper.assertTrue(HatchingGroundPlacer.unusableAt(level, water.getX(), water.getY(), water.getZ()), "water");
+        helper.succeed();
+    }
+
     /** The search's two ways of finding nothing are told apart, for the warning. */
     @GameTest(template = "empty8")
     public static void theLastStepEndsInNoSiteOrItsLimit(GameTestHelper helper) {

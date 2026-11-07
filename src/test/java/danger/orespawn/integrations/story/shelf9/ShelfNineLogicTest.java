@@ -67,6 +67,15 @@ class ShelfNineLogicTest {
     }
 
     @Test
+    void anUnusableReadRulesOutAPatchThatIsOtherwiseFlat() {
+        int[] heights = new int[25];
+        boolean[] unusable = new boolean[25];
+        assertTrue(SiteSearch.fits(heights, unusable));
+        unusable[12] = true;
+        assertTrue(!SiteSearch.fits(heights, unusable));
+    }
+
+    @Test
     void theLastStepPicksUpWhereTheFirstLeftOff() {
         List<int[]> beyond = SiteSearch.spiralBeyond(SiteSearch.RADIUS, SiteSearch.FAR_RADIUS, 4);
         int last = 0;

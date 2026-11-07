@@ -7,7 +7,8 @@ import java.util.List;
 
 /**
  * Shelf 9's site rule, as pure logic (unit tested): a 21 x 21 patch fits when its 25 heightmap reads (a 5 x 5 grid
- * across the patch) spread by 5 blocks or less and none of them is fluid. Candidates are tried nearest first, out to
+ * across the patch) spread by 5 blocks or less and none of them is unusable (fluid, or a deck with air under it, as a
+ * sky-ship's is). Candidates are tried nearest first, out to
  * 48 blocks from world spawn, then, after the beach, from there out to 192 under a time limit.
  */
 public final class SiteSearch {
@@ -20,6 +21,8 @@ public final class SiteSearch {
     public static final long FAR_LIMIT_MS = 30_000L;
     /** The read offsets from the patch centre: -10, -5, 0, 5, 10 on each axis. */
     public static final int[] OFFSETS = {-10, -5, 0, 5, 10};
+    /** A read with this many blocks of air right under it is standing on something built in the sky, not on land. */
+    public static final int AIR_UNDER = 4;
 
     private SiteSearch() {
     }
@@ -27,17 +30,17 @@ public final class SiteSearch {
     /** Whether the reads at candidate centre (x, z) make a site; {@link #LAND} is the world's own rule. */
     @FunctionalInterface
     public interface Rule {
-        boolean fits(int x, int z, int[] heights, boolean[] fluid);
+        boolean fits(int x, int z, int[] heights, boolean[] unusable);
     }
 
-    public static final Rule LAND = (x, z, heights, fluid) -> fits(heights, fluid);
+    public static final Rule LAND = (x, z, heights, unusable) -> fits(heights, unusable);
 
-    /** True when the 25 reads fit: spread at most {@link #MAX_SPREAD}, no fluid. */
-    public static boolean fits(int[] heights, boolean[] fluid) {
+    /** True when the 25 reads fit: spread at most {@link #MAX_SPREAD}, none unusable. */
+    public static boolean fits(int[] heights, boolean[] unusable) {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < heights.length; i++) {
-            if (fluid[i]) {
+            if (unusable[i]) {
                 return false;
             }
             min = Math.min(min, heights[i]);
