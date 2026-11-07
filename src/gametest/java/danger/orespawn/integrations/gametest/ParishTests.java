@@ -221,14 +221,15 @@ public final class ParishTests {
 
     /**
      * The peddler stands beside the house with two llamas and vanilla's 48,000-tick despawn. The arrival finds the
-     * ground by the heightmap, so the test box has an open sky: under the barrier lid he would stand on its roof.
+     * ground by the heightmap, so the test box has an open sky: under the barrier lid he would stand on its roof. A llama
+     * five blocks out can land on top of the box's own wall, nine blocks up, so the count looks that high.
      */
     @GameTest(template = "empty8", skyAccess = true)
     public static void thePeddlerComesWithTwoLlamas(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
         BlockPos at = helper.absolutePos(new BlockPos(4, 1, 4));
         helper.assertTrue(Freguesias.peddler(level, at), "no peddler came");
-        AABB box = new AABB(at).inflate(8.0);
+        AABB box = new AABB(at).inflate(8.0, 16.0, 8.0);
         List<WanderingTrader> traders = level.getEntitiesOfClass(WanderingTrader.class, box);
         List<TraderLlama> llamas = level.getEntitiesOfClass(TraderLlama.class, box);
         helper.assertTrue(traders.size() == 1 && traders.get(0).getDespawnDelay() == 48000, "the peddler is wrong");

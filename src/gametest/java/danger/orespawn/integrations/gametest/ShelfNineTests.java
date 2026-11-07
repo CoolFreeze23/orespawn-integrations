@@ -244,6 +244,26 @@ public final class ShelfNineTests {
         helper.succeed();
     }
 
+    /**
+     * The whole search around ground nobody has loaded: without a mod that loads the chunk behind a block read, reading
+     * the heightmap straight off the level gives all 25 reads the bottom of the world, a flat dry patch that fits. Run
+     * in a dev environment, which has no such mod.
+     */
+    @GameTest(template = "empty8")
+    public static void theSearchNeverSettlesOnTheBottomOfTheWorld(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        BlockPos here = helper.absolutePos(BlockPos.ZERO);
+        BlockPos far = new BlockPos(here.getX() + 8192, 64, here.getZ() + 8192);
+        helper.assertTrue(!level.hasChunk(far.getX() >> 4, far.getZ() >> 4), "the far chunk was already loaded");
+        HatchingGroundPlacer.Search search = HatchingGroundPlacer.findSite(level, far, SiteSearch.LAND, 52, 60_000L);
+        helper.assertTrue(search.ground() == null || search.ground().getY() >= level.getMinBuildHeight(),
+                "settled on the bottom of the world at " + search.ground());
+        // An empty column, had the world one: nothing under the read but void.
+        helper.assertTrue(HatchingGroundPlacer.unusableAt(level, far.getX(), level.getMinBuildHeight() - 1, far.getZ()),
+                "an empty column counts as ground");
+        helper.succeed();
+    }
+
     /** A sky-ship's deck is not land: air right under a read rules it out, as fluid does; solid ground under it doesn't. */
     @GameTest(template = "empty8")
     public static void aDeckWithAirUnderItIsNoSite(GameTestHelper helper) {
