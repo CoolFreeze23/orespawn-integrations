@@ -17,6 +17,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
@@ -33,7 +34,8 @@ import java.util.List;
  *
  * <p>The band is scanned by biome alone, which generates nothing: the card's regions first, then any land. Each candidate's start
  * is built without being placed, so the land rule reads the box of the very Lodge {@code /place} would put there, rotation
- * included. The chunks a candidate reads are generated while the server is still starting, so the search has its own limit.</p>
+ * included. The terrain generator screens each place first; the chunks a promising one reads are generated while the server is
+ * still starting, so the search has its own limit.</p>
  */
 public final class LodgeFallback {
 
@@ -93,13 +95,40 @@ public final class LodgeFallback {
             StructureStart start = lodge.value().generate(level.registryAccess(), level.getChunkSource().getGenerator(),
                     level.getChunkSource().getGenerator().getBiomeSource(), level.getChunkSource().randomState(),
                     level.getStructureManager(), level.getSeed(), chunk, 0, level, biome -> true);
-            if (start.isValid() && fits(level, start.getBoundingBox())) {
+            if (start.isValid() && looksFlat(level, start.getBoundingBox()) && fits(level, start.getBoundingBox())) {
                 place(server, level, chunk, start.getBoundingBox(), started, tried);
                 return;
             }
         }
         OreSpawnIntegrations.LOGGER.warn("Hunt Lodge: no ground for it among {} places {} to {} blocks from spawn; the board keeps its"
                 + " tents and desks, and an operator can run /cc hunt_lodge place", regions.size(), BAND_MIN, BAND_MAX);
+    }
+
+    /**
+     * The land rule's first pass from the terrain generator alone, which generates no chunk: flat enough, and dry, going by
+     * the surface and the sea floor. Most of the band fails here, so {@link #fits} only pays for chunks on ground worth reading.
+     */
+    private static boolean looksFlat(ServerLevel level, BoundingBox box) {
+        var generator = level.getChunkSource().getGenerator();
+        var random = level.getChunkSource().randomState();
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int a = 0; a < READS; a++) {
+            for (int b = 0; b < READS; b++) {
+                int x = box.minX() + (box.maxX() - box.minX()) * a / (READS - 1);
+                int z = box.minZ() + (box.maxZ() - box.minZ()) * b / (READS - 1);
+                int top = generator.getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, level, random);
+                if (top != generator.getBaseHeight(x, z, Heightmap.Types.OCEAN_FLOOR_WG, level, random)) {
+                    return false;
+                }
+                min = Math.min(min, top);
+                max = Math.max(max, top);
+                if (max - min > SiteSearch.MAX_SPREAD) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /** Shelf 9's land rule across the box of this Lodge, stopping at the first read that rules it out. */
