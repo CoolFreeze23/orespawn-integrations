@@ -32,7 +32,8 @@ from registro import Template, jigsaw, sign_nbt, state_string  # noqa: E402
 from nbtlib import Byte, Compound, Double, Float, Int, List, String  # noqa: E402
 
 OUT = os.path.join("src", "main", "resources", "data", "orespawn_integrations", "structure", "boteco")
-DUMP = r"registry_dump.json"
+# The pack's registry dump: the first argument, else registry_dump.json in the design atlas named by CC_DESIGN_ATLAS.
+DUMP = os.path.join(os.environ.get("CC_DESIGN_ATLAS", "."), "registry_dump.json")
 W, H, D = 24, 12, 24
 
 SIGN_COUNTER = ["orespawn_integrations.boteco.placa.balcao.%d" % i for i in range(1, 5)]

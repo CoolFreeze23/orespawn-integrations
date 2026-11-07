@@ -24,6 +24,7 @@ later add-ons with their own templates. Every block id is checked against the pa
 block is ours, so it is exempt).
 """
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -32,7 +33,8 @@ from nbtlib import Byte, Compound, Double, Int, List, String
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "src/main/resources/data/orespawn_integrations/structure/hunt_lodge/lodge.nbt"
-DUMP = Path("registry_dump.json")
+# The pack's registry dump: the first argument, else registry_dump.json in the design atlas named by CC_DESIGN_ATLAS.
+DUMP = Path(os.environ.get("CC_DESIGN_ATLAS", ".")) / "registry_dump.json"
 DATA_VERSION = 3955
 SX, SY, SZ = 40, 16, 30
 OURS = {"orespawn_integrations:wanted_poster"}
