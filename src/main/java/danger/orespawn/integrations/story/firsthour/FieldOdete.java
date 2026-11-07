@@ -220,6 +220,15 @@ public final class FieldOdete {
         StoryScheduler.schedule(player.getServer(), LINE_GAP, "odete_campo_talk", () -> talk(player, veteran, line + 1));
     }
 
+    /**
+     * The height of a pin on a village nobody has been to: its ground when the chunk is loaded, else sea level, since the
+     * heightmap read would put the map's waypoint at the bottom of the world.
+     */
+    public static int pinHeight(ServerLevel level, int x, int z) {
+        return level.getChunkSource().hasChunk(x >> 4, z >> 4)
+                ? level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z) : level.getSeaLevel();
+    }
+
     /** The Registry pin and the parting line, then the walk toward it. */
     private static void leave(ServerPlayer player, Visit visit) {
         PriorityTicket.announce(player, 6);
@@ -242,8 +251,7 @@ public final class FieldOdete {
         say(player, "leaving");
         if (village) {
             say(player, "refurbished");
-            desk = new BlockPos(desk.getX(), level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    desk.getX(), desk.getZ()), desk.getZ());
+            desk = new BlockPos(desk.getX(), pinHeight(level, desk.getX(), desk.getZ()), desk.getZ());
         }
         GoldPin.set(player, TicketState.PIN_REGISTRY, desk.getX(), desk.getY(), desk.getZ());
         if (visit.npc() != null) {

@@ -303,6 +303,15 @@ public final class FallSafety {
         return surface(level, x, z, new Tally());
     }
 
+    /**
+     * The ground height at (x, z), or {@code fallback} when that chunk isn't loaded: the heightmap read answers the bottom
+     * of the world there. For things a landing scatters around itself after its player may have walked away.
+     */
+    public static int heightOr(ServerLevel level, int x, int z, int fallback) {
+        return level.getChunkSource().hasChunk(x >> 4, z >> 4)
+                ? level.getHeight(Heightmap.Types.MOTION_BLOCKING, x, z) : fallback;
+    }
+
     static BlockPos surface(ServerLevel level, int x, int z, Tally tally) {
         if (!level.getChunkSource().hasChunk(x >> 4, z >> 4)) {
             tally.unloaded++;

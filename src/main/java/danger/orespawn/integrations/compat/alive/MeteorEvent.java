@@ -48,7 +48,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
  * {@code orespawn_integrations:hoard_fall} ({@code last}) for the Gazette's headline, beside {@code carry}, the
  * postponed Fall.</p>
  */
-final class MeteorEvent {
+public final class MeteorEvent {
 
     private static final double MIN_DIST = 60.0;
     private static final double MAX_DIST = 100.0;
@@ -209,6 +209,22 @@ final class MeteorEvent {
         }
     }
 
+    /**
+     * The first block above the ground at the landing column. Its player may have walked off or logged out during the
+     * streak, leaving the chunk unloaded; it was loaded when the spot was picked, so this reads it back and generates nothing.
+     */
+    public static int landingTop(ServerLevel level, int x, int z) {
+        return level.getChunk(x >> 4, z >> 4).getHeight(Heightmap.Types.MOTION_BLOCKING, x & 15, z & 15) + 1;
+    }
+
+    /** Where an Alien stands: its own column while that chunk is loaded, else the landing's, which the crater has loaded. */
+    public static BlockPos alienSpot(ServerLevel level, int x, int z, int landingX, int landingZ) {
+        if (level.getChunkSource().hasChunk(x >> 4, z >> 4)) {
+            return new BlockPos(x, level.getHeight(Heightmap.Types.MOTION_BLOCKING, x, z), z);
+        }
+        return new BlockPos(landingX, landingTop(level, landingX, landingZ), landingZ);
+    }
+
     /** The landing: crater (or bowl), ore, the vault, three Aliens, Close Encounter. */
     private static void impact(ServerLevel level, BlockPos spot, UUID centreId) {
         boolean grief = IntegrationsConfig.on(IntegrationsConfig.aliveMeteorGrief);
@@ -218,8 +234,7 @@ final class MeteorEvent {
                 grief ? Level.ExplosionInteraction.BLOCK : Level.ExplosionInteraction.NONE);
         BlockPos crate;
         if (grief) {
-            int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING, spot.getX(), spot.getZ());
-            crate = new BlockPos(spot.getX(), y, spot.getZ());
+            crate = new BlockPos(spot.getX(), landingTop(level, spot.getX(), spot.getZ()), spot.getZ());
             inlayOres(level, x, z, true);
         } else {
             crate = bowl(level, spot);
@@ -280,7 +295,7 @@ final class MeteorEvent {
             return;
         }
         RandomSource random = level.random;
-        int craterY = level.getHeight(Heightmap.Types.MOTION_BLOCKING, Mth.floor(tx), Mth.floor(tz));
+        int craterY = landingTop(level, Mth.floor(tx), Mth.floor(tz));
         List<BlockPos> spots = new ArrayList<>(5);
         for (int attempt = 0; attempt < 24 && spots.size() < 5; attempt++) {
             int x = Mth.floor(tx) + random.nextInt(5) - 2;
@@ -317,8 +332,8 @@ final class MeteorEvent {
             double r = 4.0 + random.nextDouble() * 2.0;
             double ax = tx + Math.cos(angle) * r;
             double az = tz + Math.sin(angle) * r;
-            int ay = level.getHeight(Heightmap.Types.MOTION_BLOCKING, Mth.floor(ax), Mth.floor(az));
-            alien.spawn(level, BlockPos.containing(ax, ay, az), MobSpawnType.EVENT);
+            alien.spawn(level, alienSpot(level, Mth.floor(ax), Mth.floor(az), Mth.floor(tx), Mth.floor(tz)),
+                    MobSpawnType.EVENT);
         }
     }
 

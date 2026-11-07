@@ -399,7 +399,7 @@ public final class FirstFall {
             double angle = i * (Math.PI * 2.0 / 3.0) + level.random.nextDouble() * 0.6;
             int x = crate.getX() + (int) Math.round(Math.cos(angle) * 5.0);
             int z = crate.getZ() + (int) Math.round(Math.sin(angle) * 5.0);
-            int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING, x, z);
+            int y = FallSafety.heightOr(level, x, z, crate.getY());
             Entity e = coin.spawn(level, new BlockPos(x, y, z), MobSpawnType.EVENT);
             if (e != null) {
                 e.addTag(COIN_TAG);

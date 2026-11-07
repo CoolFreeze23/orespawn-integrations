@@ -1,6 +1,9 @@
 package danger.orespawn.integrations.gametest;
 
 import danger.orespawn.integrations.command.CcCommand;
+import danger.orespawn.integrations.compat.alive.FallSafety;
+import danger.orespawn.integrations.compat.alive.MeteorEvent;
+import danger.orespawn.integrations.story.firsthour.FieldOdete;
 import danger.orespawn.integrations.story.StoryCore;
 import danger.orespawn.integrations.story.firsthour.FirstHourData;
 import danger.orespawn.integrations.story.firsthour.TicketState;
@@ -26,6 +29,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
@@ -261,6 +265,45 @@ public final class ShelfNineTests {
         // An empty column, had the world one: nothing under the read but void.
         helper.assertTrue(HatchingGroundPlacer.unusableAt(level, far.getX(), level.getMinBuildHeight() - 1, far.getZ()),
                 "an empty column counts as ground");
+        helper.succeed();
+    }
+
+    /** A column in a chunk nobody has loaded, checked to read the bottom of the world by the plain heightmap read. */
+    private static BlockPos unloadedColumn(GameTestHelper helper, int out) {
+        ServerLevel level = helper.getLevel();
+        BlockPos here = helper.absolutePos(BlockPos.ZERO);
+        BlockPos far = new BlockPos(here.getX() + out, 64, here.getZ() + out);
+        helper.assertTrue(!level.hasChunk(far.getX() >> 4, far.getZ() >> 4), "the column's chunk was already loaded");
+        helper.assertTrue(level.getHeight(Heightmap.Types.MOTION_BLOCKING, far.getX(), far.getZ()) == level.getMinBuildHeight(),
+                "the plain read no longer answers the bottom of the world on an unloaded chunk");
+        return far;
+    }
+
+    /** A coin or Alien over an unloaded column doesn't land at the bottom of the world, and a landing's own column reads true. */
+    @GameTest(template = "empty8")
+    public static void aLandingNeverScattersToTheBottomOfTheWorld(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        BlockPos coin = unloadedColumn(helper, 16384);
+        helper.assertTrue(FallSafety.heightOr(level, coin.getX(), coin.getZ(), 77) == 77, "a coin's height without its chunk");
+
+        BlockPos alien = unloadedColumn(helper, 32768);
+        BlockPos landing = helper.absolutePos(new BlockPos(3, 1, 3));
+        BlockPos stands = MeteorEvent.alienSpot(level, alien.getX(), alien.getZ(), landing.getX(), landing.getZ());
+        helper.assertTrue(stands.getX() == landing.getX() && stands.getZ() == landing.getZ(), "the Alien stayed on its column");
+        helper.assertTrue(stands.getY() > level.getMinBuildHeight(), "the Alien stands at " + stands);
+
+        BlockPos crater = unloadedColumn(helper, 49152);
+        int top = MeteorEvent.landingTop(level, crater.getX(), crater.getZ());
+        helper.assertTrue(top > level.getMinBuildHeight(), "the crater's top read " + top);
+        helper.succeed();
+    }
+
+    /** The Registry pin on a village nobody has visited stands at sea level, not at the bottom of the world. */
+    @GameTest(template = "empty8")
+    public static void aPinOnAFarVillageIsNotAtTheBottomOfTheWorld(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        BlockPos village = unloadedColumn(helper, 65536);
+        helper.assertTrue(FieldOdete.pinHeight(level, village.getX(), village.getZ()) == level.getSeaLevel(), "the pin's height");
         helper.succeed();
     }
 
