@@ -838,7 +838,7 @@ public final class ChaosTests {
         if (!Needs.mods(helper, "bossTags", "cataclysm", "mowziesmobs", "twilightforest")) {
             return;
         }
-        helper.assertTrue(size(Registries.ENTITY_TYPE, "orespawn_integrations:heavyweights") == 46, "heavyweights: " + size(Registries.ENTITY_TYPE, "orespawn_integrations:heavyweights"));
+        helper.assertTrue(size(Registries.ENTITY_TYPE, "orespawn_integrations:heavyweights") == 47, "heavyweights: " + size(Registries.ENTITY_TYPE, "orespawn_integrations:heavyweights"));
         EntityType<?> scorpion = BuiltInRegistries.ENTITY_TYPE.get(os("emperor_scorpion"));
         helper.assertTrue(scorpion.is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("apothic_spawners:blacklisted_from_spawners"))),
                 "the Emperor Scorpion is not on Apothic's blacklist");

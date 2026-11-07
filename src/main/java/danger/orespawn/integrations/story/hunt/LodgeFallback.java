@@ -42,10 +42,11 @@ public final class LodgeFallback {
     /** The ring's band: the card's 300 to 600 blocks from spawn. */
     public static final int BAND_MIN = 300;
     public static final int BAND_MAX = 600;
-    private static final int STEP = 48;
+    private static final int STEP = 24;
     /** The search's limit, on top of Shelf 9's: a handheld can spend it on a first world, and the board has its other homes. */
     public static final long LIMIT_MS = 20_000L;
     private static final int READS = 5;
+    private static final int TREE_HEIGHT = 40;
 
     private static final TagKey<Biome> REGIONS = TagKey.create(Registries.BIOME, FirstHourUtil.oi("hunt_lodge_preferred"));
     private static final TagKey<Biome> LAND = TagKey.create(Registries.BIOME, FirstHourUtil.oi("has_structure/hunt_lodge"));
@@ -71,8 +72,8 @@ public final class LodgeFallback {
             return;
         }
         long started = System.nanoTime();
-        List<ChunkPos> regions = new ArrayList<>();
-        List<ChunkPos> land = new ArrayList<>();
+        java.util.Set<ChunkPos> regions = new java.util.LinkedHashSet<>();
+        java.util.Set<ChunkPos> land = new java.util.LinkedHashSet<>();
         for (int[] offset : SiteSearch.spiralBeyond(BAND_MIN, BAND_MAX, STEP)) {
             int x = spawn.getX() + offset[0];
             int z = spawn.getZ() + offset[1];
@@ -83,25 +84,73 @@ public final class LodgeFallback {
                 land.add(new ChunkPos(new BlockPos(x, 0, z)));
             }
         }
-        regions.addAll(land);
+        land.removeAll(regions);
+        List<ChunkPos> places = new ArrayList<>(regions);
+        places.addAll(land);
+        // The screen reads only the terrain generator and builds structure starts, as world generation's own worker threads do,
+        // so it runs on all of them at once; in the band's order, the regions first.
+        List<BoundingBox> screened = places.parallelStream().map(chunk -> screen(level, lodge, chunk)).toList();
+        long screenedMs = (System.nanoTime() - started) / 1_000_000L;
+        int candidates = (int) screened.stream().filter(java.util.Objects::nonNull).count();
         int tried = 0;
-        for (ChunkPos chunk : regions) {
+        for (int i = 0; i < places.size(); i++) {
+            BoundingBox box = screened.get(i);
+            if (box == null) {
+                continue;
+            }
             if ((System.nanoTime() - started) / 1_000_000L >= LIMIT_MS) {
-                OreSpawnIntegrations.LOGGER.warn("Hunt Lodge: the search reached its {} ms limit after {} of {} places; the board"
-                        + " keeps its tents and desks, and an operator can run /cc hunt_lodge place", LIMIT_MS, tried, regions.size());
+                OreSpawnIntegrations.LOGGER.warn("Hunt Lodge: the search reached its {} ms limit after {} of {} flat places ({} screened in"
+                        + " {} ms); the board keeps its tents and desks, and an operator can run /cc hunt_lodge place", LIMIT_MS, tried,
+                        candidates, places.size(), screenedMs);
                 return;
             }
             tried++;
-            StructureStart start = lodge.value().generate(level.registryAccess(), level.getChunkSource().getGenerator(),
-                    level.getChunkSource().getGenerator().getBiomeSource(), level.getChunkSource().randomState(),
-                    level.getStructureManager(), level.getSeed(), chunk, 0, level, biome -> true);
-            if (start.isValid() && looksFlat(level, start.getBoundingBox()) && fits(level, start.getBoundingBox())) {
-                place(server, level, chunk, start.getBoundingBox(), started, tried);
+            if (fits(level, box)) {
+                place(server, level, places.get(i), box, started, tried, screenedMs, places.size(), candidates);
                 return;
             }
         }
-        OreSpawnIntegrations.LOGGER.warn("Hunt Lodge: no ground for it among {} places {} to {} blocks from spawn; the board keeps its"
-                + " tents and desks, and an operator can run /cc hunt_lodge place", regions.size(), BAND_MIN, BAND_MAX);
+        OreSpawnIntegrations.LOGGER.warn("Hunt Lodge: no ground for it among {} places {} to {} blocks from spawn ({} looked flat); the"
+                + " board keeps its tents and desks, and an operator can run /cc hunt_lodge place", places.size(), BAND_MIN, BAND_MAX, candidates);
+    }
+
+    /** The box of the Lodge {@code /place} would put at this chunk, when the terrain generator says its ground is flat and dry. */
+    private static BoundingBox screen(ServerLevel level, Holder<Structure> lodge, ChunkPos chunk) {
+        try {
+            if (!roughlyFlat(level, chunk)) {
+                return null;
+            }
+            StructureStart start = lodge.value().generate(level.registryAccess(), level.getChunkSource().getGenerator(),
+                    level.getChunkSource().getGenerator().getBiomeSource(), level.getChunkSource().randomState(),
+                    level.getStructureManager(), level.getSeed(), chunk, 0, level, biome -> true);
+            return start.isValid() && looksFlat(level, start.getBoundingBox()) ? start.getBoundingBox() : null;
+        } catch (Throwable t) {
+            return null;
+        }
+    }
+
+    /**
+     * A first look before the structure is even built: nine surface heights over the square any rotation of the Lodge could
+     * cover from this chunk's corner. Each read costs the terrain generator a column, so most of the band is turned down here.
+     */
+    private static boolean roughlyFlat(ServerLevel level, ChunkPos chunk) {
+        var generator = level.getChunkSource().getGenerator();
+        var random = level.getChunkSource().randomState();
+        int x0 = chunk.getMinBlockX();
+        int z0 = chunk.getMinBlockZ();
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int a = -1; a <= 1; a++) {
+            for (int b = -1; b <= 1; b++) {
+                int top = generator.getBaseHeight(x0 + a * 20, z0 + b * 20, Heightmap.Types.WORLD_SURFACE_WG, level, random);
+                min = Math.min(min, top);
+                max = Math.max(max, top);
+                if (max - min > SiteSearch.MAX_SPREAD + 2) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /**
@@ -143,7 +192,7 @@ public final class LodgeFallback {
             for (int b = 0; b < READS; b++) {
                 int x = box.minX() + (box.maxX() - box.minX()) * a / (READS - 1);
                 int z = box.minZ() + (box.maxZ() - box.minZ()) * b / (READS - 1);
-                int top = HatchingGroundPlacer.topAt(level, x, z);
+                int top = groundAt(level, x, z);
                 if (HatchingGroundPlacer.unusableAt(level, x, top, z)
                         || HatchingGroundPlacer.inAStructurePiece(level, new BlockPos(x, top, z))) {
                     return false;
@@ -161,7 +210,22 @@ public final class LodgeFallback {
         return SiteSearch.fits(heights, unusable);
     }
 
-    private static void place(MinecraftServer server, ServerLevel level, ChunkPos chunk, BoundingBox box, long started, int tried) {
+    /** The ground under any tree: the template clears its whole box of them, so a trunk is no reason to turn a place down. */
+    private static int groundAt(ServerLevel level, int x, int z) {
+        int top = HatchingGroundPlacer.topAt(level, x, z);
+        for (int down = 0; down < TREE_HEIGHT; down++) {
+            var state = level.getBlockState(new BlockPos(x, top, z));
+            if (!state.is(net.minecraft.tags.BlockTags.LOGS) && !state.is(net.minecraft.tags.BlockTags.LEAVES)
+                    && !state.isAir() && state.isCollisionShapeFullBlock(level, new BlockPos(x, top, z))) {
+                break;
+            }
+            top--;
+        }
+        return top;
+    }
+
+    private static void place(MinecraftServer server, ServerLevel level, ChunkPos chunk, BoundingBox box, long started, int tried,
+                              long screenedMs, int places, int candidates) {
         for (ChunkPos c : (Iterable<ChunkPos>) ChunkPos.rangeClosed(new ChunkPos(box.minX() >> 4, box.minZ() >> 4),
                 new ChunkPos(box.maxX() >> 4, box.maxZ() >> 4))::iterator) {
             level.getChunk(c.x, c.z);
@@ -183,7 +247,7 @@ public final class LodgeFallback {
         if (shelf9.placed) {
             FourWays.queueResurvey(shelf9);
         }
-        OreSpawnIntegrations.LOGGER.info("Hunt Lodge placed at {} in {} ms ({} places tried; the ring had no start)", middle,
-                (System.nanoTime() - started) / 1_000_000L, tried);
+        OreSpawnIntegrations.LOGGER.info("Hunt Lodge placed at {} in {} ms ({} places screened in {} ms, {} looked flat, {} read;"
+                + " the ring had no start)", middle, (System.nanoTime() - started) / 1_000_000L, places, screenedMs, candidates, tried);
     }
 }
