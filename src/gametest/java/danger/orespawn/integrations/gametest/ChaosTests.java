@@ -476,6 +476,13 @@ public final class ChaosTests {
                 helper.setBlock(new BlockPos(x, 0, z), Blocks.STONE);
             }
         }
+        // A low barn roof, four blocks up: the fireballs and skulls come down from ten blocks over the player, and the TNT goes
+        // off under the floor.
+        for (int x = 0; x < 8; x++) {
+            for (int z = 0; z < 8; z++) {
+                helper.setBlock(new BlockPos(x, 4, z), Blocks.OAK_PLANKS);
+            }
+        }
         ServerPlayer op = MockPlayers.inLevel(helper);
         op.setGameMode(GameType.CREATIVE);
         Vec3 stand = helper.absoluteVec(new Vec3(4.5, 1.0, 1.5));
@@ -510,6 +517,13 @@ public final class ChaosTests {
                 cauldron |= state.is(Blocks.LAVA_CAULDRON);
             }
             helper.assertTrue(cauldron, "no lava cauldron was left in the casket's hole");
+            int roof = 0;
+            for (int x = 0; x < 8; x++) {
+                for (int z = 0; z < 8; z++) {
+                    roof += level.getBlockState(helper.absolutePos(new BlockPos(x, 4, z))).is(Blocks.OAK_PLANKS) ? 1 : 0;
+                }
+            }
+            helper.assertTrue(roof == 64, "the barn's roof lost " + (64 - roof) + " planks");
             for (Entity e : level.getEntities((Entity) null, new AABB(lo.getCenter(), hi.getCenter()).inflate(4),
                     e -> !(e instanceof Player))) {
                 e.discard();

@@ -15,7 +15,10 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.PrimedTnt;
+import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.entity.projectile.SmallFireball;
+import net.minecraft.world.entity.projectile.WitherSkull;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.ReadOnlyScoreInfo;
@@ -27,6 +30,7 @@ import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.ExplosionEvent;
@@ -46,7 +50,10 @@ import net.neoforged.neoforge.server.ServerLifecycleHooks;
  *   <li>the first join's day, written once at login (a veteran with three game days of play time is dated back, so
  *       nobody who played before 0.10.0 starts a grace);</li>
  *   <li>the traps tagged {@code cc_lucky_trap}: their blasts break no block and hurt only players, a small fireball
- *       lights no block, and a lightning bolt strikes only the players beside it and sets no fire;</li>
+ *       lights no block, and a lightning bolt strikes only the players beside it and sets no fire. A trap's fireball,
+ *       wither skull or TNT never reaches vanilla's explosion at all, because in the pack other mods' explosion and
+ *       fireball code lit a roof and broke blocks around the Detonate clearing: its blast is played here and hurts the
+ *       players in range, and nothing else;</li>
  *   <li>the first Sealed Casket ({@code simpleluckyblock:lucky_block}) a player opens pays one Ledger Scrap;</li>
  *   <li>every Pandora's Box shows its small gift tag on its first open, unless a Great Refusal already tagged it.</li>
  * </ul>
@@ -83,6 +90,7 @@ public final class CasketCore {
         NeoForge.EVENT_BUS.addListener(CasketCore::onDetonate);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGH, CasketCore::onImpact);
         NeoForge.EVENT_BUS.addListener(CasketCore::onJoin);
+        NeoForge.EVENT_BUS.addListener(CasketCore::onTntTick);
     }
 
     // --- what the functions read ---
@@ -171,6 +179,46 @@ public final class CasketCore {
             if (!fireball.level().isClientSide) {
                 fireball.discard();
             }
+            return;
+        }
+        Entity projectile = event.getProjectile();
+        if ((projectile instanceof LargeFireball || projectile instanceof WitherSkull) && projectile.getTags().contains(TRAP_TAG)) {
+            event.setCanceled(true);
+            if (projectile.level() instanceof ServerLevel level) {
+                projectile.discard();
+                trapBlast(level, event.getRayTraceResult().getLocation(), 1.0F);
+            }
+        }
+    }
+
+    /** A trap's TNT goes off here on its last tick, before vanilla's explosion could run. */
+    private static void onTntTick(EntityTickEvent.Pre event) {
+        if (event.getEntity() instanceof PrimedTnt tnt && tnt.getFuse() <= 1 && tnt.getTags().contains(TRAP_TAG)
+                && tnt.level() instanceof ServerLevel level) {
+            // Cancelled too, or its own tick still runs this tick and explodes as vanilla would.
+            event.setCanceled(true);
+            tnt.discard();
+            trapBlast(level, tnt.position(), 4.0F);
+        }
+    }
+
+    /**
+     * A trap's blast without vanilla's explosion: its sound and smoke, and explosion damage to each player in range on
+     * vanilla's falloff, no knockback beyond it. No block, no fire, no other mob.
+     */
+    static void trapBlast(ServerLevel level, net.minecraft.world.phys.Vec3 at, float power) {
+        level.playSound(null, at.x, at.y, at.z, net.minecraft.sounds.SoundEvents.GENERIC_EXPLODE.value(),
+                net.minecraft.sounds.SoundSource.BLOCKS, 4.0F, 0.9F);
+        level.sendParticles(power >= 2.0F ? net.minecraft.core.particles.ParticleTypes.EXPLOSION_EMITTER
+                : net.minecraft.core.particles.ParticleTypes.EXPLOSION, at.x, at.y, at.z, 1, 0.0, 0.0, 0.0, 0.0);
+        double diameter = power * 2.0;
+        for (Player player : level.getEntitiesOfClass(Player.class, new net.minecraft.world.phys.AABB(at, at).inflate(diameter))) {
+            double v = 1.0 - Math.sqrt(player.distanceToSqr(at)) / diameter;
+            if (v <= 0.0) {
+                continue;
+            }
+            float damage = (float) ((v * v + v) / 2.0 * 7.0 * diameter + 1.0);
+            player.hurt(level.damageSources().explosion(null, null), damage);
         }
     }
 
