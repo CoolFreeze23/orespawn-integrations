@@ -67,6 +67,14 @@ class ShelfNineLogicTest {
     }
 
     @Test
+    void aWorldNeverSearchesForASecondLodge() {
+        assertTrue(danger.orespawn.integrations.story.hunt.LodgeFallback.shouldSearch(true, false, 0));
+        assertFalse(danger.orespawn.integrations.story.hunt.LodgeFallback.shouldSearch(true, true, 0), "a ring start");
+        assertFalse(danger.orespawn.integrations.story.hunt.LodgeFallback.shouldSearch(true, false, 1), "already on the hub list");
+        assertFalse(danger.orespawn.integrations.story.hunt.LodgeFallback.shouldSearch(false, false, 0), "switched off");
+    }
+
+    @Test
     void anUnusableReadRulesOutAPatchThatIsOtherwiseFlat() {
         int[] heights = new int[25];
         boolean[] unusable = new boolean[25];

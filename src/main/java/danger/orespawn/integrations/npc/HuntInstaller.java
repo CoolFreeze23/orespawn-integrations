@@ -7,7 +7,14 @@ import danger.orespawn.integrations.story.StoryScheduler;
 import danger.orespawn.integrations.story.hunt.HuntIds;
 import danger.orespawn.integrations.story.hunt.TentBoard;
 import danger.orespawn.integrations.story.hunt.WallOfTheWanted;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -80,7 +87,16 @@ public final class HuntInstaller {
     private HuntInstaller() {
     }
 
+    private static final ResourceLocation OWED = ResourceLocation.fromNamespaceAndPath(OreSpawnIntegrations.MODID, "iracema_owed");
+
     public static void init(IEventBus modBus) {
+        danger.orespawn.integrations.story.StoryClock.everySecond("hunt.iracema_owed", server -> {
+            try {
+                spawnOwed(server);
+            } catch (Throwable t) {
+                danger.orespawn.integrations.story.StoryCore.logOnce("hunt.iracema_owed", t);
+            }
+        });
         NeoForge.EVENT_BUS.addListener(HuntInstaller::onServerAboutToStart);
         NeoForge.EVENT_BUS.addListener(HuntInstaller::onServerStarted);
         NeoForge.EVENT_BUS.addListener(HuntInstaller::onJoin);
@@ -223,26 +239,59 @@ public final class HuntInstaller {
         if (!IntegrationsConfig.on(IntegrationsConfig.storyRoyalHunt)) {
             return;
         }
-        double x = marker.getX();
-        double y = marker.getY();
-        double z = marker.getZ();
-        float yaw = marker.getYRot();
-        StoryScheduler.schedule(level.getServer(), 1, "hunt.iracema_spawn", () -> {
-            try {
-                if (!Files.exists(clonePath(level.getServer())) && !installClone(level.getServer())) {
-                    OreSpawnIntegrations.LOGGER.warn("[hunt] no iracema clone yet; the Lodge at {} {} {} opens without her",
-                            (int) x, (int) y, (int) z);
-                    return;
-                }
-                IEntity<?> iracema = NpcAPI.Instance().getClones().spawn(x, y, z, HuntIds.CLONE_TAB,
-                        HuntIds.CLONE_IRACEMA, NpcAPI.Instance().getIWorld(level));
-                if (iracema != null) {
-                    iracema.setRotation(yaw);
-                }
-            } catch (Throwable t) {
-                StoryCore.logOnce("hunt.iracema_spawn", t);
+        // Owed in the world's data until she stands there: the clone may not exist yet, the chunk may unload first, and the
+        // server may stop in between. A Lodge placed while the server starts meets all three.
+        MinecraftServer server = level.getServer();
+        CompoundTag root = server.getCommandStorage().get(OWED);
+        ListTag owed = root.getList("owed", Tag.TAG_COMPOUND);
+        CompoundTag entry = new CompoundTag();
+        entry.putDouble("x", marker.getX());
+        entry.putDouble("y", marker.getY());
+        entry.putDouble("z", marker.getZ());
+        entry.putFloat("yaw", marker.getYRot());
+        entry.putString("dim", level.dimension().location().toString());
+        owed.add(entry);
+        root.put("owed", owed);
+        server.getCommandStorage().set(OWED, root);
+    }
+
+    /** Once a second: each Iracema owed, as soon as her clone exists and her chunk is loaded. */
+    static void spawnOwed(MinecraftServer server) {
+        CompoundTag root = server.getCommandStorage().get(OWED);
+        ListTag owed = root.getList("owed", Tag.TAG_COMPOUND);
+        if (owed.isEmpty()) {
+            return;
+        }
+        if (!Files.exists(clonePath(server)) && !installClone(server)) {
+            return;
+        }
+        ListTag still = new ListTag();
+        for (int i = 0; i < owed.size(); i++) {
+            CompoundTag entry = owed.getCompound(i);
+            ServerLevel level = server.getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(entry.getString("dim"))));
+            if (level == null) {
+                continue;
             }
-        });
+            BlockPos pos = BlockPos.containing(entry.getDouble("x"), entry.getDouble("y"), entry.getDouble("z"));
+            if (!level.hasChunkAt(pos)) {
+                still.add(entry);
+                continue;
+            }
+            IEntity<?> iracema = NpcAPI.Instance().getClones().spawn(entry.getDouble("x"), entry.getDouble("y"), entry.getDouble("z"),
+                    HuntIds.CLONE_TAB, HuntIds.CLONE_IRACEMA, NpcAPI.Instance().getIWorld(level));
+            if (iracema == null) {
+                still.add(entry);
+            } else {
+                iracema.setRotation(entry.getFloat("yaw"));
+            }
+        }
+        root.put("owed", still);
+        server.getCommandStorage().set(OWED, root);
+    }
+
+    /** How many Iracemas this world still owes (for the GameTests and /cc). */
+    public static int owedCount(MinecraftServer server) {
+        return server.getCommandStorage().get(OWED).getList("owed", Tag.TAG_COMPOUND).size();
     }
 
     // --- the kill bridge for the re-keyed 701 and 703 ---

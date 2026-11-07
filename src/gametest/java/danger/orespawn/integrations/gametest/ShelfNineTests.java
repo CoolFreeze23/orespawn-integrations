@@ -12,6 +12,7 @@ import danger.orespawn.integrations.story.shelf9.FourWays;
 import danger.orespawn.integrations.story.shelf9.HatchRegister;
 import danger.orespawn.integrations.story.shelf9.HatchingGroundData;
 import danger.orespawn.integrations.story.shelf9.HatchingGroundPlacer;
+import danger.orespawn.integrations.story.shelf9.HubPlaces;
 import danger.orespawn.integrations.story.shelf9.SiteSearch;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -304,6 +305,24 @@ public final class ShelfNineTests {
         ServerLevel level = helper.getLevel();
         BlockPos village = unloadedColumn(helper, 65536);
         helper.assertTrue(FieldOdete.pinHeight(level, village.getX(), village.getZ()) == level.getSeaLevel(), "the pin's height");
+        helper.succeed();
+    }
+
+    /** A Lodge on the hub list is what the board, the errand and the Wall find first, with no structure start behind it. */
+    @GameTest(template = "empty8", batch = "shelf9_skip")
+    public static void aPlacedLodgeIsTheBoardsLodge(GameTestHelper helper) {
+        ServerLevel level = helper.getLevel();
+        var server = level.getServer();
+        var storage = server.getCommandStorage();
+        var saved = storage.get(HubPlaces.STORAGE).copy();
+        try {
+            BlockPos lodge = helper.absolutePos(new BlockPos(2, 1, 2));
+            helper.assertTrue(HubPlaces.add(server, "hunt_lodge", lodge, level.dimension().location().toString()), "the list took it");
+            helper.assertTrue(lodge.equals(danger.orespawn.integrations.story.hunt.HuntLodge.nearestBoard(level, lodge.offset(500, 0, 0))),
+                    "the board didn't find the placed Lodge");
+        } finally {
+            storage.set(HubPlaces.STORAGE, saved);
+        }
         helper.succeed();
     }
 

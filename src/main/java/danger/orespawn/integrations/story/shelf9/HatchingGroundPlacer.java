@@ -71,16 +71,18 @@ public final class HatchingGroundPlacer {
             data.firstStartDone = true;
             data.setDirty();
             ServerLevel level = server.overworld();
-            if (!IntegrationsConfig.on(IntegrationsConfig.storyHatchingGround) || data.placed
-                    || level.getGameTime() >= 200) {
+            if (level.getGameTime() >= 200) {
                 return;
             }
-            long start = System.nanoTime();
-            BlockPos ground = settleFirstStart(level, SiteSearch.LAND, SiteSearch.FAR_RADIUS, SiteSearch.FAR_LIMIT_MS);
-            if (ground != null) {
-                OreSpawnIntegrations.LOGGER.info("Shelf 9 placed at {} in {} ms (site search, template, four locates)",
-                        ground, (System.nanoTime() - start) / 1_000_000L);
+            if (IntegrationsConfig.on(IntegrationsConfig.storyHatchingGround) && !data.placed) {
+                long start = System.nanoTime();
+                BlockPos ground = settleFirstStart(level, SiteSearch.LAND, SiteSearch.FAR_RADIUS, SiteSearch.FAR_LIMIT_MS);
+                if (ground != null) {
+                    OreSpawnIntegrations.LOGGER.info("Shelf 9 placed at {} in {} ms (site search, template, four locates)",
+                            ground, (System.nanoTime() - start) / 1_000_000L);
+                }
             }
+            danger.orespawn.integrations.story.hunt.LodgeFallback.firstStart(server);
         } catch (Throwable t) {
             StoryCore.logOnce("shelf9.first_start", t);
         }

@@ -34,7 +34,7 @@ import java.util.List;
  */
 public final class HuntLodge {
 
-    private static final ResourceKey<Structure> LODGE = ResourceKey.create(Registries.STRUCTURE, FirstHourUtil.oi("hunt_lodge"));
+    static final ResourceKey<Structure> LODGE = ResourceKey.create(Registries.STRUCTURE, FirstHourUtil.oi("hunt_lodge"));
     private static final String[] TENTS = {"blue", "brown", "cyan", "gray", "green", "light_gray", "purple", "red", "white"};
     private static final int TENT_RADIUS_CHUNKS = 50;
     private static final int MAX_FROM_SPAWN = 4000;
@@ -78,6 +78,17 @@ public final class HuntLodge {
         }
     }
 
+    /** The world's ring start, by the lookup the board itself uses; null when the ring gave this world no Lodge. */
+    static BlockPos hasStart(ServerLevel level, BlockPos from) {
+        Holder<Structure> lodge = level.registryAccess().registryOrThrow(Registries.STRUCTURE).getHolder(LODGE).orElse(null);
+        if (lodge == null) {
+            return null;
+        }
+        Pair<BlockPos, Holder<Structure>> found = level.getChunkSource().getGenerator()
+                .findNearestMapStructure(level, HolderSet.direct(lodge), from, 64, false);
+        return found == null ? null : found.getFirst();
+    }
+
     /** The Lodge (hub list, then the ring start), else the nearest Hunter tent within range; null when none. */
     public static BlockPos nearestBoard(ServerLevel level, BlockPos from) {
         if (level.dimension() != net.minecraft.world.level.Level.OVERWORLD) {
@@ -94,13 +105,9 @@ public final class HuntLodge {
         }
         Registry<Structure> registry = level.registryAccess().registryOrThrow(Registries.STRUCTURE);
         if (IntegrationsConfig.on(IntegrationsConfig.storyHuntLodge)) {
-            Holder<Structure> lodge = registry.getHolder(LODGE).orElse(null);
-            if (lodge != null) {
-                Pair<BlockPos, Holder<Structure>> found = level.getChunkSource().getGenerator()
-                        .findNearestMapStructure(level, HolderSet.direct(lodge), from, 64, false);
-                if (found != null) {
-                    return found.getFirst();
-                }
+            BlockPos start = hasStart(level, from);
+            if (start != null) {
+                return start;
             }
         }
         List<Holder<Structure>> tents = new ArrayList<>();
