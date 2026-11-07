@@ -93,20 +93,27 @@ public final class LodgeFallback {
         long screenedMs = (System.nanoTime() - started) / 1_000_000L;
         int candidates = (int) screened.stream().filter(java.util.Objects::nonNull).count();
         int tried = 0;
+        int skipped = 0;
         for (int i = 0; i < places.size(); i++) {
             BoundingBox box = screened.get(i);
             if (box == null) {
                 continue;
             }
+            // A structure already where the reads would land rules the place out before its terrain is generated, which is
+            // most of what a read costs: on a slow machine those places alone could spend the whole limit.
+            if (structureWhereItReads(level, box)) {
+                skipped++;
+                continue;
+            }
             if ((System.nanoTime() - started) / 1_000_000L >= LIMIT_MS) {
-                OreSpawnIntegrations.LOGGER.warn("Hunt Lodge: the search reached its {} ms limit after {} of {} flat places ({} screened in"
-                        + " {} ms); the board keeps its tents and desks, and an operator can run /cc hunt_lodge place", LIMIT_MS, tried,
-                        candidates, places.size(), screenedMs);
+                OreSpawnIntegrations.LOGGER.warn("Hunt Lodge: the search reached its {} ms limit after {} of {} flat places, {} skipped for"
+                        + " a structure ({} screened in {} ms); the board keeps its tents and desks, and an operator can run /cc hunt_lodge"
+                        + " place", LIMIT_MS, tried, candidates, skipped, places.size(), screenedMs);
                 return;
             }
             tried++;
             if (fits(level, box)) {
-                place(server, level, places.get(i), box, started, tried, screenedMs, places.size(), candidates);
+                place(server, level, places.get(i), box, started, tried, skipped, screenedMs, places.size(), candidates);
                 return;
             }
         }
@@ -180,6 +187,28 @@ public final class LodgeFallback {
         return true;
     }
 
+    /**
+     * Whether a structure piece stands where a read of {@link #fits} would land, going by the terrain generator's height give
+     * or take three blocks. The structure references answer it without generating the place's terrain.
+     */
+    private static boolean structureWhereItReads(ServerLevel level, BoundingBox box) {
+        var generator = level.getChunkSource().getGenerator();
+        var random = level.getChunkSource().randomState();
+        for (int a = 0; a < READS; a++) {
+            for (int b = 0; b < READS; b++) {
+                int x = box.minX() + (box.maxX() - box.minX()) * a / (READS - 1);
+                int z = box.minZ() + (box.maxZ() - box.minZ()) * b / (READS - 1);
+                int top = generator.getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, level, random);
+                for (int y = top - 3; y <= top + 3; y++) {
+                    if (HatchingGroundPlacer.inAStructurePiece(level, new BlockPos(x, y, z))) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     /** Shelf 9's land rule across the box of this Lodge, stopping at the first read that rules it out. */
     private static boolean fits(ServerLevel level, BoundingBox box) {
         int n = READS * READS;
@@ -225,7 +254,7 @@ public final class LodgeFallback {
     }
 
     private static void place(MinecraftServer server, ServerLevel level, ChunkPos chunk, BoundingBox box, long started, int tried,
-                              long screenedMs, int places, int candidates) {
+                              int skipped, long screenedMs, int places, int candidates) {
         for (ChunkPos c : (Iterable<ChunkPos>) ChunkPos.rangeClosed(new ChunkPos(box.minX() >> 4, box.minZ() >> 4),
                 new ChunkPos(box.maxX() >> 4, box.maxZ() >> 4))::iterator) {
             level.getChunk(c.x, c.z);
@@ -252,7 +281,8 @@ public final class LodgeFallback {
         if (shelf9.placed) {
             FourWays.queueResurvey(shelf9);
         }
-        OreSpawnIntegrations.LOGGER.info("Hunt Lodge placed at {} in {} ms ({} places screened in {} ms, {} looked flat, {} read;"
-                + " the ring had no start)", middle, (System.nanoTime() - started) / 1_000_000L, places, screenedMs, candidates, tried);
+        OreSpawnIntegrations.LOGGER.info("Hunt Lodge placed at {} in {} ms ({} places screened in {} ms, {} looked flat, {} skipped for"
+                + " a structure, {} read; the ring had no start)", middle, (System.nanoTime() - started) / 1_000_000L, places, screenedMs,
+                candidates, skipped, tried);
     }
 }
