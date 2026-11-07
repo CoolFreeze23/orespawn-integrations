@@ -237,6 +237,10 @@ class Checker:
             self.need(where, kind, node)
         elif isinstance(node, list):
             for v in node:
+                if isinstance(v, str) and v.startswith("#"):
+                    # The game refuses the whole registry over this ("Not a JSON object"), and only where the file's
+                    # conditions pass, so a dev run without the partner mods never sees it.
+                    self.bad(where, f"a {kind} list can't hold a tag ({v}): use one tag, or one file per tag")
                 self.holder(where, kind, v)
         elif isinstance(node, dict):
             if node.get("type") in ("neoforge:or", "neoforge:and"):
