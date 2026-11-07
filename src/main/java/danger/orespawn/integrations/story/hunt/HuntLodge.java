@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import danger.orespawn.integrations.config.IntegrationsConfig;
 import danger.orespawn.integrations.story.StoryClock;
 import danger.orespawn.integrations.story.StoryCore;
+import danger.orespawn.integrations.story.firsthour.FieldOdete;
 import danger.orespawn.integrations.story.firsthour.FirstHourData;
 import danger.orespawn.integrations.story.firsthour.FirstHourUtil;
 import danger.orespawn.integrations.story.firsthour.GoldPin;
@@ -107,7 +108,7 @@ public final class HuntLodge {
         if (IntegrationsConfig.on(IntegrationsConfig.storyHuntLodge)) {
             BlockPos start = hasStart(level, from);
             if (start != null) {
-                return start;
+                return onTheSurface(level, start);
             }
         }
         List<Holder<Structure>> tents = new ArrayList<>();
@@ -124,6 +125,14 @@ public final class HuntLodge {
             return null;
         }
         BlockPos spawn = level.getSharedSpawnPos();
-        return tent.getFirst().distSqr(spawn) <= (double) MAX_FROM_SPAWN * MAX_FROM_SPAWN ? tent.getFirst() : null;
+        return tent.getFirst().distSqr(spawn) <= (double) MAX_FROM_SPAWN * MAX_FROM_SPAWN ? onTheSurface(level, tent.getFirst()) : null;
+    }
+
+    /**
+     * A structure lookup answers a chunk's middle at y 0, which a map pin would put deep underground: the surface instead,
+     * or sea level while the chunk isn't loaded, as the Registry pin does.
+     */
+    private static BlockPos onTheSurface(ServerLevel level, BlockPos found) {
+        return new BlockPos(found.getX(), FieldOdete.pinHeight(level, found.getX(), found.getZ()), found.getZ());
     }
 }
