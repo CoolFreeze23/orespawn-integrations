@@ -17,8 +17,11 @@ public final class SiteSearch {
     public static final int RADIUS = 48;
     /** The last step's reach: a new world's spawn moves to the straw, so the player never sees the distance. */
     public static final int FAR_RADIUS = 192;
-    /** The last step's limit: each read of an ungenerated chunk generates it while the server is still starting. */
-    public static final long FAR_LIMIT_MS = 30_000L;
+    /**
+     * The last step's limit: each new chunk it reads is generated while the server is still starting. A handheld reaches
+     * about 136 blocks in this time and a desktop PC nearly all 192, so a slow machine still finds what a fast one does.
+     */
+    public static final long FAR_LIMIT_MS = 60_000L;
     /** The read offsets from the patch centre: -10, -5, 0, 5, 10 on each axis. */
     public static final int[] OFFSETS = {-10, -5, 0, 5, 10};
     /** A read with this many blocks of air right under it is standing on something built in the sky, not on land. */
