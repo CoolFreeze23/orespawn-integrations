@@ -60,7 +60,7 @@ on in the next versions.
   dependia de outro mod do pack. Use a 0.10.1 ou mais nova.
 - The Registry pin on a far village no longer sits at the bottom of the world on the map, and a landing's coins and Aliens no
   longer can when their player has walked away.
-  pt-BR: O marcador do Cartório numa vila distante não fica mais no fundo do mundo no mapa, e as moedas e os Alienígenas de um
+  pt-BR: O marcador do Registro numa vila distante não fica mais no fundo do mundo no mapa, e as moedas e os Alienígenas de um
   pouso também não quando o jogador já foi embora.
 - Baron von Bats joins the other Plants & Zombies bosses on the heavyweights list and the spawner blacklist.
   pt-BR: O Barão Von Morcego se junta aos outros chefes de Plants & Zombies na lista de pesos-pesados e na lista proibida de geradores.
