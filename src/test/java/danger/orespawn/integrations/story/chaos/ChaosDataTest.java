@@ -143,8 +143,8 @@ class ChaosDataTest {
         assertEquals(18, count("orespawn_integrations/tags/item/royal_eggs.json"), "royal egg blocks");
         assertEquals(8, count("orespawn_integrations/tags/item/hbm_hazard_exempt.json"), "HBM exemptions");
         assertEquals(7, count("orespawn_integrations/tags/item/royal_diet.json"), "royal diet");
-        assertEquals(46, count("orespawn_integrations/tags/entity_type/heavyweights.json"), "heavyweights");
-        assertEquals(46, count("apothic_spawners/tags/entity_type/blacklisted_from_spawners.json"), "Apothic blacklist merge");
+        assertEquals(47, count("orespawn_integrations/tags/entity_type/heavyweights.json"), "heavyweights");
+        assertEquals(47, count("apothic_spawners/tags/entity_type/blacklisted_from_spawners.json"), "Apothic blacklist merge");
         assertEquals(3, count("orespawn_integrations/tags/item/statues/no_spawner.json"), "statue no-spawner list");
     }
 

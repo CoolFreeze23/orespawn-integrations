@@ -162,6 +162,10 @@
       "required": false
     },
     {
+      "id": "plantz:baron_von_bats",
+      "required": false
+    },
+    {
       "id": "marvel:red_skull",
       "required": false
     },
