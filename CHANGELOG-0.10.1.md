@@ -64,6 +64,25 @@ on in the next versions.
   pouso também não quando o jogador já foi embora.
 - Baron von Bats joins the other Plants & Zombies bosses on the heavyweights list and the spawner blacklist.
   pt-BR: O Barão Von Morcego se junta aos outros chefes de Plants & Zombies na lista de pesos-pesados e na lista proibida de geradores.
+- **A new world always looks for its Hunt Lodge.** When the world's own placement finds nothing, usually because it landed out
+  at sea, the first start puts the Lodge on good ground 300 to 600 blocks from spawn, the card's regions first. In our tests
+  on 8 new worlds, all 8 got a Lodge. A world with no land in range still gets the Monday board at Monster Hunter tents and
+  Registry desks.
+  pt-BR: **Todo mundo novo procura o seu Pavilhão de Caça.** Quando o posicionamento do próprio mundo não acha nada, quase
+  sempre por cair no mar, a primeira abertura põe o Pavilhão em chão bom a 300–600 blocos do spawn, nas regiões do card
+  primeiro. Nos nossos testes com 8 mundos novos, os 8 ganharam um Pavilhão. Um mundo sem terra ao alcance continua com o
+  quadro de segunda-feira nas tendas de Caçador e nos Balcões do Registro.
+- Captain Iracema is no longer lost when her Lodge appears before she can: she waits in the world's data until she can stand
+  there, through a restart too.
+  pt-BR: A Capitã Iracema não se perde mais quando o Pavilhão aparece antes dela: ela espera nos dados do mundo até poder
+  ficar lá, inclusive depois de reiniciar.
+- **A Royal Casket's trap no longer burns or breaks a roof.** Since alpha.1, a trap's fireball could set a roof above the
+  player alight and its TNT could blow holes in a roof and floor, because other mods in the pack change how explosions
+  work. Its blasts now hurt only the players in range, with no fire and no broken block.
+  pt-BR: **A armadilha de uma Arca Real não queima nem quebra mais um telhado.** Desde a alpha.1, a bola de fogo de uma
+  armadilha podia pôr fogo no telhado acima do jogador e o TNT podia abrir buracos no telhado e no chão, porque outros mods
+  do pack mudam como as explosões funcionam. Agora as explosões dela só ferem os jogadores por perto, sem fogo e sem
+  quebrar bloco.
 - The game no longer crashes in the creative inventory with Refurbished Furniture ("Cannot assign field visible because
   this.scrollUpButton is null"): its filter tabs wait until their buttons exist.
 - Long region names and subtitles no longer run off the screen on small GUI scales: a title or subtitle that wouldn't fit
@@ -78,12 +97,10 @@ on in the next versions.
 - A world could not load its registries because the Hunt Lodge's structure set had no salt.
 
 ## Known issues
-- The Hunt Lodge isn't in every world yet: in testing, 4 of 8 new worlds had none. Those worlds still get the Monday board at
-  Monster Hunter tents and Registry desks, an operator can run `/cc hunt_lodge place`, and a fix is coming next.
 - Creating a first world can take up to about a minute on a handheld, while Shelf 9 looks for a place to stand.
 
 ## Details
 - Minecraft 1.21.1, NeoForge 21.1.252. Built for the CrazyCraft 5.0 pack (v2.0.0-alpha.4).
-- 141 GameTests run on a test server for every build, and the first night and week above were checked in the full
-  pack.
+- 142 GameTests run for every build, on a test server and in the full pack, and the first night and week above were
+  checked on a real client in the full pack.
 - The Four Ways signs are surveyed once more at the first start on this version, so the bar's way can name the boteco.
