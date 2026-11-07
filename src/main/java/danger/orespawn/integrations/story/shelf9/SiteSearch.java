@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Shelf 9's site rule, as pure logic (unit tested): a 21 x 21 patch fits when its 25 heightmap reads (a 5 x 5 grid
  * across the patch) spread by 5 blocks or less and none of them is unusable (fluid, or a deck with air under it, as a
- * sky-ship's is). Candidates are tried nearest first, out to
+ * sky-ship's is). The placer also turns down a patch with a read inside a structure's piece. Candidates are tried nearest first, out to
  * 48 blocks from world spawn, then, after the beach, from there out to 192 under a time limit.
  */
 public final class SiteSearch {

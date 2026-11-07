@@ -264,6 +264,14 @@ public final class ShelfNineTests {
         helper.succeed();
     }
 
+    /** Open ground with no structure is not in a structure's piece. Full-pack seeds prove the other side, a real windmill. */
+    @GameTest(template = "empty8")
+    public static void openGroundIsNotAStructurePiece(GameTestHelper helper) {
+        helper.assertTrue(!HatchingGroundPlacer.inAStructurePiece(helper.getLevel(), helper.absolutePos(new BlockPos(3, 1, 3))),
+                "an empty test box read as a structure");
+        helper.succeed();
+    }
+
     /** A sky-ship's deck is not land: air right under a read rules it out, as fluid does; solid ground under it doesn't. */
     @GameTest(template = "empty8")
     public static void aDeckWithAirUnderItIsNoSite(GameTestHelper helper) {

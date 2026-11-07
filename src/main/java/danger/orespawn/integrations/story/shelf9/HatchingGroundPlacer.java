@@ -156,11 +156,35 @@ public final class HatchingGroundPlacer {
                     i++;
                 }
             }
-            if (rule.fits(cx, cz, heights, unusable)) {
+            if (rule.fits(cx, cz, heights, unusable) && !onAStructure(level, cx, cz, heights)) {
                 return new BlockPos(cx, SiteSearch.groundOf(heights), cz);
             }
         }
         return null;
+    }
+
+    /** True when any of a patch's 25 reads stands in a built part of a structure: someone's windmill is not free land. */
+    private static boolean onAStructure(ServerLevel level, int cx, int cz, int[] heights) {
+        int i = 0;
+        for (int ox : SiteSearch.OFFSETS) {
+            for (int oz : SiteSearch.OFFSETS) {
+                if (inAStructurePiece(level, new BlockPos(cx + ox, heights[i], cz + oz))) {
+                    return true;
+                }
+                i++;
+            }
+        }
+        return false;
+    }
+
+    /** True when {@code pos} is inside one of a structure's pieces, not merely inside its wider bounding box. */
+    public static boolean inAStructurePiece(ServerLevel level, BlockPos pos) {
+        for (var structure : level.structureManager().getAllStructuresAt(pos).keySet()) {
+            if (level.structureManager().getStructureWithPieceAt(pos, structure).isValid()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
