@@ -289,6 +289,16 @@ public final class HuntInstaller {
         server.getCommandStorage().set(OWED, root);
     }
 
+    /** The spot of the Iracema owed last, or null: a Lodge just placed puts its marker there, on its own floor. */
+    public static BlockPos lastOwed(MinecraftServer server) {
+        ListTag owed = server.getCommandStorage().get(OWED).getList("owed", Tag.TAG_COMPOUND);
+        if (owed.isEmpty()) {
+            return null;
+        }
+        CompoundTag last = owed.getCompound(owed.size() - 1);
+        return BlockPos.containing(last.getDouble("x"), last.getDouble("y"), last.getDouble("z"));
+    }
+
     /** How many Iracemas this world still owes (for the GameTests and /cc). */
     public static int owedCount(MinecraftServer server) {
         return server.getCommandStorage().get(OWED).getList("owed", Tag.TAG_COMPOUND).size();

@@ -241,7 +241,12 @@ public final class LodgeFallback {
         }
         int cx = (box.minX() + box.maxX()) / 2;
         int cz = (box.minZ() + box.maxZ()) / 2;
-        BlockPos middle = new BlockPos(cx, HatchingGroundPlacer.topAt(level, cx, cz) + 1, cz);
+        // The floor, where Iracema stands and the Wall hangs: her marker joined the world on it as the Lodge was placed. The
+        // box's own Y is the terrain generator's guess, and the heightmap would read the roof.
+        BlockPos marker = danger.orespawn.integrations.npc.HuntInstaller.lastOwed(server);
+        int floor = marker != null && marker.distSqr(new BlockPos(cx, marker.getY(), cz)) < 48 * 48 ? marker.getY()
+                : HatchingGroundPlacer.topAt(level, cx, cz) + 1;
+        BlockPos middle = new BlockPos(cx, floor, cz);
         HubPlaces.add(server, "hunt_lodge", middle, level.dimension().location().toString());
         HatchingGroundData shelf9 = HatchingGroundData.get(server);
         if (shelf9.placed) {
